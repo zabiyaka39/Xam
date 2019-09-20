@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+    
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="RTMobile.mainPage"
+             NavigationPage.HasNavigationBar="False">
+    
+    
+
+    <ContentPage.Content>
+        
+        <StackLayout BackgroundColor= "#ffffff" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <StackLayout VerticalOptions="Start" HorizontalOptions="End" Margin="20">
+                <Button  WidthRequest="24" HeightRequest="24" ImageSource= "@drawable/settings" BackgroundColor="Transparent"/>
+            </StackLayout>
+
+            <StackLayout  VerticalOptions="CenterAndExpand" HorizontalOptions="Center" >
+                <Frame VerticalOptions="Center" CornerRadius="100" HasShadow="true">
+                    <Image  Source="@drawable/RosohranaLogo"  BackgroundColor="Transparent" 
+                            WidthRequest="240"  HeightRequest ="240" />
+                    
+                </Frame> 
+            </StackLayout>
+
+            <Frame VerticalOptions="End" HasShadow="True">
+                <StackLayout HorizontalOptions="Start" Orientation="Horizontal">
+                    <Frame 
+                           BorderColor="Black"
+                           CornerRadius="50"
+                           HeightRequest="30"
+                           WidthRequest="30"
+                           IsClippedToBounds="True"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center">        
+                        <Image Source="sekisovAvatar.jpg"
+                             Aspect="AspectFill"
+                             Margin="-20"
+                             HeightRequest="100"
+                             WidthRequest="100" />
+                    </Frame>
+                    <StackLayout HorizontalOptions="Start" VerticalOptions="End" Margin="5,0,0,0" >
+                        <Label HorizontalOptions="StartAndExpand" Text="Владислав Секисов" TextColor="Black" FontAttributes="Bold" FontSize="Large"/>
+                        <Label HorizontalOptions="StartAndExpand" Text="sekisov@rosohrana.ru" TextColor="Black" FontSize="Small"/>
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+
+
+            <Frame HasShadow="False" VerticalOptions="End" HorizontalOptions="FillAndExpand" BackgroundColor="White" Padding="20,20,20,20">
+                <StackLayout Orientation="Horizontal">
+                <Button HorizontalOptions="FillAndExpand" CornerRadius="8" BackgroundColor="#BE0030" TextColor="White" Text="ВОЙТИ" Clicked="Button_Clicked"></Button>
+                <Button HorizontalOptions="FillAndExpand" CornerRadius="8" BackgroundColor="Black" TextColor="White" Text="О ПРОГРАММЕ" Clicked="Button_Clicked_1"></Button>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+
+</ContentPage>

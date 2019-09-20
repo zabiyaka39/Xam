@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<!--<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:RTMobile"
+             mc:Ignorable="d"
+             x:Class="RTMobile.IssuePage">
+    <MasterDetailPage.Master>
+        <ContentPage Title="Master Page Title" />
+    </MasterDetailPage.Master>
+    <MasterDetailPage.Detail>
+        <NavigationPage BarBackgroundColor="Blue" BarTextColor="White">
+            <x:Arguments>
+                <ContentPage>
+                    <Label Text="Slide the master page to see the status bar text color mode change." />
+                </ContentPage>
+            </x:Arguments>
+        </NavigationPage>
+    </MasterDetailPage.Detail>
+</MasterDetailPage>-->
+
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:RTMobile"
+             mc:Ignorable="d"
+             x:Class="RTMobile.IssuePage" 
+             NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" BackgroundColor="#f2f2f2">
+            <StackLayout Orientation="Horizontal" VerticalOptions="Start" BackgroundColor="#000000" HeightRequest="80" 
+                         HorizontalOptions="FillAndExpand" Padding="10,-20,0,0" Margin="0,0,0,-50">
+                <Picker Margin="10,20,0,0"  x:Name="pickerFilter" MinimumWidthRequest="100"
+                                 Title="Фильтр задач                 "                        
+                                 TitleColor="White"
+                                 TextColor="White"
+                                 FontSize="Caption"
+                         VerticalOptions="End"
+                         HorizontalOptions="StartAndExpand">
+                    <Picker.ItemsSource >                        
+                        <x:Array  Type="{x:Type x:String}">
+                            <x:String>Назначенные мне</x:String>
+                            <x:String>Открытые</x:String>
+                            <x:String>В работе</x:String>
+                            <x:String>Наблюдаемые</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+                <Picker Margin="0,20,0,0" HorizontalOptions="EndAndExpand" x:Name="pickerSort" MinimumWidthRequest="100"
+                                 Title="Сортировка                "
+                                 TitleColor="White"
+                                 TextColor="White"
+                                 FontSize="Caption"
+                         VerticalOptions="End">
+                    <Picker.ItemsSource >
+
+                        <x:Array  Type="{x:Type x:String}">
+                            <x:String>По дате</x:String>
+                            <x:String>По номеру</x:String>
+                            <x:String>По статусу</x:String>
+                            <x:String>Наблюдаемые</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+            </StackLayout>
+            <Frame CornerRadius="50"
+                                           HeightRequest="50"
+                                           WidthRequest="50"
+                                           IsClippedToBounds="True"
+                                           HorizontalOptions="CenterAndExpand"
+                                           VerticalOptions="Center"
+                                           Margin="-22,0,-22,-10"
+                                           HasShadow="False"
+                                           BackgroundColor="#f2f2f2">
+
+                <Button BackgroundColor="Transparent" Clicked="Button_Clicked" ImageSource="issueSearch.png" HorizontalOptions="Start" VerticalOptions="Start">
+                </Button>
+            </Frame>
+
+
+
+           
+
+            <ScrollView VerticalOptions="StartAndExpand" BackgroundColor="#f2f2f2" Margin="10,10,10,10">
+                <StackLayout >
+                    <!--1 запись-->
+                    <Frame CornerRadius="10" HasShadow="False"  BackgroundColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">                       
+                        <StackLayout VerticalOptions="StartAndExpand">
+                            <StackLayout Margin=" 0,0,0,10" HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand">
+                                    <Frame CornerRadius="50"
+                                           HeightRequest="2"
+                                           WidthRequest="2"
+                                           IsClippedToBounds="True"
+                                           HorizontalOptions="Center"
+                                           VerticalOptions="Center"
+                                           Margin="0,0,10,0">
+                                        <Image Source="sekisovAvatar.jpg"
+                                             Aspect="AspectFill"
+                                             Margin="-20"
+                                             HeightRequest="10"
+                                             WidthRequest="10" />
+                                    </Frame>
+                                    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                                        <StackLayout.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                                        </StackLayout.GestureRecognizers>
+                                        <Label x:Name="numberIssue" HorizontalOptions="FillAndExpand" TextColor="#6666ff" Text="IT-3342">                                           
+                                        </Label>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Image Source="statusIssue"></Image>
+                                            <Label x:Name="typeIssue" Text="Инцидент"> 
+                                            </Label>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <StackLayout.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                                    </StackLayout.GestureRecognizers>
+                                    <Frame HorizontalOptions="End">
+                                        <StackLayout Orientation="Horizontal">
+                                            <Image Source="statusImageIssue.png"></Image>
+                                            <Label>В работе</Label>
+                                        </StackLayout>
+                                    </Frame>
+                                    <Image Margin="5,0,0,0" Source="moreVertical.png"></Image>
+                                </StackLayout>
+                            </StackLayout>
+                            <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand" >
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                                </StackLayout.GestureRecognizers>
+                                <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand">
+                                        <Label HorizontalOptions="FillAndExpand" FontSize="15" TextColor="Black" VerticalOptions="CenterAndExpand">Создание Мобильного приложения</Label>
+                                        <Label HorizontalOptions="End" FontSize="Micro">0 комментариев</Label>
+                                    </StackLayout>
+                                    <StackLayout HorizontalOptions="FillAndExpand">
+                                        <BoxView Color="Black" HeightRequest="1" ></BoxView>
+                                    
+                                    </StackLayout>
+                               
+                            </StackLayout>
+
+
+                            <StackLayout Orientation="Horizontal">
+                                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+                                    <Label >Наблюдение</Label>
+                                </StackLayout>
+                                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+                                    <Label >Комментарии</Label>
+                                </StackLayout>
+                                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+                                    <Label>Поделиться</Label>
+                                </StackLayout>
+                            </StackLayout>
+
+                        </StackLayout>
+                    </Frame>
+
+                </StackLayout>
+            </ScrollView>
+
+
+
+
+            <StackLayout Orientation="Horizontal" VerticalOptions="Start" BackgroundColor="#000000" HeightRequest="80" 
+                         HorizontalOptions="FillAndExpand" Padding="-10,0,0,10" Margin="0,0,0,0">
+                <ImageButton  Source="notifications" BackgroundColor="Transparent" HeightRequest="5" WidthRequest="35" Padding="5" Margin="20,10,20,10"></ImageButton>
+                <Image Source="settings.png" ></Image>
+                <!--<ImageButton  Source="settings"    HeightRequest="5" WidthRequest="35" Padding="5" Margin="20,10,20,10"></ImageButton>-->
+            </StackLayout>
+            <Frame CornerRadius="50"
+                                           HeightRequest="50"
+                                           WidthRequest="50"
+                                           IsClippedToBounds="True"
+                                           HorizontalOptions="CenterAndExpand"
+                                           VerticalOptions="Center"
+                                           Margin="-22,-140,-22,30"
+                                           HasShadow="False"
+                                           BackgroundColor="#f2f2f2">
+
+                <Button BackgroundColor="Transparent" Clicked="Button_Clicked_1" ImageSource="addButton.png" HorizontalOptions="Start" VerticalOptions="Start">
+                </Button>
+            </Frame>
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+    

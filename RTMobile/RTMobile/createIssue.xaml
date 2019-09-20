@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="RTMobile.createIssue"
+             Title="Создать задачу">
+    <ContentPage.Content>
+        <ScrollView Margin="10" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <StackLayout>
+                <Frame HorizontalOptions="FillAndExpand">
+                    <StackLayout Orientation="Horizontal">
+                        <Label HorizontalOptions="Start" Text="Тема" VerticalOptions="CenterAndExpand"></Label>
+                        <Entry HorizontalOptions="EndAndExpand" Placeholder="Введите тему"  VerticalOptions="CenterAndExpand"></Entry>
+                    </StackLayout>
+                </Frame>
+                <Frame HorizontalOptions="FillAndExpand">
+                    <StackLayout Orientation="Horizontal">
+                        <Label HorizontalOptions="Start" Text="Классификатор"  VerticalOptions="CenterAndExpand"></Label>
+                        <Entry HorizontalOptions="EndAndExpand" Placeholder="Введите классификатор"  VerticalOptions="CenterAndExpand"></Entry>
+                    </StackLayout>
+                </Frame>
+                <Frame HorizontalOptions="FillAndExpand">
+                    <StackLayout Orientation="Horizontal">
+                        <Label HorizontalOptions="Start" Text="Описание"  VerticalOptions="CenterAndExpand"></Label>
+                        <Editor HorizontalOptions="EndAndExpand" Placeholder="Введите описание" HeightRequest="200"  VerticalOptions="CenterAndExpand"></Editor>
+                    </StackLayout>
+                </Frame>
+                <StackLayout HorizontalOptions="FillAndExpand">
+                    <Button HorizontalOptions="EndAndExpand" Text="Создать" BackgroundColor="White" BorderColor="Black" BorderWidth="1"></Button>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

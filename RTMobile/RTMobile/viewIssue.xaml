@@ -1,0 +1,258 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="RTMobile.viewIssue">
+
+    <ContentPage.Content>
+        <ScrollView BackgroundColor="#f9f9f9">
+            <StackLayout>  
+                <Frame MinimumHeightRequest="5">
+                    <Label x:Name="summary" VerticalOptions="Center" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" Text="Мобильная версия Jira (задача № 9306 в Bitrix)"></Label>
+                </Frame>
+
+                <!--Раздел с Деталями задачи-->
+                <Frame BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Start">
+                    <StackLayout>
+                        <StackLayout>
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="ButtonDetailIssue_Clicked"/>
+                            </StackLayout.GestureRecognizers>
+                            <StackLayout Orientation="Horizontal">
+                                <Image Source="detailIssue.png" HeightRequest="20"/>
+                                <Label HorizontalOptions="FillAndExpand">Детали задачи</Label>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" >                                
+                                <StackLayout HorizontalOptions="FillAndExpand" Padding="0,5,0,0" >
+                                    <BoxView Color="Black" HeightRequest="1"></BoxView>
+                                </StackLayout>
+                                <ImageButton x:Name="buttonDetailIssue" Clicked="ButtonDetailIssue_Clicked" Source="arrowUp.png" BackgroundColor="Transparent"></ImageButton>
+                            </StackLayout>
+                        </StackLayout>
+                        <StackLayout x:Name="detailIssueData" Orientation="Vertical">
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                                <Label HorizontalOptions="FillAndExpand">Тип</Label>
+                                <Label HorizontalOptions="End">Запрос на обслуживание</Label>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                                <Label HorizontalOptions="FillAndExpand">Приортет</Label>
+                                <Label>Средний</Label>
+                            </StackLayout >
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                                <Label HorizontalOptions="FillAndExpand">Статус</Label>
+                                <Label>Открыта</Label>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                                <Label HorizontalOptions="FillAndExpand">Источник обращения</Label>
+                                <Label>Клиент ЮЛ</Label>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                                <Label HorizontalOptions="FillAndExpand">Причина обращения</Label>
+                                <Label>Разработка</Label>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                                <Label HorizontalOptions="FillAndExpand">Контакты</Label>
+                                <Label>Тел.: +7(999)1234567</Label>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                                <Label HorizontalOptions="FillAndExpand">Клиент</Label>
+                                <Label>Попов Петр Петрович</Label>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                                <Label HorizontalOptions="FillAndExpand">Создана</Label>
+                                <Label>15:00 13.08.2019</Label>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                                <Label HorizontalOptions="FillAndExpand">Обновлена</Label>
+                                <Label>15:03 13.08.2019</Label>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                                <Label HorizontalOptions="FillAndExpand">Время до решения</Label>
+                                <Label>90 мин</Label>
+                            </StackLayout>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+                <!--Раздел с Описание задачи-->
+                <Frame BackgroundColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
+                    <StackLayout>
+                        <StackLayout>
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="ButtonDescriptionIssue_Clicked"/>
+                            </StackLayout.GestureRecognizers>
+                            <StackLayout Orientation="Horizontal">
+                                <Image Source="description.png" HeightRequest="20"/>
+                                <Label HorizontalOptions="FillAndExpand">Описание</Label>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" >                                
+                                <StackLayout HorizontalOptions="FillAndExpand" Padding="0,5,0,0" >
+                                    <BoxView Color="Black" HeightRequest="1"></BoxView>
+                                </StackLayout>
+                                <ImageButton x:Name="buttonDescriptionIssue" Clicked="ButtonDescriptionIssue_Clicked" Source="arrowUp.png" BackgroundColor="Transparent"></ImageButton>
+                            </StackLayout>
+                        </StackLayout>
+                        <StackLayout Orientation="Vertical" x:Name="descriptionIssue">
+                            <ScrollView Orientation="Horizontal" HorizontalOptions="FillAndExpand" >
+                                <Editor HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Text="Ключ - 57247
+    Дата события – 05.03.2019 " FontSize="Small" IsReadOnly="true" FontAttributes="None" >
+                                </Editor>
+                            </ScrollView>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+                <!--Раздел с вложенными файлами-->
+                <Frame BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Start">
+                    <StackLayout Orientation="Vertical">
+                        <StackLayout>
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="ButtonFileIssue_Clicked"/>
+                            </StackLayout.GestureRecognizers>
+                            <StackLayout Orientation="Horizontal">
+                                <Image Source="folderFile.png" HeightRequest="20"/>
+                                <Label HorizontalOptions="FillAndExpand">Вложенные файлы</Label>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal">                                
+                                <StackLayout HorizontalOptions="FillAndExpand" Padding="0,5,0,0" >
+                                    <BoxView Color="Black" HeightRequest="1"></BoxView>
+                                </StackLayout>
+                                <ImageButton x:Name="buttonFileIssue" Clicked="ButtonFileIssue_Clicked" Source="arrowUp.png" BackgroundColor="Transparent"></ImageButton>
+                            </StackLayout>
+                        </StackLayout>
+                        <StackLayout x:Name="fileIssue" Orientation="Vertical">
+                            <ScrollView>
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
+                                        <Image Source="demoPhoto.png" ></Image>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
+                                        <Image Source="demoPhoto.png" ></Image>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
+                                        <Image Source="demoPhoto.png" ></Image>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
+                                        <Image Source="demoPhoto.png" ></Image>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
+                                        <Image Source="demoPhoto.png" ></Image>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
+                                        <Image Source="demoPhoto.png" ></Image>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
+                                        <Image Source="demoPhoto.png" ></Image>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
+                                        <Image Source="demoPhoto.png" ></Image>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
+                                        <Image Source="demoPhoto.png" ></Image>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
+                                        <Image Source="demoPhoto.png" ></Image>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
+                                        <Image Source="demoPhoto.png" ></Image>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
+                                        <Image Source="demoPhoto.png" ></Image>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
+                                        <Image Source="demoPhoto.png" ></Image>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
+                                        <Image Source="demoPhoto.png" ></Image>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
+                                        <Image Source="demoPhoto.png" ></Image>
+                                    </StackLayout>
+                                </StackLayout>
+                            </ScrollView>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                                <Image Source="addFile.png" HeightRequest="20"></Image>
+                                <Label>Добавить вложение</Label>
+                            </StackLayout>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+                <!--Раздел с Людьми-->
+                <Frame BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Start">
+                    <StackLayout>
+                        <StackLayout>
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="ButtonPeopleIssue_Clicked"/>
+                            </StackLayout.GestureRecognizers>
+                            <StackLayout Orientation="Horizontal">
+                                <Image Source="people.png"  HeightRequest="20"/>
+                                <Label HorizontalOptions="FillAndExpand">Люди</Label>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal">                                
+                                <StackLayout HorizontalOptions="FillAndExpand" Padding="0,5,0,0" >
+                                    <BoxView Color="Black" HeightRequest="1"></BoxView>
+                                </StackLayout>
+                                <ImageButton x:Name="buttonPeopleIssue" Clicked="ButtonPeopleIssue_Clicked" Source="arrowUp.png" BackgroundColor="Transparent"></ImageButton>
+                            </StackLayout>
+                        </StackLayout>
+                        <StackLayout x:Name="peopleIssue" Orientation="Vertical">
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                                <Label HorizontalOptions="FillAndExpand"  VerticalOptions="Center">Исполнитель</Label>
+                                <Frame Margin="10"
+                                       BorderColor="Black"
+                                       CornerRadius="50"
+                                       HeightRequest="5"
+                                       WidthRequest="5"
+                                       IsClippedToBounds="True"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="Center">
+                                    <Image Source="sekisovAvatar.png"
+                                         Aspect="AspectFill"
+                                         Margin="-20"
+                                         HeightRequest="5"
+                                         WidthRequest="5" />
+                                </Frame>
+                                <Label HorizontalOptions="End"  VerticalOptions="Center">Секисов В.А.</Label>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                                <Label HorizontalOptions="FillAndExpand"  VerticalOptions="Center">Автор</Label>
+                                <Frame Margin="10"
+                                       BorderColor="Black"
+                                       CornerRadius="50"
+                                       HeightRequest="5"
+                                       WidthRequest="5"
+                                       IsClippedToBounds="True"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="Center">
+                                    <Image Source="sekisovAvatar.png"
+                                         Aspect="AspectFill"
+                                         Margin="-20"
+                                         HeightRequest="5"
+                                         WidthRequest="5" />
+                                </Frame>
+                                <Label  VerticalOptions="Center">Куркова М.А.</Label>
+                            </StackLayout >
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                                <Label  HorizontalOptions="FillAndExpand">Голоса</Label>
+                               
+                                <Frame BackgroundColor="blue" Padding="2" HorizontalOptions="Center" WidthRequest="20" HeightRequest="20" CornerRadius="50">
+                                    <Label TextColor="White" WidthRequest="40" Text="1" HorizontalTextAlignment="Center"></Label>
+                                </Frame>
+                                <Label>Голосовать за эту задачу</Label>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                                <Label HorizontalOptions="FillAndExpand">Наблюдатели</Label>
+                                <Frame BackgroundColor="blue" Padding="2" HorizontalOptions="Center" WidthRequest="20" HeightRequest="20" CornerRadius="50">
+                                    <Label TextColor="White" WidthRequest="40" Text="1" HorizontalTextAlignment="Center"></Label>
+                                </Frame>
+                                <Label>Прекратить наблюдение</Label>
+                            </StackLayout>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

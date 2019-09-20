@@ -1,0 +1,1 @@
+C:\Users\sekisov\source\repos\RTMobile\RTMobile\RTMobile.UWP\RTMobile.UWP.csproj;x86

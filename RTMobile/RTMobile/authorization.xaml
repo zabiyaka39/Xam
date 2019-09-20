@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             
+             mc:Ignorable="d"
+             x:Class="RTMobile.authorization" 
+             Title="Авторизация"
+             NavigationPage.HasNavigationBar="True"
+             NavigationPage.HasBackButton="True"
+             NavigationPage.BackButtonTitle="Авторизация">
+
+    <Shell.TitleView>
+        <Image BackgroundColor="Black" Source="apply.png"
+               HorizontalOptions="Center"
+               VerticalOptions="Center" />
+    </Shell.TitleView>
+    <ContentPage.Content>   
+        <StackLayout  VerticalOptions="FillAndExpand" BackgroundColor="White">
+
+            <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="White" Padding="20,0,20,0">
+
+                <Frame BorderColor="Black" CornerRadius="2" Padding="5,5,5,5" Margin="0,10,0,10">
+                    <Entry Placeholder="Логин" BackgroundColor="White" ReturnType="Done">                        
+                    </Entry>
+                </Frame>
+                <Frame BorderColor="Black" CornerRadius="2" Padding="5,5,5,5">
+                    <Entry Placeholder="Пароль" IsPassword="True" ReturnType="Send"></Entry>
+                </Frame>
+                <!--<StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="FillAndExpand" BackgroundColor="White" Padding="20,20,20,20">-->
+                    <Button HorizontalOptions="FillAndExpand" Margin="0,10,0,0" CornerRadius="8" BackgroundColor="#BE0030" TextColor="White" Text="ВОЙТИ" HeightRequest="60" WidthRequest="20" Clicked="Button_Clicked"></Button>
+                <!--</StackLayout>-->
+                <StackLayout Margin="0,10,0,0" Orientation="Horizontal" >
+                    <CheckBox HorizontalOptions="Start" Color="#BE0030"></CheckBox>
+                    <Label Margin="0,5,0,0" FontSize="Small" HorizontalOptions="Start">Запомнить меня</Label>
+                </StackLayout>
+            </StackLayout>
+            
+        </StackLayout>
+        
+    </ContentPage.Content>
+</ContentPage>
