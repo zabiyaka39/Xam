@@ -18,6 +18,11 @@ namespace RTMobile
             //((NavigationPage)Application.Current.MainPage).BarBackgroundColor = Color.Wheat;
             //((NavigationPage)Application.Current.MainPage).BarTextColor = Color.Black;
             //((NavigationPage)Application.Current.MainPage).Title = "Задача";
+            var names = new List<string>
+            {
+                "Test1", "Test2", "Test3"
+            };
+            //MainCarouselView.ItemsSource = names;
 
         }
 

@@ -8,8 +8,8 @@ namespace RTMobile
     {
         public App()
         {
+            
             InitializeComponent();
-
             MainPage = new NavigationPage(new RTMobile.mainPage());
         }
 

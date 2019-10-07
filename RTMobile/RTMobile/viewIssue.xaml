@@ -103,80 +103,80 @@
                     </StackLayout>
                 </Frame>
                 <!--Раздел с вложенными файлами-->
-                <Frame BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Start">
+                    <Frame BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Start">
                     <StackLayout Orientation="Vertical">
                         <StackLayout>
-                            <StackLayout.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="ButtonFileIssue_Clicked"/>
-                            </StackLayout.GestureRecognizers>
-                            <StackLayout Orientation="Horizontal">
-                                <Image Source="folderFile.png" HeightRequest="20"/>
-                                <Label HorizontalOptions="FillAndExpand">Вложенные файлы</Label>
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="ButtonFileIssue_Clicked"/>
+                        </StackLayout.GestureRecognizers>
+                        <StackLayout Orientation="Horizontal">
+                            <Image Source="folderFile.png" HeightRequest="20"/>
+                            <Label HorizontalOptions="FillAndExpand">Вложенные файлы</Label>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <StackLayout HorizontalOptions="FillAndExpand" Padding="0,5,0,0" >
+                            <BoxView Color="Black" HeightRequest="1"></BoxView>
                             </StackLayout>
-                            <StackLayout Orientation="Horizontal">                                
-                                <StackLayout HorizontalOptions="FillAndExpand" Padding="0,5,0,0" >
-                                    <BoxView Color="Black" HeightRequest="1"></BoxView>
-                                </StackLayout>
-                                <ImageButton x:Name="buttonFileIssue" Clicked="ButtonFileIssue_Clicked" Source="arrowUp.png" BackgroundColor="Transparent"></ImageButton>
-                            </StackLayout>
+                            <ImageButton x:Name="buttonFileIssue" Clicked="ButtonFileIssue_Clicked" Source="arrowUp.png" BackgroundColor="Transparent"></ImageButton>
+                        </StackLayout>
                         </StackLayout>
                         <StackLayout x:Name="fileIssue" Orientation="Vertical">
-                            <ScrollView>
-                                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-                                    <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
-                                        <Image Source="demoPhoto.png" ></Image>
-                                    </StackLayout>
-                                    <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
-                                        <Image Source="demoPhoto.png" ></Image>
-                                    </StackLayout>
-                                    <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
-                                        <Image Source="demoPhoto.png" ></Image>
-                                    </StackLayout>
-                                    <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
-                                        <Image Source="demoPhoto.png" ></Image>
-                                    </StackLayout>
-                                    <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
-                                        <Image Source="demoPhoto.png" ></Image>
-                                    </StackLayout>
-                                    <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
-                                        <Image Source="demoPhoto.png" ></Image>
-                                    </StackLayout>
-                                    <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
-                                        <Image Source="demoPhoto.png" ></Image>
-                                    </StackLayout>
-                                    <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
-                                        <Image Source="demoPhoto.png" ></Image>
-                                    </StackLayout>
-                                    <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
-                                        <Image Source="demoPhoto.png" ></Image>
-                                    </StackLayout>
-                                    <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
-                                        <Image Source="demoPhoto.png" ></Image>
-                                    </StackLayout>
-                                    <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
-                                        <Image Source="demoPhoto.png" ></Image>
-                                    </StackLayout>
-                                    <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
-                                        <Image Source="demoPhoto.png" ></Image>
-                                    </StackLayout>
-                                    <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
-                                        <Image Source="demoPhoto.png" ></Image>
-                                    </StackLayout>
-                                    <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
-                                        <Image Source="demoPhoto.png" ></Image>
-                                    </StackLayout>
-                                    <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
-                                        <Image Source="demoPhoto.png" ></Image>
-                                    </StackLayout>
+                        <ScrollView Orientation="Horizontal">
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="10">
+                                    <Frame  IsClippedToBounds="True"
+                                           HorizontalOptions="Center"
+                                           VerticalOptions="Center" 
+                                            WidthRequest="100" HeightRequest="100"
+                                            Padding="2">
+                                        <Frame.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="imageTapped"/>
+                                        </Frame.GestureRecognizers>
+                                        <Image  Aspect="AspectFill" Source="image1.jpg"></Image>
+                                    </Frame>
+                                    <Frame  IsClippedToBounds="True"
+                                           HorizontalOptions="Center"
+                                           VerticalOptions="Center" 
+                                            WidthRequest="100" HeightRequest="100"
+                                            Padding="2">
+                                        <Image  Aspect="AspectFill" Source="image2.jpg"></Image>
+                                    </Frame>
+                                    <Frame  IsClippedToBounds="True"
+                                           HorizontalOptions="Center"
+                                           VerticalOptions="Center" 
+                                            WidthRequest="100" HeightRequest="100"
+                                            Padding="2">
+                                        <Image  Aspect="AspectFill" Source="image3.jpg"></Image>
+                                    </Frame>
+                                    <Frame  IsClippedToBounds="True"
+                                           HorizontalOptions="Center"
+                                           VerticalOptions="Center" 
+                                            WidthRequest="100" HeightRequest="100"
+                                            Padding="2">
+                                        <Image  Aspect="AspectFill" Source="image1.jpg"></Image>
+                                    </Frame>
+                                    <Frame  IsClippedToBounds="True"
+                                           HorizontalOptions="Center"
+                                           VerticalOptions="Center" 
+                                            WidthRequest="100" HeightRequest="100"
+                                            Padding="2">
+                                        <Image  Aspect="AspectFill" Source="image2.jpg"></Image>
+                                    </Frame>
+                                    <Frame  IsClippedToBounds="True"
+                                           HorizontalOptions="Center"
+                                           VerticalOptions="Center" 
+                                            WidthRequest="100" HeightRequest="100"
+                                            Padding="2">
+                                        <Image  Aspect="AspectFill" Source="image3.jpg"></Image>
+                                    </Frame>
                                 </StackLayout>
-                            </ScrollView>
-                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-                                <Image Source="addFile.png" HeightRequest="20"></Image>
-                                <Label>Добавить вложение</Label>
-                            </StackLayout>
+                        </ScrollView>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                            <Image  Source="addFile.png" HeightRequest="20"></Image>
+                            <Label>Добавить вложение</Label>
+                        </StackLayout>
                         </StackLayout>
                     </StackLayout>
-                </Frame>
+                    </Frame>                                   
                 <!--Раздел с Людьми-->
                 <Frame BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Start">
                     <StackLayout>
@@ -188,7 +188,7 @@
                                 <Image Source="people.png"  HeightRequest="20"/>
                                 <Label HorizontalOptions="FillAndExpand">Люди</Label>
                             </StackLayout>
-                            <StackLayout Orientation="Horizontal">                                
+                            <StackLayout Orientation="Horizontal">
                                 <StackLayout HorizontalOptions="FillAndExpand" Padding="0,5,0,0" >
                                     <BoxView Color="Black" HeightRequest="1"></BoxView>
                                 </StackLayout>
@@ -234,24 +234,22 @@
                             </StackLayout >
                             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
                                 <Label  HorizontalOptions="FillAndExpand">Голоса</Label>
-                               
+
                                 <Frame BackgroundColor="blue" Padding="2" HorizontalOptions="Center" WidthRequest="20" HeightRequest="20" CornerRadius="50">
                                     <Label TextColor="White" WidthRequest="40" Text="1" HorizontalTextAlignment="Center"></Label>
                                 </Frame>
                                 <Label>Голосовать за эту задачу</Label>
                             </StackLayout>
                             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-                                <Label HorizontalOptions="FillAndExpand">Наблюдатели</Label>
+                                <Label HorizontalOptions="StartAndExpand">Наблюдатели</Label>
                                 <Frame BackgroundColor="blue" Padding="2" HorizontalOptions="Center" WidthRequest="20" HeightRequest="20" CornerRadius="50">
                                     <Label TextColor="White" WidthRequest="40" Text="1" HorizontalTextAlignment="Center"></Label>
-                                </Frame>
-                                <Label>Прекратить наблюдение</Label>
+                                </Frame>                                
+                                <Label BackgroundColor="Transparent" TextColor="Blue" Text="Просмотреть наблюдателей" HorizontalOptions="End"></Label>
                             </StackLayout>
                         </StackLayout>
                     </StackLayout>
                 </Frame>
-
-
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

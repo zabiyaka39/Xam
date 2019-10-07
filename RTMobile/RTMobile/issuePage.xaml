@@ -42,7 +42,7 @@
                                  FontSize="Caption"
                          VerticalOptions="End"
                          HorizontalOptions="StartAndExpand">
-                    <Picker.ItemsSource >                        
+                    <Picker.ItemsSource >
                         <x:Array  Type="{x:Type x:String}">
                             <x:String>Назначенные мне</x:String>
                             <x:String>Открытые</x:String>
@@ -68,6 +68,7 @@
                     </Picker.ItemsSource>
                 </Picker>
             </StackLayout>
+
             <Frame CornerRadius="50"
                                            HeightRequest="50"
                                            WidthRequest="50"
@@ -82,14 +83,10 @@
                 </Button>
             </Frame>
 
-
-
-           
-
             <ScrollView VerticalOptions="StartAndExpand" BackgroundColor="#f2f2f2" Margin="10,10,10,10">
-                <StackLayout >
+                <StackLayout x:Name="contentIssue">
                     <!--1 запись-->
-                    <Frame CornerRadius="10" HasShadow="False"  BackgroundColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">                       
+                    <Frame CornerRadius="10" HasShadow="False"  BackgroundColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
                         <StackLayout VerticalOptions="StartAndExpand">
                             <StackLayout Margin=" 0,0,0,10" HorizontalOptions="FillAndExpand" Orientation="Horizontal">
                                 <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand">
@@ -110,15 +107,16 @@
                                         <StackLayout.GestureRecognizers>
                                             <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
                                         </StackLayout.GestureRecognizers>
-                                        <Label x:Name="numberIssue" HorizontalOptions="FillAndExpand" TextColor="#6666ff" Text="IT-3342">                                           
+                                        <Label x:Name="numberIssue" HorizontalOptions="FillAndExpand" TextColor="#6666ff" Text="IT-3342">
                                         </Label>
                                         <StackLayout Orientation="Horizontal">
                                             <Image Source="statusIssue"></Image>
-                                            <Label x:Name="typeIssue" Text="Инцидент"> 
+                                            <Label x:Name="typeIssue" Text="Инцидент">
                                             </Label>
                                         </StackLayout>
                                     </StackLayout>
                                 </StackLayout>
+                               
                                 <StackLayout Orientation="Horizontal">
                                     <StackLayout.GestureRecognizers>
                                         <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
@@ -129,37 +127,30 @@
                                             <Label>В работе</Label>
                                         </StackLayout>
                                     </Frame>
-                                    <Image Margin="5,0,0,0" Source="moreVertical.png"></Image>
+                                    <ImageButton Margin="5,0,0,0" Source="moreVertical.png"></ImageButton>
                                 </StackLayout>
                             </StackLayout>
+
+
                             <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand" >
                                 <StackLayout.GestureRecognizers>
                                     <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
                                 </StackLayout.GestureRecognizers>
                                 <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand">
-                                        <Label HorizontalOptions="FillAndExpand" FontSize="15" TextColor="Black" VerticalOptions="CenterAndExpand">Создание Мобильного приложения</Label>
-                                        <Label HorizontalOptions="End" FontSize="Micro">0 комментариев</Label>
-                                    </StackLayout>
-                                    <StackLayout HorizontalOptions="FillAndExpand">
-                                        <BoxView Color="Black" HeightRequest="1" ></BoxView>
-                                    
-                                    </StackLayout>
-                               
+                                    <Label HorizontalOptions="FillAndExpand" FontSize="15" TextColor="Black" VerticalOptions="CenterAndExpand">Создание Мобильного приложения</Label>
+                                    <Label HorizontalOptions="End" FontSize="Micro">0 комментариев</Label>
+                                </StackLayout>
+                                <BoxView HorizontalOptions="FillAndExpand" Color="Black" HeightRequest="1" ></BoxView>
                             </StackLayout>
+                            
+                            
 
-
-                            <StackLayout Orientation="Horizontal">
-                                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
-                                    <Label >Наблюдение</Label>
-                                </StackLayout>
-                                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
-                                    <Label >Комментарии</Label>
-                                </StackLayout>
-                                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
-                                    <Label>Поделиться</Label>
-                                </StackLayout>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" >                             
+                                    <Label HorizontalOptions="StartAndExpand" >Наблюдение</Label>
+                                    <Label HorizontalOptions="CenterAndExpand">Комментарии</Label>
+                                    <Label HorizontalOptions="EndAndExpand">Поделиться</Label>                              
                             </StackLayout>
-
+                            
                         </StackLayout>
                     </Frame>
 
@@ -171,9 +162,11 @@
 
             <StackLayout Orientation="Horizontal" VerticalOptions="Start" BackgroundColor="#000000" HeightRequest="80" 
                          HorizontalOptions="FillAndExpand" Padding="-10,0,0,10" Margin="0,0,0,0">
-                <ImageButton  Source="notifications" BackgroundColor="Transparent" HeightRequest="5" WidthRequest="35" Padding="5" Margin="20,10,20,10"></ImageButton>
-                <Image Source="settings.png" ></Image>
-                <!--<ImageButton  Source="settings"    HeightRequest="5" WidthRequest="35" Padding="5" Margin="20,10,20,10"></ImageButton>-->
+                <ImageButton  Source="insight.png" BackgroundColor="Transparent" HorizontalOptions="StartAndExpand" WidthRequest="30" Margin="20,10,20,10" Clicked="ImageButton_Clicked_2"></ImageButton>
+                <ImageButton  Source="filterGray.png" BackgroundColor="Transparent"  HorizontalOptions="StartAndExpand" WidthRequest="30" Margin="20,10,30,10"></ImageButton>
+                <ImageButton  Source="alarm.png" BackgroundColor="Transparent" HorizontalOptions="EndAndExpand" WidthRequest="30" Margin="30,10,20,10" Clicked="ImageButton_Clicked_1"></ImageButton>
+                <ImageButton  Source="user.png" BackgroundColor="Transparent" HorizontalOptions="EndAndExpand" WidthRequest="30" Margin="20,10,20,10" Clicked="ImageButton_Clicked"></ImageButton>
+
             </StackLayout>
             <Frame CornerRadius="50"
                                            HeightRequest="50"

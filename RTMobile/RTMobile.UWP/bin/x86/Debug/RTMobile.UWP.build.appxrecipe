@@ -10,23 +10,32 @@
     <PackageArchitecture>x86</PackageArchitecture>
     <PackageIdentityName>ec0cc741-fd3e-485c-81be-68815c480690</PackageIdentityName>
     <PackageIdentityPublisher>CN=9016596b-bc42-4bff-a509-547a73340138</PackageIdentityPublisher>
-    <IntermediateOutputPath>C:\Users\sekisov\source\repos\RTMobile\RTMobile\RTMobile.UWP\obj\x86\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>F:\project\RTMobile\RTMobile\RTMobile.UWP\obj\x86\Debug\</IntermediateOutputPath>
     <RemoteDeploymentType></RemoteDeploymentType>
     <PackageRegistrationPath></PackageRegistrationPath>
     <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
-    <LayoutDir>C:\Users\sekisov\source\repos\RTMobile\RTMobile\RTMobile.UWP\bin\x86\Debug\AppX</LayoutDir>
+    <LayoutDir>F:\project\RTMobile\RTMobile\RTMobile.UWP\bin\x86\Debug\AppX</LayoutDir>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="C:\Users\sekisov\source\repos\RTMobile\RTMobile\RTMobile.UWP\bin\x86\Debug\Core\AppxManifest.xml">
+    <AppXManifest Include="F:\project\RTMobile\RTMobile\RTMobile.UWP\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Users\sekisov\source\repos\RTMobile\RTMobile\RTMobile.UWP\bin\x86\Debug\RTMobile.UWP.exe">
+    <AppxPackagedFile Include="F:\project\RTMobile\RTMobile\RTMobile.UWP\bin\x86\Debug\RTMobile.UWP.exe">
       <PackagePath>entrypoint\RTMobile.UWP.exe</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sekisov\.nuget\packages\carouselview\7.0.3.1\lib\netstandard2.0\CarouselView.dll">
+      <PackagePath>CarouselView.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sekisov\.nuget\packages\carouselview.formsplugin\5.2.0\lib\UAP10\CarouselView.FormsPlugin.Abstractions.dll">
+      <PackagePath>CarouselView.FormsPlugin.Abstractions.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sekisov\.nuget\packages\carouselview.formsplugin\5.2.0\lib\UAP10\CarouselView.FormsPlugin.UWP.dll">
+      <PackagePath>CarouselView.FormsPlugin.UWP.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\sekisov\.nuget\packages\dapper\1.60.6\lib\netstandard2.0\Dapper.dll">
       <PackagePath>Dapper.dll</PackagePath>
@@ -754,7 +763,7 @@
     <AppxPackagedFile Include="C:\Users\sekisov\.nuget\packages\xamarin.forms\4.1.0.555618\lib\uap10.0\Xamarin.Forms.Xaml.dll">
       <PackagePath>Xamarin.Forms.Xaml.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sekisov\source\repos\RTMobile\RTMobile\RTMobile\bin\Debug\netstandard2.0\RTMobile.dll">
+    <AppxPackagedFile Include="F:\project\RTMobile\RTMobile\RTMobile\bin\Debug\netstandard2.0\RTMobile.dll">
       <PackagePath>RTMobile.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Microsoft\Xamarin\NuGet\win2d.uwp\1.20.0\lib\uap10.0\Microsoft.Graphics.Canvas.winmd">
@@ -763,139 +772,142 @@
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\bin\10.0.17763.0\XamlCompiler\Microsoft.UI.Xaml.Markup.winmd">
       <PackagePath>Microsoft.UI.Xaml.Markup.winmd</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sekisov\source\repos\RTMobile\RTMobile\RTMobile\viewIssue.xaml.cs">
+    <AppxPackagedFile Include="F:\project\RTMobile\RTMobile\RTMobile\viewIssue.xaml.cs">
       <PackagePath>viewIssue.xaml.cs</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sekisov\source\repos\RTMobile\RTMobile\RTMobile.UWP\Assets\LargeTile.scale-100.png">
+    <AppxPackagedFile Include="F:\project\RTMobile\RTMobile\RTMobile.UWP\Assets\LargeTile.scale-100.png">
       <PackagePath>Assets\LargeTile.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sekisov\source\repos\RTMobile\RTMobile\RTMobile.UWP\Assets\LargeTile.scale-200.png">
+    <AppxPackagedFile Include="F:\project\RTMobile\RTMobile\RTMobile.UWP\Assets\LargeTile.scale-200.png">
       <PackagePath>Assets\LargeTile.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sekisov\source\repos\RTMobile\RTMobile\RTMobile.UWP\Assets\LargeTile.scale-400.png">
+    <AppxPackagedFile Include="F:\project\RTMobile\RTMobile\RTMobile.UWP\Assets\LargeTile.scale-400.png">
       <PackagePath>Assets\LargeTile.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sekisov\source\repos\RTMobile\RTMobile\RTMobile.UWP\Assets\SmallTile.scale-100.png">
+    <AppxPackagedFile Include="F:\project\RTMobile\RTMobile\RTMobile.UWP\Assets\SmallTile.scale-100.png">
       <PackagePath>Assets\SmallTile.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sekisov\source\repos\RTMobile\RTMobile\RTMobile.UWP\Assets\SmallTile.scale-200.png">
+    <AppxPackagedFile Include="F:\project\RTMobile\RTMobile\RTMobile.UWP\Assets\SmallTile.scale-200.png">
       <PackagePath>Assets\SmallTile.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sekisov\source\repos\RTMobile\RTMobile\RTMobile.UWP\Assets\SmallTile.scale-400.png">
+    <AppxPackagedFile Include="F:\project\RTMobile\RTMobile\RTMobile.UWP\Assets\SmallTile.scale-400.png">
       <PackagePath>Assets\SmallTile.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sekisov\source\repos\RTMobile\RTMobile\RTMobile.UWP\Assets\SplashScreen.scale-100.png">
+    <AppxPackagedFile Include="F:\project\RTMobile\RTMobile\RTMobile.UWP\Assets\SplashScreen.scale-100.png">
       <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sekisov\source\repos\RTMobile\RTMobile\RTMobile.UWP\Assets\SplashScreen.scale-200.png">
+    <AppxPackagedFile Include="F:\project\RTMobile\RTMobile\RTMobile.UWP\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sekisov\source\repos\RTMobile\RTMobile\RTMobile.UWP\Assets\SplashScreen.scale-400.png">
+    <AppxPackagedFile Include="F:\project\RTMobile\RTMobile\RTMobile.UWP\Assets\SplashScreen.scale-400.png">
       <PackagePath>Assets\SplashScreen.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sekisov\source\repos\RTMobile\RTMobile\RTMobile.UWP\Assets\Square150x150Logo.scale-100.png">
+    <AppxPackagedFile Include="F:\project\RTMobile\RTMobile\RTMobile.UWP\Assets\Square150x150Logo.scale-100.png">
       <PackagePath>Assets\Square150x150Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sekisov\source\repos\RTMobile\RTMobile\RTMobile.UWP\Assets\Square150x150Logo.scale-200.png">
+    <AppxPackagedFile Include="F:\project\RTMobile\RTMobile\RTMobile.UWP\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sekisov\source\repos\RTMobile\RTMobile\RTMobile.UWP\Assets\Square150x150Logo.scale-400.png">
+    <AppxPackagedFile Include="F:\project\RTMobile\RTMobile\RTMobile.UWP\Assets\Square150x150Logo.scale-400.png">
       <PackagePath>Assets\Square150x150Logo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sekisov\source\repos\RTMobile\RTMobile\RTMobile.UWP\Assets\Square44x44Logo.altform-unplated_targetsize-16.png">
+    <AppxPackagedFile Include="F:\project\RTMobile\RTMobile\RTMobile.UWP\Assets\Square44x44Logo.altform-unplated_targetsize-16.png">
       <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-16.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sekisov\source\repos\RTMobile\RTMobile\RTMobile.UWP\Assets\Square44x44Logo.altform-unplated_targetsize-256.png">
+    <AppxPackagedFile Include="F:\project\RTMobile\RTMobile\RTMobile.UWP\Assets\Square44x44Logo.altform-unplated_targetsize-256.png">
       <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-256.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sekisov\source\repos\RTMobile\RTMobile\RTMobile.UWP\Assets\Square44x44Logo.altform-unplated_targetsize-48.png">
+    <AppxPackagedFile Include="F:\project\RTMobile\RTMobile\RTMobile.UWP\Assets\Square44x44Logo.altform-unplated_targetsize-48.png">
       <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-48.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sekisov\source\repos\RTMobile\RTMobile\RTMobile.UWP\Assets\Square44x44Logo.scale-100.png">
+    <AppxPackagedFile Include="F:\project\RTMobile\RTMobile\RTMobile.UWP\Assets\Square44x44Logo.scale-100.png">
       <PackagePath>Assets\Square44x44Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sekisov\source\repos\RTMobile\RTMobile\RTMobile.UWP\Assets\Square44x44Logo.scale-200.png">
+    <AppxPackagedFile Include="F:\project\RTMobile\RTMobile\RTMobile.UWP\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sekisov\source\repos\RTMobile\RTMobile\RTMobile.UWP\Assets\Square44x44Logo.scale-400.png">
+    <AppxPackagedFile Include="F:\project\RTMobile\RTMobile\RTMobile.UWP\Assets\Square44x44Logo.scale-400.png">
       <PackagePath>Assets\Square44x44Logo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sekisov\source\repos\RTMobile\RTMobile\RTMobile.UWP\Assets\Square44x44Logo.targetsize-16.png">
+    <AppxPackagedFile Include="F:\project\RTMobile\RTMobile\RTMobile.UWP\Assets\Square44x44Logo.targetsize-16.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-16.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sekisov\source\repos\RTMobile\RTMobile\RTMobile.UWP\Assets\Square44x44Logo.targetsize-256.png">
+    <AppxPackagedFile Include="F:\project\RTMobile\RTMobile\RTMobile.UWP\Assets\Square44x44Logo.targetsize-256.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-256.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sekisov\source\repos\RTMobile\RTMobile\RTMobile.UWP\Assets\Square44x44Logo.targetsize-48.png">
+    <AppxPackagedFile Include="F:\project\RTMobile\RTMobile\RTMobile.UWP\Assets\Square44x44Logo.targetsize-48.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-48.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sekisov\source\repos\RTMobile\RTMobile\RTMobile.UWP\Assets\StoreLogo.scale-100.png">
+    <AppxPackagedFile Include="F:\project\RTMobile\RTMobile\RTMobile.UWP\Assets\StoreLogo.scale-100.png">
       <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sekisov\source\repos\RTMobile\RTMobile\RTMobile.UWP\Assets\StoreLogo.scale-200.png">
+    <AppxPackagedFile Include="F:\project\RTMobile\RTMobile\RTMobile.UWP\Assets\StoreLogo.scale-200.png">
       <PackagePath>Assets\StoreLogo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sekisov\source\repos\RTMobile\RTMobile\RTMobile.UWP\Assets\StoreLogo.scale-400.png">
+    <AppxPackagedFile Include="F:\project\RTMobile\RTMobile\RTMobile.UWP\Assets\StoreLogo.scale-400.png">
       <PackagePath>Assets\StoreLogo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sekisov\source\repos\RTMobile\RTMobile\RTMobile.UWP\Assets\Wide310x150Logo.scale-100.png">
+    <AppxPackagedFile Include="F:\project\RTMobile\RTMobile\RTMobile.UWP\Assets\Wide310x150Logo.scale-100.png">
       <PackagePath>Assets\Wide310x150Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sekisov\source\repos\RTMobile\RTMobile\RTMobile.UWP\Assets\Wide310x150Logo.scale-200.png">
+    <AppxPackagedFile Include="F:\project\RTMobile\RTMobile\RTMobile.UWP\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sekisov\source\repos\RTMobile\RTMobile\RTMobile.UWP\Assets\Wide310x150Logo.scale-400.png">
+    <AppxPackagedFile Include="F:\project\RTMobile\RTMobile\RTMobile.UWP\Assets\Wide310x150Logo.scale-400.png">
       <PackagePath>Assets\Wide310x150Logo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sekisov\source\repos\RTMobile\RTMobile\RTMobile.UWP\Properties\Default.rd.xml">
+    <AppxPackagedFile Include="F:\project\RTMobile\RTMobile\RTMobile.UWP\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sekisov\source\repos\RTMobile\RTMobile\RTMobile.UWP\bin\x86\Debug\RTMobile.UWP.xr.xml">
+    <AppxPackagedFile Include="F:\project\RTMobile\RTMobile\RTMobile.UWP\bin\x86\Debug\RTMobile.UWP.xr.xml">
       <PackagePath>RTMobile.UWP.xr.xml</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sekisov\source\repos\RTMobile\RTMobile\RTMobile.UWP\bin\x86\Debug\App.xbf">
+    <AppxPackagedFile Include="F:\project\RTMobile\RTMobile\RTMobile.UWP\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sekisov\source\repos\RTMobile\RTMobile\RTMobile.UWP\bin\x86\Debug\MainPage.xbf">
+    <AppxPackagedFile Include="F:\project\RTMobile\RTMobile\RTMobile.UWP\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.17763.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sekisov\.nuget\packages\carouselview.formsplugin\5.2.0\lib\UAP10\CarouselView.FormsPlugin.UWP\CarouselView.FormsPlugin.UWP.xr.xml">
+      <PackagePath>CarouselView.FormsPlugin.UWP\CarouselView.FormsPlugin.UWP.xr.xml</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\sekisov\.nuget\packages\xamarin.forms\4.1.0.555618\lib\uap10.0\Xamarin.Forms.Platform.UAP\Xamarin.Forms.Platform.UAP.xr.xml">
       <PackagePath>Xamarin.Forms.Platform.UAP\Xamarin.Forms.Platform.UAP.xr.xml</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sekisov\source\repos\RTMobile\RTMobile\RTMobile.UWP\bin\x86\Debug\resources.pri">
+    <AppxPackagedFile Include="F:\project\RTMobile\RTMobile\RTMobile.UWP\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sekisov\source\repos\RTMobile\RTMobile\RTMobile.UWP\bin\x86\Debug\Core\RTMobile.UWP.exe">
+    <AppxPackagedFile Include="F:\project\RTMobile\RTMobile\RTMobile.UWP\bin\x86\Debug\Core\RTMobile.UWP.exe">
       <PackagePath>RTMobile.UWP.exe</PackagePath>
     </AppxPackagedFile>
   </ItemGroup>

@@ -8,16 +8,62 @@
     <ContentPage>
         <ContentPage.Padding>
             <OnPlatform x:TypeArguments="Thickness">
-                <On Platform="iOS, Android" Value="0,40,0,0" />
+                <On Platform="iOS, Android" Value="0,0,0,0" />
             </OnPlatform>
         </ContentPage.Padding>
         <StackLayout>
-            <Label Text="Red" FontSize="Medium" HorizontalOptions="Center" />
-            <BoxView Color="Red" WidthRequest="200" HeightRequest="200" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
+            <Image Source="image1.png" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
         </StackLayout>
     </ContentPage>
     <ContentPage>
+        <ContentPage.Padding>
+            <OnPlatform x:TypeArguments="Thickness">
+                <On Platform="iOS, Android" Value="0,0,0,0" />
+            </OnPlatform>
+        </ContentPage.Padding>
+        <StackLayout>
+            <Image Source="image2.png" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+        </StackLayout>
     </ContentPage>
     <ContentPage>
+        <ContentPage.Padding>
+            <OnPlatform x:TypeArguments="Thickness">
+                <On Platform="iOS, Android" Value="0,0,0,0" />
+            </OnPlatform>
+        </ContentPage.Padding>
+        <StackLayout>
+            <Image Source="image3.png" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+        </StackLayout>
     </ContentPage>
+    <ContentPage>
+        <ContentPage.Padding>
+            <OnPlatform x:TypeArguments="Thickness">
+                <On Platform="iOS, Android" Value="0,0,0,0" />
+            </OnPlatform>
+        </ContentPage.Padding>
+        <StackLayout>
+            <Image Source="image1.png" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+        </StackLayout>
+    </ContentPage>
+    <ContentPage>
+        <ContentPage.Padding>
+            <OnPlatform x:TypeArguments="Thickness">
+                <On Platform="iOS, Android" Value="0,0,0,0" />
+            </OnPlatform>
+        </ContentPage.Padding>
+        <StackLayout>
+            <Image Source="image2.png" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+        </StackLayout>
+    </ContentPage>
+    <ContentPage>
+        <ContentPage.Padding>
+            <OnPlatform x:TypeArguments="Thickness">
+                <On Platform="iOS, Android" Value="0,0,0,0" />
+            </OnPlatform>
+        </ContentPage.Padding>
+        <StackLayout>
+            <Image Source="image3.png" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+        </StackLayout>
+    </ContentPage>
+    
 </CarouselPage>

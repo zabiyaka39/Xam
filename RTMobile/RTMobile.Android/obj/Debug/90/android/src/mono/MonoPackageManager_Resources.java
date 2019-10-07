@@ -3,6 +3,7 @@ public class MonoPackageManager_Resources {
 	public static String[] Assemblies = new String[]{
 		/* We need to ensure that "RTMobile.Android.dll" comes first in this list. */
 		"RTMobile.Android.dll",
+		"CarouselView.dll",
 		"CarouselView.FormsPlugin.Abstractions.dll",
 		"CarouselView.FormsPlugin.Android.dll",
 		"Com.Android.DeskClock.dll",

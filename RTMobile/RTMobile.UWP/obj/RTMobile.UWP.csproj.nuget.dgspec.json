@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\sekisov\\source\\repos\\RTMobile\\RTMobile\\RTMobile.UWP\\RTMobile.UWP.csproj": {}
+    "F:\\project\\RTMobile\\RTMobile\\RTMobile.UWP\\RTMobile.UWP.csproj": {}
   },
   "projects": {
-    "C:\\Users\\sekisov\\source\\repos\\RTMobile\\RTMobile\\RTMobile.UWP\\RTMobile.UWP.csproj": {
+    "F:\\project\\RTMobile\\RTMobile\\RTMobile.UWP\\RTMobile.UWP.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sekisov\\source\\repos\\RTMobile\\RTMobile\\RTMobile.UWP\\RTMobile.UWP.csproj",
+        "projectUniqueName": "F:\\project\\RTMobile\\RTMobile\\RTMobile.UWP\\RTMobile.UWP.csproj",
         "projectName": "RTMobile.UWP",
-        "projectPath": "C:\\Users\\sekisov\\source\\repos\\RTMobile\\RTMobile\\RTMobile.UWP\\RTMobile.UWP.csproj",
+        "projectPath": "F:\\project\\RTMobile\\RTMobile\\RTMobile.UWP\\RTMobile.UWP.csproj",
         "packagesPath": "C:\\Users\\sekisov\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sekisov\\source\\repos\\RTMobile\\RTMobile\\RTMobile.UWP\\obj\\",
+        "outputPath": "F:\\project\\RTMobile\\RTMobile\\RTMobile.UWP\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
@@ -33,8 +33,8 @@
         "frameworks": {
           "uap10.0.16299": {
             "projectReferences": {
-              "C:\\Users\\sekisov\\source\\repos\\RTMobile\\RTMobile\\RTMobile\\RTMobile.csproj": {
-                "projectPath": "C:\\Users\\sekisov\\source\\repos\\RTMobile\\RTMobile\\RTMobile\\RTMobile.csproj"
+              "F:\\project\\RTMobile\\RTMobile\\RTMobile\\RTMobile.csproj": {
+                "projectPath": "F:\\project\\RTMobile\\RTMobile\\RTMobile\\RTMobile.csproj"
               }
             }
           }
@@ -87,14 +87,14 @@
         }
       }
     },
-    "C:\\Users\\sekisov\\source\\repos\\RTMobile\\RTMobile\\RTMobile\\RTMobile.csproj": {
+    "F:\\project\\RTMobile\\RTMobile\\RTMobile\\RTMobile.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sekisov\\source\\repos\\RTMobile\\RTMobile\\RTMobile\\RTMobile.csproj",
+        "projectUniqueName": "F:\\project\\RTMobile\\RTMobile\\RTMobile\\RTMobile.csproj",
         "projectName": "RTMobile",
-        "projectPath": "C:\\Users\\sekisov\\source\\repos\\RTMobile\\RTMobile\\RTMobile\\RTMobile.csproj",
+        "projectPath": "F:\\project\\RTMobile\\RTMobile\\RTMobile\\RTMobile.csproj",
         "packagesPath": "C:\\Users\\sekisov\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sekisov\\source\\repos\\RTMobile\\RTMobile\\RTMobile\\obj\\",
+        "outputPath": "F:\\project\\RTMobile\\RTMobile\\RTMobile\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -126,6 +126,10 @@
       "frameworks": {
         "netstandard2.0": {
           "dependencies": {
+            "CarouselView": {
+              "target": "Package",
+              "version": "[7.0.3.1, )"
+            },
             "CarouselView.FormsPlugin": {
               "target": "Package",
               "version": "[5.2.0, )"
@@ -150,11 +154,11 @@
             },
             "Xamarin.Essentials": {
               "target": "Package",
-              "version": "[1.3.0, )"
+              "version": "[1.3.1, )"
             },
             "Xamarin.Forms": {
               "target": "Package",
-              "version": "[4.2.0.709249, )"
+              "version": "[4.2.0.815419, )"
             }
           },
           "imports": [

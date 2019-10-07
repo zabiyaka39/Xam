@@ -1,1 +1,1 @@
-C:\Users\sekisov\source\repos\RTMobile\RTMobile\RTMobile.UWP\RTMobile.UWP.csproj;x86
+F:\project\RTMobile\RTMobile\RTMobile.UWP\RTMobile.UWP.csproj;x86

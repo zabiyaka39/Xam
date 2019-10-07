@@ -2,6 +2,19 @@
   "version": 3,
   "targets": {
     ".NETStandard,Version=v2.0": {
+      "CarouselView/7.0.3.1": {
+        "type": "package",
+        "dependencies": {
+          "NETStandard.Library": "2.0.0",
+          "Xamarin.Forms": "2.5.0.122203"
+        },
+        "compile": {
+          "lib/netstandard2.0/CarouselView.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/CarouselView.dll": {}
+        }
+      },
       "CarouselView.FormsPlugin/5.2.0": {
         "type": "package",
         "compile": {
@@ -2680,7 +2693,7 @@
           "lib/netstandard1.0/Plugin.Settings.dll": {}
         }
       },
-      "Xamarin.Essentials/1.3.0": {
+      "Xamarin.Essentials/1.3.1": {
         "type": "package",
         "dependencies": {
           "System.Numerics.Vectors": "4.5.0"
@@ -2692,7 +2705,7 @@
           "lib/netstandard2.0/Xamarin.Essentials.dll": {}
         }
       },
-      "Xamarin.Forms/4.2.0.709249": {
+      "Xamarin.Forms/4.2.0.815419": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/Xamarin.Forms.Core.dll": {},
@@ -2712,6 +2725,20 @@
     }
   },
   "libraries": {
+    "CarouselView/7.0.3.1": {
+      "sha512": "ajh14LBzz4A+UVNbORQaY07F3vRvIyIowYsGAv7R1XKj+OXxYPZnbbBm8xlGgZ0o7r3DnbrA4twiUFiU2KIe7A==",
+      "type": "package",
+      "path": "carouselview/7.0.3.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "carouselview.7.0.3.1.nupkg.sha512",
+        "carouselview.nuspec",
+        "lib/monoandroid80/CarouselView.dll",
+        "lib/netstandard2.0/CarouselView.dll",
+        "lib/xamarinios10/CarouselView.dll"
+      ]
+    },
     "CarouselView.FormsPlugin/5.2.0": {
       "sha512": "h849lqz0wvmpyiXqCrN7EW+cCGqK5chcefCfS55CkoGMMQx238QWNknUTOl/CvIdZ4bgs0Oztb7kamYXDlQ5mQ==",
       "type": "package",
@@ -8509,10 +8536,10 @@
         "xam.plugins.settings.nuspec"
       ]
     },
-    "Xamarin.Essentials/1.3.0": {
-      "sha512": "AI6NZ7ngolTQmUI2dnsP/t6xxwPNWXuOY1sfol2yNVPSw4RfI8+D/kjz5p7Yabl5vRtoFhI6sWDT40IK9VwlBg==",
+    "Xamarin.Essentials/1.3.1": {
+      "sha512": "+51728AdZ/qtABGvcIaNXgEoL2jAtxAXLHS8PvGCP0pb6n7twBqYpfgkmwHYVgu+U99szgtL+Jot8L+OXorPcA==",
       "type": "package",
-      "path": "xamarin.essentials/1.3.0",
+      "path": "xamarin.essentials/1.3.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -8557,14 +8584,14 @@
         "lib/xamarinwatchos10/Xamarin.Essentials.pdb",
         "lib/xamarinwatchos10/Xamarin.Essentials.xml",
         "readme.txt",
-        "xamarin.essentials.1.3.0.nupkg.sha512",
+        "xamarin.essentials.1.3.1.nupkg.sha512",
         "xamarin.essentials.nuspec"
       ]
     },
-    "Xamarin.Forms/4.2.0.709249": {
-      "sha512": "3DWqPSn9kSKJW5mwjmICV/+4IpPQrequEN1VXUhsF0i9KKnfj49jFk9VbJnT9o2aesJAk00NED67XPbSmbxKjw==",
+    "Xamarin.Forms/4.2.0.815419": {
+      "sha512": "GrKE8TBjR5chew92HBcoaTuqwo6Jnpp0djVaN4/wtGQW/URZAt3Eb3zF8rQ6jRA2WKuTKm3wyPTCPrB2PekIfQ==",
       "type": "package",
-      "path": "xamarin.forms/4.2.0.709249",
+      "path": "xamarin.forms/4.2.0.815419",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -8803,20 +8830,21 @@
         "lib/uap10.0/Xamarin.Forms.Xaml.dll",
         "lib/uap10.0/Xamarin.Forms.Xaml.pdb",
         "lib/uap10.0/Xamarin.Forms.Xaml.xml",
-        "xamarin.forms.4.2.0.709249.nupkg.sha512",
+        "xamarin.forms.4.2.0.815419.nupkg.sha512",
         "xamarin.forms.nuspec"
       ]
     }
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
+      "CarouselView >= 7.0.3.1",
       "CarouselView.FormsPlugin >= 5.2.0",
       "NETStandard.Library >= 2.0.3",
       "Newtonsoft.Json >= 12.0.2",
       "Serenity.Web >= 3.9.11",
       "Xam.Plugins.Settings >= 3.1.1",
-      "Xamarin.Essentials >= 1.3.0",
-      "Xamarin.Forms >= 4.2.0.709249"
+      "Xamarin.Essentials >= 1.3.1",
+      "Xamarin.Forms >= 4.2.0.815419"
     ]
   },
   "packageFolders": {
@@ -8827,11 +8855,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\sekisov\\source\\repos\\RTMobile\\RTMobile\\RTMobile\\RTMobile.csproj",
+      "projectUniqueName": "F:\\project\\RTMobile\\RTMobile\\RTMobile\\RTMobile.csproj",
       "projectName": "RTMobile",
-      "projectPath": "C:\\Users\\sekisov\\source\\repos\\RTMobile\\RTMobile\\RTMobile\\RTMobile.csproj",
+      "projectPath": "F:\\project\\RTMobile\\RTMobile\\RTMobile\\RTMobile.csproj",
       "packagesPath": "C:\\Users\\sekisov\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\sekisov\\source\\repos\\RTMobile\\RTMobile\\RTMobile\\obj\\",
+      "outputPath": "F:\\project\\RTMobile\\RTMobile\\RTMobile\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -8863,6 +8891,10 @@
     "frameworks": {
       "netstandard2.0": {
         "dependencies": {
+          "CarouselView": {
+            "target": "Package",
+            "version": "[7.0.3.1, )"
+          },
           "CarouselView.FormsPlugin": {
             "target": "Package",
             "version": "[5.2.0, )"
@@ -8887,11 +8919,11 @@
           },
           "Xamarin.Essentials": {
             "target": "Package",
-            "version": "[1.3.0, )"
+            "version": "[1.3.1, )"
           },
           "Xamarin.Forms": {
             "target": "Package",
-            "version": "[4.2.0.709249, )"
+            "version": "[4.2.0.815419, )"
           }
         },
         "imports": [
