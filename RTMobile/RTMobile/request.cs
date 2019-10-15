@@ -32,20 +32,61 @@ namespace RTMobile
             this.json = JsonConvert.SerializeObject(issueJSONSearch);
         }
 
+        public Request(CommentJSONSearch commentJSONSearch)
+        {
+            authorization();
+
+            this.httpWebRequest = (HttpWebRequest)WebRequest.Create("https://sd.rosohrana.ru/rest/api/2/issue/" + commentJSONSearch.issueIdOrKey + "/comment");
+            this.httpWebRequest.ContentType = "application/json";
+            this.httpWebRequest.Method = "GET";
+            this.httpWebRequest.Headers.Add(HttpRequestHeader.Authorization, "Basic " + Convert.ToBase64String(Encoding.Default.GetBytes(this.login + ":" + this.password)));
+            this.json = JsonConvert.SerializeObject(commentJSONSearch);
+        }
+
+        public Request(string getIssue)
+        {
+            authorization();
+
+            this.httpWebRequest = (HttpWebRequest)WebRequest.Create(getIssue);
+            this.httpWebRequest.ContentType = "application/json";
+            this.httpWebRequest.Method = "GET";
+            this.httpWebRequest.Headers.Add(HttpRequestHeader.Authorization, "Basic " + Convert.ToBase64String(Encoding.Default.GetBytes(this.login + ":" + this.password)));
+        }
+
         public RootObject GetResponses(IssueJSONSearch issueJSONSearch)
         {
+            RootObject rootObject = new RootObject();
+
             using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
             {
                 streamWriter.Write(this.json);
             }
             var httpResponse = this.httpWebRequest.GetResponse();
-            RootObject rootObject = new RootObject();
+
             using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
             {
                 var result = streamReader.ReadToEnd();
-
                 rootObject = JsonConvert.DeserializeObject<RootObject>(result);
             }
+            return rootObject;
+        }
+
+        public RootObject GetResponses(string getIssue)
+        {
+            RootObject rootObject = new RootObject();
+
+
+
+
+            var httpResponse = this.httpWebRequest.GetResponse();
+
+            using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+            {
+                var result = streamReader.ReadToEnd();
+                rootObject = JsonConvert.DeserializeObject<RootObject>(result);
+            }
+
+
             return rootObject;
         }
 

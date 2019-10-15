@@ -14,6 +14,7 @@
     <PackageReference Include="CarouselView.FormsPlugin" Version="5.2.0" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
     <PackageReference Include="Serenity.Web" Version="3.9.11" />
+    <PackageReference Include="System.Net.Http" Version="4.3.4" />
     <PackageReference Include="Xam.Plugins.Settings" Version="3.1.1" />
     <PackageReference Include="Xamarin.Forms" Version="4.2.0.815419" />
     <PackageReference Include="Xamarin.Essentials" Version="1.3.1" />
@@ -32,10 +33,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Comment.xaml.cs">
+    <Compile Update="dataIssue\Comment.xaml.cs">
       <DependentUpon>comment.xaml</DependentUpon>
     </Compile>
-    <Compile Update="viewIssue.xaml.cs">
+    <Compile Update="dataIssue\viewIssue.xaml.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
   </ItemGroup>
@@ -47,16 +48,16 @@
     <EmbeddedResource Update="authorization.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="comment.xaml">
+    <EmbeddedResource Update="dataIssue\Comment.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="createIssue.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="general.xaml">
+    <EmbeddedResource Update="dataIssue\general.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="history.xaml">
+    <EmbeddedResource Update="dataIssue\history.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="insight.xaml">
@@ -68,7 +69,7 @@
     <EmbeddedResource Update="notifications.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="photoView.xaml">
+    <EmbeddedResource Update="dataIssue\photoView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="profile.xaml">
@@ -77,10 +78,10 @@
     <EmbeddedResource Update="searchIssue.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="viewIssue.xaml">
+    <EmbeddedResource Update="dataIssue\viewIssue.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="workJournal.xaml">
+    <EmbeddedResource Update="dataIssue\workJournal.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

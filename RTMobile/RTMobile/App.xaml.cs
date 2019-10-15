@@ -10,6 +10,7 @@ namespace RTMobile
         {
             
             InitializeComponent();
+            //MainPage = new NavigationPage(new RTMobile.blockIssue());
             MainPage = new NavigationPage(new RTMobile.mainPage());
         }
 

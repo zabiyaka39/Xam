@@ -1899,10 +1899,10 @@
           "lib/netstandard2.0/System.Memory.dll": {}
         }
       },
-      "System.Net.Http/4.3.0": {
+      "System.Net.Http/4.3.4": {
         "type": "package",
         "dependencies": {
-          "Microsoft.NETCore.Platforms": "1.1.0",
+          "Microsoft.NETCore.Platforms": "1.1.1",
           "System.Collections": "4.3.0",
           "System.Diagnostics.Debug": "4.3.0",
           "System.Diagnostics.DiagnosticSource": "4.3.0",
@@ -1922,7 +1922,7 @@
           "System.Threading.Tasks": "4.3.0"
         },
         "compile": {
-          "ref/netcore50/_._": {}
+          "ref/netcore50/System.Net.Http.dll": {}
         },
         "runtime": {
           "lib/win8/_._": {}
@@ -2862,6 +2862,7 @@
           "CarouselView.FormsPlugin": "5.2.0",
           "Newtonsoft.Json": "12.0.2",
           "Serenity.Web": "3.9.11",
+          "System.Net.Http": "4.3.4",
           "Xam.Plugins.Settings": "3.1.1",
           "Xamarin.Essentials": "1.3.1",
           "Xamarin.Forms": "4.2.0.815419"
@@ -5071,10 +5072,10 @@
           "lib/netstandard2.0/System.Memory.dll": {}
         }
       },
-      "System.Net.Http/4.3.0": {
+      "System.Net.Http/4.3.4": {
         "type": "package",
         "dependencies": {
-          "Microsoft.NETCore.Platforms": "1.1.0",
+          "Microsoft.NETCore.Platforms": "1.1.1",
           "System.Collections": "4.3.0",
           "System.Diagnostics.Debug": "4.3.0",
           "System.Diagnostics.DiagnosticSource": "4.3.0",
@@ -5094,7 +5095,7 @@
           "System.Threading.Tasks": "4.3.0"
         },
         "compile": {
-          "ref/netcore50/_._": {}
+          "ref/netcore50/System.Net.Http.dll": {}
         },
         "runtime": {
           "runtimes/win/lib/netcore50/System.Net.Http.dll": {}
@@ -5945,6 +5946,7 @@
           "CarouselView.FormsPlugin": "5.2.0",
           "Newtonsoft.Json": "12.0.2",
           "Serenity.Web": "3.9.11",
+          "System.Net.Http": "4.3.4",
           "Xam.Plugins.Settings": "3.1.1",
           "Xamarin.Essentials": "1.3.1",
           "Xamarin.Forms": "4.2.0.815419"
@@ -8197,10 +8199,10 @@
           "lib/netstandard2.0/System.Memory.dll": {}
         }
       },
-      "System.Net.Http/4.3.0": {
+      "System.Net.Http/4.3.4": {
         "type": "package",
         "dependencies": {
-          "Microsoft.NETCore.Platforms": "1.1.0",
+          "Microsoft.NETCore.Platforms": "1.1.1",
           "System.Collections": "4.3.0",
           "System.Diagnostics.Debug": "4.3.0",
           "System.Diagnostics.DiagnosticSource": "4.3.0",
@@ -8220,7 +8222,7 @@
           "System.Threading.Tasks": "4.3.0"
         },
         "compile": {
-          "ref/netcore50/_._": {}
+          "ref/netcore50/System.Net.Http.dll": {}
         },
         "runtime": {
           "runtimes/win/lib/netcore50/System.Net.Http.dll": {}
@@ -9071,6 +9073,7 @@
           "CarouselView.FormsPlugin": "5.2.0",
           "Newtonsoft.Json": "12.0.2",
           "Serenity.Web": "3.9.11",
+          "System.Net.Http": "4.3.4",
           "Xam.Plugins.Settings": "3.1.1",
           "Xamarin.Essentials": "1.3.1",
           "Xamarin.Forms": "4.2.0.815419"
@@ -11105,10 +11108,10 @@
           "lib/netstandard2.0/System.Memory.dll": {}
         }
       },
-      "System.Net.Http/4.3.0": {
+      "System.Net.Http/4.3.4": {
         "type": "package",
         "dependencies": {
-          "Microsoft.NETCore.Platforms": "1.1.0",
+          "Microsoft.NETCore.Platforms": "1.1.1",
           "System.Collections": "4.3.0",
           "System.Diagnostics.Debug": "4.3.0",
           "System.Diagnostics.DiagnosticSource": "4.3.0",
@@ -11128,7 +11131,7 @@
           "System.Threading.Tasks": "4.3.0"
         },
         "compile": {
-          "ref/netcore50/_._": {}
+          "ref/netcore50/System.Net.Http.dll": {}
         },
         "runtime": {
           "runtimes/win/lib/netcore50/System.Net.Http.dll": {}
@@ -11976,6 +11979,7 @@
           "CarouselView.FormsPlugin": "5.2.0",
           "Newtonsoft.Json": "12.0.2",
           "Serenity.Web": "3.9.11",
+          "System.Net.Http": "4.3.4",
           "Xam.Plugins.Settings": "3.1.1",
           "Xamarin.Essentials": "1.3.1",
           "Xamarin.Forms": "4.2.0.815419"
@@ -14185,10 +14189,10 @@
           "lib/netstandard2.0/System.Memory.dll": {}
         }
       },
-      "System.Net.Http/4.3.0": {
+      "System.Net.Http/4.3.4": {
         "type": "package",
         "dependencies": {
-          "Microsoft.NETCore.Platforms": "1.1.0",
+          "Microsoft.NETCore.Platforms": "1.1.1",
           "System.Collections": "4.3.0",
           "System.Diagnostics.Debug": "4.3.0",
           "System.Diagnostics.DiagnosticSource": "4.3.0",
@@ -14208,7 +14212,7 @@
           "System.Threading.Tasks": "4.3.0"
         },
         "compile": {
-          "ref/netcore50/_._": {}
+          "ref/netcore50/System.Net.Http.dll": {}
         },
         "runtime": {
           "runtimes/win/lib/netcore50/System.Net.Http.dll": {}
@@ -15059,6 +15063,7 @@
           "CarouselView.FormsPlugin": "5.2.0",
           "Newtonsoft.Json": "12.0.2",
           "Serenity.Web": "3.9.11",
+          "System.Net.Http": "4.3.4",
           "Xam.Plugins.Settings": "3.1.1",
           "Xamarin.Essentials": "1.3.1",
           "Xamarin.Forms": "4.2.0.815419"
@@ -17311,10 +17316,10 @@
           "lib/netstandard2.0/System.Memory.dll": {}
         }
       },
-      "System.Net.Http/4.3.0": {
+      "System.Net.Http/4.3.4": {
         "type": "package",
         "dependencies": {
-          "Microsoft.NETCore.Platforms": "1.1.0",
+          "Microsoft.NETCore.Platforms": "1.1.1",
           "System.Collections": "4.3.0",
           "System.Diagnostics.Debug": "4.3.0",
           "System.Diagnostics.DiagnosticSource": "4.3.0",
@@ -17334,7 +17339,7 @@
           "System.Threading.Tasks": "4.3.0"
         },
         "compile": {
-          "ref/netcore50/_._": {}
+          "ref/netcore50/System.Net.Http.dll": {}
         },
         "runtime": {
           "runtimes/win/lib/netcore50/System.Net.Http.dll": {}
@@ -18185,6 +18190,7 @@
           "CarouselView.FormsPlugin": "5.2.0",
           "Newtonsoft.Json": "12.0.2",
           "Serenity.Web": "3.9.11",
+          "System.Net.Http": "4.3.4",
           "Xam.Plugins.Settings": "3.1.1",
           "Xamarin.Essentials": "1.3.1",
           "Xamarin.Forms": "4.2.0.815419"
@@ -20394,10 +20400,10 @@
           "lib/netstandard2.0/System.Memory.dll": {}
         }
       },
-      "System.Net.Http/4.3.0": {
+      "System.Net.Http/4.3.4": {
         "type": "package",
         "dependencies": {
-          "Microsoft.NETCore.Platforms": "1.1.0",
+          "Microsoft.NETCore.Platforms": "1.1.1",
           "System.Collections": "4.3.0",
           "System.Diagnostics.Debug": "4.3.0",
           "System.Diagnostics.DiagnosticSource": "4.3.0",
@@ -20417,7 +20423,7 @@
           "System.Threading.Tasks": "4.3.0"
         },
         "compile": {
-          "ref/netcore50/_._": {}
+          "ref/netcore50/System.Net.Http.dll": {}
         },
         "runtime": {
           "runtimes/win/lib/netcore50/System.Net.Http.dll": {}
@@ -21268,6 +21274,7 @@
           "CarouselView.FormsPlugin": "5.2.0",
           "Newtonsoft.Json": "12.0.2",
           "Serenity.Web": "3.9.11",
+          "System.Net.Http": "4.3.4",
           "Xam.Plugins.Settings": "3.1.1",
           "Xamarin.Essentials": "1.3.1",
           "Xamarin.Forms": "4.2.0.815419"
@@ -23520,10 +23527,10 @@
           "lib/netstandard2.0/System.Memory.dll": {}
         }
       },
-      "System.Net.Http/4.3.0": {
+      "System.Net.Http/4.3.4": {
         "type": "package",
         "dependencies": {
-          "Microsoft.NETCore.Platforms": "1.1.0",
+          "Microsoft.NETCore.Platforms": "1.1.1",
           "System.Collections": "4.3.0",
           "System.Diagnostics.Debug": "4.3.0",
           "System.Diagnostics.DiagnosticSource": "4.3.0",
@@ -23543,7 +23550,7 @@
           "System.Threading.Tasks": "4.3.0"
         },
         "compile": {
-          "ref/netcore50/_._": {}
+          "ref/netcore50/System.Net.Http.dll": {}
         },
         "runtime": {
           "runtimes/win/lib/netcore50/System.Net.Http.dll": {}
@@ -24394,6 +24401,7 @@
           "CarouselView.FormsPlugin": "5.2.0",
           "Newtonsoft.Json": "12.0.2",
           "Serenity.Web": "3.9.11",
+          "System.Net.Http": "4.3.4",
           "Xam.Plugins.Settings": "3.1.1",
           "Xamarin.Essentials": "1.3.1",
           "Xamarin.Forms": "4.2.0.815419"
@@ -25743,11 +25751,12 @@
       ]
     },
     "NETStandard.Library/2.0.3": {
-      "sha512": "st47PosZSHrjECdjeIzZQbzivYBJFv6P2nv4cj2ypdI204DO+vZ7l5raGMiX4eXMJ53RfOIg+/s4DHVZ54Nu2A==",
+      "sha512": "548M6mnBSJWxsIlkQHfbzoYxpiYFXZZSL00p4GHYv8PkiqFBnnT68mW5mGEsA/ch9fDO9GkPgkFQpWiXZN7mAQ==",
       "type": "package",
       "path": "netstandard.library/2.0.3",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
         "build/netstandard2.0/NETStandard.Library.targets",
@@ -31915,10 +31924,10 @@
         "version.txt"
       ]
     },
-    "System.Net.Http/4.3.0": {
-      "sha512": "sYg+FtILtRQuYWSIAuNOELwVuVsxVyJGWQyOnlAzhV4xvhyFnON1bAzYYC+jjRW8JREM45R0R5Dgi8MTC5sEwA==",
+    "System.Net.Http/4.3.4": {
+      "sha512": "aOa2d51SEbmM+H+Csw7yJOuNZoHkrP2XnAurye5HWYgGVVU54YZDvsLUYRv6h18X3sPnjNCANmN7ZhIPiqMcjA==",
       "type": "package",
-      "path": "system.net.http/4.3.0",
+      "path": "system.net.http/4.3.4",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -31940,49 +31949,9 @@
         "ref/monotouch10/_._",
         "ref/net45/_._",
         "ref/net46/System.Net.Http.dll",
-        "ref/net46/System.Net.Http.xml",
-        "ref/net46/de/System.Net.Http.xml",
-        "ref/net46/es/System.Net.Http.xml",
-        "ref/net46/fr/System.Net.Http.xml",
-        "ref/net46/it/System.Net.Http.xml",
-        "ref/net46/ja/System.Net.Http.xml",
-        "ref/net46/ko/System.Net.Http.xml",
-        "ref/net46/ru/System.Net.Http.xml",
-        "ref/net46/zh-hans/System.Net.Http.xml",
-        "ref/net46/zh-hant/System.Net.Http.xml",
         "ref/netcore50/System.Net.Http.dll",
-        "ref/netcore50/System.Net.Http.xml",
-        "ref/netcore50/de/System.Net.Http.xml",
-        "ref/netcore50/es/System.Net.Http.xml",
-        "ref/netcore50/fr/System.Net.Http.xml",
-        "ref/netcore50/it/System.Net.Http.xml",
-        "ref/netcore50/ja/System.Net.Http.xml",
-        "ref/netcore50/ko/System.Net.Http.xml",
-        "ref/netcore50/ru/System.Net.Http.xml",
-        "ref/netcore50/zh-hans/System.Net.Http.xml",
-        "ref/netcore50/zh-hant/System.Net.Http.xml",
         "ref/netstandard1.1/System.Net.Http.dll",
-        "ref/netstandard1.1/System.Net.Http.xml",
-        "ref/netstandard1.1/de/System.Net.Http.xml",
-        "ref/netstandard1.1/es/System.Net.Http.xml",
-        "ref/netstandard1.1/fr/System.Net.Http.xml",
-        "ref/netstandard1.1/it/System.Net.Http.xml",
-        "ref/netstandard1.1/ja/System.Net.Http.xml",
-        "ref/netstandard1.1/ko/System.Net.Http.xml",
-        "ref/netstandard1.1/ru/System.Net.Http.xml",
-        "ref/netstandard1.1/zh-hans/System.Net.Http.xml",
-        "ref/netstandard1.1/zh-hant/System.Net.Http.xml",
         "ref/netstandard1.3/System.Net.Http.dll",
-        "ref/netstandard1.3/System.Net.Http.xml",
-        "ref/netstandard1.3/de/System.Net.Http.xml",
-        "ref/netstandard1.3/es/System.Net.Http.xml",
-        "ref/netstandard1.3/fr/System.Net.Http.xml",
-        "ref/netstandard1.3/it/System.Net.Http.xml",
-        "ref/netstandard1.3/ja/System.Net.Http.xml",
-        "ref/netstandard1.3/ko/System.Net.Http.xml",
-        "ref/netstandard1.3/ru/System.Net.Http.xml",
-        "ref/netstandard1.3/zh-hans/System.Net.Http.xml",
-        "ref/netstandard1.3/zh-hant/System.Net.Http.xml",
         "ref/portable-net45+win8+wpa81/_._",
         "ref/win8/_._",
         "ref/wpa81/_._",
@@ -31993,7 +31962,7 @@
         "runtimes/win/lib/net46/System.Net.Http.dll",
         "runtimes/win/lib/netcore50/System.Net.Http.dll",
         "runtimes/win/lib/netstandard1.3/System.Net.Http.dll",
-        "system.net.http.4.3.0.nupkg.sha512",
+        "system.net.http.4.3.4.nupkg.sha512",
         "system.net.http.nuspec"
       ]
     },

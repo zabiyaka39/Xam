@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="RTMobile.Commentaries">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="FillAndExpand">
+            <ScrollView VerticalOptions="StartAndExpand" BackgroundColor="#f9f9f9">
+                <StackLayout >
+                    <!--1 запись-->
+                    <Frame  BackgroundColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+                        <StackLayout VerticalOptions="StartAndExpand">
+                            <StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Frame Margin="10"
+                                       BorderColor="Black"
+                                       CornerRadius="50"
+                                       HeightRequest="5"
+                                       WidthRequest="5"
+                                       IsClippedToBounds="True"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="Start">
+                                        <Image Source="sekisovAvatar.png"
+                                         Aspect="AspectFill"
+                                         Margin="-20"
+                                         HeightRequest="5"
+                                         WidthRequest="5" />
+                                    </Frame>
+                                    <StackLayout>
+                                    <Label HorizontalOptions="FillAndExpand">Секисов В.А.</Label>
+                                        <ScrollView Orientation="Horizontal" VerticalOptions="Start" HorizontalOptions="FillAndExpand">
+                                            <Editor AutoSize="TextChanges" HorizontalOptions="FillAndExpand" IsReadOnly="True" Text="Не очень умный текст"  VerticalOptions="CenterAndExpand"></Editor>
+                                        </ScrollView>
+                                    </StackLayout>
+                                </StackLayout>
+                               
+                            </StackLayout>
+                            
+                            <Label HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">15:15 06.09.2019</Label>
+                        </StackLayout>
+                    </Frame>
+                    <!--2 запись-->
+                    <Frame  BackgroundColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+                        <StackLayout VerticalOptions="StartAndExpand">
+                            <StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Frame Margin="10"
+                                       BorderColor="Black"
+                                       CornerRadius="50"
+                                       HeightRequest="5"
+                                       WidthRequest="5"
+                                       IsClippedToBounds="True"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="Start">
+                                        <Image Source="sekisovAvatar.png"
+                                         Aspect="AspectFill"
+                                         Margin="-20"
+                                         HeightRequest="5"
+                                         WidthRequest="5" />
+                                    </Frame>
+                                    <StackLayout>
+                                        <Label HorizontalOptions="FillAndExpand">Секисов В.А.</Label>
+                                        <ScrollView Orientation="Horizontal" VerticalOptions="Start" HorizontalOptions="FillAndExpand">
+                                            <Editor AutoSize="TextChanges" HorizontalOptions="FillAndExpand" IsReadOnly="True" Text="Очень умный текст"  VerticalOptions="CenterAndExpand"></Editor>
+                                        </ScrollView>
+                                    </StackLayout>
+                                </StackLayout>
+
+                            </StackLayout>
+
+                            <Label HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">15:15 06.09.2019</Label>
+                        </StackLayout>
+                    </Frame>
+
+                    <Frame  BackgroundColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+                        <StackLayout VerticalOptions="StartAndExpand">
+                            <StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Frame Margin="10"
+                                       BorderColor="Black"
+                                       CornerRadius="50"
+                                       HeightRequest="5"
+                                       WidthRequest="5"
+                                       IsClippedToBounds="True"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="Start">
+                                        <Image Source="sekisovAvatar.png"
+                                         Aspect="AspectFill"
+                                         Margin="-20"
+                                         HeightRequest="5"
+                                         WidthRequest="5" />
+                                    </Frame>
+                                    <StackLayout>
+                                        <Label HorizontalOptions="FillAndExpand">Секисов В.А.</Label>
+                                        <ScrollView Orientation="Horizontal" VerticalOptions="Start" HorizontalOptions="FillAndExpand">
+                                            <Editor AutoSize="TextChanges" HorizontalOptions="FillAndExpand" IsReadOnly="True" Text="Просто текст"  VerticalOptions="CenterAndExpand"></Editor>
+                                        </ScrollView>
+                                    </StackLayout>
+                                </StackLayout>
+
+                            </StackLayout>
+
+                            <Label HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">15:15 06.09.2019</Label>
+                        </StackLayout>
+                    </Frame>
+
+
+                </StackLayout>
+            </ScrollView>
+            <!--Раздел с вводом комментариев-->
+            <Frame BackgroundColor="White" Grid.Row="1" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="End">
+                <StackLayout Orientation="Horizontal">
+                    <ImageButton Source="addFile.png"  HeightRequest="20" Scale="1" BackgroundColor="Transparent" VerticalOptions="Center" >
+                    </ImageButton>
+                    <Entry Placeholder="Введите комментарий" BackgroundColor="#FFF" HorizontalOptions="FillAndExpand"></Entry>
+                    <ImageButton Source="apply.png" Scale="1" BackgroundColor="Transparent" HeightRequest="20" VerticalOptions="Center">
+                    </ImageButton>
+                </StackLayout>
+            </Frame>
+
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

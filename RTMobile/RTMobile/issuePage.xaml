@@ -58,7 +58,6 @@
                                  FontSize="Caption"
                          VerticalOptions="End">
                     <Picker.ItemsSource >
-
                         <x:Array  Type="{x:Type x:String}">
                             <x:String>По дате</x:String>
                             <x:String>По номеру</x:String>
@@ -83,79 +82,93 @@
                 </Button>
             </Frame>
 
-            <ScrollView VerticalOptions="StartAndExpand" BackgroundColor="#f2f2f2" Margin="10,10,10,10">
-                <StackLayout x:Name="contentIssue">
-                    <!--1 запись-->
-                    <Frame CornerRadius="10" HasShadow="False"  BackgroundColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
-                        <StackLayout VerticalOptions="StartAndExpand">
-                            <StackLayout Margin=" 0,0,0,10" HorizontalOptions="FillAndExpand" Orientation="Horizontal">
-                                <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand">
-                                    <Frame CornerRadius="50"
-                                           HeightRequest="2"
-                                           WidthRequest="2"
-                                           IsClippedToBounds="True"
-                                           HorizontalOptions="Center"
-                                           VerticalOptions="Center"
-                                           Margin="0,0,10,0">
-                                        <Image Source="sekisovAvatar.jpg"
-                                             Aspect="AspectFill"
-                                             Margin="-20"
-                                             HeightRequest="10"
-                                             WidthRequest="10" />
-                                    </Frame>
-                                    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
-                                        <StackLayout.GestureRecognizers>
-                                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
-                                        </StackLayout.GestureRecognizers>
-                                        <Label x:Name="numberIssue" HorizontalOptions="FillAndExpand" TextColor="#6666ff" Text="IT-3342">
-                                        </Label>
-                                        <StackLayout Orientation="Horizontal">
-                                            <Image Source="statusIssue"></Image>
-                                            <Label x:Name="typeIssue" Text="Инцидент">
-                                            </Label>
+            <ListView x:Name="phonesList"
+                  HasUnevenRows="True"
+                  ItemsSource="{Binding issues}"
+                  ItemTapped="OnItemTapped" 
+                  VerticalScrollBarVisibility="Never" 
+                  SeparatorVisibility="None"  
+                  RefreshControlColor="Black" >
+                <!--Цвет значка обновления-->
+                <!--IsPullToRefreshEnabled ="True"   Показ иконки обновления появляется при появлении и вызывает событие Refreshing-->
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <Frame CornerRadius="10" HasShadow="False"  BackgroundColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Margin="5 ">
+                                    <StackLayout VerticalOptions="StartAndExpand">
+                                        <StackLayout Margin=" 0,0,0,10" HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                                            <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand">
+                                                <Frame CornerRadius="50"
+                                                       HeightRequest="2"
+                                                       WidthRequest="2"
+                                                       IsClippedToBounds="True"
+                                                       HorizontalOptions="Center"
+                                                       VerticalOptions="Center"
+                                                       Margin="0,0,10,0">
+                                                    <Image Source="sekisovAvatar.jpg"
+                                                                Aspect="AspectFill"
+                                                                Margin="-20"
+                                                                HeightRequest="10"
+                                                                WidthRequest="10" />
+                                                </Frame>
+                                                <StackLayout Orientation="Vertical" HorizontalOptions="Start">
+                                                    <StackLayout.GestureRecognizers>
+                                                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                                                    </StackLayout.GestureRecognizers>
+                                                    <Label x:Name="numberIssue" HorizontalOptions="Start" TextColor="#6666ff" Text="{Binding Path=key}">
+                                                    </Label>
+                                                    <StackLayout Orientation="Horizontal">
+                                                        <!--<Image Source="{Binding Path=fields.issuetype.iconUrl}"></Image>-->
+                                                        <Label x:Name="typeIssue" Text="{Binding Path=fields.issuetype.name}">
+                                                            <!--<Label x:Name="typeIssue" Text="{Binding Path=fields.issuetype.iconUrl}">-->
+                                                        </Label>
+                                                    </StackLayout>
+                                                </StackLayout>
+                                            </StackLayout>
+
+                                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                                                <StackLayout.GestureRecognizers>
+                                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                                                </StackLayout.GestureRecognizers>
+                                                <Frame HorizontalOptions="EndAndExpand">
+                                                    <StackLayout Orientation="Horizontal" Padding="-15,0,-15,0">
+                                                        <!--<Image HorizontalOptions="Start"  Source="{Binding Path=fields.status.iconUrl}"></Image>-->
+                                                        <Label x:Name="statusIssue" HorizontalOptions="Start" Text="{Binding Path=fields.status.name}"></Label>
+                                                    </StackLayout>
+                                                </Frame>
+                                                <ImageButton Margin="5,0,0,0" Source="moreVertical.png"></ImageButton>
+                                            </StackLayout>
                                         </StackLayout>
+
+
+                                        <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand" >
+                                            <StackLayout.GestureRecognizers>
+                                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                                            </StackLayout.GestureRecognizers>
+                                            <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand">
+                                                <Label HorizontalOptions="FillAndExpand" FontSize="15" TextColor="Black" VerticalOptions="CenterAndExpand" Text="{Binding Path=fields.summary}"></Label>
+                                                <!--<Label HorizontalOptions="End" FontSize="Micro"  Text="0">комментариев</Label>-->
+                                            </StackLayout>
+                                            <BoxView HorizontalOptions="FillAndExpand" Color="Black" HeightRequest="1" ></BoxView>
+                                        </StackLayout>
+
+
+                                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" >
+                                            <Label HorizontalOptions="StartAndExpand" >Наблюдение</Label>
+                                            <Label HorizontalOptions="CenterAndExpand">Комментарии</Label>
+                                            <Label HorizontalOptions="EndAndExpand">Поделиться</Label>
+                                        </StackLayout>
+
                                     </StackLayout>
-                                </StackLayout>
-                               
-                                <StackLayout Orientation="Horizontal">
-                                    <StackLayout.GestureRecognizers>
-                                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
-                                    </StackLayout.GestureRecognizers>
-                                    <Frame HorizontalOptions="End">
-                                        <StackLayout Orientation="Horizontal">
-                                            <Image Source="statusImageIssue.png"></Image>
-                                            <Label>В работе</Label>
-                                        </StackLayout>
-                                    </Frame>
-                                    <ImageButton Margin="5,0,0,0" Source="moreVertical.png"></ImageButton>
-                                </StackLayout>
-                            </StackLayout>
+                                </Frame>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
 
-
-                            <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand" >
-                                <StackLayout.GestureRecognizers>
-                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
-                                </StackLayout.GestureRecognizers>
-                                <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand">
-                                    <Label HorizontalOptions="FillAndExpand" FontSize="15" TextColor="Black" VerticalOptions="CenterAndExpand">Создание Мобильного приложения</Label>
-                                    <Label HorizontalOptions="End" FontSize="Micro">0 комментариев</Label>
-                                </StackLayout>
-                                <BoxView HorizontalOptions="FillAndExpand" Color="Black" HeightRequest="1" ></BoxView>
-                            </StackLayout>
-                            
-                            
-
-                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" >                             
-                                    <Label HorizontalOptions="StartAndExpand" >Наблюдение</Label>
-                                    <Label HorizontalOptions="CenterAndExpand">Комментарии</Label>
-                                    <Label HorizontalOptions="EndAndExpand">Поделиться</Label>                              
-                            </StackLayout>
-                            
-                        </StackLayout>
-                    </Frame>
-
-                </StackLayout>
-            </ScrollView>
 
 
 
@@ -181,9 +194,9 @@
                 <Button BackgroundColor="Transparent" Clicked="Button_Clicked_1" ImageSource="addButton.png" HorizontalOptions="Start" VerticalOptions="Start">
                 </Button>
             </Frame>
-
-
         </StackLayout>
+
+
     </ContentPage.Content>
 </ContentPage>
     

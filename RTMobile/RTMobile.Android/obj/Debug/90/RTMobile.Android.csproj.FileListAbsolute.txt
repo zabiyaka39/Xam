@@ -779,7 +779,6 @@ C:\Users\sekisov\source\repos\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\an
 C:\Users\sekisov\source\repos\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\res\drawable\logort.jpg
 C:\Users\sekisov\source\repos\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\assets\Mono.Android.pdb
 C:\Users\sekisov\source\repos\RTMobile\RTMobile\RTMobile.Android\bin\Debug\RTMobile.dll.mdb
-F:\project\RTMobile\RTMobile\RTMobile.Android\bin\Debug\viewIssue.xaml.cs
 F:\project\RTMobile\RTMobile\RTMobile.Android\bin\Debug\RTMobile.Android.dll
 F:\project\RTMobile\RTMobile\RTMobile.Android\bin\Debug\RTMobile.Android.pdb
 F:\project\RTMobile\RTMobile\RTMobile.Android\bin\Debug\com.companyname.rtmobile.apk
@@ -808,7 +807,6 @@ F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\flata\2050a566261494d
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\flata\compiled.flata
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\R.txt
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\R.cs.flag
-F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\RTMobile.Android.csproj.CoreCompileInputs.cache
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\XamlC.stamp
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\RTMobile.Android.csproj.CopyComplete
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\RTMobile.Android.dll
@@ -1594,3 +1592,12 @@ F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\res\drawable\user.png
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\res\drawable\filtergray.png
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\res\drawable\insight.png
 F:\project\RTMobile\RTMobile\RTMobile.Android\bin\Debug\RTMobile.dll.mdb
+F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\typemap.jm.arm64-v8a.s
+F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\typemap.jm.armeabi-v7a.s
+F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\typemap.jm.x86.s
+F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\typemap.jm.x86_64.s
+F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\typemap.mj.arm64-v8a.s
+F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\typemap.mj.armeabi-v7a.s
+F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\typemap.mj.x86.s
+F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\typemap.mj.x86_64.s
+F:\project\RTMobile\RTMobile\RTMobile.Android\bin\Debug\dataIssue\viewIssue.xaml.cs

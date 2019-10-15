@@ -83,6 +83,7 @@ F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\assets\System
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\assets\System.dll
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\assets\System.IO.Compression.dll
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\assets\System.Memory.dll
+F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\assets\System.Net.Http.dll
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\assets\System.Numerics.dll
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\assets\System.Numerics.Vectors.dll
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\assets\System.Reflection.Metadata.dll
@@ -146,7 +147,6 @@ F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\assets\System
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\assets\System.Drawing.Common.dll
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\assets\System.IO.Compression.FileSystem.dll
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\assets\System.ComponentModel.Composition.dll
-F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\assets\System.Net.Http.dll
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\assets\System.Runtime.Serialization.dll
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\assets\System.ServiceModel.Internals.dll
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\assets\System.Web.Services.dll

@@ -30,6 +30,7 @@ CarouselView.FormsPlugin.Android.VerticalViewPager;F:\project\RTMobile\RTMobile\
 color;F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\lp\3\jl\res\values\vpi__colors.xml
 color;F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\lp\3\jl\res\values\vpi__defaults.xml
 color;obj\Debug\90\res\values\colors.xml
+color;obj\Debug\90\res\values\styles.xml
 Com.ViewPagerIndicator.CirclePageIndicator;F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\lp\1\jl\res\layout\horizontal_viewpager.xml
 Com.ViewPagerIndicator.CirclePageIndicator;F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\lp\1\jl\res\layout\vertical_viewpager.xml
 declare-styleable;F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\lp\3\jl\res\values\vpi__attrs.xml
