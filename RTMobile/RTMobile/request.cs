@@ -11,36 +11,38 @@ namespace RTMobile
     {
         private HttpWebRequest httpWebRequest = null;
 
-        private string login = "";
-        private string password = "";
-        private string json = "";
+        private string login { get; set; }
+        private string password { get; set; }
+        private string json { get; set; }
+        private string urlServer { get; set; }
 
         private void authorization()
         {
             this.login = "sekisov";
             this.password = "28651455gsbua1A";
+            this.urlServer = "https://sd.rosohrana.ru";
         }
 
         public Request(IssueJSONSearch issueJSONSearch)
         {
             authorization();
 
-            this.httpWebRequest = (HttpWebRequest)WebRequest.Create("https://sd.rosohrana.ru/rest/api/2/search?");
+            this.httpWebRequest = (HttpWebRequest)WebRequest.Create(this.urlServer + "/rest/api/2/search?");
             this.httpWebRequest.ContentType = "application/json";
             this.httpWebRequest.Method = "POST";
             this.httpWebRequest.Headers.Add(HttpRequestHeader.Authorization, "Basic " + Convert.ToBase64String(Encoding.Default.GetBytes(this.login + ":" + this.password)));
             this.json = JsonConvert.SerializeObject(issueJSONSearch);
         }
 
-        public Request(CommentJSONSearch commentJSONSearch)
+        public Request(CommentJSONSearch commentJSONSearch, string keyIssue)
         {
             authorization();
 
-            this.httpWebRequest = (HttpWebRequest)WebRequest.Create("https://sd.rosohrana.ru/rest/api/2/issue/" + commentJSONSearch.issueIdOrKey + "/comment");
+            this.httpWebRequest = (HttpWebRequest)WebRequest.Create(urlServer + "/rest/api/2/issue/" + keyIssue + "/comment");
             this.httpWebRequest.ContentType = "application/json";
             this.httpWebRequest.Method = "GET";
             this.httpWebRequest.Headers.Add(HttpRequestHeader.Authorization, "Basic " + Convert.ToBase64String(Encoding.Default.GetBytes(this.login + ":" + this.password)));
-            this.json = JsonConvert.SerializeObject(commentJSONSearch);
+            //this.json = JsonConvert.SerializeObject(commentJSONSearch);
         }
 
         public Request(string getIssue)
@@ -53,7 +55,7 @@ namespace RTMobile
             this.httpWebRequest.Headers.Add(HttpRequestHeader.Authorization, "Basic " + Convert.ToBase64String(Encoding.Default.GetBytes(this.login + ":" + this.password)));
         }
 
-        public RootObject GetResponses(IssueJSONSearch issueJSONSearch)
+        public RootObject GetResponses()
         {
             RootObject rootObject = new RootObject();
 
@@ -71,12 +73,10 @@ namespace RTMobile
             return rootObject;
         }
 
+
         public RootObject GetResponses(string getIssue)
         {
             RootObject rootObject = new RootObject();
-
-
-
 
             var httpResponse = this.httpWebRequest.GetResponse();
 
@@ -85,7 +85,6 @@ namespace RTMobile
                 var result = streamReader.ReadToEnd();
                 rootObject = JsonConvert.DeserializeObject<RootObject>(result);
             }
-
 
             return rootObject;
         }

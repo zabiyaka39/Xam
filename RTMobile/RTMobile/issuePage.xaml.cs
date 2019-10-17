@@ -53,7 +53,7 @@ namespace RTMobile
                 RootObject rootObject = new RootObject();
                 Request request = new Request(issueJSONSearch);
 
-                rootObject = request.GetResponses(issueJSONSearch);
+                rootObject = request.GetResponses();
                 
                 //Проверка на пустой список задач
                 try

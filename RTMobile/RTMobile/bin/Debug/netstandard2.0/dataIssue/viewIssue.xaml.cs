@@ -41,7 +41,7 @@ namespace RTMobile
         {
             try
             {
-                string getIssue = @"https://sd.rosohrana.ru/rest/api/2/issue/" + issue.key + "/watchers";
+                string getIssue = @"https://sd.rosohrana.ru/rest/api/2/issue/" + issue.key + "/watchers/";
 
                 Request request = new Request(getIssue);
                 watchers = request.GetResponses(getIssue);
@@ -116,6 +116,17 @@ namespace RTMobile
                 peopleIssue.IsVisible = false;
                 buttonPeopleIssue.Source = "arrowDown.png";
             }
+        }
+
+        private async void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        {
+            List<string> watchersList = new List<string>();
+            for (int i = 0; i < watchers.watchers.Count; ++i)
+            {
+                watchersList.Add(watchers.watchers[i].displayName);
+            }
+            string action = await DisplayActionSheet("Наблюдатели задачи", "Закрыть", null, watchersList.ToArray());
+            Console.WriteLine("Action: " + action);
         }
     }
 }

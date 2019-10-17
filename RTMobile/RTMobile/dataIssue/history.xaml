@@ -7,172 +7,80 @@
              x:Class="RTMobile.history">
     <ContentPage.Content>
 
-        <ScrollView VerticalOptions="FillAndExpand" BackgroundColor="#f9f9f9">
-            <StackLayout>
-                <!--1 запись-->
-                    <Frame BackgroundColor="White"   HorizontalOptions="FillAndExpand" VerticalOptions="Start">
-                    <StackLayout VerticalOptions="StartAndExpand">
+        <ListView x:Name="historysList"
+                  HasUnevenRows="True"
+                  ItemsSource="{Binding histories}"
+                  ItemTapped="OnItemTapped" 
+                  VerticalScrollBarVisibility="Never" 
+                  SeparatorVisibility="None"  
+                  RefreshControlColor="Black" >
+            <!--Цвет значка обновления-->
+            <!--IsPullToRefreshEnabled ="True"   Показ иконки обновления появляется при появлении и вызывает событие Refreshing-->
 
-                        <StackLayout>
-                            <StackLayout Orientation="Horizontal">
-                                <Frame Margin="10"
-                                       BorderColor="Black"
-                                       CornerRadius="50"
-                                       HeightRequest="5"
-                                       WidthRequest="5"
-                                       IsClippedToBounds="True"
-                                       HorizontalOptions="Center"
-                                       VerticalOptions="Center">
-                                    <Image Source="sekisovAvatar.png"
-                                         Aspect="AspectFill"
-                                         Margin="-20"
-                                         HeightRequest="5"
-                                         WidthRequest="5" />      
-                                </Frame>
-                                <StackLayout>
-                                    <Label HorizontalOptions="FillAndExpand">Секисов В.А.</Label>
-                                    <StackLayout Orientation="Horizontal" VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand">
-                                        <Label HorizontalOptions="FillAndExpand" FontAttributes="Bold" TextColor="Black" FontSize="16" Text="Внес изменения" VerticalOptions="CenterAndExpand"></Label>
-                                        <Label HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">(15:15 06.09.2019)</Label>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.View>
+                            <!--1 запись-->
+                            <Frame BackgroundColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="Start" Margin="5">
+                                <StackLayout VerticalOptions="StartAndExpand">
+
+                                    <StackLayout>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Frame Margin="10"
+                                                   BorderColor="Black"
+                                                   CornerRadius="50"
+                                                   HeightRequest="5"
+                                                   WidthRequest="5"
+                                                   IsClippedToBounds="True"
+                                                   HorizontalOptions="Center"
+                                                   VerticalOptions="Center">
+                                                   <Image Source="sekisovAvatar.png"
+                                                         Aspect="AspectFill"
+                                                         Margin="-20"
+                                                         HeightRequest="5"
+                                                         WidthRequest="5" />
+                                            </Frame>
+                                            <StackLayout>
+                                                <Label HorizontalOptions="FillAndExpand" Text="{Binding Path=histories.author.displayName}"></Label>
+                                                <StackLayout Orientation="Horizontal" VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand">
+                                                    <Label HorizontalOptions="FillAndExpand" FontAttributes="Bold" TextColor="Black" FontSize="16" Text="Внес изменения" VerticalOptions="CenterAndExpand"></Label>
+                                                    <Label HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand"  Text="{Binding Path=histories.Created}"></Label>
+                                                </StackLayout>
+                                            </StackLayout>
+                                        </StackLayout>
+                                        <StackLayout Orientation="Horizontal">
+                                            <StackLayout HorizontalOptions="FillAndExpand">
+                                                <BoxView Color="Black" HeightRequest="1" ></BoxView>
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </StackLayout>
+
+                                    <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand">
+
+                                        <StackLayout Orientation="Horizontal">
+                                            <StackLayout Orientation="Vertical">
+                                                <Label>Поле</Label>
+                                                <Label>Исполнитель</Label>
+                                            </StackLayout>
+                                            <StackLayout Orientation="Vertical">
+                                                <Label>Исходное значение</Label>
+                                                <Label>Раковский В.</Label>
+                                            </StackLayout>
+                                            <StackLayout Orientation="Vertical">
+                                                <Label>Новое значение</Label>
+                                                <Label>Секисов В.А.</Label>
+                                            </StackLayout>
+                                        </StackLayout>
                                     </StackLayout>
                                 </StackLayout>
-                            </StackLayout>
-                            <StackLayout Orientation="Horizontal">
-                                <StackLayout HorizontalOptions="FillAndExpand">
-                                    <BoxView Color="Black" HeightRequest="1" ></BoxView>
-                                </StackLayout>
-                            </StackLayout>
-                        </StackLayout>
+                            </Frame>
 
-                        <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand">
-                            
-                            <StackLayout Orientation="Horizontal">
-                                <StackLayout Orientation="Vertical">
-                                    <Label>Поле</Label>
-                                    <Label>Исполнитель</Label>
-                                </StackLayout>
-                                <StackLayout Orientation="Vertical">
-                                    <Label>Исходное значение</Label>
-                                    <Label>Раковский В.</Label>
-                                </StackLayout>
-                                <StackLayout Orientation="Vertical">
-                                    <Label>Новое значение</Label>
-                                    <Label>Секисов В.А.</Label>
-                                </StackLayout>
-                            </StackLayout>
-                        </StackLayout>
-                    </StackLayout>
-                </Frame>
-                    <!--2 запись-->
-                <Frame BackgroundColor="White"   HorizontalOptions="FillAndExpand" VerticalOptions="Start">
-                    <StackLayout VerticalOptions="StartAndExpand">
-
-                        <StackLayout>
-                            <StackLayout Orientation="Horizontal">
-                                <Frame Margin="10"
-                                       BorderColor="Black"
-                                       CornerRadius="50"
-                                       HeightRequest="5"
-                                       WidthRequest="5"
-                                       IsClippedToBounds="True"
-                                       HorizontalOptions="Center"
-                                       VerticalOptions="Center">
-                                    <Image Source="sekisovAvatar.png"
-                                         Aspect="AspectFill"
-                                         Margin="-20"
-                                         HeightRequest="5"
-                                         WidthRequest="5" />
-                                </Frame>
-                                <StackLayout>
-                                    <Label HorizontalOptions="FillAndExpand">Секисов В.А.</Label>
-                                    <StackLayout Orientation="Horizontal" VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand">
-                                        <Label HorizontalOptions="FillAndExpand" FontAttributes="Bold" TextColor="Black" FontSize="16" Text="Внес изменения" VerticalOptions="CenterAndExpand"></Label>
-                                        <Label HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">(15:15 06.09.2019)</Label>
-                                    </StackLayout>
-                                </StackLayout>
-                            </StackLayout>
-                            <StackLayout Orientation="Horizontal">
-                                <StackLayout HorizontalOptions="FillAndExpand">
-                                    <BoxView Color="Black" HeightRequest="1" ></BoxView>
-                                </StackLayout>
-                            </StackLayout>
-                        </StackLayout>
-
-                        <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand">
-
-                            <StackLayout Orientation="Horizontal">
-                                <StackLayout Orientation="Vertical">
-                                    <Label>Поле</Label>
-                                    <Label>Исполнитель</Label>
-                                </StackLayout>
-                                <StackLayout Orientation="Vertical">
-                                    <Label>Исходное значение</Label>
-                                    <Label>Раковский В.</Label>
-                                </StackLayout>
-                                <StackLayout Orientation="Vertical">
-                                    <Label>Новое значение</Label>
-                                    <Label>Секисов В.А.</Label>
-                                </StackLayout>
-                            </StackLayout>
-                        </StackLayout>
-                    </StackLayout>
-                </Frame>
-                <Frame BackgroundColor="White"   HorizontalOptions="FillAndExpand" VerticalOptions="Start">
-                    <StackLayout VerticalOptions="StartAndExpand">
-
-                        <StackLayout>
-                            <StackLayout Orientation="Horizontal">
-                                <Frame Margin="10"
-                                       BorderColor="Black"
-                                       CornerRadius="50"
-                                       HeightRequest="5"
-                                       WidthRequest="5"
-                                       IsClippedToBounds="True"
-                                       HorizontalOptions="Center"
-                                       VerticalOptions="Center">
-                                    <Image Source="sekisovAvatar.png"
-                                         Aspect="AspectFill"
-                                         Margin="-20"
-                                         HeightRequest="5"
-                                         WidthRequest="5" />
-                                </Frame>
-                                <StackLayout>
-                                    <Label HorizontalOptions="FillAndExpand">Секисов В.А.</Label>
-                                    <StackLayout Orientation="Horizontal" VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand">
-                                        <Label HorizontalOptions="FillAndExpand" FontAttributes="Bold" TextColor="Black" FontSize="16" Text="Внес изменения" VerticalOptions="CenterAndExpand"></Label>
-                                        <Label HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">(15:15 06.09.2019)</Label>
-                                    </StackLayout>
-                                </StackLayout>
-                            </StackLayout>
-                            <StackLayout Orientation="Horizontal">
-                                <StackLayout HorizontalOptions="FillAndExpand">
-                                    <BoxView Color="Black" HeightRequest="1" ></BoxView>
-                                </StackLayout>
-                            </StackLayout>
-                        </StackLayout>
-
-                        <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand">
-
-                            <StackLayout Orientation="Horizontal">
-                                <StackLayout Orientation="Vertical">
-                                    <Label>Поле</Label>
-                                    <Label>Исполнитель</Label>
-                                </StackLayout>
-                                <StackLayout Orientation="Vertical">
-                                    <Label>Исходное значение</Label>
-                                    <Label>Раковский В.</Label>
-                                </StackLayout>
-                                <StackLayout Orientation="Vertical">
-                                    <Label>Новое значение</Label>
-                                    <Label>Секисов В.А.</Label>
-                                </StackLayout>
-                            </StackLayout>
-                        </StackLayout>
-                    </StackLayout>
-                </Frame>
-                
-            </StackLayout>
-         </ScrollView>
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
 
     </ContentPage.Content>
 </ContentPage>

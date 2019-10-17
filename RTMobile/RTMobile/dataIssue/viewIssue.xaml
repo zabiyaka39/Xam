@@ -247,7 +247,11 @@
                                 <Frame BackgroundColor="blue" Padding="2" HorizontalOptions="Center" WidthRequest="20" HeightRequest="20" CornerRadius="50">
                                     <Label x:Name="countWatchers" TextColor="White" WidthRequest="40" HorizontalTextAlignment="Center"></Label>
                                 </Frame>                                
-                                <Label BackgroundColor="Transparent" TextColor="Blue" Text="Просмотреть наблюдателей" HorizontalOptions="End"></Label>
+                                <Label BackgroundColor="Transparent" TextColor="Blue"  Text="Просмотреть наблюдателей" HorizontalOptions="End">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"></TapGestureRecognizer>
+                                    </Label.GestureRecognizers>
+                                </Label>
                             </StackLayout>
                         </StackLayout>
                     </StackLayout>

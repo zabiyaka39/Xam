@@ -18,13 +18,46 @@ namespace RTMobile
     public class CommentJSONSearch
     {
         public string orderBy { get; set; }
-        public string fields { get; set; }
         public string expand { get; set; }
         public int startAt { get; set; }
         public int maxResults { get; set; }
-        public string issueIdOrKey { get; set; }
+    }
+    public class Changelog
+    {
+        public int startAt { get; set; }
+        public int maxResults { get; set; }
+        public int total { get; set; }
+        public List<History> histories { get; set; }
+    }
+    public class HistoryMetadata
+    {
     }
 
+    public class History
+    {
+        public string id { get; set; }
+        public Author author { get; set; }
+        private string created { get; set; }
+        public string Created
+        {
+            get { return created; }
+            set
+            {
+                created = (Convert.ToDateTime(value)).ToString("dd.MM.yyyy hh:mm");
+            }
+        }
+        public List<Item> items { get; set; }
+        public HistoryMetadata historyMetadata { get; set; }
+    }
+    public class Item
+    {
+        public string field { get; set; }
+        public string fieldtype { get; set; }
+        public string from { get; set; }
+        public string fromString { get; set; }
+        public string to { get; set; }
+        public string toString { get; set; }
+    }
     public class Resolution
     {
         public string self { get; set; }
@@ -122,8 +155,25 @@ namespace RTMobile
         public Author author { get; set; }
         public string body { get; set; }
         public UpdateAuthor updateAuthor { get; set; }
-        public DateTime created { get; set; }
-        public DateTime updated { get; set; }
+        private string created { get; set; }
+        public string Created
+        {
+            get { return created; }
+            set
+            {
+                created = (Convert.ToDateTime(value)).ToString("dd.MM.yyyy hh:mm");
+            }
+        }
+
+        private string updated { get; set; }
+        public string Updated
+        {
+            get { return updated; }
+            set
+            {
+                updated = (Convert.ToDateTime(value)).ToString("dd.MM.yyyy hh:mm");
+            }
+        }
     }
     public class UpdateAuthor
     {
@@ -143,7 +193,44 @@ namespace RTMobile
         public string __invalid_name__16x16 { get; set; }
         public string __invalid_name__32x32 { get; set; }
     }
-
+    public class Worklog
+    {
+        public string self { get; set; }
+        public Author author { get; set; }
+        public UpdateAuthor updateAuthor { get; set; }
+        public string comment { get; set; }
+        private string created { get; set; }
+        public string Created
+        {
+            get { return created; }
+            set
+            {
+                created = (Convert.ToDateTime(value)).ToString("dd.MM.yyyy hh:mm");
+            }
+        }
+        private string updated { get; set; }
+        public string Updated
+        {
+            get { return updated; }
+            set
+            {
+                updated = (Convert.ToDateTime(value)).ToString("dd.MM.yyyy hh:mm");
+            }
+        }
+        private string started { get; set; }
+        public string Started
+        {
+            get { return started; }
+            set
+            {
+                started = (Convert.ToDateTime(value)).ToString("dd.MM.yyyy hh:mm");
+            }
+        }
+        public string timeSpent { get; set; }
+        public int timeSpentSeconds { get; set; }
+        public string id { get; set; }
+        public string issueId { get; set; }
+    }
     public class Author
     {
         public string self { get; set; }
@@ -239,5 +326,7 @@ namespace RTMobile
         public bool isWatching { get; set; }
         public string watchCount { get; set; }
         public List<Watcher> watchers { get; set; }
+        public List<Worklog> worklogs { get; set; }
+        public Changelog changelog { get; set; }
     }
 }

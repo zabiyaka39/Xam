@@ -82,7 +82,7 @@
                 </Button>
             </Frame>
 
-            <ListView x:Name="phonesList"
+            <ListView x:Name="issuesList"
                   HasUnevenRows="True"
                   ItemsSource="{Binding issues}"
                   ItemTapped="OnItemTapped" 
@@ -96,7 +96,7 @@
                     <DataTemplate>
                         <ViewCell>
                             <ViewCell.View>
-                                <Frame CornerRadius="10" HasShadow="False"  BackgroundColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Margin="5 ">
+                                <Frame CornerRadius="10" HasShadow="False"  BackgroundColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Margin="5">
                                     <StackLayout VerticalOptions="StartAndExpand">
                                         <StackLayout Margin=" 0,0,0,10" HorizontalOptions="FillAndExpand" Orientation="Horizontal">
                                             <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand">

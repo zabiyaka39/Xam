@@ -7,109 +7,57 @@
              x:Class="RTMobile.Commentaries">
     <ContentPage.Content>
         <StackLayout VerticalOptions="FillAndExpand">
-            <ScrollView VerticalOptions="StartAndExpand" BackgroundColor="#f9f9f9">
-                <StackLayout >
-                    <!--1 запись-->
-                    <Frame  BackgroundColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
-                        <StackLayout VerticalOptions="StartAndExpand">
-                            <StackLayout>
-                                <StackLayout Orientation="Horizontal">
-                                    <Frame Margin="10"
-                                       BorderColor="Black"
-                                       CornerRadius="50"
-                                       HeightRequest="5"
-                                       WidthRequest="5"
-                                       IsClippedToBounds="True"
-                                       HorizontalOptions="Center"
-                                       VerticalOptions="Start">
-                                        <Image Source="sekisovAvatar.png"
-                                         Aspect="AspectFill"
-                                         Margin="-20"
-                                         HeightRequest="5"
-                                         WidthRequest="5" />
+            <ListView x:Name="commentsList"
+                          VerticalOptions="StartAndExpand" 
+                  HasUnevenRows="True"
+                  ItemsSource="{Binding comments}"
+                  ItemTapped="OnItemTapped" 
+                  VerticalScrollBarVisibility="Never" 
+                  SeparatorVisibility="None"  
+                  RefreshControlColor="Black" >
+                    <!--Цвет значка обновления-->
+                    <!--IsPullToRefreshEnabled ="True"   Показ иконки обновления появляется при появлении и вызывает событие Refreshing-->
+
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.View>
+                                    <!--Зааписи-->
+                                    <Frame BackgroundColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Margin="5">
+                                        <StackLayout VerticalOptions="StartAndExpand">
+                                            <StackLayout>
+                                                <StackLayout Orientation="Horizontal">
+                                                    <Frame Margin="10"
+                                                            BorderColor="Black"
+                                                            CornerRadius="50"
+                                                            HeightRequest="5"
+                                                            WidthRequest="5"
+                                                            IsClippedToBounds="True"
+                                                            HorizontalOptions="Center"
+                                                            VerticalOptions="Start">
+                                                        <Image Source="sekisovAvatar.png"
+                                                                    Aspect="AspectFill"
+                                                                    Margin="-20"
+                                                                    HeightRequest="5"
+                                                                    WidthRequest="5" />
+                                                    </Frame>
+                                                    <StackLayout>
+                                                    <Label HorizontalOptions="FillAndExpand" Text="{Binding Path=author.displayName}"></Label>
+                                                        <ScrollView Orientation="Horizontal" VerticalOptions="Start" HorizontalOptions="FillAndExpand">
+                                                        <Editor AutoSize="TextChanges" HorizontalOptions="FillAndExpand" IsReadOnly="True" Text="{Binding Path=body}"  VerticalOptions="CenterAndExpand"></Editor>
+                                                        </ScrollView>
+                                                    </StackLayout>
+                                                </StackLayout>
+                                            </StackLayout>
+                                        <Label HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Text="{Binding Path=Created}"></Label>
+                                        </StackLayout>
                                     </Frame>
-                                    <StackLayout>
-                                    <Label HorizontalOptions="FillAndExpand">Секисов В.А.</Label>
-                                        <ScrollView Orientation="Horizontal" VerticalOptions="Start" HorizontalOptions="FillAndExpand">
-                                            <Editor AutoSize="TextChanges" HorizontalOptions="FillAndExpand" IsReadOnly="True" Text="Не очень умный текст"  VerticalOptions="CenterAndExpand"></Editor>
-                                        </ScrollView>
-                                    </StackLayout>
-                                </StackLayout>
-                               
-                            </StackLayout>
-                            
-                            <Label HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">15:15 06.09.2019</Label>
-                        </StackLayout>
-                    </Frame>
-                    <!--2 запись-->
-                    <Frame  BackgroundColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
-                        <StackLayout VerticalOptions="StartAndExpand">
-                            <StackLayout>
-                                <StackLayout Orientation="Horizontal">
-                                    <Frame Margin="10"
-                                       BorderColor="Black"
-                                       CornerRadius="50"
-                                       HeightRequest="5"
-                                       WidthRequest="5"
-                                       IsClippedToBounds="True"
-                                       HorizontalOptions="Center"
-                                       VerticalOptions="Start">
-                                        <Image Source="sekisovAvatar.png"
-                                         Aspect="AspectFill"
-                                         Margin="-20"
-                                         HeightRequest="5"
-                                         WidthRequest="5" />
-                                    </Frame>
-                                    <StackLayout>
-                                        <Label HorizontalOptions="FillAndExpand">Секисов В.А.</Label>
-                                        <ScrollView Orientation="Horizontal" VerticalOptions="Start" HorizontalOptions="FillAndExpand">
-                                            <Editor AutoSize="TextChanges" HorizontalOptions="FillAndExpand" IsReadOnly="True" Text="Очень умный текст"  VerticalOptions="CenterAndExpand"></Editor>
-                                        </ScrollView>
-                                    </StackLayout>
-                                </StackLayout>
-
-                            </StackLayout>
-
-                            <Label HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">15:15 06.09.2019</Label>
-                        </StackLayout>
-                    </Frame>
-
-                    <Frame  BackgroundColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
-                        <StackLayout VerticalOptions="StartAndExpand">
-                            <StackLayout>
-                                <StackLayout Orientation="Horizontal">
-                                    <Frame Margin="10"
-                                       BorderColor="Black"
-                                       CornerRadius="50"
-                                       HeightRequest="5"
-                                       WidthRequest="5"
-                                       IsClippedToBounds="True"
-                                       HorizontalOptions="Center"
-                                       VerticalOptions="Start">
-                                        <Image Source="sekisovAvatar.png"
-                                         Aspect="AspectFill"
-                                         Margin="-20"
-                                         HeightRequest="5"
-                                         WidthRequest="5" />
-                                    </Frame>
-                                    <StackLayout>
-                                        <Label HorizontalOptions="FillAndExpand">Секисов В.А.</Label>
-                                        <ScrollView Orientation="Horizontal" VerticalOptions="Start" HorizontalOptions="FillAndExpand">
-                                            <Editor AutoSize="TextChanges" HorizontalOptions="FillAndExpand" IsReadOnly="True" Text="Просто текст"  VerticalOptions="CenterAndExpand"></Editor>
-                                        </ScrollView>
-                                    </StackLayout>
-                                </StackLayout>
-
-                            </StackLayout>
-
-                            <Label HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">15:15 06.09.2019</Label>
-                        </StackLayout>
-                    </Frame>
-
-
-                </StackLayout>
-            </ScrollView>
-            <!--Раздел с вводом комментариев-->
+                                </ViewCell.View>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <!--Раздел с вводом комментариев-->
             <Frame BackgroundColor="White" Grid.Row="1" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="End">
                 <StackLayout Orientation="Horizontal">
                     <ImageButton Source="addFile.png"  HeightRequest="20" Scale="1" BackgroundColor="Transparent" VerticalOptions="Center" >

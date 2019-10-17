@@ -11,7 +11,7 @@ namespace RTMobile
             
             InitializeComponent();
             //MainPage = new NavigationPage(new RTMobile.blockIssue());
-            MainPage = new NavigationPage(new RTMobile.mainPage());
+            MainPage = new NavigationPage(new RTMobile.IssuePage());
         }
 
         protected override void OnStart()
