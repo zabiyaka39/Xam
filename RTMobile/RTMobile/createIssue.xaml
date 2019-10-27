@@ -9,7 +9,16 @@
     <ContentPage.Content>
         <ScrollView Margin="10" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
             <StackLayout>
-                <Frame HorizontalOptions="FillAndExpand">
+                <Picker Margin="10,20,0,0"  
+                        x:Name="pickerProject" 
+                        Title="Выберете проект"                        
+                        TitleColor="Black"
+                        TextColor="Black"
+                        HorizontalOptions="FillAndExpand" 
+                        ItemsSource="{Binding projects}" 
+                        ItemDisplayBinding="{Binding name}">
+                    </Picker>
+                    <Frame HorizontalOptions="FillAndExpand">
                     <StackLayout Orientation="Horizontal">
                         <Label HorizontalOptions="Start" Text="Тема" VerticalOptions="CenterAndExpand"></Label>
                         <Entry HorizontalOptions="EndAndExpand" Placeholder="Введите тему"  VerticalOptions="CenterAndExpand"></Entry>
@@ -24,7 +33,19 @@
                 <Frame HorizontalOptions="FillAndExpand">
                     <StackLayout Orientation="Horizontal">
                         <Label HorizontalOptions="Start" Text="Описание"  VerticalOptions="CenterAndExpand"></Label>
-                        <Editor HorizontalOptions="EndAndExpand" Placeholder="Введите описание" HeightRequest="200"  VerticalOptions="CenterAndExpand"></Editor>
+                        <Entry HorizontalOptions="EndAndExpand" Placeholder="Введите описание задачи"  VerticalOptions="CenterAndExpand"></Entry>
+                    </StackLayout>
+                </Frame>
+                <Frame HorizontalOptions="FillAndExpand">
+                    <StackLayout Orientation="Horizontal">
+                        <Label HorizontalOptions="Start" Text="Номер телефона"  VerticalOptions="CenterAndExpand"></Label>
+                        <Entry HorizontalOptions="EndAndExpand" Placeholder="Введите номер телефона"  VerticalOptions="CenterAndExpand"></Entry>
+                    </StackLayout>
+                </Frame>
+                <Frame HorizontalOptions="FillAndExpand">
+                    <StackLayout Orientation="Horizontal">
+                        <Label HorizontalOptions="Start" Text="Ваше ФИО"  VerticalOptions="CenterAndExpand"></Label>
+                        <Entry HorizontalOptions="EndAndExpand" Placeholder="Введите ваше ФИО"  VerticalOptions="CenterAndExpand"></Entry>
                     </StackLayout>
                 </Frame>
                 <StackLayout HorizontalOptions="FillAndExpand">

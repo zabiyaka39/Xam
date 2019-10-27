@@ -40,6 +40,7 @@ namespace RTMobile
               
                 histories = historyIssues.changelog.histories;
 
+
             }
             catch (Exception ex)
             {

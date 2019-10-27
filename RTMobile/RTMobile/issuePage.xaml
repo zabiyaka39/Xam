@@ -32,17 +32,19 @@
              NavigationPage.HasNavigationBar="False">
 
     <ContentPage.Content>
+        
         <StackLayout Orientation="Vertical" BackgroundColor="#f2f2f2">
+            
             <StackLayout Orientation="Horizontal" VerticalOptions="Start" BackgroundColor="#000000" HeightRequest="80" 
                          HorizontalOptions="FillAndExpand" Padding="10,-20,0,0" Margin="0,0,0,-50">
                 <Picker Margin="10,20,0,0"  x:Name="pickerFilter" MinimumWidthRequest="100"
-                                 Title="Фильтр задач                 "                        
-                                 TitleColor="White"
-                                 TextColor="White"
-                                 FontSize="Caption"
-                         VerticalOptions="End"
-                         HorizontalOptions="StartAndExpand">
-                    <Picker.ItemsSource >
+                        Title="Фильтр задач                 "                        
+                        TitleColor="White"
+                        FontSize="Caption"
+                        TextColor="White"
+                        VerticalOptions="End"
+                        HorizontalOptions="StartAndExpand">
+                    <Picker.ItemsSource>
                         <x:Array  Type="{x:Type x:String}">
                             <x:String>Назначенные мне</x:String>
                             <x:String>Открытые</x:String>
@@ -56,7 +58,8 @@
                                  TitleColor="White"
                                  TextColor="White"
                                  FontSize="Caption"
-                         VerticalOptions="End">
+                         VerticalOptions="End" >
+                   
                     <Picker.ItemsSource >
                         <x:Array  Type="{x:Type x:String}">
                             <x:String>По дате</x:String>
@@ -100,6 +103,7 @@
                                     <StackLayout VerticalOptions="StartAndExpand">
                                         <StackLayout Margin=" 0,0,0,10" HorizontalOptions="FillAndExpand" Orientation="Horizontal">
                                             <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand">
+                                                
                                                 <Frame CornerRadius="50"
                                                        HeightRequest="2"
                                                        WidthRequest="2"
@@ -107,7 +111,7 @@
                                                        HorizontalOptions="Center"
                                                        VerticalOptions="Center"
                                                        Margin="0,0,10,0">
-                                                    <Image Source="sekisovAvatar.jpg"
+                                                    <Image Source="user.jpg"
                                                                 Aspect="AspectFill"
                                                                 Margin="-20"
                                                                 HeightRequest="10"

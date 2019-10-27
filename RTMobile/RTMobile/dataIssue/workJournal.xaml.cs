@@ -31,7 +31,7 @@ namespace RTMobile
         {
             try
             {
-                string getIssue = @"https://sd.rosohrana.ru/rest/api/2/issue/" + "KPA-6081"/*issue.key */+ "/worklog/";
+                string getIssue = @"https://sd.rosohrana.ru/rest/api/2/issue/" +issue.key + "/worklog/";
 
                 Request request = new Request(getIssue);
                 RootObject workJournals = new RootObject();

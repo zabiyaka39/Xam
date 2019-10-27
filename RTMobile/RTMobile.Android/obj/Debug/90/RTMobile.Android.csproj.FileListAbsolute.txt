@@ -1591,7 +1591,6 @@ F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\res\drawable\alarm.pn
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\res\drawable\user.png
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\res\drawable\filtergray.png
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\res\drawable\insight.png
-F:\project\RTMobile\RTMobile\RTMobile.Android\bin\Debug\RTMobile.dll.mdb
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\typemap.jm.arm64-v8a.s
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\typemap.jm.armeabi-v7a.s
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\typemap.jm.x86.s
@@ -1601,3 +1600,14 @@ F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\typemap.mj.ar
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\typemap.mj.x86.s
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\typemap.mj.x86_64.s
 F:\project\RTMobile\RTMobile\RTMobile.Android\bin\Debug\dataIssue\viewIssue.xaml.cs
+F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\linksrc\Microsoft.IdentityModel.JsonWebTokens.dll
+F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\linksrc\Microsoft.IdentityModel.Logging.dll
+F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\linksrc\Microsoft.IdentityModel.Tokens.dll
+F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\linksrc\System.IdentityModel.Tokens.Jwt.dll
+F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\linksrc\System.Security.Cryptography.Cng.dll
+F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\assets\Microsoft.IdentityModel.JsonWebTokens.dll
+F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\assets\Microsoft.IdentityModel.Logging.dll
+F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\assets\Microsoft.IdentityModel.Tokens.dll
+F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\assets\System.IdentityModel.Tokens.Jwt.dll
+F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\assets\System.Security.Cryptography.Cng.dll
+F:\project\RTMobile\RTMobile\RTMobile.Android\bin\Debug\RTMobile.dll.mdb

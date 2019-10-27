@@ -22,12 +22,13 @@
                     <ViewCell>
                         <ViewCell.View>
                             <!--1 запись-->
-                            <Frame BackgroundColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="Start" Margin="5">
-                                <StackLayout VerticalOptions="StartAndExpand">
+                            <StackLayout>
+                                <Frame BackgroundColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="Start" Margin="5">
+                                    <StackLayout VerticalOptions="StartAndExpand">
 
-                                    <StackLayout>
-                                        <StackLayout Orientation="Horizontal">
-                                            <Frame Margin="10"
+                                        <StackLayout>
+                                            <StackLayout Orientation="Horizontal">
+                                                <Frame Margin="10"
                                                    BorderColor="Black"
                                                    CornerRadius="50"
                                                    HeightRequest="5"
@@ -35,47 +36,99 @@
                                                    IsClippedToBounds="True"
                                                    HorizontalOptions="Center"
                                                    VerticalOptions="Center">
-                                                   <Image Source="sekisovAvatar.png"
+                                                    <Image Source="user.png"
                                                          Aspect="AspectFill"
                                                          Margin="-20"
                                                          HeightRequest="5"
                                                          WidthRequest="5" />
-                                            </Frame>
-                                            <StackLayout>
-                                                <Label HorizontalOptions="FillAndExpand" Text="{Binding Path=histories.author.displayName}"></Label>
-                                                <StackLayout Orientation="Horizontal" VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand">
-                                                    <Label HorizontalOptions="FillAndExpand" FontAttributes="Bold" TextColor="Black" FontSize="16" Text="Внес изменения" VerticalOptions="CenterAndExpand"></Label>
-                                                    <Label HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand"  Text="{Binding Path=histories.Created}"></Label>
+                                                </Frame>
+                                                <StackLayout>
+                                                    <Label HorizontalOptions="FillAndExpand" Text="{Binding Path=author.displayName}"></Label>
+                                                    <StackLayout Orientation="Horizontal" VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand">
+                                                        <Label HorizontalOptions="FillAndExpand" FontAttributes="Bold" TextColor="Black" FontSize="16" Text="Внес изменения" VerticalOptions="CenterAndExpand"></Label>
+                                                        <Label HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand"  Text="{Binding Path=Created}"></Label>
+                                                    </StackLayout>
+                                                </StackLayout>
+                                            </StackLayout>
+                                            <StackLayout Orientation="Vertical">
+                                                <StackLayout HorizontalOptions="FillAndExpand">
+                                                    <BoxView Color="Black" HeightRequest="1" ></BoxView>
+                                                </StackLayout>
+                                                <StackLayout Orientation="Horizontal" Margin="0,0,0,5" HorizontalOptions="FillAndExpand">
+                                                    <Label Text="Поле" HorizontalOptions="EndAndExpand"/>
+                                                    <Label Text="Исходное значение" HorizontalOptions="EndAndExpand"/>
+                                                    <Label Text="Новое значение" HorizontalOptions="EndAndExpand"/>
                                                 </StackLayout>
                                             </StackLayout>
                                         </StackLayout>
                                         <StackLayout Orientation="Horizontal">
-                                            <StackLayout HorizontalOptions="FillAndExpand">
-                                                <BoxView Color="Black" HeightRequest="1" ></BoxView>
+                                            <StackLayout Orientation="Vertical">
+                                                <!--<Label Text="Поле"/>-->
+                                                <ListView HasUnevenRows="True"
+                                                    ItemsSource="{Binding items}"
+                                                    VerticalScrollBarVisibility="Never" 
+                                                    SeparatorVisibility="None"   HeightRequest="50"
+                                                    RefreshControlColor="Black" VerticalOptions="Start">
+
+                                                    <ListView.ItemTemplate>
+                                                        <DataTemplate>
+                                                            <ViewCell>
+                                                                <ViewCell.View>
+                                                                    <Label Text="{Binding Path=field}"></Label>
+                                                                </ViewCell.View>
+                                                            </ViewCell>
+                                                        </DataTemplate>
+                                                    </ListView.ItemTemplate>
+                                                </ListView>
                                             </StackLayout>
+
+                                            <StackLayout Orientation="Vertical">
+                                                <!--<Label Text="Исходное значение" Margin="0,0,0,5"/>-->
+                                                <ListView HasUnevenRows="True"
+                                                    ItemsSource="{Binding items}"
+                                                    VerticalScrollBarVisibility="Never" 
+                                                    SeparatorVisibility="None"   HeightRequest="50"
+                                                    RefreshControlColor="Black" VerticalOptions="Start">
+
+                                                    <ListView.ItemTemplate>
+                                                        <DataTemplate>
+                                                            <ViewCell>
+                                                                <ViewCell.View>
+                                                                    <Label Text="{Binding Path=fromString}"></Label>
+                                                                </ViewCell.View>
+                                                            </ViewCell>
+                                                        </DataTemplate>
+                                                    </ListView.ItemTemplate>
+                                                </ListView>
+                                            </StackLayout>
+
+
+                                            <StackLayout Orientation="Vertical">
+                                                <!--<Label Text="Новое значение"/>-->
+                                                <ListView HasUnevenRows="True"
+                                                    ItemsSource="{Binding items}"
+                                                    VerticalScrollBarVisibility="Never" 
+                                                    SeparatorVisibility="None"   HeightRequest="100"
+                                                    RefreshControlColor="Black" VerticalOptions="Start">
+
+                                                    <ListView.ItemTemplate>
+                                                        <DataTemplate>
+                                                            <ViewCell>
+                                                                <ViewCell.View>
+                                                                    <Label Text="{Binding Path=fromString}"></Label>
+                                                                </ViewCell.View>
+                                                            </ViewCell>
+                                                        </DataTemplate>
+                                                    </ListView.ItemTemplate>
+                                                </ListView>
+                                            </StackLayout>
+
+
+
                                         </StackLayout>
                                     </StackLayout>
-
-                                    <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand">
-
-                                        <StackLayout Orientation="Horizontal">
-                                            <StackLayout Orientation="Vertical">
-                                                <Label>Поле</Label>
-                                                <Label>Исполнитель</Label>
-                                            </StackLayout>
-                                            <StackLayout Orientation="Vertical">
-                                                <Label>Исходное значение</Label>
-                                                <Label>Раковский В.</Label>
-                                            </StackLayout>
-                                            <StackLayout Orientation="Vertical">
-                                                <Label>Новое значение</Label>
-                                                <Label>Секисов В.А.</Label>
-                                            </StackLayout>
-                                        </StackLayout>
-                                    </StackLayout>
-                                </StackLayout>
-                            </Frame>
-
+                                </Frame>
+                            </StackLayout>
                         </ViewCell.View>
                     </ViewCell>
                 </DataTemplate>

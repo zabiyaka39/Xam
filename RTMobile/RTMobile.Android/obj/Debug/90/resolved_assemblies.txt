@@ -61,6 +61,9 @@ F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\assets\Micros
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\assets\Microsoft.Extensions.Options.dll
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\assets\Microsoft.Extensions.Primitives.dll
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\assets\Microsoft.Extensions.WebEncoders.dll
+F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\assets\Microsoft.IdentityModel.JsonWebTokens.dll
+F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\assets\Microsoft.IdentityModel.Logging.dll
+F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\assets\Microsoft.IdentityModel.Tokens.dll
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\assets\Microsoft.Net.Http.Headers.dll
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\assets\Microsoft.Win32.Registry.dll
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\assets\Mono.Android.dll
@@ -81,6 +84,7 @@ F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\assets\System
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\assets\System.Core.dll
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\assets\System.Diagnostics.DiagnosticSource.dll
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\assets\System.dll
+F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\assets\System.IdentityModel.Tokens.Jwt.dll
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\assets\System.IO.Compression.dll
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\assets\System.Memory.dll
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\assets\System.Net.Http.dll
@@ -186,6 +190,7 @@ F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\assets\System
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\assets\System.Text.Encoding.CodePages.dll
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\assets\System.Runtime.InteropServices.RuntimeInformation.dll
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\assets\System.AppContext.dll
+F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\assets\System.Security.Cryptography.Cng.dll
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\assets\System.Text.RegularExpressions.dll
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\assets\System.Diagnostics.Tracing.dll
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\assets\Mono.Security.dll

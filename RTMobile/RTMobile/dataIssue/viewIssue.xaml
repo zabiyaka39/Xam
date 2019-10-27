@@ -205,7 +205,7 @@
                                        IsClippedToBounds="True"
                                        HorizontalOptions="End"
                                        VerticalOptions="Center">
-                                        <Image Source="sekisovAvatar.png"
+                                        <Image Source="user.png"
                                          Aspect="AspectFill"
                                          Margin="-20"
                                          HeightRequest="5"
@@ -225,7 +225,7 @@
                                            IsClippedToBounds="True"
                                            HorizontalOptions="End"
                                            VerticalOptions="Center">
-                                        <Image Source="sekisovAvatar.png"
+                                        <Image Source="user.png"
                                              Aspect="AspectFill"
                                              Margin="-20"
                                              HeightRequest="5"

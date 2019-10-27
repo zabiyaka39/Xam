@@ -17,6 +17,8 @@ namespace RTMobile
         public List<Comment> comments { get; set; }
 
         Issue issue = new Issue();
+        private object properties;
+
         public Commentaries()
         {
             InitializeComponent();
@@ -43,13 +45,13 @@ namespace RTMobile
                     maxResults = 50,
                     startAt = 0
                 };
-                
+
                 RootObject rootObject = new RootObject();
                 Request request = new Request(commentJSONSearch, issue.key);
 
                 rootObject = request.GetResponses("");
-                Console.WriteLine(rootObject.total + " 1111111dsadadadsa");
 
+                comments = null;
                 //Проверка на пустой список задач
                 comments = rootObject.comments;
 
@@ -62,7 +64,6 @@ namespace RTMobile
                 await DisplayAlert("Error issues", ex.ToString(), "OK");
             }
         }
-
 
         /// <summary>
         /// Тап перехода к задаче
@@ -78,6 +79,45 @@ namespace RTMobile
             //    //await DisplayAlert("Выбранная модель", $"{selectedIssue.key}", "OK");
             //}
             ((ListView)sender).SelectedItem = null;
+        }
+
+        private async void ImageButton_Clicked(object sender, EventArgs e)
+        {
+            try
+            {
+                Comment comment = new Comment
+                {
+                    body = commentEntry.Text
+                };
+                //comment.properties.Add(new Property());
+                //comment.properties[0].value.Internal = true;
+                //comment.properties[0].key = "sd.public.comment";
+                RootObject rootObject = new RootObject();
+                Request request = new Request(comment, issue.key);
+
+                rootObject = request.GetResponses();
+
+                //Проверка на пустой список задач
+
+
+                if (rootObject.id != 0)
+                {
+                    issueStartPostRequest();
+                    await DisplayAlert("Готово", "Комментарий добавлен", "OK");
+                }
+                else
+                {
+                    await DisplayAlert("Ошибка", "Ошибка добавления комментария в систему", "OK");
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                await DisplayAlert("Error issues", ex.ToString(), "OK");
+            }
+
         }
     }
 }

@@ -5,6 +5,9 @@ using System.Text;
 
 namespace RTMobile
 {
+    /// <summary>
+    /// Класс хранящий JSON запрос для поиска задач
+    /// </summary>
     public class IssueJSONSearch
     {
         public string jql { get; set; }
@@ -14,7 +17,9 @@ namespace RTMobile
         public int maxResults { get; set; }
         public bool validateQuery { get; set; } = true;
     }
-
+    /// <summary>
+    /// Класс хранящий JSON запрос для поиска комментариев
+    /// </summary>
     public class CommentJSONSearch
     {
         public string orderBy { get; set; }
@@ -22,6 +27,9 @@ namespace RTMobile
         public int startAt { get; set; }
         public int maxResults { get; set; }
     }
+    /// <summary>
+    /// Класс хранящий данные по истории (общие данные и список событий задачи)  задачи
+    /// </summary>
     public class Changelog
     {
         public int startAt { get; set; }
@@ -29,10 +37,15 @@ namespace RTMobile
         public int total { get; set; }
         public List<History> histories { get; set; }
     }
+    /// <summary>
+    /// Метаданные истории
+    /// </summary>
     public class HistoryMetadata
     {
     }
-
+    /// <summary>
+    /// События по задаче
+    /// </summary>
     public class History
     {
         public string id { get; set; }
@@ -49,6 +62,9 @@ namespace RTMobile
         public List<Item> items { get; set; }
         public HistoryMetadata historyMetadata { get; set; }
     }
+    /// <summary>
+    /// Изменения по задачи, какие поля были затронуты, значения до и после
+    /// </summary>
     public class Item
     {
         public string field { get; set; }
@@ -108,6 +124,10 @@ namespace RTMobile
         public string id { get; set; }
         public string key { get; set; }
         public string name { get; set; }
+        public string expand { get; set; }
+        public int recent { get; set; }
+        public bool includeArchived { get; set; }
+        public AvatarUrls avatarUrls { get; set; }
         public string projectTypeKey { get; set; }
     }
 
@@ -148,6 +168,24 @@ namespace RTMobile
         public string timeZone { get; set; }
         public AvatarUrls avatarUrls { get; set; }
     }
+    /// <summary>
+    /// Значение внешний или внутренний будет комментарий
+    /// </summary>
+    public class Value
+    {
+        public bool Internal { get; set; }
+    }
+    /// <summary>
+    /// Класс настроек комментариев
+    /// </summary>
+    public class Property
+    {
+        public string key { get; set; }
+        public Value value { get; set; }
+    }
+    /// <summary>
+    /// Класс комментариев задачи
+    /// </summary>
     public class Comment
     {
         public string self { get; set; }
@@ -164,7 +202,6 @@ namespace RTMobile
                 created = (Convert.ToDateTime(value)).ToString("dd.MM.yyyy hh:mm");
             }
         }
-
         private string updated { get; set; }
         public string Updated
         {
@@ -174,6 +211,7 @@ namespace RTMobile
                 updated = (Convert.ToDateTime(value)).ToString("dd.MM.yyyy hh:mm");
             }
         }
+        public List<Property> properties { get; set; }
     }
     public class UpdateAuthor
     {
@@ -317,6 +355,7 @@ namespace RTMobile
 
     public class RootObject
     {
+        public int id { get; set; }
         public string expand { get; set; }
         public int startAt { get; set; }
         public int maxResults { get; set; }
@@ -328,5 +367,9 @@ namespace RTMobile
         public List<Watcher> watchers { get; set; }
         public List<Worklog> worklogs { get; set; }
         public Changelog changelog { get; set; }
+        public string self { get; set; }
+        public string key { get; set; }
+        public string name { get; set; }
+
     }
 }

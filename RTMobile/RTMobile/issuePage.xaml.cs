@@ -13,8 +13,6 @@ using System.Net.Http;
 
 namespace RTMobile
 {
-
-
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class IssuePage : ContentPage
     {
@@ -31,9 +29,9 @@ namespace RTMobile
             //    issues[i].fields.issuetype.iconUrl = issues[i].fields.issuetype.iconUrl;
             //    Console.WriteLine(issues[i].fields.issuetype.iconUrl);
             //}
-           
-            this.BindingContext = this;
+     
 
+            this.BindingContext = this;
 
         }
         /// <summary>
@@ -151,5 +149,6 @@ namespace RTMobile
         {
             await Navigation.PushAsync(new insight());
         }
+
     }
 }

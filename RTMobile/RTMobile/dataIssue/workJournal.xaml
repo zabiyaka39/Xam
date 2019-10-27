@@ -20,11 +20,13 @@
                         <ViewCell>
                             <ViewCell.View>
                                 <!--1 запись-->
-                                <Frame BackgroundColor="White"  Grid.Row="0" Grid.Column="0"  HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Margin="5">
-                                    <StackLayout VerticalOptions="StartAndExpand">
+                                <StackLayout>
+
+                                    <Frame BackgroundColor="White"  Grid.Row="0" Grid.Column="0"  HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Margin="5">
                                         <StackLayout VerticalOptions="StartAndExpand">
-                                            <StackLayout Orientation="Horizontal">
-                                                <Frame Margin="10"
+                                            <StackLayout VerticalOptions="StartAndExpand">
+                                                <StackLayout Orientation="Horizontal">
+                                                    <Frame Margin="10"
                                                        BorderColor="Black"
                                                        CornerRadius="50"
                                                        HeightRequest="5"
@@ -32,41 +34,42 @@
                                                        IsClippedToBounds="True"
                                                        HorizontalOptions="Center"
                                                        VerticalOptions="Center">
-                                                    <Image Source="sekisovAvatar.png"
+                                                        <Image Source="user.png"
                                                              Aspect="AspectFill"
                                                              Margin="-20"
                                                              HeightRequest="5"
                                                              WidthRequest="5" />
-                                                </Frame>
-                                                <StackLayout>
-                                                    <Label HorizontalOptions="FillAndExpand" Text="{Binding Path=author.displayName}"></Label>
-                                                    <StackLayout Orientation="Horizontal" VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand">
-                                                        <Label HorizontalOptions="FillAndExpand" FontAttributes="Bold" TextColor="Black" FontSize="16" Text="Сделал запись о работе" VerticalOptions="CenterAndExpand"></Label>
-                                                        <Label HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Text="{Binding Path=Created}"></Label>
+                                                    </Frame>
+                                                    <StackLayout>
+                                                        <Label HorizontalOptions="FillAndExpand" Text="{Binding Path=author.displayName}"></Label>
+                                                        <StackLayout Orientation="Horizontal" VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand">
+                                                            <Label HorizontalOptions="FillAndExpand" FontAttributes="Bold" TextColor="Black" FontSize="16" Text="Сделал запись о работе" VerticalOptions="CenterAndExpand"></Label>
+                                                            <Label HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Text="{Binding Path=Created}"></Label>
+                                                        </StackLayout>
+                                                    </StackLayout>
+                                                </StackLayout>
+                                            </StackLayout>
+                                            <StackLayout Orientation="Horizontal">
+                                                <StackLayout HorizontalOptions="FillAndExpand">
+                                                    <BoxView Color="Black" HeightRequest="1" ></BoxView>
+                                                </StackLayout>
+                                            </StackLayout>
+                                            <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand">
+                                                <StackLayout Orientation="Horizontal">
+                                                    <StackLayout Orientation="Vertical">
+                                                        <Label>Затраченное время</Label>
+                                                        <Label>Комментарий</Label>
+                                                    </StackLayout>
+
+                                                    <StackLayout Orientation="Vertical">
+                                                        <Label Text="{Binding Path=timeSpent}"></Label>
+                                                        <Label Text="{Binding Path=comment}"></Label>
                                                     </StackLayout>
                                                 </StackLayout>
                                             </StackLayout>
                                         </StackLayout>
-                                        <StackLayout Orientation="Horizontal">
-                                            <StackLayout HorizontalOptions="FillAndExpand">
-                                                <BoxView Color="Black" HeightRequest="1" ></BoxView>
-                                            </StackLayout>
-                                        </StackLayout>
-                                        <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand">
-                                            <StackLayout Orientation="Horizontal">
-                                                <StackLayout Orientation="Vertical">
-                                                    <Label>Затраченное время</Label>
-                                                    <Label>Комментарий</Label>
-                                                </StackLayout>
-                                                
-                                                <StackLayout Orientation="Vertical">
-                                                    <Label Text="{Binding Path=timeSpent}"></Label>
-                                                    <Label Text="{Binding Path=comment}"></Label>
-                                                </StackLayout>
-                                            </StackLayout>
-                                        </StackLayout>
-                                    </StackLayout>
-                                </Frame>
+                                    </Frame>
+                                </StackLayout>
                             </ViewCell.View>
                         </ViewCell>
                     </DataTemplate>
