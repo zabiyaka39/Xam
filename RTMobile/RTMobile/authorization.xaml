@@ -18,28 +18,27 @@
                HorizontalOptions="Center"
                VerticalOptions="Center" />
     </Shell.TitleView>
-    <ContentPage.Content>   
+    <ContentPage.Content>
         <StackLayout  VerticalOptions="FillAndExpand" BackgroundColor="White">
 
             <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="White" Padding="20,0,20,0">
-
+                <Label x:Name="errorAuthorization" Text="Логин или пароль введены не верно" TextColor="Red" IsVisible="False" HorizontalOptions="CenterAndExpand"></Label>
                 <Frame BorderColor="Black" CornerRadius="2" Padding="5,5,5,5" Margin="0,10,0,10">
-                    <Entry Placeholder="Логин" BackgroundColor="White" ReturnType="Done">                        
-                    </Entry>
+                    <Entry x:Name="login" Placeholder="Логин" BackgroundColor="White" ReturnType="Done"></Entry>
                 </Frame>
                 <Frame BorderColor="Black" CornerRadius="2" Padding="5,5,5,5">
-                    <Entry Placeholder="Пароль" IsPassword="True" ReturnType="Send"></Entry>
+                    <Entry x:Name="password" Placeholder="Пароль" IsPassword="True" ReturnType="Send"></Entry>
                 </Frame>
                 <!--<StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="FillAndExpand" BackgroundColor="White" Padding="20,20,20,20">-->
-                    <Button HorizontalOptions="FillAndExpand" Margin="0,10,0,0" CornerRadius="8" BackgroundColor="#BE0030" TextColor="White" Text="ВОЙТИ" HeightRequest="60" WidthRequest="20" Clicked="Button_Clicked"></Button>
+                <Button HorizontalOptions="FillAndExpand" Margin="0,10,0,0" CornerRadius="8" BackgroundColor="#BE0030" TextColor="White" Text="ВОЙТИ" HeightRequest="60" WidthRequest="20" Clicked="Button_Clicked"></Button>
                 <!--</StackLayout>-->
                 <StackLayout Margin="0,10,0,0" Orientation="Horizontal" >
-                    <CheckBox HorizontalOptions="Start" Color="#BE0030"></CheckBox>
+                    <CheckBox x:Name="checkSaveAuthorization" HorizontalOptions="Start" Color="#BE0030"></CheckBox>
                     <Label Margin="0,5,0,0" FontSize="Small" HorizontalOptions="Start">Запомнить меня</Label>
                 </StackLayout>
             </StackLayout>
-            
+
         </StackLayout>
-        
+
     </ContentPage.Content>
 </ContentPage>

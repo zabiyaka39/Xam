@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Plugin.Settings;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -37,7 +38,38 @@ namespace RTMobile
 
         private async void Button_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new authorization());
+            if (CrossSettings.Current.GetValueOrDefault<string>("login").Length > 0 && CrossSettings.Current.GetValueOrDefault<string>("password").Length > 0 && CrossSettings.Current.GetValueOrDefault<bool>("saveAuthorizationData"))
+            {
+                Request request = new Request();
+
+                if (request.authorization(CrossSettings.Current.GetValueOrDefault<string>("login"), CrossSettings.Current.GetValueOrDefault<string>("password")))
+                {
+                    CrossSettings.Current.AddOrUpdateValue<string>("tmpLogin", CrossSettings.Current.GetValueOrDefault<string>("login"));
+                    CrossSettings.Current.AddOrUpdateValue<string>("tmpPassword", CrossSettings.Current.GetValueOrDefault<string>("password"));
+                   
+                    var mainPage = new IssuePage();//this could be content page
+                    var rootPage = new NavigationPage(mainPage);
+                    //NavigationPage(new IssuePage());
+                    await Navigation.PushAsync(new IssuePage());
+                }
+                else
+                {
+                    await Navigation.PushAsync(new authorization());
+                }
+            }
+            else
+            {
+                if (CrossSettings.Current.GetValueOrDefault<string>("login").Length > 0)
+                {
+                    CrossSettings.Current.Remove("login");
+                }
+                if (CrossSettings.Current.GetValueOrDefault<string>("password").Length > 0)
+                {
+                    CrossSettings.Current.Remove("password");
+                }
+
+                await Navigation.PushAsync(new authorization());
+            }
             //await Navigation.PushAsync(new IssuePage());
         }
 

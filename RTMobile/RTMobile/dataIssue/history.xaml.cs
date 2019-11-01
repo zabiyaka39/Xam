@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Plugin.Settings;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -32,7 +33,7 @@ namespace RTMobile
         {
             try
             {
-                string getIssue = @"https://sd.rosohrana.ru/rest/api/2/issue/" + issue.key + "?expand=changelog";
+                string getIssue = CrossSettings.Current.GetValueOrDefault<string>("urlServer") + @"/rest/api/2/issue/" + issue.key + "?expand=changelog";
 
                 Request request = new Request(getIssue);
                 RootObject historyIssues = new RootObject();

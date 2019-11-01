@@ -102,8 +102,7 @@
                                 <Frame CornerRadius="10" HasShadow="False"  BackgroundColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Margin="5">
                                     <StackLayout VerticalOptions="StartAndExpand">
                                         <StackLayout Margin=" 0,0,0,10" HorizontalOptions="FillAndExpand" Orientation="Horizontal">
-                                            <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand">
-                                                
+                                            <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand">                                                
                                                 <Frame CornerRadius="50"
                                                        HeightRequest="2"
                                                        WidthRequest="2"
@@ -118,9 +117,9 @@
                                                                 WidthRequest="10" />
                                                 </Frame>
                                                 <StackLayout Orientation="Vertical" HorizontalOptions="Start">
-                                                    <StackLayout.GestureRecognizers>
+                                                    <!--<StackLayout.GestureRecognizers>
                                                         <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
-                                                    </StackLayout.GestureRecognizers>
+                                                    </StackLayout.GestureRecognizers>-->
                                                     <Label x:Name="numberIssue" HorizontalOptions="Start" TextColor="#6666ff" Text="{Binding Path=key}">
                                                     </Label>
                                                     <StackLayout Orientation="Horizontal">
@@ -133,9 +132,9 @@
                                             </StackLayout>
 
                                             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-                                                <StackLayout.GestureRecognizers>
+                                                <!--<StackLayout.GestureRecognizers>
                                                     <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
-                                                </StackLayout.GestureRecognizers>
+                                                </StackLayout.GestureRecognizers>-->
                                                 <Frame HorizontalOptions="EndAndExpand">
                                                     <StackLayout Orientation="Horizontal" Padding="-15,0,-15,0">
                                                         <!--<Image HorizontalOptions="Start"  Source="{Binding Path=fields.status.iconUrl}"></Image>-->
@@ -148,9 +147,9 @@
 
 
                                         <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand" >
-                                            <StackLayout.GestureRecognizers>
+                                            <!--<StackLayout.GestureRecognizers>
                                                 <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
-                                            </StackLayout.GestureRecognizers>
+                                            </StackLayout.GestureRecognizers>-->
                                             <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand">
                                                 <Label HorizontalOptions="FillAndExpand" FontSize="15" TextColor="Black" VerticalOptions="CenterAndExpand" Text="{Binding Path=fields.summary}"></Label>
                                                 <!--<Label HorizontalOptions="End" FontSize="Micro"  Text="0">комментариев</Label>-->

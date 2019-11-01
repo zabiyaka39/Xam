@@ -112,6 +112,12 @@
               "target": "Package",
               "version": "[5.2.0, )"
             },
+            "Microsoft.CodeAnalysis.FxCopAnalyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.9.6, )"
+            },
             "NETStandard.Library": {
               "suppressParent": "All",
               "target": "Package",
@@ -140,7 +146,7 @@
             },
             "Xam.Plugins.Settings": {
               "target": "Package",
-              "version": "[3.1.1, )"
+              "version": "[2.5.8, )"
             },
             "Xamarin.Essentials": {
               "target": "Package",

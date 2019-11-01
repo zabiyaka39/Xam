@@ -1062,8 +1062,6 @@ F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\linksrc\Serenity.Serv
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\linksrc\Xamarin.Forms.Core.pdb
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\linksrc\Xamarin.Forms.Platform.Android.pdb
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\linksrc\Xamarin.Forms.Xaml.pdb
-F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\linksrc\Plugin.Settings.Abstractions.dll.mdb
-F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\linksrc\Plugin.Settings.dll.mdb
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\linksrc\RTMobile.dll.mdb
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\linksrc\Xamarin.Essentials.dll.mdb
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\link.flag
@@ -1142,9 +1140,7 @@ F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\assets\Newton
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\assets\Newtonsoft.Json.dll
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\assets\NUglify.dll
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\assets\Plugin.Settings.Abstractions.dll
-F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\assets\Plugin.Settings.Abstractions.dll.mdb
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\assets\Plugin.Settings.dll
-F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\assets\Plugin.Settings.dll.mdb
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\assets\RTMobile.Android.dll
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\assets\RTMobile.Android.pdb
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\assets\RTMobile.dll
@@ -1610,4 +1606,5 @@ F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\assets\Micros
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\assets\Microsoft.IdentityModel.Tokens.dll
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\assets\System.IdentityModel.Tokens.Jwt.dll
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\assets\System.Security.Cryptography.Cng.dll
+F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\res\drawable\exit.png
 F:\project\RTMobile\RTMobile\RTMobile.Android\bin\Debug\RTMobile.dll.mdb

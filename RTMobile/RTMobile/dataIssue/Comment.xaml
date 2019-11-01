@@ -50,7 +50,7 @@
                                                     </StackLayout>
                                                 </StackLayout>
                                             </StackLayout>
-                                            <Label HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Text="{Binding Path=Created}"></Label>
+                                            <Label HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Text="{Binding Path=created}"></Label>
                                         </StackLayout>
                                     </Frame>
                                 </StackLayout>

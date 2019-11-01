@@ -44,7 +44,7 @@
                                                         <Label HorizontalOptions="FillAndExpand" Text="{Binding Path=author.displayName}"></Label>
                                                         <StackLayout Orientation="Horizontal" VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand">
                                                             <Label HorizontalOptions="FillAndExpand" FontAttributes="Bold" TextColor="Black" FontSize="16" Text="Сделал запись о работе" VerticalOptions="CenterAndExpand"></Label>
-                                                            <Label HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Text="{Binding Path=Created}"></Label>
+                                                            <Label HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Text="{Binding Path=created}"></Label>
                                                         </StackLayout>
                                                     </StackLayout>
                                                 </StackLayout>

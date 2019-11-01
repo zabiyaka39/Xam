@@ -6,10 +6,122 @@
              mc:Ignorable="d"
              x:Class="RTMobile.profile">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Профиль пользователя"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand" Margin="20">
+
+
+            <StackLayout Orientation="Horizontal" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <Frame  Margin="20"
+                    BorderColor="Black"
+                    CornerRadius="50"
+                    HeightRequest="20"
+                    WidthRequest="20"
+                    IsClippedToBounds="True"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="Start">
+                    <Image  Source="user.png"
+                        Aspect="AspectFill"
+                        Margin="-20"
+                        HeightRequest="20"
+                        WidthRequest="20" />
+                </Frame>
+            </StackLayout>
+
+
+
+            <StackLayout VerticalOptions="Start">
+                <StackLayout  HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                    <Label Text="Логин пользователя:"></Label>
+                    <Label x:Name="username" HorizontalOptions="EndAndExpand" Text="noname"></Label>
+                </StackLayout>
+                <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                    <Label HorizontalOptions="FillAndExpand" Text="Полное имя:"></Label>
+                    <Label Text="{Binding rootObject.displayName}" HorizontalOptions="EndAndExpand"></Label>
+                </StackLayout>
+                <StackLayout  HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                    <Label Text="E-mail:"></Label>
+                    <Label x:Name="email" HorizontalOptions="EndAndExpand" Text="{Binding rootObject.emailAddress}"></Label>
+                </StackLayout>
+            </StackLayout>
+
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Группы:" HorizontalOptions="FillAndExpand"></Label>
+                
+                <ListView   HasUnevenRows="True"
+                            ItemsSource="{Binding groups}"
+                            VerticalScrollBarVisibility="Never" 
+                            SeparatorVisibility="None"  
+                            RefreshControlColor="Black">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.View>
+                                    <StackLayout HorizontalOptions="End">
+                                        <Label HorizontalOptions="End" Text="{Binding Path=name}"></Label>
+                                    </StackLayout>
+                                </ViewCell.View>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+            </StackLayout>
+            <!--<StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+
+                        <Label Text="Группы:"></Label>
+                        <ListView x:Name="groupList"
+                                  HorizontalOptions="EndAndExpand"
+                                  HasUnevenRows="True"
+                                  ItemsSource="{Binding groups}"
+                                  VerticalScrollBarVisibility="Never" 
+                                  SeparatorVisibility="None"  
+                                  RefreshControlColor="Black">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <ViewCell.View>                                           
+                                            <StackLayout>
+                                                <Label Text="{Binding Path=name}"></Label>
+                                            </StackLayout>
+                                        </ViewCell.View>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+
+                </StackLayout>-->
+
+
+
+
+            <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand">
+                <Switch IsToggled="false">
+                </Switch>
+                <Label Text="Автоматический выход после закрытия приложения"></Label>
+            </StackLayout>
+
+
+
+
+            <Frame  Margin="10"
+                    BorderColor="Black"
+                    HeightRequest="20"
+                    IsClippedToBounds="True"
+                    HorizontalOptions="End"
+                    VerticalOptions="End">
+                <StackLayout Orientation="Horizontal">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                    </StackLayout.GestureRecognizers>
+                    <Image  Source="exit.png"
+                        Aspect="AspectFill"
+                        HeightRequest="15"
+                        WidthRequest="20"
+                            Margin="0, 0, 15, 0"/>
+                    <Label TextColor="Black" Text="Выйти"></Label>
+                </StackLayout>
+            </Frame>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -114,13 +114,17 @@ namespace RTMobile
         /// <param name="e"></param>
         private async void TapGestureRecognizer_Tapped(object sender, EventArgs e)
         {
-            //Issue selectedIssue = sender as Issue;
-            //if (selectedIssue != null)
-            //{
-            //    await Navigation.PushAsync(new general(selectedIssue));
-            //    //await DisplayAlert("Выбранная модель", $"{selectedIssue.key}", "OK");
-            //}
-            //((ListView)sender).SelectedItem = null;
+            Issue selectedIssue = sender as Issue;
+            Console.WriteLine("sdadasdsadadasd" + selectedIssue.key);
+            if (selectedIssue != null)
+            {
+                await DisplayAlert("Выбранная модель", $"{selectedIssue.key}", "OK");
+
+                //        await Navigation.PushAsync(new general(selectedIssue));
+                //        //await DisplayAlert("Выбранная модель", $"{selectedIssue.key}", "OK");
+                //    }
+                //    ((ListView)sender).SelectedItem = null;
+            }
         }
         /// <summary>
         /// Кнопка перехода к профилю

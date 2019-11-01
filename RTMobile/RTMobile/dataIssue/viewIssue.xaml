@@ -16,9 +16,9 @@
                 <Frame BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Start">
                     <StackLayout>
                         <StackLayout>
-                            <StackLayout.GestureRecognizers>
+                            <!--<StackLayout.GestureRecognizers>
                                 <TapGestureRecognizer Tapped="ButtonDetailIssue_Clicked"/>
-                            </StackLayout.GestureRecognizers>
+                            </StackLayout.GestureRecognizers>-->
                             <StackLayout Orientation="Horizontal">
                                 <Image Source="detailIssue.png" HeightRequest="20"/>
                                 <Label HorizontalOptions="FillAndExpand">Детали задачи</Label>
@@ -61,11 +61,11 @@
                             </StackLayout>-->
                             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
                                 <Label HorizontalOptions="FillAndExpand">Создана</Label>
-                                <Label Text="{Binding Path=issue.fields.Created}"></Label>
+                                <Label Text="{Binding Path=issue.fields.created}"></Label>
                             </StackLayout>
                             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
                                 <Label HorizontalOptions="FillAndExpand">Обновлена</Label>
-                                <Label Text="{Binding Path=issue.fields.Updated}"></Label>
+                                <Label Text="{Binding Path=issue.fields.updated}"></Label>
                             </StackLayout>
                             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
                                 <Label HorizontalOptions="FillAndExpand">SLA</Label>

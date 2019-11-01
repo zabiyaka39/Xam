@@ -5,6 +5,7 @@ using System.Text;
 
 namespace RTMobile
 {
+   
     /// <summary>
     /// Класс хранящий JSON запрос для поиска задач
     /// </summary>
@@ -50,13 +51,13 @@ namespace RTMobile
     {
         public string id { get; set; }
         public Author author { get; set; }
-        private string created { get; set; }
-        public string Created
+        private string _created { get; set; }
+        public string сreated
         {
-            get { return created; }
+            get { return _created; }
             set
             {
-                created = (Convert.ToDateTime(value)).ToString("dd.MM.yyyy hh:mm");
+                _created = (Convert.ToDateTime(value)).ToString("dd.MM.yyyy hh:mm");
             }
         }
         public List<Item> items { get; set; }
@@ -67,6 +68,7 @@ namespace RTMobile
     /// </summary>
     public class Item
     {
+        public string name { get; set; }
         public string field { get; set; }
         public string fieldtype { get; set; }
         public string from { get; set; }
@@ -129,6 +131,7 @@ namespace RTMobile
         public bool includeArchived { get; set; }
         public AvatarUrls avatarUrls { get; set; }
         public string projectTypeKey { get; set; }
+        public List<Issuetype> issuetypes { get; set; }
     }
 
     public class Watches
@@ -193,22 +196,22 @@ namespace RTMobile
         public Author author { get; set; }
         public string body { get; set; }
         public UpdateAuthor updateAuthor { get; set; }
-        private string created { get; set; }
-        public string Created
+        private string _created { get; set; }
+        public string сreated
         {
-            get { return created; }
+            get { return _created; }
             set
             {
-                created = (Convert.ToDateTime(value)).ToString("dd.MM.yyyy hh:mm");
+                _created = (Convert.ToDateTime(value)).ToString("dd.MM.yyyy hh:mm");
             }
         }
-        private string updated { get; set; }
-        public string Updated
+        private string _updated { get; set; }
+        public string updated
         {
-            get { return updated; }
+            get { return _updated; }
             set
             {
-                updated = (Convert.ToDateTime(value)).ToString("dd.MM.yyyy hh:mm");
+                _updated = (Convert.ToDateTime(value)).ToString("dd.MM.yyyy hh:mm");
             }
         }
         public List<Property> properties { get; set; }
@@ -237,31 +240,31 @@ namespace RTMobile
         public Author author { get; set; }
         public UpdateAuthor updateAuthor { get; set; }
         public string comment { get; set; }
-        private string created { get; set; }
-        public string Created
+        private string _created { get; set; }
+        public string created
         {
-            get { return created; }
+            get { return _created; }
             set
             {
-                created = (Convert.ToDateTime(value)).ToString("dd.MM.yyyy hh:mm");
+                _created = (Convert.ToDateTime(value)).ToString("dd.MM.yyyy hh:mm");
             }
         }
-        private string updated { get; set; }
-        public string Updated
+        private string _updated { get; set; }
+        public string updated
         {
-            get { return updated; }
+            get { return _updated; }
             set
             {
-                updated = (Convert.ToDateTime(value)).ToString("dd.MM.yyyy hh:mm");
+                _updated = (Convert.ToDateTime(value)).ToString("dd.MM.yyyy hh:mm");
             }
         }
-        private string started { get; set; }
-        public string Started
+        private string _started { get; set; }
+        public string started
         {
-            get { return started; }
+            get { return _started; }
             set
             {
-                started = (Convert.ToDateTime(value)).ToString("dd.MM.yyyy hh:mm");
+                _started = (Convert.ToDateTime(value)).ToString("dd.MM.yyyy hh:mm");
             }
         }
         public string timeSpent { get; set; }
@@ -318,13 +321,13 @@ namespace RTMobile
         public string resolutiondate { get; set; }
         public Watches watches { get; set; }
 
-        private string updated;
-        public string Updated
+        private string _updated;
+        public string updated
         {
-            get { return updated; }
+            get { return _updated; }
             set
             {
-                updated = (Convert.ToDateTime(value)).ToString("dd.MM.yyyy hh:mm");
+                _updated = (Convert.ToDateTime(value)).ToString("dd.MM.yyyy hh:mm");
             }
         }
         public string description { get; set; }
@@ -333,13 +336,13 @@ namespace RTMobile
         public Status status { get; set; }
         public Creator creator { get; set; }
 
-        private string created;
-        public string Created
+        private string _created;
+        public string created
         {
-            get { return created; }
+            get { return _created; }
             set
             {
-                created = (Convert.ToDateTime(value)).ToString("dd.MM.yyyy hh:mm");
+                _created = (Convert.ToDateTime(value)).ToString("dd.MM.yyyy hh:mm");
             }
         }
         public List<Issuelink> issuelinks { get; set; }
@@ -355,21 +358,34 @@ namespace RTMobile
 
     public class RootObject
     {
+        public List<string> errorMessages { get; set; }
+        public List<Watcher> watchers { get; set; }
+        public List<Worklog> worklogs { get; set; }
+        public List<Project> projects { get; set; }
+        public List<Issue> issues { get; set; }
+        public List<Comment> comments { get; set; }
+        public Changelog changelog { get; set; }
+        public Session session { get; set; }
+        public LoginInfo loginInfo { get; set; }
+        public Groups groups { get; set; }
+        public AvatarUrls avatarUrls { get; set; }
+        public ApplicationRoles applicationRoles { get; set; }
         public int id { get; set; }
         public string expand { get; set; }
         public int startAt { get; set; }
         public int maxResults { get; set; }
         public int total { get; set; }
-        public List<Issue> issues { get; set; }
-        public List<Comment> comments { get; set; }
         public bool isWatching { get; set; }
         public string watchCount { get; set; }
-        public List<Watcher> watchers { get; set; }
-        public List<Worklog> worklogs { get; set; }
-        public Changelog changelog { get; set; }
         public string self { get; set; }
         public string key { get; set; }
         public string name { get; set; }
-
+        public string emailAddress { get; set; }       
+        public string displayName { get; set; }
+        public bool active { get; set; }
+        public string timeZone { get; set; }
+        public string locale { get; set; }
+       
+        
     }
 }
