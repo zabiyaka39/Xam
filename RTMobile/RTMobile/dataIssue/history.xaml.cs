@@ -40,8 +40,6 @@ namespace RTMobile
                 historyIssues = request.GetResponses(getIssue);
               
                 histories = historyIssues.changelog.histories;
-
-
             }
             catch (Exception ex)
             {

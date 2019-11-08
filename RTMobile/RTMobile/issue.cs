@@ -177,6 +177,18 @@ namespace RTMobile
     public class Value
     {
         public bool Internal { get; set; }
+        public string id { get; set; }
+        public string name { get; set; }
+        public string description { get; set; }
+        public string type { get; set; }
+        public string searcherKey { get; set; }
+        public string self { get; set; }
+        public int numericId { get; set; }
+        public bool isLocked { get; set; }
+        public bool isManaged { get; set; }
+        public bool isAllProjects { get; set; }
+        public int projectsCount { get; set; }19
+        public int screensCount { get; set; }
     }
     /// <summary>
     /// Класс настроек комментариев

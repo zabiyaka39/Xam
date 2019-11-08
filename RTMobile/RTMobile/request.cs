@@ -163,7 +163,6 @@ namespace RTMobile
 
             return rootObject;
         }
-
         public RootObject GetResponsersProfile()
         {
             RootObject rootObject = new RootObject();
@@ -193,8 +192,6 @@ namespace RTMobile
 
             return rootObject;
         }
-
-
         public RootObject GetResponses(string getIssue)
         {
             RootObject rootObject = new RootObject();
@@ -209,6 +206,87 @@ namespace RTMobile
 
 
             return rootObject;
+        }
+        /// <summary>
+        /// Получаем список названий полей и значений задачи
+        /// </summary>
+        /// <returns></returns>
+        public Dictionary<string, string> GetCustomField()
+        {
+            Dictionary<string, string> keyValuePairsField = new Dictionary<string, string>();
+
+            var httpResponse = this.httpWebRequest.GetResponse();
+            RootObject rootObject = new RootObject();
+            //Отправляем запрос для получения списка полей задачи
+            using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+            {
+                //читаем поток
+                var result = streamReader.ReadToEnd();
+                //Создаем JAVA серелиазатор для возможности чтения элементов по названию, а не по полю класса, т.к. нам заранее не известны названия и количество полей в задаче и их количество может меняться
+                JavaScriptSerializer js = new JavaScriptSerializer();
+                //десериализуем в переменную с типом dynamic
+                dynamic objectCustomField = js.Deserialize<dynamic>(result);
+
+                //проходимся по всем полученным customField и получаем значения
+                foreach (System.Collections.Generic.KeyValuePair<string, object> field in objectCustomField["fields"])
+                {
+                    //Определяем тип выбранного поля
+                    switch (objectCustomField["schema"][field.Key]["type"])
+                    {
+                        //Добавляем customField если это выпадающий список
+                        case "option":
+                            {
+                                //проверяем на наличие заполнения поля
+                                if (field.Value != null)
+                                {
+                                    dynamic keyValue = field.Value;
+                                    foreach (System.Collections.Generic.KeyValuePair<string, object> valueCustomFeildOption in keyValue)
+                                    {
+                                        //ищем поле value для получения значения
+                                        if (valueCustomFeildOption.Key == "value")
+                                        {
+                                            keyValuePairsField.Add(objectCustomField["names"][field.Key], valueCustomFeildOption.Value.ToString());
+                                        }
+                                    }
+                                }
+                                break;
+                            }
+                        //Добавляем customField если это перечисление нескольких элементов (например insight)
+                        case "any":
+                            {
+                                if (field.Value != null)
+                                {
+                                    dynamic keyValue = field.Value;
+                                    string arrayElement = "";
+                                    foreach (var arrayCustomField in keyValue)
+                                    {
+                                        arrayElement += arrayCustomField + "\n";
+                                    }
+
+                                    keyValuePairsField.Add(objectCustomField["names"][field.Key], arrayElement);
+                                }
+                                break;
+                            }
+                        //Добавляем customField если это число или строка
+                        case "number":
+                        case "string":
+                            {
+                                if (field.Value != null)
+                                {
+                                    //Убираем пустые элементы
+                                    if (field.Value.ToString().Trim(' ') != "")
+                                    {
+                                        keyValuePairsField.Add(objectCustomField["names"][field.Key], field.Value.ToString());
+                                    }
+                                }
+                                break;
+                            }
+                    }
+
+                }
+
+            }
+            return keyValuePairsField;
         }
 
 

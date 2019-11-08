@@ -21,7 +21,6 @@ namespace RTMobile
             //((NavigationPage)Application.Current.MainPage).BarBackgroundColor = Color.Wheat;
             //((NavigationPage)Application.Current.MainPage).BarTextColor = Color.Black;
             //((NavigationPage)Application.Current.MainPage).Title = "Задача";
-
             this.BindingContext = this;
         }
 
@@ -30,7 +29,7 @@ namespace RTMobile
             InitializeComponent();
             //((NavigationPage)Application.Current.MainPage).BarBackgroundColor = Color.Wheat;
             //((NavigationPage)Application.Current.MainPage).BarTextColor = Color.Black;
-            //((NavigationPage)Application.Current.MainPage).Title = "Задача";           
+            //((NavigationPage)Application.Current.MainPage).Title = "Задача";          
 
             issue = issues;
             warchersIssue();
@@ -68,14 +67,12 @@ namespace RTMobile
                 buttonDetailIssue.Source = "arrowDown.png";
             }
         }
-
         private void ButtonDescriptionIssue_Clicked(object sender, EventArgs e)
         {
             if (descriptionIssue.IsVisible == false)
             {
                 descriptionIssue.IsVisible = true;
                 buttonDescriptionIssue.Source = "arrowUp.png";
-
             }
             else
             {
