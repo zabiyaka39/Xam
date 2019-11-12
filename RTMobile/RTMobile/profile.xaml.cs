@@ -32,10 +32,10 @@ namespace RTMobile
             CrossSettings.Current.Remove("tmpPassword");
             CrossSettings.Current.Remove("CookieAuthJira");
             CrossSettings.Current.Remove("saveAuthorizationData");
-            await Navigation.PopToRootAsync();
+            await Navigation.PopToRootAsync().ConfigureAwait(true);
         }
 
-        async void issueStartPostRequest()
+        void issueStartPostRequest()
         {
             try
             {
@@ -46,8 +46,6 @@ namespace RTMobile
 
                 groups = rootObject.groups.items;
                 username.Text = CrossSettings.Current.GetValueOrDefault<string>("tmpLogin");
-
-
             }
             catch (Exception ex)
             {

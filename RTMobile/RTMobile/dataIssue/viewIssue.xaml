@@ -7,70 +7,52 @@
              x:Class="RTMobile.viewIssue">
     <ContentPage.Content>
         <ScrollView BackgroundColor="#f9f9f9">
-            <StackLayout BindableLayout.ItemsSource="{Binding issue}">  
+            <StackLayout BindableLayout.ItemsSource="{Binding issue}">
                 <Frame MinimumHeightRequest="5">
                     <Label x:Name="summary" VerticalOptions="Center" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" Text="{Binding Path=issue.fields.summary}"></Label>
                 </Frame>
-
+                
                 <!--Раздел с Деталями задачи-->
-                <Frame BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Start">
-                    <StackLayout>
+                <Frame BackgroundColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
+                    <StackLayout VerticalOptions="Start">
                         <StackLayout>
-                            <!--<StackLayout.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="ButtonDetailIssue_Clicked"/>
-                            </StackLayout.GestureRecognizers>-->
                             <StackLayout Orientation="Horizontal">
                                 <Image Source="detailIssue.png" HeightRequest="20"/>
                                 <Label HorizontalOptions="FillAndExpand">Детали задачи</Label>
                             </StackLayout>
-                            <StackLayout Orientation="Horizontal" >                                
+                            <StackLayout Orientation="Horizontal" >
                                 <StackLayout HorizontalOptions="FillAndExpand" Padding="0,5,0,0" >
                                     <BoxView Color="Black" HeightRequest="1"></BoxView>
                                 </StackLayout>
                                 <ImageButton x:Name="buttonDetailIssue" Clicked="ButtonDetailIssue_Clicked" Source="arrowUp.png" BackgroundColor="Transparent"></ImageButton>
                             </StackLayout>
                         </StackLayout>
-                        <StackLayout x:Name="detailIssueData" Orientation="Vertical">
-                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-                                <Label HorizontalOptions="FillAndExpand" x:Name="typelabel">Тип</Label>
-                                <Label HorizontalOptions="End" Text="{Binding Path=issue.fields.issuetype.name}"></Label>
-                            </StackLayout>
-                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-                                <Label HorizontalOptions="FillAndExpand">Приортет</Label>
-                                <Label  Text="{Binding Path=issue.fields.priority.name}"></Label>
-                            </StackLayout >
+                        
+                        <StackLayout x:Name="detailIssueData" Orientation="Vertical" VerticalOptions="Start">
                             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
                                 <Label HorizontalOptions="FillAndExpand">Статус</Label>
                                 <Label Text="{Binding Path=issue.fields.status.name}"></Label>
                             </StackLayout>
-                            <!--<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-                                <Label HorizontalOptions="FillAndExpand">Источник обращения</Label>
-                                <Label>Клиент ЮЛ</Label>
-                            </StackLayout>-->
-                            <!--<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-                                <Label HorizontalOptions="FillAndExpand">Причина обращения</Label>
-                                <Label>Разработка</Label>
-                            </StackLayout>-->
-                            <!--<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-                                <Label HorizontalOptions="FillAndExpand">Контакты</Label>
-                                <Label>Тел.: +7(999)1234567</Label>
-                            </StackLayout>-->
-                            <!--<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-                                <Label HorizontalOptions="FillAndExpand">Клиент</Label>
-                                <Label>Попов Петр Петрович</Label>
-                            </StackLayout>-->
-                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-                                <Label HorizontalOptions="FillAndExpand">Создана</Label>
-                                <Label Text="{Binding Path=issue.fields.created}"></Label>
-                            </StackLayout>
-                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-                                <Label HorizontalOptions="FillAndExpand">Обновлена</Label>
-                                <Label Text="{Binding Path=issue.fields.updated}"></Label>
-                            </StackLayout>
-                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-                                <Label HorizontalOptions="FillAndExpand">SLA</Label>
-                                <Label Text="{Binding Path=issue.fields.customfield_10217.ongoingCycle.remainingTime}"></Label>
-                            </StackLayout>
+                            <ListView   x:Name="listDetailIssue"
+                                        HasUnevenRows="True"
+                                        ItemsSource="{Binding fieldIssue}"
+                                        VerticalScrollBarVisibility="Never" 
+                                        SeparatorVisibility="None"  
+                                        RefreshControlColor="Black">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ViewCell>
+                                            <ViewCell.View>                                               
+                                                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Margin="0,15,0,0">
+                                                    <Label HorizontalOptions="FillAndExpand" Text="{Binding Path = name}"></Label>
+                                                    <Label HorizontalOptions="End" Text="{Binding Path=value}"></Label>
+                                                    <!--<Label HorizontalOptions="End" Text="111"></Label>-->
+                                                </StackLayout>
+                                            </ViewCell.View>
+                                        </ViewCell>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
                         </StackLayout>
                     </StackLayout>
                 </Frame>
@@ -85,7 +67,7 @@
                                 <Image Source="description.png" HeightRequest="20"/>
                                 <Label HorizontalOptions="FillAndExpand">Описание</Label>
                             </StackLayout>
-                            <StackLayout Orientation="Horizontal" >                                
+                            <StackLayout Orientation="Horizontal" >
                                 <StackLayout HorizontalOptions="FillAndExpand" Padding="0,5,0,0" >
                                     <BoxView Color="Black" HeightRequest="1"></BoxView>
                                 </StackLayout>
@@ -101,25 +83,25 @@
                     </StackLayout>
                 </Frame>
                 <!--Раздел с вложенными файлами-->
-                    <Frame BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Start">
+                <Frame BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Start">
                     <StackLayout Orientation="Vertical">
                         <StackLayout>
-                        <StackLayout.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="ButtonFileIssue_Clicked"/>
-                        </StackLayout.GestureRecognizers>
-                        <StackLayout Orientation="Horizontal">
-                            <Image Source="folderFile.png" HeightRequest="20"/>
-                            <Label HorizontalOptions="FillAndExpand">Вложенные файлы</Label>
-                        </StackLayout>
-                        <StackLayout Orientation="Horizontal">
-                            <StackLayout HorizontalOptions="FillAndExpand" Padding="0,5,0,0" >
-                            <BoxView Color="Black" HeightRequest="1"></BoxView>
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="ButtonFileIssue_Clicked"/>
+                            </StackLayout.GestureRecognizers>
+                            <StackLayout Orientation="Horizontal">
+                                <Image Source="folderFile.png" HeightRequest="20"/>
+                                <Label HorizontalOptions="FillAndExpand">Вложенные файлы</Label>
                             </StackLayout>
-                            <ImageButton x:Name="buttonFileIssue" Clicked="ButtonFileIssue_Clicked" Source="arrowUp.png" BackgroundColor="Transparent"></ImageButton>
-                        </StackLayout>
+                            <StackLayout Orientation="Horizontal">
+                                <StackLayout HorizontalOptions="FillAndExpand" Padding="0,5,0,0" >
+                                    <BoxView Color="Black" HeightRequest="1"></BoxView>
+                                </StackLayout>
+                                <ImageButton x:Name="buttonFileIssue" Clicked="ButtonFileIssue_Clicked" Source="arrowUp.png" BackgroundColor="Transparent"></ImageButton>
+                            </StackLayout>
                         </StackLayout>
                         <StackLayout x:Name="fileIssue" Orientation="Vertical">
-                        <ScrollView Orientation="Horizontal">
+                            <ScrollView Orientation="Horizontal">
                                 <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="10">
                                     <Frame  IsClippedToBounds="True"
                                            HorizontalOptions="Center"
@@ -167,14 +149,14 @@
                                         <Image  Aspect="AspectFill" Source="image3.jpg"></Image>
                                     </Frame>
                                 </StackLayout>
-                        </ScrollView>
-                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-                            <Image  Source="addFile.png" HeightRequest="20"></Image>
-                            <Label>Добавить вложение</Label>
-                        </StackLayout>
+                            </ScrollView>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                                <Image  Source="addFile.png" HeightRequest="20"></Image>
+                                <Label>Добавить вложение</Label>
+                            </StackLayout>
                         </StackLayout>
                     </StackLayout>
-                    </Frame>                                   
+                </Frame>
                 <!--Раздел с Людьми-->
                 <Frame BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Start">
                     <StackLayout>
@@ -246,7 +228,7 @@
                                 <Label HorizontalOptions="StartAndExpand">Наблюдатели</Label>
                                 <Frame BackgroundColor="blue" Padding="2" HorizontalOptions="Center" WidthRequest="20" HeightRequest="20" CornerRadius="50">
                                     <Label x:Name="countWatchers" TextColor="White" WidthRequest="40" HorizontalTextAlignment="Center"></Label>
-                                </Frame>                                
+                                </Frame>
                                 <Label BackgroundColor="Transparent" TextColor="Blue"  Text="Просмотреть наблюдателей" HorizontalOptions="End">
                                     <Label.GestureRecognizers>
                                         <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"></TapGestureRecognizer>

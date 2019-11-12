@@ -25,7 +25,7 @@ namespace RTMobile
 
         private async void Button_Clicked(object sender, EventArgs e)
         {
-            Request request = new Request();            
+            Request request = new Request();
 
             if (request.authorization(login.Text.Trim(' '), password.Text))
             {
@@ -44,10 +44,10 @@ namespace RTMobile
                     CrossSettings.Current.AddOrUpdateValue<bool>("saveAuthorizationData", checkSaveAuthorization.IsChecked);                  
                 }
                 errorAuthorization.IsVisible = false;
-                var mainPage = new IssuePage();//this could be content page
-                var rootPage = new NavigationPage(mainPage);
+                //var mainPage = new IssuePage();//this could be content page
+                //var rootPage = new NavigationPage(mainPage);
                 //NavigationPage(new IssuePage());
-                await Navigation.PushAsync(new IssuePage());
+                await Navigation.PushAsync(new IssuePage()).ConfigureAwait(true);
             }
             else
             {

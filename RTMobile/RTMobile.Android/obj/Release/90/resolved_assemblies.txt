@@ -59,12 +59,17 @@ F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Release\90\android\assets\Micr
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Release\90\android\assets\Microsoft.Extensions.Logging.Abstractions.dll
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Release\90\android\assets\Microsoft.Extensions.ObjectPool.dll
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Release\90\android\assets\Microsoft.Extensions.Options.dll
+F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Release\90\android\assets\Microsoft.Extensions.PlatformAbstractions.dll
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Release\90\android\assets\Microsoft.Extensions.Primitives.dll
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Release\90\android\assets\Microsoft.Extensions.WebEncoders.dll
+F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Release\90\android\assets\Microsoft.IdentityModel.JsonWebTokens.dll
+F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Release\90\android\assets\Microsoft.IdentityModel.Logging.dll
+F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Release\90\android\assets\Microsoft.IdentityModel.Tokens.dll
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Release\90\android\assets\Microsoft.Net.Http.Headers.dll
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Release\90\android\assets\Microsoft.Win32.Registry.dll
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Release\90\android\assets\Mono.Android.dll
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Release\90\android\assets\mscorlib.dll
+F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Release\90\android\assets\Nancy.dll
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Release\90\android\assets\Newtonsoft.Json.Bson.dll
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Release\90\android\assets\Newtonsoft.Json.dll
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Release\90\android\assets\NUglify.dll
@@ -81,6 +86,7 @@ F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Release\90\android\assets\Syst
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Release\90\android\assets\System.Core.dll
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Release\90\android\assets\System.Diagnostics.DiagnosticSource.dll
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Release\90\android\assets\System.dll
+F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Release\90\android\assets\System.IdentityModel.Tokens.Jwt.dll
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Release\90\android\assets\System.Net.Http.dll
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Release\90\android\assets\System.Numerics.dll
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Release\90\android\assets\System.Reflection.Metadata.dll

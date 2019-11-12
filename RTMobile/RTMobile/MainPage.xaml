@@ -14,14 +14,13 @@
         
         <StackLayout BackgroundColor= "#ffffff" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
             <StackLayout VerticalOptions="Start" HorizontalOptions="End" Margin="20">
-                <Button  WidthRequest="24" HeightRequest="24" ImageSource= "@drawable/settings" BackgroundColor="Transparent"/>
+                <Button  WidthRequest="24" HeightRequest="24" ImageSource= "@drawable/settings" BackgroundColor="Transparent" Clicked="Button_Clicked_2"/>
             </StackLayout>
 
             <StackLayout  VerticalOptions="CenterAndExpand" HorizontalOptions="Center" >
                 <Frame VerticalOptions="Center" CornerRadius="100" HasShadow="true">
                     <Image  Source="@drawable/RosohranaLogo"  BackgroundColor="Transparent" 
-                            WidthRequest="240"  HeightRequest ="240" />
-                    
+                            WidthRequest="240"  HeightRequest ="240" />                    
                 </Frame> 
             </StackLayout>
 

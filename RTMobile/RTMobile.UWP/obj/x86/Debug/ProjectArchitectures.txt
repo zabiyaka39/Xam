@@ -1,1 +1,0 @@
-F:\project\RTMobile\RTMobile\RTMobile.UWP\RTMobile.UWP.csproj;x86

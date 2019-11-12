@@ -1,8 +1,11 @@
-﻿using Newtonsoft.Json;
+﻿//using Nancy.Json;
+using Nancy.Json;
+using Newtonsoft.Json;
 using Plugin.Settings;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
+//using System.Web.Script.Serialization;
 using System.IO;
 using System.Net;
 using System.Text;
@@ -32,6 +35,7 @@ namespace RTMobile
             authorization.password = password;
 
             this.httpWebRequest = (HttpWebRequest)WebRequest.Create(CrossSettings.Current.GetValueOrDefault<string>("urlServer") + "/rest/auth/1/session");
+            this.httpWebRequest.Headers.Add(HttpRequestHeader.Authorization, "Basic " + Convert.ToBase64String(Encoding.Default.GetBytes(login + ":" + password)));
 
             this.httpWebRequest.ContentType = "application/json";
             this.httpWebRequest.Method = "POST";
@@ -42,7 +46,14 @@ namespace RTMobile
             try
             {
                 rootObject = this.GetResponses();
-                return true;
+                if (rootObject.session.name != null)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
             catch (Exception ex)
             {
@@ -60,6 +71,7 @@ namespace RTMobile
         /// <param name="issueJSONSearch"></param>
         public Request(IssueJSONSearch issueJSONSearch)
         {
+            //CrossSettings.Current.AddOrUpdateValue<string>("urlServer", "https://sd.rosohrana.ru");
             this.httpWebRequest = (HttpWebRequest)WebRequest.Create(CrossSettings.Current.GetValueOrDefault<string>("urlServer") + "/rest/api/2/search?");
             this.httpWebRequest.ContentType = "application/json";
             this.httpWebRequest.Method = "POST";
@@ -132,13 +144,20 @@ namespace RTMobile
                     streamWriter.Write(this.json);
                 }
             }
-
-            var httpResponse = this.httpWebRequest.GetResponse();
-
-            using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+            try
             {
-                var result = streamReader.ReadToEnd();
-                rootObject = JsonConvert.DeserializeObject<RootObject>(result);
+                var httpResponse = this.httpWebRequest.GetResponse();
+
+                using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+                {
+                    var result = streamReader.ReadToEnd();
+                    Console.WriteLine(result);
+                    rootObject = JsonConvert.DeserializeObject<RootObject>(result);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("1111111111111111111111" + ex.Message);
             }
 
             return rootObject;
@@ -211,8 +230,10 @@ namespace RTMobile
         /// Получаем список названий полей и значений задачи
         /// </summary>
         /// <returns></returns>
-        public Dictionary<string, string> GetCustomField()
+        public List<Fields> GetCustomField()
         {
+            List<Fields> fields = new List<Fields>();
+
             Dictionary<string, string> keyValuePairsField = new Dictionary<string, string>();
 
             var httpResponse = this.httpWebRequest.GetResponse();
@@ -245,7 +266,11 @@ namespace RTMobile
                                         //ищем поле value для получения значения
                                         if (valueCustomFeildOption.Key == "value")
                                         {
-                                            keyValuePairsField.Add(objectCustomField["names"][field.Key], valueCustomFeildOption.Value.ToString());
+                                            Fields tmpFiled = new Fields();
+                                            tmpFiled.name = objectCustomField["names"][field.Key];
+                                            tmpFiled.value = valueCustomFeildOption.Value.ToString();
+                                            fields.Add(tmpFiled);
+                                            //keyValuePairsField.Add(objectCustomField["names"][field.Key], valueCustomFeildOption.Value.ToString());
                                         }
                                     }
                                 }
@@ -262,8 +287,12 @@ namespace RTMobile
                                     {
                                         arrayElement += arrayCustomField + "\n";
                                     }
-
-                                    keyValuePairsField.Add(objectCustomField["names"][field.Key], arrayElement);
+                                    arrayElement = arrayElement.Trim('\n');
+                                    Fields tmpFiled = new Fields();
+                                    tmpFiled.name = objectCustomField["names"][field.Key];
+                                    tmpFiled.value = arrayElement.ToString();
+                                    fields.Add(tmpFiled);
+                                    //keyValuePairsField.Add(objectCustomField["names"][field.Key], arrayElement);
                                 }
                                 break;
                             }
@@ -274,9 +303,16 @@ namespace RTMobile
                                 if (field.Value != null)
                                 {
                                     //Убираем пустые элементы
-                                    if (field.Value.ToString().Trim(' ') != "")
+                                    if (field.Value.ToString().Trim(' ').Length >0 )
                                     {
-                                        keyValuePairsField.Add(objectCustomField["names"][field.Key], field.Value.ToString());
+                                        if (field.Key.ToLower() !="description" && field.Key.ToLower() != "summary" )
+                                        {
+                                            Fields tmpFiled = new Fields();
+                                            tmpFiled.name = objectCustomField["names"][field.Key];
+                                            tmpFiled.value = field.Value.ToString();
+                                            fields.Add(tmpFiled);
+                                            //keyValuePairsField.Add(objectCustomField["names"][field.Key], field.Value.ToString());
+                                        }
                                     }
                                 }
                                 break;
@@ -286,7 +322,7 @@ namespace RTMobile
                 }
 
             }
-            return keyValuePairsField;
+            return fields;
         }
 
 

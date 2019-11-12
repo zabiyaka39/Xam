@@ -31,9 +31,6 @@ namespace RTMobile
 
             //};
             //ToolbarItems.Add(toolbar);
-
-
-
         }
 
         private async void Button_Clicked(object sender, EventArgs e)
@@ -47,14 +44,14 @@ namespace RTMobile
                     CrossSettings.Current.AddOrUpdateValue<string>("tmpLogin", CrossSettings.Current.GetValueOrDefault<string>("login"));
                     CrossSettings.Current.AddOrUpdateValue<string>("tmpPassword", CrossSettings.Current.GetValueOrDefault<string>("password"));
                    
-                    var mainPage = new IssuePage();//this could be content page
-                    var rootPage = new NavigationPage(mainPage);
+                    //var mainPage = new IssuePage();//this could be content page
+                    //var rootPage = new NavigationPage(mainPage);
                     //NavigationPage(new IssuePage());
-                    await Navigation.PushAsync(new IssuePage());
+                    await Navigation.PushAsync(new IssuePage()).ConfigureAwait(true);
                 }
                 else
                 {
-                    await Navigation.PushAsync(new authorization());
+                    await Navigation.PushAsync(new authorization()).ConfigureAwait(true);
                 }
             }
             else
@@ -68,14 +65,19 @@ namespace RTMobile
                     CrossSettings.Current.Remove("password");
                 }
 
-                await Navigation.PushAsync(new authorization());
+                await Navigation.PushAsync(new authorization()).ConfigureAwait(true);
             }
             //await Navigation.PushAsync(new IssuePage());
         }
 
         private async void Button_Clicked_1(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new about());
+            await Navigation.PushAsync(new about()).ConfigureAwait(true);
+        }
+
+        private async void Button_Clicked_2(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new settingsRT()).ConfigureAwait(true);
         }
     }
 }

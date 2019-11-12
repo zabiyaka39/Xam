@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Plugin.Settings;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,15 +13,17 @@ namespace RTMobile
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class viewIssue : ContentPage
     {
+        public List<Fields> fieldIssue { get; set; }
         public Issue issue { get; set; }
         private RootObject watchers = new RootObject();
+        List<string> keyField { get; set; }
+        List<string> valueField { get; set; }
         public viewIssue()
         {
             InitializeComponent();
             //((NavigationPage)Application.Current.MainPage).BarBackgroundColor = Color.Wheat;
             //((NavigationPage)Application.Current.MainPage).BarTextColor = Color.Black;
             //((NavigationPage)Application.Current.MainPage).Title = "Задача";
-
             this.BindingContext = this;
         }
 
@@ -29,9 +32,14 @@ namespace RTMobile
             InitializeComponent();
             //((NavigationPage)Application.Current.MainPage).BarBackgroundColor = Color.Wheat;
             //((NavigationPage)Application.Current.MainPage).BarTextColor = Color.Black;
-            //((NavigationPage)Application.Current.MainPage).Title = "Задача";           
+            //((NavigationPage)Application.Current.MainPage).Title = "Задача";          
 
             issue = issues;
+            Request request = new Request($"https://sd.rosohrana.ru/rest/api/2/issue/{issue.key}?expand=names,schema");
+            fieldIssue = request.GetCustomField();
+
+            listDetailIssue.HeightRequest = fieldIssue.Count * 37;
+
             warchersIssue();
 
             this.BindingContext = this;
@@ -41,7 +49,7 @@ namespace RTMobile
         {
             try
             {
-                string getIssue = @"https://sd.rosohrana.ru/rest/api/2/issue/" + issue.key + "/watchers/";
+                string getIssue = CrossSettings.Current.GetValueOrDefault<string>("urlServer") + @"/rest/api/2/issue/" + issue.key + "/watchers/";
 
                 Request request = new Request(getIssue);
                 watchers = request.GetResponses(getIssue);
@@ -53,7 +61,6 @@ namespace RTMobile
                 await DisplayAlert("Error issues", ex.ToString(), "OK");
             }
         }
-
         private void ButtonDetailIssue_Clicked(object sender, EventArgs e)
         {
             if (detailIssueData.IsVisible == false)
@@ -67,14 +74,12 @@ namespace RTMobile
                 buttonDetailIssue.Source = "arrowDown.png";
             }
         }
-
         private void ButtonDescriptionIssue_Clicked(object sender, EventArgs e)
         {
             if (descriptionIssue.IsVisible == false)
             {
                 descriptionIssue.IsVisible = true;
                 buttonDescriptionIssue.Source = "arrowUp.png";
-
             }
             else
             {
@@ -82,15 +87,12 @@ namespace RTMobile
                 buttonDescriptionIssue.Source = "arrowDown.png";
             }
         }
-
         private void ButtonFileIssue_Clicked(object sender, EventArgs e)
         {
-
             if (fileIssue.IsVisible == false)
             {
                 fileIssue.IsVisible = true;
                 buttonFileIssue.Source = "arrowUp.png";
-
             }
             else
             {
@@ -98,7 +100,6 @@ namespace RTMobile
                 buttonFileIssue.Source = "arrowDown.png";
             }
         }
-
         private async void imageTapped(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new photoView());
@@ -109,7 +110,6 @@ namespace RTMobile
             {
                 peopleIssue.IsVisible = true;
                 buttonPeopleIssue.Source = "arrowUp.png";
-
             }
             else
             {
@@ -117,7 +117,6 @@ namespace RTMobile
                 buttonPeopleIssue.Source = "arrowDown.png";
             }
         }
-
         private async void TapGestureRecognizer_Tapped(object sender, EventArgs e)
         {
             List<string> watchersList = new List<string>();

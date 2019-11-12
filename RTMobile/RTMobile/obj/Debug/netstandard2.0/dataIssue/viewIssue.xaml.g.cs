@@ -26,7 +26,7 @@ namespace RTMobile {
         private global::Xamarin.Forms.StackLayout detailIssueData;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.Label typelabel;
+        private global::Xamarin.Forms.ListView listDetailIssue;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private global::Xamarin.Forms.ImageButton buttonDescriptionIssue;
@@ -55,7 +55,7 @@ namespace RTMobile {
             summary = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "summary");
             buttonDetailIssue = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ImageButton>(this, "buttonDetailIssue");
             detailIssueData = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.StackLayout>(this, "detailIssueData");
-            typelabel = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "typelabel");
+            listDetailIssue = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ListView>(this, "listDetailIssue");
             buttonDescriptionIssue = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ImageButton>(this, "buttonDescriptionIssue");
             descriptionIssue = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.StackLayout>(this, "descriptionIssue");
             buttonFileIssue = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ImageButton>(this, "buttonFileIssue");

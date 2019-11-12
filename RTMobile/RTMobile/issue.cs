@@ -5,7 +5,7 @@ using System.Text;
 
 namespace RTMobile
 {
-   
+
     /// <summary>
     /// Класс хранящий JSON запрос для поиска задач
     /// </summary>
@@ -18,6 +18,7 @@ namespace RTMobile
         public int maxResults { get; set; }
         public bool validateQuery { get; set; } = true;
     }
+
     /// <summary>
     /// Класс хранящий JSON запрос для поиска комментариев
     /// </summary>
@@ -187,7 +188,7 @@ namespace RTMobile
         public bool isLocked { get; set; }
         public bool isManaged { get; set; }
         public bool isAllProjects { get; set; }
-        public int projectsCount { get; set; }19
+        public int projectsCount { get; set; }
         public int screensCount { get; set; }
     }
     /// <summary>
@@ -300,7 +301,7 @@ namespace RTMobile
     {
         public string id { get; set; }
         public string self { get; set; }
-        public Type type { get; set; }
+        //public Type type { get; set; }
         public OutwardIssue outwardIssue { get; set; }
     }
     public class OutwardIssue
@@ -323,6 +324,7 @@ namespace RTMobile
     }
     public class Fields
     {
+
         public Resolution resolution { get; set; }
         public Assignee assignee { get; set; }
         public List<object> subtasks { get; set; }
@@ -330,10 +332,14 @@ namespace RTMobile
         public Votes votes { get; set; }
         public Issuetype issuetype { get; set; }
         public Project project { get; set; }
-        public string resolutiondate { get; set; }
+        public Status status { get; set; }
+        public Creator creator { get; set; }
         public Watches watches { get; set; }
-
+        public List<Issuelink> issuelinks { get; set; }
+        public string resolutiondate { get; set; }
         private string _updated;
+        public string name { get; set; }
+        public string value { get; set; }
         public string updated
         {
             get { return _updated; }
@@ -345,9 +351,6 @@ namespace RTMobile
         public string description { get; set; }
         public string summary { get; set; }
         public object duedate { get; set; }
-        public Status status { get; set; }
-        public Creator creator { get; set; }
-
         private string _created;
         public string created
         {
@@ -357,7 +360,7 @@ namespace RTMobile
                 _created = (Convert.ToDateTime(value)).ToString("dd.MM.yyyy hh:mm");
             }
         }
-        public List<Issuelink> issuelinks { get; set; }
+
     }
     public class Issue
     {
@@ -392,12 +395,11 @@ namespace RTMobile
         public string self { get; set; }
         public string key { get; set; }
         public string name { get; set; }
-        public string emailAddress { get; set; }       
+        public string emailAddress { get; set; }
         public string displayName { get; set; }
         public bool active { get; set; }
         public string timeZone { get; set; }
         public string locale { get; set; }
-       
-        
+
     }
 }

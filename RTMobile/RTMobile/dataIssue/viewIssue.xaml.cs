@@ -13,8 +13,9 @@ namespace RTMobile
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class viewIssue : ContentPage
     {
-        public Issue issue { get; set; }
+        public List<Fields> fieldIssue { get; set; }
         private RootObject watchers = new RootObject();
+        public Issue issue { get; set; }        
         public viewIssue()
         {
             InitializeComponent();
@@ -32,6 +33,11 @@ namespace RTMobile
             //((NavigationPage)Application.Current.MainPage).Title = "Задача";          
 
             issue = issues;
+            Request request = new Request($"https://sd.rosohrana.ru/rest/api/2/issue/{issue.key}?expand=names,schema");
+            fieldIssue = request.GetCustomField();
+
+            listDetailIssue.HeightRequest = fieldIssue.Count * 37;
+
             warchersIssue();
 
             this.BindingContext = this;
@@ -53,7 +59,6 @@ namespace RTMobile
                 await DisplayAlert("Error issues", ex.ToString(), "OK");
             }
         }
-
         private void ButtonDetailIssue_Clicked(object sender, EventArgs e)
         {
             if (detailIssueData.IsVisible == false)
@@ -80,15 +85,12 @@ namespace RTMobile
                 buttonDescriptionIssue.Source = "arrowDown.png";
             }
         }
-
         private void ButtonFileIssue_Clicked(object sender, EventArgs e)
         {
-
             if (fileIssue.IsVisible == false)
             {
                 fileIssue.IsVisible = true;
                 buttonFileIssue.Source = "arrowUp.png";
-
             }
             else
             {
@@ -96,7 +98,6 @@ namespace RTMobile
                 buttonFileIssue.Source = "arrowDown.png";
             }
         }
-
         private async void imageTapped(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new photoView());
@@ -107,7 +108,6 @@ namespace RTMobile
             {
                 peopleIssue.IsVisible = true;
                 buttonPeopleIssue.Source = "arrowUp.png";
-
             }
             else
             {
@@ -115,7 +115,6 @@ namespace RTMobile
                 buttonPeopleIssue.Source = "arrowDown.png";
             }
         }
-
         private async void TapGestureRecognizer_Tapped(object sender, EventArgs e)
         {
             List<string> watchersList = new List<string>();

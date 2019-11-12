@@ -25,7 +25,6 @@
                             <StackLayout>
                                 <Frame BackgroundColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="Start" Margin="5">
                                     <StackLayout VerticalOptions="StartAndExpand">
-
                                         <StackLayout>
                                             <StackLayout Orientation="Horizontal">
                                                 <Frame Margin="10"

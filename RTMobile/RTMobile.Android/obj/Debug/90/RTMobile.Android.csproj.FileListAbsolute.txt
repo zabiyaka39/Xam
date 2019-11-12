@@ -1607,4 +1607,12 @@ F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\assets\Micros
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\assets\System.IdentityModel.Tokens.Jwt.dll
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\assets\System.Security.Cryptography.Cng.dll
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\res\drawable\exit.png
+F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\linksrc\Microsoft.Extensions.PlatformAbstractions.dll
+F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\linksrc\Nancy.dll
+F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\linksrc\System.Reflection.TypeExtensions.dll
+F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\assets\Microsoft.Extensions.PlatformAbstractions.dll
+F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\assets\Nancy.dll
+F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\assets\System.Reflection.TypeExtensions.dll
+F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\linksrc\Newtonsoft.Json.pdb
+F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\assets\Newtonsoft.Json.pdb
 F:\project\RTMobile\RTMobile\RTMobile.Android\bin\Debug\RTMobile.dll.mdb
