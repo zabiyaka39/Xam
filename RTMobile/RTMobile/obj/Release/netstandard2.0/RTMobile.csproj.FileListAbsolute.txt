@@ -26,3 +26,4 @@ F:\project\RTMobile\RTMobile\RTMobile\obj\Release\netstandard2.0\RTMobile.csproj
 F:\project\RTMobile\RTMobile\RTMobile\obj\Release\netstandard2.0\RTMobile.dll
 F:\project\RTMobile\RTMobile\RTMobile\obj\Release\netstandard2.0\RTMobile.pdb
 F:\project\RTMobile\RTMobile\RTMobile\obj\Release\netstandard2.0\RTMobile.csprojAssemblyReference.cache
+F:\project\RTMobile\RTMobile\RTMobile\obj\Release\netstandard2.0\settings.xaml.g.cs

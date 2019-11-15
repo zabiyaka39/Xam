@@ -57,3 +57,4 @@ F:\project\RTMobile\RTMobile\RTMobile\bin\Debug\netstandard2.0\Windows.Foundatio
 F:\project\RTMobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\RTMobile.csproj.CopyComplete
 F:\project\RTMobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\XamlC.stamp
 F:\project\RTMobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\settings.xaml.g.cs
+F:\project\RTMobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\RTMobile.csprojAssemblyReference.cache

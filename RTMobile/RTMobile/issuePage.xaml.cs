@@ -10,18 +10,19 @@ using Newtonsoft.Json.Linq;
 using System.Windows.Input;
 using System.ComponentModel;
 using System.Net.Http;
+using System.Collections.ObjectModel;
 
 namespace RTMobile
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class IssuePage : ContentPage
     {
-        public List<Issue> issues { get; set; }
+        public ObservableCollection<Issue> issues { get; set; }
+        IssueJSONSearch issueJSONSearch = new IssueJSONSearch();
 
         public IssuePage()
         {
             InitializeComponent();
-
 
             issueStartPostRequest();
             //for (int i = 0; i < issues.Count; ++i)
@@ -29,36 +30,38 @@ namespace RTMobile
             //    issues[i].fields.issuetype.iconUrl = issues[i].fields.issuetype.iconUrl;
             //    Console.WriteLine(issues[i].fields.issuetype.iconUrl);
             //}
-     
 
             this.BindingContext = this;
-
         }
         /// <summary>
         /// Выгрузка всех задач
         /// </summary>
-        async void issueStartPostRequest()
+        async void issueStartPostRequest(bool firstRequest = true)
         {
             try
             {
-                IssueJSONSearch issueJSONSearch = new IssueJSONSearch
-                {
-                    jql = "status not in  (Закрыта, Отклонена, Отменена, Активирована, Выполнено, 'Доставлена клиенту', Провалено) AND assignee in (currentUser())",
-                    maxResults = 50,
-                    startAt = 0
-                };
+                issueJSONSearch.jql = "status not in  (Закрыта, Отклонена, Отменена, Активирована, Выполнено, 'Доставлена клиенту', Провалено) AND assignee in (currentUser())";
+                issueJSONSearch.maxResults = 50;
+                issueJSONSearch.startAt = 0;
 
                 RootObject rootObject = new RootObject();
                 Request request = new Request(issueJSONSearch);
 
                 rootObject = request.GetResponses();
-                
+
                 //Проверка на пустой список задач
                 try
                 {
                     if (rootObject.issues != null)
                     {
-                        issues = rootObject.issues;
+                        if (!firstRequest && rootObject.issues.Count > 0)
+                        {
+                            issues.Add(rootObject.issues[rootObject.issues.Count - 1]);
+                        }
+                        else
+                        {
+                            issues = rootObject.issues;
+                        }
                     }
                 }
                 catch (Exception ex)

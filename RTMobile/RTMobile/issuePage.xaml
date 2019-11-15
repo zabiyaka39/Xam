@@ -39,9 +39,9 @@
                          HorizontalOptions="FillAndExpand" Padding="10,-20,0,0" Margin="0,0,0,-50">
                 <Picker Margin="10,20,0,0"  x:Name="pickerFilter" MinimumWidthRequest="100"
                         Title="Фильтр задач                 "                        
-                        TitleColor="White"
+                        TitleColor="#949494"
                         FontSize="Caption"
-                        TextColor="White"
+                        TextColor="#949494"
                         VerticalOptions="End"
                         HorizontalOptions="StartAndExpand">
                     <Picker.ItemsSource>
@@ -54,18 +54,17 @@
                     </Picker.ItemsSource>
                 </Picker>
                 <Picker Margin="0,20,0,0" HorizontalOptions="EndAndExpand" x:Name="pickerSort" MinimumWidthRequest="100"
-                                 Title="Сортировка                "
-                                 TitleColor="White"
-                                 TextColor="White"
-                                 FontSize="Caption"
-                         VerticalOptions="End" >
+                        Title="Сортировка                "
+                        TitleColor="#949494"
+                        TextColor="#949494"
+                        FontSize="Caption"
+                        VerticalOptions="End" >
                    
-                    <Picker.ItemsSource >
+                    <Picker.ItemsSource>
                         <x:Array  Type="{x:Type x:String}">
                             <x:String>По дате</x:String>
                             <x:String>По номеру</x:String>
                             <x:String>По статусу</x:String>
-                            <x:String>Наблюдаемые</x:String>
                         </x:Array>
                     </Picker.ItemsSource>
                 </Picker>

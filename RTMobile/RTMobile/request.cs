@@ -26,36 +26,43 @@ namespace RTMobile
         /// <returns></returns>
         public bool authorization(string login, string password)
         {
-            if (CrossSettings.Current.GetValueOrDefault<string>("urlServer").Length <= 0)
+            if (login.Length > 0)
             {
-                CrossSettings.Current.AddOrUpdateValue<string>("urlServer", "https://sd.rosohrana.ru");
-            }
-            Authorization authorization = new Authorization();
-            authorization.username = login;
-            authorization.password = password;
-
-            this.httpWebRequest = (HttpWebRequest)WebRequest.Create(CrossSettings.Current.GetValueOrDefault<string>("urlServer") + "/rest/auth/1/session");
-            this.httpWebRequest.Headers.Add(HttpRequestHeader.Authorization, "Basic " + Convert.ToBase64String(Encoding.Default.GetBytes(login + ":" + password)));
-
-            this.httpWebRequest.ContentType = "application/json";
-            this.httpWebRequest.Method = "POST";
-            this.json = JsonConvert.SerializeObject(authorization);
-
-            RootObject rootObject = new RootObject();
-
-            try
-            {
-                rootObject = this.GetResponses();
-                if (rootObject.session.name != null)
+                if (CrossSettings.Current.GetValueOrDefault<string>("urlServer").Length <= 0)
                 {
-                    return true;
+                    CrossSettings.Current.AddOrUpdateValue<string>("urlServer", "https://sd.rosohrana.ru");
                 }
-                else
+                Authorization authorization = new Authorization();
+                authorization.username = login;
+                authorization.password = password;
+
+                this.httpWebRequest = (HttpWebRequest)WebRequest.Create(CrossSettings.Current.GetValueOrDefault<string>("urlServer") + "/rest/auth/1/session");
+                this.httpWebRequest.Headers.Add(HttpRequestHeader.Authorization, "Basic " + Convert.ToBase64String(Encoding.Default.GetBytes(login + ":" + password)));
+
+                this.httpWebRequest.ContentType = "application/json";
+                this.httpWebRequest.Method = "POST";
+                this.json = JsonConvert.SerializeObject(authorization);
+
+                RootObject rootObject = new RootObject();
+
+                try
+                {
+                    rootObject = this.GetResponses();
+                    if (rootObject.session.name != null)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+                catch (Exception ex)
                 {
                     return false;
                 }
             }
-            catch (Exception ex)
+            else
             {
                 return false;
             }

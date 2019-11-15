@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Globalization;
 using System.Text;
 
@@ -37,7 +38,7 @@ namespace RTMobile
         public int startAt { get; set; }
         public int maxResults { get; set; }
         public int total { get; set; }
-        public List<History> histories { get; set; }
+        public ObservableCollection<History> histories { get; set; }
     }
     /// <summary>
     /// Метаданные истории
@@ -53,7 +54,7 @@ namespace RTMobile
         public string id { get; set; }
         public Author author { get; set; }
         private string _created { get; set; }
-        public string сreated
+        public string created
         {
             get { return _created; }
             set
@@ -210,9 +211,12 @@ namespace RTMobile
         public string body { get; set; }
         public UpdateAuthor updateAuthor { get; set; }
         private string _created { get; set; }
-        public string сreated
+        public string created
         {
-            get { return _created; }
+            get
+            {
+                return _created;
+            }
             set
             {
                 _created = (Convert.ToDateTime(value)).ToString("dd.MM.yyyy hh:mm");
@@ -354,7 +358,10 @@ namespace RTMobile
         private string _created;
         public string created
         {
-            get { return _created; }
+            get
+            {
+                return _created;
+            }
             set
             {
                 _created = (Convert.ToDateTime(value)).ToString("dd.MM.yyyy hh:mm");
@@ -377,8 +384,8 @@ namespace RTMobile
         public List<Watcher> watchers { get; set; }
         public List<Worklog> worklogs { get; set; }
         public List<Project> projects { get; set; }
-        public List<Issue> issues { get; set; }
-        public List<Comment> comments { get; set; }
+        public ObservableCollection<Issue> issues { get; set; }
+        public ObservableCollection<Comment> comments { get; set; }
         public Changelog changelog { get; set; }
         public Session session { get; set; }
         public LoginInfo loginInfo { get; set; }

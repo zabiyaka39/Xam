@@ -4,12 +4,62 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="RTMobile.insight">
+             x:Class="RTMobile.insight"
+             Title="Insight">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="insight objects"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Orientation="Horizontal" Margin="15">
+            <StackLayout Orientation="Vertical">
+                <!--Шапка таблицы-->
+                <Label Text="Имя объектной схемы"></Label>
+                <!--Тестовые схемы объектов-->
+                <Label Text="Test"></Label>
+                <ListView HasUnevenRows="True"
+                  ItemsSource="{Binding insight}"
+                  VerticalScrollBarVisibility="Never" 
+                  SeparatorVisibility="None"  
+                  RefreshControlColor="Black" >
+                    <!--Цвет значка обновления-->
+                    <!--IsPullToRefreshEnabled ="True"   Показ иконки обновления появляется при появлении и вызывает событие Refreshing-->
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.View>
+                                    <Label>
+
+                                    </Label>
+                                </ViewCell.View>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+            </StackLayout>
+            <StackLayout Orientation="Vertical">
+                <!--Шапка таблицы-->
+                <Label Text="Ключ объектной схемы"></Label>
+                <!--Тестовые схемы объектов-->
+                <Label Text="Test"></Label>
+                <ListView  HasUnevenRows="True"
+                  ItemsSource="{Binding insight}"
+                  VerticalScrollBarVisibility="Never" 
+                  SeparatorVisibility="None"  
+                  RefreshControlColor="Black" >
+                    <!--Цвет значка обновления-->
+                    <!--IsPullToRefreshEnabled ="True"   Показ иконки обновления появляется при появлении и вызывает событие Refreshing-->
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.View>
+                                    <Label>
+
+                                    </Label>
+                                </ViewCell.View>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

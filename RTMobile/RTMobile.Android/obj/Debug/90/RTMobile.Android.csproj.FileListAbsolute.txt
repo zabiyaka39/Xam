@@ -781,8 +781,6 @@ C:\Users\sekisov\source\repos\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\an
 C:\Users\sekisov\source\repos\RTMobile\RTMobile\RTMobile.Android\bin\Debug\RTMobile.dll.mdb
 F:\project\RTMobile\RTMobile\RTMobile.Android\bin\Debug\RTMobile.Android.dll
 F:\project\RTMobile\RTMobile\RTMobile.Android\bin\Debug\RTMobile.Android.pdb
-F:\project\RTMobile\RTMobile\RTMobile.Android\bin\Debug\com.companyname.rtmobile.apk
-F:\project\RTMobile\RTMobile\RTMobile.Android\bin\Debug\com.companyname.rtmobile-Signed.apk
 F:\project\RTMobile\RTMobile\RTMobile.Android\bin\Debug\RTMobile.dll
 F:\project\RTMobile\RTMobile\RTMobile.Android\bin\Debug\RTMobile.pdb
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\MonoAndroid,Version=v9.0.AssemblyAttributes.cs
@@ -811,7 +809,6 @@ F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\XamlC.stamp
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\RTMobile.Android.csproj.CopyComplete
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\RTMobile.Android.dll
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\RTMobile.Android.pdb
-F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\bin\com.companyname.rtmobile.apk
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\res\layout\tabbar.xml
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\res\layout\toolbar.xml
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\res\values\styles.xml
@@ -1615,4 +1612,8 @@ F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\assets\Nancy.
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\assets\System.Reflection.TypeExtensions.dll
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\linksrc\Newtonsoft.Json.pdb
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\assets\Newtonsoft.Json.pdb
+F:\project\RTMobile\RTMobile\RTMobile.Android\bin\Debug\RTMobile.RTMobile.apk
+F:\project\RTMobile\RTMobile\RTMobile.Android\bin\Debug\RTMobile.RTMobile-Signed.apk
+F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\bin\RTMobile.RTMobile.apk
+F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\src\rtmobile\rtmobile\R.java
 F:\project\RTMobile\RTMobile\RTMobile.Android\bin\Debug\RTMobile.dll.mdb

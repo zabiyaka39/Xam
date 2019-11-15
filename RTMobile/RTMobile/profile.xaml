@@ -44,14 +44,15 @@
             </StackLayout>
 
 
-            <StackLayout Orientation="Horizontal">
+            <StackLayout Orientation="Horizontal" >
                 <Label Text="Группы:" HorizontalOptions="FillAndExpand"></Label>
-                
                 <ListView   HasUnevenRows="True"
                             ItemsSource="{Binding groups}"
                             VerticalScrollBarVisibility="Never" 
                             SeparatorVisibility="None"  
-                            RefreshControlColor="Black">
+                            RefreshControlColor="Black"
+                            HeightRequest="300"
+                            WidthRequest="200">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>

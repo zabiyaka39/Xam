@@ -11,8 +11,10 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("RTMobile")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("ООО \"Росохрана Телеком\"")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
+[assembly: System.Reflection.AssemblyCopyrightAttribute("Секисов Владислав Александрович")]
+[assembly: System.Reflection.AssemblyDescriptionAttribute("Приложение для работы в системе учета задач Jira")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("RTMobile")]

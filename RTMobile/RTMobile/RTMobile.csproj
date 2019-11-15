@@ -2,6 +2,12 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Copyright>Секисов Владислав Александрович</Copyright>
+    <PackageLicenseExpression>Что не делается, делается к лучшему</PackageLicenseExpression>
+    <Authors>Секисов Владислав Александрович</Authors>
+    <Company>ООО "Росохрана Телеком"</Company>
+    <Description>Приложение для работы в системе учета задач Jira</Description>
+    <PackageTags>RTMobile</PackageTags>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

@@ -14,10 +14,8 @@ namespace RTMobile
     public partial class viewIssue : ContentPage
     {
         public List<Fields> fieldIssue { get; set; }
-        public Issue issue { get; set; }
         private RootObject watchers = new RootObject();
-        List<string> keyField { get; set; }
-        List<string> valueField { get; set; }
+        public Issue issue { get; set; }        
         public viewIssue()
         {
             InitializeComponent();
