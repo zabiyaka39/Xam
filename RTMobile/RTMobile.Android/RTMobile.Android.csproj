@@ -193,9 +193,6 @@
     <AndroidResource Include="Resources\drawable\notifications.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\sekisovAvatar.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\drawable\logoRT.jpg" />
   </ItemGroup>
   <ItemGroup>

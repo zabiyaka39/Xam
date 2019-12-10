@@ -34,7 +34,7 @@ namespace RTMobile
         {
             try
             {
-                string getIssue = CrossSettings.Current.GetValueOrDefault<string>("urlServer") + @"/rest/api/2/issue/" + issue.key + "?expand=changelog";
+                string getIssue = CrossSettings.Current.GetValueOrDefault("urlServer", string.Empty) + @"/rest/api/2/issue/" + issue.key + "?expand=changelog";
 
                 Request request = new Request(getIssue);
                 RootObject historyIssues = new RootObject();
@@ -56,15 +56,15 @@ namespace RTMobile
             }
         }
 
-        public async void OnItemTapped(object sender, ItemTappedEventArgs e)//обработка нажатия на элемент в ListView
-        {
-            //Issue selectedIssue = e.Item as Issue;
-            //if (selectedIssue != null)
-            //{
-            //    await Navigation.PushAsync(new general(selectedIssue));
-            //    //await DisplayAlert("Выбранная модель", $"{selectedIssue.key}", "OK");
-            //}
-            ((ListView)sender).SelectedItem = null;
-        }
-    }
+		public void OnItemTapped(object sender, ItemTappedEventArgs e)//обработка нажатия на элемент в ListView
+		{
+			//Issue selectedIssue = e.Item as Issue;
+			//if (selectedIssue != null)
+			//{
+			//    await Navigation.PushAsync(new general(selectedIssue));
+			//    //await DisplayAlert("Выбранная модель", $"{selectedIssue.key}", "OK");
+			//}
+			((ListView)sender).SelectedItem = null;
+		}
+	}
 }

@@ -4987,14 +4987,13 @@ public final class R {
     public static final int rosohranalogo=0x7f070158;
     public static final int search=0x7f070159;
     public static final int sekisov=0x7f07015a;
-    public static final int sekisovavatar=0x7f07015b;
-    public static final int settings=0x7f07015c;
-    public static final int statusimageissue=0x7f07015d;
-    public static final int statusissue=0x7f07015e;
-    public static final int tooltip_frame_dark=0x7f07015f;
-    public static final int tooltip_frame_light=0x7f070160;
-    public static final int up=0x7f070161;
-    public static final int user=0x7f070162;
+    public static final int settings=0x7f07015b;
+    public static final int statusimageissue=0x7f07015c;
+    public static final int statusissue=0x7f07015d;
+    public static final int tooltip_frame_dark=0x7f07015e;
+    public static final int tooltip_frame_light=0x7f07015f;
+    public static final int up=0x7f070160;
+    public static final int user=0x7f070161;
   }
   public static final class id {
     public static final int ALT=0x7f080000;

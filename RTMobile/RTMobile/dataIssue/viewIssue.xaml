@@ -5,13 +5,20 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="RTMobile.viewIssue">
+
     <ContentPage.Content>
+        
+        
         <ScrollView BackgroundColor="#f9f9f9">
+
             <StackLayout BindableLayout.ItemsSource="{Binding issue}">
-                <Frame MinimumHeightRequest="5">
-                    <Label x:Name="summary" VerticalOptions="Center" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" Text="{Binding Path=issue.fields.summary}"></Label>
-                </Frame>
                 
+                <Frame MinimumHeightRequest="5">
+                    <StackLayout Orientation="Horizontal">
+                        <Label x:Name="summary" VerticalOptions="Center" FontSize="Large" TextColor="Black" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" Text="{Binding Path=issue.fields.summary}"></Label>
+                    </StackLayout>
+                </Frame>
+
                 <!--Раздел с Деталями задачи-->
                 <Frame BackgroundColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
                     <StackLayout VerticalOptions="Start">
@@ -20,14 +27,17 @@
                                 <Image Source="detailIssue.png" HeightRequest="20"/>
                                 <Label HorizontalOptions="FillAndExpand">Детали задачи</Label>
                             </StackLayout>
-                            <StackLayout Orientation="Horizontal" >
-                                <StackLayout HorizontalOptions="FillAndExpand" Padding="0,5,0,0" >
+                            <StackLayout Orientation="Horizontal">
+                                <StackLayout HorizontalOptions="FillAndExpand" Padding="0,5,0,0">
+                                    <StackLayout.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="ButtonDetailIssue_Clicked"/>
+                                    </StackLayout.GestureRecognizers>
                                     <BoxView Color="Black" HeightRequest="1"></BoxView>
                                 </StackLayout>
                                 <ImageButton x:Name="buttonDetailIssue" Clicked="ButtonDetailIssue_Clicked" Source="arrowUp.png" BackgroundColor="Transparent"></ImageButton>
                             </StackLayout>
                         </StackLayout>
-                        
+
                         <StackLayout x:Name="detailIssueData" Orientation="Vertical" VerticalOptions="Start">
                             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
                                 <Label HorizontalOptions="FillAndExpand">Статус</Label>
@@ -42,7 +52,7 @@
                                 <ListView.ItemTemplate>
                                     <DataTemplate>
                                         <ViewCell>
-                                            <ViewCell.View>                                               
+                                            <ViewCell.View>
                                                 <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Margin="0,15,0,0">
                                                     <Label HorizontalOptions="FillAndExpand" Text="{Binding Path = name}"></Label>
                                                     <Label HorizontalOptions="End" Text="{Binding Path=value}"></Label>
@@ -103,7 +113,7 @@
                         <StackLayout x:Name="fileIssue" Orientation="Vertical">
                             <ScrollView Orientation="Horizontal">
                                 <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="10">
-                                    <Frame  IsClippedToBounds="True"
+                                    <!--<Frame  IsClippedToBounds="True"
                                            HorizontalOptions="Center"
                                            VerticalOptions="Center" 
                                             WidthRequest="100" HeightRequest="100"
@@ -147,7 +157,7 @@
                                             WidthRequest="100" HeightRequest="100"
                                             Padding="2">
                                         <Image  Aspect="AspectFill" Source="image3.jpg"></Image>
-                                    </Frame>
+                                    </Frame>-->
                                 </StackLayout>
                             </ScrollView>
                             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
@@ -187,11 +197,16 @@
                                        IsClippedToBounds="True"
                                        HorizontalOptions="End"
                                        VerticalOptions="Center">
-                                        <Image Source="user.png"
+                                        <Image Source="{Binding issue.fields.assignee.AvatarUrls.image}"
                                          Aspect="AspectFill"
                                          Margin="-20"
                                          HeightRequest="5"
-                                         WidthRequest="5" />
+                                         WidthRequest="5" >
+                                            <Image.GestureRecognizers>
+                                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_2"/>
+                                            </Image.GestureRecognizers>
+                                        </Image>
+
                                     </Frame>
                                     <Label HorizontalOptions="End" VerticalOptions="Center" Text="{Binding Path=issue.fields.assignee.displayName}"></Label>
                                 </StackLayout>
@@ -207,11 +222,15 @@
                                            IsClippedToBounds="True"
                                            HorizontalOptions="End"
                                            VerticalOptions="Center">
-                                        <Image Source="user.png"
+                                        <Image Source="{Binding issue.fields.creator.AvatarUrls.image}"
                                              Aspect="AspectFill"
                                              Margin="-20"
                                              HeightRequest="5"
-                                             WidthRequest="5" />
+                                             WidthRequest="5" >
+                                            <Image.GestureRecognizers>
+                                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_3"/>
+                                            </Image.GestureRecognizers>
+                                        </Image>
                                     </Frame>
                                     <Label  VerticalOptions="Center" Text="{Binding Path=issue.fields.creator.displayName}"></Label>
                                 </StackLayout>

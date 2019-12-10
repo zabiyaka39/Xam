@@ -35,7 +35,7 @@
                                                    IsClippedToBounds="True"
                                                    HorizontalOptions="Center"
                                                    VerticalOptions="Center">
-                                                    <Image Source="user.png"
+                                                    <Image Source="{Binding author.AvatarUrls.image}"
                                                          Aspect="AspectFill"
                                                          Margin="-20"
                                                          HeightRequest="5"

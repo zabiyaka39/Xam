@@ -17,18 +17,18 @@ namespace RTMobile
         {
             InitializeComponent();
 
-            if (CrossSettings.Current.GetValueOrDefault<string>("urlServer").Length <= 0)
+            if (CrossSettings.Current.GetValueOrDefault("urlServer", string.Empty).Length <= 0)
             {
-                CrossSettings.Current.AddOrUpdateValue<string>("urlServer", "https://sd.rosohrana.ru");
+                CrossSettings.Current.AddOrUpdateValue("urlServer", "https://sd.rosohrana.ru");
             }
 
-            urlServer.Text = CrossSettings.Current.GetValueOrDefault<string>("urlServer");
+            urlServer.Text = CrossSettings.Current.GetValueOrDefault("urlServer", string.Empty);
         }
 
         private async void Button_Clicked(object sender, EventArgs e)
         {
-            CrossSettings.Current.AddOrUpdateValue<string>("urlServer", urlServer.Text);
-            if (CrossSettings.Current.GetValueOrDefault<string>("urlServer") == urlServer.Text)
+            CrossSettings.Current.AddOrUpdateValue("urlServer", urlServer.Text);
+            if (CrossSettings.Current.GetValueOrDefault("urlServer", string.Empty) == urlServer.Text)
             {
                 await DisplayAlert("Изменение настроек", "Настройки успешно сохранены", "Закрыть").ConfigureAwait(true); 
             }
