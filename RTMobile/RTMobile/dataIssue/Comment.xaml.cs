@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,10 +15,10 @@ namespace RTMobile
 
     public partial class Commentaries : ContentPage
     {
-        public List<Comment> comments { get; set; }
+        public ObservableCollection<Comment> comments { get; set; }
 
         Issue issue = new Issue();
-        private object properties;
+        //private object properties;
 
         public Commentaries()
         {
@@ -36,7 +37,7 @@ namespace RTMobile
         /// <summary>
         /// Выгрузка всех задач
         /// </summary>
-        async void issueStartPostRequest()
+        async void issueStartPostRequest(bool firstRequest = true)
         {
             try
             {
@@ -50,13 +51,16 @@ namespace RTMobile
                 Request request = new Request(commentJSONSearch, issue.key);
 
                 rootObject = request.GetResponses("");
+                //проверка на наличие комментариев. При отсутствии комментариев добавляем все, при наличии добавляем только последний
 
-                comments = null;
-                //Проверка на пустой список задач
-                comments = rootObject.comments;
-
-                //Console.WriteLine(rootObject.comments[0].body);
-
+                if (!firstRequest && rootObject.comments.Count > 0)
+                {
+                    comments.Add(rootObject.comments[rootObject.comments.Count - 1]);
+                }
+                else
+                {
+                    comments = rootObject.comments;
+                }
             }
             catch (Exception ex)
             {
@@ -102,7 +106,9 @@ namespace RTMobile
 
                 if (rootObject.id != 0)
                 {
-                    issueStartPostRequest();
+                    commentEntry.Text = "";
+                    issueStartPostRequest(false);
+
                     await DisplayAlert("Готово", "Комментарий добавлен", "OK");
                 }
                 else

@@ -30,7 +30,7 @@ namespace RTMobile
 
                     includeArchived = false
                 };
-                string getIssue = CrossSettings.Current.GetValueOrDefault<string>("urlServer")+ @"/rest/api/2/project";
+                string getIssue = CrossSettings.Current.GetValueOrDefault("urlServer", string.Empty) + @"/rest/api/2/project";
                 Request request = new Request(getIssue);
 
                 projects = request.GetResponsesProject();

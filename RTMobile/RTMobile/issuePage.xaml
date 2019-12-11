@@ -39,9 +39,9 @@
                          HorizontalOptions="FillAndExpand" Padding="10,-20,0,0" Margin="0,0,0,-50">
                 <Picker Margin="10,20,0,0"  x:Name="pickerFilter" MinimumWidthRequest="100"
                         Title="Фильтр задач                 "                        
-                        TitleColor="White"
+                        TitleColor="#949494"
                         FontSize="Caption"
-                        TextColor="White"
+                        TextColor="#949494"
                         VerticalOptions="End"
                         HorizontalOptions="StartAndExpand">
                     <Picker.ItemsSource>
@@ -54,23 +54,23 @@
                     </Picker.ItemsSource>
                 </Picker>
                 <Picker Margin="0,20,0,0" HorizontalOptions="EndAndExpand" x:Name="pickerSort" MinimumWidthRequest="100"
-                                 Title="Сортировка                "
-                                 TitleColor="White"
-                                 TextColor="White"
-                                 FontSize="Caption"
-                         VerticalOptions="End" >
+                        Title="Сортировка                "
+                        TitleColor="#949494"
+                        TextColor="#949494"
+                        FontSize="Caption"
+                        VerticalOptions="End"
+                        SelectedIndexChanged ="pickerSort_SelectedIndexChanged">
                    
-                    <Picker.ItemsSource >
+                    <Picker.ItemsSource>
                         <x:Array  Type="{x:Type x:String}">
                             <x:String>По дате</x:String>
                             <x:String>По номеру</x:String>
                             <x:String>По статусу</x:String>
-                            <x:String>Наблюдаемые</x:String>
                         </x:Array>
                     </Picker.ItemsSource>
                 </Picker>
             </StackLayout>
-
+           
             <Frame CornerRadius="50"
                                            HeightRequest="50"
                                            WidthRequest="50"
@@ -84,7 +84,11 @@
                 <Button BackgroundColor="Transparent" Clicked="Button_Clicked" ImageSource="issueSearch.png" HorizontalOptions="Start" VerticalOptions="Start">
                 </Button>
             </Frame>
-
+            
+            <!--<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Margin="15,0,15,0"> 
+                <Label Text="Фильтр" HorizontalOptions="StartAndExpand"></Label>
+                <Label Text="Фильтр" HorizontalOptions="EndAndExpand"></Label>
+            </StackLayout>-->
             <ListView x:Name="issuesList"
                   HasUnevenRows="True"
                   ItemsSource="{Binding issues}"
@@ -94,7 +98,6 @@
                   RefreshControlColor="Black" >
                 <!--Цвет значка обновления-->
                 <!--IsPullToRefreshEnabled ="True"   Показ иконки обновления появляется при появлении и вызывает событие Refreshing-->
-
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -110,11 +113,11 @@
                                                        HorizontalOptions="Center"
                                                        VerticalOptions="Center"
                                                        Margin="0,0,10,0">
-                                                    <Image Source="user.jpg"
+                                                    <Image Source="{Binding fields.assignee.AvatarUrls.image}"
                                                                 Aspect="AspectFill"
                                                                 Margin="-20"
                                                                 HeightRequest="10"
-                                                                WidthRequest="10" />
+                                                                WidthRequest="10"/>
                                                 </Frame>
                                                 <StackLayout Orientation="Vertical" HorizontalOptions="Start">
                                                     <!--<StackLayout.GestureRecognizers>
@@ -124,9 +127,8 @@
                                                     </Label>
                                                     <StackLayout Orientation="Horizontal">
                                                         <!--<Image Source="{Binding Path=fields.issuetype.iconUrl}"></Image>-->
-                                                        <Label x:Name="typeIssue" Text="{Binding Path=fields.issuetype.name}">
-                                                            <!--<Label x:Name="typeIssue" Text="{Binding Path=fields.issuetype.iconUrl}">-->
-                                                        </Label>
+                                                        <Label x:Name="typeIssue" Text="{Binding Path=fields.issuetype.name}"/>
+                                                        <Image HorizontalOptions="Start" Source="{Binding Path=fields.issuetype.icon}"/>
                                                     </StackLayout>
                                                 </StackLayout>
                                             </StackLayout>
@@ -137,8 +139,9 @@
                                                 </StackLayout.GestureRecognizers>-->
                                                 <Frame HorizontalOptions="EndAndExpand">
                                                     <StackLayout Orientation="Horizontal" Padding="-15,0,-15,0">
-                                                        <!--<Image HorizontalOptions="Start"  Source="{Binding Path=fields.status.iconUrl}"></Image>-->
+                                                        <!--<Frame HorizontalOptions="Start" HeightRequest="5" WidthRequest="5" CornerRadius="10" BackgroundColor="{Binding Path=fields.status.statusCategory.colorName}"></Frame>-->
                                                         <Label x:Name="statusIssue" HorizontalOptions="Start" Text="{Binding Path=fields.status.name}"></Label>
+                                                        <Label  HorizontalOptions="Start" Text="{Binding Path=fields.status.statusCategory.color}"></Label>
                                                     </StackLayout>
                                                 </Frame>
                                                 <ImageButton Margin="5,0,0,0" Source="moreVertical.png"></ImageButton>
@@ -152,7 +155,7 @@
                                             </StackLayout.GestureRecognizers>-->
                                             <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand">
                                                 <Label HorizontalOptions="FillAndExpand" FontSize="15" TextColor="Black" VerticalOptions="CenterAndExpand" Text="{Binding Path=fields.summary}"></Label>
-                                                <!--<Label HorizontalOptions="End" FontSize="Micro"  Text="0">комментариев</Label>-->
+                                                <!--<Label HorizontalOptions="End" FontSize="Micro"  Text="0">комментариев</Label>-->                                             
                                             </StackLayout>
                                             <BoxView HorizontalOptions="FillAndExpand" Color="Black" HeightRequest="1" ></BoxView>
                                         </StackLayout>
@@ -196,10 +199,10 @@
 
                 <Button BackgroundColor="Transparent" Clicked="Button_Clicked_1" ImageSource="addButton.png" HorizontalOptions="Start" VerticalOptions="Start">
                 </Button>
-            </Frame>
+            </Frame>           
         </StackLayout>
 
-
+       
     </ContentPage.Content>
 </ContentPage>
     

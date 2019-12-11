@@ -25,7 +25,6 @@
                             <StackLayout>
                                 <Frame BackgroundColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="Start" Margin="5">
                                     <StackLayout VerticalOptions="StartAndExpand">
-
                                         <StackLayout>
                                             <StackLayout Orientation="Horizontal">
                                                 <Frame Margin="10"
@@ -36,7 +35,7 @@
                                                    IsClippedToBounds="True"
                                                    HorizontalOptions="Center"
                                                    VerticalOptions="Center">
-                                                    <Image Source="user.png"
+                                                    <Image Source="{Binding author.AvatarUrls.image}"
                                                          Aspect="AspectFill"
                                                          Margin="-20"
                                                          HeightRequest="5"
@@ -74,7 +73,12 @@
                                                         <DataTemplate>
                                                             <ViewCell>
                                                                 <ViewCell.View>
-                                                                    <Label Text="{Binding Path=field}"></Label>
+                                                                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                                                                        <Label HorizontalOptions="StartAndExpand" WidthRequest="150" Text="{Binding Path=field}"></Label>
+                                                                        <Label HorizontalOptions="CenterAndExpand" WidthRequest="200"  Text="{Binding Path=fromString}"></Label>
+                                                                        <Label  HorizontalOptions="End" Text="{Binding Path=toString}"></Label>
+                                                                    </StackLayout>
+
                                                                 </ViewCell.View>
                                                             </ViewCell>
                                                         </DataTemplate>
@@ -82,8 +86,8 @@
                                                 </ListView>
                                             </StackLayout>
 
-                                            <StackLayout Orientation="Vertical">
-                                                <!--<Label Text="Исходное значение" Margin="0,0,0,5"/>-->
+                                            <!--<StackLayout Orientation="Vertical">
+                                                --><!--<Label Text="Исходное значение" Margin="0,0,0,5"/>--><!--
                                                 <ListView HasUnevenRows="True"
                                                     ItemsSource="{Binding items}"
                                                     VerticalScrollBarVisibility="Never" 
@@ -104,7 +108,7 @@
 
 
                                             <StackLayout Orientation="Vertical">
-                                                <!--<Label Text="Новое значение"/>-->
+                                                --><!--<Label Text="Новое значение"/>--><!--
                                                 <ListView HasUnevenRows="True"
                                                     ItemsSource="{Binding items}"
                                                     VerticalScrollBarVisibility="Never" 
@@ -115,13 +119,13 @@
                                                         <DataTemplate>
                                                             <ViewCell>
                                                                 <ViewCell.View>
-                                                                    <Label Text="{Binding Path=fromString}"></Label>
+                                                                    <Label Text="{Binding Path=toString}"></Label>
                                                                 </ViewCell.View>
                                                             </ViewCell>
                                                         </DataTemplate>
                                                     </ListView.ItemTemplate>
                                                 </ListView>
-                                            </StackLayout>
+                                            </StackLayout>-->
 
 
 

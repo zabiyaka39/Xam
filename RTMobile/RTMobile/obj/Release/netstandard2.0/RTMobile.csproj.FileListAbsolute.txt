@@ -1,8 +1,3 @@
-F:\project\RTMobile\RTMobile\RTMobile\bin\Release\netstandard2.0\dataIssue\viewIssue.xaml.cs
-F:\project\RTMobile\RTMobile\RTMobile\bin\Release\netstandard2.0\RTMobile.deps.json
-F:\project\RTMobile\RTMobile\RTMobile\bin\Release\netstandard2.0\RTMobile.dll
-F:\project\RTMobile\RTMobile\RTMobile\bin\Release\netstandard2.0\RTMobile.pdb
-F:\project\RTMobile\RTMobile\RTMobile\bin\Release\netstandard2.0\Windows.Foundation.UniversalApiContract.winmd
 F:\project\RTMobile\RTMobile\RTMobile\obj\Release\netstandard2.0\about.xaml.g.cs
 F:\project\RTMobile\RTMobile\RTMobile\obj\Release\netstandard2.0\App.xaml.g.cs
 F:\project\RTMobile\RTMobile\RTMobile\obj\Release\netstandard2.0\authorization.xaml.g.cs
@@ -19,10 +14,16 @@ F:\project\RTMobile\RTMobile\RTMobile\obj\Release\netstandard2.0\MainPage.xaml.g
 F:\project\RTMobile\RTMobile\RTMobile\obj\Release\netstandard2.0\notifications.xaml.g.cs
 F:\project\RTMobile\RTMobile\RTMobile\obj\Release\netstandard2.0\profile.xaml.g.cs
 F:\project\RTMobile\RTMobile\RTMobile\obj\Release\netstandard2.0\searchIssue.xaml.g.cs
+F:\project\RTMobile\RTMobile\RTMobile\obj\Release\netstandard2.0\settings.xaml.g.cs
 F:\project\RTMobile\RTMobile\RTMobile\obj\Release\netstandard2.0\RTMobile.AssemblyInfoInputs.cache
 F:\project\RTMobile\RTMobile\RTMobile\obj\Release\netstandard2.0\RTMobile.AssemblyInfo.cs
-F:\project\RTMobile\RTMobile\RTMobile\obj\Release\netstandard2.0\XamlC.stamp
-F:\project\RTMobile\RTMobile\RTMobile\obj\Release\netstandard2.0\RTMobile.csproj.CopyComplete
 F:\project\RTMobile\RTMobile\RTMobile\obj\Release\netstandard2.0\RTMobile.dll
 F:\project\RTMobile\RTMobile\RTMobile\obj\Release\netstandard2.0\RTMobile.pdb
+F:\project\RTMobile\RTMobile\RTMobile\bin\Release\netstandard2.0\dataIssue\viewIssue.xaml.cs
+F:\project\RTMobile\RTMobile\RTMobile\bin\Release\netstandard2.0\RTMobile.deps.json
+F:\project\RTMobile\RTMobile\RTMobile\bin\Release\netstandard2.0\RTMobile.dll
+F:\project\RTMobile\RTMobile\RTMobile\bin\Release\netstandard2.0\RTMobile.pdb
+F:\project\RTMobile\RTMobile\RTMobile\bin\Release\netstandard2.0\Windows.Foundation.UniversalApiContract.winmd
 F:\project\RTMobile\RTMobile\RTMobile\obj\Release\netstandard2.0\RTMobile.csprojAssemblyReference.cache
+F:\project\RTMobile\RTMobile\RTMobile\obj\Release\netstandard2.0\XamlC.stamp
+F:\project\RTMobile\RTMobile\RTMobile\obj\Release\netstandard2.0\RTMobile.csproj.CopyComplete

@@ -18,15 +18,13 @@
                     IsClippedToBounds="True"
                     HorizontalOptions="CenterAndExpand"
                     VerticalOptions="Start">
-                    <Image  Source="user.png"
-                        Aspect="AspectFill"
-                        Margin="-20"
-                        HeightRequest="20"
-                        WidthRequest="20" />
+                    <Image  Source="{Binding rootObject.AvatarUrls.image}"
+                            Aspect="AspectFill"
+                            Margin="-20"
+                            HeightRequest="20"
+                            WidthRequest="20" />
                 </Frame>
             </StackLayout>
-
-
 
             <StackLayout VerticalOptions="Start">
                 <StackLayout  HorizontalOptions="FillAndExpand" Orientation="Horizontal">
@@ -44,14 +42,15 @@
             </StackLayout>
 
 
-            <StackLayout Orientation="Horizontal">
+            <StackLayout Orientation="Horizontal" >
                 <Label Text="Группы:" HorizontalOptions="FillAndExpand"></Label>
-                
                 <ListView   HasUnevenRows="True"
                             ItemsSource="{Binding groups}"
                             VerticalScrollBarVisibility="Never" 
                             SeparatorVisibility="None"  
-                            RefreshControlColor="Black">
+                            RefreshControlColor="Black"
+                            HeightRequest="300"
+                            WidthRequest="200">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
@@ -64,7 +63,6 @@
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-
             </StackLayout>
             <!--<StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
 
@@ -88,13 +86,8 @@
                                 </DataTemplate>
                             </ListView.ItemTemplate>
                         </ListView>
-
                 </StackLayout>-->
-
-
-
-
-            <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand">
+            <StackLayout x:Name="autoClose" Orientation="Horizontal" VerticalOptions="EndAndExpand">
                 <Switch IsToggled="false">
                 </Switch>
                 <Label Text="Автоматический выход после закрытия приложения"></Label>
@@ -103,7 +96,8 @@
 
 
 
-            <Frame  Margin="10"
+            <Frame  x:Name="buttonExit"
+                    Margin="10"
                     BorderColor="Black"
                     HeightRequest="20"
                     IsClippedToBounds="True"

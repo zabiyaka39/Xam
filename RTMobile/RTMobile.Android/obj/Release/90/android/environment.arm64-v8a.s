@@ -3,8 +3,8 @@
 	.section	.rodata..L.str.1,"aMS",@progbits,1
 	.type	.L.str.1, @object
 .L.str.1:
-	.asciz	"com.companyname.rtmobile"
-	.size	.L.str.1, 25
+	.asciz	"RTMobile.RTMobile"
+	.size	.L.str.1, 18
 	.section	.data.application_config,"aw",@progbits
 	.type	application_config, @object
 	.p2align	3
@@ -63,7 +63,7 @@ mono_aot_mode_name:
 	.section	.rodata..L.str.8,"aMS",@progbits,1
 	.type	.L.str.8, @object
 .L.str.8:
-	.asciz	"f3b59c9e-a706-420a-9df6-e9cdbc1bdf1f"
+	.asciz	"04d1da8c-6ca4-4c3a-b451-922348831c74"
 	.size	.L.str.8, 37
 	.section	.rodata..L.str.9,"aMS",@progbits,1
 	.type	.L.str.9, @object

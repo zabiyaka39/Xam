@@ -129,11 +129,15 @@
               "target": "Package",
               "version": "[5.2.0, )"
             },
+            "Microsoft.CSharp": {
+              "target": "Package",
+              "version": "[4.6.0, )"
+            },
             "Microsoft.CodeAnalysis.FxCopAnalyzers": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[2.9.6, )"
+              "version": "[2.9.8, )"
             },
             "NETStandard.Library": {
               "suppressParent": "All",
@@ -141,13 +145,13 @@
               "version": "[2.0.3, )",
               "autoReferenced": true
             },
+            "Nancy": {
+              "target": "Package",
+              "version": "[2.0.0, )"
+            },
             "Newtonsoft.Json": {
               "target": "Package",
-              "version": "[12.0.2, )"
-            },
-            "Serenity.Web": {
-              "target": "Package",
-              "version": "[3.9.11, )"
+              "version": "[12.0.3, )"
             },
             "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",
@@ -163,7 +167,7 @@
             },
             "Xam.Plugins.Settings": {
               "target": "Package",
-              "version": "[2.5.8, )"
+              "version": "[3.1.1, )"
             },
             "Xamarin.Essentials": {
               "target": "Package",
@@ -171,7 +175,7 @@
             },
             "Xamarin.Forms": {
               "target": "Package",
-              "version": "[4.3.0.908675, )"
+              "version": "[4.3.0.991211, )"
             }
           },
           "imports": [

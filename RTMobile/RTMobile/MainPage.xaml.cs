@@ -31,51 +31,57 @@ namespace RTMobile
 
             //};
             //ToolbarItems.Add(toolbar);
-
-
-
         }
 
         private async void Button_Clicked(object sender, EventArgs e)
         {
-            if (CrossSettings.Current.GetValueOrDefault<string>("login").Length > 0 && CrossSettings.Current.GetValueOrDefault<string>("password").Length > 0 && CrossSettings.Current.GetValueOrDefault<bool>("saveAuthorizationData"))
-            {
-                Request request = new Request();
+			//CrossSettings.Current.AddOrUpdateValue("saveAuthorizationData","true");
+			//await Navigation.PushAsync(new authorization()).ConfigureAwait(true);
+			if (CrossSettings.Current.GetValueOrDefault("login", string.Empty).Length > 0 && 
+				CrossSettings.Current.GetValueOrDefault("password", string.Empty).Length > 0)/* && 
+				CrossSettings.Current.GetValueOrDefault("saveAuthorizationData", string.Empty) == "true")*/
+			{
+				Request request = new Request();
 
-                if (request.authorization(CrossSettings.Current.GetValueOrDefault<string>("login"), CrossSettings.Current.GetValueOrDefault<string>("password")))
-                {
-                    CrossSettings.Current.AddOrUpdateValue<string>("tmpLogin", CrossSettings.Current.GetValueOrDefault<string>("login"));
-                    CrossSettings.Current.AddOrUpdateValue<string>("tmpPassword", CrossSettings.Current.GetValueOrDefault<string>("password"));
-                   
-                    var mainPage = new IssuePage();//this could be content page
-                    var rootPage = new NavigationPage(mainPage);
-                    //NavigationPage(new IssuePage());
-                    await Navigation.PushAsync(new IssuePage());
-                }
-                else
-                {
-                    await Navigation.PushAsync(new authorization());
-                }
-            }
-            else
-            {
-                if (CrossSettings.Current.GetValueOrDefault<string>("login").Length > 0)
-                {
-                    CrossSettings.Current.Remove("login");
-                }
-                if (CrossSettings.Current.GetValueOrDefault<string>("password").Length > 0)
-                {
-                    CrossSettings.Current.Remove("password");
-                }
+				if (request.authorization(CrossSettings.Current.GetValueOrDefault("login", string.Empty), CrossSettings.Current.GetValueOrDefault("password", string.Empty)))
+				{
+					CrossSettings.Current.AddOrUpdateValue("tmpLogin", CrossSettings.Current.GetValueOrDefault("login", string.Empty));
+					CrossSettings.Current.AddOrUpdateValue("tmpPassword", CrossSettings.Current.GetValueOrDefault("password", string.Empty));
 
-                await Navigation.PushAsync(new authorization());
-            }
-            //await Navigation.PushAsync(new IssuePage());
-        }
+					//var mainPage = new IssuePage();//this could be content page
+					//var rootPage = new NavigationPage(mainPage);
+					//NavigationPage(new IssuePage());мани
+					await Navigation.PushAsync(new IssuePage()).ConfigureAwait(true);
+				}
+				else
+				{
+					await Navigation.PushAsync(new authorization()).ConfigureAwait(true);
+				}
+			}
+			else
+			{
+				if (CrossSettings.Current.GetValueOrDefault("login", string.Empty).Length > 0)
+				{
+					CrossSettings.Current.Remove("login");
+				}
+				if (CrossSettings.Current.GetValueOrDefault("password", string.Empty).Length > 0)
+				{
+					CrossSettings.Current.Remove("password");
+				}
+
+				await Navigation.PushAsync(new authorization()).ConfigureAwait(true);
+			}
+			//await Navigation.PushAsync(new IssuePage());
+		}
 
         private async void Button_Clicked_1(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new about());
+            await Navigation.PushAsync(new about()).ConfigureAwait(true);
+        }
+
+        private async void Button_Clicked_2(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new settingsRT()).ConfigureAwait(true);
         }
     }
 }

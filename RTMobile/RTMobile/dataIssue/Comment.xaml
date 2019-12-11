@@ -36,7 +36,7 @@
                                                             IsClippedToBounds="True"
                                                             HorizontalOptions="Center"
                                                             VerticalOptions="Start">
-                                                        <Image  Source="user.png"
+                                                        <Image  Source="{Binding author.AvatarUrls.image}"
                                                                 Aspect="AspectFill"
                                                                 Margin="-20"
                                                                 HeightRequest="5"
@@ -45,7 +45,7 @@
                                                     <StackLayout>
                                                         <Label HorizontalOptions="FillAndExpand" Text="{Binding Path=author.displayName}"></Label>
                                                         <ScrollView Orientation="Horizontal" VerticalOptions="Start" HorizontalOptions="FillAndExpand">
-                                                            <Editor AutoSize="TextChanges" HorizontalOptions="FillAndExpand" IsReadOnly="True" Text="{Binding Path=body}"  VerticalOptions="CenterAndExpand"></Editor>
+                                                            <Editor AutoSize="TextChanges" FontSize="Medium" HorizontalOptions="FillAndExpand" IsReadOnly="True" Text="{Binding Path=body}"  VerticalOptions="CenterAndExpand"></Editor>
                                                         </ScrollView>
                                                     </StackLayout>
                                                 </StackLayout>
