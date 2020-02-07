@@ -13,6 +13,9 @@ using System.Net.Http;
 using System.Collections.ObjectModel;
 using System.Net;
 using System.IO;
+using RTMobile.profile;
+using RTMobile.notification;
+using RTMobile.insight;
 
 namespace RTMobile
 {
@@ -209,7 +212,7 @@ namespace RTMobile
 		/// <param name="e"></param>
 		private async void ImageButton_Clicked(object sender, EventArgs e)
 		{
-			await Navigation.PushAsync(new profile());
+			await Navigation.PushAsync(new Profile());
 		}
 		/// <summary>
 		/// Кнопка перехода к уведомлениям
@@ -218,7 +221,7 @@ namespace RTMobile
 		/// <param name="e"></param>
 		private async void ImageButton_Clicked_1(object sender, EventArgs e)
 		{
-			await Navigation.PushAsync(new notifications());
+			await Navigation.PushAsync(new Notification());
 		}
 		/// <summary>
 		/// Кнопка перехода к разделу Insight
@@ -227,7 +230,7 @@ namespace RTMobile
 		/// <param name="e"></param>
 		private async void ImageButton_Clicked_2(object sender, EventArgs e)
 		{
-			await Navigation.PushAsync(new insight());
+			await Navigation.PushAsync(new Insight());
 		}
 		/// <summary>
 		/// Обработка сортировки

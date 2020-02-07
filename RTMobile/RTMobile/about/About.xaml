@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RTMobile.about.About"
+             Title="О ПРИЛОЖЕНИИ">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#312F35" HorizontalOptions="FillAndExpand"
+                     VerticalOptions="FillAndExpand">
+            <Image Source="rosohranaLogo.png" HorizontalOptions="CenterAndExpand"
+                   VerticalOptions="Start"  Aspect="Fill" Margin="0,40,0,0"/>
+            <Label Text="Версия 1.0.0" HorizontalOptions="CenterAndExpand" VerticalOptions="Start"
+                   FontSize="16" TextColor="#F0F1F0" Margin="0,10,0,25"/>
+            <Grid VerticalOptions="StartAndExpand" BackgroundColor="#4A4C50">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height = "60"/>
+                    <RowDefinition Height="1"/>
+                    <RowDefinition Height="60"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="40"/>
+                </Grid.ColumnDefinitions>
+                <Button Text="Обратная связь" Grid.Row="0" Grid.Column="0"
+                        VerticalOptions="FillAndExpand" HorizontalOptions="StartAndExpand"
+                        TextColor="#F0F1F0" BackgroundColor="Transparent" />
+                <Image Source="arrowRight.png" Grid.Row="0" Grid.Column="1"/>
+
+                <BoxView BackgroundColor="#9B9CA0" HeightRequest="1"
+                                 HorizontalOptions="FillAndExpand"
+                                 Grid.Row="1" Grid.ColumnSpan="2"/>
+                <Button Text="Оценить приложение" Grid.Row="2" Grid.Column="0"
+                        TextColor="#F0F1F0" HorizontalOptions="StartAndExpand"
+                        VerticalOptions="FillAndExpand" BackgroundColor="Transparent"/>
+                <Image Source="arrowRight.png" Grid.Row="2" Grid.Column="1"/>
+            </Grid>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="5"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="5"/>
+                </Grid.RowDefinitions>
+                <ImageButton Source="home.png" Grid.Column="0" Grid.Row="1"
+                             BackgroundColor="Transparent" Clicked="ImageButton_Clicked_3"></ImageButton>
+                <ImageButton Source="calendar.png" Grid.Column="1" Grid.Row="1"
+                             BackgroundColor="Transparent" Clicked="ImageButton_Clicked"></ImageButton>
+                <ImageButton Source="insight.png" Grid.Column="2" Grid.Row="1"
+                             BackgroundColor="Transparent" Clicked="ImageButton_Clicked_1"></ImageButton>
+                <ImageButton Source="filter.png" Grid.Column="3" Grid.Row="1"
+                             BackgroundColor="Transparent" Clicked="ImageButton_Clicked_2"></ImageButton>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

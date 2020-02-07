@@ -32,7 +32,7 @@
           "lib/Xamarin.iOS10/CarouselView.FormsPlugin.iOS.dll": {}
         }
       },
-      "Microsoft.CSharp/4.6.0": {
+      "Microsoft.CSharp/4.7.0": {
         "type": "package",
         "frameworkAssemblies": [
           "Microsoft.CSharp"
@@ -390,7 +390,7 @@
           "lib/Xamarin.iOS10/Plugin.Settings.dll": {}
         }
       },
-      "Xamarin.Essentials/1.1.0": {
+      "Xamarin.Essentials/1.3.1": {
         "type": "package",
         "dependencies": {
           "System.Numerics.Vectors": "4.5.0"
@@ -405,7 +405,7 @@
           "lib/xamarinios10/Xamarin.Essentials.dll": {}
         }
       },
-      "Xamarin.Forms/4.1.0.555618": {
+      "Xamarin.Forms/4.3.0.991221": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Xamarin.Forms.Core.dll": {},
@@ -534,7 +534,7 @@
         "dependencies": {
           "CarouselView": "7.0.3.1",
           "CarouselView.FormsPlugin": "5.2.0",
-          "Microsoft.CSharp": "4.6.0",
+          "Microsoft.CSharp": "4.7.0",
           "Nancy": "2.0.0",
           "Newtonsoft.Json": "12.0.3",
           "System.IdentityModel.Tokens.Jwt": "5.6.0",
@@ -542,7 +542,7 @@
           "System.Xml.XmlSerializer": "4.3.0",
           "Xam.Plugins.Settings": "3.1.1",
           "Xamarin.Essentials": "1.3.1",
-          "Xamarin.Forms": "4.3.0.991211"
+          "Xamarin.Forms": "4.3.0.991221"
         },
         "compile": {
           "bin/placeholder/RTMobile.dll": {}
@@ -583,7 +583,7 @@
           "lib/Xamarin.iOS10/CarouselView.FormsPlugin.iOS.dll": {}
         }
       },
-      "Microsoft.CSharp/4.6.0": {
+      "Microsoft.CSharp/4.7.0": {
         "type": "package",
         "frameworkAssemblies": [
           "Microsoft.CSharp"
@@ -905,7 +905,7 @@
           "lib/Xamarin.iOS10/Plugin.Settings.dll": {}
         }
       },
-      "Xamarin.Essentials/1.1.0": {
+      "Xamarin.Essentials/1.3.1": {
         "type": "package",
         "dependencies": {
           "System.Numerics.Vectors": "4.5.0"
@@ -920,7 +920,7 @@
           "lib/xamarinios10/Xamarin.Essentials.dll": {}
         }
       },
-      "Xamarin.Forms/4.1.0.555618": {
+      "Xamarin.Forms/4.3.0.991221": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Xamarin.Forms.Core.dll": {},
@@ -1049,7 +1049,7 @@
         "dependencies": {
           "CarouselView": "7.0.3.1",
           "CarouselView.FormsPlugin": "5.2.0",
-          "Microsoft.CSharp": "4.6.0",
+          "Microsoft.CSharp": "4.7.0",
           "Nancy": "2.0.0",
           "Newtonsoft.Json": "12.0.3",
           "System.IdentityModel.Tokens.Jwt": "5.6.0",
@@ -1057,7 +1057,7 @@
           "System.Xml.XmlSerializer": "4.3.0",
           "Xam.Plugins.Settings": "3.1.1",
           "Xamarin.Essentials": "1.3.1",
-          "Xamarin.Forms": "4.3.0.991211"
+          "Xamarin.Forms": "4.3.0.991221"
         },
         "compile": {
           "bin/placeholder/RTMobile.dll": {}
@@ -1098,7 +1098,7 @@
           "lib/Xamarin.iOS10/CarouselView.FormsPlugin.iOS.dll": {}
         }
       },
-      "Microsoft.CSharp/4.6.0": {
+      "Microsoft.CSharp/4.7.0": {
         "type": "package",
         "frameworkAssemblies": [
           "Microsoft.CSharp"
@@ -1420,7 +1420,7 @@
           "lib/Xamarin.iOS10/Plugin.Settings.dll": {}
         }
       },
-      "Xamarin.Essentials/1.1.0": {
+      "Xamarin.Essentials/1.3.1": {
         "type": "package",
         "dependencies": {
           "System.Numerics.Vectors": "4.5.0"
@@ -1435,7 +1435,7 @@
           "lib/xamarinios10/Xamarin.Essentials.dll": {}
         }
       },
-      "Xamarin.Forms/4.1.0.555618": {
+      "Xamarin.Forms/4.3.0.991221": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Xamarin.Forms.Core.dll": {},
@@ -1564,7 +1564,7 @@
         "dependencies": {
           "CarouselView": "7.0.3.1",
           "CarouselView.FormsPlugin": "5.2.0",
-          "Microsoft.CSharp": "4.6.0",
+          "Microsoft.CSharp": "4.7.0",
           "Nancy": "2.0.0",
           "Newtonsoft.Json": "12.0.3",
           "System.IdentityModel.Tokens.Jwt": "5.6.0",
@@ -1572,7 +1572,7 @@
           "System.Xml.XmlSerializer": "4.3.0",
           "Xam.Plugins.Settings": "3.1.1",
           "Xamarin.Essentials": "1.3.1",
-          "Xamarin.Forms": "4.3.0.991211"
+          "Xamarin.Forms": "4.3.0.991221"
         },
         "compile": {
           "bin/placeholder/RTMobile.dll": {}
@@ -1613,7 +1613,7 @@
           "lib/Xamarin.iOS10/CarouselView.FormsPlugin.iOS.dll": {}
         }
       },
-      "Microsoft.CSharp/4.6.0": {
+      "Microsoft.CSharp/4.7.0": {
         "type": "package",
         "frameworkAssemblies": [
           "Microsoft.CSharp"
@@ -1935,7 +1935,7 @@
           "lib/Xamarin.iOS10/Plugin.Settings.dll": {}
         }
       },
-      "Xamarin.Essentials/1.1.0": {
+      "Xamarin.Essentials/1.3.1": {
         "type": "package",
         "dependencies": {
           "System.Numerics.Vectors": "4.5.0"
@@ -1950,7 +1950,7 @@
           "lib/xamarinios10/Xamarin.Essentials.dll": {}
         }
       },
-      "Xamarin.Forms/4.1.0.555618": {
+      "Xamarin.Forms/4.3.0.991221": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Xamarin.Forms.Core.dll": {},
@@ -2079,7 +2079,7 @@
         "dependencies": {
           "CarouselView": "7.0.3.1",
           "CarouselView.FormsPlugin": "5.2.0",
-          "Microsoft.CSharp": "4.6.0",
+          "Microsoft.CSharp": "4.7.0",
           "Nancy": "2.0.0",
           "Newtonsoft.Json": "12.0.3",
           "System.IdentityModel.Tokens.Jwt": "5.6.0",
@@ -2087,7 +2087,7 @@
           "System.Xml.XmlSerializer": "4.3.0",
           "Xam.Plugins.Settings": "3.1.1",
           "Xamarin.Essentials": "1.3.1",
-          "Xamarin.Forms": "4.3.0.991211"
+          "Xamarin.Forms": "4.3.0.991221"
         },
         "compile": {
           "bin/placeholder/RTMobile.dll": {}
@@ -2135,10 +2135,10 @@
         "lib/portable-net45+netcore45+wpa81+wp8+MonoAndroid10+Xamarin.iOS10/CarouselView.FormsPlugin.Abstractions.dll"
       ]
     },
-    "Microsoft.CSharp/4.6.0": {
-      "sha512": "kxn3M2rnAGy5N5DgcIwcE8QTePWU/XiYcQVzn9HqTls2NKluVzVSmVWRjK7OUPWbljCXuZxHyhEz9kPRIQeXow==",
+    "Microsoft.CSharp/4.7.0": {
+      "sha512": "pTj+D3uJWyN3My70i2Hqo+OXixq3Os2D1nJ2x92FFo6sk8fYS1m1WLNTs0Dc1uPaViH0YvEEwvzddQ7y4rhXmA==",
       "type": "package",
-      "path": "microsoft.csharp/4.6.0",
+      "path": "microsoft.csharp/4.7.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2161,7 +2161,7 @@
         "lib/xamarinmac20/_._",
         "lib/xamarintvos10/_._",
         "lib/xamarinwatchos10/_._",
-        "microsoft.csharp.4.6.0.nupkg.sha512",
+        "microsoft.csharp.4.7.0.nupkg.sha512",
         "microsoft.csharp.nuspec",
         "ref/MonoAndroid10/_._",
         "ref/MonoTouch10/_._",
@@ -3550,10 +3550,10 @@
         "xam.plugins.settings.nuspec"
       ]
     },
-    "Xamarin.Essentials/1.1.0": {
-      "sha512": "W0XOt1dNMAE2POcsVotoKDDy5FdAOnR0qULKl6WI4kQEMxQ1sp84DsSU5iacV7oQUMuPhUBAm/3ywks0HO1QrQ==",
+    "Xamarin.Essentials/1.3.1": {
+      "sha512": "+51728AdZ/qtABGvcIaNXgEoL2jAtxAXLHS8PvGCP0pb6n7twBqYpfgkmwHYVgu+U99szgtL+Jot8L+OXorPcA==",
       "type": "package",
-      "path": "xamarin.essentials/1.1.0",
+      "path": "xamarin.essentials/1.3.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -3581,6 +3581,9 @@
         "lib/netstandard2.0/Xamarin.Essentials.dll",
         "lib/netstandard2.0/Xamarin.Essentials.pdb",
         "lib/netstandard2.0/Xamarin.Essentials.xml",
+        "lib/tizen40/Xamarin.Essentials.dll",
+        "lib/tizen40/Xamarin.Essentials.pdb",
+        "lib/tizen40/Xamarin.Essentials.xml",
         "lib/uap10.0.16299/Xamarin.Essentials.dll",
         "lib/uap10.0.16299/Xamarin.Essentials.pdb",
         "lib/uap10.0.16299/Xamarin.Essentials.pri",
@@ -3588,15 +3591,21 @@
         "lib/xamarinios10/Xamarin.Essentials.dll",
         "lib/xamarinios10/Xamarin.Essentials.pdb",
         "lib/xamarinios10/Xamarin.Essentials.xml",
+        "lib/xamarintvos10/Xamarin.Essentials.dll",
+        "lib/xamarintvos10/Xamarin.Essentials.pdb",
+        "lib/xamarintvos10/Xamarin.Essentials.xml",
+        "lib/xamarinwatchos10/Xamarin.Essentials.dll",
+        "lib/xamarinwatchos10/Xamarin.Essentials.pdb",
+        "lib/xamarinwatchos10/Xamarin.Essentials.xml",
         "readme.txt",
-        "xamarin.essentials.1.1.0.nupkg.sha512",
+        "xamarin.essentials.1.3.1.nupkg.sha512",
         "xamarin.essentials.nuspec"
       ]
     },
-    "Xamarin.Forms/4.1.0.555618": {
-      "sha512": "eZHy/yCrKhu3WUI1oszz8Hvq8iC+wQyokEVkzlSmNJD6xa2pGLq5UjOgpXEWu7zKPaoZ5c70SrTv1BBZE+Je1A==",
+    "Xamarin.Forms/4.3.0.991221": {
+      "sha512": "Yh3kxXj+fnERLZfh8gNbcFWflSL0PvPh3aHtq2tpXInInVNeWDUb0qitChUm2hgJSSOpn3MBa/55nxcqPM4Kog==",
       "type": "package",
-      "path": "xamarin.forms/4.1.0.555618",
+      "path": "xamarin.forms/4.3.0.991221",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -3816,17 +3825,20 @@
         "lib/uap10.0/Xamarin.Forms.Platform.UAP.pdb",
         "lib/uap10.0/Xamarin.Forms.Platform.UAP.pri",
         "lib/uap10.0/Xamarin.Forms.Platform.UAP/AutoSuggestStyle.xbf",
+        "lib/uap10.0/Xamarin.Forms.Platform.UAP/CollectionView/ItemsViewStyles.xbf",
         "lib/uap10.0/Xamarin.Forms.Platform.UAP/FormsCheckBoxStyle.xbf",
         "lib/uap10.0/Xamarin.Forms.Platform.UAP/FormsCommandBarStyle.xbf",
         "lib/uap10.0/Xamarin.Forms.Platform.UAP/FormsEmbeddedPageWrapper.xbf",
         "lib/uap10.0/Xamarin.Forms.Platform.UAP/FormsFlyout.xbf",
         "lib/uap10.0/Xamarin.Forms.Platform.UAP/FormsProgressBarStyle.xbf",
         "lib/uap10.0/Xamarin.Forms.Platform.UAP/FormsTextBoxStyle.xbf",
-        "lib/uap10.0/Xamarin.Forms.Platform.UAP/Items/ItemsViewStyles.xbf",
         "lib/uap10.0/Xamarin.Forms.Platform.UAP/MasterDetailControlStyle.xbf",
+        "lib/uap10.0/Xamarin.Forms.Platform.UAP/Microsoft.UI.Xaml/DensityStyles/Compact.xbf",
         "lib/uap10.0/Xamarin.Forms.Platform.UAP/PageControlStyle.xbf",
+        "lib/uap10.0/Xamarin.Forms.Platform.UAP/PickerStyle.xbf",
         "lib/uap10.0/Xamarin.Forms.Platform.UAP/Properties/Xamarin.Forms.Platform.UAP.rd.xml",
         "lib/uap10.0/Xamarin.Forms.Platform.UAP/Resources.xbf",
+        "lib/uap10.0/Xamarin.Forms.Platform.UAP/Shell/ShellStyles.xbf",
         "lib/uap10.0/Xamarin.Forms.Platform.UAP/SliderStyle.xbf",
         "lib/uap10.0/Xamarin.Forms.Platform.UAP/StepperControl.xbf",
         "lib/uap10.0/Xamarin.Forms.Platform.UAP/TabbedPageStyle.xbf",
@@ -3835,7 +3847,7 @@
         "lib/uap10.0/Xamarin.Forms.Xaml.dll",
         "lib/uap10.0/Xamarin.Forms.Xaml.pdb",
         "lib/uap10.0/Xamarin.Forms.Xaml.xml",
-        "xamarin.forms.4.1.0.555618.nupkg.sha512",
+        "xamarin.forms.4.3.0.991221.nupkg.sha512",
         "xamarin.forms.nuspec"
       ]
     },
@@ -3848,8 +3860,8 @@
   "projectFileDependencyGroups": {
     "Xamarin.iOS,Version=v1.0": [
       "RTMobile >= 1.0.0",
-      "Xamarin.Essentials >= 1.1.0",
-      "Xamarin.Forms >= 4.1.0.555618"
+      "Xamarin.Essentials >= 1.3.1",
+      "Xamarin.Forms >= 4.3.0.991221"
     ]
   },
   "packageFolders": {
@@ -3859,11 +3871,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\project\\RTMobile\\RTMobile\\RTMobile.iOS\\RTMobile.iOS.csproj",
+      "projectUniqueName": "F:\\project\\Mobile\\RTMobile\\RTMobile\\RTMobile.iOS\\RTMobile.iOS.csproj",
       "projectName": "RTMobile.iOS",
-      "projectPath": "F:\\project\\RTMobile\\RTMobile\\RTMobile.iOS\\RTMobile.iOS.csproj",
+      "projectPath": "F:\\project\\Mobile\\RTMobile\\RTMobile\\RTMobile.iOS\\RTMobile.iOS.csproj",
       "packagesPath": "C:\\Users\\sekisov\\.nuget\\packages\\",
-      "outputPath": "F:\\project\\RTMobile\\RTMobile\\RTMobile.iOS\\obj\\",
+      "outputPath": "F:\\project\\Mobile\\RTMobile\\RTMobile\\RTMobile.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -3884,8 +3896,8 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "F:\\project\\RTMobile\\RTMobile\\RTMobile\\RTMobile.csproj": {
-              "projectPath": "F:\\project\\RTMobile\\RTMobile\\RTMobile\\RTMobile.csproj"
+            "F:\\project\\Mobile\\RTMobile\\RTMobile\\RTMobile\\RTMobile.csproj": {
+              "projectPath": "F:\\project\\Mobile\\RTMobile\\RTMobile\\RTMobile\\RTMobile.csproj"
             }
           }
         }
@@ -3896,11 +3908,11 @@
         "dependencies": {
           "Xamarin.Essentials": {
             "target": "Package",
-            "version": "[1.1.0, )"
+            "version": "[1.3.1, )"
           },
           "Xamarin.Forms": {
             "target": "Package",
-            "version": "[4.1.0.555618, )"
+            "version": "[4.3.0.991221, )"
           }
         }
       }
@@ -3916,33 +3928,5 @@
         "#import": []
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1605",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Обнаружено понижение версии пакета Xamarin.Essentials с 1.3.1 на 1.1.0. Чтобы выбрать другую версию, создайте ссылку на пакет напрямую из проекта. \r\n RTMobile.iOS -> RTMobile -> Xamarin.Essentials (>= 1.3.1) \r\n RTMobile.iOS -> Xamarin.Essentials (>= 1.1.0)",
-      "libraryId": "Xamarin.Essentials",
-      "targetGraphs": [
-        "Xamarin.iOS,Version=v1.0",
-        "Xamarin.iOS,Version=v1.0/win",
-        "Xamarin.iOS,Version=v1.0/win-x64",
-        "Xamarin.iOS,Version=v1.0/win-x86"
-      ]
-    },
-    {
-      "code": "NU1605",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Обнаружено понижение версии пакета Xamarin.Forms с 4.3.0.991211 на 4.1.0.555618. Чтобы выбрать другую версию, создайте ссылку на пакет напрямую из проекта. \r\n RTMobile.iOS -> RTMobile -> Xamarin.Forms (>= 4.3.0.991211) \r\n RTMobile.iOS -> Xamarin.Forms (>= 4.1.0.555618)",
-      "libraryId": "Xamarin.Forms",
-      "targetGraphs": [
-        "Xamarin.iOS,Version=v1.0",
-        "Xamarin.iOS,Version=v1.0/win",
-        "Xamarin.iOS,Version=v1.0/win-x64",
-        "Xamarin.iOS,Version=v1.0/win-x86"
-      ]
-    }
-  ]
+  }
 }

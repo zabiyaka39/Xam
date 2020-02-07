@@ -1,5 +1,6 @@
 ﻿using System;
 using Xamarin.Forms;
+using RTMobile.issues;
 using Xamarin.Forms.Xaml;
 
 namespace RTMobile
@@ -10,7 +11,9 @@ namespace RTMobile
         {
             
             InitializeComponent();
-            MainPage = new NavigationPage(new RTMobile.mainPage());
+            MainPage = new NavigationPage(new MainPage());
+            //MainPage = new NavigationPage(new MainPage());
+            //MainPage = new NavigationPage(new dataIssue.screen());
             //MainPage = new NavigationPage(new RTMobile.IssuePage());
         }
 

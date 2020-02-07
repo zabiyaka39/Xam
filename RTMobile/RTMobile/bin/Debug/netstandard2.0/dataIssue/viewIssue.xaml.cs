@@ -1,4 +1,5 @@
 ﻿using Plugin.Settings;
+using RTMobile.profile;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -161,12 +162,12 @@ namespace RTMobile
 
 		private async void TapGestureRecognizer_Tapped_2(object sender, EventArgs e)
 		{
-			await Navigation.PushAsync(new profile(issue.fields.assignee.name)).ConfigureAwait(true);
+			await Navigation.PushAsync(new Profile(issue.fields.assignee.name)).ConfigureAwait(true);
 		}
 
 		private async void TapGestureRecognizer_Tapped_3(object sender, EventArgs e)
 		{
-			await Navigation.PushAsync(new profile(issue.fields.reporter.name)).ConfigureAwait(true);
+			await Navigation.PushAsync(new Profile(issue.fields.reporter.name)).ConfigureAwait(true);
 		}
 	}
 }

@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RTMobile.issues.viewIssue.Comment"
+             Title="КОМЕННТАРИИ">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <x:Array x:Key="histories" Type="{x:Type x:String}">
+                <x:String>iiii</x:String>
+                <x:String>qqq</x:String>
+                <x:String>rrrr</x:String>
+                <x:String>www</x:String>
+                <x:String>eee</x:String>
+                <x:String>rrrr</x:String>
+                <x:String>www</x:String>
+                <x:String>eee</x:String>
+                <x:String>rrrr</x:String>
+                <x:String>www</x:String>
+                <x:String>eee</x:String>
+                <x:String>rrrr</x:String>
+                <x:String>www</x:String>
+                <x:String>eee</x:String>
+                <x:String>rrrr</x:String>
+                <x:String>www</x:String>
+                <x:String>eee88</x:String>
+            </x:Array>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.ToolbarItems>
+
+        <ToolbarItem Text="   _________________   " 
+                     Order="Secondary" Priority="0"/>
+        <ToolbarItem Text="Рабочий журнал" Clicked="ToolbarItem_Clicked_1"
+                     Order="Secondary" Priority="1"/>
+        <ToolbarItem Text="История" Clicked="ToolbarItem_Clicked"
+                     Order="Secondary" Priority="2"/>
+
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
+                      BackgroundColor="#4A4C50">
+            <StackLayout HeightRequest="70" BackgroundColor="#323037">
+                <Label Text="IT-4926 - Создание мобильного приложения"
+                       TextColor="#F0F1F0" FontSize="16" VerticalOptions="CenterAndExpand"
+                       HorizontalOptions="CenterAndExpand"/>
+            </StackLayout>
+
+            <ListView VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
+                     BackgroundColor="#4A4C50" HasUnevenRows="True" SeparatorVisibility="None"
+                     ItemsSource="{StaticResource Key=histories}" ItemTapped="ListView_ItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                    <Frame Grid.Column="0" Grid.Row="0" CornerRadius="5" HorizontalOptions="Start" WidthRequest="360"
+                                           Margin="10" Padding="0" BackgroundColor="#FFFFFF">
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="25"/>
+                                            </Grid.RowDefinitions>
+                                            <Grid Padding="10,5,5,5" Margin="0" Grid.Row="0">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="50"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="35"/>
+                                                    <RowDefinition Height="30"/>
+                                                    <RowDefinition Height="1"/>
+                                                </Grid.RowDefinitions>
+                                                <Frame Margin="0, 10, 0, 10" 
+                                               CornerRadius="50" IsClippedToBounds="True"
+                                               HorizontalOptions="Start" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" VerticalOptions="Start"
+                                               HasShadow="True" OutlineColor="Black" BackgroundColor="#FFFFFF">
+                                                    <Image x:Name="imageReporter" Source ="sekisov.jpg" Aspect="Fill" Margin="-20"/>
+                                                </Frame>
+
+                                                <Label Grid.Column="1" Grid.Row="0" Text="Сексиов Владислав Александрович"
+                                                   FontSize="12" TextColor="#4A4C50" VerticalOptions="End"/>
+                                                <StackLayout Orientation="Horizontal" Grid.Column="1" Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
+                                                    <Label  Text="Добавлен: 22.01.2020 17:56"
+                                                           FontSize="12" TextColor="#4A4C50" VerticalOptions="StartAndExpand"/>
+                                                    <Frame CornerRadius="5" BackgroundColor="#F0F1F0" HorizontalOptions="EndAndExpand" BorderColor="#4A4C50"
+                                                           Padding="5,0,5,0" >
+                                                        <Label HorizontalOptions="Start" VerticalOptions="Start" Margin="0" FontSize="12" Text="Авт."/>
+                                                    </Frame>
+                                                    <Frame CornerRadius="5" BackgroundColor="#F0F1F0" HorizontalOptions="End" BorderColor="#4A4C50"
+                                                           Padding="5,0,5,0" Margin="5,0,5,0" HeightRequest="5">
+                                                        <Label HorizontalOptions="Start" VerticalOptions="Center" Margin="0" FontSize="12" Text="Внешн."/>
+                                                    </Frame>
+                                                </StackLayout>
+                                                <BoxView BackgroundColor="#4A4C50" HeightRequest="1" 
+                                                 HorizontalOptions="FillAndExpand" Grid.Column="0" Margin="-5,0,0,0"
+                                                 Grid.Row="2" Grid.ColumnSpan="2" VerticalOptions="Start"/>
+                                            </Grid>
+                                            <ScrollView Margin="10,0,10,0" VerticalOptions="StartAndExpand"
+                                                  HorizontalOptions="FillAndExpand" Grid.Column="0" Grid.Row="1" Padding="0" >
+                                                <Label VerticalOptions="Start" HorizontalOptions="Start" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nibh eget molestie in amet, vitae phasellus amet, nibh ipsum. Vitae, auctor eget id suspendisse lobortis aliquam. Felis fames aliquet amet ultricies cursus sed massa habitant senectus. Imperdiet dis mauris ultrices vitae est et risus, gravida. Non fermentum vel fames blandit quis nunc posuere. Dui non augue viverra id. Turpis netus turpis elementum ut ut porta quam lorem placerat. Mauris dolor at amet vitae sit amet parturient. Tincidunt viverra non eget integer molestie. Mi lacus, vitae amet lorem interdum gravida.
+Lectus nisi etiam ut ut elit, dictumst mauris aliquet id. Eget et pharetra aliquet tortor ornare nunc. Id nisl nunc netus mauris orci sem purus sagittis ultricies. Scelerisque vestibulum vitae arcu pharetra faucibus. Sit in maecenas sit sit aenean. Odio convallis lacus ornare malesuada a, turpis purus sodales.
+Eget eu elit semper ornare sem orci ac dui ultrices. Ultricies cras scelerisque urna at arcu euismod blandit sapien. Mauris volutpat, viverra quisque suspendisse non pretium molestie id sit. Ut senectus scelerisque nibh velit magna elit aliquet auctor sit. Faucibus luctus ullamcorper accumsan tempor imperdiet curabitur suscipit risus. Maecenas mauris in tincidunt tristique tellus purus. In euismod semper nunc suspendisse. Viverra at interdum duis eu viverra mi, gravida. Laoreet sit tortor sit sociis faucibus feugiat tristique id. Tincidunt viverra mattis gravida tortor, cras." Grid.Column="0" Grid.Row="0"/>
+
+                                            </ScrollView>
+                                            <ImageButton x:Name="showHistory" Source="arrowUp.png"  Grid.Column="0"
+                                                         BackgroundColor="Transparent"
+                                                     Grid.Row="2" HorizontalOptions="Center" VerticalOptions="End"
+                                                         Margin="0,0,0,10" Clicked="showHistory_Clicked"/>
+                                        </Grid>
+                                    </Frame>
+
+                                    <Frame Grid.Column="0" Grid.Row="1" CornerRadius="5" HorizontalOptions="End" WidthRequest="360"
+                                           Margin="10" Padding="0" BackgroundColor="#FFFFFF">
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="25"/>
+                                            </Grid.RowDefinitions>
+                                            <Grid Padding="10,5,5,5" Margin="0" Grid.Row="0">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="50"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="35"/>
+                                                    <RowDefinition Height="30"/>
+                                                    <RowDefinition Height="1"/>
+                                                </Grid.RowDefinitions>
+                                                <Frame Margin="0, 10, 0, 10" 
+                                                       CornerRadius="50" IsClippedToBounds="True"
+                                                       HorizontalOptions="Start" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" VerticalOptions="Start"
+                                                       HasShadow="True" OutlineColor="Black" BackgroundColor="#FFFFFF">
+                                                    <Image Source ="sekisov.jpg" Aspect="Fill" Margin="-20"/>
+                                                </Frame>
+
+                                                <Label Grid.Column="1" Grid.Row="0" Text="Вы"
+                                                   FontSize="12" TextColor="#4A4C50" VerticalOptions="End"/>
+                                                <StackLayout Orientation="Horizontal" Grid.Column="1" Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
+                                                    <Label  Text="Добавлен: 22.01.2020 17:56" 
+                                                           FontSize="12" TextColor="#4A4C50" VerticalOptions="StartAndExpand"/>
+
+                                                    <Frame CornerRadius="5" BackgroundColor="#F0F1F0" HorizontalOptions="EndAndExpand" BorderColor="#4A4C50"
+                                                           Padding="5,0,5,0" Margin="5,0,5,0" HeightRequest="5">
+                                                        <Label HorizontalOptions="Start" VerticalOptions="Center" Margin="0" FontSize="12" Text="Внутр."/>
+                                                    </Frame>
+                                                </StackLayout>
+
+                                                <BoxView BackgroundColor="#4A4C50" HeightRequest="1" 
+                                                 HorizontalOptions="FillAndExpand" Grid.Column="0" Margin="-5,0,0,0"
+                                                 Grid.Row="2" Grid.ColumnSpan="2" VerticalOptions="Start"/>
+                                            </Grid>
+                                            <ScrollView Margin="10,0,10,0" VerticalOptions="StartAndExpand"
+                                                  HorizontalOptions="FillAndExpand" Grid.Column="0" Grid.Row="1" Padding="0" >
+                                                <Label VerticalOptions="Start" HorizontalOptions="Start" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nibh eget molestie in amet, vitae phasellus amet, nibh ipsum. Vitae, auctor eget id suspendisse lobortis aliquam. Felis fames aliquet amet ultricies cursus sed massa habitant senectus. Imperdiet dis mauris ultrices vitae est et risus, gravida. Non fermentum vel fames blandit quis nunc posuere. Dui non augue viverra id. Turpis netus turpis elementum ut ut porta quam lorem placerat. Mauris dolor at amet vitae sit amet parturient. Tincidunt viverra non eget integer molestie. Mi lacus, vitae amet lorem interdum gravida.
+Lectus nisi etiam ut ut elit, dictumst mauris aliquet id. Eget et pharetra aliquet tortor ornare nunc. Id nisl nunc netus mauris orci sem purus sagittis ultricies. Scelerisque vestibulum vitae arcu pharetra faucibus. Sit in maecenas sit sit aenean. Odio convallis lacus ornare malesuada a, turpis purus sodales.
+Eget eu elit semper ornare sem orci ac dui ultrices. Ultricies cras scelerisque urna at arcu euismod blandit sapien. Mauris volutpat, viverra quisque suspendisse non pretium molestie id sit. Ut senectus scelerisque nibh velit magna elit aliquet auctor sit. Faucibus luctus ullamcorper accumsan tempor imperdiet curabitur suscipit risus. Maecenas mauris in tincidunt tristique tellus purus. In euismod semper nunc suspendisse. Viverra at interdum duis eu viverra mi, gravida. Laoreet sit tortor sit sociis faucibus feugiat tristique id. Tincidunt viverra mattis gravida tortor, cras." Grid.Column="0" Grid.Row="0"/>
+
+                                            </ScrollView>
+                                            <ImageButton  Source="arrowUp.png"  Grid.Column="0" BackgroundColor="Transparent"
+                                                     Grid.Row="2" HorizontalOptions="Center" VerticalOptions="End" Margin="0,0,0,10" Clicked="showHistory_Clicked"/>
+                                        </Grid>
+                                    </Frame>
+
+                                </Grid>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+
+            <StackLayout Padding="10,0,10,5" BackgroundColor="#4A4C50">
+                <Frame BackgroundColor="#FFF" CornerRadius="5" HorizontalOptions="FillAndExpand" Padding="0" Margin="0">
+                    <Grid HorizontalOptions="FillAndExpand">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="25"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="25"/>
+                        </Grid.ColumnDefinitions>
+                        <ImageButton BackgroundColor="Transparent" Grid.Column="0" Grid.Row="0" Source="attachment.png" HorizontalOptions="Start" HeightRequest="25" Margin="5,0,0,0"/>
+                        <Entry Grid.Column="1" Grid.Row="0" Placeholder="Введите текст комментария..." FontSize="14" Margin="-5,0,0,0"
+                               PlaceholderColor="#4A4C50" TextColor="#4A4C50" HeightRequest="60" HorizontalOptions="FillAndExpand"/>
+                         <ImageButton BackgroundColor="Transparent" Grid.Column="2" Grid.Row="0" Source="arrowRightDark.png" HeightRequest="15" HorizontalOptions="End" Margin="0,0,10,0"/>
+                    </Grid>
+                </Frame>
+            </StackLayout>
+            <Grid VerticalOptions="End" BackgroundColor="#323037">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="5"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="5"/>
+                </Grid.RowDefinitions>
+                <ImageButton Source="home.png" Grid.Column="0" Grid.Row="1"
+                             BackgroundColor="Transparent" Clicked="ImageButton_Clicked_3"></ImageButton>
+                <ImageButton Source="calendar.png" Grid.Column="1" Grid.Row="1"
+                             BackgroundColor="Transparent" Clicked="ImageButton_Clicked"></ImageButton>
+                <ImageButton Source="insight.png" Grid.Column="2" Grid.Row="1"
+                             BackgroundColor="Transparent" Clicked="ImageButton_Clicked_1"></ImageButton>
+                <ImageButton Source="filter.png" Grid.Column="3" Grid.Row="1"
+                             BackgroundColor="Transparent" Clicked="ImageButton_Clicked_2"></ImageButton>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

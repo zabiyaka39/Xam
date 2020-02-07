@@ -88,6 +88,10 @@ namespace RTMobile
 		public string id { get; set; }
 		public string description { get; set; }
 		public string name { get; set; }
+		public bool required { get; set; }
+		public Schema schema { get; set; }
+		public List<string> operations { get; set; }
+		public List<AllowedValue> allowedValues { get; set; }
 	}
 	public class Assignee
 	{
@@ -246,19 +250,22 @@ namespace RTMobile
 		public string key { get; set; }
 		public string colorName
 		{
-			get; set;
-			//get
-			//{
-			//	return colorName;
-			//}
-			//set
-			//{
+			//get; set;
+			get
+			{
+				Color slateBlue = System.Drawing.Color.FromName(this.color.ToString());
 
-			//}
+				string str = slateBlue.ToHex().ToString();
+				return slateBlue.ToHex().ToString();
+			}
+			set
+			{
+
+			}
 		}
 		public Color color
 		{
-			get;
+			private get;
 			set;
 		}
 		public string name { get; set; }
@@ -371,10 +378,43 @@ namespace RTMobile
 		}
 		public List<Property> properties { get; set; }
 	}
+	public class To
+	{
+		public string self { get; set; }
+		public string description { get; set; }
+		public string iconUrl { get; set; }
+		public string name { get; set; }
+		public string id { get; set; }
+		public StatusCategory statusCategory { get; set; }
+	}
+	public class Attachment
+	{
+		public bool required { get; set; }
+		public string type { get; set; }
+		public Schema schema { get; set; }
+		public string name { get; set; }
+		public List<object> operations { get; set; }
+	}
+	public class AllowedValue
+	{
+		public string self { get; set; }
+		public string name { get; set; }
+		public string id { get; set; }
+	}
+	public class Schema
+	{
+		public string type { get; set; }
+		public string items { get; set; }
+		public string system { get; set; }
+		public string custom { get; set; }
+		public int customId { get; set; }
+	}
 	public class Transition
 	{
 		public string id { get; set; }
 		public string name { get; set; }
+		public To to { get; set; }
+		public List<Fields> fields { get; set; }
 	}
 	public class UpdateAuthor
 	{
@@ -467,10 +507,11 @@ namespace RTMobile
 	}
 	public class Fields
 	{
-
+		public List<string> subtasks { get; set; }
+		public List<string> operations { get; set; }
 		public Resolution resolution { get; set; }
 		public Assignee assignee { get; set; }
-		public List<object> subtasks { get; set; }
+		public Attachment attachment { get; set; }
 		public Reporter reporter { get; set; }
 		public Votes votes { get; set; }
 		public Issuetype issuetype { get; set; }
@@ -479,7 +520,16 @@ namespace RTMobile
 		public Creator creator { get; set; }
 		public Watches watches { get; set; }
 		public List<Issuelink> issuelinks { get; set; }
-		public string resolutiondate { get; set; }
+		public string resolutiondate
+		{
+			get { return _resolutiondate; }
+			set
+			{
+				System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo("ru-RU");
+				_resolutiondate = Convert.ToString(value, culture);
+			}
+		}
+		private string _resolutiondate { get; set; }
 		private string _updated;
 		public string name { get; set; }
 		public string value { get; set; }
@@ -493,7 +543,7 @@ namespace RTMobile
 		}
 		public string description { get; set; }
 		public string summary { get; set; }
-		public object duedate { get; set; }
+		public string duedate { get; set; }
 		private string _created;
 		public string created
 		{
@@ -506,7 +556,10 @@ namespace RTMobile
 				_created = (Convert.ToDateTime(value)).ToString("dd.MM.yyyy hh:mm");
 			}
 		}
-
+		public bool required { get; set; }
+		public Schema schema { get; set; }
+		public ObservableCollection<Comment> comment { get; set; }
+		public List<AllowedValue> allowedValues { get; set; }
 	}
 	public class Issue
 	{

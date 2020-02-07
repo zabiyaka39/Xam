@@ -11,7 +11,7 @@
         "dependencies": {
           "CarouselView": "7.0.3.1",
           "CarouselView.FormsPlugin": "5.2.0",
-          "Microsoft.CSharp": "4.6.0",
+          "Microsoft.CSharp": "4.7.0",
           "Microsoft.CodeAnalysis.FxCopAnalyzers": "2.9.8",
           "NETStandard.Library": "2.0.3",
           "Nancy": "2.0.0",
@@ -21,7 +21,7 @@
           "System.Xml.XmlSerializer": "4.3.0",
           "Xam.Plugins.Settings": "3.1.1",
           "Xamarin.Essentials": "1.3.1",
-          "Xamarin.Forms": "4.3.0.991211",
+          "Xamarin.Forms": "4.3.0.991221",
           "Windows.Foundation.UniversalApiContract": "7.0.0.0"
         },
         "runtime": {
@@ -31,7 +31,7 @@
       "CarouselView/7.0.3.1": {
         "dependencies": {
           "NETStandard.Library": "2.0.3",
-          "Xamarin.Forms": "4.3.0.991211"
+          "Xamarin.Forms": "4.3.0.991221"
         },
         "runtime": {
           "lib/netstandard2.0/CarouselView.dll": {
@@ -58,11 +58,11 @@
       },
       "Microsoft.CodeAnalysis.VersionCheckAnalyzer/2.9.8": {},
       "Microsoft.CodeQuality.Analyzers/2.9.8": {},
-      "Microsoft.CSharp/4.6.0": {
+      "Microsoft.CSharp/4.7.0": {
         "runtime": {
           "lib/netstandard2.0/Microsoft.CSharp.dll": {
-            "assemblyVersion": "4.0.4.0",
-            "fileVersion": "4.700.19.46214"
+            "assemblyVersion": "4.0.5.0",
+            "fileVersion": "4.700.19.56404"
           }
         }
       },
@@ -1069,19 +1069,19 @@
           }
         }
       },
-      "Xamarin.Forms/4.3.0.991211": {
+      "Xamarin.Forms/4.3.0.991221": {
         "runtime": {
           "lib/netstandard2.0/Xamarin.Forms.Core.dll": {
             "assemblyVersion": "2.0.0.0",
-            "fileVersion": "4.3.0.367"
+            "fileVersion": "4.3.0.389"
           },
           "lib/netstandard2.0/Xamarin.Forms.Platform.dll": {
             "assemblyVersion": "2.0.0.0",
-            "fileVersion": "4.3.0.367"
+            "fileVersion": "4.3.0.389"
           },
           "lib/netstandard2.0/Xamarin.Forms.Xaml.dll": {
             "assemblyVersion": "2.0.0.0",
-            "fileVersion": "4.3.0.367"
+            "fileVersion": "4.3.0.389"
           }
         }
       },
@@ -1136,12 +1136,12 @@
       "path": "microsoft.codequality.analyzers/2.9.8",
       "hashPath": "microsoft.codequality.analyzers.2.9.8.nupkg.sha512"
     },
-    "Microsoft.CSharp/4.6.0": {
+    "Microsoft.CSharp/4.7.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-kxn3M2rnAGy5N5DgcIwcE8QTePWU/XiYcQVzn9HqTls2NKluVzVSmVWRjK7OUPWbljCXuZxHyhEz9kPRIQeXow==",
-      "path": "microsoft.csharp/4.6.0",
-      "hashPath": "microsoft.csharp.4.6.0.nupkg.sha512"
+      "sha512": "sha512-pTj+D3uJWyN3My70i2Hqo+OXixq3Os2D1nJ2x92FFo6sk8fYS1m1WLNTs0Dc1uPaViH0YvEEwvzddQ7y4rhXmA==",
+      "path": "microsoft.csharp/4.7.0",
+      "hashPath": "microsoft.csharp.4.7.0.nupkg.sha512"
     },
     "Microsoft.DotNet.PlatformAbstractions/2.0.4": {
       "type": "package",
@@ -1773,12 +1773,12 @@
       "path": "xamarin.essentials/1.3.1",
       "hashPath": "xamarin.essentials.1.3.1.nupkg.sha512"
     },
-    "Xamarin.Forms/4.3.0.991211": {
+    "Xamarin.Forms/4.3.0.991221": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-cWbxRKy6oPbFvpw2K6Du3bSo34LDyVKYSR6jCDSbB3Ieyj6549bWQbBLUEptRGQQ8fhDTcJQ/ezqwGwxd+7bkg==",
-      "path": "xamarin.forms/4.3.0.991211",
-      "hashPath": "xamarin.forms.4.3.0.991211.nupkg.sha512"
+      "sha512": "sha512-Yh3kxXj+fnERLZfh8gNbcFWflSL0PvPh3aHtq2tpXInInVNeWDUb0qitChUm2hgJSSOpn3MBa/55nxcqPM4Kog==",
+      "path": "xamarin.forms/4.3.0.991221",
+      "hashPath": "xamarin.forms.4.3.0.991221.nupkg.sha512"
     },
     "Windows.Foundation.UniversalApiContract/7.0.0.0": {
       "type": "reference",

@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RTMobile.issues.viewIssue.Description"
+             Title="ОПИСАНИЕ">
+    <ContentPage.ToolbarItems>
+
+        <ToolbarItem Text="Комментарии" Icon="commentToolBar.png" 
+                     Order="Primary" Priority="0"/>
+        <ToolbarItem Text="   _________________   " 
+                     Order="Secondary" Priority="0"/>
+        <ToolbarItem Text="Комментарии" Icon="comment.png" 
+                     Order="Secondary" Priority="0"/>
+        <ToolbarItem Text="Рабочий журнал" 
+                     Order="Secondary" Priority="1"/>
+        <ToolbarItem Text="История" 
+                     Order="Secondary" Priority="2"/>
+
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content >
+        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
+                      BackgroundColor="#4A4C50">
+            <StackLayout x:Name="descriptionStack" VerticalOptions="FillAndExpand">
+                <Frame Grid.Row="0" Grid.Column="0" HasShadow="True" CornerRadius="5" VerticalOptions="FillAndExpand"
+                   x:Name="descriptionFrame" BackgroundColor="#FFFFFF" Margin="10,20,10,10" Padding="10,0,10,0">
+                    <Grid >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="25"/>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0" Grid.Column="0" Padding="0" Margin="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="15"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="21"/>
+                                <RowDefinition Height="1"/>
+                            </Grid.RowDefinitions>
+                            <Image Source="description.png" Grid.Column="0" Grid.Row="0" VerticalOptions="Center" />
+                            <Label Text="Описание" Grid.Column="1" Grid.Row="0" VerticalOptions="Center" />
+
+                            <BoxView BackgroundColor="#4A4C50" HeightRequest="1" Margin="-20,0,-20,0"
+                                 HorizontalOptions="FillAndExpand" Grid.Column="0"
+                                 Grid.Row="1" Grid.ColumnSpan="2" VerticalOptions="Start"/>
+                        </Grid>
+                        <ScrollView x:Name="description" Grid.Row="1" Grid.Column="0" HorizontalOptions="FillAndExpand"
+                                    VerticalOptions="FillAndExpand" Margin="0,0,10,0">
+                            <Editor IsReadOnly="True" VerticalOptions="FillAndExpand" FontSize="14" TextColor="#4A4C50" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nibh eget molestie in amet, vitae phasellus amet, nibh ipsum. Vitae, auctor eget id suspendisse lobortis aliquam. Felis fames aliquet amet ultricies cursus sed massa habitant senectus. Imperdiet dis mauris ultrices vitae est et risus, gravida. Non fermentum vel fames blandit quis nunc posuere. Dui non augue viverra id. Turpis netus turpis elementum ut ut porta quam lorem placerat. Mauris dolor at amet vitae sit amet parturient. Tincidunt viverra non eget integer molestie. Mi lacus, vitae amet lorem interdum gravida.
+Lectus nisi etiam ut ut elit, dictumst mauris aliquet id. Eget et pharetra aliquet tortor ornare nunc. Id nisl nunc netus mauris orci sem purus sagittis ultricies. Scelerisque vestibulum vitae arcu pharetra faucibus. Sit in maecenas sit sit aenean. Odio convallis lacus ornare malesuada a, turpis purus sodales.
+Eget eu elit semper ornare sem orci ac dui ultrices. Ultricies cras scelerisque urna at arcu euismod blandit sapien. Mauris volutpat, viverra quisque suspendisse non pretium molestie id sit. Ut senectus scelerisque nibh velit magna elit aliquet auctor sit. Faucibus luctus ullamcorper accumsan tempor imperdiet curabitur suscipit risus. Maecenas mauris in tincidunt tristique tellus purus. In euismod semper nunc suspendisse. Viverra at interdum duis eu viverra mi, gravida. Laoreet sit tortor sit sociis faucibus feugiat tristique id. Tincidunt viverra mattis gravida tortor, cras. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nibh eget molestie in amet, vitae phasellus amet, nibh ipsum. Vitae, auctor eget id suspendisse lobortis aliquam. Felis fames aliquet amet ultricies cursus sed massa habitant senectus. Imperdiet dis mauris ultrices vitae est et risus, gravida. Non fermentum vel fames blandit quis nunc posuere. Dui non augue viverra id. Turpis netus turpis elementum ut ut porta quam lorem placerat. Mauris dolor at amet vitae sit amet parturient. Tincidunt viverra non eget integer molestie. Mi lacus, vitae amet lorem interdum gravida.
+Lectus nisi etiam ut ut elit, dictumst mauris aliquet id. Eget et pharetra aliquet tortor ornare nunc. Id nisl nunc netus mauris orci sem purus sagittis ultricies. Scelerisque vestibulum vitae arcu pharetra faucibus. Sit in maecenas sit sit aenean. Odio convallis lacus ornare malesuada a, turpis purus sodales.
+Eget eu elit semper ornare sem orci ac dui ultrices. Ultricies cras scelerisque urna at arcu euismod blandit sapien. Mauris volutpat, viverra quisque suspendisse non pretium molestie id sit. Ut senectus scelerisque nibh velit magna elit aliquet auctor sit. Faucibus luctus ullamcorper accumsan tempor imperdiet curabitur suscipit risus. Maecenas mauris in tincidunt tristique tellus purus. In euismod semper nunc suspendisse. Viverra at interdum duis eu viverra mi, gravida. Laoreet sit tortor sit sociis faucibus feugiat tristique id. Tincidunt viverra mattis gravida tortor, cras."/>
+                        </ScrollView>
+                        <ImageButton x:Name="showDescription" Source="arrowUp.png"  Grid.Column="0" BackgroundColor="Transparent"
+                                 Clicked="showDescriptionIssue_Clicked" Grid.Row="2" HorizontalOptions="Center" VerticalOptions="End" Margin="0,0,0,10"/>
+                    </Grid>
+                </Frame>
+            </StackLayout>
+
+            <Grid VerticalOptions="End" BackgroundColor="#323037">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="5"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="5"/>
+                </Grid.RowDefinitions>
+                <ImageButton Source="home.png" Grid.Column="0" Grid.Row="1"
+                             BackgroundColor="Transparent" Clicked="ImageButton_Clicked_3"></ImageButton>
+                <ImageButton Source="calendar.png" Grid.Column="1" Grid.Row="1"
+                             BackgroundColor="Transparent" Clicked="ImageButton_Clicked"></ImageButton>
+                <ImageButton Source="insight.png" Grid.Column="2" Grid.Row="1"
+                             BackgroundColor="Transparent" Clicked="ImageButton_Clicked_1"></ImageButton>
+                <ImageButton Source="filter.png" Grid.Column="3" Grid.Row="1"
+                             BackgroundColor="Transparent" Clicked="ImageButton_Clicked_2"></ImageButton>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

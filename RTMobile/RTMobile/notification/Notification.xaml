@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RTMobile.notification.Notification"
+             Title="УВЕДОМЛЕНИЯ">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
+                      BackgroundColor="#312F35">
+            <Label Text="РАЗДЕЛ В РАЗРАБОТКЕ..." HorizontalOptions="CenterAndExpand"
+                       VerticalOptions="CenterAndExpand" TextColor="#F0F1F0" FontSize="20"/>
+            <Grid VerticalOptions="End">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="5"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="5"/>
+                </Grid.RowDefinitions>
+                <ImageButton Source="home.png" Grid.Column="0" Grid.Row="1"
+                             BackgroundColor="Transparent" Clicked="ImageButton_Clicked_3"></ImageButton>
+                <ImageButton Source="calendar.png" Grid.Column="1" Grid.Row="1"
+                             BackgroundColor="Transparent" Clicked="ImageButton_Clicked"></ImageButton>
+                <ImageButton Source="insight.png" Grid.Column="2" Grid.Row="1"
+                             BackgroundColor="Transparent" Clicked="ImageButton_Clicked_1"></ImageButton>
+                <ImageButton Source="filter.png" Grid.Column="3" Grid.Row="1"
+                             BackgroundColor="Transparent" Clicked="ImageButton_Clicked_2"></ImageButton>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

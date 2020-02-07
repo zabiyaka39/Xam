@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RTMobile.issues.viewIssue.People"
+             Title="ЛЮДИ">
+    <ContentPage.ToolbarItems>
+
+        <ToolbarItem Text="Комментарии" Icon="commentToolBar.png" Clicked="ToolbarItem_Clicked_3"
+                     Order="Primary" Priority="0"/>
+        <ToolbarItem Text="   _________________   " 
+                     Order="Secondary" Priority="0"/>
+        <ToolbarItem Text="Комментарии" Icon="comment.png"  Clicked="ToolbarItem_Clicked_2"
+                     Order="Secondary" Priority="0"/>
+        <ToolbarItem Text="Рабочий журнал" Clicked="ToolbarItem_Clicked_1"
+                     Order="Secondary" Priority="1"/>
+        <ToolbarItem Text="История" Clicked="ToolbarItem_Clicked"
+                     Order="Secondary" Priority="2"/>
+
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content >
+        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
+                      BackgroundColor="#4A4C50">
+            <StackLayout x:Name="generalPeopleFrame" VerticalOptions="FillAndExpand">
+                <Frame Grid.Row="0" Grid.Column="0" HasShadow="True" CornerRadius="5"
+                   x:Name="generalFrame" BackgroundColor="#FFFFFF" HeightRequest="210" Margin="10,20,10,10" Padding="10,0,10,0">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="25"/>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0" Grid.Column="0" Padding="0" Margin="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="15"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="21"/>
+                                <RowDefinition Height="1"/>
+                            </Grid.RowDefinitions>
+                            <Image Source="info.png" Grid.Column="0" Grid.Row="0" VerticalOptions="Center" />
+                            <Label Text="Основные" Grid.Column="1" Grid.Row="0" VerticalOptions="Center" />
+
+                            <BoxView BackgroundColor="#4A4C50" HeightRequest="1" Margin="-20,0,-20,0"
+                                 HorizontalOptions="FillAndExpand" Grid.Column="0"
+                                 Grid.Row="1" Grid.ColumnSpan="2" VerticalOptions="Start"/>
+                        </Grid>
+                        <ScrollView x:Name="generalPeople" Grid.Row="1" Grid.Column="0" HorizontalOptions="FillAndExpand"
+                                    VerticalOptions="FillAndExpand" Margin="0,0,10,0">
+                            <Grid Padding="0">
+                                <Label Text="Автор:" Grid.Column="0" Grid.Row="0" VerticalOptions="Center" FontSize="13"/>
+                                <Frame Margin="20, 10, 0, 10" 
+                                       CornerRadius="50" IsClippedToBounds="True"
+                                       HeightRequest="10" WidthRequest="10"
+                                       HorizontalOptions="End" Grid.Column="1" Grid.Row="0" VerticalOptions="Center"
+                                       HasShadow="True" OutlineColor="Red" BackgroundColor="#FFFFFF">
+                                    <Image x:Name="imageReporter" Source ="sekisov.jpg" Aspect="AspectFill" Margin="-20"
+                                           HeightRequest="10" WidthRequest="10"/>
+                                </Frame>
+                                <Label x:Name="nameReporter" Grid.Column="2" Grid.Row="0" FontSize="13"
+                                   Text="Секисов Владислав Александрович" HorizontalOptions="EndAndExpand" VerticalOptions="Center" />
+                                <Label Text="Исолнитель:" Grid.Column="0" Grid.Row="1" VerticalOptions="Center" FontSize="13"/>
+                                <Frame Margin="20, 10, 0, 10" 
+                                       CornerRadius="50" IsClippedToBounds="True"
+                                       HeightRequest="10" WidthRequest="10"
+                                       HorizontalOptions="End" Grid.Column="1" Grid.Row="1" VerticalOptions="Center"
+                                       HasShadow="True" OutlineColor="Red" BackgroundColor="#FFFFFF">
+                                    <Image x:Name="imageAssigne" Source ="sekisov.jpg" Aspect="AspectFill" Margin="-20"
+                                           HeightRequest="10" WidthRequest="10"/>
+                                </Frame>
+                                <Label x:Name="nameAssigne" Grid.Column="2" Grid.Row="1" FontSize="13"
+                                   Text="Секисов Владислав Александрович" HorizontalOptions="EndAndExpand" VerticalOptions="Center" />
+
+                            </Grid>
+                        </ScrollView>
+                        <ImageButton x:Name="showGeneralPeople" Source="arrowUp.png"  Grid.Column="0" BackgroundColor="Transparent"
+                                 Grid.Row="2" HorizontalOptions="Center" VerticalOptions="End" Margin="0,0,0,10" Clicked="showGeneralPeople_Clicked"/>
+                    </Grid>
+                </Frame>
+                <Frame Grid.Row="0" Grid.Column="0" HasShadow="True" CornerRadius="5"
+                   x:Name="watcherFrame" BackgroundColor="#FFFFFF" HeightRequest="250" Margin="10,0,10,20" Padding="10,0,10,0">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="25"/>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0" Grid.Column="0" Padding="0" Margin="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="15"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="21"/>
+                                <RowDefinition Height="1"/>
+                            </Grid.RowDefinitions>
+                            <Image Source="visability.png" Grid.Column="0" Grid.Row="0" VerticalOptions="Center" />
+                            <Label Text="Наблюдатели" Grid.Column="1" Grid.Row="0" VerticalOptions="Center" />
+
+                            <BoxView BackgroundColor="#4A4C50" HeightRequest="1" Margin="-20,0,-20,0"
+                                 HorizontalOptions="FillAndExpand" Grid.Column="0"
+                                 Grid.Row="1" Grid.ColumnSpan="2" VerticalOptions="Start"/>
+                        </Grid>
+                        <StackLayout x:Name="watcherPeople" Grid.Row="1" Grid.Column="0" HorizontalOptions="FillAndExpand"
+                                    VerticalOptions="FillAndExpand" Margin="0,0,0,0">
+                            <ScrollView VerticalOptions="FillAndExpand">
+                                <Grid Padding="0" Margin="0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="20"/>
+                                        <ColumnDefinition Width="60"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Text="1." Grid.Column="0" Grid.Row="0" VerticalOptions="Start"
+                                       FontSize="13" HorizontalOptions="Start" Margin="0,25,0,0" />
+                                    <Frame Margin="0, 10, 0, 10" 
+                                       CornerRadius="50" IsClippedToBounds="True"
+                                       HeightRequest="5" WidthRequest="5"
+                                       HorizontalOptions="Start" Grid.Column="1" Grid.Row="0" VerticalOptions="Start"
+                                       HasShadow="True" OutlineColor="Red" BackgroundColor="#FFFFFF">
+                                        <Image x:Name="watcherReporter" Source ="sekisov.jpg" Aspect="AspectFill" Margin="-20"
+                                           HeightRequest="5" WidthRequest="5"/>
+                                    </Frame>
+                                    <Label x:Name="nameWatcher" Grid.Column="2" Grid.Row="0" FontSize="13" Margin="0,25,0,0"
+                                   Text="Секисов Владислав Александрович" HorizontalOptions="Start" VerticalOptions="Start" />
+                                </Grid>
+
+                            </ScrollView>
+                            <StackLayout Grid.Column="0" Grid.Row="2" VerticalOptions="End" Margin="0,0,0,0" Orientation="Horizontal">
+                                <Image Source="visibilityOff.png" HorizontalOptions="Start" HeightRequest="20"/>
+                                <Label Text="Прекратить наблюдение" HorizontalOptions="StartAndExpand" FontSize="12"/>
+                                <Image Source="addWatchers.png" HorizontalOptions="EndAndExpand" HeightRequest="20"/>
+                                <Label Text="Добавить наблюдателей" HorizontalOptions="End" FontSize="12"/>
+                            </StackLayout>
+                        </StackLayout>
+                        <ImageButton x:Name="showWatcherPeople" Source="arrowUp.png" BackgroundColor="Transparent" Grid.Column="0" Grid.Row="2"
+                                     HorizontalOptions="Center" VerticalOptions="End" Margin="0,0,0,10" Clicked="showWatcherPeople_Clicked"/>
+                    </Grid>
+                </Frame>
+            </StackLayout>
+
+            <Grid VerticalOptions="End" BackgroundColor="#323037">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="5"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="5"/>
+                </Grid.RowDefinitions>
+                <ImageButton Source="home.png" Grid.Column="0" Grid.Row="1"
+                             BackgroundColor="Transparent" Clicked="ImageButton_Clicked_3"></ImageButton>
+                <ImageButton Source="calendar.png" Grid.Column="1" Grid.Row="1"
+                             BackgroundColor="Transparent" Clicked="ImageButton_Clicked"></ImageButton>
+                <ImageButton Source="insight.png" Grid.Column="2" Grid.Row="1"
+                             BackgroundColor="Transparent" Clicked="ImageButton_Clicked_1"></ImageButton>
+                <ImageButton Source="filter.png" Grid.Column="3" Grid.Row="1"
+                             BackgroundColor="Transparent" Clicked="ImageButton_Clicked_2"></ImageButton>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

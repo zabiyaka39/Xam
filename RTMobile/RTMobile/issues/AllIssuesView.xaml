@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RTMobile.issues.AllIssuesView"
+            >
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+            <Image Source="rosohranaLogo.png" WidthRequest="20" HeightRequest="25" />
+            <Label Text="РОСОХРАНА" FontSize="20" TextColor="#F0F1F0"></Label>
+        </StackLayout>
+    </NavigationPage.TitleView>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Уведомления" Icon="newNotification.png" Clicked="ToolbarItem_Clicked"
+                     Order="Primary" Priority="0"/>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand"
+                     HorizontalOptions="FillAndExpand" BackgroundColor="#312F35">
+            <Frame HasShadow="True" CornerRadius="5" Padding="2,2,2,0" Margin="10"
+                   BackgroundColor="#4A4C50">
+                <SearchBar Placeholder="Найти..." FontSize="16" TextColor="#F0F1F0"
+                           BackgroundColor="#4A4C50" CancelButtonColor="#F0F1F0"
+                           PlaceholderColor="#F0F1F0" />
+            </Frame>
+            <ListView VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
+                     BackgroundColor="#4A4C50" HasUnevenRows="True" SeparatorVisibility="None"
+                     ItemsSource="{Binding issues}" ItemTapped="ListView_ItemTapped" x:Name="issuesList">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <Grid Margin="5">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="50"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="140"/>
+                                    </Grid.RowDefinitions>
+                                    <Frame BackgroundColor="#94B66C" HasShadow="True" Padding="0"
+                                           Grid.Column="0" Grid.Row="0" CornerRadius="5" Margin="0,0,-4,0">
+                                        <StackLayout Orientation="Horizontal">
+                                            <BoxView HorizontalOptions="Center" VerticalOptions="Center"
+                                                     CornerRadius="50" Margin="-5,0,0,0" BackgroundColor="#4A4C50"
+                                                     HeightRequest="10" WidthRequest="10"/>
+                                            <Label Text="{Binding Path = key}" Rotation="-90" FontAttributes="Bold" FontSize="14"
+                                                   VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"
+                                                   TextColor="#FFFFFF" Margin="-40,0,-30,0"/>
+
+                                        </StackLayout>
+                                    </Frame>
+                                    <Frame BackgroundColor="#FFFFFF" HasShadow="True"
+                                           Grid.Column="1" Grid.Row="0" CornerRadius="5">
+                                        <Grid HorizontalOptions="FillAndExpand" >
+                                            <Label Text="{Binding Path=fields.summary}" TextColor="#000000"
+                                                   FontSize="14" FontAttributes ="Bold" MaxLines="1" LineBreakMode="TailTruncation"
+                                                   Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Margin="-10"
+                                                   HorizontalOptions="StartAndExpand"/>
+
+                                            <Label Text="{Binding Path=fields.description}" TextColor="#000000"
+                                                   FontSize="12" Grid.Row="1"  MaxLines="2" LineBreakMode="TailTruncation"
+                                                   Grid.Column="0" Grid.ColumnSpan="4" Margin="-10,-10,0,0"
+                                                   HorizontalOptions="FillAndExpand" Padding="0,0,0,-5"/>
+                                            <Grid Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="4" HorizontalOptions="FillAndExpand">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="20"/>
+                                                    <ColumnDefinition Width="20"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Label Text="{Binding Path=fields.issuetype.name}" FontAttributes="Bold"
+                                                   FontSize="12" TextColor="#94B66C" Grid.Column="0" Padding="0,0,0,-5" 
+                                                   Grid.Row="0" Margin="-10,0,0,0" Grid.ColumnSpan="2" HorizontalOptions="Fill" />
+                                                <Image Source="comment.png" Grid.Column="1" VerticalOptions="Start"
+                                                   Grid.Row="0" Margin="0,0,-10,0" HorizontalOptions="End"/>
+                                                <Label Text="{Binding Path=fields.comment.total}" Grid.Column="2" FontSize="12" HorizontalOptions="End"
+                                                   Grid.Row="0" Margin="-10,-3,0,0" TextColor="#CCCCCC"/>
+                                            </Grid>
+
+                                            <Grid Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="4" HorizontalOptions="FillAndExpand">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="Auto"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="Auto"/>
+                                                    <ColumnDefinition Width="Auto"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Image Source="person.png" Grid.Column="0" VerticalOptions="Start"
+                                                   Grid.Row="0" HorizontalOptions="Start" Margin="-10,0,0,0"/>
+                                                <Label Text="{Binding Path=fields.assignee.displayName}" TextColor="#000000"
+                                                   FontSize="14" Grid.Row="0"  Grid.Column="1"
+                                                   HorizontalOptions="Fill" Margin="0,-3,0,0" />
+                                                <Image Source="timeStart.png" Grid.Column="2" VerticalOptions="Start"
+                                                   Grid.Row="0" HorizontalOptions="End" />
+                                                <Label Text="{Binding Path=fields.created}" TextColor="#000000"
+                                                   FontSize="14" Grid.Row="0"
+                                                   Grid.Column="3" HorizontalOptions="End" Margin="0,-6,0,0" />
+                                            </Grid>
+
+                                            <Grid Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="4" HorizontalOptions="FillAndExpand">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="Auto"/>
+                                                    <ColumnDefinition Width="Auto"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Label Text="{Binding Path=fields.status.name}" TextColor="#000000"
+                                                   FontSize="14" Grid.Row="0"  Grid.Column="0"
+                                                   HorizontalOptions="StartAndExpand" Margin="-10,-6,0,0" />
+                                                <Image x:Name="resolutionImg" Source="timeUpdate.png" Grid.Column="1" VerticalOptions="Start"
+                                                   Grid.Row="0" HorizontalOptions="End" />
+                                                <Label x:Name="resolution" Text="{Binding Path=fields.resolutiondate}" TextColor="#000000"
+                                                   FontSize="14" Grid.Row="0"
+                                                   Grid.Column="2" HorizontalOptions="End" Margin="0,-6,0,0" />
+                                            </Grid>
+                                        </Grid>
+                                    </Frame>
+                                </Grid>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="5"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="5"/>
+                </Grid.RowDefinitions>
+               <ImageButton Source="home.png" Grid.Column="0" Grid.Row="1"
+                             BackgroundColor="Transparent" Clicked="ImageButton_Clicked_3"></ImageButton>
+                <ImageButton Source="calendar.png" Grid.Column="1" Grid.Row="1"
+                             BackgroundColor="Transparent" Clicked="ImageButton_Clicked"></ImageButton>
+                <ImageButton Source="insight.png" Grid.Column="2" Grid.Row="1"
+                             BackgroundColor="Transparent" Clicked="ImageButton_Clicked_1"></ImageButton>
+                <ImageButton Source="filter.png" Grid.Column="3" Grid.Row="1"
+                             BackgroundColor="Transparent" Clicked="ImageButton_Clicked_2"></ImageButton>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

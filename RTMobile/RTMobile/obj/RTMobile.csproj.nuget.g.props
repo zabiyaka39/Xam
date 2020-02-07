@@ -7,13 +7,13 @@
     <NuGetPackageRoot Condition=" '$(NuGetPackageRoot)' == '' ">$(UserProfile)\.nuget\packages\</NuGetPackageRoot>
     <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">C:\Users\sekisov\.nuget\packages\;C:\Microsoft\Xamarin\NuGet\;C:\Program Files\dotnet\sdk\NuGetFallbackFolder</NuGetPackageFolders>
     <NuGetProjectStyle Condition=" '$(NuGetProjectStyle)' == '' ">PackageReference</NuGetProjectStyle>
-    <NuGetToolVersion Condition=" '$(NuGetToolVersion)' == '' ">5.3.1</NuGetToolVersion>
+    <NuGetToolVersion Condition=" '$(NuGetToolVersion)' == '' ">5.4.0</NuGetToolVersion>
   </PropertyGroup>
   <PropertyGroup>
     <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
   </PropertyGroup>
   <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <Import Project="$(NuGetPackageRoot)xamarin.forms\4.3.0.991211\build\Xamarin.Forms.props" Condition="Exists('$(NuGetPackageRoot)xamarin.forms\4.3.0.991211\build\Xamarin.Forms.props')" />
+    <Import Project="$(NuGetPackageRoot)xamarin.forms\4.3.0.991221\build\Xamarin.Forms.props" Condition="Exists('$(NuGetPackageRoot)xamarin.forms\4.3.0.991221\build\Xamarin.Forms.props')" />
     <Import Project="$(NuGetPackageRoot)microsoft.netframework.analyzers\2.9.8\build\Microsoft.NetFramework.Analyzers.props" Condition="Exists('$(NuGetPackageRoot)microsoft.netframework.analyzers\2.9.8\build\Microsoft.NetFramework.Analyzers.props')" />
     <Import Project="$(NuGetPackageRoot)microsoft.netcore.analyzers\2.9.8\build\Microsoft.NetCore.Analyzers.props" Condition="Exists('$(NuGetPackageRoot)microsoft.netcore.analyzers\2.9.8\build\Microsoft.NetCore.Analyzers.props')" />
     <Import Project="$(NuGetPackageRoot)microsoft.codequality.analyzers\2.9.8\build\Microsoft.CodeQuality.Analyzers.props" Condition="Exists('$(NuGetPackageRoot)microsoft.codequality.analyzers\2.9.8\build\Microsoft.CodeQuality.Analyzers.props')" />
