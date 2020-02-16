@@ -60,6 +60,7 @@
                            FontAttributes="Bold" VerticalOptions="Center" Clicked="Button_Clicked"/>
                 </Frame>
             </StackLayout>
+          
         </StackLayout>
         <Label x:Name="yearLabel" VerticalOptions="End" HorizontalOptions="Center" FontSize="14"
                TextColor="#F0F1F0" Text="2020г." FontAttributes="Bold" Margin="0,0,0,25"/>

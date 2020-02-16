@@ -14,15 +14,14 @@
             <Grid VerticalOptions="Start" HorizontalOptions="FillAndExpand"
                   Grid.Column="0" Grid.Row="0" Margin="10,25,10,0">
                 <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="1"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="1"/>
                     <RowDefinition Height="*"/>
-                    <RowDefinition Height="1"/>
-                    <RowDefinition Height="20"/>
-                    <RowDefinition Height="20"/>
-                    <RowDefinition Height="20"/>
-                    <RowDefinition Height="20"/>
-                    <RowDefinition Height="1"/>
                 </Grid.RowDefinitions>
-                <Grid Grid.Column="0" Grid.Row="0" Margin="-10,0,0,20">
+                <Grid Grid.Column="0" Grid.Row="0" Margin="-10,0,0,20" VerticalOptions="Start">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="150"/>
                         <ColumnDefinition Width="*"/>
@@ -32,45 +31,60 @@
                     </Grid.RowDefinitions>
                     <Frame Margin="0, 10, 0, 10" Grid.Column="0" Grid.Row="0"
                                CornerRadius="50" IsClippedToBounds="True"
-                               HeightRequest="40" WidthRequest="40"
-                               HorizontalOptions="Center" VerticalOptions="Center"
-                               HasShadow="True" OutlineColor="Red" BackgroundColor="#FFFFFF">
-                        <Image Source ="sekisov.jpg" Aspect="AspectFill" Margin="-20"
+                               HeightRequest="40" WidthRequest="40" VerticalOptions="Start"
+                               HorizontalOptions="Center"
+                               HasShadow="True" OutlineColor="#000000" BackgroundColor="#FFFFFF">
+                        <Image Source ="{Binding Path=user.AvatarUrls.image}" Aspect="AspectFill" Margin="-20"
                                    HeightRequest="100" WidthRequest="100"/>
                     </Frame>
-                    <Label x:Name="username" VerticalOptions="CenterAndExpand" Text="СЕКИСОВ Владислав Александрович"
+                    <Label x:Name="username" VerticalOptions="Start" Text="{Binding Path=user.displayName}"
                            Grid.Column="1" Grid.Row="0" TextColor="#F0F1F0" FontSize="20" Margin="-15,0,0,0"/>
-                    <Label VerticalOptions="Start" HorizontalOptions="Center" Margin="0,-10,0,0"
+                    <Label x:Name="edit" VerticalOptions="Start" HorizontalOptions="Center" Margin="0,-8,0,0"
                             Text="Редактировать" Grid.Column="0" Grid.Row="1" TextColor="#F0F1F0" FontSize="12"/>
                     <Label VerticalOptions="Start" HorizontalOptions="Start"
-                            Text="sekisov@rosohrana.ru" Grid.Column="1" Grid.Row="1"
+                            Text="{Binding Path=user.emailAddress}" Grid.Column="1" Grid.Row="1"
                             TextColor="#F0F1F0" FontSize="14" Margin="-15,-10,0,0"/>
                 </Grid>
 
                 <BoxView BackgroundColor="#9B9CA0" HeightRequest="1"
                                  HorizontalOptions="FillAndExpand"
-                                 Grid.Row="1" />
-
-                <Label Margin="20,0,10,0" Text="Последний вход: 12.12.2019 16:17" VerticalOptions="Start"
-                       Grid.Column="0" Grid.Row="2" TextColor="#F0F1F0" FontSize="12"/>
-                <Label Margin="20,0,10,0" Text="Последний неудавшийся вход в систему: 11.12.2019 14:19" FontSize="12"
-                       Grid.Column="0" Grid.Row="3" TextColor="#F0F1F0" VerticalOptions="Start"/>
-                <Label Margin="20,0,10,0" Text="Текущие неудавшиеся входы: 0" FontSize="12"
-                       Grid.Column="0" Grid.Row="4" TextColor="#F0F1F0"/>
-                <Label Margin="20,0,10,0" Text="Группы:" Grid.Column="0" Grid.Row="5" TextColor="#F0F1F0"
+                                 Grid.Row="1" VerticalOptions="Start" />
+                <StackLayout x:Name="dataEntry" Grid.Row="2" VerticalOptions="Start">
+                    <Label Margin="20,0,10,0" Text="Последний вход: Отсутствует" VerticalOptions="Start"
+                            TextColor="#F0F1F0" FontSize="12"/>
+                    <Label Margin="20,0,10,0" Text="Последний неудавшийся вход в систему: Отсутствует" FontSize="12"
+                            TextColor="#F0F1F0" VerticalOptions="Start"/>
+                    <Label Margin="20,0,10,0" Text="Текущие неудавшиеся входы: Отсутствует" FontSize="12"
+                            TextColor="#F0F1F0"/>
+                </StackLayout>
+                <Label Margin="20,0,10,0" Text="Группы:" Grid.Row="3" TextColor="#F0F1F0"
                        FontSize="12"/>
 
                 <BoxView BackgroundColor="#9B9CA0" HeightRequest="1"
                                  HorizontalOptions="FillAndExpand"
-                                 Grid.Row="6" />
+                                 Grid.Row="4" />
+                <ListView Grid.Row="5" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
+                      HasUnevenRows="True" SeparatorVisibility="None"
+                     ItemsSource="{Binding Path=user.groups.items}" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.View>
+                                    <Label  Margin="20,5,10,0" FontSize="12" 
+                                            Text="{Binding Path=name}" TextColor="#F0F1F0"/>
+                                </ViewCell.View>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
             </Grid>
             <BoxView BackgroundColor="#9B9CA0" HeightRequest="1"
                                  HorizontalOptions="FillAndExpand"
                                  VerticalOptions="EndAndExpand" Margin="10,0,10,0"/>
-            <StackLayout Orientation="Horizontal">
-                <Image Source="exit.png" VerticalOptions="Center" Margin="10,0,0,0" HeightRequest="30"
+            <StackLayout Orientation="Horizontal" x:Name="exit">
+                <Image  Source="exit.png" VerticalOptions="Center" Margin="10,0,0,0" HeightRequest="30"
                    BackgroundColor="Transparent" HorizontalOptions="Start"/>
-                <Button x:Name="exit" Text="ВЫЙТИ" VerticalOptions="End" Margin="0" Padding="0" BackgroundColor="Transparent"
+                <Button Text="ВЫЙТИ" VerticalOptions="End" Margin="0" Padding="0" BackgroundColor="Transparent"
                     TextColor="#F0F1F0" HorizontalOptions="Start" FontSize="18"/>
             </StackLayout>
             <Grid>

@@ -23,6 +23,7 @@
                            BackgroundColor="#4A4C50" CancelButtonColor="#F0F1F0"
                            PlaceholderColor="#F0F1F0" />
             </Frame>
+            <Button Clicked="Button_Clicked"></Button>
             <ListView VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
                      BackgroundColor="#4A4C50" HasUnevenRows="True" SeparatorVisibility="None"
                      ItemsSource="{Binding issues}" ItemTapped="ListView_ItemTapped" x:Name="issuesList">

@@ -11,6 +11,7 @@ using System.Net;
 using System.Text;
 using Microsoft.CSharp;
 using System.Collections.ObjectModel;
+using Xamarin.Forms;
 
 namespace RTMobile
 {
@@ -194,20 +195,21 @@ namespace RTMobile
 		/// Метод для получения данных профиля пользователя
 		/// </summary>
 		/// <returns></returns>
-		public RootObject GetResponsersProfile()
+		public User GetResponsersProfile()
 		{
-			RootObject rootObject = new RootObject();
+			User rootObject = new User();
 
 			var httpResponse = this.httpWebRequest.GetResponse();
 
 			using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
 			{
 				var result = streamReader.ReadToEnd();
-				rootObject = JsonConvert.DeserializeObject<RootObject>(result);
+				rootObject = JsonConvert.DeserializeObject<User>(result);
 			}
 
 			return rootObject;
 		}
+		
 		/// <summary>
 		/// Метод отправки запроса для получения списка проектов
 		/// </summary>
@@ -327,7 +329,47 @@ namespace RTMobile
 			}
 			return fields;
 		}
+		/// <summary>
+		/// Список полей при переходе
+		/// </summary>
+		/// <returns></returns>
+		public List<Fields> GetFieldTransitions()
+		{
+			List<Fields> fields = new List<Fields>();
 
+			Dictionary<string, string> keyValuePairsField = new Dictionary<string, string>();
+
+			var httpResponse = this.httpWebRequest.GetResponse();
+			RootObject rootObject = new RootObject();
+			//Отправляем запрос для получения списка полей задачи
+			using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+			{
+				//читаем поток
+				var result = streamReader.ReadToEnd();
+				//Создаем JAVA серелиазатор для возможности чтения элементов по названию, а не по полю класса, т.к. нам заранее не известны названия и количество полей в задаче и их количество может меняться
+				JavaScriptSerializer js = new JavaScriptSerializer();
+				//десериализуем в переменную с типом dynamic
+				dynamic objectCustomField = js.Deserialize<dynamic>(result);
+
+				//string str = objectCustomField["transitions"][0][3];
+				//проходимся по всем полученным customField и получаем значения
+				foreach (System.Collections.Generic.KeyValuePair<string, object> field in objectCustomField["transitions"])
+				{
+					if(field.Key == "transitions")
+					{
+						
+						dynamic fieldTrans =  (field.Value);
+						foreach(KeyValuePair<string, object> fieldTransaction in fieldTrans)
+						{
+
+						}
+					}
+
+				}
+
+			}
+			return fields;
+		}
 
 		/// <summary>
 		/// Получаем список названий полей и значений задачи

@@ -9,34 +9,20 @@
                 <x:String>iiii</x:String>
                 <x:String>qqq</x:String>
                 <x:String>rrrr</x:String>
-                <x:String>www</x:String>
-                <x:String>eee</x:String>
-                <x:String>rrrr</x:String>
-                <x:String>www</x:String>
-                <x:String>eee</x:String>
-                <x:String>rrrr</x:String>
-                <x:String>www</x:String>
-                <x:String>eee</x:String>
-                <x:String>rrrr</x:String>
-                <x:String>www</x:String>
-                <x:String>eee</x:String>
-                <x:String>rrrr</x:String>
-                <x:String>www</x:String>
-                <x:String>eee88</x:String>
             </x:Array>
         </ResourceDictionary>
     </ContentPage.Resources>
 
     <ContentPage.ToolbarItems>
 
-        <ToolbarItem Text="Комментарии" Icon="commentToolBar.png" Clicked="ToolbarItem_Clicked_3"
+        <ToolbarItem Text="Комментарии" Icon="commentToolBar.png" Clicked="ToolbarItem_Clicked_2"
                      Order="Primary" Priority="0"/>
         <ToolbarItem Text="   _________________   " 
-                     Order="Secondary" Priority="0"/>
+                     Order="Secondary" Priority="998"/>
         <ToolbarItem Text="Комментарии" Icon="comment.png"  Clicked="ToolbarItem_Clicked_2"
-                     Order="Secondary" Priority="0"/>
+                     Order="Secondary" Priority="999"/>
         <ToolbarItem Text="История" Clicked="ToolbarItem_Clicked"
-                     Order="Secondary" Priority="1"/>
+                     Order="Secondary" Priority="1000"/>
 
     </ContentPage.ToolbarItems>
 

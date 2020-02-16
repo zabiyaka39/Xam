@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -10,7 +11,7 @@ namespace RTMobile
     public class ApplicationRoles
     {
         public int size { get; set; }
-        public List<object> items { get; set; }
+        public List<Item> items { get; set; }
     }
     /// <summary>
     /// Группы пользователей
@@ -67,5 +68,24 @@ namespace RTMobile
                 _previousLoginTime = (Convert.ToDateTime(value)).ToString("dd.MM.yyyy hh:mm");
             }
         }
+    }
+    /// <summary>
+    /// Данные о пользователе
+    /// </summary>
+    public class User
+    {
+        public string self { get; set; }
+        public string key { get; set; }
+        public string name { get; set; } = "Отсутствует";
+        public string emailAddress { get; set; } = "Отсутствует";
+        [JsonProperty("avatarUrls")]
+        public Urls AvatarUrls { get; set; }
+        public string displayName { get; set; } = "Отсутствует";
+        public bool active { get; set; }
+        public string timeZone { get; set; }
+        public string locale { get; set; }
+        public Groups groups { get; set; }
+        public ApplicationRoles applicationRoles { get; set; }
+        public string expand { get; set; }
     }
 }

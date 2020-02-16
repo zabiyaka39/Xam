@@ -11,13 +11,15 @@ namespace RTMobile.profile
 {
 	public partial class Profile : ContentPage
 	{
-		public RootObject rootObject { get; set; }
-		public List<Item> groups { get; set; }
+		public User user { get; set; }
 		public Profile(string user)
 		{
 			InitializeComponent();
 
 			Title = "Профиль " + issueStartPostRequest(user);
+			edit.IsVisible = false;
+			dataEntry.IsVisible = false;
+			exit.IsVisible = false;
 
 			this.BindingContext = this;
 		}
@@ -36,10 +38,7 @@ namespace RTMobile.profile
 		{
 			CrossSettings.Current.Remove("login");
 			CrossSettings.Current.Remove("password");
-			CrossSettings.Current.Remove("tmpLogin");
-			CrossSettings.Current.Remove("tmpPassword");
 			CrossSettings.Current.Remove("CookieAuthJira");
-			CrossSettings.Current.Remove("saveAuthorizationData");
 			await Navigation.PopToRootAsync().ConfigureAwait(true);
 		}
 		string issueStartPostRequest(string user)
@@ -49,12 +48,8 @@ namespace RTMobile.profile
 				string getIssue = CrossSettings.Current.GetValueOrDefault("urlServer", string.Empty) + @"/rest/api/2/user?username=" + user + @"&expand=groups,applicationRoles";
 				Request request = new Request(getIssue);
 
-				rootObject = request.GetResponsersProfile();
-
-				groups = rootObject.groups.items;
-				username.Text = user;
-				exit.IsVisible = false;
-				return rootObject.displayName;
+				this.user = request.GetResponsersProfile();
+				return this.user.displayName;
 			}
 			catch (Exception ex)
 			{
@@ -67,13 +62,10 @@ namespace RTMobile.profile
 		{
 			try
 			{
-				string getIssue = CrossSettings.Current.GetValueOrDefault("urlServer", string.Empty) + @"/rest/api/2/user?username=" + CrossSettings.Current.GetValueOrDefault("tmpLogin", string.Empty) + @"&expand=groups,applicationRoles";
+				string getIssue = CrossSettings.Current.GetValueOrDefault("urlServer", string.Empty) + @"/rest/api/2/user?username=" + CrossSettings.Current.GetValueOrDefault("login", string.Empty) + @"&expand=groups,applicationRoles";
 				Request request = new Request(getIssue);
 
-				rootObject = request.GetResponsersProfile();
-
-				groups = rootObject.groups.items;
-				username.Text = CrossSettings.Current.GetValueOrDefault("tmpLogin", string.Empty);
+				this.user = request.GetResponsersProfile();
 			}
 			catch (Exception ex)
 			{

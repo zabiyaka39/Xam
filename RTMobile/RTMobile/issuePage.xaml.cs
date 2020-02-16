@@ -162,7 +162,7 @@ namespace RTMobile
 			Issue selectedIssue = e.Item as Issue;
 			if (selectedIssue != null)
 			{
-				await Navigation.PushAsync(new general(selectedIssue));
+				//await Navigation.PushAsync(new general(selectedIssue));
 				//await DisplayAlert("Выбранная модель", $"{selectedIssue.key}", "OK");
 			}
 			((ListView)sender).SelectedItem = null;

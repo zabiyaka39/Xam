@@ -5,16 +5,16 @@
              Title="ЛЮДИ">
     <ContentPage.ToolbarItems>
 
-        <ToolbarItem Text="Комментарии" Icon="commentToolBar.png" Clicked="ToolbarItem_Clicked_3"
+        <ToolbarItem Text="Комментарии" Icon="commentToolBar.png" Clicked="ToolbarItem_Clicked_2"
                      Order="Primary" Priority="0"/>
         <ToolbarItem Text="   _________________   " 
-                     Order="Secondary" Priority="0"/>
+                     Order="Secondary" Priority="997"/>
         <ToolbarItem Text="Комментарии" Icon="comment.png"  Clicked="ToolbarItem_Clicked_2"
-                     Order="Secondary" Priority="0"/>
+                     Order="Secondary" Priority="998"/>
         <ToolbarItem Text="Рабочий журнал" Clicked="ToolbarItem_Clicked_1"
-                     Order="Secondary" Priority="1"/>
+                     Order="Secondary" Priority="999"/>
         <ToolbarItem Text="История" Clicked="ToolbarItem_Clicked"
-                     Order="Secondary" Priority="2"/>
+                     Order="Secondary" Priority="1000"/>
 
     </ContentPage.ToolbarItems>
     <ContentPage.Content >
@@ -53,23 +53,35 @@
                                        CornerRadius="50" IsClippedToBounds="True"
                                        HeightRequest="10" WidthRequest="10"
                                        HorizontalOptions="End" Grid.Column="1" Grid.Row="0" VerticalOptions="Center"
-                                       HasShadow="True" OutlineColor="Red" BackgroundColor="#FFFFFF">
-                                    <Image x:Name="imageReporter" Source ="sekisov.jpg" Aspect="AspectFill" Margin="-20"
+                                       HasShadow="True" OutlineColor="Black" BackgroundColor="#FFFFFF" >                                    
+                                    <Image x:Name="creatorImg" Source ="{Binding issue.fields.creator.AvatarUrls.image}" Aspect="AspectFill" Margin="-20"
                                            HeightRequest="10" WidthRequest="10"/>
+                                    <Frame.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                                    </Frame.GestureRecognizers>
                                 </Frame>
                                 <Label x:Name="nameReporter" Grid.Column="2" Grid.Row="0" FontSize="13"
-                                   Text="Секисов Владислав Александрович" HorizontalOptions="EndAndExpand" VerticalOptions="Center" />
+                                   Text="{Binding Path=issue.fields.creator.displayName}" HorizontalOptions="EndAndExpand" VerticalOptions="Center" >
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                                    </Label.GestureRecognizers>
+                                </Label>
                                 <Label Text="Исолнитель:" Grid.Column="0" Grid.Row="1" VerticalOptions="Center" FontSize="13"/>
+                                
+
                                 <Frame Margin="20, 10, 0, 10" 
                                        CornerRadius="50" IsClippedToBounds="True"
                                        HeightRequest="10" WidthRequest="10"
                                        HorizontalOptions="End" Grid.Column="1" Grid.Row="1" VerticalOptions="Center"
-                                       HasShadow="True" OutlineColor="Red" BackgroundColor="#FFFFFF">
-                                    <Image x:Name="imageAssigne" Source ="sekisov.jpg" Aspect="AspectFill" Margin="-20"
+                                       HasShadow="True" OutlineColor="Black" BackgroundColor="#FFFFFF">
+                                    <Image x:Name="assigneeImg" Source ="{Binding issue.fields.assignee.AvatarUrls.image}" Aspect="AspectFill" Margin="-20"
                                            HeightRequest="10" WidthRequest="10"/>
+                                    <Frame.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1"/>
+                                    </Frame.GestureRecognizers>
                                 </Frame>
                                 <Label x:Name="nameAssigne" Grid.Column="2" Grid.Row="1" FontSize="13"
-                                   Text="Секисов Владислав Александрович" HorizontalOptions="EndAndExpand" VerticalOptions="Center" />
+                                   Text="{Binding Path=issue.fields.assignee.displayName}" HorizontalOptions="EndAndExpand" VerticalOptions="Center" />
 
                             </Grid>
                         </ScrollView>
@@ -77,6 +89,7 @@
                                  Grid.Row="2" HorizontalOptions="Center" VerticalOptions="End" Margin="0,0,0,10" Clicked="showGeneralPeople_Clicked"/>
                     </Grid>
                 </Frame>
+
                 <Frame Grid.Row="0" Grid.Column="0" HasShadow="True" CornerRadius="5"
                    x:Name="watcherFrame" BackgroundColor="#FFFFFF" HeightRequest="250" Margin="10,0,10,20" Padding="10,0,10,0">
                     <Grid>
@@ -103,25 +116,48 @@
                         </Grid>
                         <StackLayout x:Name="watcherPeople" Grid.Row="1" Grid.Column="0" HorizontalOptions="FillAndExpand"
                                     VerticalOptions="FillAndExpand" Margin="0,0,0,0">
+                            <ListView  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
+                                       HasUnevenRows="True" SeparatorVisibility="None"
+                                       ItemsSource="{Binding Path=watchers.watchers}"
+                                       ItemTapped="ListView_ItemTapped">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ViewCell>
+                                            <ViewCell.View>
+                                                <Grid>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto"/>
+                                                        <ColumnDefinition Width="*"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <Frame Margin="0, 10, 0, 10"  
+                                                                   CornerRadius="50" IsClippedToBounds="True"
+                                                                   HeightRequest="5" WidthRequest="5"
+                                                                   HorizontalOptions="Start" Grid.Column="0" Grid.Row="0" VerticalOptions="Start"
+                                                                   HasShadow="True" OutlineColor="Black" BackgroundColor="#FFFFFF">
+                                                        <Image Source ="{Binding Path=AvatarUrls.image}" Aspect="AspectFill" Margin="-20"
+                                                                    HeightRequest="5" WidthRequest="5"/>
+                                                    </Frame>
+                                                    <Label x:Name="nameAssigne" Grid.Column="1" Grid.Row="0" FontSize="13"
+                                                           Text="{Binding Path=displayName}" HorizontalOptions="Start"
+                                                           VerticalOptions="Center" />
+
+                                                </Grid>
+
+                                            </ViewCell.View>
+                                        </ViewCell>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
                             <ScrollView VerticalOptions="FillAndExpand">
                                 <Grid Padding="0" Margin="0">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="20"/>
                                         <ColumnDefinition Width="60"/>
-                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
                                     </Grid.ColumnDefinitions>
-                                    <Label Text="1." Grid.Column="0" Grid.Row="0" VerticalOptions="Start"
-                                       FontSize="13" HorizontalOptions="Start" Margin="0,25,0,0" />
-                                    <Frame Margin="0, 10, 0, 10" 
-                                       CornerRadius="50" IsClippedToBounds="True"
-                                       HeightRequest="5" WidthRequest="5"
-                                       HorizontalOptions="Start" Grid.Column="1" Grid.Row="0" VerticalOptions="Start"
-                                       HasShadow="True" OutlineColor="Red" BackgroundColor="#FFFFFF">
-                                        <Image x:Name="watcherReporter" Source ="sekisov.jpg" Aspect="AspectFill" Margin="-20"
-                                           HeightRequest="5" WidthRequest="5"/>
-                                    </Frame>
-                                    <Label x:Name="nameWatcher" Grid.Column="2" Grid.Row="0" FontSize="13" Margin="0,25,0,0"
-                                   Text="Секисов Владислав Александрович" HorizontalOptions="Start" VerticalOptions="Start" />
+                                    
+                                    
+                                    
                                 </Grid>
 
                             </ScrollView>

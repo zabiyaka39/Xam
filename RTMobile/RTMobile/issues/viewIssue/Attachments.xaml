@@ -8,13 +8,13 @@
         <ToolbarItem Text="Комментарии" Icon="commentToolBar.png" 
                      Order="Primary" Priority="0"/>
         <ToolbarItem Text="   _________________   " 
-                     Order="Secondary" Priority="0"/>
+                     Order="Secondary" Priority="997"/>
         <ToolbarItem Text="Комментарии" Icon="comment.png" 
-                     Order="Secondary" Priority="0"/>
+                     Order="Secondary" Priority="998"/>
         <ToolbarItem Text="Рабочий журнал" 
-                     Order="Secondary" Priority="1"/>
+                     Order="Secondary" Priority="999"/>
         <ToolbarItem Text="История" 
-                     Order="Secondary" Priority="2"/>
+                     Order="Secondary" Priority="1000"/>
 
     </ContentPage.ToolbarItems>
     <ContentPage.Content>

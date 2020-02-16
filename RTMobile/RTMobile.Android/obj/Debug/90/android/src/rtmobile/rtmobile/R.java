@@ -5659,9 +5659,6 @@ public final class R {
     public static final int CardView_Dark=0x7f0e00c4;
     public static final int CardView_Light=0x7f0e00c5;
     public static final int MainTheme=0x7f0e00c6;
-    /**
-     * Base theme applied no matter what API
-     */
     public static final int MainTheme_Base=0x7f0e00c7;
     public static final int Platform_AppCompat=0x7f0e00c8;
     public static final int Platform_AppCompat_Light=0x7f0e00c9;

@@ -1348,7 +1348,6 @@ F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\app_shared_libraries\
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\app_shared_libraries\x86\libxamarin-app.so
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\app_shared_libraries\x86_64\libxamarin-app.so
 F:\project\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\stamp\SetupDependenciesForDesigner.stamp
-F:\project\Mobile\RTMobile\RTMobile\RTMobile.Android\bin\Debug\dataIssue\viewIssue.xaml.cs
 F:\project\Mobile\RTMobile\RTMobile\RTMobile.Android\bin\Debug\RTMobile.Android.dll
 F:\project\Mobile\RTMobile\RTMobile\RTMobile.Android\bin\Debug\RTMobile.Android.pdb
 F:\project\Mobile\RTMobile\RTMobile\RTMobile.Android\bin\Debug\RTMobile.RTMobile.apk
@@ -1889,8 +1888,6 @@ F:\project\Mobile\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\stamp\_Convert
 F:\project\Mobile\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\stamp\_GenerateJavaStubs.stamp
 F:\project\Mobile\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\stamp\_GeneratePackageManagerJava.stamp
 F:\project\Mobile\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\stamp\_ResolveLibraryProjectImports.stamp
-F:\project\Mobile\RTMobile\RTMobile\RTMobile.Android\bin\Debug\RTMobile.dll.mdb
-F:\project\Mobile\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\stamp\SetupDependenciesForDesigner.stamp
 F:\project\Mobile\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\res\drawable\about.png
 F:\project\Mobile\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\res\drawable\addwatchers.png
 F:\project\Mobile\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\res\drawable\arrowright.png
@@ -1912,3 +1909,4 @@ F:\project\Mobile\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\res\drawable\t
 F:\project\Mobile\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\res\drawable\timeupdate.png
 F:\project\Mobile\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\res\drawable\visability.png
 F:\project\Mobile\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\res\drawable\visibilityoff.png
+F:\project\Mobile\RTMobile\RTMobile\RTMobile.Android\bin\Debug\RTMobile.dll.mdb

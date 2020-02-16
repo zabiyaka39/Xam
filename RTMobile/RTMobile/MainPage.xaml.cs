@@ -76,5 +76,10 @@ namespace RTMobile
 		{
 			await Navigation.PushAsync(new Settings()).ConfigureAwait(true);
 		}
+
+		private async void Button_Clicked_3(object sender, EventArgs e)
+		{
+			
+		}
 	}
 }
