@@ -509,8 +509,11 @@ namespace RTMobile
 	}
 	public class Fields
 	{
+		public ObservableCollection<Comment> comment { get; set; }
+		public List<AllowedValue> allowedValues { get; set; }
 		public List<string> subtasks { get; set; }
 		public List<string> operations { get; set; }
+		public List<Issuelink> issuelinks { get; set; }
 		public Resolution resolution { get; set; }
 		public Assignee assignee { get; set; }
 		public Attachment attachment { get; set; }
@@ -521,7 +524,7 @@ namespace RTMobile
 		public Status status { get; set; }
 		public Creator creator { get; set; }
 		public Watches watches { get; set; }
-		public List<Issuelink> issuelinks { get; set; }
+		public Schema schema { get; set; }
 		public string resolutiondate
 		{
 			get { return _resolutiondate; }
@@ -534,7 +537,11 @@ namespace RTMobile
 		private string _resolutiondate { get; set; }
 		private string _updated;
 		public string name { get; set; }
+		public string key { get; set; }
+		public string displayName { get; set; }
+		public string autoCompleteUrl { get; set; }
 		public string value { get; set; }
+		public string defaultValue { get; set; }
 		public string updated
 		{
 			get { return _updated; }
@@ -558,10 +565,15 @@ namespace RTMobile
 				_created = (Convert.ToDateTime(value)).ToString("dd.MM.yyyy hh:mm");
 			}
 		}
-		public bool required { get; set; }
-		public Schema schema { get; set; }
-		public ObservableCollection<Comment> comment { get; set; }
-		public List<AllowedValue> allowedValues { get; set; }
+		public bool required { get; set; } = false;
+		public bool hasScreen { get; set; } = true;
+		public bool isAvailable { get; set; } = true;
+		public bool hasDefaultValue { get; set; } = false;
+		public bool isGlobal { get; set; } = false;
+		public bool isConditional { get; set; } = false;
+		public bool isInitial { get; set; } = false;
+
+		
 	}
 	public class Issue
 	{

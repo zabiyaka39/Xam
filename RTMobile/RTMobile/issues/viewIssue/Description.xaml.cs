@@ -21,10 +21,7 @@ namespace RTMobile.issues.viewIssue
             transitionIssue();
             this.BindingContext = this;
         }
-        void ImageButton_Clicked(System.Object sender, System.EventArgs e)
-        {
-            Navigation.PushAsync(new Calendar());
-        }
+      
         private void transitionIssue()
         {
             string getIssue = CrossSettings.Current.GetValueOrDefault("urlServer", string.Empty) + @"/rest/api/2/issue/" + issue.key + "/transitions/";
@@ -41,6 +38,10 @@ namespace RTMobile.issues.viewIssue
                 };
                 ToolbarItems.Add(tb);
             }
+        }
+        void ImageButton_Clicked(System.Object sender, System.EventArgs e)
+        {
+            Navigation.PushAsync(new Calendar());
         }
         void ImageButton_Clicked_1(System.Object sender, System.EventArgs e)
         {
