@@ -87,7 +87,6 @@ F:\project\Mobile\RTMobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\searchIssu
 F:\project\Mobile\RTMobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\settings\Settings.xaml.g.cs
 F:\project\Mobile\RTMobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\RTMobile.AssemblyInfoInputs.cache
 F:\project\Mobile\RTMobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\RTMobile.AssemblyInfo.cs
-F:\project\Mobile\RTMobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\RTMobile.csprojAssemblyReference.cache
 F:\project\Mobile\RTMobile\RTMobile\RTMobile\bin\Debug\netstandard2.0\RTMobile.deps.json
 F:\project\Mobile\RTMobile\RTMobile\RTMobile\bin\Debug\netstandard2.0\RTMobile.dll
 F:\project\Mobile\RTMobile\RTMobile\RTMobile\bin\Debug\netstandard2.0\RTMobile.pdb
@@ -96,3 +95,4 @@ F:\project\Mobile\RTMobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\XamlC.stam
 F:\project\Mobile\RTMobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\RTMobile.csproj.CopyComplete
 F:\project\Mobile\RTMobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\RTMobile.dll
 F:\project\Mobile\RTMobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\RTMobile.pdb
+F:\project\Mobile\RTMobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\RTMobile.csprojAssemblyReference.cache

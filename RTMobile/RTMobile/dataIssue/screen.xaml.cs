@@ -53,14 +53,13 @@ namespace RTMobile.dataIssue
 							};
 							for (int j = 0; j < fields[i].allowedValues.Count; ++j)
 							{
-								picker.Items.Add(fields[i].allowedValues[j].name);
+								picker.Items.Add(fields[i].allowedValues[j].value);
 							}
 							grid.Children.Add(picker, 1, i);
 							break;
 						}
 					case "string":
 						{
-
 							grid.Children.Add(label, 1, i);
 							break;
 						}

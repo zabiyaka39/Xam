@@ -1909,4 +1909,10 @@ F:\project\Mobile\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\res\drawable\t
 F:\project\Mobile\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\res\drawable\timeupdate.png
 F:\project\Mobile\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\res\drawable\visability.png
 F:\project\Mobile\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\res\drawable\visibilityoff.png
+F:\project\Mobile\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\FormsAnimationDrawable.java
+F:\project\Mobile\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\GenericGlobalLayoutListener.java
+F:\project\Mobile\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\IndicatorViewRenderer.java
+F:\project\Mobile\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\ScrollLayoutManager.java
+F:\project\Mobile\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\SwipeViewRenderer.java
+F:\project\Mobile\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\src\crc64a0e0a82d0db9a07d\ClipboardChangeListener.java
 F:\project\Mobile\RTMobile\RTMobile\RTMobile.Android\bin\Debug\RTMobile.dll.mdb

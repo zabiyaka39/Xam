@@ -132,7 +132,7 @@ namespace RTMobile
 			get
 			{
 				Image image = new Image();
-				Uri uri = new Uri("https://sd.rosohrana.ru");
+				Uri uri = new Uri(CrossSettings.Current.GetValueOrDefault("urlServer", string.Empty));
 				//выбираем изображение с максимальным разрешением, при его наличии
 				if (iconUrl != null)
 				{
@@ -157,7 +157,7 @@ namespace RTMobile
 		public Uri iconUrl { get; set; }
 		public string name { get; set; }
 		public bool subtask { get; set; }
-		public int avatarId { get; set; }
+		public long avatarId { get; set; }
 	}
 	public class Project
 	{
@@ -185,7 +185,7 @@ namespace RTMobile
 			get
 			{
 				Image img = new Image();
-				Uri uri = new Uri("https://sd.rosohrana.ru");
+				Uri uri = new Uri(CrossSettings.Current.GetValueOrDefault("urlServer", string.Empty));
 				//выбираем изображение с максимальным разрешением, при его наличии
 				if (The48X48 != null)
 				{
@@ -280,7 +280,7 @@ namespace RTMobile
 			get
 			{
 				Image image = new Image();
-				Uri uri = new Uri("https://sd.rosohrana.ru");
+				Uri uri = new Uri(CrossSettings.Current.GetValueOrDefault("urlServer", string.Empty));
 				//выбираем изображение с максимальным разрешением, при его наличии
 				if (iconUrl != null)
 				{
@@ -400,16 +400,44 @@ namespace RTMobile
 	public class AllowedValue
 	{
 		public string self { get; set; }
-		public string name { get; set; }
+		public string value { get; set; }
+		public ImageSource icon
+		{
+			get
+			{
+				Image image = new Image();
+				Uri uri = new Uri(CrossSettings.Current.GetValueOrDefault("urlServer", string.Empty));
+				//выбираем изображение с максимальным разрешением, при его наличии
+				if (iconUrl != null)
+				{
+					uri = new Uri(iconUrl);
+				}
+
+				WebClient webClient = new WebClient();
+				string credentials = Convert.ToBase64String(Encoding.ASCII.GetBytes(CrossSettings.Current.GetValueOrDefault("login", string.Empty) + ":" + CrossSettings.Current.GetValueOrDefault("password", string.Empty)));
+				webClient.Headers[HttpRequestHeader.Authorization] = "Basic " + credentials;
+				var byteArray = webClient.DownloadData(uri);
+				image.Source = ImageSource.FromStream(() => new MemoryStream(byteArray));
+				return image.Source;
+			}
+			set
+			{
+				icon = value;
+			}
+		}
 		public string id { get; set; }
+		public string description { get; set; }
+		public string iconUrl { get; set; }
+		public bool subtask { get; set; }
+		public long avatarId { get; set; }
 	}
 	public class Schema
 	{
 		public string type { get; set; }
 		public string items { get; set; }
 		public string system { get; set; }
-		public string custom { get; set; }
-		public int customId { get; set; }
+		public string custom { get; set; } = "";
+		public long customId { get; set; }
 	}
 	public class Transition
 	{
@@ -484,6 +512,9 @@ namespace RTMobile
 	public class Issuelink
 	{
 		public string id { get; set; }
+		public string name { get; set; }
+		public string inward { get; set; }
+		public string outward { get; set; }
 		public string self { get; set; }
 		//public Type type { get; set; }
 		public OutwardIssue outwardIssue { get; set; }
@@ -541,7 +572,7 @@ namespace RTMobile
 		public string displayName { get; set; }
 		public string autoCompleteUrl { get; set; }
 		public string value { get; set; }
-		public string defaultValue { get; set; }
+		public string defaultValue { get; set; } = "Заполните значение...";
 		public string updated
 		{
 			get { return _updated; }
@@ -573,7 +604,7 @@ namespace RTMobile
 		public bool isConditional { get; set; } = false;
 		public bool isInitial { get; set; } = false;
 
-		
+
 	}
 	public class Issue
 	{
@@ -581,7 +612,23 @@ namespace RTMobile
 		public string id { get; set; }
 		public string self { get; set; }
 		public string key { get; set; }
+		//Изображение типа задачи в котором находится задача
+		public string img { get; set; }
+		//Тема задачи (используется при наличии в запросе на получение, связанные задачи)
+		public string summary { get; set; }
+		//Тема задачи (используется при наличии в запросе на получение, связанные задачи)
+		public string summaryText { get; set; }
 		public Fields fields { get; set; }
+	}
+	/// <summary>
+	/// Класс для показа связанных задач
+	/// </summary>
+	public class Section
+	{
+		public string label { get; set; }
+		public string sub { get; set; }
+		public string id { get; set; }
+		public List<Issue> issues { get; set; }
 	}
 
 	public class RootObject
@@ -590,6 +637,8 @@ namespace RTMobile
 		public List<Watcher> watchers { get; set; }
 		public List<Worklog> worklogs { get; set; }
 		public List<Project> projects { get; set; }
+		public List<Section> sections { get; set; }
+		public List<Issuelink> issueLinkTypes { get; set; }
 		public List<Transition> transitions { get; set; }
 		public ObservableCollection<Issue> issues { get; set; }
 		public ObservableCollection<Comment> comments { get; set; }

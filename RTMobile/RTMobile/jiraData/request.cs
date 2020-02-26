@@ -36,6 +36,7 @@ namespace RTMobile
 				{
 					CrossSettings.Current.AddOrUpdateValue("urlServer", "https://sd.rosohrana.ru");
 				}
+				//CrossSettings.Current.AddOrUpdateValue("urlServer", "https://dev-sd.rosohrana.ru");
 				Authorization authorization = new Authorization();
 				authorization.username = login;
 				authorization.password = password;
@@ -212,6 +213,26 @@ namespace RTMobile
 		}
 
 		/// <summary>
+		/// Метод для получения данных профиля пользователя
+		/// </summary>
+		/// <returns></returns>
+		public List<User> GetResponsersProfileList()
+		{
+			List<User> rootObject = new List<User>();
+
+			var httpResponse = this.httpWebRequest.GetResponse();
+
+			using (StreamReader streamReader = new StreamReader(httpResponse.GetResponseStream()))
+			{
+				var result = streamReader.ReadToEnd();
+				rootObject = JsonConvert.DeserializeObject<List<User>>(result);
+			}
+
+			return rootObject;
+		}
+
+	
+		/// <summary>
 		/// Метод отправки запроса для получения списка проектов
 		/// </summary>
 		/// <returns></returns>
@@ -291,7 +312,7 @@ namespace RTMobile
 									//Добавляем данные
 									allowedValues.Add(new AllowedValue
 									{
-										name = transitions.fields[i].allowedValues[j].name,
+										value = transitions.fields[i].allowedValues[j].name,
 										id = transitions.fields[i].allowedValues[j].id,
 										self = transitions.fields[i].allowedValues[j].self
 									});
@@ -448,7 +469,6 @@ namespace RTMobile
 																		int numberKey = 0;
 																		foreach (string shemaNameField in ((dynamic)(fieldTransactionInformation.Value)).Keys)
 																		{
-
 																			switch (shemaNameField)
 																			{
 																				case "type":
@@ -516,12 +536,37 @@ namespace RTMobile
 																						}
 																					case "name":
 																						{
-																							allowedValues.name = (string)allowedValueNameField.Value;
+																							allowedValues.value = (string)allowedValueNameField.Value;
 																							break;
 																						}
 																					case "id":
 																						{
 																							allowedValues.id = (string)allowedValueNameField.Value;
+																							break;
+																						}
+																					case "value":
+																						{
+																							allowedValues.value = (string)allowedValueNameField.Value;
+																							break;
+																						}
+																					case "avatarId":
+																						{
+																							allowedValues.avatarId = (long)allowedValueNameField.Value;
+																							break;
+																						}
+																					case "subtask":
+																						{
+																							allowedValues.subtask = (bool)allowedValueNameField.Value;
+																							break;
+																						}
+																					case "iconUrl":
+																						{
+																							allowedValues.iconUrl = (string)allowedValueNameField.Value;
+																							break;
+																						}
+																					case "description":
+																						{
+																							allowedValues.description = (string)allowedValueNameField.Value;
 																							break;
 																						}
 																				}

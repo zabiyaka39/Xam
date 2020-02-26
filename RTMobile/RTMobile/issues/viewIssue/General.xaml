@@ -44,9 +44,9 @@
                                  HorizontalOptions="FillAndExpand" Grid.Column="0"
                                  Grid.Row="1" Grid.ColumnSpan="2" VerticalOptions="Start"/>
                     </Grid>
-                    <ScrollView x:Name="detailIssue" Grid.Row="1" Grid.Column="0" HorizontalOptions="FillAndExpand"
+                    <ScrollView  x:Name="detailIssue" Grid.Row="1" Grid.Column="0" HorizontalOptions="FillAndExpand"
                                     VerticalOptions="FillAndExpand" Margin="0,0,10,0">
-                        <Grid Padding="0">
+                        <Grid Padding="0" >
                             <Label Text="Тема:" Grid.Column="0" Grid.Row="0" VerticalOptions="Start"/>
                             <Label x:Name="summaryIssue" Grid.Column="1" Grid.Row="0"
                                    Text="{Binding Path=issue.fields.summary}" HorizontalTextAlignment="End"
