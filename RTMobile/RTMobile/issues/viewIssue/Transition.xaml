@@ -28,7 +28,7 @@
                             <TapGestureRecognizer  NumberOfTapsRequired="1"/>
                         </Frame.GestureRecognizers>
                         <Button Margin="0" Padding="0" BackgroundColor="Transparent" Text="ПРИНЯТЬ" FontSize="18" TextColor="#F0F1F0" HorizontalOptions="Center"
-                           FontAttributes="Bold" VerticalOptions="Center" />
+                           FontAttributes="Bold" VerticalOptions="Center" Clicked="Button_Clicked" />
                     </Frame>
                 </StackLayout>
                 <Grid VerticalOptions="End" BackgroundColor="#323037">

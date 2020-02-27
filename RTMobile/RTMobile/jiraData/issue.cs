@@ -635,6 +635,7 @@ namespace RTMobile
 	{
 		public List<string> errorMessages { get; set; }
 		public List<Watcher> watchers { get; set; }
+		public List<User> users { get; set; }
 		public List<Worklog> worklogs { get; set; }
 		public List<Project> projects { get; set; }
 		public List<Section> sections { get; set; }
