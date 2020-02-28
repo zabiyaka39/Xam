@@ -148,11 +148,11 @@ namespace RTMobile
 		/// Универсальный GET запрос на получение информации
 		/// </summary>
 		/// <param name="getIssue"></param>
-		public Request(string getIssue)
+		public Request(string getIssue, string method = "GET")
 		{
 			this.httpWebRequest = (HttpWebRequest)WebRequest.Create(getIssue);
 			this.httpWebRequest.ContentType = "application/json";
-			this.httpWebRequest.Method = "GET";
+			this.httpWebRequest.Method = method;
 			this.httpWebRequest.Headers.Add(HttpRequestHeader.Authorization, "Basic " +
 				Convert.ToBase64String(Encoding.Default.GetBytes(CrossSettings.Current.GetValueOrDefault("tmpLogin", string.Empty) +
 				":" +
@@ -169,18 +169,18 @@ namespace RTMobile
 
 			if (this.json.Length > 0)
 			{
-				using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
+				using (StreamWriter streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
 				{
 					streamWriter.Write(this.json);
 				}
 			}
 			try
 			{
-				var httpResponse = this.httpWebRequest.GetResponse();
+				WebResponse httpResponse = this.httpWebRequest.GetResponse();
 
-				using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+				using (StreamReader streamReader = new StreamReader(httpResponse.GetResponseStream()))
 				{
-					var result = streamReader.ReadToEnd();
+					string result = streamReader.ReadToEnd();
 					Console.WriteLine(result);
 					rootObject = JsonConvert.DeserializeObject<RootObject>(result);
 				}
@@ -197,16 +197,16 @@ namespace RTMobile
 		/// Метод для получения данных профиля пользователя
 		/// </summary>
 		/// <returns></returns>
-		public User GetResponsersProfile()
+		public T GetResponsersProfile<T>()
 		{
-			User rootObject = new User();
+			T rootObject;
 
-			var httpResponse = this.httpWebRequest.GetResponse();
+			WebResponse httpResponse = this.httpWebRequest.GetResponse();
 
-			using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+			using (StreamReader streamReader = new StreamReader(httpResponse.GetResponseStream()))
 			{
-				var result = streamReader.ReadToEnd();
-				rootObject = JsonConvert.DeserializeObject<User>(result);
+				string result = streamReader.ReadToEnd();
+				rootObject = JsonConvert.DeserializeObject<T>(result);
 			}
 
 			return rootObject;
@@ -220,18 +220,17 @@ namespace RTMobile
 		{
 			List<User> rootObject = new List<User>();
 
-			var httpResponse = this.httpWebRequest.GetResponse();
+			WebResponse httpResponse = this.httpWebRequest.GetResponse();
 
 			using (StreamReader streamReader = new StreamReader(httpResponse.GetResponseStream()))
 			{
-				var result = streamReader.ReadToEnd();
+				string result = streamReader.ReadToEnd();
 				rootObject = JsonConvert.DeserializeObject<List<User>>(result);
 			}
 
 			return rootObject;
 		}
 
-	
 		/// <summary>
 		/// Метод отправки запроса для получения списка проектов
 		/// </summary>
@@ -241,11 +240,11 @@ namespace RTMobile
 
 			List<Project> rootObject = new List<Project>();
 
-			var httpResponse = this.httpWebRequest.GetResponse();
+			WebResponse httpResponse = this.httpWebRequest.GetResponse();
 
-			using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+			using (StreamReader streamReader = new StreamReader(httpResponse.GetResponseStream()))
 			{
-				var result = streamReader.ReadToEnd();
+				string result = streamReader.ReadToEnd();
 				rootObject = JsonConvert.DeserializeObject<List<Project>>(result);
 			}
 
@@ -260,11 +259,11 @@ namespace RTMobile
 		{
 			RootObject rootObject = new RootObject();
 
-			var httpResponse = this.httpWebRequest.GetResponse();
+			WebResponse httpResponse = this.httpWebRequest.GetResponse();
 
-			using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+			using (StreamReader streamReader = new StreamReader(httpResponse.GetResponseStream()))
 			{
-				var result = streamReader.ReadToEnd();
+				string result = streamReader.ReadToEnd();
 				rootObject = JsonConvert.DeserializeObject<RootObject>(result);
 			}
 
@@ -281,13 +280,13 @@ namespace RTMobile
 
 			Dictionary<string, string> keyValuePairsField = new Dictionary<string, string>();
 
-			var httpResponse = this.httpWebRequest.GetResponse();
+			WebResponse httpResponse = this.httpWebRequest.GetResponse();
 			RootObject rootObject = new RootObject();
 			//Отправляем запрос для получения списка полей задачи
-			using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+			using (StreamReader streamReader = new StreamReader(httpResponse.GetResponseStream()))
 			{
 				//читаем поток
-				var result = streamReader.ReadToEnd();
+				string result = streamReader.ReadToEnd();
 				//Создаем JAVA серелиазатор для возможности чтения элементов по названию, а не по полю класса, т.к. нам заранее не известны названия и количество полей в задаче и их количество может меняться
 				JavaScriptSerializer js = new JavaScriptSerializer();
 				//десериализуем в переменную с типом dynamic
@@ -361,13 +360,13 @@ namespace RTMobile
 
 			Dictionary<string, string> keyValuePairsField = new Dictionary<string, string>();
 
-			var httpResponse = this.httpWebRequest.GetResponse();
+			WebResponse httpResponse = this.httpWebRequest.GetResponse();
 			RootObject rootObject = new RootObject();
 			//Отправляем запрос для получения списка полей задачи
-			using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+			using (StreamReader streamReader = new StreamReader(httpResponse.GetResponseStream()))
 			{
 				//читаем поток
-				var result = streamReader.ReadToEnd();
+				string result = streamReader.ReadToEnd();
 				//Создаем JAVA серелиазатор для возможности чтения элементов по названию, а не по полю класса, т.к. нам заранее не известны названия и количество полей в задаче и их количество может меняться
 				JavaScriptSerializer js = new JavaScriptSerializer();
 				//десериализуем в переменную с типом dynamic
@@ -599,6 +598,35 @@ namespace RTMobile
 			}
 			return fields;
 		}
+		/// <summary>
+		/// Получаем результат перехода между статусами
+		/// </summary>
+		public Errors ResponseTransition(string json)
+		{
+			Errors errors = new Errors();
+
+			try
+			{
+				if (json.Length > 0)
+				{
+					using (var streamWriter = new StreamWriter(this.httpWebRequest.GetRequestStream()))
+					{
+						streamWriter.Write(json);
+					}
+				}
+				var httpResponse = (HttpWebResponse)this.httpWebRequest.GetResponse();
+				using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+				{
+					var responseText = streamReader.ReadToEnd();
+					Console.WriteLine(responseText);
+				}
+			}
+			catch (WebException ex)
+			{
+				Console.WriteLine(ex.Message);
+			}
+			return errors;
+		}
 
 		/// <summary>
 		/// Получаем список названий полей и значений задачи
@@ -610,13 +638,13 @@ namespace RTMobile
 
 			Dictionary<string, string> keyValuePairsField = new Dictionary<string, string>();
 
-			var httpResponse = this.httpWebRequest.GetResponse();
+			WebResponse httpResponse = this.httpWebRequest.GetResponse();
 			RootObject rootObject = new RootObject();
 			//Отправляем запрос для получения списка полей задачи
-			using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+			using (StreamReader streamReader = new StreamReader(httpResponse.GetResponseStream()))
 			{
 				//читаем поток
-				var result = streamReader.ReadToEnd();
+				string result = streamReader.ReadToEnd();
 				//Создаем JAVA серелиазатор для возможности чтения элементов по названию, а не по полю класса, т.к. нам заранее не известны названия и количество полей в задаче и их количество может меняться
 				JavaScriptSerializer js = new JavaScriptSerializer();
 				//десериализуем в переменную с типом dynamic

@@ -630,10 +630,19 @@ namespace RTMobile
 		public string id { get; set; }
 		public List<Issue> issues { get; set; }
 	}
+	/// <summary>
+	/// Класс работы с ошибками при ответе сервера
+	/// </summary>
+	public class Errors
+	{
+		public string assignee { get; set; }
+		public string comment { get; set; }
+	}
 
 	public class RootObject
 	{
 		public List<string> errorMessages { get; set; }
+		public Errors errors { get; set; }
 		public List<Watcher> watchers { get; set; }
 		public List<User> users { get; set; }
 		public List<Worklog> worklogs { get; set; }

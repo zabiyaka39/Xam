@@ -15,9 +15,9 @@
                 <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
                     <Frame HasShadow="True" CornerRadius="3" BackgroundColor="#4A4C50" WidthRequest="167" VerticalOptions="End"
                        HeightRequest="40" HorizontalOptions="StartAndExpand" Padding="0,5,0,5" Margin="-25,0,20,10">
-                        <!--<Frame.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1" NumberOfTapsRequired="1"/>
-                    </Frame.GestureRecognizers>-->
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" NumberOfTapsRequired="1"/>
+                        </Frame.GestureRecognizers>
                         <Label Text="ОТМЕНА" FontSize="18" TextColor="#F0F1F0" HorizontalOptions="Center"
                            FontAttributes="Bold" VerticalOptions="Center"/>
                     </Frame>

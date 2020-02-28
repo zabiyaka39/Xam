@@ -18,10 +18,7 @@ namespace RTMobile.dataIssue
 		public screen()
 		{
 			InitializeComponent();
-
-			CrossSettings.Current.AddOrUpdateValue("tmpLogin", "sekisov");
-			CrossSettings.Current.AddOrUpdateValue("tmpPassword", "28651455gsbua1A");
-
+			
 			Request request = new Request("https://dev-sd.rosohrana.ru/rest/api/2/issue/KDOP-61168/transitions?expand=transitions.fields&transitionId=271");
 			fields = request.GetFieldScreen();
 
