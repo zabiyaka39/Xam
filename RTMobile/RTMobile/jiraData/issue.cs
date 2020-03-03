@@ -558,11 +558,10 @@ namespace RTMobile
 		public Schema schema { get; set; }
 		public string resolutiondate
 		{
-			get { return _resolutiondate; }
+			get { return _updated; }
 			set
 			{
-				System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo("ru-RU");
-				_resolutiondate = Convert.ToString(value, culture);
+				_updated = (Convert.ToDateTime(value)).ToString("dd.MM.yyyy hh:mm");
 			}
 		}
 		private string _resolutiondate { get; set; }

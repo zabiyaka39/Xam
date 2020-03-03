@@ -91,8 +91,8 @@ F:\project\Mobile\RTMobile\RTMobile\RTMobile\bin\Debug\netstandard2.0\RTMobile.d
 F:\project\Mobile\RTMobile\RTMobile\RTMobile\bin\Debug\netstandard2.0\RTMobile.dll
 F:\project\Mobile\RTMobile\RTMobile\RTMobile\bin\Debug\netstandard2.0\RTMobile.pdb
 F:\project\Mobile\RTMobile\RTMobile\RTMobile\bin\Debug\netstandard2.0\Windows.Foundation.UniversalApiContract.winmd
-F:\project\Mobile\RTMobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\XamlC.stamp
 F:\project\Mobile\RTMobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\RTMobile.csproj.CopyComplete
 F:\project\Mobile\RTMobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\RTMobile.dll
 F:\project\Mobile\RTMobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\RTMobile.pdb
 F:\project\Mobile\RTMobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\RTMobile.csprojAssemblyReference.cache
+F:\project\Mobile\RTMobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\XamlC.stamp

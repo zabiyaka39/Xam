@@ -35,12 +35,6 @@ namespace RTMobile.issues.viewIssue
 				{
 					issue.fields.resolution = new Resolution { name = "Нет решения" };
 				}
-
-				if (issue.fields.resolutiondate != null)
-				{
-					issue.fields.resolutiondate = "-";
-				}
-
 			}
 			this.BindingContext = this;
 		}
@@ -57,6 +51,10 @@ namespace RTMobile.issues.viewIssue
 					Text = transition[i].name,
 					Order = ToolbarItemOrder.Secondary,
 					Priority = i + 1
+				};
+				tb.Clicked += async (sender, args) =>
+				{
+					await Navigation.PushAsync(new RTMobile.issues.viewIssue.Transition(int.Parse(transition[((ToolbarItem)sender).Priority-1].id), issue.key)).ConfigureAwait(true);
 				};
 				ToolbarItems.Add(tb);
 			}

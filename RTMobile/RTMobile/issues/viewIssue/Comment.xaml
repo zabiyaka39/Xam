@@ -23,7 +23,7 @@
                        TextColor="#F0F1F0" FontSize="16" VerticalOptions="CenterAndExpand"
                        HorizontalOptions="CenterAndExpand" Margin="10,0,10,0" MaxLines="2" LineBreakMode="TailTruncation"/>
             </StackLayout>
-
+           
             <ListView VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" x:Name="listComment"
                       BackgroundColor="#4A4C50" HasUnevenRows="True" SeparatorVisibility="None"
                       ItemsSource="{Binding comments}" ItemTapped="ListView_ItemTapped">

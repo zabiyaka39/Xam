@@ -1,4 +1,5 @@
-﻿using Plugin.Settings;
+﻿using Microsoft.AppCenter.Crashes;
+using Plugin.Settings;
 using RTMobile.about;
 using RTMobile.issues;
 using RTMobile.settings;
@@ -21,8 +22,8 @@ namespace RTMobile
 		public MainPage()
 		{
 			InitializeComponent();
-			login.Text=CrossSettings.Current.GetValueOrDefault("login", "");
-			password.Text=CrossSettings.Current.GetValueOrDefault("password", "");
+			login.Text = CrossSettings.Current.GetValueOrDefault("login", "");
+			password.Text = CrossSettings.Current.GetValueOrDefault("password", "");
 			//ToolbarItem toolbar = new ToolbarItem
 			//{
 			//    Text = "Настройки",
@@ -40,30 +41,39 @@ namespace RTMobile
 		private async void Button_Clicked(object sender, EventArgs e)
 		{
 			Request request = new Request();
-			if (login.Text != null && login.Text.Length > 0 && password.Text!=null && password.Text.Length > 0)
+			try
 			{
-				if (request.authorization(login.Text.Trim(' '), password.Text))
+				if (login.Text != null && login.Text.Length > 0 && password.Text != null && password.Text.Length > 0)
 				{
-					errorMessage.IsVisible = false;
-					errorMessage1.IsVisible = false;
-					errorMessage.IsVisible = false;
+					if (request.authorization(login.Text.Trim(' '), password.Text))
+					{
+						errorMessage.IsVisible = false;
+						errorMessage1.IsVisible = false;
+						errorMessage.IsVisible = false;
 
-					CrossSettings.Current.AddOrUpdateValue("login", login.Text.Trim(' '));
-					CrossSettings.Current.AddOrUpdateValue("password", password.Text);
-					await Navigation.PushModalAsync(new AllIssues()).ConfigureAwait(true);
+						CrossSettings.Current.AddOrUpdateValue("login", login.Text.Trim(' '));
+						CrossSettings.Current.AddOrUpdateValue("password", password.Text);
+
+						await Navigation.PushModalAsync(new AllIssues()).ConfigureAwait(true);
+
+					}
+					else
+					{
+						CrossSettings.Current.Remove("login");
+						CrossSettings.Current.Remove("password");
+						errorMessage.IsVisible = true;
+						errorMessage1.IsVisible = true;
+					}
 				}
 				else
 				{
-					CrossSettings.Current.Remove("login");
-					CrossSettings.Current.Remove("password");
-					errorMessage.IsVisible = true;				
+					errorMessage.IsVisible = true;
 					errorMessage1.IsVisible = true;
 				}
 			}
-			else
+			catch (Exception ex)
 			{
-				errorMessage.IsVisible = true;
-				errorMessage1.IsVisible = true;
+				Crashes.TrackError(ex);
 			}
 		}
 
@@ -79,7 +89,7 @@ namespace RTMobile
 
 		private void Button_Clicked_3(object sender, EventArgs e)
 		{
-			
+
 		}
 	}
 }

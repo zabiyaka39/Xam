@@ -112,6 +112,14 @@
               "target": "Package",
               "version": "[5.2.0, )"
             },
+            "Microsoft.AppCenter.Analytics": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "Microsoft.AppCenter.Crashes": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
             "Microsoft.CSharp": {
               "target": "Package",
               "version": "[4.7.0, )"
@@ -154,11 +162,11 @@
             },
             "Xamarin.Essentials": {
               "target": "Package",
-              "version": "[1.4.0, )"
+              "version": "[1.5.0, )"
             },
             "Xamarin.Forms": {
               "target": "Package",
-              "version": "[4.4.0.991640, )"
+              "version": "[4.5.0.356, )"
             }
           },
           "imports": [

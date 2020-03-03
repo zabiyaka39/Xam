@@ -40,7 +40,7 @@ namespace RTMobile
             catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
-                await DisplayAlert("Error issues", ex.ToString(), "OK");
+                await DisplayAlert("Error issues", ex.ToString(), "OK").ConfigureAwait(true);
             }
         }
     }

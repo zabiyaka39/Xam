@@ -490,7 +490,7 @@ namespace RTMobile.issues.viewIssue
 			//Создаем label с названием получаемого аргумента для более понятного вида для пользователя
 			Label labelComment = new Label
 			{
-				Text = "Комментарий",
+				Text = "Комментарий*",
 				TextColor = Color.FromHex("#F0F1F0"),
 				FontSize = 14
 			};
@@ -576,7 +576,7 @@ namespace RTMobile.issues.viewIssue
 							case "array":
 								{
 									//Проверяем какой массив данных необходимо принять на вход
-									switch (fieldIssue[i].schema.items)
+									switch (fieldIssue[j].schema.items)
 									{
 										case "attachment":
 											{
@@ -674,11 +674,11 @@ namespace RTMobile.issues.viewIssue
 			//Закрываем запрос
 			jsonRequestTransitions += "}";
 
-			Request request = new Request(CrossSettings.Current.GetValueOrDefault("urlServer", string.Empty) + $"/rest/api/2/issue/IT-3757/transitions", "POST");
+			Request request = new Request(CrossSettings.Current.GetValueOrDefault("urlServer", string.Empty) + $"/rest/api/2/issue/{numberIssue}/transitions", "POST");
 			Errors errors = request.ResponseTransition(jsonRequestTransitions);
-			if (errors.comment.Length == 0 && errors.assignee.Length == 0)
+			if (errors.comment == null && errors.assignee == null)
 			{
-				await Navigation.PopAsync().ConfigureAwait(true);
+				Application.Current.MainPage = new AllIssues();
 			}
 		}
 

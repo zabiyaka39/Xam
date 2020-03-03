@@ -13,6 +13,7 @@ using Microsoft.CSharp;
 using System.Collections.ObjectModel;
 using Xamarin.Forms;
 using Windows.Data.Json;
+using Microsoft.AppCenter.Crashes;
 
 namespace RTMobile
 {
@@ -36,7 +37,7 @@ namespace RTMobile
 				{
 					CrossSettings.Current.AddOrUpdateValue("urlServer", "https://sd.rosohrana.ru");
 				}
-				//CrossSettings.Current.AddOrUpdateValue("urlServer", "https://dev-sd.rosohrana.ru");
+				//CrossSettings.Current.AddOrUpdateValue("urlServer", "https://sd.rosohrana.ru");
 				Authorization authorization = new Authorization();
 				authorization.username = login;
 				authorization.password = password;
@@ -62,7 +63,7 @@ namespace RTMobile
 						return false;
 					}
 				}
-				catch (Exception ex)
+				catch  
 				{
 					return false;
 				}
@@ -88,9 +89,9 @@ namespace RTMobile
 			this.httpWebRequest.ContentType = "application/json";
 			this.httpWebRequest.Method = "POST";
 			this.httpWebRequest.Headers.Add(HttpRequestHeader.Authorization, "Basic " +
-				Convert.ToBase64String(Encoding.Default.GetBytes(CrossSettings.Current.GetValueOrDefault("tmpLogin", string.Empty) +
+				Convert.ToBase64String(Encoding.Default.GetBytes(CrossSettings.Current.GetValueOrDefault("login", string.Empty) +
 				":" +
-				CrossSettings.Current.GetValueOrDefault("tmpPassword", string.Empty))));
+				CrossSettings.Current.GetValueOrDefault("password", string.Empty))));
 			this.json = JsonConvert.SerializeObject(issueJSONSearch);
 		}
 		/// <summary>
@@ -104,9 +105,9 @@ namespace RTMobile
 			this.httpWebRequest.ContentType = "application/json";
 			this.httpWebRequest.Method = "GET";
 			this.httpWebRequest.Headers.Add(HttpRequestHeader.Authorization, "Basic " +
-				Convert.ToBase64String(Encoding.Default.GetBytes(CrossSettings.Current.GetValueOrDefault("tmpLogin", string.Empty) +
+				Convert.ToBase64String(Encoding.Default.GetBytes(CrossSettings.Current.GetValueOrDefault("login", string.Empty) +
 				":" +
-				CrossSettings.Current.GetValueOrDefault("tmpPassword", string.Empty))));
+				CrossSettings.Current.GetValueOrDefault("password", string.Empty))));
 		}
 		/// <summary>
 		/// Запрос на получение списка комментариев
@@ -121,9 +122,9 @@ namespace RTMobile
 			this.httpWebRequest.ContentType = "application/json";
 			this.httpWebRequest.Method = "POST";
 			this.httpWebRequest.Headers.Add(HttpRequestHeader.Authorization, "Basic " +
-				Convert.ToBase64String(Encoding.Default.GetBytes(CrossSettings.Current.GetValueOrDefault("tmpLogin", string.Empty) +
+				Convert.ToBase64String(Encoding.Default.GetBytes(CrossSettings.Current.GetValueOrDefault("login", string.Empty) +
 				":" +
-				CrossSettings.Current.GetValueOrDefault("tmpPassword", string.Empty))));
+				CrossSettings.Current.GetValueOrDefault("password", string.Empty))));
 			this.json = JsonConvert.SerializeObject(comment);
 		}
 		/// <summary>
@@ -138,9 +139,9 @@ namespace RTMobile
 			this.httpWebRequest.ContentType = "application/json";
 			this.httpWebRequest.Method = "GET";
 			this.httpWebRequest.Headers.Add(HttpRequestHeader.Authorization, "Basic " +
-				Convert.ToBase64String(Encoding.Default.GetBytes(CrossSettings.Current.GetValueOrDefault("tmpLogin", string.Empty) +
+				Convert.ToBase64String(Encoding.Default.GetBytes(CrossSettings.Current.GetValueOrDefault("login", string.Empty) +
 				":" +
-				CrossSettings.Current.GetValueOrDefault("tmpPassword", string.Empty))));
+				CrossSettings.Current.GetValueOrDefault("password", string.Empty))));
 			this.json = JsonConvert.SerializeObject(project);
 
 		}
@@ -154,9 +155,9 @@ namespace RTMobile
 			this.httpWebRequest.ContentType = "application/json";
 			this.httpWebRequest.Method = method;
 			this.httpWebRequest.Headers.Add(HttpRequestHeader.Authorization, "Basic " +
-				Convert.ToBase64String(Encoding.Default.GetBytes(CrossSettings.Current.GetValueOrDefault("tmpLogin", string.Empty) +
+				Convert.ToBase64String(Encoding.Default.GetBytes(CrossSettings.Current.GetValueOrDefault("login", string.Empty) +
 				":" +
-				CrossSettings.Current.GetValueOrDefault("tmpPassword", string.Empty))));
+				CrossSettings.Current.GetValueOrDefault("password", string.Empty))));
 			this.json = "";
 		}
 		/// <summary>
@@ -188,6 +189,7 @@ namespace RTMobile
 			catch (Exception ex)
 			{
 				Console.WriteLine(ex.Message);
+				Crashes.TrackError(ex);
 			}
 
 			return rootObject;
@@ -594,6 +596,7 @@ namespace RTMobile
 				catch (Exception ex)
 				{
 					Console.WriteLine(ex.Message);
+					Crashes.TrackError(ex);
 				}
 			}
 			return fields;
@@ -624,6 +627,7 @@ namespace RTMobile
 			catch (WebException ex)
 			{
 				Console.WriteLine(ex.Message);
+				Crashes.TrackError(ex);
 			}
 			return errors;
 		}

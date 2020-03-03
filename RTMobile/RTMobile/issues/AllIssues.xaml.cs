@@ -4,16 +4,25 @@ using RTMobile.settings;
 using RTMobile.about;
 using Xamarin.Forms;
 using RTMobile.profile;
+using System;
+using Plugin.Settings;
+using Microsoft.AppCenter.Crashes;
 
 namespace RTMobile.issues
 {
 	public partial class AllIssues : MasterDetailPage
 	{
-
+		User user { get; set; }
 		public AllIssues()
 		{
 			InitializeComponent();
-		
+
+			string getIssue = CrossSettings.Current.GetValueOrDefault("urlServer", string.Empty) + @"/rest/api/2/user?username=" + CrossSettings.Current.GetValueOrDefault("login", string.Empty) + @"&expand=groups,applicationRoles";
+			Request requestUser = new Request(getIssue);
+			user = requestUser.GetResponsersProfile<User>();
+			userName.Text = user.displayName;
+			userEmail.Text = user.emailAddress;
+			userImage.Source = user.AvatarUrls.image;
 			Detail = new NavigationPage(new AllIssuesView());
 		}
 
@@ -58,5 +67,9 @@ namespace RTMobile.issues
 			IsPresented = false;
 		}
 
+		private async void Button_Clicked_6(object sender, System.EventArgs e)
+		{
+			Application.Current.MainPage = new MainPage();
+		}
 	}
 }

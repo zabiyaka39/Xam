@@ -44,6 +44,10 @@ namespace RTMobile.issues.viewIssue
                     Order = ToolbarItemOrder.Secondary,
                     Priority = i + 1
                 };
+                tb.Clicked += async (sender, args) =>
+                {
+                    await Navigation.PushAsync(new RTMobile.issues.viewIssue.Transition(int.Parse(transition[((ToolbarItem)sender).Priority - 1].id), issueKey)).ConfigureAwait(true);
+                };
                 ToolbarItems.Add(tb);
             }
         }
@@ -69,7 +73,7 @@ namespace RTMobile.issues.viewIssue
             catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
-                await DisplayAlert("Error issues", ex.ToString(), "OK");
+                await DisplayAlert("Error issues", ex.ToString(), "OK").ConfigureAwait(true);
             }
         }
 

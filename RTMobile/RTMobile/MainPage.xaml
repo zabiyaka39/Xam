@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ContentPage BackgroundColor="#312F35"
+<ContentPage  BackgroundColor="#312F35"
              xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
@@ -9,6 +9,7 @@
              NavigationPage.HasNavigationBar="False">
     <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                  Orientation="Vertical" BackgroundColor="#312F35">
+        
         <Frame BackgroundColor="#4A4C50" HasShadow="False" HeightRequest="40"
                HorizontalOptions="FillAndExpand" VerticalOptions="Start" Margin="0,0,0,-25">
             <StackLayout Orientation="Horizontal" VerticalOptions="Center"
@@ -18,6 +19,7 @@
                 <Label Text="РОСОХРАНА" FontSize="20" TextColor="#F0F1F0" VerticalOptions="Center" />
             </StackLayout>
         </Frame>
+
         <StackLayout VerticalOptions="CenterAndExpand">
             <Label Text="АВТОРИЗАЦИЯ" HorizontalOptions="CenterAndExpand"
                FontSize="20" FontAttributes="Bold" TextColor="#F0F1F0" Margin="0,0,0,24" />

@@ -52,6 +52,10 @@ namespace RTMobile.issues.viewIssue
                     Order = ToolbarItemOrder.Secondary,
                     Priority = i + 1
                 };
+                tb.Clicked += async (sender, args) =>
+                {
+                    await Navigation.PushAsync(new RTMobile.issues.viewIssue.Transition(int.Parse(transition[((ToolbarItem)sender).Priority - 1].id), issue.key)).ConfigureAwait(true);
+                };
                 ToolbarItems.Add(tb);
             }
         }

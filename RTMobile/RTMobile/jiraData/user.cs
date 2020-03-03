@@ -1,7 +1,11 @@
 ﻿using Newtonsoft.Json;
+using Plugin.Settings;
 using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Net;
 using System.Text;
+using Xamarin.Forms;
 
 namespace RTMobile
 {
@@ -80,6 +84,8 @@ namespace RTMobile
         public string emailAddress { get; set; } = "Отсутствует";
         [JsonProperty("avatarUrls")]
         public Urls AvatarUrls { get; set; }
+
+       
         public string displayName { get; set; } = "Отсутствует";
         public bool active { get; set; }
         public string timeZone { get; set; }

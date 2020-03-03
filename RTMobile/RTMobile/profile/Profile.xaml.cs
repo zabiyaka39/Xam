@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Microsoft.AppCenter.Crashes;
 using Plugin.Settings;
 using RTMobile.calendar;
 using RTMobile.filter;
@@ -52,6 +53,7 @@ namespace RTMobile.profile
 			}
 			catch (Exception ex)
 			{
+				Crashes.TrackError(ex);
 				Console.WriteLine(ex.ToString());
 				return "";
 			}
@@ -68,7 +70,7 @@ namespace RTMobile.profile
 			}
 			catch (Exception ex)
 			{
-				Console.WriteLine(ex.ToString());
+				Crashes.TrackError(ex);
 			}
 		}
 		void ImageButton_Clicked(System.Object sender, System.EventArgs e)
@@ -94,6 +96,11 @@ namespace RTMobile.profile
 		void ToolbarItem_Clicked(System.Object sender, System.EventArgs e)
 		{
 			Navigation.PushAsync(new Settings());
+		}
+
+		private void Button_Clicked(object sender, EventArgs e)
+		{
+			Application.Current.MainPage = new MainPage();
 		}
 	}
 }

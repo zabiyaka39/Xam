@@ -83,13 +83,13 @@ namespace RTMobile
 				}
 				catch (Exception ex)
 				{
-					await DisplayAlert("Error", ex.ToString(), "OK");
+					await DisplayAlert("Error", ex.ToString(), "OK").ConfigureAwait(true);
 				}
 			}
 			catch (Exception ex)
 			{
 				Console.WriteLine(ex.ToString());
-				await DisplayAlert("Error issues", ex.ToString(), "OK");
+				await DisplayAlert("Error issues", ex.ToString(), "OK").ConfigureAwait(true);
 			}
 		}
 		/// <summary>
@@ -114,42 +114,34 @@ namespace RTMobile
 				{
 					issues.RemoveAt(i);
 				}
-				//Проверка на пустой список задач
-				try
+				if (rootObject.issues != null)
 				{
-					if (rootObject.issues != null)
+					if (firstRequest && rootObject.issues.Count > 0)
 					{
-						if (firstRequest && rootObject.issues.Count > 0)
+						for (int i = 0; i < rootObject.issues.Count; ++i)
 						{
-							for (int i = 0; i < rootObject.issues.Count; ++i)
-							{
-								issues.Add(rootObject.issues[i]);
-							}
-							//issues.Add(rootObject.issues[rootObject.issues.Count - 1]);
+							issues.Add(rootObject.issues[i]);
 						}
-						else
-						{
-							issues = rootObject.issues;
-							//for (int i = 0; i < issues.Count; ++i)
-							//{
-							//	//ColorTypeConverter converter = new ColorTypeConverter();
-
-							//	//Color colors = (Color)(converter.ConvertFromInvariantString(issues[i].fields.status.statusCategory.colorName));
-							//	//color.Add(colors);
-							//}
-
-						}
+						//issues.Add(rootObject.issues[rootObject.issues.Count - 1]);
 					}
-				}
-				catch (Exception ex)
-				{
-					await DisplayAlert("Error", ex.ToString(), "OK");
+					else
+					{
+						issues = rootObject.issues;
+						//for (int i = 0; i < issues.Count; ++i)
+						//{
+						//	//ColorTypeConverter converter = new ColorTypeConverter();
+
+						//	//Color colors = (Color)(converter.ConvertFromInvariantString(issues[i].fields.status.statusCategory.colorName));
+						//	//color.Add(colors);
+						//}
+
+					}
 				}
 			}
 			catch (Exception ex)
 			{
 				Console.WriteLine(ex.ToString());
-				await DisplayAlert("Error issues", ex.ToString(), "OK");
+				await DisplayAlert("Error issues", ex.ToString(), "OK").ConfigureAwait(true);
 			}
 		}
 		/// <summary>
@@ -175,7 +167,7 @@ namespace RTMobile
 		/// <param name="e"></param>
 		private async void Button_Clicked(object sender, EventArgs e)
 		{
-			await Navigation.PushAsync(new searchIssue());
+			await Navigation.PushAsync(new searchIssue()).ConfigureAwait(true);
 		}
 		/// <summary>
 		/// Кнопка создания задачи
@@ -184,7 +176,7 @@ namespace RTMobile
 		/// <param name="e"></param>
 		private async void Button_Clicked_1(object sender, EventArgs e)
 		{
-			await Navigation.PushAsync(new createIssue());
+			await Navigation.PushAsync(new createIssue()).ConfigureAwait(true);
 		}
 		/// <summary>
 		/// Тап перехода к задаче
@@ -197,7 +189,7 @@ namespace RTMobile
 			Console.WriteLine("sdadasdsadadasd" + selectedIssue.key);
 			if (selectedIssue != null)
 			{
-				await DisplayAlert("Выбранная модель", $"{selectedIssue.key}", "OK");
+				await DisplayAlert("Выбранная модель", $"{selectedIssue.key}", "OK").ConfigureAwait(true);
 
 				//        await Navigation.PushAsync(new general(selectedIssue));
 				//        //await DisplayAlert("Выбранная модель", $"{selectedIssue.key}", "OK");
@@ -212,7 +204,7 @@ namespace RTMobile
 		/// <param name="e"></param>
 		private async void ImageButton_Clicked(object sender, EventArgs e)
 		{
-			await Navigation.PushAsync(new Profile());
+			await Navigation.PushAsync(new Profile()).ConfigureAwait(true);
 		}
 		/// <summary>
 		/// Кнопка перехода к уведомлениям
@@ -221,7 +213,7 @@ namespace RTMobile
 		/// <param name="e"></param>
 		private async void ImageButton_Clicked_1(object sender, EventArgs e)
 		{
-			await Navigation.PushAsync(new Notification());
+			await Navigation.PushAsync(new Notification()).ConfigureAwait(true);
 		}
 		/// <summary>
 		/// Кнопка перехода к разделу Insight
@@ -230,7 +222,7 @@ namespace RTMobile
 		/// <param name="e"></param>
 		private async void ImageButton_Clicked_2(object sender, EventArgs e)
 		{
-			await Navigation.PushAsync(new Insight());
+			await Navigation.PushAsync(new Insight()).ConfigureAwait(true);
 		}
 		/// <summary>
 		/// Обработка сортировки

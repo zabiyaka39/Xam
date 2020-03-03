@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using Plugin.Settings;
 using RTMobile.calendar;
 using RTMobile.filter;
 using RTMobile.insight;
@@ -22,8 +23,16 @@ namespace RTMobile.issues
 			InitializeComponent();
 			filterIssue = "status not in  (Закрыта, Отклонена, Отменена, Активирована, Выполнено, 'Доставлена клиенту', Провалено) AND assignee in (currentUser())";
 			issueStartPostRequest(true);
-
-
+			if (this.issues.Count > 0)
+			{
+				issuesList.IsVisible = true;
+				noneIssue.IsVisible = false;
+			}
+			else
+			{
+				issuesList.IsVisible = false;
+				noneIssue.IsVisible = true;
+			}
 			this.BindingContext = this;
 		}
 
@@ -52,7 +61,7 @@ namespace RTMobile.issues
 			Issue selectedIssue = e.Item as Issue;
 			if (selectedIssue != null)
 			{
-				await Navigation.PushAsync(new TabPageIssue(selectedIssue));
+				await Navigation.PushAsync(new TabPageIssue(selectedIssue)).ConfigureAwait(true);
 			}
 			((ListView)sender).SelectedItem = null;
 		}
@@ -155,21 +164,19 @@ namespace RTMobile.issues
 				}
 				catch (Exception ex)
 				{
-					await DisplayAlert("Error", ex.ToString(), "OK");
+					await DisplayAlert("Error", ex.ToString(), "OK").ConfigureAwait(true);
 				}
 			}
 			catch (Exception ex)
 			{
 				Console.WriteLine(ex.ToString());
-				await DisplayAlert("Error issues", ex.ToString(), "OK");
+				await DisplayAlert("Error issues", ex.ToString(), "OK").ConfigureAwait(true);
 			}
 		}
-
 		private void ImageButton_Clicked_4(object sender, EventArgs e)
 		{
 
 		}
-
 		private async void Button_Clicked(object sender, EventArgs e)
 		{
 			await Navigation.PushAsync(new RTMobile.issues.viewIssue.Transition(721, "IT-3757")).ConfigureAwait(true);

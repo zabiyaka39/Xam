@@ -34,10 +34,9 @@
                                HeightRequest="40" WidthRequest="40" VerticalOptions="Start"
                                HorizontalOptions="Center"
                                HasShadow="True" OutlineColor="#000000" BackgroundColor="#FFFFFF">
-                        <Image Source ="{Binding Path=user.AvatarUrls.image}" Aspect="AspectFill" Margin="-20"
-                                   HeightRequest="100" WidthRequest="100"/>
+                        <Image Source ="{Binding Path=user.AvatarUrls.image}" Aspect="AspectFill" Margin="-20"/>
                     </Frame>
-                    <Label x:Name="username" VerticalOptions="Start" Text="{Binding Path=user.displayName}"
+                    <Label x:Name="username" VerticalOptions="Center" Text="{Binding Path=user.displayName}"
                            Grid.Column="1" Grid.Row="0" TextColor="#F0F1F0" FontSize="20" Margin="-15,0,0,0"/>
                     <Label x:Name="edit" VerticalOptions="Start" HorizontalOptions="Center" Margin="0,-8,0,0"
                             Text="Редактировать" Grid.Column="0" Grid.Row="1" TextColor="#F0F1F0" FontSize="12"/>
@@ -85,7 +84,7 @@
                 <Image  Source="exit.png" VerticalOptions="Center" Margin="10,0,0,0" HeightRequest="30"
                    BackgroundColor="Transparent" HorizontalOptions="Start"/>
                 <Button Text="ВЫЙТИ" VerticalOptions="End" Margin="0" Padding="0" BackgroundColor="Transparent"
-                    TextColor="#F0F1F0" HorizontalOptions="Start" FontSize="18"/>
+                    TextColor="#F0F1F0" HorizontalOptions="Start" FontSize="18" Clicked="Button_Clicked"/>
             </StackLayout>
             <Grid>
                 <Grid.RowDefinitions>
