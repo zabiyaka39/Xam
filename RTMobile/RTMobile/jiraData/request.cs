@@ -53,7 +53,7 @@ namespace RTMobile
 
 				try
 				{
-					rootObject = this.GetResponses();
+					rootObject = this.GetResponses<RootObject>();
 					if (rootObject.session.name != null)
 					{
 						return true;
@@ -160,30 +160,34 @@ namespace RTMobile
 				CrossSettings.Current.GetValueOrDefault("password", string.Empty))));
 			this.json = "";
 		}
+		
 		/// <summary>
-		/// Метод отправки GET-запроса без параметров
+		/// Метод для получения данных профиля пользователя
 		/// </summary>
 		/// <returns></returns>
-		public RootObject GetResponses()
-		{
-			RootObject rootObject = new RootObject();
-
-			if (this.json.Length > 0)
-			{
-				using (StreamWriter streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
-				{
-					streamWriter.Write(this.json);
-				}
-			}
+		public T GetResponses<T>(string json ="")
+		{			
+			T rootObject = default(T);
 			try
 			{
+				if (this.json.Length > 0)
+				{
+					if (json.Length > 0)
+					{
+						this.json = json;
+					}
+					using (StreamWriter streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
+					{
+						streamWriter.Write(this.json);
+					}
+				}
+
 				WebResponse httpResponse = this.httpWebRequest.GetResponse();
 
 				using (StreamReader streamReader = new StreamReader(httpResponse.GetResponseStream()))
 				{
 					string result = streamReader.ReadToEnd();
-					Console.WriteLine(result);
-					rootObject = JsonConvert.DeserializeObject<RootObject>(result);
+					rootObject = JsonConvert.DeserializeObject<T>(result);
 				}
 			}
 			catch (Exception ex)
@@ -191,84 +195,6 @@ namespace RTMobile
 				Console.WriteLine(ex.Message);
 				Crashes.TrackError(ex);
 			}
-
-			return rootObject;
-		}
-
-		/// <summary>
-		/// Метод для получения данных профиля пользователя
-		/// </summary>
-		/// <returns></returns>
-		public T GetResponsersProfile<T>()
-		{
-			T rootObject;
-
-			WebResponse httpResponse = this.httpWebRequest.GetResponse();
-
-			using (StreamReader streamReader = new StreamReader(httpResponse.GetResponseStream()))
-			{
-				string result = streamReader.ReadToEnd();
-				rootObject = JsonConvert.DeserializeObject<T>(result);
-			}
-
-			return rootObject;
-		}
-
-		/// <summary>
-		/// Метод для получения данных профиля пользователя
-		/// </summary>
-		/// <returns></returns>
-		public List<User> GetResponsersProfileList()
-		{
-			List<User> rootObject = new List<User>();
-
-			WebResponse httpResponse = this.httpWebRequest.GetResponse();
-
-			using (StreamReader streamReader = new StreamReader(httpResponse.GetResponseStream()))
-			{
-				string result = streamReader.ReadToEnd();
-				rootObject = JsonConvert.DeserializeObject<List<User>>(result);
-			}
-
-			return rootObject;
-		}
-
-		/// <summary>
-		/// Метод отправки запроса для получения списка проектов
-		/// </summary>
-		/// <returns></returns>
-		public List<Project> GetResponsesProject()
-		{
-
-			List<Project> rootObject = new List<Project>();
-
-			WebResponse httpResponse = this.httpWebRequest.GetResponse();
-
-			using (StreamReader streamReader = new StreamReader(httpResponse.GetResponseStream()))
-			{
-				string result = streamReader.ReadToEnd();
-				rootObject = JsonConvert.DeserializeObject<List<Project>>(result);
-			}
-
-			return rootObject;
-		}
-		/// <summary>
-		/// Метод отпарвки GET запроса на сервер с параметрами
-		/// </summary>
-		/// <param name="getIssue"></param>
-		/// <returns></returns>
-		public RootObject GetResponses(string getIssue)
-		{
-			RootObject rootObject = new RootObject();
-
-			WebResponse httpResponse = this.httpWebRequest.GetResponse();
-
-			using (StreamReader streamReader = new StreamReader(httpResponse.GetResponseStream()))
-			{
-				string result = streamReader.ReadToEnd();
-				rootObject = JsonConvert.DeserializeObject<RootObject>(result);
-			}
-
 			return rootObject;
 		}
 
@@ -600,36 +526,6 @@ namespace RTMobile
 				}
 			}
 			return fields;
-		}
-		/// <summary>
-		/// Получаем результат перехода между статусами
-		/// </summary>
-		public Errors ResponseTransition(string json)
-		{
-			Errors errors = new Errors();
-
-			try
-			{
-				if (json.Length > 0)
-				{
-					using (var streamWriter = new StreamWriter(this.httpWebRequest.GetRequestStream()))
-					{
-						streamWriter.Write(json);
-					}
-				}
-				var httpResponse = (HttpWebResponse)this.httpWebRequest.GetResponse();
-				using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
-				{
-					var responseText = streamReader.ReadToEnd();
-					Console.WriteLine(responseText);
-				}
-			}
-			catch (WebException ex)
-			{
-				Console.WriteLine(ex.Message);
-				Crashes.TrackError(ex);
-			}
-			return errors;
 		}
 
 		/// <summary>

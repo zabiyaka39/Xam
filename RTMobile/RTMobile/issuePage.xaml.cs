@@ -56,7 +56,7 @@ namespace RTMobile
 				RootObject rootObject = new RootObject();
 				Request request = new Request(issueJSONSearch);
 
-				rootObject = request.GetResponses();
+				rootObject = request.GetResponses<RootObject>();
 
 				//Проверка на пустой список задач
 				try
@@ -109,7 +109,7 @@ namespace RTMobile
 				RootObject rootObject = new RootObject();
 				Request request = new Request(issueJSONSearch);
 
-				rootObject = request.GetResponses();
+				rootObject = request.GetResponses<RootObject>();
 				for (int i = issues.Count - 1; i >= 0; --i)
 				{
 					issues.RemoveAt(i);

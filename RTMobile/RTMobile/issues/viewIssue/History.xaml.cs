@@ -35,7 +35,7 @@ namespace RTMobile.issues.viewIssue
             string getIssue = CrossSettings.Current.GetValueOrDefault("urlServer", string.Empty) + @"/rest/api/2/issue/" + issueKey + "/transitions/";
 
             Request request = new Request(getIssue);
-            transition = request.GetResponses(getIssue).transitions;
+            transition = request.GetResponses<RootObject>().transitions;
             for (int i = 0; i < transition.Count; ++i)
             {
                 ToolbarItem tb = new ToolbarItem
@@ -59,7 +59,7 @@ namespace RTMobile.issues.viewIssue
 
                 Request request = new Request(getIssue);
                 RootObject historyIssues = new RootObject();
-                historyIssues = request.GetResponses(getIssue);
+                historyIssues = request.GetResponses<RootObject>();
                 //Проверяем наличие истории. Если первая то присваиваем, если обновляем, то добавляем последний элемент
                 if (!firstRequest && historyIssues.changelog.histories.Count > 0)
                 {

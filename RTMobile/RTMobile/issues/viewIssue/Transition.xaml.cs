@@ -60,7 +60,7 @@ namespace RTMobile.issues.viewIssue
 									if (fieldIssue[i].autoCompleteUrl.Length > 0)
 									{
 										Request requestUser = new Request(CrossSettings.Current.GetValueOrDefault("urlServer", string.Empty) + $"/rest/api/latest/user/assignable/search?issueKey={numberIssue}&username=");
-										user = requestUser.GetResponsersProfileList();
+										user = requestUser.GetResponses<List<User>>();
 
 										for (int j = 0; j < user.Count; ++j)
 										{
@@ -199,7 +199,7 @@ namespace RTMobile.issues.viewIssue
 												};
 
 												Request requestIssuelinks = new Request(CrossSettings.Current.GetValueOrDefault("urlServer", string.Empty) + $"/rest/api/2/issueLinkType");
-												List<Issuelink> issuelinks = requestIssuelinks.GetResponses().issueLinkTypes;
+												List<Issuelink> issuelinks = requestIssuelinks.GetResponses<RootObject>().issueLinkTypes;
 												for (int j = 0; j < issuelinks.Count; ++j)
 												{
 													picker.Items.Add(issuelinks[j].outward);
@@ -213,7 +213,7 @@ namespace RTMobile.issues.viewIssue
 												if (fieldIssue[i].autoCompleteUrl.Length > 0)
 												{
 													Request requestIssue = new Request(fieldIssue[i].autoCompleteUrl);
-													List<Issue> issue = requestIssue.GetResponses().sections[0].issues;
+													List<Issue> issue = requestIssue.GetResponses<RootObject>().sections[0].issues;
 
 													for (int j = 0; j < issue.Count; ++j)
 													{
@@ -251,7 +251,7 @@ namespace RTMobile.issues.viewIssue
 													{
 														Request requestIssue = new Request(CrossSettings.Current.GetValueOrDefault("urlServer", string.Empty)
 																			   + $"/rest/api/2/issue/picker?currentProjectId=&showSubTaskParent=true&showSubTasks=true&currentIssueKey={numberIssue}&query=" + keyword.ToLower());
-														List<Issue> issue = requestIssue.GetResponses().sections[0].issues;
+														List<Issue> issue = requestIssue.GetResponses<RootObject>().sections[0].issues;
 
 														issueDisplayName.Clear();
 														for (int j = 0; j < issue.Count; ++j)
@@ -392,7 +392,7 @@ namespace RTMobile.issues.viewIssue
 									if (fieldIssue[i].autoCompleteUrl.Length > 0)
 									{
 										Request requestUser = new Request(CrossSettings.Current.GetValueOrDefault("urlServer", string.Empty) + $"/rest/api/2/user/picker?query=");
-										user = requestUser.GetResponses().users;
+										user = requestUser.GetResponses<RootObject>().users;
 
 										for (int j = 0; j < user.Count; ++j)
 										{
@@ -429,7 +429,7 @@ namespace RTMobile.issues.viewIssue
 										if (keyword.Length >= 1)
 										{
 											Request requestIssue = new Request(CrossSettings.Current.GetValueOrDefault("urlServer", string.Empty) + $"/rest/api/2/user/picker?query=" + keyword.ToLower());
-											user = requestIssue.GetResponses().users;
+											user = requestIssue.GetResponses<RootObject>().users;
 
 											userDisplayName.Clear();
 
@@ -546,7 +546,7 @@ namespace RTMobile.issues.viewIssue
 									//Увеличиваем счетчик для получения доступа к элементу после label
 									List<User> user = new List<User>();
 									Request requestUser = new Request(CrossSettings.Current.GetValueOrDefault("urlServer", string.Empty) + $"/rest/api/latest/user/assignable/search?issueKey={numberIssue}&username=" + ((SearchBar)generalStackLayout.Children[i]).Text);
-									user = requestUser.GetResponsersProfileList();
+									user = requestUser.GetResponses<List<User>>();
 									if (user.Count > 0)
 									{
 										jsonRequestTransitions += "\"" + fieldIssue[j].name + "\":{\"name\":\"" + user[0].name + "\"}";
@@ -653,7 +653,7 @@ namespace RTMobile.issues.viewIssue
 									//Увеличиваем счетчик для получения доступа к элементу после label
 									List<User> user = new List<User>();
 									Request requestUser = new Request(CrossSettings.Current.GetValueOrDefault("urlServer", string.Empty) + $"/rest/api/latest/user/assignable/search?issueKey={numberIssue}&username=" + ((SearchBar)generalStackLayout.Children[i]).Text);
-									user = requestUser.GetResponsersProfileList();
+									user = requestUser.GetResponses<List<User>>();
 									if (user.Count > 0)
 									{
 										jsonRequestTransitions += "\"" + fieldIssue[j].name + "\":{\"name\":\"" + user[0].name + "\"}";
@@ -675,7 +675,7 @@ namespace RTMobile.issues.viewIssue
 			jsonRequestTransitions += "}";
 
 			Request request = new Request(CrossSettings.Current.GetValueOrDefault("urlServer", string.Empty) + $"/rest/api/2/issue/{numberIssue}/transitions", "POST");
-			Errors errors = request.ResponseTransition(jsonRequestTransitions);
+			Errors errors = request.GetResponses<Errors>(jsonRequestTransitions);
 			if (errors.comment == null && errors.assignee == null)
 			{
 				Application.Current.MainPage = new AllIssues();

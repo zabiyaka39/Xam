@@ -19,7 +19,7 @@ namespace RTMobile.issues
 
 			string getIssue = CrossSettings.Current.GetValueOrDefault("urlServer", string.Empty) + @"/rest/api/2/user?username=" + CrossSettings.Current.GetValueOrDefault("login", string.Empty) + @"&expand=groups,applicationRoles";
 			Request requestUser = new Request(getIssue);
-			user = requestUser.GetResponsersProfile<User>();
+			user = requestUser.GetResponses<User>();
 			userName.Text = user.displayName;
 			userEmail.Text = user.emailAddress;
 			userImage.Source = user.AvatarUrls.image;

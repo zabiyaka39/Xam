@@ -30,7 +30,7 @@ namespace RTMobile.issues.viewIssue
                 string getIssue = CrossSettings.Current.GetValueOrDefault("urlServer", string.Empty) + @"/rest/api/2/issue/" + issue.key + "/watchers/";
 
                 Request request = new Request(getIssue);
-                watchers = request.GetResponses(getIssue);
+                watchers = request.GetResponses<RootObject>();
             }
             catch (Exception ex)
             {
@@ -43,7 +43,7 @@ namespace RTMobile.issues.viewIssue
             string getIssue = CrossSettings.Current.GetValueOrDefault("urlServer", string.Empty) + @"/rest/api/2/issue/" + issue.key + "/transitions/";
 
             Request request = new Request(getIssue);
-            transition = request.GetResponses(getIssue).transitions;
+            transition = request.GetResponses<RootObject>().transitions;
             for (int i = 0; i < transition.Count; ++i)
             {
                 ToolbarItem tb = new ToolbarItem

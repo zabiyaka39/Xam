@@ -23,7 +23,7 @@ namespace RTMobile.issues
 			InitializeComponent();
 			filterIssue = "status not in  (Закрыта, Отклонена, Отменена, Активирована, Выполнено, 'Доставлена клиенту', Провалено) AND assignee in (currentUser())";
 			issueStartPostRequest(true);
-			if (this.issues.Count > 0)
+			if (this.issues != null && this.issues.Count > 0)
 			{
 				issuesList.IsVisible = true;
 				noneIssue.IsVisible = false;
@@ -85,7 +85,7 @@ namespace RTMobile.issues
 				RootObject rootObject = new RootObject();
 				Request request = new Request(issueJSONSearch);
 
-				rootObject = request.GetResponses();
+				rootObject = request.GetResponses<RootObject>();
 
 				//Проверка на пустой список задач
 				try
@@ -130,7 +130,7 @@ namespace RTMobile.issues
 				RootObject rootObject = new RootObject();
 				Request request = new Request(issueJSONSearch);
 
-				rootObject = request.GetResponses();
+				rootObject = request.GetResponses<RootObject>();
 				for (int i = issues.Count - 1; i >= 0; --i)
 				{
 					issues.RemoveAt(i);
@@ -158,7 +158,6 @@ namespace RTMobile.issues
 							//	//Color colors = (Color)(converter.ConvertFromInvariantString(issues[i].fields.status.statusCategory.colorName));
 							//	//color.Add(colors);
 							//}
-
 						}
 					}
 				}

@@ -33,9 +33,7 @@ namespace RTMobile
                 string getIssue = CrossSettings.Current.GetValueOrDefault("urlServer", string.Empty) + @"/rest/api/2/project";
                 Request request = new Request(getIssue);
 
-                projects = request.GetResponsesProject();
-                
-                
+                projects = request.GetResponses<List<Project>>();
             }
             catch (Exception ex)
             {

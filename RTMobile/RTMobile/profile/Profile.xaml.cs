@@ -48,7 +48,7 @@ namespace RTMobile.profile
 			{
 				Request request = new Request(CrossSettings.Current.GetValueOrDefault("urlServer", string.Empty) + @"/rest/api/2/user?username=" + user + @"&expand=groups,applicationRoles");
 
-				this.user = request.GetResponsersProfile<User>();
+				this.user = request.GetResponses<User>();
 				return this.user.displayName;
 			}
 			catch (Exception ex)
@@ -66,7 +66,7 @@ namespace RTMobile.profile
 				string getIssue = CrossSettings.Current.GetValueOrDefault("urlServer", string.Empty) + @"/rest/api/2/user?username=" + CrossSettings.Current.GetValueOrDefault("login", string.Empty) + @"&expand=groups,applicationRoles";
 				Request request = new Request(getIssue);
 
-				this.user = request.GetResponsersProfile<User>();
+				this.user = request.GetResponses<User>();
 			}
 			catch (Exception ex)
 			{
