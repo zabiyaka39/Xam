@@ -10,30 +10,24 @@ using Xamarin.Forms;
 
 namespace RTMobile
 {
-
 	/// <summary>
-	/// Класс хранящий JSON запрос для поиска задач
+	/// Класс для отправки запроса на сервер
 	/// </summary>
-	public class IssueJSONSearch
+	public class JSONRequest
 	{
 		public string jql { get; set; }
 		public string fields { get; set; }
 		public string expand { get; set; }
 		public int startAt { get; set; }
 		public int maxResults { get; set; }
-		public bool validateQuery { get; set; } = true;
+		public string body { get; set; }
+		public string orderBy { get; set; }
+		[JsonIgnore]
+		public string urlRequest { get; set; }
+		[JsonIgnore]
+		public string methodRequest { get; set; }
 	}
 
-	/// <summary>
-	/// Класс хранящий JSON запрос для поиска комментариев
-	/// </summary>
-	public class CommentJSONSearch
-	{
-		public string orderBy { get; set; }
-		public string expand { get; set; }
-		public int startAt { get; set; }
-		public int maxResults { get; set; }
-	}
 	/// <summary>
 	/// Класс хранящий данные по истории (общие данные и список событий задачи)  задачи
 	/// </summary>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Microsoft.AppCenter.Crashes;
 using Plugin.Settings;
 using RTMobile.calendar;
 using RTMobile.filter;
@@ -25,11 +26,22 @@ namespace RTMobile.issues.viewIssue
 			//Проверяем на существование задачи в памяти
 			if (issue != null && issue.key != null)
 			{
-				//Делаем запрпос на получение расширенных данных по задаче
-				Request request = new Request(CrossSettings.Current.GetValueOrDefault("urlServer", string.Empty) + $"/rest/api/2/issue/{issue.key}?expand=names,schema");
-				fieldIssue = request.GetCustomField();
-				transitionIssue();
+				try
+				{
+					//Делаем запрпос на получение расширенных данных по задаче				
+					JSONRequest jsonRequest = new JSONRequest();
+					jsonRequest.urlRequest = $"/rest/api/2/issue/{issue.key}?expand=names,schema";
+					jsonRequest.methodRequest = "GET";
+					Request request = new Request(jsonRequest);
 
+					fieldIssue = request.GetCustomField();
+					transitionIssue();
+				}
+				catch (Exception ex)
+				{
+					Console.WriteLine(ex.Message);
+					Crashes.TrackError(ex);
+				}
 				//Проверяем наличие полей, при отсутствии значения скрываем их
 				if (issue.fields.resolution == null)
 				{
@@ -40,23 +52,33 @@ namespace RTMobile.issues.viewIssue
 		}
 		private void transitionIssue()
 		{
-			string getIssue = CrossSettings.Current.GetValueOrDefault("urlServer", string.Empty) + @"/rest/api/2/issue/" + issue.key + "/transitions/";
-
-			Request request = new Request(getIssue);
-			transition = request.GetResponses<RootObject>().transitions;
-			for (int i = 0; i < transition.Count; ++i)
+			try
 			{
-				ToolbarItem tb = new ToolbarItem
+				JSONRequest jsonRequest = new JSONRequest();
+				jsonRequest.urlRequest = $"/rest/api/2/issue/{issue.key}/transitions/";
+				jsonRequest.methodRequest = "GET";
+				Request request = new Request(jsonRequest);
+
+				transition = request.GetResponses<RootObject>().transitions;
+				for (int i = 0; i < transition.Count; ++i)
 				{
-					Text = transition[i].name,
-					Order = ToolbarItemOrder.Secondary,
-					Priority = i + 1
-				};
-				tb.Clicked += async (sender, args) =>
-				{
-					await Navigation.PushAsync(new RTMobile.issues.viewIssue.Transition(int.Parse(transition[((ToolbarItem)sender).Priority-1].id), issue.key)).ConfigureAwait(true);
-				};
-				ToolbarItems.Add(tb);
+					ToolbarItem tb = new ToolbarItem
+					{
+						Text = transition[i].name,
+						Order = ToolbarItemOrder.Secondary,
+						Priority = i + 1
+					};
+					tb.Clicked += async (sender, args) =>
+					{
+						await Navigation.PushAsync(new RTMobile.issues.viewIssue.Transition(int.Parse(transition[((ToolbarItem)sender).Priority - 1].id), issue.key)).ConfigureAwait(true);
+					};
+					ToolbarItems.Add(tb);
+				}
+			}
+			catch (Exception ex)
+			{
+				Console.WriteLine(ex.Message);
+				Crashes.TrackError(ex);
 			}
 		}
 		void ImageButton_Clicked(System.Object sender, System.EventArgs e)

@@ -55,7 +55,6 @@ namespace RTMobile
 						CrossSettings.Current.AddOrUpdateValue("password", password.Text);
 
 						await Navigation.PushModalAsync(new AllIssues()).ConfigureAwait(true);
-
 					}
 					else
 					{
@@ -74,6 +73,7 @@ namespace RTMobile
 			catch (Exception ex)
 			{
 				Crashes.TrackError(ex);
+				Console.WriteLine(ex.ToString());
 			}
 		}
 

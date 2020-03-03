@@ -46,7 +46,10 @@ namespace RTMobile.profile
 		{
 			try
 			{
-				Request request = new Request(CrossSettings.Current.GetValueOrDefault("urlServer", string.Empty) + @"/rest/api/2/user?username=" + user + @"&expand=groups,applicationRoles");
+				JSONRequest jsonRequest = new JSONRequest();
+				jsonRequest.urlRequest = $"/rest/api/2/user?username={user}&expand=groups,applicationRoles";
+				jsonRequest.methodRequest = "GET";
+				Request request = new Request(jsonRequest);
 
 				this.user = request.GetResponses<User>();
 				return this.user.displayName;
@@ -63,14 +66,17 @@ namespace RTMobile.profile
 		{
 			try
 			{
-				string getIssue = CrossSettings.Current.GetValueOrDefault("urlServer", string.Empty) + @"/rest/api/2/user?username=" + CrossSettings.Current.GetValueOrDefault("login", string.Empty) + @"&expand=groups,applicationRoles";
-				Request request = new Request(getIssue);
+				JSONRequest jsonRequest = new JSONRequest();
+				jsonRequest.urlRequest = $"/rest/api/2/user?username={CrossSettings.Current.GetValueOrDefault("login", string.Empty)}&expand=groups,applicationRoles";
+				jsonRequest.methodRequest = "GET";
+				Request request = new Request(jsonRequest);
 
 				this.user = request.GetResponses<User>();
 			}
 			catch (Exception ex)
 			{
 				Crashes.TrackError(ex);
+				Console.WriteLine(ex.ToString());
 			}
 		}
 		void ImageButton_Clicked(System.Object sender, System.EventArgs e)

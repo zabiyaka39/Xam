@@ -17,13 +17,24 @@ namespace RTMobile.issues
 		{
 			InitializeComponent();
 
-			string getIssue = CrossSettings.Current.GetValueOrDefault("urlServer", string.Empty) + @"/rest/api/2/user?username=" + CrossSettings.Current.GetValueOrDefault("login", string.Empty) + @"&expand=groups,applicationRoles";
-			Request requestUser = new Request(getIssue);
-			user = requestUser.GetResponses<User>();
-			userName.Text = user.displayName;
-			userEmail.Text = user.emailAddress;
-			userImage.Source = user.AvatarUrls.image;
-			Detail = new NavigationPage(new AllIssuesView());
+			try
+			{
+				JSONRequest jsonRequest = new JSONRequest();
+				jsonRequest.urlRequest = $"/rest/api/2/user?username={CrossSettings.Current.GetValueOrDefault("login", string.Empty)}&expand=groups,applicationRoles";
+				jsonRequest.methodRequest = "GET";
+				Request request = new Request(jsonRequest);
+
+				user = request.GetResponses<User>();
+				userName.Text = user.displayName;
+				userEmail.Text = user.emailAddress;
+				userImage.Source = user.AvatarUrls.image;
+				Detail = new NavigationPage(new AllIssuesView());
+			}
+			catch (Exception ex)
+			{
+				Console.WriteLine(ex.Message);
+				Crashes.TrackError(ex);
+			}
 		}
 
 		void Button_Clicked(System.Object sender, System.EventArgs e)

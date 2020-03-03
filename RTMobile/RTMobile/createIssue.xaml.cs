@@ -1,4 +1,5 @@
-﻿using Plugin.Settings;
+﻿using Microsoft.AppCenter.Crashes;
+using Plugin.Settings;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,20 +26,17 @@ namespace RTMobile
         {
             try
             {
-                Project project = new Project
-                {
-
-                    includeArchived = false
-                };
-                string getIssue = CrossSettings.Current.GetValueOrDefault("urlServer", string.Empty) + @"/rest/api/2/project";
-                Request request = new Request(getIssue);
+                JSONRequest jsonRequest = new JSONRequest();
+                jsonRequest.urlRequest = $"/rest/api/2/project";
+                jsonRequest.methodRequest = "GET";
+                Request request = new Request(jsonRequest);
 
                 projects = request.GetResponses<List<Project>>();
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.ToString());
-                await DisplayAlert("Error issues", ex.ToString(), "OK").ConfigureAwait(true);
+                Console.WriteLine(ex.Message);
+                Crashes.TrackError(ex);
             }
         }
     }

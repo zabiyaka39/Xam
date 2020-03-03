@@ -20,7 +20,11 @@ namespace RTMobile
 	class Request
 	{
 		private HttpWebRequest httpWebRequest = null;
-
+		/// <summary>
+		/// Пустой конструктор для авторизации
+		/// </summary>
+		public Request()
+		{ }
 		private string json { get; set; }
 		/// <summary>
 		/// Авторизация пользователя и возвращение упешности результата авторизации
@@ -51,22 +55,12 @@ namespace RTMobile
 
 				RootObject rootObject = new RootObject();
 
-				try
+				rootObject = this.GetResponses<RootObject>();
+				if (rootObject.session != null && rootObject.session.name != null)
 				{
-					rootObject = this.GetResponses<RootObject>();
-					if (rootObject.session.name != null)
-					{
-						return true;
-					}
-					else
-					{
-						return false;
-					}
+					return true;
 				}
-				catch  
-				{
-					return false;
-				}
+				return false;
 			}
 			else
 			{
@@ -74,114 +68,56 @@ namespace RTMobile
 			}
 		}
 		/// <summary>
-		/// Пустой конструктор
+		/// Создаем подключение для запроса данных
 		/// </summary>
-		public Request()
-		{ }
-		/// <summary>
-		/// Запрос на список задач
-		/// </summary>
-		/// <param name="issueJSONSearch"></param>
-		public Request(IssueJSONSearch issueJSONSearch)
+		/// <param name="jsonRequest"></param>
+		public Request(JSONRequest jsonRequest)
 		{
-			//CrossSettings.Current.AddOrUpdateValue<string>("urlServer", "https://sd.rosohrana.ru");
-			this.httpWebRequest = (HttpWebRequest)WebRequest.Create(CrossSettings.Current.GetValueOrDefault("urlServer", string.Empty) + "/rest/api/2/search?");
-			this.httpWebRequest.ContentType = "application/json";
-			this.httpWebRequest.Method = "POST";
-			this.httpWebRequest.Headers.Add(HttpRequestHeader.Authorization, "Basic " +
-				Convert.ToBase64String(Encoding.Default.GetBytes(CrossSettings.Current.GetValueOrDefault("login", string.Empty) +
-				":" +
-				CrossSettings.Current.GetValueOrDefault("password", string.Empty))));
-			this.json = JsonConvert.SerializeObject(issueJSONSearch);
+			try
+			{
+				this.httpWebRequest = (HttpWebRequest)WebRequest.Create(CrossSettings.Current.GetValueOrDefault("urlServer", string.Empty) + jsonRequest.urlRequest);
+				this.httpWebRequest.ContentType = "application/json";
+				this.httpWebRequest.Method = jsonRequest.methodRequest;
+				this.httpWebRequest.Headers.Add(HttpRequestHeader.Authorization, "Basic " +
+					Convert.ToBase64String(Encoding.Default.GetBytes(CrossSettings.Current.GetValueOrDefault("login", string.Empty) +
+					":" +
+					CrossSettings.Current.GetValueOrDefault("password", string.Empty))));
+				this.json = JsonConvert.SerializeObject(jsonRequest,
+														Newtonsoft.Json.Formatting.None,
+														new JsonSerializerSettings
+														{
+															NullValueHandling = NullValueHandling.Ignore
+														});
+			}
+			catch (Exception ex)
+			{
+				Console.WriteLine(ex.Message);
+				Crashes.TrackError(ex);
+			}
 		}
 		/// <summary>
-		/// Запрос на список комментариев
-		/// </summary>
-		/// <param name="commentJSONSearch"></param>
-		/// <param name="keyIssue"></param>
-		public Request(CommentJSONSearch commentJSONSearch, string keyIssue)
-		{
-			this.httpWebRequest = (HttpWebRequest)WebRequest.Create(CrossSettings.Current.GetValueOrDefault("urlServer", string.Empty) + "/rest/api/2/issue/" + keyIssue + "/comment");
-			this.httpWebRequest.ContentType = "application/json";
-			this.httpWebRequest.Method = "GET";
-			this.httpWebRequest.Headers.Add(HttpRequestHeader.Authorization, "Basic " +
-				Convert.ToBase64String(Encoding.Default.GetBytes(CrossSettings.Current.GetValueOrDefault("login", string.Empty) +
-				":" +
-				CrossSettings.Current.GetValueOrDefault("password", string.Empty))));
-		}
-		/// <summary>
-		/// Запрос на получение списка комментариев
-		/// </summary>
-		/// <param name="comment"></param>
-		/// <param name="keyIssue"></param>
-		public Request(Comment comment, string keyIssue)
-		{
-
-			this.httpWebRequest = (HttpWebRequest)WebRequest.Create(CrossSettings.Current.GetValueOrDefault("urlServer", string.Empty) + "/rest/api/2/issue/" + keyIssue + "/comment/");
-
-			this.httpWebRequest.ContentType = "application/json";
-			this.httpWebRequest.Method = "POST";
-			this.httpWebRequest.Headers.Add(HttpRequestHeader.Authorization, "Basic " +
-				Convert.ToBase64String(Encoding.Default.GetBytes(CrossSettings.Current.GetValueOrDefault("login", string.Empty) +
-				":" +
-				CrossSettings.Current.GetValueOrDefault("password", string.Empty))));
-			this.json = JsonConvert.SerializeObject(comment);
-		}
-		/// <summary>
-		/// Запрос на получение списков проектов
-		/// </summary>
-		/// <param name="project"></param>
-		public Request(Project project)
-		{
-
-			this.httpWebRequest = (HttpWebRequest)WebRequest.Create(CrossSettings.Current.GetValueOrDefault("urlServer", string.Empty) + "/rest/api/2/project");
-
-			this.httpWebRequest.ContentType = "application/json";
-			this.httpWebRequest.Method = "GET";
-			this.httpWebRequest.Headers.Add(HttpRequestHeader.Authorization, "Basic " +
-				Convert.ToBase64String(Encoding.Default.GetBytes(CrossSettings.Current.GetValueOrDefault("login", string.Empty) +
-				":" +
-				CrossSettings.Current.GetValueOrDefault("password", string.Empty))));
-			this.json = JsonConvert.SerializeObject(project);
-
-		}
-		/// <summary>
-		/// Универсальный GET запрос на получение информации
-		/// </summary>
-		/// <param name="getIssue"></param>
-		public Request(string getIssue, string method = "GET")
-		{
-			this.httpWebRequest = (HttpWebRequest)WebRequest.Create(getIssue);
-			this.httpWebRequest.ContentType = "application/json";
-			this.httpWebRequest.Method = method;
-			this.httpWebRequest.Headers.Add(HttpRequestHeader.Authorization, "Basic " +
-				Convert.ToBase64String(Encoding.Default.GetBytes(CrossSettings.Current.GetValueOrDefault("login", string.Empty) +
-				":" +
-				CrossSettings.Current.GetValueOrDefault("password", string.Empty))));
-			this.json = "";
-		}
-		
-		/// <summary>
-		/// Метод для получения данных профиля пользователя
+		/// Метод для получения данных 
 		/// </summary>
 		/// <returns></returns>
-		public T GetResponses<T>(string json ="")
-		{			
+		public T GetResponses<T>(string json = "")
+		{
 			T rootObject = default(T);
 			try
 			{
-				if (this.json.Length > 0)
+				if (httpWebRequest.Method == "POST")
 				{
-					if (json.Length > 0)
+					if (this.json != null && this.json.Length > 0)
 					{
-						this.json = json;
-					}
-					using (StreamWriter streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
-					{
-						streamWriter.Write(this.json);
+						if (json.Length > 0)
+						{
+							this.json = json;
+						}
+						using (StreamWriter streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
+						{
+							streamWriter.Write(this.json);
+						}
 					}
 				}
-
 				WebResponse httpResponse = this.httpWebRequest.GetResponse();
 
 				using (StreamReader streamReader = new StreamReader(httpResponse.GetResponseStream()))
@@ -197,7 +133,6 @@ namespace RTMobile
 			}
 			return rootObject;
 		}
-
 		/// <summary>
 		/// Вывод всех полей экрана
 		/// </summary>
@@ -527,7 +462,6 @@ namespace RTMobile
 			}
 			return fields;
 		}
-
 		/// <summary>
 		/// Получаем список названий полей и значений задачи
 		/// </summary>

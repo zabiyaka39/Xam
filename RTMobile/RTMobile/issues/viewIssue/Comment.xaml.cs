@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using Microsoft.AppCenter.Crashes;
 using Plugin.Settings;
 using RTMobile.calendar;
 using RTMobile.filter;
@@ -47,23 +48,33 @@ namespace RTMobile.issues.viewIssue
 		}
 		private void transitionIssue(string issueKey)
 		{
-			string getIssue = CrossSettings.Current.GetValueOrDefault("urlServer", string.Empty) + @"/rest/api/2/issue/" + issueKey + "/transitions/";
-
-			Request request = new Request(getIssue);
-			transition = request.GetResponses<RootObject>().transitions;
-			for (int i = 0; i < transition.Count; ++i)
+			try
 			{
-				ToolbarItem tb = new ToolbarItem
+				JSONRequest jsonRequest = new JSONRequest();
+				jsonRequest.urlRequest = $"/rest/api/2/issue/{issueKey}/transitions/";
+				jsonRequest.methodRequest = "GET";
+				Request request = new Request(jsonRequest);
+
+				transition = request.GetResponses<RootObject>().transitions;
+				for (int i = 0; i < transition.Count; ++i)
 				{
-					Text = transition[i].name,
-					Order = ToolbarItemOrder.Secondary,
-					Priority = i + 1
-				};
-				tb.Clicked += async (sender, args) =>
-				{
-					await Navigation.PushAsync(new RTMobile.issues.viewIssue.Transition(int.Parse(transition[((ToolbarItem)sender).Priority - 1].id), issueKey)).ConfigureAwait(true);
-				};
-				ToolbarItems.Add(tb);
+					ToolbarItem tb = new ToolbarItem
+					{
+						Text = transition[i].name,
+						Order = ToolbarItemOrder.Secondary,
+						Priority = i + 1
+					};
+					tb.Clicked += async (sender, args) =>
+					{
+						await Navigation.PushAsync(new RTMobile.issues.viewIssue.Transition(int.Parse(transition[((ToolbarItem)sender).Priority - 1].id), issueKey)).ConfigureAwait(true);
+					};
+					ToolbarItems.Add(tb);
+				}
+			}
+			catch (Exception ex)
+			{
+				Console.WriteLine(ex.Message);
+				Crashes.TrackError(ex);
 			}
 		}
 		/// <summary>
@@ -73,14 +84,14 @@ namespace RTMobile.issues.viewIssue
 		{
 			try
 			{
-				CommentJSONSearch commentJSONSearch = new CommentJSONSearch
-				{
-					maxResults = 50,
-					startAt = 0
-				};
+				JSONRequest jsonRequest = new JSONRequest();
+				jsonRequest.urlRequest = $"/rest/api/2/issue/{issueKey}/comment";
+				jsonRequest.methodRequest = "GET";
+				jsonRequest.maxResults = 50;
+				jsonRequest.startAt = 0;
 
 				RootObject rootObject = new RootObject();
-				Request request = new Request(commentJSONSearch, issueKey);
+				Request request = new Request(jsonRequest);
 
 				rootObject = request.GetResponses<RootObject>();
 				//проверка на наличие комментариев. При отсутствии комментариев добавляем все, при наличии добавляем только последний
@@ -96,8 +107,8 @@ namespace RTMobile.issues.viewIssue
 			}
 			catch (Exception ex)
 			{
-				Console.WriteLine(ex.ToString());
-				await DisplayAlert("Error issues", ex.ToString(), "OK").ConfigureAwait(true);
+				Console.WriteLine(ex.Message);
+				Crashes.TrackError(ex);
 			}
 		}
 
@@ -145,12 +156,13 @@ namespace RTMobile.issues.viewIssue
 		{
 			try
 			{
-				RTMobile.Comment comment = new RTMobile.Comment
-				{
-					body = newComment.Text
-				};
+				JSONRequest jsonRequest = new JSONRequest();
+				jsonRequest.urlRequest = $"/rest/api/2/issue/{issueKey}/comment";
+				jsonRequest.methodRequest = "POST";
+				jsonRequest.body = newComment.Text;
+
 				RootObject rootObject = new RootObject();
-				Request request = new Request(comment, issueKey);
+				Request request = new Request(jsonRequest);
 
 				rootObject = request.GetResponses<RootObject>();
 

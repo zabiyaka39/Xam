@@ -15,7 +15,6 @@ namespace RTMobile.issues
 	public partial class AllIssuesView : ContentPage
 	{
 		public ObservableCollection<Issue> issues { get; set; }
-		IssueJSONSearch issueJSONSearch = new IssueJSONSearch();
 		private string filterIssue { get; set; }
 		string typeSort = "";
 		public AllIssuesView()
@@ -78,12 +77,15 @@ namespace RTMobile.issues
 		{
 			try
 			{
-				issueJSONSearch.jql = filterIssue;
-				issueJSONSearch.maxResults = 50;
-				issueJSONSearch.startAt = 0;
+				JSONRequest jsonRequest = new JSONRequest();
+				jsonRequest.urlRequest = "/rest/api/2/search";
+				jsonRequest.methodRequest = "POST";
+				jsonRequest.jql = filterIssue;
+				jsonRequest.maxResults = 50;
+				jsonRequest.startAt = 0;
 
 				RootObject rootObject = new RootObject();
-				Request request = new Request(issueJSONSearch);
+				Request request = new Request(jsonRequest);
 
 				rootObject = request.GetResponses<RootObject>();
 
@@ -123,12 +125,15 @@ namespace RTMobile.issues
 		{
 			try
 			{
-				issueJSONSearch.jql = filterIssue + " ORDER BY " + sortField + " " + typeSort;
-				issueJSONSearch.maxResults = 50;
-				issueJSONSearch.startAt = 0;
+				JSONRequest jsonRequest = new JSONRequest();
+				jsonRequest.urlRequest = "/rest/api/2/search?";
+				jsonRequest.methodRequest = "POST";
+				jsonRequest.jql = filterIssue + " ORDER BY " + sortField + " " + typeSort;
+				jsonRequest.maxResults = 50;
+				jsonRequest.startAt = 0;
 
 				RootObject rootObject = new RootObject();
-				Request request = new Request(issueJSONSearch);
+				Request request = new Request(jsonRequest);
 
 				rootObject = request.GetResponses<RootObject>();
 				for (int i = issues.Count - 1; i >= 0; --i)

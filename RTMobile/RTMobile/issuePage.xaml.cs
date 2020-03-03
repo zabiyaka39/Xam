@@ -16,6 +16,7 @@ using System.IO;
 using RTMobile.profile;
 using RTMobile.notification;
 using RTMobile.insight;
+using Microsoft.AppCenter.Crashes;
 
 namespace RTMobile
 {
@@ -23,7 +24,6 @@ namespace RTMobile
 	public partial class IssuePage : ContentPage
 	{
 		public ObservableCollection<Issue> issues { get; set; }
-		IssueJSONSearch issueJSONSearch = new IssueJSONSearch();
 		private string filterIssue { get; set; }
 		string typeSort = "";
 		//List<Color> color { get; set; }
@@ -49,47 +49,41 @@ namespace RTMobile
 		{
 			try
 			{
-				issueJSONSearch.jql = filterIssue;
-				issueJSONSearch.maxResults = 50;
-				issueJSONSearch.startAt = 0;
+				JSONRequest jsonRequest = new JSONRequest();
+				jsonRequest.urlRequest = "/rest/api/2/search?";
+				jsonRequest.methodRequest = "POST";
+				jsonRequest.jql = filterIssue;
+				jsonRequest.maxResults = 50;
+				jsonRequest.startAt = 0;
 
 				RootObject rootObject = new RootObject();
-				Request request = new Request(issueJSONSearch);
-
+				Request request = new Request(jsonRequest);
 				rootObject = request.GetResponses<RootObject>();
 
-				//Проверка на пустой список задач
-				try
+				if (rootObject.issues != null)
 				{
-					if (rootObject.issues != null)
+					if (!firstRequest && rootObject.issues.Count > 0)
 					{
-						if (!firstRequest && rootObject.issues.Count > 0)
-						{
-							issues.Add(rootObject.issues[rootObject.issues.Count - 1]);
-						}
-						else
-						{
-							issues = rootObject.issues;
-							//for (int i = 0; i < issues.Count; ++i)
-							//{
-							//	//ColorTypeConverter converter = new ColorTypeConverter();
-
-							//	//Color colors = (Color)(converter.ConvertFromInvariantString(issues[i].fields.status.statusCategory.colorName));
-							//	//color.Add(colors);
-							//}
-
-						}
+						issues.Add(rootObject.issues[rootObject.issues.Count - 1]);
 					}
-				}
-				catch (Exception ex)
-				{
-					await DisplayAlert("Error", ex.ToString(), "OK").ConfigureAwait(true);
+					else
+					{
+						issues = rootObject.issues;
+						//for (int i = 0; i < issues.Count; ++i)
+						//{
+						//	//ColorTypeConverter converter = new ColorTypeConverter();
+
+						//	//Color colors = (Color)(converter.ConvertFromInvariantString(issues[i].fields.status.statusCategory.colorName));
+						//	//color.Add(colors);
+						//}
+
+					}
 				}
 			}
 			catch (Exception ex)
 			{
-				Console.WriteLine(ex.ToString());
-				await DisplayAlert("Error issues", ex.ToString(), "OK").ConfigureAwait(true);
+				Console.WriteLine(ex.Message);
+				Crashes.TrackError(ex);
 			}
 		}
 		/// <summary>
@@ -102,12 +96,16 @@ namespace RTMobile
 		{
 			try
 			{
-				issueJSONSearch.jql = filterIssue + " ORDER BY " + sortField + " " + typeSort;
-				issueJSONSearch.maxResults = 50;
-				issueJSONSearch.startAt = 0;
+				JSONRequest jsonRequest = new JSONRequest();
+				jsonRequest.urlRequest = "/rest/api/2/search?";
+				jsonRequest.methodRequest = "POST";
+				jsonRequest.jql = filterIssue + " ORDER BY " + sortField + " " + typeSort; 
+				jsonRequest.maxResults = 50;
+				jsonRequest.startAt = 0;
 
 				RootObject rootObject = new RootObject();
-				Request request = new Request(issueJSONSearch);
+				Request request = new Request(jsonRequest);
+
 
 				rootObject = request.GetResponses<RootObject>();
 				for (int i = issues.Count - 1; i >= 0; --i)
@@ -140,8 +138,8 @@ namespace RTMobile
 			}
 			catch (Exception ex)
 			{
-				Console.WriteLine(ex.ToString());
-				await DisplayAlert("Error issues", ex.ToString(), "OK").ConfigureAwait(true);
+				Console.WriteLine(ex.Message);
+				Crashes.TrackError(ex);
 			}
 		}
 		/// <summary>
