@@ -8,6 +8,15 @@
     <Company>ООО "Росохрана Телеком"</Company>
     <Description>Приложение для работы в системе учета задач Jira</Description>
     <PackageTags>RTMobile</PackageTags>
+    <ApplicationIcon>rosohranaLogo.ico</ApplicationIcon>
+    <Win32Resource />
+    <PackageIcon>rosohranaLogo.png</PackageIcon>
+    <PackageIconUrl />
+    <RepositoryUrl>https://bb.rosohrana.ru/projects/JIRA/repos/rtmobile/browse</RepositoryUrl>
+    <RepositoryType>Bitbucket</RepositoryType>
+    <AssemblyVersion>1.0.0.2</AssemblyVersion>
+    <FileVersion>1.0.0.2</FileVersion>
+    <SignAssembly>false</SignAssembly>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -71,5 +80,12 @@
     <Folder Include="issues\" />
     <Folder Include="notification\" />
     <Folder Include="profile\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\RTMobile.Android\Resources\drawable\rosohranaLogo.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 </Project>
