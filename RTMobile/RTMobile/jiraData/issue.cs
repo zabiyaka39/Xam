@@ -57,7 +57,7 @@ namespace RTMobile
 			get { return _created; }
 			set
 			{
-				_created = (Convert.ToDateTime(value)).ToString("dd.MM.yyyy hh:mm");
+				_created = (Convert.ToDateTime(value)).ToString("dd.MM.yyyy H:mm");
 			}
 		}
 		public List<Item> items { get; set; }
@@ -360,7 +360,7 @@ namespace RTMobile
 			}
 			set
 			{
-				_created = (Convert.ToDateTime(value)).ToString("dd.MM.yyyy hh:mm");
+				_created = (Convert.ToDateTime(value)).ToString("dd.MM.yyyy H:mm");
 			}
 		}
 		private string _updated { get; set; }
@@ -369,7 +369,7 @@ namespace RTMobile
 			get { return _updated; }
 			set
 			{
-				_updated = (Convert.ToDateTime(value)).ToString("dd.MM.yyyy hh:mm");
+				_updated = (Convert.ToDateTime(value)).ToString("dd.MM.yyyy H:mm");
 			}
 		}
 		public List<Property> properties { get; set; }
@@ -464,7 +464,7 @@ namespace RTMobile
 			get { return _created; }
 			set
 			{
-				_created = (Convert.ToDateTime(value)).ToString("dd.MM.yyyy hh:mm");
+				_created = (Convert.ToDateTime(value)).ToString("dd.MM.yyyy H:mm");
 			}
 		}
 		private string _updated { get; set; }
@@ -473,7 +473,7 @@ namespace RTMobile
 			get { return _updated; }
 			set
 			{
-				_updated = (Convert.ToDateTime(value)).ToString("dd.MM.yyyy hh:mm");
+				_updated = (Convert.ToDateTime(value)).ToString("dd.MM.yyyy H:mm");
 			}
 		}
 		private string _started { get; set; }
@@ -482,7 +482,7 @@ namespace RTMobile
 			get { return _started; }
 			set
 			{
-				_started = (Convert.ToDateTime(value)).ToString("dd.MM.yyyy hh:mm");
+				_started = (Convert.ToDateTime(value)).ToString("dd.MM.yyyy H:mm");
 			}
 		}
 		public string timeSpent { get; set; }
@@ -555,7 +555,7 @@ namespace RTMobile
 			get { return _updated; }
 			set
 			{
-				_updated = (Convert.ToDateTime(value)).ToString("dd.MM.yyyy hh:mm");
+				_updated = (Convert.ToDateTime(value)).ToString("dd.MM.yyyy H:mm");
 			}
 		}
 		private string _resolutiondate { get; set; }
@@ -571,7 +571,7 @@ namespace RTMobile
 			get { return _updated; }
 			set
 			{
-				_updated = (Convert.ToDateTime(value)).ToString("dd.MM.yyyy hh:mm");
+				_updated = (Convert.ToDateTime(value)).ToString("dd.MM.yyyy H:mm");
 			}
 		}
 		public string description { get; set; }
@@ -586,7 +586,7 @@ namespace RTMobile
 			}
 			set
 			{
-				_created = (Convert.ToDateTime(value)).ToString("dd.MM.yyyy hh:mm");
+				_created = (Convert.ToDateTime(value)).ToString("dd.MM.yyyy H:mm");
 			}
 		}
 		public bool required { get; set; } = false;

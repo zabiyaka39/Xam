@@ -225,7 +225,7 @@ namespace RTMobile.issues.viewIssue
 												if (fieldIssue[i].autoCompleteUrl.Length > 0)
 												{
 													//Удаляем адрес сервера для получения только остаточной части запроса API
-													fieldIssue[i].autoCompleteUrl = fieldIssue[i].autoCompleteUrl.Remove(0, (fieldIssue[i].autoCompleteUrl.IndexOf(".ru")+3));
+													fieldIssue[i].autoCompleteUrl = fieldIssue[i].autoCompleteUrl.Remove(0, (fieldIssue[i].autoCompleteUrl.IndexOf(".ru") + 3));
 
 													JSONRequest jsonRequestIssue = new JSONRequest();
 													jsonRequestIssue.urlRequest = fieldIssue[i].autoCompleteUrl;
@@ -513,8 +513,9 @@ namespace RTMobile.issues.viewIssue
 				schema = new Schema
 				{
 					type = "comment",
-					system = "comment",
-				}
+					system = "comment"
+				},
+				required = true
 
 			});
 
@@ -557,10 +558,14 @@ namespace RTMobile.issues.viewIssue
 		}
 		private async void Button_Clicked(object sender, EventArgs e)
 		{
+			string fields = "";
+			string commentField = "";
+			//Переменная для отлова незаполненного обязательного поля
+			bool checkTransition = true;
 			//Создаем переменную для построения json-запроса для совершения перехода
-			string jsonRequestTransitions = "{ \"transition\": \"" + transitionId.ToString() + "\", \"fields\":{";
+			string jsonRequestTransitions = "{ \"transition\": \"" + transitionId.ToString() + "\"";
 
-			for (int i = 1, j = 0; i < generalStackLayout.Children.Count; ++i)
+			for (int i = 1, j = 0; i < generalStackLayout.Children.Count && checkTransition; ++i)
 			{
 				//Увеличиваем значение только в том случае если поле не является label (шапкой/дополнением к основному полю)
 				if (generalStackLayout.Children[i].GetType() != typeof(Label))
@@ -574,6 +579,14 @@ namespace RTMobile.issues.viewIssue
 							//Выгружаем список пользователей для данной задачи
 							case "user":
 								{
+									if (fieldIssue[j].required == true)
+									{
+										if (((SearchBar)generalStackLayout.Children[i]).Text == null)
+										{
+											checkTransition = false;
+											break;
+										}
+									}
 									//Увеличиваем счетчик для получения доступа к элементу после label
 									List<User> user = new List<User>();
 									JSONRequest jsonRequestIssue = new JSONRequest();
@@ -584,7 +597,11 @@ namespace RTMobile.issues.viewIssue
 									user = requestUser.GetResponses<List<User>>();
 									if (user.Count > 0)
 									{
-										jsonRequestTransitions += "\"" + fieldIssue[j].name + "\":{\"name\":\"" + user[0].name + "\"}";
+										if (fields.Length > 0)
+										{
+											fields += ", ";
+										}
+										fields += "\"" + fieldIssue[j].name + "\":{\"name\":\"" + user[0].name + "\"}";
 									}
 									//Увеличиваем счетчик полей на единицу, т.к. мы ранее создавали для этого типа поля два поля (searchBar и grid)
 									++i;
@@ -595,17 +612,42 @@ namespace RTMobile.issues.viewIssue
 							case "option":
 							case "resolution":
 								{
+									if (((Picker)generalStackLayout.Children[i]).SelectedIndex == -1 && fieldIssue[j].required == true)
+									{
+										checkTransition = false;
+										break;
+									}
 									int selectedIndex = ((Picker)generalStackLayout.Children[i]).SelectedIndex;
 
 									if (selectedIndex != -1)
 									{
-										jsonRequestTransitions += "\"" + fieldIssue[j].name + "\":{\"name\":\"" + ((Picker)generalStackLayout.Children[i]).Items[selectedIndex] + "\"}";
+										if (fields.Length > 0)
+										{
+											fields += ", ";
+										}
+										fields += "\"" + fieldIssue[j].name + "\":{\"name\":\"" + ((Picker)generalStackLayout.Children[i]).Items[selectedIndex] + "\"}";
 									}
 									break;
 								}
 							case "string":
 								{
-									jsonRequestTransitions += "\"" + fieldIssue[j].name + "\":{\"name\":\"" + ((Entry)generalStackLayout.Children[i]).Text + "\"}";
+
+									if (fieldIssue[j].required == true)
+									{
+										if (((Entry)generalStackLayout.Children[i]).Text == null)
+										{
+											checkTransition = false;
+											break;
+										}
+									}
+									if (((Entry)generalStackLayout.Children[i]).Text.Length > 0)
+									{
+										if (fields.Length > 0)
+										{
+											fields += ", ";
+										}
+										fields += "\"" + fieldIssue[j].name + "\":{\"name\":\"" + ((Entry)generalStackLayout.Children[i]).Text + "\"}";
+									}
 									break;
 								}
 							case "array":
@@ -619,17 +661,37 @@ namespace RTMobile.issues.viewIssue
 											}
 										case "issuelinks":
 											{
+												if (fieldIssue[j].required == true)
+												{
+													if (((SearchBar)generalStackLayout.Children[i]).Text == null && ((Picker)generalStackLayout.Children[i]).SelectedIndex == -1)
+													{
+														checkTransition = false;
+														i += 2;
+														break;
+													}
+												}
 												int selectedIndex = ((Picker)generalStackLayout.Children[i]).SelectedIndex;
 												if (selectedIndex != -1)
 												{
-													jsonRequestTransitions += "\"" + fieldIssue[j].name + "\":{\"name\":\"" + ((Picker)generalStackLayout.Children[i]).Items[selectedIndex] + "\"}";
+													if (fields.Length > 0)
+													{
+														fields += ", ";
+													}
+													fields += "\"" + fieldIssue[j].name + "\":{\"name\":\"" + ((Picker)generalStackLayout.Children[i]).Items[selectedIndex] + "\"}";
 												}
 												//Увеличиваем счетчик полей на единицу, т.к. мы ранее создавали для этого типа поля два поля (searchBar и grid и picker)
 												++i;
-												jsonRequestTransitions += "\"" + fieldIssue[j].name + "\":{\"name\":\"" + ((SearchBar)generalStackLayout.Children[i]).Text + "\"}";
-
+												if (((SearchBar)generalStackLayout.Children[i]).Text.Length > 0)
+												{
+													if (fields.Length > 0)
+													{
+														fields += ", ";
+													}
+													fields += "\"issuelinks\":{\"name\":\"" + ((SearchBar)generalStackLayout.Children[i]).Text + "\"}";
+												}
 												//Увеличиваем счетчик полей на единицу, т.к. мы ранее создавали для этого типа поля два поля (searchBar и grid и picker)
 												++i;
+
 												break;
 											}
 									}
@@ -642,13 +704,28 @@ namespace RTMobile.issues.viewIssue
 								}
 							case "date":
 								{
-									jsonRequestTransitions += "\"" + fieldIssue[j].name + "\":{\"name\":\"" + ((DatePicker)generalStackLayout.Children[i]).Date.ToString() + "\"}";
+									if (fields.Length > 0)
+									{
+										fields += ", ";
+									}
+									fields += "\"" + fieldIssue[j].name + "\":{\"name\":\"" + ((DatePicker)generalStackLayout.Children[i]).Date.ToString() + "\"}";
 									break;
 								}
 							case "comment":
 								{
-									//Закрываем блок с полями и открываем блок для добавления комментария
-									jsonRequestTransitions += "}, \"update\":{\"comment\":[{\"add\":{\"body\":\"" + ((Entry)generalStackLayout.Children[i]).Text + "\"}}]}";
+									if (fieldIssue[j].required == true)
+									{
+										if (((Entry)generalStackLayout.Children[i]).Text == null)
+										{
+											checkTransition = false;
+											break;
+										}
+									}
+									if (((Entry)generalStackLayout.Children[i]).Text.Length > 0)
+									{
+										commentField = "\"update\":{\"comment\":[{\"add\":{\"body\":\"" + ((Entry)generalStackLayout.Children[i]).Text + "\"}}]}";
+									}
+
 									break;
 								}
 						}
@@ -660,31 +737,83 @@ namespace RTMobile.issues.viewIssue
 							case "option":
 							case "resolution":
 								{
+									if (((Picker)generalStackLayout.Children[i]).SelectedIndex == -1 && fieldIssue[j].required == true)
+									{
+										checkTransition = false;
+										break;
+									}
 									int selectedIndex = ((Picker)generalStackLayout.Children[i]).SelectedIndex;
 
 									if (selectedIndex != -1)
 									{
-										jsonRequestTransitions += "\"" + fieldIssue[j].name + "\":{\"name\":\"" + ((Picker)generalStackLayout.Children[i]).Items[selectedIndex] + "\"}";
+										if (fields.Length > 0)
+										{
+											fields += ", ";
+										}
+										fields += "\"" + fieldIssue[j].name + "\":{\"name\":\"" + ((Picker)generalStackLayout.Children[i]).Items[selectedIndex] + "\"}";
 									}
+
 									break;
 								}
 							case "datetime":
 								{
-									jsonRequestTransitions += "\"" + fieldIssue[j].name + "\":{\"name\":\"" + ((DatePicker)generalStackLayout.Children[i]).Date.ToString() + "\"}";
+									if (fields.Length > 0)
+									{
+										fields += ", ";
+									}
+									fields += "\"" + fieldIssue[j].name + "\":{\"name\":\"" + ((DatePicker)generalStackLayout.Children[i]).Date.ToString() + "\"}";
 									break;
 								}
 							case "string":
 								{
-									jsonRequestTransitions += "\"" + fieldIssue[j].name + "\":{\"name\":\"" + ((Entry)generalStackLayout.Children[i]).Text + "\"}";
+									if (fieldIssue[j].required == true)
+									{
+										if (((Entry)generalStackLayout.Children[i]).Text == null )
+										{
+											checkTransition = false;
+											break;
+										}
+									}
+									if (((Entry)generalStackLayout.Children[i]).Text.Length > 0)
+									{
+										if (fields.Length > 0)
+										{
+											fields += ", ";
+										}
+										fields += "\"" + fieldIssue[j].name + "\":{\"name\":\"" + ((Entry)generalStackLayout.Children[i]).Text + "\"}";
+									}
 									break;
 								}
 							case "number":
 								{
-									jsonRequestTransitions += "\"" + fieldIssue[j].name + "\":{\"name\":\"" + ((Entry)generalStackLayout.Children[i]).Text + "\"}";
+									if (fieldIssue[j].required == true)
+									{
+										if (((Entry)generalStackLayout.Children[i]).Text == null)
+										{
+											checkTransition = false;
+											break;
+										}
+									}
+									if (((Entry)generalStackLayout.Children[i]).Text.Length > 0)
+									{
+										if (fields.Length > 0)
+										{
+											fields += ", ";
+										}
+										jsonRequestTransitions += "\"" + fieldIssue[j].name + "\":{\"name\":\"" + ((Entry)generalStackLayout.Children[i]).Text + "\"}";
+									}
 									break;
 								}
 							case "user":
 								{
+									if (fieldIssue[j].required == true)
+									{
+										if (((SearchBar)generalStackLayout.Children[i]).Text == null && ((Picker)generalStackLayout.Children[i]).SelectedIndex == -1)
+										{
+											checkTransition = false;
+											break;
+										}
+									}
 									//Увеличиваем счетчик для получения доступа к элементу после label
 									List<User> user = new List<User>();
 
@@ -696,8 +825,13 @@ namespace RTMobile.issues.viewIssue
 									user = requestUser.GetResponses<List<User>>();
 									if (user.Count > 0)
 									{
-										jsonRequestTransitions += "\"" + fieldIssue[j].name + "\":{\"name\":\"" + user[0].name + "\"}";
+										if (fields.Length > 0)
+										{
+											fields += ", ";
+										}
+										fields += "\"" + fieldIssue[j].name + "\":{\"name\":\"" + user[0].name + "\"}";
 									}
+
 									//Увеличиваем счетчик полей на единицу, т.к. мы ранее создавали для этого типа поля два поля (searchBar и grid)
 									++i;
 									break;
@@ -711,19 +845,36 @@ namespace RTMobile.issues.viewIssue
 					++j;
 				}
 			}
+
+			if (fields.Length > 0)
+			{
+				jsonRequestTransitions += ", \"fields\":{" + fields + "}";
+			}
+			if (commentField.Length > 0)
+			{
+
+				jsonRequestTransitions += ", " + commentField;
+			}
 			//Закрываем запрос
 			jsonRequestTransitions += "}";
-					   
-			//Совершаем переход с полученными данными
-			JSONRequest jsonRequest = new JSONRequest();
-			jsonRequest.urlRequest = $"/rest/api/2/issue/{numberIssue}/transitions";
-			jsonRequest.methodRequest = "POST";
-			Request request = new Request(jsonRequest);
-
-			Errors errors = request.GetResponses<Errors>(jsonRequestTransitions);
-			if (errors.comment == null && errors.assignee == null)
+			if (checkTransition)
 			{
-				Application.Current.MainPage = new AllIssues();
+				//Совершаем переход с полученными данными
+				JSONRequest jsonRequest = new JSONRequest();
+				jsonRequest.urlRequest = $"/rest/api/2/issue/{numberIssue}/transitions";
+				jsonRequest.methodRequest = "POST";
+				Request request = new Request(jsonRequest);
+
+				Errors errors = request.GetResponses<Errors>(jsonRequestTransitions);
+				if (errors == null || (errors.comment == null && errors.assignee == null))
+				{
+					Application.Current.MainPage = new AllIssues();
+				}
+			}
+			else
+			{
+				errorMessage.IsVisible = true;
+				errorMessage.Text = "Заполните обязательные поля помечанные *";
 			}
 		}
 

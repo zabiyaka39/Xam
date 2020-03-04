@@ -173,7 +173,7 @@ namespace RTMobile.issues.viewIssue
 				{
 					newComment.Text = "";
 					issueStartPostRequest(issueKey, false);
-					await DisplayAlert("Готово", "Комментарий добавлен", "OK").ConfigureAwait(true);
+					//await DisplayAlert("Готово", "Комментарий добавлен", "OK").ConfigureAwait(true);
 				}
 				else
 				{

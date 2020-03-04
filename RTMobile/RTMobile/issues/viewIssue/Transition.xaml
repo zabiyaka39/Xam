@@ -8,7 +8,7 @@
                      BackgroundColor="#312F35">
             <StackLayout  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
                 <Label x:Name="errorMessage" Text="Ошибка!" IsVisible="False" TextColor="#BE0030" FontSize="18" 
-                   HorizontalOptions="CenterAndExpand" VerticalOptions="Start" Margin="0,10,0,0"/>
+                   HorizontalOptions="Center" VerticalOptions="Start" Margin="20,10,20,0"/>
                 <StackLayout x:Name="generalStackLayout" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
                      BackgroundColor="#312F35" Padding="27">
                 </StackLayout>

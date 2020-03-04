@@ -37,7 +37,6 @@ F:\project\Mobile\RTMobile\RTMobile\RTMobile\obj\Release\netstandard2.0\App.xaml
 F:\project\Mobile\RTMobile\RTMobile\RTMobile\obj\Release\netstandard2.0\calendar\Calendar.xaml.g.cs
 F:\project\Mobile\RTMobile\RTMobile\RTMobile\obj\Release\netstandard2.0\createIssue.xaml.g.cs
 F:\project\Mobile\RTMobile\RTMobile\RTMobile\obj\Release\netstandard2.0\dataIssue\photoView.xaml.g.cs
-F:\project\Mobile\RTMobile\RTMobile\RTMobile\obj\Release\netstandard2.0\dataIssue\screen.xaml.g.cs
 F:\project\Mobile\RTMobile\RTMobile\RTMobile\obj\Release\netstandard2.0\filter\Filter.xaml.g.cs
 F:\project\Mobile\RTMobile\RTMobile\RTMobile\obj\Release\netstandard2.0\insight\Insight.xaml.g.cs
 F:\project\Mobile\RTMobile\RTMobile\RTMobile\obj\Release\netstandard2.0\issuePage.xaml.g.cs
