@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using Microsoft.AppCenter.Crashes;
 using Plugin.Settings;
 using RTMobile.calendar;
 using RTMobile.filter;
@@ -114,6 +115,7 @@ namespace RTMobile.issues
 			catch (Exception ex)
 			{
 				Console.WriteLine(ex.ToString());
+				Crashes.TrackError(ex);
 				await DisplayAlert("Error issues", ex.ToString(), "OK").ConfigureAwait(true);
 			}
 		}
