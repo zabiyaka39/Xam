@@ -25,6 +25,10 @@ namespace RTMobile.issues.viewIssue
 			this.issue = issue;
 			if (issue != null && issue.fields != null)
 			{
+				for(int i=0; i<issue.fields.attachment.Count; ++i)
+				{
+
+				}
 				attachmentsImage = issue.fields.attachment;
 			}
 

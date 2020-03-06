@@ -396,8 +396,81 @@ namespace RTMobile
 		public string id { get; set; }
 		public StatusCategory statusCategory { get; set; }
 	}
+
+
 	public class Attachment
 	{
+		private static Dictionary<string, string> countries = new Dictionary<string, string>
+		{
+			{"image/png", "image"},
+			{"image/bmp", "image"},
+			{"image/x-emf", "image"},
+			{"image/jpeg", "image"},
+			{"image/pjpeg", "image"},
+			{"image/pict", "image"},
+			{"image/x-portable-graymap", "image"},
+			{"image/x-portable-anymap", "image"},
+			{"image/x-macpaint", "image"},
+			{"image/vnd.rn-realflash", "image"},
+			{"image/x-quicktime", "image"},
+			{"image/x-cmu-raster", "image"},
+			{"image/x-portable-bitmap", "image"},
+			{"image/gif", "image"},
+			{"image/x-xbitmap", "image"},
+			{"image/x-xpixmap", "image"},
+			{"image/x-xwindowdump", "image"},
+			{"image/vnd.ms-photo", "image"},
+			{"image/vnd.wap.wbmp", "image"},
+			{"image/x-rgb", "image"},
+			{"image/ico", "image"},
+			{"image/ief", "image"},
+			{"image/tiff", "image"},
+			{"image/wmf", "image"},
+			{"image/x-jg", "image"},
+			{"image/x-cmx", "image"},
+			{"image/x-icon", "image"},
+			{"image/cis-cod", "image"},
+			{"text/xml", "text"},
+			{"application/msword", "text"},
+			{"application/vnd.ms-powerpoint.slide.macroEnabled.12", "text"},
+			{"application/vnd.ms-powerpoint.presentation.macroEnabled.12", "text"},
+			{"application/vnd.ms-powerpoint.slideshow.macroEnabled.12", "text"},
+			{"application/vnd.ms-powerpoint.addin.macroEnabled.12", "text"},
+			{"application/vnd.ms-powerpoint.template.macroEnabled.12", "text"},
+			{"application/vnd.ms-powerpoint", "text"},
+			{"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "text"},
+			{"application/vnd.ms-excel.sheet.macroenabled.12", "text"},
+			{"application/vnd.ms-excel.sheet.binary.macroenabled.12", "text"},
+			{"application/vnd.ms-excel.addin.macroenabled.12", "text"},
+			{"application/vnd.ms-excel", "text"},
+			{"application/vnd.openxmlformats-officedocument.wordprocessingml.template", "text"},
+			{"application/vnd.openxmlformats-officedocument.wordprocessingml.document", "text"},
+			{"application/vnd.ms-word.document.macroEnabled.12", "text"},
+			{"text/css", "text"},
+			{"text/csv", "text"},
+			{"text/dlm", "text"},
+			{"text/html", "text"},
+			{"text/jscript", "text"},
+			{"text/richtext", "text"},
+			{"text/scriptlet", "text"},
+			{"text/sgml", "text"},
+			{"text/iuls", "text"},
+			{"text/vbscript", "text"},
+			{"text/vnd.wap.wmlscript", "text"},
+			{"text/vnd.wap.wml", "text"},
+			{"text/x-vcard", "text"},
+			{"text/tab-separated-values", "text"},
+			{"text/x-ms-rqy", "text"},
+			{"text/x-ms-odc", "text"},
+			{"text/x-html-insertion", "text"},
+			{"text/x-ms-iqy", "text"},
+			{"text/webviewhtml", "text"},
+			{"text/x-component", "text"},
+			{"text/x-hdml", "text"},
+			{"text/x-ms-group", "text"},
+			{"text/x-setext", "text"},
+			{"text/x-ms-contact", "text"}
+		};
 		public bool required { get; set; }
 		public string type { get; set; }
 		public Schema schema { get; set; }
@@ -417,7 +490,26 @@ namespace RTMobile
 			}
 		}
 		public int size { get; set; }
-		public string mimeType { get; set; }
+
+		private string _mimeType { get; set; }
+		public string mimeType
+		{
+			get
+			{
+				return _mimeType;
+			}
+			set
+			{
+				if (!countries.ContainsKey(value))
+				{
+					_mimeType = countries[value];
+				}
+				else
+				{
+					_mimeType = "other";
+				}
+			}
+		}
 		public string content { get; set; }
 		public ImageSource thumbnailImage
 		{

@@ -143,7 +143,6 @@ namespace RTMobile
 		{
 			ObservableCollection<Fields> fields = new ObservableCollection<Fields>();
 
-
 			WebResponse httpResponse = this.httpWebRequest.GetResponse();
 			//Отправляем запрос для получения списка полей задачи
 			using (StreamReader streamReader = new StreamReader(httpResponse.GetResponseStream()))

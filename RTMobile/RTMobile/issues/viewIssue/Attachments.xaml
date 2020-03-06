@@ -22,24 +22,50 @@
                       BackgroundColor="#4A4C50">
             <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="190"/>
-                    <RowDefinition Height="190"/>
-                    <RowDefinition Height="190"/>
+                    <RowDefinition Height="200"/>
+                    <RowDefinition Height="200"/>
+                    <RowDefinition Height="200"/>
                 </Grid.RowDefinitions>
                 <Frame Grid.Row="0" Grid.Column="0" HasShadow="True" CornerRadius="5"
-                   BackgroundColor="#FFFFFF" Margin="10,10,10,10" Padding="0,0,0,0">
+                   BackgroundColor="#FFFFFF" Margin="10,10,10,10" Padding="10,10,10,0">
                     <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="10,0,10,20" Margin="0" >
                         <StackLayout VerticalOptions="Center" HorizontalOptions="FillAndExpand" HeightRequest="20" Orientation="Horizontal">
-                            <Image Source="image.png" Grid.Column="0" Grid.Row="0"/>
-                            <Label Text="Изображения" Grid.Column="1" Grid.Row="0"/>
+                            <Image Source="image.png" />
+                            <Label Text="Изображения"/>
                         </StackLayout>
                         <BoxView HorizontalOptions="FillAndExpand" VerticalOptions="Center"
                                                      CornerRadius="50" Margin="-5,0,0,10" BackgroundColor="#4A4C50"
                                                      HeightRequest="1"/>
-                        <CarouselView x:Name="carouselImages" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <CarouselView x:Name="carouselImages" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  PeekAreaInsets="100" HorizontalScrollBarVisibility="Always">
                             <CarouselView.ItemTemplate>
                                 <DataTemplate>
                                     <StackLayout>
+                                        <VisualStateManager.VisualStateGroups>
+                                            <VisualStateGroup x:Name="CommonStates">
+                                                <VisualState x:Name="CurrentItem">
+                                                    <VisualState.Setters>
+                                                        <Setter Property="Scale" Value="1" />
+                                                    </VisualState.Setters>
+                                                </VisualState>
+                                                <VisualState x:Name="PreviousItem">
+                                                    <VisualState.Setters>
+                                                        <Setter Property="Opacity" Value="0.1" />
+                                                        <Setter Property="Scale" Value="0.7" />
+                                                    </VisualState.Setters>
+                                                </VisualState>
+                                                <VisualState x:Name="NextItem">
+                                                    <VisualState.Setters>
+                                                        <Setter Property="Opacity" Value="0.1" />
+                                                        <Setter Property="Scale" Value="0.7" />
+                                                    </VisualState.Setters>
+                                                </VisualState>
+                                                <VisualState x:Name="DefaultItem">
+                                                    <VisualState.Setters>
+                                                        <Setter Property="Opacity" Value="0.25" />
+                                                    </VisualState.Setters>
+                                                </VisualState>
+                                            </VisualStateGroup>
+                                        </VisualStateManager.VisualStateGroups>
                                         <Image Source="{Binding thumbnailImage}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
                                     </StackLayout>
                                 </DataTemplate>
@@ -52,8 +78,15 @@
                     </StackLayout>
                 </Frame>
                 <Frame Grid.Row="1" Grid.Column="0" HasShadow="True" CornerRadius="5"
-                   BackgroundColor="#FFFFFF"  Margin="10,0,10,10" Padding="10,0,10,0">
-                    <StackLayout>
+                   BackgroundColor="#FFFFFF"  Margin="10,0,10,10" Padding="10,10,10,0">
+                    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="10,0,10,20" Margin="0" >
+                        <StackLayout VerticalOptions="Center" HorizontalOptions="FillAndExpand" HeightRequest="20" Orientation="Horizontal">
+                            <Image Source="files.png" />
+                            <Label Text="Документы" />
+                        </StackLayout>
+                        <BoxView HorizontalOptions="FillAndExpand" VerticalOptions="Center"
+                                                     CornerRadius="50" Margin="-5,0,0,10" BackgroundColor="#4A4C50"
+                                                     HeightRequest="1"/>
                         <CarouselView x:Name="carouselDocuments">
                             <CarouselView.ItemTemplate>
                                 <DataTemplate>
