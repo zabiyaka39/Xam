@@ -9,8 +9,10 @@ namespace RTMobile.issues
 {
     public partial class CreateIssue : ContentPage
     {
+        List<Project> projects { get; set; }
         public CreateIssue()
         {
+            
             InitializeComponent();
             JSONRequest jsonRequest = new JSONRequest();
             jsonRequest.urlRequest = $"/rest/api/2/project";
