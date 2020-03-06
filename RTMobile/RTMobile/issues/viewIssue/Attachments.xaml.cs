@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using Microsoft.AppCenter.Crashes;
 using Plugin.Settings;
 using RTMobile.calendar;
@@ -13,16 +14,36 @@ namespace RTMobile.issues.viewIssue
 	public partial class Attachments : ContentPage
 	{
 		Issue issue = new Issue();
-		List <Attachment> attachments { get; set; }
+		ObservableCollection<Attachment> attachmentsImage { get; set; }
+		ObservableCollection<Attachment> attachmentsDocument { get; set; }
+		ObservableCollection<Attachment> attachmentsOther { get; set; }
 		private List<RTMobile.Transition> transition { get; set; }//Переходы по заявке
 		public Attachments(Issue issue)
 		{
 			InitializeComponent();
-			TransitionIssue();
-			attachments = issue.fields.attachment;
+			//TransitionIssue();
 			this.issue = issue;
+			if (issue != null && issue.fields != null)
+			{
+				attachmentsImage = issue.fields.attachment;
+			}
+
+			//if (attachmentsImage != null && attachmentsImage.Count > 0)
+			//{
+			//	noneImage.IsVisible = true;
+			//	carouselImages.IsVisible = false;
+			//}
+			//else
+			//{
+			//	carouselImages.IsVisible = true;
+			//	noneImage.IsVisible = false;
+			//}
+
+			carouselImages.ItemsSource = attachmentsImage;
+
+			this.BindingContext = this;
 		}
-			private void TransitionIssue()
+		private void TransitionIssue()
 		{
 			try
 			{
@@ -81,7 +102,7 @@ namespace RTMobile.issues.viewIssue
 		}
 		void ToolbarItem_Clicked_2(System.Object sender, System.EventArgs e)
 		{
-			Navigation.PushAsync(new Comment(issue.key,issue.fields.summary));
+			Navigation.PushAsync(new Comment(issue.key, issue.fields.summary));
 		}
 		void ToolbarItem_Clicked_3(System.Object sender, System.EventArgs e)
 		{

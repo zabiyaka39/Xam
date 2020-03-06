@@ -419,7 +419,31 @@ namespace RTMobile
 		public int size { get; set; }
 		public string mimeType { get; set; }
 		public string content { get; set; }
-		public string thumbnail { get; set; }
+		public ImageSource thumbnailImage
+		{
+			get
+			{
+				Image image = new Image();
+				Uri uri = new Uri(CrossSettings.Current.GetValueOrDefault("urlServer", string.Empty));
+				//выбираем изображение с максимальным разрешением, при его наличии
+				if (thumbnail != null)
+				{
+					uri = thumbnail;
+				}
+
+				WebClient webClient = new WebClient();
+				string credentials = Convert.ToBase64String(Encoding.ASCII.GetBytes(CrossSettings.Current.GetValueOrDefault("login", string.Empty) + ":" + CrossSettings.Current.GetValueOrDefault("password", string.Empty)));
+				webClient.Headers[HttpRequestHeader.Authorization] = "Basic " + credentials;
+				var byteArray = webClient.DownloadData(uri);
+				image.Source = ImageSource.FromStream(() => new MemoryStream(byteArray));
+				return image.Source;
+			}
+			set
+			{
+				thumbnailImage = value;
+			}
+		}
+		public Uri thumbnail { get; set; }
 	}
 	public class AllowedValue
 	{
@@ -559,7 +583,7 @@ namespace RTMobile
 		public List<Issuelink> issuelinks { get; set; }
 		public Resolution resolution { get; set; }
 		public Assignee assignee { get; set; }
-		public List<Attachment> attachment { get; set; }
+		public ObservableCollection<Attachment> attachment { get; set; }
 		public Reporter reporter { get; set; }
 		public Votes votes { get; set; }
 		public Issuetype issuetype { get; set; }

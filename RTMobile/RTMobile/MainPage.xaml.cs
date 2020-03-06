@@ -1,4 +1,5 @@
-﻿using Microsoft.AppCenter.Crashes;
+﻿using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
 using Plugin.Settings;
 using RTMobile.about;
 using RTMobile.issues;
@@ -53,7 +54,7 @@ namespace RTMobile
 
 						CrossSettings.Current.AddOrUpdateValue("login", login.Text.Trim(' '));
 						CrossSettings.Current.AddOrUpdateValue("password", password.Text);
-
+						Analytics.TrackEvent("Выполнен вход в систему: пользователь - " + CrossSettings.Current.GetValueOrDefault("login", "") + ", " + DateTime.Now );
 						await Navigation.PushModalAsync(new AllIssues()).ConfigureAwait(true);
 					}
 					else

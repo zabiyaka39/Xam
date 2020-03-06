@@ -23,7 +23,6 @@ namespace RTMobile.issues.viewIssue
 			issueKeySummary = issueKey + " - " + issueSummary;
 			this.issueKey = issueKey;
 			this.issueSummary = issueSummary;
-			transitionIssue(issueKey);
 
 			InitializeComponent();
 
@@ -31,37 +30,7 @@ namespace RTMobile.issues.viewIssue
 
 			this.BindingContext = this;
 		}
-		private void transitionIssue(string issueKey)
-		{
-			try
-			{
-				JSONRequest jsonRequest = new JSONRequest();
-				jsonRequest.urlRequest = $"/rest/api/2/issue/{issueKey}/transitions/";
-				jsonRequest.methodRequest = "GET";
-				Request request = new Request(jsonRequest);
-
-				transition = request.GetResponses<RootObject>().transitions;
-				for (int i = 0; i < transition.Count; ++i)
-				{
-					ToolbarItem tb = new ToolbarItem
-					{
-						Text = transition[i].name,
-						Order = ToolbarItemOrder.Secondary,
-						Priority = i + 1
-					};
-					tb.Clicked += async (sender, args) =>
-					{
-						await Navigation.PushAsync(new RTMobile.issues.viewIssue.Transition(int.Parse(transition[((ToolbarItem)sender).Priority - 1].id), issueKey)).ConfigureAwait(true);
-					};
-					ToolbarItems.Add(tb);
-				}
-			}
-			catch (Exception ex)
-			{
-				Console.WriteLine(ex.Message);
-				Crashes.TrackError(ex);
-			}
-		}
+		
 		private async void historyIssue(string issueKey, bool firstRequest = true)
 		{
 			try
