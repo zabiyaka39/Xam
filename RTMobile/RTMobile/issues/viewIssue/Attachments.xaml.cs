@@ -14,22 +14,49 @@ namespace RTMobile.issues.viewIssue
 	public partial class Attachments : ContentPage
 	{
 		Issue issue = new Issue();
-		ObservableCollection<Attachment> attachmentsImage { get; set; }
-		ObservableCollection<Attachment> attachmentsDocument { get; set; }
-		ObservableCollection<Attachment> attachmentsOther { get; set; }
+		ObservableCollection<Attachment> attachmentsImage  = new ObservableCollection<Attachment>();
+		ObservableCollection<Attachment> attachmentsDocument = new ObservableCollection<Attachment>();
+		ObservableCollection<Attachment> attachmentsOther = new ObservableCollection<Attachment>();
 		private List<RTMobile.Transition> transition { get; set; }//Переходы по заявке
 		public Attachments(Issue issue)
 		{
+			List<Attachment> atach = new List<Attachment>();
 			InitializeComponent();
 			//TransitionIssue();
 			this.issue = issue;
 			if (issue != null && issue.fields != null)
 			{
-				for(int i=0; i<issue.fields.attachment.Count; ++i)
+				for (int i = 0; i < issue.fields.attachment.Count; ++i)
 				{
+					try
+					{
+						switch (issue.fields.attachment[i].mimeType)
+						{
+							case "image":
+								{
+									attachmentsImage.Add(issue.fields.attachment[i]);
+									break;
+								}
+							case "text":
+								{
+									attachmentsDocument.Add(issue.fields.attachment[i]);
+									break;
+								}
+							default:
+								{
+									
+									atach.Add(issue.fields.attachment[i]);
+									attachmentsOther.Add(issue.fields.attachment[i]);
+									break;
+								}
+						}
+					}
+					catch (Exception ex)
+					{
+						Console.WriteLine(ex.Message);
 
+					}
 				}
-				attachmentsImage = issue.fields.attachment;
 			}
 
 			//if (attachmentsImage != null && attachmentsImage.Count > 0)
@@ -44,6 +71,8 @@ namespace RTMobile.issues.viewIssue
 			//}
 
 			carouselImages.ItemsSource = attachmentsImage;
+			carouselDocuments.ItemsSource = attachmentsDocument;
+			carouselOthers.ItemsSource = attachmentsOther;
 
 			this.BindingContext = this;
 		}

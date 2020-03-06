@@ -36,7 +36,7 @@
                         <BoxView HorizontalOptions="FillAndExpand" VerticalOptions="Center"
                                                      CornerRadius="50" Margin="-5,0,0,10" BackgroundColor="#4A4C50"
                                                      HeightRequest="1"/>
-                        <CarouselView x:Name="carouselImages" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  PeekAreaInsets="100" HorizontalScrollBarVisibility="Always">
+                        <CarouselView x:Name="carouselImages" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" PeekAreaInsets="100" HorizontalScrollBarVisibility="Always" >
                             <CarouselView.ItemTemplate>
                                 <DataTemplate>
                                     <StackLayout>
@@ -87,11 +87,40 @@
                         <BoxView HorizontalOptions="FillAndExpand" VerticalOptions="Center"
                                                      CornerRadius="50" Margin="-5,0,0,10" BackgroundColor="#4A4C50"
                                                      HeightRequest="1"/>
-                        <CarouselView x:Name="carouselDocuments">
+                        <CarouselView x:Name="carouselDocuments" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" PeekAreaInsets="100" HorizontalScrollBarVisibility="Always" >
                             <CarouselView.ItemTemplate>
                                 <DataTemplate>
-                                    <StackLayout>
-                                        <Label Text="{Binding filename}" FontSize="16"/>
+                                    <StackLayout HorizontalOptions="CenterAndExpand" WidthRequest="100">
+                                        <VisualStateManager.VisualStateGroups>
+                                            <VisualStateGroup x:Name="CommonStates">
+                                                <VisualState x:Name="CurrentItem">
+                                                    <VisualState.Setters>
+                                                        <Setter Property="Scale" Value="1" />
+                                                    </VisualState.Setters>
+                                                </VisualState>
+                                                <VisualState x:Name="PreviousItem">
+                                                    <VisualState.Setters>
+                                                        <Setter Property="Opacity" Value="0.5" />
+                                                        <Setter Property="Scale" Value="0.7" />
+                                                    </VisualState.Setters>
+                                                </VisualState>
+                                                <VisualState x:Name="NextItem">
+                                                    <VisualState.Setters>
+                                                        <Setter Property="Opacity" Value="0.5" />
+                                                        <Setter Property="Scale" Value="0.7" />
+                                                    </VisualState.Setters>
+                                                </VisualState>
+                                                <VisualState x:Name="DefaultItem">
+                                                    <VisualState.Setters>
+                                                        <Setter Property="Opacity" Value="0.25" />
+                                                    </VisualState.Setters>
+                                                </VisualState>
+                                            </VisualStateGroup>
+                                        </VisualStateManager.VisualStateGroups>
+                                        <Frame HorizontalOptions="Center" VerticalOptions="FillAndExpand" WidthRequest="100" HasShadow="True">
+                                            <Label Text="{Binding extension}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                                        </Frame>
+                                        <Label Text="{Binding filename}" FontSize="10" HorizontalTextAlignment="Center" LineBreakMode="MiddleTruncation"/>
                                     </StackLayout>
                                 </DataTemplate>
                             </CarouselView.ItemTemplate>
@@ -105,11 +134,47 @@
                 <Frame Grid.Row="2" Grid.Column="0" HasShadow="True" CornerRadius="5"
                   BackgroundColor="#FFFFFF" Margin="10,0,10,10" Padding="10,0,10,0">
                     <StackLayout>
-                        <CarouselView x:Name="carouselOthers">
+                        <StackLayout VerticalOptions="Center" HorizontalOptions="FillAndExpand" HeightRequest="20" Orientation="Horizontal">
+                            <Image Source="folder.png" />
+                            <Label Text="Другое"/>
+                        </StackLayout>
+                        <BoxView HorizontalOptions="FillAndExpand" VerticalOptions="Center"
+                                                     CornerRadius="50" Margin="-5,0,0,10" BackgroundColor="#4A4C50"
+                                                     HeightRequest="1"/>
+                        <CarouselView x:Name="carouselOthers" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" PeekAreaInsets="100" HorizontalScrollBarVisibility="Always" >
                             <CarouselView.ItemTemplate>
                                 <DataTemplate>
-                                    <StackLayout>
-                                        <Label Text="{Binding filename}" FontSize="16"/>
+                                    <StackLayout HorizontalOptions="CenterAndExpand" WidthRequest="100">
+                                        <VisualStateManager.VisualStateGroups>
+                                            <VisualStateGroup x:Name="CommonStates">
+                                                <VisualState x:Name="CurrentItem">
+                                                    <VisualState.Setters>
+                                                        <Setter Property="Scale" Value="1" />
+                                                    </VisualState.Setters>
+                                                </VisualState>
+                                                <VisualState x:Name="PreviousItem">
+                                                    <VisualState.Setters>
+                                                        <Setter Property="Opacity" Value="0.5" />
+                                                        <Setter Property="Scale" Value="0.7" />
+                                                    </VisualState.Setters>
+                                                </VisualState>
+                                                <VisualState x:Name="NextItem">
+                                                    <VisualState.Setters>
+                                                        <Setter Property="Opacity" Value="0.5" />
+                                                        <Setter Property="Scale" Value="0.7" />
+                                                    </VisualState.Setters>
+                                                </VisualState>
+                                                <VisualState x:Name="DefaultItem">
+                                                    <VisualState.Setters>
+                                                        <Setter Property="Opacity" Value="0.25" />
+                                                    </VisualState.Setters>
+                                                </VisualState>
+                                            </VisualStateGroup>
+                                        </VisualStateManager.VisualStateGroups>
+                                        <Frame HorizontalOptions="Center" VerticalOptions="FillAndExpand" WidthRequest="100" HasShadow="True">
+                                            <Label Text="{Binding extension}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                                        </Frame>
+                                        <Label Text="{Binding filename}" FontSize="10" HorizontalTextAlignment="Center" LineBreakMode="MiddleTruncation"/>
                                     </StackLayout>
                                 </DataTemplate>
                             </CarouselView.ItemTemplate>

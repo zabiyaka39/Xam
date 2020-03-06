@@ -490,7 +490,7 @@ namespace RTMobile
 			}
 		}
 		public int size { get; set; }
-
+		public string extension { get; set; }
 		private string _mimeType { get; set; }
 		public string mimeType
 		{
@@ -500,7 +500,8 @@ namespace RTMobile
 			}
 			set
 			{
-				if (!countries.ContainsKey(value))
+				extension = Path.GetExtension(filename);
+				if (countries.ContainsKey(value))
 				{
 					_mimeType = countries[value];
 				}

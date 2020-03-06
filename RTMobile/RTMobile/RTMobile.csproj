@@ -58,7 +58,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="dataIssue\photoView.xaml">
+    <EmbeddedResource Update="issues\viewIssue\imageView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
@@ -69,7 +69,6 @@
     <Folder Include="calendar\" />
     <Folder Include="filter\" />
     <Folder Include="insight\" />
-    <Folder Include="issues\" />
     <Folder Include="notification\" />
     <Folder Include="profile\" />
   </ItemGroup>
