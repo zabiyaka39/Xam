@@ -42,9 +42,11 @@ namespace RTMobile
 					CrossSettings.Current.AddOrUpdateValue("urlServer", "https://sd.rosohrana.ru");
 				}
 				//CrossSettings.Current.AddOrUpdateValue("urlServer", "https://sd.rosohrana.ru");
-				Authorization authorization = new Authorization();
-				authorization.username = login;
-				authorization.password = password;
+				Authorization authorization = new Authorization
+				{
+					username = login,
+					password = password
+				};
 
 				this.httpWebRequest = (HttpWebRequest)WebRequest.Create(CrossSettings.Current.GetValueOrDefault("urlServer", string.Empty) + "/rest/auth/1/session");
 				this.httpWebRequest.Headers.Add(HttpRequestHeader.Authorization, "Basic " + Convert.ToBase64String(Encoding.Default.GetBytes(login + ":" + password)));
@@ -53,7 +55,7 @@ namespace RTMobile
 				this.httpWebRequest.Method = "POST";
 				this.json = JsonConvert.SerializeObject(authorization);
 
-				RootObject rootObject = new RootObject();
+				RootObject rootObject;
 
 				rootObject = this.GetResponses<RootObject>();
 				if (rootObject.session != null && rootObject.session.name != null)
@@ -141,10 +143,8 @@ namespace RTMobile
 		{
 			ObservableCollection<Fields> fields = new ObservableCollection<Fields>();
 
-			Dictionary<string, string> keyValuePairsField = new Dictionary<string, string>();
 
 			WebResponse httpResponse = this.httpWebRequest.GetResponse();
-			RootObject rootObject = new RootObject();
 			//Отправляем запрос для получения списка полей задачи
 			using (StreamReader streamReader = new StreamReader(httpResponse.GetResponseStream()))
 			{
@@ -221,10 +221,7 @@ namespace RTMobile
 		{
 			List<Fields> fields = new List<Fields>();
 
-			Dictionary<string, string> keyValuePairsField = new Dictionary<string, string>();
-
 			WebResponse httpResponse = this.httpWebRequest.GetResponse();
-			RootObject rootObject = new RootObject();
 			//Отправляем запрос для получения списка полей задачи
 			using (StreamReader streamReader = new StreamReader(httpResponse.GetResponseStream()))
 			{
@@ -470,10 +467,8 @@ namespace RTMobile
 		{
 			List<Fields> fields = new List<Fields>();
 
-			Dictionary<string, string> keyValuePairsField = new Dictionary<string, string>();
 
 			WebResponse httpResponse = this.httpWebRequest.GetResponse();
-			RootObject rootObject = new RootObject();
 			//Отправляем запрос для получения списка полей задачи
 			using (StreamReader streamReader = new StreamReader(httpResponse.GetResponseStream()))
 			{
@@ -502,9 +497,11 @@ namespace RTMobile
 										//ищем поле value для получения значения
 										if (valueCustomFeildOption.Key == "value")
 										{
-											Fields tmpFiled = new Fields();
-											tmpFiled.name = objectCustomField["names"][field.Key];
-											tmpFiled.value = valueCustomFeildOption.Value.ToString();
+											Fields tmpFiled = new Fields
+											{
+												name = objectCustomField["names"][field.Key],
+												value = valueCustomFeildOption.Value.ToString()
+											};
 											fields.Add(tmpFiled);
 											break;
 										}
@@ -524,9 +521,11 @@ namespace RTMobile
 										arrayElement += arrayCustomField + "\n";
 									}
 									arrayElement = arrayElement.Trim('\n');
-									Fields tmpFiled = new Fields();
-									tmpFiled.name = objectCustomField["names"][field.Key];
-									tmpFiled.value = arrayElement.ToString();
+									Fields tmpFiled = new Fields
+									{
+										name = objectCustomField["names"][field.Key],
+										value = arrayElement.ToString()
+									};
 									fields.Add(tmpFiled);
 
 								}
@@ -543,9 +542,11 @@ namespace RTMobile
 									{
 										if (field.Key.ToLower() != "description" && field.Key.ToLower() != "summary")
 										{
-											Fields tmpFiled = new Fields();
-											tmpFiled.name = objectCustomField["names"][field.Key];
-											tmpFiled.value = field.Value.ToString();
+											Fields tmpFiled = new Fields
+											{
+												name = objectCustomField["names"][field.Key],
+												value = field.Value.ToString()
+											};
 											fields.Add(tmpFiled);
 										}
 									}

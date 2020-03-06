@@ -13,7 +13,7 @@ namespace RTMobile.issues.viewIssue
 	public partial class People : ContentPage
 	{
 		public Issue issue { get; set; }
-		public RootObject watchers { get; set; }
+		public List<Watches> watchers { get; set; }
 		private List<RTMobile.Transition> transition { get; set; }
 		public People(Issue issue)
 		{
@@ -33,7 +33,7 @@ namespace RTMobile.issues.viewIssue
 				jsonRequest.methodRequest = "GET";
 				Request request = new Request(jsonRequest);
 
-				watchers = request.GetResponses<RootObject>();
+				watchers = request.GetResponses<Watches>().watchers;
 			}
 			catch (Exception ex)
 			{
@@ -151,7 +151,7 @@ namespace RTMobile.issues.viewIssue
 
 		private async void ListView_ItemTapped(object sender, ItemTappedEventArgs e)
 		{
-			Watcher selectedIssue = e.Item as Watcher;
+			Watches selectedIssue = e.Item as Watches;
 			if (selectedIssue != null)
 			{
 				await Navigation.PushAsync(new Profile(selectedIssue.name)).ConfigureAwait(true);

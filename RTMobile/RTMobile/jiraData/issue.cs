@@ -237,6 +237,15 @@ namespace RTMobile
 		public string self { get; set; }
 		public int watchCount { get; set; }
 		public bool isWatching { get; set; }
+		public string name { get; set; }
+		public string key { get; set; }
+		public string emailAddress { get; set; }
+		[JsonProperty("avatarUrls")]
+		public Urls AvatarUrls { get; set; }
+		public string displayName { get; set; }
+		public bool active { get; set; }
+		public string timeZone { get; set; }
+		public List<Watches> watchers { get; set; }
 	}
 
 	public class StatusCategory
@@ -346,6 +355,9 @@ namespace RTMobile
 	/// </summary>
 	public class Comment
 	{
+		public int maxResults { get; set; }
+		public int total { get; set; }
+		public int startAt { get; set; }
 		public string self { get; set; }
 		public string id { get; set; }
 		public Author author { get; set; }
@@ -373,6 +385,7 @@ namespace RTMobile
 			}
 		}
 		public List<Property> properties { get; set; }
+		public ObservableCollection<Comment> comments { get; set; }
 	}
 	public class To
 	{
@@ -390,6 +403,23 @@ namespace RTMobile
 		public Schema schema { get; set; }
 		public string name { get; set; }
 		public List<object> operations { get; set; }
+		public string self { get; set; }
+		public string id { get; set; }
+		public string filename { get; set; }
+		public Author author { get; set; }
+		private string _created { get; set; }
+		public string created
+		{
+			get { return _created; }
+			set
+			{
+				_created = (Convert.ToDateTime(value)).ToString("dd.MM.yyyy H:mm");
+			}
+		}
+		public int size { get; set; }
+		public string mimeType { get; set; }
+		public string content { get; set; }
+		public string thumbnail { get; set; }
 	}
 	public class AllowedValue
 	{
@@ -520,28 +550,16 @@ namespace RTMobile
 		public string self { get; set; }
 		public Fields fields { get; set; }
 	}
-	public class Watcher
-	{
-		public string self { get; set; }
-		public string name { get; set; }
-		public string key { get; set; }
-		public string emailAddress { get; set; }
-		[JsonProperty("avatarUrls")]
-		public Urls AvatarUrls { get; set; }
-		public string displayName { get; set; }
-		public bool active { get; set; }
-		public string timeZone { get; set; }
-	}
 	public class Fields
 	{
-		public ObservableCollection<Comment> comment { get; set; }
+		public Comment comment { get; set; }
 		public List<AllowedValue> allowedValues { get; set; }
 		public List<string> subtasks { get; set; }
 		public List<string> operations { get; set; }
 		public List<Issuelink> issuelinks { get; set; }
 		public Resolution resolution { get; set; }
 		public Assignee assignee { get; set; }
-		public Attachment attachment { get; set; }
+		public List<Attachment> attachment { get; set; }
 		public Reporter reporter { get; set; }
 		public Votes votes { get; set; }
 		public Issuetype issuetype { get; set; }
@@ -559,6 +577,11 @@ namespace RTMobile
 			}
 		}
 		private string _resolutiondate { get; set; }
+		public string Resolutiondate
+		{
+			get { return _resolutiondate; }
+			set => _resolutiondate = (Convert.ToDateTime(value)).ToString("dd.MM.yyyy H:mm");
+		}
 		private string _updated;
 		public string name { get; set; }
 		public string key { get; set; }
@@ -569,10 +592,7 @@ namespace RTMobile
 		public string updated
 		{
 			get { return _updated; }
-			set
-			{
-				_updated = (Convert.ToDateTime(value)).ToString("dd.MM.yyyy H:mm");
-			}
+			set => _updated = Convert.ToDateTime(value).ToString("dd.MM.yyyy H:mm");
 		}
 		public string description { get; set; }
 		public string summary { get; set; }
@@ -596,8 +616,6 @@ namespace RTMobile
 		public bool isGlobal { get; set; } = false;
 		public bool isConditional { get; set; } = false;
 		public bool isInitial { get; set; } = false;
-
-
 	}
 	public class Issue
 	{
@@ -636,7 +654,6 @@ namespace RTMobile
 	{
 		public List<string> errorMessages { get; set; }
 		public Errors errors { get; set; }
-		public List<Watcher> watchers { get; set; }
 		public List<User> users { get; set; }
 		public List<Worklog> worklogs { get; set; }
 		public List<Project> projects { get; set; }
@@ -670,3 +687,4 @@ namespace RTMobile
 
 	}
 }
+

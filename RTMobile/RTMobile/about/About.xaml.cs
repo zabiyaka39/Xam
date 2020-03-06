@@ -4,7 +4,7 @@ using RTMobile.calendar;
 using RTMobile.filter;
 using RTMobile.insight;
 using RTMobile.profile;
-
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace RTMobile.about
@@ -14,6 +14,8 @@ namespace RTMobile.about
         public About()
         {
             InitializeComponent();
+            VersionTracking.Track();
+            versionApp.Text ="Версия: " + VersionTracking.CurrentVersion; 
         }
         void ImageButton_Clicked(System.Object sender, System.EventArgs e)
         {

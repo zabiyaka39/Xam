@@ -1301,7 +1301,7 @@
           "build/Xamarin.Forms.targets": {}
         }
       },
-      "RTMobile/1.0.0": {
+      "RTMobile/1.0.0.2": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
@@ -4103,7 +4103,7 @@
         "xamarin.forms.nuspec"
       ]
     },
-    "RTMobile/1.0.0": {
+    "RTMobile/1.0.0.2": {
       "type": "project",
       "path": "../RTMobile/RTMobile.csproj",
       "msbuildProject": "../RTMobile/RTMobile.csproj"
@@ -4117,7 +4117,7 @@
       "Microsoft.AppCenter.Crashes >= 3.0.0",
       "Nancy >= 2.0.0",
       "Newtonsoft.Json >= 12.0.3",
-      "RTMobile >= 1.0.0",
+      "RTMobile >= 1.0.0.2",
       "Xam.Plugins.Settings >= 3.1.1",
       "Xamarin.Android.Support.Core.Utils >= 28.0.0.3",
       "Xamarin.Android.Support.CustomTabs >= 28.0.0.3",

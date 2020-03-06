@@ -23,9 +23,11 @@ namespace RTMobile.issues.viewIssue
 			this.numberIssue = numberIssue;
 			this.transitionId = transitionId;
 
-			JSONRequest jsonRequest = new JSONRequest();
-			jsonRequest.urlRequest = $"/rest/api/2/issue/{numberIssue}/transitions?expand=transitions.fields&transitionId=" + transitionId;
-			jsonRequest.methodRequest = "GET";
+			JSONRequest jsonRequest = new JSONRequest
+			{
+				urlRequest = $"/rest/api/2/issue/{numberIssue}/transitions?expand=transitions.fields&transitionId=" + transitionId,
+				methodRequest = "GET"
+			};
 			Request request = new Request(jsonRequest);
 
 			fieldIssue = request.GetFieldTransitions();
@@ -62,11 +64,12 @@ namespace RTMobile.issues.viewIssue
 									List<string> userDisplayName = new List<string>();
 									if (fieldIssue[i].autoCompleteUrl.Length > 0)
 									{
-										JSONRequest jsonRequestUser = new JSONRequest();
-										jsonRequestUser.urlRequest = $"/rest/api/latest/user/assignable/search?issueKey={numberIssue}&username=";
-										jsonRequestUser.methodRequest = "GET";
+										JSONRequest jsonRequestUser = new JSONRequest
+										{
+											urlRequest = $"/rest/api/latest/user/assignable/search?issueKey={numberIssue}&username=",
+											methodRequest = "GET"
+										};
 										Request requestUser = new Request(jsonRequestUser);
-
 
 										user = requestUser.GetResponses<List<User>>();
 
@@ -206,9 +209,11 @@ namespace RTMobile.issues.viewIssue
 													FontSize = 16,
 												};
 
-												JSONRequest jsonRequestLink = new JSONRequest();
-												jsonRequestLink.urlRequest = $"/rest/api/2/issueLinkType";
-												jsonRequestLink.methodRequest = "GET";
+												JSONRequest jsonRequestLink = new JSONRequest
+												{
+													urlRequest = $"/rest/api/2/issueLinkType",
+													methodRequest = "GET"
+												};
 												Request requestIssuelinks = new Request(jsonRequestLink);
 
 												List<Issuelink> issuelinks = requestIssuelinks.GetResponses<RootObject>().issueLinkTypes;
@@ -227,9 +232,11 @@ namespace RTMobile.issues.viewIssue
 													//Удаляем адрес сервера для получения только остаточной части запроса API
 													fieldIssue[i].autoCompleteUrl = fieldIssue[i].autoCompleteUrl.Remove(0, (fieldIssue[i].autoCompleteUrl.IndexOf(".ru") + 3));
 
-													JSONRequest jsonRequestIssue = new JSONRequest();
-													jsonRequestIssue.urlRequest = fieldIssue[i].autoCompleteUrl;
-													jsonRequestIssue.methodRequest = "GET";
+													JSONRequest jsonRequestIssue = new JSONRequest
+													{
+														urlRequest = fieldIssue[i].autoCompleteUrl,
+														methodRequest = "GET"
+													};
 													Request requestIssue = new Request(jsonRequestIssue);
 
 													List<Issue> issue = requestIssue.GetResponses<RootObject>().sections[0].issues;
@@ -269,9 +276,11 @@ namespace RTMobile.issues.viewIssue
 													if (keyword.Length >= 1)
 													{
 
-														JSONRequest jsonRequestIssue = new JSONRequest();
-														jsonRequestIssue.urlRequest = $"/rest/api/2/issue/picker?currentProjectId=&showSubTaskParent=true&showSubTasks=true&currentIssueKey={numberIssue}&query=" + keyword.ToLower();
-														jsonRequestIssue.methodRequest = "GET";
+														JSONRequest jsonRequestIssue = new JSONRequest
+														{
+															urlRequest = $"/rest/api/2/issue/picker?currentProjectId=&showSubTaskParent=true&showSubTasks=true&currentIssueKey={numberIssue}&query=" + keyword.ToLower(),
+															methodRequest = "GET"
+														};
 														Request requestIssue = new Request(jsonRequestIssue);
 
 														List<Issue> issue = requestIssue.GetResponses<RootObject>().sections[0].issues;
@@ -414,9 +423,11 @@ namespace RTMobile.issues.viewIssue
 									List<string> userDisplayName = new List<string>();
 									if (fieldIssue[i].autoCompleteUrl.Length > 0)
 									{
-										JSONRequest jsonRequestUser = new JSONRequest();
-										jsonRequestUser.urlRequest = $"/rest/api/2/user/picker?query=";
-										jsonRequestUser.methodRequest = "GET";
+										JSONRequest jsonRequestUser = new JSONRequest
+										{
+											urlRequest = $"/rest/api/2/user/picker?query=",
+											methodRequest = "GET"
+										};
 										Request requestUser = new Request(jsonRequestUser);
 
 										user = requestUser.GetResponses<RootObject>().users;
@@ -455,9 +466,11 @@ namespace RTMobile.issues.viewIssue
 										var keyword = searchBar.Text;
 										if (keyword.Length >= 1)
 										{
-											JSONRequest jsonRequestIssue = new JSONRequest();
-											jsonRequestIssue.urlRequest = $"/rest/api/2/user/picker?query=" + keyword.ToLower();
-											jsonRequestIssue.methodRequest = "GET";
+											JSONRequest jsonRequestIssue = new JSONRequest
+											{
+												urlRequest = $"/rest/api/2/user/picker?query=" + keyword.ToLower(),
+												methodRequest = "GET"
+											};
 											Request requestIssue = new Request(jsonRequestIssue);
 
 											user = requestIssue.GetResponses<RootObject>().users;
@@ -588,10 +601,12 @@ namespace RTMobile.issues.viewIssue
 										}
 									}
 									//Увеличиваем счетчик для получения доступа к элементу после label
-									List<User> user = new List<User>();
-									JSONRequest jsonRequestIssue = new JSONRequest();
-									jsonRequestIssue.urlRequest = $"/rest/api/latest/user/assignable/search?issueKey={numberIssue}&username=" + ((SearchBar)generalStackLayout.Children[i]).Text;
-									jsonRequestIssue.methodRequest = "GET";
+									List<User> user;
+									JSONRequest jsonRequestIssue = new JSONRequest
+									{
+										urlRequest = $"/rest/api/latest/user/assignable/search?issueKey={numberIssue}&username=" + ((SearchBar)generalStackLayout.Children[i]).Text,
+										methodRequest = "GET"
+									};
 									Request requestUser = new Request(jsonRequestIssue);
 
 									user = requestUser.GetResponses<List<User>>();
@@ -815,11 +830,13 @@ namespace RTMobile.issues.viewIssue
 										}
 									}
 									//Увеличиваем счетчик для получения доступа к элементу после label
-									List<User> user = new List<User>();
+									List<User> user;
 
-									JSONRequest jsonRequestUser = new JSONRequest();
-									jsonRequestUser.urlRequest = $"/rest/api/latest/user/assignable/search?issueKey={numberIssue}&username=" + ((SearchBar)generalStackLayout.Children[i]).Text;
-									jsonRequestUser.methodRequest = "GET";
+									JSONRequest jsonRequestUser = new JSONRequest
+									{
+										urlRequest = $"/rest/api/latest/user/assignable/search?issueKey={numberIssue}&username=" + ((SearchBar)generalStackLayout.Children[i]).Text,
+										methodRequest = "GET"
+									};
 									Request requestUser = new Request(jsonRequestUser);
 
 									user = requestUser.GetResponses<List<User>>();
@@ -860,9 +877,11 @@ namespace RTMobile.issues.viewIssue
 			if (checkTransition)
 			{
 				//Совершаем переход с полученными данными
-				JSONRequest jsonRequest = new JSONRequest();
-				jsonRequest.urlRequest = $"/rest/api/2/issue/{numberIssue}/transitions";
-				jsonRequest.methodRequest = "POST";
+				JSONRequest jsonRequest = new JSONRequest
+				{
+					urlRequest = $"/rest/api/2/issue/{numberIssue}/transitions",
+					methodRequest = "POST"
+				};
 				Request request = new Request(jsonRequest);
 
 				Errors errors = request.GetResponses<Errors>(jsonRequestTransitions);

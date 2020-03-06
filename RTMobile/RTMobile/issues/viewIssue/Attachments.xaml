@@ -21,7 +21,29 @@
         <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
                       BackgroundColor="#312F35">
             <StackLayout VerticalOptions="FillAndExpand">
-                 <Label Text="РАЗДЕЛ В РАЗРАБОТКЕ..." HorizontalOptions="CenterAndExpand"
+                <CarouselView ItemsSource="{Binding attachments}">
+                    <CarouselView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Red">
+                            <Label Text="123"/>
+                            </StackLayout>
+                        </DataTemplate>
+                    </CarouselView.ItemTemplate>
+                </CarouselView>
+                <!--<CarouselView>
+                    <CarouselView.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Baboon</x:String>
+                            <x:String>Capuchin Monkey</x:String>
+                            <x:String>Blue Monkey</x:String>
+                            <x:String>Squirrel Monkey</x:String>
+                            <x:String>Golden Lion Tamarin</x:String>
+                            <x:String>Howler Monkey</x:String>
+                            <x:String>Japanese Macaque</x:String>
+                        </x:Array>
+                    </CarouselView.ItemsSource>
+                </CarouselView>-->
+                <Label Text="РАЗДЕЛ В РАЗРАБОТКЕ..." HorizontalOptions="CenterAndExpand"
                        VerticalOptions="CenterAndExpand" TextColor="#F0F1F0" FontSize="20"/>
             </StackLayout>
             <Grid VerticalOptions="End">
@@ -30,7 +52,7 @@
                     <RowDefinition Height="20"/>
                     <RowDefinition Height="5"/>
                 </Grid.RowDefinitions>
-              <ImageButton Source="home.png" Grid.Column="0" Grid.Row="1"
+                <ImageButton Source="home.png" Grid.Column="0" Grid.Row="1"
                              BackgroundColor="Transparent" Clicked="ImageButton_Clicked_3"></ImageButton>
                 <ImageButton Source="calendar.png" Grid.Column="1" Grid.Row="1"
                              BackgroundColor="Transparent" Clicked="ImageButton_Clicked"></ImageButton>

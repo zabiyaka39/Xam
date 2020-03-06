@@ -84,11 +84,13 @@ namespace RTMobile.issues.viewIssue
 		{
 			try
 			{
-				JSONRequest jsonRequest = new JSONRequest();
-				jsonRequest.urlRequest = $"/rest/api/2/issue/{issueKey}/comment";
-				jsonRequest.methodRequest = "GET";
-				jsonRequest.maxResults = 50;
-				jsonRequest.startAt = 0;
+				JSONRequest jsonRequest = new JSONRequest
+				{
+					urlRequest = $"/rest/api/2/issue/{issueKey}/comment",
+					methodRequest = "GET",
+					maxResults = 50,
+					startAt = 0
+				};
 
 				RootObject rootObject = new RootObject();
 				Request request = new Request(jsonRequest);

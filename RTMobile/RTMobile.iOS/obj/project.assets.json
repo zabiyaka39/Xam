@@ -567,7 +567,7 @@
           "build/Xamarin.Forms.targets": {}
         }
       },
-      "RTMobile/1.0.0": {
+      "RTMobile/1.0.0.2": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
@@ -1123,7 +1123,7 @@
           "build/Xamarin.Forms.targets": {}
         }
       },
-      "RTMobile/1.0.0": {
+      "RTMobile/1.0.0.2": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
@@ -1679,7 +1679,7 @@
           "build/Xamarin.Forms.targets": {}
         }
       },
-      "RTMobile/1.0.0": {
+      "RTMobile/1.0.0.2": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
@@ -2235,7 +2235,7 @@
           "build/Xamarin.Forms.targets": {}
         }
       },
-      "RTMobile/1.0.0": {
+      "RTMobile/1.0.0.2": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
@@ -4090,7 +4090,7 @@
         "xamarin.forms.nuspec"
       ]
     },
-    "RTMobile/1.0.0": {
+    "RTMobile/1.0.0.2": {
       "type": "project",
       "path": "../RTMobile/RTMobile.csproj",
       "msbuildProject": "../RTMobile/RTMobile.csproj"
@@ -4098,7 +4098,7 @@
   },
   "projectFileDependencyGroups": {
     "Xamarin.iOS,Version=v1.0": [
-      "RTMobile >= 1.0.0",
+      "RTMobile >= 1.0.0.2",
       "Xamarin.Essentials >= 1.3.1",
       "Xamarin.Forms >= 4.3.0.991221"
     ]

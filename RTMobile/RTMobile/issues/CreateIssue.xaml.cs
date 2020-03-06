@@ -12,6 +12,12 @@ namespace RTMobile.issues
         public CreateIssue()
         {
             InitializeComponent();
+            JSONRequest jsonRequest = new JSONRequest();
+            jsonRequest.urlRequest = $"/rest/api/2/project";
+            jsonRequest.methodRequest = "GET";
+            Request request = new Request(jsonRequest);
+
+            projects = request.GetResponses<List<Project>>();
         }
         void ImageButton_Clicked(System.Object sender, System.EventArgs e)
         {

@@ -12,20 +12,25 @@ namespace RTMobile.issues.viewIssue
 {
 	public partial class Attachments : ContentPage
 	{
-		public Issue issue { get; set; }
+		Issue issue = new Issue();
+		List <Attachment> attachments { get; set; }
 		private List<RTMobile.Transition> transition { get; set; }//Переходы по заявке
-		public Attachments()
+		public Attachments(Issue issue)
 		{
 			InitializeComponent();
-			//transitionIssue();
+			TransitionIssue();
+			attachments = issue.fields.attachment;
+			this.issue = issue;
 		}
-		private void transitionIssue()
+			private void TransitionIssue()
 		{
 			try
 			{
-				JSONRequest jsonRequest = new JSONRequest();
-				jsonRequest.urlRequest = $"/rest/api/2/issue/{issue.key}/transitions/";
-				jsonRequest.methodRequest = "GET";
+				JSONRequest jsonRequest = new JSONRequest
+				{
+					urlRequest = $"/rest/api/2/issue/{issue.key}/transitions/",
+					methodRequest = "GET"
+				};
 				Request request = new Request(jsonRequest);
 
 				transition = request.GetResponses<RootObject>().transitions;
@@ -68,15 +73,15 @@ namespace RTMobile.issues.viewIssue
 		}
 		void ToolbarItem_Clicked(System.Object sender, System.EventArgs e)
 		{
-			Navigation.PushAsync(new History(issue.key, issue.fields.summary));
+			Navigation.PushAsync(new History(issue.key, issue.summary));
 		}
 		void ToolbarItem_Clicked_1(System.Object sender, System.EventArgs e)
 		{
-			Navigation.PushAsync(new WorkJournal(issue.key, issue.fields.summary));
+			Navigation.PushAsync(new WorkJournal(issue.key, issue.summary));
 		}
 		void ToolbarItem_Clicked_2(System.Object sender, System.EventArgs e)
 		{
-			Navigation.PushAsync(new Comment(issue.key, issue.fields.summary));
+			Navigation.PushAsync(new Comment(issue.key,issue.fields.summary));
 		}
 		void ToolbarItem_Clicked_3(System.Object sender, System.EventArgs e)
 		{
