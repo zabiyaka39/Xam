@@ -30,14 +30,17 @@ namespace RTMobile.issues.viewIssue
 
 			this.BindingContext = this;
 		}
-		
+
 		private async void historyIssue(string issueKey, bool firstRequest = true)
 		{
 			try
 			{
-				JSONRequest jsonRequest = new JSONRequest();
-				jsonRequest.urlRequest = $"/rest/api/2/issue/{issueKey}?expand=changelog";
-				jsonRequest.methodRequest = "GET";
+				JSONRequest jsonRequest = new JSONRequest()
+				{
+					
+					urlRequest = new Uri($"/rest/api/2/issue/{issueKey}?expand=changelog"),
+					methodRequest = "GET"
+				};
 				Request request = new Request(jsonRequest);
 
 				RootObject historyIssues = new RootObject();

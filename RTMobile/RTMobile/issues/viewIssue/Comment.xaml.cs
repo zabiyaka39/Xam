@@ -50,9 +50,11 @@ namespace RTMobile.issues.viewIssue
 		{
 			try
 			{
-				JSONRequest jsonRequest = new JSONRequest();
-				jsonRequest.urlRequest = $"/rest/api/2/issue/{issueKey}/transitions/";
-				jsonRequest.methodRequest = "GET";
+				JSONRequest jsonRequest = new JSONRequest()
+				{
+					urlRequest = new Uri($"/rest/api/2/issue/{issueKey}/transitions/"),
+					methodRequest = "GET"
+				};
 				Request request = new Request(jsonRequest);
 
 				transition = request.GetResponses<RootObject>().transitions;
@@ -80,13 +82,13 @@ namespace RTMobile.issues.viewIssue
 		/// <summary>
 		/// Выгрузка всех задач
 		/// </summary>
-		async void issueStartPostRequest(string issueKey, bool firstRequest = true)
+		void issueStartPostRequest(string issueKey, bool firstRequest = true)
 		{
 			try
 			{
 				JSONRequest jsonRequest = new JSONRequest
 				{
-					urlRequest = $"/rest/api/2/issue/{issueKey}/comment",
+					urlRequest = new Uri($"/rest/api/2/issue/{issueKey}/comment"),
 					methodRequest = "GET",
 					maxResults = 50,
 					startAt = 0
@@ -158,10 +160,12 @@ namespace RTMobile.issues.viewIssue
 		{
 			try
 			{
-				JSONRequest jsonRequest = new JSONRequest();
-				jsonRequest.urlRequest = $"/rest/api/2/issue/{issueKey}/comment";
-				jsonRequest.methodRequest = "POST";
-				jsonRequest.body = newComment.Text;
+				JSONRequest jsonRequest = new JSONRequest()
+				{
+					urlRequest = new Uri($"/rest/api/2/issue/{issueKey}/comment"),
+					methodRequest = "POST",
+					body = newComment.Text
+				};
 
 				RootObject rootObject = new RootObject();
 				Request request = new Request(jsonRequest);

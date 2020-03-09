@@ -1,25 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "F:\\project\\Mobile\\RTMobile\\RTMobile\\RTMobile.UWP\\RTMobile.UWP.csproj": {}
+    "D:\\Project\\Jira\\rtmobile\\RTMobile\\RTMobile.UWP\\RTMobile.UWP.csproj": {}
   },
   "projects": {
-    "F:\\project\\Mobile\\RTMobile\\RTMobile\\RTMobile.UWP\\RTMobile.UWP.csproj": {
+    "D:\\Project\\Jira\\rtmobile\\RTMobile\\RTMobile.UWP\\RTMobile.UWP.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\project\\Mobile\\RTMobile\\RTMobile\\RTMobile.UWP\\RTMobile.UWP.csproj",
+        "projectUniqueName": "D:\\Project\\Jira\\rtmobile\\RTMobile\\RTMobile.UWP\\RTMobile.UWP.csproj",
         "projectName": "RTMobile.UWP",
-        "projectPath": "F:\\project\\Mobile\\RTMobile\\RTMobile\\RTMobile.UWP\\RTMobile.UWP.csproj",
-        "packagesPath": "C:\\Users\\sekisov\\.nuget\\packages\\",
-        "outputPath": "F:\\project\\Mobile\\RTMobile\\RTMobile\\RTMobile.UWP\\obj\\",
+        "projectPath": "D:\\Project\\Jira\\rtmobile\\RTMobile\\RTMobile.UWP\\RTMobile.UWP.csproj",
+        "packagesPath": "C:\\Users\\wwwge\\.nuget\\packages\\",
+        "outputPath": "D:\\Project\\Jira\\rtmobile\\RTMobile\\RTMobile.UWP\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "D:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\sekisov\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\wwwge\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -33,8 +33,8 @@
         "frameworks": {
           "uap10.0.16299": {
             "projectReferences": {
-              "F:\\project\\Mobile\\RTMobile\\RTMobile\\RTMobile\\RTMobile.csproj": {
-                "projectPath": "F:\\project\\Mobile\\RTMobile\\RTMobile\\RTMobile\\RTMobile.csproj"
+              "D:\\Project\\Jira\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj": {
+                "projectPath": "D:\\Project\\Jira\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj"
               }
             }
           }
@@ -49,11 +49,11 @@
             },
             "Xamarin.Essentials": {
               "target": "Package",
-              "version": "[1.3.1, )"
+              "version": "[1.5.1, )"
             },
             "Xamarin.Forms": {
               "target": "Package",
-              "version": "[4.3.0.991221, )"
+              "version": "[4.5.0.356, )"
             }
           },
           "imports": [
@@ -87,21 +87,20 @@
         }
       }
     },
-    "F:\\project\\Mobile\\RTMobile\\RTMobile\\RTMobile\\RTMobile.csproj": {
+    "D:\\Project\\Jira\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj": {
       "version": "1.0.0.2",
       "restore": {
-        "projectUniqueName": "F:\\project\\Mobile\\RTMobile\\RTMobile\\RTMobile\\RTMobile.csproj",
+        "projectUniqueName": "D:\\Project\\Jira\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj",
         "projectName": "RTMobile",
-        "projectPath": "F:\\project\\Mobile\\RTMobile\\RTMobile\\RTMobile\\RTMobile.csproj",
-        "packagesPath": "C:\\Users\\sekisov\\.nuget\\packages\\",
-        "outputPath": "F:\\project\\Mobile\\RTMobile\\RTMobile\\RTMobile\\obj\\",
+        "projectPath": "D:\\Project\\Jira\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj",
+        "packagesPath": "C:\\Users\\wwwge\\.nuget\\packages\\",
+        "outputPath": "D:\\Project\\Jira\\rtmobile\\RTMobile\\RTMobile\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "D:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\sekisov\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\wwwge\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -184,7 +183,7 @@
             },
             "Xamarin.Essentials": {
               "target": "Package",
-              "version": "[1.5.0, )"
+              "version": "[1.5.1, )"
             },
             "Xamarin.Forms": {
               "target": "Package",

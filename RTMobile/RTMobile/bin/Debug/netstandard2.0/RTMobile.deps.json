@@ -22,7 +22,7 @@
           "System.Net.Http": "4.3.4",
           "System.Xml.XmlSerializer": "4.3.0",
           "Xam.Plugins.Settings": "3.1.1",
-          "Xamarin.Essentials": "1.5.0",
+          "Xamarin.Essentials": "1.5.1",
           "Xamarin.Forms": "4.5.0.356",
           "Windows.Foundation.UniversalApiContract": "7.0.0.0"
         },
@@ -1090,7 +1090,7 @@
           }
         }
       },
-      "Xamarin.Essentials/1.5.0": {
+      "Xamarin.Essentials/1.5.1": {
         "dependencies": {
           "System.Numerics.Vectors": "4.5.0"
         },
@@ -1819,12 +1819,12 @@
       "path": "xam.plugins.settings/3.1.1",
       "hashPath": "xam.plugins.settings.3.1.1.nupkg.sha512"
     },
-    "Xamarin.Essentials/1.5.0": {
+    "Xamarin.Essentials/1.5.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-smsjVQ05+EUpynNmzDVOKu4hE17c5WZU79cgWxAkZtJPXqJdNUoqFpj34n4s32QsPdLSgRE/B48+64q1ycqD+Q==",
-      "path": "xamarin.essentials/1.5.0",
-      "hashPath": "xamarin.essentials.1.5.0.nupkg.sha512"
+      "sha512": "sha512-XEKAp7BXfZkTGbMqySXtuhwxb06ULjkJNQ8p44e8amOPm4m4VTVV92F13ov0a8NFNU+6JFm98510QK9Q/HBD5A==",
+      "path": "xamarin.essentials/1.5.1",
+      "hashPath": "xamarin.essentials.1.5.1.nupkg.sha512"
     },
     "Xamarin.Forms/4.5.0.356": {
       "type": "package",

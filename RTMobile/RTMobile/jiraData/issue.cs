@@ -23,7 +23,7 @@ namespace RTMobile
 		public string body { get; set; }
 		public string orderBy { get; set; }
 		[JsonIgnore]
-		public string urlRequest { get; set; }
+		public Uri urlRequest { get; set; }
 		[JsonIgnore]
 		public string methodRequest { get; set; }
 	}
@@ -55,10 +55,7 @@ namespace RTMobile
 		public string created
 		{
 			get { return _created; }
-			set
-			{
-				_created = (Convert.ToDateTime(value)).ToString("dd.MM.yyyy H:mm");
-			}
+			set => _created = Convert.ToDateTime(value).ToString("dd.MM.yyyy H:mm");
 		}
 		public List<Item> items { get; set; }
 		public HistoryMetadata historyMetadata { get; set; }
@@ -137,6 +134,7 @@ namespace RTMobile
 				string credentials = Convert.ToBase64String(Encoding.ASCII.GetBytes(CrossSettings.Current.GetValueOrDefault("login", string.Empty) + ":" + CrossSettings.Current.GetValueOrDefault("password", string.Empty)));
 				webClient.Headers[HttpRequestHeader.Authorization] = "Basic " + credentials;
 				var byteArray = webClient.DownloadData(uri);
+				webClient.Dispose();
 				image.Source = ImageSource.FromStream(() => new MemoryStream(byteArray));
 				return image.Source;
 			}
@@ -558,7 +556,8 @@ namespace RTMobile
 				string credentials = Convert.ToBase64String(Encoding.ASCII.GetBytes(CrossSettings.Current.GetValueOrDefault("login", string.Empty) + ":" + CrossSettings.Current.GetValueOrDefault("password", string.Empty)));
 				webClient.Headers[HttpRequestHeader.Authorization] = "Basic " + credentials;
 				var byteArray = webClient.DownloadData(uri);
-				image.Source = ImageSource.FromStream(() => new MemoryStream(byteArray));
+				webClient.Dispose();
+				image.Source = ImageSource.FromStream(() => new MemoryStream(byteArray));				
 				return image.Source;
 			}
 			set
@@ -688,16 +687,13 @@ namespace RTMobile
 		public string resolutiondate
 		{
 			get { return _updated; }
-			set
-			{
-				_updated = (Convert.ToDateTime(value)).ToString("dd.MM.yyyy H:mm");
-			}
+			set => _updated = Convert.ToDateTime(value).ToString("dd.MM.yyyy H:mm");
 		}
 		private string _resolutiondate { get; set; }
 		public string Resolutiondate
 		{
 			get { return _resolutiondate; }
-			set => _resolutiondate = (Convert.ToDateTime(value)).ToString("dd.MM.yyyy H:mm");
+			set => _resolutiondate = Convert.ToDateTime(value).ToString("dd.MM.yyyy H:mm");
 		}
 		private string _updated;
 		public string name { get; set; }

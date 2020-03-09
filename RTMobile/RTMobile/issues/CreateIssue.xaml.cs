@@ -7,38 +7,41 @@ using Xamarin.Forms;
 
 namespace RTMobile.issues
 {
-    public partial class CreateIssue : ContentPage
-    {
-        List<Project> projects { get; set; }
-        public CreateIssue()
-        {
-            
-            InitializeComponent();
-            JSONRequest jsonRequest = new JSONRequest();
-            jsonRequest.urlRequest = $"/rest/api/2/project";
-            jsonRequest.methodRequest = "GET";
-            Request request = new Request(jsonRequest);
+	public partial class CreateIssue : ContentPage
+	{
+		List<Project> projects { get; set; }
+		public CreateIssue()
+		{
 
-            projects = request.GetResponses<List<Project>>();
-        }
-        void ImageButton_Clicked(System.Object sender, System.EventArgs e)
-        {
-            Navigation.PushAsync(new Calendar());
-        }
+			InitializeComponent();
+			JSONRequest jsonRequest = new JSONRequest()
+			{
+				urlRequest = new Uri($"/rest/api/2/project"),
+				methodRequest = "GET"
+			};
 
-        void ImageButton_Clicked_1(System.Object sender, System.EventArgs e)
-        {
-            Navigation.PushAsync(new Insight());
-        }
+			Request request = new Request(jsonRequest);
 
-        void ImageButton_Clicked_2(System.Object sender, System.EventArgs e)
-        {
-            Navigation.PushAsync(new Filter());
-        }
+			projects = request.GetResponses<List<Project>>();
+		}
+		void ImageButton_Clicked(System.Object sender, System.EventArgs e)
+		{
+			Navigation.PushAsync(new Calendar());
+		}
 
-        void ImageButton_Clicked_3(System.Object sender, System.EventArgs e)
-        {
-            Navigation.PopToRootAsync();
-        }
-    }
+		void ImageButton_Clicked_1(System.Object sender, System.EventArgs e)
+		{
+			Navigation.PushAsync(new Insight());
+		}
+
+		void ImageButton_Clicked_2(System.Object sender, System.EventArgs e)
+		{
+			Navigation.PushAsync(new Filter());
+		}
+
+		void ImageButton_Clicked_3(System.Object sender, System.EventArgs e)
+		{
+			Navigation.PopToRootAsync();
+		}
+	}
 }

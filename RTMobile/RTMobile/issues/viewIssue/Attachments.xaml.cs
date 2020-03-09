@@ -82,7 +82,7 @@ namespace RTMobile.issues.viewIssue
 			{
 				JSONRequest jsonRequest = new JSONRequest
 				{
-					urlRequest = $"/rest/api/2/issue/{issue.key}/transitions/",
+					urlRequest = new Uri($"/rest/api/2/issue/{issue.key}/transitions/"),
 					methodRequest = "GET"
 				};
 				Request request = new Request(jsonRequest);

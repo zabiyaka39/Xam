@@ -36,9 +36,11 @@ namespace RTMobile.issues.viewIssue
 		{
 			try
 			{
-				JSONRequest jsonRequest = new JSONRequest();
-				jsonRequest.urlRequest = $"/rest/api/2/issue/{issueKey}/transitions/";
-				jsonRequest.methodRequest = "GET";
+				JSONRequest jsonRequest = new JSONRequest()
+				{
+					urlRequest = new Uri($"/rest/api/2/issue/{issueKey}/transitions/"),
+					methodRequest = "GET"
+				};
 				Request request = new Request(jsonRequest);
 
 				transition = request.GetResponses<RootObject>().transitions;

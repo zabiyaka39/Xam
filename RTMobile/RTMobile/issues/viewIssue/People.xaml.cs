@@ -27,9 +27,11 @@ namespace RTMobile.issues.viewIssue
 		{
 			try
 			{
-				JSONRequest jsonRequest = new JSONRequest();
-				jsonRequest.urlRequest = $"/rest/api/2/issue/{issue.key}/watchers/";
-				jsonRequest.methodRequest = "GET";
+				JSONRequest jsonRequest = new JSONRequest()
+				{
+					urlRequest = new Uri($"/rest/api/2/issue/{issue.key}/watchers/"),
+					methodRequest = "GET"
+				};
 				Request request = new Request(jsonRequest);
 
 				watchers = request.GetResponses<Watches>().watchers;
@@ -39,7 +41,7 @@ namespace RTMobile.issues.viewIssue
 				Crashes.TrackError(ex);
 				Console.WriteLine(ex.ToString());
 			}
-		}		
+		}
 		void ImageButton_Clicked(System.Object sender, System.EventArgs e)
 		{
 			Navigation.PushAsync(new Calendar());

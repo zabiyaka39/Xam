@@ -20,7 +20,7 @@ namespace RTMobile.issues
 			try
 			{
 				JSONRequest jsonRequest = new JSONRequest();
-				jsonRequest.urlRequest = $"/rest/api/2/user?username={CrossSettings.Current.GetValueOrDefault("login", string.Empty)}&expand=groups,applicationRoles";
+				jsonRequest.urlRequest = new Uri($"/rest/api/2/user?username={CrossSettings.Current.GetValueOrDefault("login", string.Empty)}&expand=groups,applicationRoles");
 				jsonRequest.methodRequest = "GET";
 				Request request = new Request(jsonRequest);
 
@@ -78,7 +78,7 @@ namespace RTMobile.issues
 			IsPresented = false;
 		}
 
-		private async void Button_Clicked_6(object sender, System.EventArgs e)
+		private void Button_Clicked_6(object sender, System.EventArgs e)
 		{
 			Application.Current.MainPage = new MainPage();
 		}
