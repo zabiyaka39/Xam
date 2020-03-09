@@ -14,7 +14,7 @@ namespace RTMobile.issues.viewIssue
 	public partial class imageView : CarouselPage
 	{
 		ObservableCollection<Attachment> attachmentsImage = new ObservableCollection<Attachment>();
-		public imageView(ObservableCollection<Attachment> attachmentsImage)
+		public imageView(ObservableCollection<Attachment> attachmentsImage, int checkImage = 0)
 		{
 			this.attachmentsImage = attachmentsImage;
 

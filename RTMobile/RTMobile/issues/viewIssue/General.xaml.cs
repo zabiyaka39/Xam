@@ -12,7 +12,7 @@ namespace RTMobile.issues.viewIssue
 	public partial class General : ContentPage
 	{
 		public List<Fields> fieldIssue { get; set; }//поля заявки
-		public List<RTMobile.Transition> transition;//Переходы по заявке
+		public List<RTMobile.Transition> transition { get; set; }//Переходы по заявке
 		public Issue issue { get; set; }
 		public General()
 		{

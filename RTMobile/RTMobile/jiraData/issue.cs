@@ -131,8 +131,8 @@ namespace RTMobile
 				}
 
 				WebClient webClient = new WebClient();
-				string credentials = Convert.ToBase64String(Encoding.ASCII.GetBytes(CrossSettings.Current.GetValueOrDefault("login", string.Empty) + ":" + CrossSettings.Current.GetValueOrDefault("password", string.Empty)));
-				webClient.Headers[HttpRequestHeader.Authorization] = "Basic " + credentials;
+				string authorize = Convert.ToBase64String(Encoding.ASCII.GetBytes(CrossSettings.Current.GetValueOrDefault("login", string.Empty) + ":" + CrossSettings.Current.GetValueOrDefault("password", string.Empty)));
+				webClient.Headers[HttpRequestHeader.Authorization] = "Basic " + authorize;
 				var byteArray = webClient.DownloadData(uri);
 				webClient.Dispose();
 				image.Source = ImageSource.FromStream(() => new MemoryStream(byteArray));
@@ -205,8 +205,8 @@ namespace RTMobile
 					}
 				}
 				WebClient webClient = new WebClient();
-				string credentials = Convert.ToBase64String(Encoding.ASCII.GetBytes(CrossSettings.Current.GetValueOrDefault("login", string.Empty) + ":" + CrossSettings.Current.GetValueOrDefault("password", string.Empty)));
-				webClient.Headers[HttpRequestHeader.Authorization] = "Basic " + credentials;
+				string authorize = Convert.ToBase64String(Encoding.ASCII.GetBytes(CrossSettings.Current.GetValueOrDefault("login", string.Empty) + ":" + CrossSettings.Current.GetValueOrDefault("password", string.Empty)));
+				webClient.Headers[HttpRequestHeader.Authorization] = "Basic " + authorize;
 				var byteArray = webClient.DownloadData(uri);
 				img.Source = ImageSource.FromStream(() => new MemoryStream(byteArray));
 				return img.Source;
@@ -289,8 +289,8 @@ namespace RTMobile
 				}
 
 				WebClient webClient = new WebClient();
-				string credentials = Convert.ToBase64String(Encoding.ASCII.GetBytes(CrossSettings.Current.GetValueOrDefault("login", string.Empty) + ":" + CrossSettings.Current.GetValueOrDefault("password", string.Empty)));
-				webClient.Headers[HttpRequestHeader.Authorization] = "Basic " + credentials;
+				string authorize = Convert.ToBase64String(Encoding.ASCII.GetBytes(CrossSettings.Current.GetValueOrDefault("login", string.Empty) + ":" + CrossSettings.Current.GetValueOrDefault("password", string.Empty)));
+				webClient.Headers[HttpRequestHeader.Authorization] = "Basic " + authorize;
 				var byteArray = webClient.DownloadData(uri);
 				image.Source = ImageSource.FromStream(() => new MemoryStream(byteArray));
 				return image.Source;
@@ -509,6 +509,39 @@ namespace RTMobile
 				}
 			}
 		}
+		public ImageSource contentImage
+		{
+			get
+			{
+				if (mimeType == "image")
+				{
+					Image image = new Image();
+					Uri uri = new Uri(CrossSettings.Current.GetValueOrDefault("urlServer", string.Empty));
+					//выбираем изображение с максимальным разрешением, при его наличии
+					if (content != null)
+					{
+						uri = new Uri(content);
+					}
+					else
+						return null;
+					WebClient webClient = new WebClient();
+					string authorize = Convert.ToBase64String(Encoding.ASCII.GetBytes(CrossSettings.Current.GetValueOrDefault("login", string.Empty) + ":" + CrossSettings.Current.GetValueOrDefault("password", string.Empty)));
+					webClient.Headers[HttpRequestHeader.Authorization] = "Basic " + authorize;
+					var byteArray = webClient.DownloadData(uri);
+					webClient.Dispose();
+					image.Source = ImageSource.FromStream(() => new MemoryStream(byteArray));
+					return image.Source;
+				}
+				else
+				{
+					return null;
+				}
+			}
+			set
+			{
+				contentImage = value;
+			}
+		}
 		public string content { get; set; }
 		public ImageSource thumbnailImage
 		{
@@ -523,8 +556,8 @@ namespace RTMobile
 				}
 
 				WebClient webClient = new WebClient();
-				string credentials = Convert.ToBase64String(Encoding.ASCII.GetBytes(CrossSettings.Current.GetValueOrDefault("login", string.Empty) + ":" + CrossSettings.Current.GetValueOrDefault("password", string.Empty)));
-				webClient.Headers[HttpRequestHeader.Authorization] = "Basic " + credentials;
+				string authorize = Convert.ToBase64String(Encoding.ASCII.GetBytes(CrossSettings.Current.GetValueOrDefault("login", string.Empty) + ":" + CrossSettings.Current.GetValueOrDefault("password", string.Empty)));
+				webClient.Headers[HttpRequestHeader.Authorization] = "Basic " + authorize;
 				var byteArray = webClient.DownloadData(uri);
 				image.Source = ImageSource.FromStream(() => new MemoryStream(byteArray));
 				return image.Source;
@@ -553,11 +586,11 @@ namespace RTMobile
 				}
 
 				WebClient webClient = new WebClient();
-				string credentials = Convert.ToBase64String(Encoding.ASCII.GetBytes(CrossSettings.Current.GetValueOrDefault("login", string.Empty) + ":" + CrossSettings.Current.GetValueOrDefault("password", string.Empty)));
-				webClient.Headers[HttpRequestHeader.Authorization] = "Basic " + credentials;
+				string authorize = Convert.ToBase64String(Encoding.ASCII.GetBytes(CrossSettings.Current.GetValueOrDefault("login", string.Empty) + ":" + CrossSettings.Current.GetValueOrDefault("password", string.Empty)));
+				webClient.Headers[HttpRequestHeader.Authorization] = "Basic " + authorize;
 				var byteArray = webClient.DownloadData(uri);
 				webClient.Dispose();
-				image.Source = ImageSource.FromStream(() => new MemoryStream(byteArray));				
+				image.Source = ImageSource.FromStream(() => new MemoryStream(byteArray));
 				return image.Source;
 			}
 			set
