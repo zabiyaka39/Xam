@@ -31,7 +31,7 @@ namespace RTMobile.issues.viewIssue
 			this.BindingContext = this;
 		}
 
-		private async void historyIssue(string issueKey, bool firstRequest = true)
+		private void historyIssue(string issueKey, bool firstRequest = true)
 		{
 			try
 			{

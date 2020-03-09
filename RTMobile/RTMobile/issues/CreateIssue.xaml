@@ -6,6 +6,12 @@
     <ContentPage.Content>
        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
                       BackgroundColor="#312F35">
+            <FlexLayout>
+                <Label Text="Проект:"/>
+                <Picker ItemsSource="{Binding project.name}">
+                    
+                </Picker>
+            </FlexLayout>
             <Label Text="РАЗДЕЛ В РАЗРАБОТКЕ..." HorizontalOptions="CenterAndExpand"
                        VerticalOptions="CenterAndExpand" TextColor="#F0F1F0" FontSize="20"/>
             <Grid VerticalOptions="End">

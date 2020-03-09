@@ -569,7 +569,7 @@ namespace RTMobile.issues.viewIssue
 		{
 			Navigation.PopToRootAsync();
 		}
-		private async void Button_Clicked(object sender, EventArgs e)
+		private void Button_Clicked(object sender, EventArgs e)
 		{
 			string fields = "";
 			string commentField = "";

@@ -23,7 +23,7 @@ namespace RTMobile.issues.viewIssue
 
 			this.BindingContext = this;
 		}
-		private async void warchersIssue()
+		private void warchersIssue()
 		{
 			try
 			{
