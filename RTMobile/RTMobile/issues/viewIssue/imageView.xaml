@@ -9,6 +9,7 @@
         <ContentPage.Content>
             <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Black">
                 <Image Source="{Binding thumbnailImage}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+                
             </Grid>
         </ContentPage.Content>
     </ContentPage>
