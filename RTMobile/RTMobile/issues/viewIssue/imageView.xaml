@@ -4,7 +4,8 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="RTMobile.issues.viewIssue.imageView" Title="{Binding Path = attachmentsImage.filename}">
+             x:Class="RTMobile.issues.viewIssue.imageView" 
+             Title="Изображения">
     <ContentPage.Content> 
         <CarouselView x:Name="page" >
             <CarouselView.ItemTemplate>

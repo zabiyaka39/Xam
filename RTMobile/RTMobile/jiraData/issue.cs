@@ -148,6 +148,7 @@ namespace RTMobile
 		public string description { get; set; }
 		public Uri iconUrl { get; set; }
 		public string name { get; set; }
+		public string expand { get; set; }
 		public bool subtask { get; set; }
 		public long avatarId { get; set; }
 	}

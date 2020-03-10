@@ -36,14 +36,13 @@
                         <BoxView HorizontalOptions="FillAndExpand" VerticalOptions="Center"
                                                      CornerRadius="50" Margin="-5,0,0,10" BackgroundColor="#4A4C50"
                                                      HeightRequest="1"/>
-                        <CarouselView x:Name="carouselImages" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" PeekAreaInsets="100" HorizontalScrollBarVisibility="Always" >
+                        <CarouselView x:Name="carouselImages" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" PeekAreaInsets="100" 
+                                      HorizontalScrollBarVisibility="Always">
                             <CarouselView.ItemTemplate>
                                 <DataTemplate>
                                     <StackLayout>
                                         <StackLayout.GestureRecognizers>
                                             <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
-
-
                                         </StackLayout.GestureRecognizers>
                                         <VisualStateManager.VisualStateGroups>
                                             <VisualStateGroup x:Name="CommonStates">

@@ -22,6 +22,7 @@ namespace RTMobile.issues.viewIssue
 			InitializeComponent();
 
 			page.ItemsSource = this.attachmentsImage;
+			page.Position = checkImage;
 			//page.PositionSelected += Carousel_PositionSelected;
 			//page.ItemSelected += Carousel_ItemSelected;
 		}

@@ -8,12 +8,12 @@
                       BackgroundColor="#312F35">
             <FlexLayout>
                 <Label Text="Проект:"/>
-                <Picker ItemsSource="{Binding project.name}">
-                    
-                </Picker>
+                <Picker ItemsSource="{Binding project.name}" SelectedIndexChanged="Picker_SelectedIndexChanged"/>
+                <Label x:Name="lblTypeIssue" Text="Тип задач" IsVisible="False"/>
+                <Picker x:Name="typeIssuePic" IsVisible="False"/>
+
             </FlexLayout>
-            <Label Text="РАЗДЕЛ В РАЗРАБОТКЕ..." HorizontalOptions="CenterAndExpand"
-                       VerticalOptions="CenterAndExpand" TextColor="#F0F1F0" FontSize="20"/>
+            
             <Grid VerticalOptions="End">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="5"/>

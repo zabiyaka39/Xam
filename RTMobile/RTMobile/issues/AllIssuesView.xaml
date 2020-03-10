@@ -57,7 +57,7 @@
                                     </Frame>
                                     <Frame BackgroundColor="#FFFFFF" HasShadow="True"
                                            Grid.Column="1" Grid.Row="0" CornerRadius="5">
-                                        <Grid HorizontalOptions="FillAndExpand" >
+                                        <Grid HorizontalOptions="FillAndExpand">
                                             <Label Text="{Binding Path=fields.summary}" TextColor="#000000"
                                                    FontSize="14" FontAttributes ="Bold" MaxLines="1" LineBreakMode="TailTruncation"
                                                    Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Margin="0,-5,0,0"
@@ -65,8 +65,8 @@
 
                                             <Label Text="{Binding Path=fields.description}" TextColor="#000000"
                                                    FontSize="12" Grid.Row="1"  MaxLines="2" LineBreakMode="TailTruncation"
-                                                   Grid.Column="0" Grid.ColumnSpan="4" Margin="0,-10,0,0"
-                                                   HorizontalOptions="FillAndExpand" Padding="0,0,0,-5"/>
+                                                   Grid.Column="0" Grid.ColumnSpan="4" Margin="0,-10,0,-10"
+                                                   HorizontalOptions="FillAndExpand" Padding="0,0,0,0"/>
                                             <Grid Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="4" HorizontalOptions="FillAndExpand"  HeightRequest="30" >
                                                 <Grid.ColumnDefinitions>
                                                     <ColumnDefinition Width="*"/>
