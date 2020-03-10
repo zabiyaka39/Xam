@@ -16,7 +16,7 @@ namespace RTMobile.issues
 			InitializeComponent();
 			JSONRequest jsonRequest = new JSONRequest()
 			{
-				urlRequest = new Uri($"/rest/api/2/project"),
+				urlRequest = $"/rest/api/2/project",
 				methodRequest = "GET"
 			};
 

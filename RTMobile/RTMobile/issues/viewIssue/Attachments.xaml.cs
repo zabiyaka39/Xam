@@ -14,9 +14,9 @@ namespace RTMobile.issues.viewIssue
 	public partial class Attachments : ContentPage
 	{
 		Issue issue = new Issue();
-		ObservableCollection<Attachment> attachmentsImage  = new ObservableCollection<Attachment>();
-		ObservableCollection<Attachment> attachmentsDocument = new ObservableCollection<Attachment>();
-		ObservableCollection<Attachment> attachmentsOther = new ObservableCollection<Attachment>();
+		public ObservableCollection<Attachment> attachmentsImage = new ObservableCollection<Attachment>();
+		public ObservableCollection<Attachment> attachmentsDocument = new ObservableCollection<Attachment>();
+		public ObservableCollection<Attachment> attachmentsOther = new ObservableCollection<Attachment>();
 		private List<RTMobile.Transition> transition { get; set; }//Переходы по заявке
 		public Attachments(Issue issue)
 		{
@@ -82,7 +82,7 @@ namespace RTMobile.issues.viewIssue
 			{
 				JSONRequest jsonRequest = new JSONRequest
 				{
-					urlRequest = new Uri($"/rest/api/2/issue/{issue.key}/transitions/"),
+					urlRequest = $"/rest/api/2/issue/{issue.key}/transitions/",
 					methodRequest = "GET"
 				};
 				Request request = new Request(jsonRequest);
@@ -140,6 +140,11 @@ namespace RTMobile.issues.viewIssue
 		void ToolbarItem_Clicked_3(System.Object sender, System.EventArgs e)
 		{
 			Navigation.PushAsync(new Comment(issue.key, issue.fields.summary));
+		}
+
+		private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+		{
+			Navigation.PushAsync(new imageView(attachmentsImage));
 		}
 	}
 }

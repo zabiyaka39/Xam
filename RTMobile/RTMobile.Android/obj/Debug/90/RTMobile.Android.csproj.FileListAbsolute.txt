@@ -1943,7 +1943,6 @@ F:\project\Mobile\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\src\mo
 F:\project\Mobile\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\src\crc64350623dcb797cc38\AndroidHttpClientAdapter.java
 F:\project\Mobile\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\src\crc64350623dcb797cc38\ServiceCall.java
 F:\project\Mobile\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\src\crc64a4555f9f70c213ae\Crashes_AndroidCrashListener.java
-F:\project\Mobile\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\stamp\SetupDependenciesForDesigner.stamp
 F:\project\Mobile\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\res\drawable\image.png
 F:\project\Mobile\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\res\drawable\files.png
 F:\project\Mobile\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\res\drawable\folder.png

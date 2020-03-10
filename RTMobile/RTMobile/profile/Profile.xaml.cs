@@ -48,7 +48,7 @@ namespace RTMobile.profile
 			{
 				JSONRequest jsonRequest = new JSONRequest()
 				{
-					urlRequest = new Uri($"/rest/api/2/user?username={user}&expand=groups,applicationRoles"),
+					urlRequest = $"/rest/api/2/user?username={user}&expand=groups,applicationRoles",
 					methodRequest = "GET"
 				};
 				Request request = new Request(jsonRequest);
@@ -70,7 +70,7 @@ namespace RTMobile.profile
 			{
 				JSONRequest jsonRequest = new JSONRequest()
 				{
-					urlRequest = new Uri($"/rest/api/2/user?username={CrossSettings.Current.GetValueOrDefault("login", string.Empty)}&expand=groups,applicationRoles"),
+					urlRequest = $"/rest/api/2/user?username={CrossSettings.Current.GetValueOrDefault("login", string.Empty)}&expand=groups,applicationRoles",
 					methodRequest = "GET"
 				};
 				Request request = new Request(jsonRequest);

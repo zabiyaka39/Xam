@@ -80,7 +80,7 @@ namespace RTMobile.issues
 			{
 				JSONRequest jsonRequest = new JSONRequest()
 				{
-					urlRequest = new Uri("/rest/api/2/search"),
+					urlRequest = "/rest/api/2/search",
 					methodRequest = "POST",
 					jql = filterIssue,
 					maxResults = 50,
@@ -132,7 +132,7 @@ namespace RTMobile.issues
 				JSONRequest jsonRequest = new JSONRequest()
 				{
 
-					urlRequest = new Uri("/rest/api/2/search?"),
+					urlRequest = "/rest/api/2/search?",
 					methodRequest = "POST",
 					jql = filterIssue + " ORDER BY " + sortField + " " + typeSort,
 					maxResults = 50,

@@ -62,7 +62,6 @@ F:\project\RTMobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\dataIssue\screen.
 F:\project\Mobile\RTMobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\about\About.xaml.g.cs
 F:\project\Mobile\RTMobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\App.xaml.g.cs
 F:\project\Mobile\RTMobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\calendar\Calendar.xaml.g.cs
-F:\project\Mobile\RTMobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\dataIssue\photoView.xaml.g.cs
 F:\project\Mobile\RTMobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\filter\Filter.xaml.g.cs
 F:\project\Mobile\RTMobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\insight\Insight.xaml.g.cs
 F:\project\Mobile\RTMobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\issues\AllIssues.xaml.g.cs
@@ -125,3 +124,4 @@ D:\Project\Jira\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\XamlC.stamp
 D:\Project\Jira\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\RTMobile.csproj.CopyComplete
 D:\Project\Jira\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\RTMobile.dll
 D:\Project\Jira\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\RTMobile.pdb
+F:\project\Mobile\RTMobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\issues\viewIssue\imageView.xaml.g.cs

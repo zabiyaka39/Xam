@@ -40,6 +40,11 @@
                             <CarouselView.ItemTemplate>
                                 <DataTemplate>
                                     <StackLayout>
+                                        <StackLayout.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+
+
+                                        </StackLayout.GestureRecognizers>
                                         <VisualStateManager.VisualStateGroups>
                                             <VisualStateGroup x:Name="CommonStates">
                                                 <VisualState x:Name="CurrentItem">

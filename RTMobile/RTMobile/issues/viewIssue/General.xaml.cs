@@ -31,7 +31,7 @@ namespace RTMobile.issues.viewIssue
 					//Делаем запрпос на получение расширенных данных по задаче				
 					JSONRequest jsonRequest = new JSONRequest()
 					{
-						urlRequest = new Uri($"/rest/api/2/issue/{issue.key}?expand=names,schema"),
+						urlRequest = $"/rest/api/2/issue/{issue.key}?expand=names,schema",
 						methodRequest = "GET"
 					};
 					Request request = new Request(jsonRequest);

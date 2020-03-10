@@ -55,9 +55,7 @@ namespace RTMobile
 				this.httpWebRequest.Method = "POST";
 				this.json = JsonConvert.SerializeObject(authorization);
 
-				RootObject rootObject;
-
-				rootObject = this.GetResponses<RootObject>();
+				RootObject rootObject = this.GetResponses<RootObject>();
 				if (rootObject.session != null && rootObject.session.name != null)
 				{
 					return true;

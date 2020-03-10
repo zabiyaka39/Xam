@@ -11,15 +11,19 @@ using Xamarin.Forms.Xaml;
 namespace RTMobile.issues.viewIssue
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class imageView : CarouselPage
+	public partial class imageView : ContentPage
 	{
-		ObservableCollection<Attachment> attachmentsImage = new ObservableCollection<Attachment>();
+		public ObservableCollection<Attachment> attachmentsImage { get; set; }
+
+
 		public imageView(ObservableCollection<Attachment> attachmentsImage, int checkImage = 0)
 		{
-			this.attachmentsImage = attachmentsImage;
-
+			this.attachmentsImage = new ObservableCollection<Attachment>(attachmentsImage);
 			InitializeComponent();
-			this.BindingContext = this;
+
+			page.ItemsSource = this.attachmentsImage;
+			//page.PositionSelected += Carousel_PositionSelected;
+			//page.ItemSelected += Carousel_ItemSelected;
 		}
 	}
 }

@@ -23,7 +23,7 @@ namespace RTMobile
 		public string body { get; set; }
 		public string orderBy { get; set; }
 		[JsonIgnore]
-		public Uri urlRequest { get; set; }
+		public string urlRequest { get; set; }
 		[JsonIgnore]
 		public string methodRequest { get; set; }
 	}

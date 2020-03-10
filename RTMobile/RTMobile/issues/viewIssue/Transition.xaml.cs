@@ -25,7 +25,7 @@ namespace RTMobile.issues.viewIssue
 
 			JSONRequest jsonRequest = new JSONRequest
 			{
-				urlRequest = new Uri($"/rest/api/2/issue/{numberIssue}/transitions?expand=transitions.fields&transitionId=" + transitionId),
+				urlRequest = $"/rest/api/2/issue/{numberIssue}/transitions?expand=transitions.fields&transitionId=" + transitionId,
 				methodRequest = "GET"
 			};
 			Request request = new Request(jsonRequest);
@@ -66,7 +66,7 @@ namespace RTMobile.issues.viewIssue
 									{
 										JSONRequest jsonRequestUser = new JSONRequest
 										{
-											urlRequest = new Uri($"/rest/api/latest/user/assignable/search?issueKey={numberIssue}&username="),
+											urlRequest = $"/rest/api/latest/user/assignable/search?issueKey={numberIssue}&username=",
 											methodRequest = "GET"
 										};
 										Request requestUser = new Request(jsonRequestUser);
@@ -211,7 +211,7 @@ namespace RTMobile.issues.viewIssue
 
 												JSONRequest jsonRequestLink = new JSONRequest
 												{
-													urlRequest = new Uri($"/rest/api/2/issueLinkType"),
+													urlRequest = $"/rest/api/2/issueLinkType",
 													methodRequest = "GET"
 												};
 												Request requestIssuelinks = new Request(jsonRequestLink);
@@ -234,7 +234,7 @@ namespace RTMobile.issues.viewIssue
 
 													JSONRequest jsonRequestIssue = new JSONRequest
 													{
-														urlRequest = new Uri(fieldIssue[i].autoCompleteUrl),
+														urlRequest = fieldIssue[i].autoCompleteUrl,
 														methodRequest = "GET"
 													};
 													Request requestIssue = new Request(jsonRequestIssue);
@@ -278,7 +278,7 @@ namespace RTMobile.issues.viewIssue
 
 														JSONRequest jsonRequestIssue = new JSONRequest
 														{
-															urlRequest = new Uri($"/rest/api/2/issue/picker?currentProjectId=&showSubTaskParent=true&showSubTasks=true&currentIssueKey={numberIssue}&query=" + keyword.ToLower()),
+															urlRequest = $"/rest/api/2/issue/picker?currentProjectId=&showSubTaskParent=true&showSubTasks=true&currentIssueKey={numberIssue}&query=" + keyword.ToLower(),
 															methodRequest = "GET"
 														};
 														Request requestIssue = new Request(jsonRequestIssue);
@@ -425,7 +425,7 @@ namespace RTMobile.issues.viewIssue
 									{
 										JSONRequest jsonRequestUser = new JSONRequest
 										{
-											urlRequest = new Uri($"/rest/api/2/user/picker?query="),
+											urlRequest = $"/rest/api/2/user/picker?query=",
 											methodRequest = "GET"
 										};
 										Request requestUser = new Request(jsonRequestUser);
@@ -468,7 +468,7 @@ namespace RTMobile.issues.viewIssue
 										{
 											JSONRequest jsonRequestIssue = new JSONRequest
 											{
-												urlRequest = new Uri($"/rest/api/2/user/picker?query=" + keyword.ToLower()),
+												urlRequest = $"/rest/api/2/user/picker?query=" + keyword.ToLower(),
 												methodRequest = "GET"
 											};
 											Request requestIssue = new Request(jsonRequestIssue);
@@ -604,7 +604,7 @@ namespace RTMobile.issues.viewIssue
 									List<User> user;
 									JSONRequest jsonRequestIssue = new JSONRequest
 									{
-										urlRequest = new Uri($"/rest/api/latest/user/assignable/search?issueKey={numberIssue}&username=" + ((SearchBar)generalStackLayout.Children[i]).Text),
+										urlRequest = $"/rest/api/latest/user/assignable/search?issueKey={numberIssue}&username=" + ((SearchBar)generalStackLayout.Children[i]).Text,
 										methodRequest = "GET"
 									};
 									Request requestUser = new Request(jsonRequestIssue);
@@ -834,7 +834,7 @@ namespace RTMobile.issues.viewIssue
 
 									JSONRequest jsonRequestUser = new JSONRequest
 									{
-										urlRequest = new Uri($"/rest/api/latest/user/assignable/search?issueKey={numberIssue}&username=" + ((SearchBar)generalStackLayout.Children[i]).Text),
+										urlRequest = $"/rest/api/latest/user/assignable/search?issueKey={numberIssue}&username=" + ((SearchBar)generalStackLayout.Children[i]).Text,
 										methodRequest = "GET"
 									};
 									Request requestUser = new Request(jsonRequestUser);
@@ -879,7 +879,7 @@ namespace RTMobile.issues.viewIssue
 				//Совершаем переход с полученными данными
 				JSONRequest jsonRequest = new JSONRequest
 				{
-					urlRequest = new Uri($"/rest/api/2/issue/{numberIssue}/transitions"),
+					urlRequest = $"/rest/api/2/issue/{numberIssue}/transitions",
 					methodRequest = "POST"
 				};
 				Request request = new Request(jsonRequest);
