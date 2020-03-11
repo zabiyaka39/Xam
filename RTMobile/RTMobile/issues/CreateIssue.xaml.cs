@@ -55,10 +55,9 @@ namespace RTMobile.issues
 		}
 
 		private void Picker_SelectedIndexChanged(object sender, EventArgs e)
-		{
+		{			
 			if (projectPic.SelectedIndex != -1)
 			{
-				//Обработать поиск проекта из displayName в key
 				JSONRequest jsonRequest = new JSONRequest()
 				{
 					urlRequest = $"/rest/api/2/issue/createmeta?projectKeys={projects[projectPic.SelectedIndex].key}",
@@ -76,7 +75,7 @@ namespace RTMobile.issues
 				lblTypeIssue.IsVisible = true;
 
 			}
-			//Сделать выгрузку полей запросом, т.к. на данный момент выгружаются только типы задач
+			//Добавить отрисовку полей
 		}
 
 		private void typeIssuePic_SelectedIndexChanged(object sender, EventArgs e)

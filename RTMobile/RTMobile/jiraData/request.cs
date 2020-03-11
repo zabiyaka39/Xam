@@ -161,7 +161,6 @@ namespace RTMobile
 					{
 						if (field.Key == "projects")
 						{
-
 							if (((dynamic)(field.Value)).Count > 0)
 							{
 								//Проходимся по всем переходам
@@ -169,201 +168,216 @@ namespace RTMobile
 								{
 									foreach (KeyValuePair<string, object> fieldTransaction in ((dynamic)(field.Value))[i])
 									{
-										switch (fieldTransaction.Key)
+										if(fieldTransaction.Key == "issuetypes")
 										{
-											case "id":
+											if (((dynamic)(fieldTransaction.Value)).Count > 0)
+											{
+												for (int k = 0; k < ((dynamic)(fieldTransaction.Value)).Count; ++k)
 												{
-													//Получаем id перехода
-													break;
-												}
-											case "name":
-												{
-													//Получаем название перехода
-													break;
-												}
-											case "to":
-												{
-													//Получаем значения перехода
-													break;
-												}
-											case "fields":
-												{
-													//Получаем поля перехода для заполнения
-													for (int j = 0; j < ((dynamic)(fieldTransaction.Value)).Count; ++j)
+													//Проверить полученные поля ТУТ
+
+													foreach (KeyValuePair<string, object> fieldScreenCreate in ((dynamic)(fieldTransaction.Value))[k])
 													{
-														Fields fieldTmp = new Fields();
+														switch (fieldScreenCreate.Key)
+														{
+															case "id":
+																{
+																	//Получаем id перехода
+																	break;
+																}
+															case "name":
+																{
+																	//Получаем название перехода
+																	break;
+																}
+															case "to":
+																{
+																	//Получаем значения перехода
+																	break;
+																}
+															case "fields":
+																{
+																	//Получаем поля перехода для заполнения
+																	for (int j = 0; j < ((dynamic)(fieldScreenCreate.Value)).Count; ++j)
+																	{
+																		Fields fieldTmp = new Fields();
 
-														List<string> keysFields = new List<string>();
-														foreach (string nameField in ((dynamic)(fieldTransaction.Value)).Keys)
-														{
-															keysFields.Add(nameField);
-														}
-														foreach (KeyValuePair<string, object> fieldTransactionInformation in ((dynamic)(fieldTransaction.Value))[j])
-														{
-															fieldTmp.name = keysFields[j];
-															switch (fieldTransactionInformation.Key)
-															{
-																case "required":
-																	{
-																		fieldTmp.required = (bool)fieldTransactionInformation.Value;
-																		break;
-																	}
-																case "hasScreen":
-																	{
-																		fieldTmp.hasScreen = (bool)fieldTransactionInformation.Value;
-																		break;
-																	}
-																case "isGlobal":
-																	{
-																		fieldTmp.isGlobal = (bool)fieldTransactionInformation.Value;
-																		break;
-																	}
-																case "isInitial":
-																	{
-																		fieldTmp.isInitial = (bool)fieldTransactionInformation.Value;
-																		break;
-																	}
-																case "isAvailable":
-																	{
-																		fieldTmp.isAvailable = (bool)fieldTransactionInformation.Value;
-																		break;
-																	}
-																case "isConditional":
-																	{
-																		fieldTmp.isConditional = (bool)fieldTransactionInformation.Value;
-																		break;
-																	}
-																case "hasDefaultValue":
-																	{
-																		fieldTmp.hasDefaultValue = (bool)fieldTransactionInformation.Value;
-																		break;
-																	}
-																case "key":
-																	{
-																		fieldTmp.key = (string)fieldTransactionInformation.Value;
-																		break;
-																	}
-																case "schema":
-																	{
-																		Schema schema = new Schema();
-																		int numberKey = 0;
-																		foreach (string shemaNameField in ((dynamic)(fieldTransactionInformation.Value)).Keys)
+																		List<string> keysFields = new List<string>();
+																		foreach (string nameField in ((dynamic)(fieldScreenCreate.Value)).Keys)
 																		{
-																			switch (shemaNameField)
+																			keysFields.Add(nameField);
+																		}
+																		foreach (KeyValuePair<string, object> fieldTransactionInformation in ((dynamic)(fieldScreenCreate.Value))[j])
+																		{
+																			fieldTmp.name = keysFields[j];
+																			switch (fieldTransactionInformation.Key)
 																			{
-																				case "type":
+																				case "required":
 																					{
-																						schema.type = ((dynamic)(fieldTransactionInformation.Value))[numberKey];
+																						fieldTmp.required = (bool)fieldTransactionInformation.Value;
 																						break;
 																					}
-																				case "system":
+																				case "hasScreen":
 																					{
-																						schema.system = ((dynamic)(fieldTransactionInformation.Value))[numberKey];
+																						fieldTmp.hasScreen = (bool)fieldTransactionInformation.Value;
 																						break;
 																					}
-																				case "items":
+																				case "isGlobal":
 																					{
-																						schema.items = ((dynamic)(fieldTransactionInformation.Value))[numberKey];
+																						fieldTmp.isGlobal = (bool)fieldTransactionInformation.Value;
 																						break;
 																					}
-																				case "custom":
+																				case "isInitial":
 																					{
-																						schema.custom = ((dynamic)(fieldTransactionInformation.Value))[numberKey];
+																						fieldTmp.isInitial = (bool)fieldTransactionInformation.Value;
 																						break;
 																					}
-																				case "customId":
+																				case "isAvailable":
 																					{
-																						schema.customId = ((dynamic)(fieldTransactionInformation.Value))[numberKey];
+																						fieldTmp.isAvailable = (bool)fieldTransactionInformation.Value;
+																						break;
+																					}
+																				case "isConditional":
+																					{
+																						fieldTmp.isConditional = (bool)fieldTransactionInformation.Value;
+																						break;
+																					}
+																				case "hasDefaultValue":
+																					{
+																						fieldTmp.hasDefaultValue = (bool)fieldTransactionInformation.Value;
+																						break;
+																					}
+																				case "key":
+																					{
+																						fieldTmp.key = (string)fieldTransactionInformation.Value;
+																						break;
+																					}
+																				case "schema":
+																					{
+																						Schema schema = new Schema();
+																						int numberKey = 0;
+																						foreach (string shemaNameField in ((dynamic)(fieldTransactionInformation.Value)).Keys)
+																						{
+																							switch (shemaNameField)
+																							{
+																								case "type":
+																									{
+																										schema.type = ((dynamic)(fieldTransactionInformation.Value))[numberKey];
+																										break;
+																									}
+																								case "system":
+																									{
+																										schema.system = ((dynamic)(fieldTransactionInformation.Value))[numberKey];
+																										break;
+																									}
+																								case "items":
+																									{
+																										schema.items = ((dynamic)(fieldTransactionInformation.Value))[numberKey];
+																										break;
+																									}
+																								case "custom":
+																									{
+																										schema.custom = ((dynamic)(fieldTransactionInformation.Value))[numberKey];
+																										break;
+																									}
+																								case "customId":
+																									{
+																										schema.customId = ((dynamic)(fieldTransactionInformation.Value))[numberKey];
+																										break;
+																									}
+																							}
+																							fieldTmp.schema = schema;
+
+																							numberKey++;
+																						}
+																						break;
+																					}
+																				case "name":
+																					{
+																						fieldTmp.displayName = (string)fieldTransactionInformation.Value;
+																						break;
+																					}
+																				case "defaultValue":
+																					{
+																						fieldTmp.defaultValue = (string)fieldTransactionInformation.Value;
+																						break;
+																					}
+																				case "autoCompleteUrl":
+																					{
+																						fieldTmp.autoCompleteUrl = (string)fieldTransactionInformation.Value;
+																						break;
+																					}
+																				case "allowedValues":
+																					{
+																						int numberKey = 0;
+																						List<AllowedValue> allowedValuesIssue = new List<AllowedValue>();
+																						for (int l = 0; l < ((dynamic)(fieldTransactionInformation.Value)).Count; ++l)
+																						{
+																							AllowedValue allowedValues = new AllowedValue();
+																							foreach (KeyValuePair<string, object> allowedValueNameField in ((dynamic)(fieldTransactionInformation.Value))[l])
+																							{
+																								switch (allowedValueNameField.Key)
+																								{
+																									case "self":
+																										{
+																											allowedValues.self = (string)allowedValueNameField.Value;
+																											break;
+																										}
+																									case "name":
+																										{
+																											allowedValues.value = (string)allowedValueNameField.Value;
+																											break;
+																										}
+																									case "id":
+																										{
+																											allowedValues.id = (string)allowedValueNameField.Value;
+																											break;
+																										}
+																									case "value":
+																										{
+																											allowedValues.value = (string)allowedValueNameField.Value;
+																											break;
+																										}
+																									case "avatarId":
+																										{
+																											allowedValues.avatarId = (long)allowedValueNameField.Value;
+																											break;
+																										}
+																									case "subtask":
+																										{
+																											allowedValues.subtask = (bool)allowedValueNameField.Value;
+																											break;
+																										}
+																									case "iconUrl":
+																										{
+																											allowedValues.iconUrl = (string)allowedValueNameField.Value;
+																											break;
+																										}
+																									case "description":
+																										{
+																											allowedValues.description = (string)allowedValueNameField.Value;
+																											break;
+																										}
+																								}
+																							}
+																							allowedValuesIssue.Add(allowedValues);
+																						}
+																						fieldTmp.allowedValues = allowedValuesIssue;
+																						numberKey++;
 																						break;
 																					}
 																			}
-																			fieldTmp.schema = schema;
-
-																			numberKey++;
 																		}
-																		break;
+																		fields.Add(fieldTmp);
 																	}
-																case "name":
-																	{
-																		fieldTmp.displayName = (string)fieldTransactionInformation.Value;
-																		break;
-																	}
-																case "defaultValue":
-																	{
-																		fieldTmp.defaultValue = (string)fieldTransactionInformation.Value;
-																		break;
-																	}
-																case "autoCompleteUrl":
-																	{
-																		fieldTmp.autoCompleteUrl = (string)fieldTransactionInformation.Value;
-																		break;
-																	}
-																case "allowedValues":
-																	{
-																		int numberKey = 0;
-																		List<AllowedValue> allowedValuesIssue = new List<AllowedValue>();
-																		for (int k = 0; k < ((dynamic)(fieldTransactionInformation.Value)).Count; ++k)
-																		{
-																			AllowedValue allowedValues = new AllowedValue();
-																			foreach (KeyValuePair<string, object> allowedValueNameField in ((dynamic)(fieldTransactionInformation.Value))[k])
-																			{
-																				switch (allowedValueNameField.Key)
-																				{
-																					case "self":
-																						{
-																							allowedValues.self = (string)allowedValueNameField.Value;
-																							break;
-																						}
-																					case "name":
-																						{
-																							allowedValues.value = (string)allowedValueNameField.Value;
-																							break;
-																						}
-																					case "id":
-																						{
-																							allowedValues.id = (string)allowedValueNameField.Value;
-																							break;
-																						}
-																					case "value":
-																						{
-																							allowedValues.value = (string)allowedValueNameField.Value;
-																							break;
-																						}
-																					case "avatarId":
-																						{
-																							allowedValues.avatarId = (long)allowedValueNameField.Value;
-																							break;
-																						}
-																					case "subtask":
-																						{
-																							allowedValues.subtask = (bool)allowedValueNameField.Value;
-																							break;
-																						}
-																					case "iconUrl":
-																						{
-																							allowedValues.iconUrl = (string)allowedValueNameField.Value;
-																							break;
-																						}
-																					case "description":
-																						{
-																							allowedValues.description = (string)allowedValueNameField.Value;
-																							break;
-																						}
-																				}
-																			}
-																			allowedValuesIssue.Add(allowedValues);
-																		}
-																		fieldTmp.allowedValues = allowedValuesIssue;
-																		numberKey++;
-																		break;
-																	}
-															}
+																	break;
+																}
 														}
-														fields.Add(fieldTmp);
 													}
-													break;
 												}
+											}
 										}
+										
 									}
 								}
 							}
