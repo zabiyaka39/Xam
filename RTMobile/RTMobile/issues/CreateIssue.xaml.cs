@@ -11,6 +11,7 @@ namespace RTMobile.issues
 	{
 		List<Project> projects { get; set; }
 		List<Issuetype> typeIssue { get; set; }
+		List<Fields> Fields { get; set; }
 		public CreateIssue()
 		{
 
@@ -24,6 +25,14 @@ namespace RTMobile.issues
 			Request request = new Request(jsonRequest);
 
 			projects = request.GetResponses<List<Project>>();
+
+			List<string> projectName = new List<string>();
+			for (int i = 0; i < projects.Count; ++i)
+			{
+				projectName.Add(projects[i].name);
+			}
+
+			projectPic.ItemsSource = projectName;
 		}
 		void ImageButton_Clicked(System.Object sender, System.EventArgs e)
 		{
@@ -47,22 +56,41 @@ namespace RTMobile.issues
 
 		private void Picker_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			JSONRequest jsonRequest = new JSONRequest()
+			if (projectPic.SelectedIndex != -1)
 			{
-				urlRequest = $"/rest/api/2/issue/createmeta?projectKeys=TELECOM&expand=projects.issuetypes.fields",
-				methodRequest = "GET"
-			};
+				//Обработать поиск проекта из displayName в key
+				JSONRequest jsonRequest = new JSONRequest()
+				{
+					urlRequest = $"/rest/api/2/issue/createmeta?projectKeys={projects[projectPic.SelectedIndex].key}",
+					methodRequest = "GET"
+				};
+				Request request = new Request(jsonRequest);
+				typeIssue = request.GetResponses<RootObject>().projects[0].issuetypes;
+				List<string> typeIssueName = new List<string>();
+				for (int i = 0; i < typeIssue.Count; ++i)
+				{
+					typeIssueName.Add(typeIssue[i].name);
+				}
+				typeIssuePic.ItemsSource = typeIssueName;
+				typeIssuePic.IsVisible = true;
+				lblTypeIssue.IsVisible = true;
 
-			Request request = new Request(jsonRequest);
-			typeIssue = request.GetResponses<RootObject>().projects[0].issuetypes;
-			List<string> typeIssueName = new List<string>();
-			for (int i = 0; i < typeIssue.Count; ++i)
-			{
-				typeIssueName.Add(typeIssue[i].name);
 			}
-			typeIssuePic.ItemsSource = typeIssue;
-
 			//Сделать выгрузку полей запросом, т.к. на данный момент выгружаются только типы задач
+		}
+
+		private void typeIssuePic_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			if (typeIssuePic.SelectedIndex !=-1)
+			{
+				JSONRequest jsonRequest = new JSONRequest()
+				{
+					urlRequest = $"/rest/api/2/issue/createmeta?projectKeys={projects[projectPic.SelectedIndex].key}&issuetypeNames={typeIssuePic.Items[typeIssuePic.SelectedIndex]}&expand=projects.issuetypes.fields",
+					methodRequest = "GET"
+				};
+				Request request = new Request(jsonRequest);
+				Fields = request.GetFieldScreenCreate();
+			}
 		}
 	}
 }

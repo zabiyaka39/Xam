@@ -4,23 +4,24 @@
              x:Class="RTMobile.issues.CreateIssue"
              Title="СОЗДАТЬ ЗАДАЧУ">
     <ContentPage.Content>
-       <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
+        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
                       BackgroundColor="#312F35">
-            <FlexLayout>
-                <Label Text="Проект:"/>
-                <Picker ItemsSource="{Binding project.name}" SelectedIndexChanged="Picker_SelectedIndexChanged"/>
-                <Label x:Name="lblTypeIssue" Text="Тип задач" IsVisible="False"/>
-                <Picker x:Name="typeIssuePic" IsVisible="False"/>
+            <ScrollView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <StackLayout x:Name="stackFields"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <Label Text="Проект:"  FontSize="18" TextColor="#F0F1F0" Margin="20,10,20,0"/>
+                    <Picker x:Name="projectPic" SelectedIndexChanged="Picker_SelectedIndexChanged" HorizontalOptions="FillAndExpand" VerticalOptions="Start"  FontSize="18" TextColor="#F0F1F0" Margin="20,10,20,0"/>
+                    <Label x:Name="lblTypeIssue" Text="Тип задач" IsVisible="False"  FontSize="18" TextColor="#F0F1F0" Margin="20,10,20,0" />
+                    <Picker x:Name="typeIssuePic" IsVisible="False" HorizontalOptions="FillAndExpand" FontSize="18" TextColor="#F0F1F0" Margin="20,10,20,0" SelectedIndexChanged="typeIssuePic_SelectedIndexChanged"/>
+                </StackLayout>
+            </ScrollView>
 
-            </FlexLayout>
-            
             <Grid VerticalOptions="End">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="5"/>
                     <RowDefinition Height="20"/>
                     <RowDefinition Height="5"/>
                 </Grid.RowDefinitions>
-                  <ImageButton Source="home.png" Grid.Column="0" Grid.Row="1"
+                <ImageButton Source="home.png" Grid.Column="0" Grid.Row="1"
                              BackgroundColor="Transparent" Clicked="ImageButton_Clicked_3"></ImageButton>
                 <ImageButton Source="calendar.png" Grid.Column="1" Grid.Row="1"
                              BackgroundColor="Transparent" Clicked="ImageButton_Clicked"></ImageButton>
