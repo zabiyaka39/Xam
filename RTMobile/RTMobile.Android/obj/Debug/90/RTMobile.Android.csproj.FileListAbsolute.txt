@@ -1899,7 +1899,6 @@ F:\project\Mobile\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\src\cr
 F:\project\Mobile\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\ScrollLayoutManager.java
 F:\project\Mobile\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\SwipeViewRenderer.java
 F:\project\Mobile\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\src\crc64a0e0a82d0db9a07d\ClipboardChangeListener.java
-F:\project\Mobile\RTMobile\RTMobile\RTMobile.Android\bin\Debug\RTMobile.dll.mdb
 F:\project\Mobile\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\CarouselViewRenderer_CarouselViewOnScrollListener.java
 F:\project\Mobile\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\CarouselViewwOnGlobalLayoutListener.java
 F:\project\Mobile\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\FormsVideoView.java
