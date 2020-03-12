@@ -368,7 +368,10 @@ namespace RTMobile
 																					}
 																			}
 																		}
-																		fields.Add(fieldTmp);
+																		if (fieldTmp.schema.type != "project" && fieldTmp.schema.type != "issuetype")
+																		{
+																			fields.Add(fieldTmp);
+																		}
 																	}
 																	break;
 																}

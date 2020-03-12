@@ -7,11 +7,11 @@
         <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
                       BackgroundColor="#312F35">
             <ScrollView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-                <StackLayout x:Name="stackFields"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-                    <Label Text="Проект:"  FontSize="18" TextColor="#F0F1F0" Margin="20,10,20,0"/>
-                    <Picker x:Name="projectPic" SelectedIndexChanged="Picker_SelectedIndexChanged" HorizontalOptions="FillAndExpand" VerticalOptions="Start"  FontSize="18" TextColor="#F0F1F0" Margin="20,10,20,0"/>
-                    <Label x:Name="lblTypeIssue" Text="Тип задач" IsVisible="False"  FontSize="18" TextColor="#F0F1F0" Margin="20,10,20,0" />
-                    <Picker x:Name="typeIssuePic" IsVisible="False" HorizontalOptions="FillAndExpand" FontSize="18" TextColor="#F0F1F0" Margin="20,10,20,0" SelectedIndexChanged="typeIssuePic_SelectedIndexChanged"/>
+                <StackLayout x:Name="generalStackLayout"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="20,10,20,0">
+                    <Label Text="Проект:"  FontSize="18" TextColor="#F0F1F0" />
+                    <Picker x:Name="projectPic" SelectedIndexChanged="Picker_SelectedIndexChanged" HorizontalOptions="FillAndExpand" VerticalOptions="Start"  FontSize="18" TextColor="#F0F1F0"/>
+                    <Label x:Name="lblTypeIssue" Text="Тип задач" IsVisible="False"  FontSize="18" TextColor="#F0F1F0"/>
+                    <Picker x:Name="typeIssuePic" IsVisible="False" HorizontalOptions="FillAndExpand" FontSize="18" TextColor="#F0F1F0" SelectedIndexChanged="typeIssuePic_SelectedIndexChanged"/>
                 </StackLayout>
             </ScrollView>
 
