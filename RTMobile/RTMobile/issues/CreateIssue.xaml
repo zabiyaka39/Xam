@@ -14,8 +14,15 @@
                     <Picker x:Name="typeIssuePic" IsVisible="False" HorizontalOptions="FillAndExpand" FontSize="18" TextColor="#F0F1F0" SelectedIndexChanged="typeIssuePic_SelectedIndexChanged"/>
                 </StackLayout>
             </ScrollView>
-
-            <Grid VerticalOptions="End">
+            <Frame HasShadow="True" CornerRadius="3" BackgroundColor="#BE0030" WidthRequest="167"
+                       HeightRequest="34" HorizontalOptions="FillAndExpand" Padding="0,5,0,5" Margin="0,0,-25,10">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer  NumberOfTapsRequired="1"/>
+                </Frame.GestureRecognizers>
+                <Button Margin="0" Padding="0" BackgroundColor="Transparent" Text="СОЗДАТЬ" FontSize="18" TextColor="#F0F1F0" HorizontalOptions="FillAndExpand"
+                           FontAttributes="Bold" VerticalOptions="Center" Clicked="Button_Clicked" />
+            </Frame>
+            <Grid VerticalOptions="End" >
                 <Grid.RowDefinitions>
                     <RowDefinition Height="5"/>
                     <RowDefinition Height="20"/>

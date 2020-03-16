@@ -127,7 +127,7 @@ namespace RTMobile
 				}
 			}
 			catch (Exception ex)
-			{
+			 {
 				Console.WriteLine(ex.Message);
 				Crashes.TrackError(ex);
 			}

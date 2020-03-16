@@ -160,7 +160,7 @@ namespace RTMobile.issues
 												};
 												Request requestUser = new Request(jsonRequestUser);
 
-												user = requestUser.GetResponses<List<User>>();
+												user = requestUser.GetResponses<RootObject>().users;
 
 												for (int j = 0; j < user.Count; ++j)
 												{
@@ -566,6 +566,11 @@ namespace RTMobile.issues
 				}
 
 			}
+		}
+
+		private void Button_Clicked(object sender, EventArgs e)
+		{
+
 		}
 	}
 }
