@@ -15,15 +15,42 @@ namespace RTMobile
 	/// </summary>
 	public class JSONRequest
 	{
+		/// <summary>
+		/// Поисковый запрос в формате JQL
+		/// </summary>
 		public string jql { get; set; }
+		/// <summary>
+		/// Отправляемы поля (те что будут находится в запросе в параметре fields)
+		/// </summary>
 		public string fields { get; set; }
+		/// <summary>
+		/// Дополнительные (расширенные) параметры получения запроса
+		/// </summary>
 		public string expand { get; set; }
+		/// <summary>
+		/// Начало запроса (с какого элемента показывать)
+		/// </summary>
 		public int startAt { get; set; }
+		/// <summary>
+		/// Максимальные искомый пул (максимальное количество врезультатов которое необходимо показать (MAX - 1000))
+		/// </summary>
 		public int maxResults { get; set; }
+		/// <summary>
+		/// Содержание запроса (тело)
+		/// </summary>
 		public string body { get; set; }
+		/// <summary>
+		/// Сортировка которую необходимо произвести для полученного результата
+		/// </summary>
 		public string orderBy { get; set; }
+		/// <summary>
+		/// Адрес запроса на сервер
+		/// </summary>
 		[JsonIgnore]
 		public string urlRequest { get; set; }
+		/// <summary>
+		/// Метод запроса (POST, GET, PUT, ...)
+		/// </summary>
 		[JsonIgnore]
 		public string methodRequest { get; set; }
 	}
@@ -401,6 +428,9 @@ namespace RTMobile
 
 	public class Attachment
 	{
+		/// <summary>
+		/// Классификация форматов заружаемых в систему
+		/// </summary>
 		private static Dictionary<string, string> countries = new Dictionary<string, string>
 		{
 			{"image/png", "image"},
@@ -472,16 +502,43 @@ namespace RTMobile
 			{"text/x-setext", "text"},
 			{"text/x-ms-contact", "text"}
 		};
+		/// <summary>
+		/// Обязательность поля для заполнения
+		/// </summary>
 		public bool required { get; set; }
+		/// <summary>
+		/// Тип вложения
+		/// </summary>
 		public string type { get; set; }
+		/// <summary>
+		/// Схема вложения
+		/// </summary>
 		public Schema schema { get; set; }
+		/// <summary>
+		/// Имя загруженного файла
+		/// </summary>
 		public string name { get; set; }
+		/// <summary>
+		/// Список производимых операций с полем
+		/// </summary>
 		public List<object> operations { get; set; }
 		public string self { get; set; }
+		/// <summary>
+		/// Номер загруженного файла
+		/// </summary>
 		public string id { get; set; }
+		/// <summary>
+		/// Имя загруженного файла с расширением
+		/// </summary>
 		public string filename { get; set; }
+		/// <summary>
+		/// Данные об авторе загруженного файла
+		/// </summary>
 		public Author author { get; set; }
 		private string _created { get; set; }
+		/// <summary>
+		/// Дата создания файла
+		/// </summary>
 		public string created
 		{
 			get { return _created; }
@@ -490,9 +547,15 @@ namespace RTMobile
 				_created = (Convert.ToDateTime(value)).ToString("dd.MM.yyyy H:mm");
 			}
 		}
+		/// <summary>
+		/// Размер файла
+		/// </summary>
 		public int size { get; set; }
 		public string extension { get; set; }
 		private string _mimeType { get; set; }
+		/// <summary>
+		/// Тип файла (сравнивается со словарем после чего получает группу принадлежности файлов)
+		/// </summary>
 		public string mimeType
 		{
 			get
@@ -512,6 +575,9 @@ namespace RTMobile
 				}
 			}
 		}
+		/// <summary>
+		/// Исходное изображение
+		/// </summary>
 		public ImageSource contentImage
 		{
 			get
@@ -546,6 +612,9 @@ namespace RTMobile
 			}
 		}
 		public string content { get; set; }
+		/// <summary>
+		/// Превью изображения
+		/// </summary>
 		public ImageSource thumbnailImage
 		{
 			get
@@ -571,6 +640,9 @@ namespace RTMobile
 				thumbnailImage = value;
 			}
 		}
+		/// <summary>
+		/// Адрес превью изображения
+		/// </summary>
 		public Uri thumbnail { get; set; }
 	}
 	public class AllowedValue
@@ -607,6 +679,13 @@ namespace RTMobile
 		public string iconUrl { get; set; }
 		public bool subtask { get; set; }
 		public long avatarId { get; set; }
+		public List<Child> children { get; set; }
+	}
+	public class Child
+	{
+		public string self { get; set; }
+		public string value { get; set; }
+		public string id { get; set; }
 	}
 	public class Schema
 	{

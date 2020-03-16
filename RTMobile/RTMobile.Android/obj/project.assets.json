@@ -4131,24 +4131,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\sekisov\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\wwwge\\.nuget\\packages\\": {},
+    "D:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile.Android\\RTMobile.Android.csproj",
+      "projectUniqueName": "D:\\Project\\Jira\\rtmobile\\RTMobile\\RTMobile.Android\\RTMobile.Android.csproj",
       "projectName": "RTMobile.Android",
-      "projectPath": "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile.Android\\RTMobile.Android.csproj",
-      "packagesPath": "C:\\Users\\sekisov\\.nuget\\packages\\",
-      "outputPath": "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile.Android\\obj\\",
+      "projectPath": "D:\\Project\\Jira\\rtmobile\\RTMobile\\RTMobile.Android\\RTMobile.Android.csproj",
+      "packagesPath": "C:\\Users\\wwwge\\.nuget\\packages\\",
+      "outputPath": "D:\\Project\\Jira\\rtmobile\\RTMobile\\RTMobile.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\"
+        "D:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\sekisov\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\wwwge\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -4162,8 +4162,8 @@
       "frameworks": {
         "monoandroid90": {
           "projectReferences": {
-            "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj": {
-              "projectPath": "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj"
+            "D:\\Project\\Jira\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj": {
+              "projectPath": "D:\\Project\\Jira\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj"
             }
           }
         }

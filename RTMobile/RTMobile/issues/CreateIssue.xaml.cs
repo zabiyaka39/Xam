@@ -56,7 +56,7 @@ namespace RTMobile.issues
 		}
 
 		private void Picker_SelectedIndexChanged(object sender, EventArgs e)
-		{			
+		{
 			if (projectPic.SelectedIndex != -1)
 			{
 				JSONRequest jsonRequest = new JSONRequest()
@@ -65,15 +65,19 @@ namespace RTMobile.issues
 					methodRequest = "GET"
 				};
 				Request request = new Request(jsonRequest);
-				typeIssue = request.GetResponses<RootObject>().projects[0].issuetypes;
-				List<string> typeIssueName = new List<string>();
-				for (int i = 0; i < typeIssue.Count; ++i)
+				RootObject rootObject = request.GetResponses<RootObject>();
+				if (rootObject != null && rootObject.projects != null && rootObject.projects.Count > 0)
 				{
-					typeIssueName.Add(typeIssue[i].name);
+					typeIssue = rootObject.projects[0].issuetypes;
+					List<string> typeIssueName = new List<string>();
+					for (int i = 0; i < typeIssue.Count; ++i)
+					{
+						typeIssueName.Add(typeIssue[i].name);
+					}
+					typeIssuePic.ItemsSource = typeIssueName;
+					typeIssuePic.IsVisible = true;
+					lblTypeIssue.IsVisible = true;
 				}
-				typeIssuePic.ItemsSource = typeIssueName;
-				typeIssuePic.IsVisible = true;
-				lblTypeIssue.IsVisible = true;
 
 			}
 			//Добавить отрисовку полей
@@ -81,7 +85,7 @@ namespace RTMobile.issues
 
 		private void typeIssuePic_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			if (typeIssuePic.SelectedIndex !=-1)
+			if (typeIssuePic.SelectedIndex != -1)
 			{
 				JSONRequest jsonRequest = new JSONRequest()
 				{
@@ -93,6 +97,9 @@ namespace RTMobile.issues
 
 
 				//Удалить поля которые могут быть добавлены с прошлого типа задач (сократить их количество на форме до 4 шт - lbl, project,lbl,issuetype
+
+
+
 				for (int i = 0; i < Fields.Count; ++i)
 				{
 					//Проверяем на необходимость показа поля
@@ -123,7 +130,7 @@ namespace RTMobile.issues
 									{
 										List<User> user = new List<User>();
 										List<string> userDisplayName = new List<string>();
-										
+
 
 										//Создаем поисковый бар для поиска и отображения пользователей имеющих доступ к задаче
 										SearchBar searchBar = new SearchBar

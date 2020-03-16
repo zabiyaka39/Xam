@@ -127,7 +127,7 @@ namespace RTMobile
 				}
 			}
 			catch (Exception ex)
-			 {
+			{
 				Console.WriteLine(ex.Message);
 				Crashes.TrackError(ex);
 			}
@@ -168,14 +168,12 @@ namespace RTMobile
 								{
 									foreach (KeyValuePair<string, object> fieldTransaction in ((dynamic)(field.Value))[i])
 									{
-										if(fieldTransaction.Key == "issuetypes")
+										if (fieldTransaction.Key == "issuetypes")
 										{
 											if (((dynamic)(fieldTransaction.Value)).Count > 0)
 											{
 												for (int k = 0; k < ((dynamic)(fieldTransaction.Value)).Count; ++k)
 												{
-													//Проверить полученные поля ТУТ
-
 													foreach (KeyValuePair<string, object> fieldScreenCreate in ((dynamic)(fieldTransaction.Value))[k])
 													{
 														switch (fieldScreenCreate.Key)
@@ -358,6 +356,39 @@ namespace RTMobile
 																											allowedValues.description = (string)allowedValueNameField.Value;
 																											break;
 																										}
+																									case "children":
+																										{
+																											//Добавляем к многомерному выпадающему списку параметры
+																											List<Child> children = new List<Child>();
+																											for (int h = 0; h < ((dynamic)(allowedValueNameField.Value)).Count; ++h)
+																											{
+																												children.Add(new Child());
+																												foreach (KeyValuePair<string, object> fieldChildren in ((dynamic)(allowedValueNameField.Value))[h])
+																												{
+																													switch (fieldChildren.Key)
+																													{
+																														case "self":
+																															{
+																																children[h].self = (string)fieldChildren.Value;
+																																break;
+																															}
+																														case "value":
+																															{
+																																children[h].value = (string)fieldChildren.Value;
+																																break;
+																															}
+																														case "id":
+																															{
+																																children[h].id = (string)fieldChildren.Value;
+																																break;
+																															}
+																													}
+																												}
+
+																											}
+																											allowedValues.children = children;
+																											break;
+																										}
 																								}
 																							}
 																							allowedValuesIssue.Add(allowedValues);
@@ -380,7 +411,7 @@ namespace RTMobile
 												}
 											}
 										}
-										
+
 									}
 								}
 							}
