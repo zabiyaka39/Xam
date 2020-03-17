@@ -79,6 +79,7 @@ namespace RTMobile.issues
 						typeIssueName.Add(typeIssue[i].name);
 					}
 					typeIssuePic.ItemsSource = typeIssueName;
+					typeIssuePic.ItemsSource = projects[projectPic.SelectedIndex].issuetypes;
 					typeIssuePic.IsVisible = true;
 					lblTypeIssue.IsVisible = true;
 				}
