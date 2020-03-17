@@ -19,13 +19,16 @@ namespace RTMobile.issues
 			InitializeComponent();
 			JSONRequest jsonRequest = new JSONRequest()
 			{
-				urlRequest = $"/rest/api/2/project",
+				//urlRequest = $"/rest/api/2/project",
+				//Получаем только проекты которые доступны пользователю
+				urlRequest = $"/rest/api/2/issue/createmeta",
 				methodRequest = "GET"
 			};
 
 			Request request = new Request(jsonRequest);
 
-			projects = request.GetResponses<List<Project>>();
+			RootObject rootObject = request.GetResponses<RootObject>();
+			projects = rootObject.projects;
 
 			List<string> projectName = new List<string>();
 			for (int i = 0; i < projects.Count; ++i)
@@ -57,6 +60,7 @@ namespace RTMobile.issues
 
 		private void Picker_SelectedIndexChanged(object sender, EventArgs e)
 		{
+			//В запросе на получение проектов получны данные о списке типов задач. Выгружать этот список присваивая Item picker значение списка из project.issueType
 			if (projectPic.SelectedIndex != -1)
 			{
 				JSONRequest jsonRequest = new JSONRequest()
