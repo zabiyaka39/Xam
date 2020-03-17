@@ -12,7 +12,6 @@ using System.Text;
 using Microsoft.CSharp;
 using System.Collections.ObjectModel;
 using Xamarin.Forms;
-using Windows.Data.Json;
 using Microsoft.AppCenter.Crashes;
 
 namespace RTMobile

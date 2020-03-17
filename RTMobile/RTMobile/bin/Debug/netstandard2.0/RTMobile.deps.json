@@ -23,8 +23,7 @@
           "System.Xml.XmlSerializer": "4.3.0",
           "Xam.Plugins.Settings": "3.1.1",
           "Xamarin.Essentials": "1.5.1",
-          "Xamarin.Forms": "4.5.0.356",
-          "Windows.Foundation.UniversalApiContract": "7.0.0.0"
+          "Xamarin.Forms": "4.5.0.356"
         },
         "runtime": {
           "RTMobile.dll": {}
@@ -1116,14 +1115,6 @@
             "fileVersion": "4.5.0.143"
           }
         }
-      },
-      "Windows.Foundation.UniversalApiContract/7.0.0.0": {
-        "runtime": {
-          "Windows.Foundation.UniversalApiContract.winmd": {
-            "assemblyVersion": "7.0.0.0",
-            "fileVersion": "10.0.17746.1000"
-          }
-        }
       }
     }
   },
@@ -1832,11 +1823,6 @@
       "sha512": "sha512-aOg3sUA2xuLhyhtLuihrDVFZ5ZCa71pgojyz/HdjEH7eW5HxEws+IIgvKTYUZbFOIGD7eK/f3x1lYj6HI/o+jg==",
       "path": "xamarin.forms/4.5.0.356",
       "hashPath": "xamarin.forms.4.5.0.356.nupkg.sha512"
-    },
-    "Windows.Foundation.UniversalApiContract/7.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
     }
   }
 }

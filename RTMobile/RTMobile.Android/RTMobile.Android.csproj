@@ -15,7 +15,6 @@
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
-    <AndroidUseLatestPlatformSdk>false</AndroidUseLatestPlatformSdk>
     <TargetFrameworkVersion>v9.0</TargetFrameworkVersion>
     <AndroidEnableSGenConcurrent>true</AndroidEnableSGenConcurrent>
     <AndroidUseAapt2>true</AndroidUseAapt2>
@@ -32,10 +31,6 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <AndroidLinkMode>None</AndroidLinkMode>
-    <AotAssemblies>false</AotAssemblies>
-    <EnableLLVM>false</EnableLLVM>
-    <AndroidEnableProfiledAot>false</AndroidEnableProfiledAot>
-    <BundleAssemblies>false</BundleAssemblies>
     <MandroidI18n />
     <AndroidPackageFormat>apk</AndroidPackageFormat>
   </PropertyGroup>
@@ -126,7 +121,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\RTMobile\RTMobile.csproj">
-      <Project>{1087FF43-66B0-4B19-93D1-2345BB90DABE}</Project>
+      <Project>{1283331B-6741-4147-84E4-1BEDEE15EE38}</Project>
       <Name>RTMobile</Name>
     </ProjectReference>
   </ItemGroup>
