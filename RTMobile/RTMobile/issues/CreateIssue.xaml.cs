@@ -69,6 +69,11 @@ namespace RTMobile.issues
                 {
                     typeIssueName.Add(projects[projectPic.SelectedIndex].issuetypes[i].name);
                 }
+                //Все поля кроме первых 4 (тип и проект с label) удаляем
+                for (int i = 3; i < generalStackLayout.Children.Count; ++i)
+                {
+                    generalStackLayout.Children.RemoveAt(i);
+                }
                 typeIssuePic.ItemsSource = typeIssueName;
                 //Показываем  label и выпадающий список с типами задач
                 typeIssuePic.IsVisible = true;
@@ -89,10 +94,11 @@ namespace RTMobile.issues
                 Request request = new Request(jsonRequest);
                 Fields = request.GetFieldScreenCreate();
 
-
-                //Удалить поля которые могут быть добавлены с прошлого типа задач (сократить их количество на форме до 4 шт - lbl, project,lbl,issuetype
-
-
+                //Все поля кроме первых 4 (тип и проект с label) удаляем
+                for (int i = 3; i < generalStackLayout.Children.Count; ++i)
+                {
+                    generalStackLayout.Children.RemoveAt(i);
+                }
 
                 for (int i = 0; i < Fields.Count; ++i)
                 {
