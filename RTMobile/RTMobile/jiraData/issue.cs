@@ -845,6 +845,7 @@ namespace RTMobile
 		public bool isGlobal { get; set; } = false;
 		public bool isConditional { get; set; } = false;
 		public bool isInitial { get; set; } = false;
+		public Guid idFieldScreen { get; set; }
 	}
 	public class Issue
 	{

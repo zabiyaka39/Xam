@@ -1,25 +1,31 @@
 {
   "format": 1,
   "restore": {
-    "/Users/sekisov/Downloads/rtmobile/RTMobile/RTMobile/RTMobile.csproj": {}
+    "D:\\Project\\Jira\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj": {}
   },
   "projects": {
-    "/Users/sekisov/Downloads/rtmobile/RTMobile/RTMobile/RTMobile.csproj": {
+    "D:\\Project\\Jira\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj": {
       "version": "1.0.0.2",
       "restore": {
-        "projectUniqueName": "/Users/sekisov/Downloads/rtmobile/RTMobile/RTMobile/RTMobile.csproj",
+        "projectUniqueName": "D:\\Project\\Jira\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj",
         "projectName": "RTMobile",
-        "projectPath": "/Users/sekisov/Downloads/rtmobile/RTMobile/RTMobile/RTMobile.csproj",
-        "packagesPath": "/Users/sekisov/.nuget/packages/",
-        "outputPath": "/Users/sekisov/Downloads/rtmobile/RTMobile/RTMobile/obj/",
+        "projectPath": "D:\\Project\\Jira\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj",
+        "packagesPath": "C:\\Users\\wwwge\\.nuget\\packages\\",
+        "outputPath": "D:\\Project\\Jira\\rtmobile\\RTMobile\\RTMobile\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "D:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
-          "/Users/sekisov/.config/NuGet/NuGet.Config"
+          "C:\\Users\\wwwge\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -111,7 +117,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.102/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
         }
       }
     }
