@@ -664,9 +664,7 @@ namespace RTMobile
 									}
 								}
 							}
-
 						}
-
 					}
 				}
 				catch (Exception ex)
@@ -745,7 +743,6 @@ namespace RTMobile
 										value = arrayElement.ToString()
 									};
 									fields.Add(tmpFiled);
-
 								}
 								break;
 							}
@@ -798,16 +795,12 @@ namespace RTMobile
 											}
 										}
 									}
-
-
 									fields.Add(tmpFiled);
 								}
 								break;
 							}
 					}
-
 				}
-
 			}
 			return fields;
 		}

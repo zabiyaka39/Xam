@@ -14,7 +14,7 @@ namespace RTMobile.issues
 		List<Issuetype> typeIssue { get; set; }
 		List<Fields> Fields { get; set; }
 		//Поле для более удобного поиска и доступа к полям (полученные поля = нарисованным полям, если нет доп. полей)
-		Dictionary<Guid, Fields> DectionaryFields {get;set;}
+		Dictionary<Guid, Fields> DectionaryFields = new Dictionary<Guid, Fields>();
 		public CreateIssue()
 		{
 
@@ -126,7 +126,7 @@ namespace RTMobile.issues
 								//Выгружаем список пользователей для данной задачи
 								case "user":
 									{
-										
+
 										List<User> user = new List<User>();
 										List<string> userDisplayName = new List<string>();
 
@@ -245,6 +245,7 @@ namespace RTMobile.issues
 
 										generalStackLayout.Children.Add(entry);
 										DectionaryFields.Add(entry.Id, Fields[i]);
+
 										break;
 									}
 								case "array":
@@ -449,20 +450,20 @@ namespace RTMobile.issues
 												int numberField = 0;
 												for (numberField = 0; numberField < Fields.Count; ++numberField)
 												{
-													if (Fields[numberField].idFieldScreen == picker.Id)
+													if (DectionaryFields[generalStackLayout.Children[i].Id].idFieldScreen == picker.Id)
 													{
 														break;
 													}
 												}
-													if (Fields[numberField].allowedValues[picker.SelectedIndex].children != null)
+												if (DectionaryFields[generalStackLayout.Children[i].Id].allowedValues[picker.SelectedIndex].children != null)
+												{
+													List<string> childName = new List<string>();
+													for (int j = 0; j < DectionaryFields[generalStackLayout.Children[i].Id].allowedValues[picker.SelectedIndex].children.Count; ++j)
 													{
-														List<string> childName = new List<string>();
-														for (int j = 0; j < Fields[numberField].allowedValues[picker.SelectedIndex].children.Count; ++j)
-														{
-															childName.Add(Fields[numberField].allowedValues[picker.SelectedIndex].children[j].value);
-														}
-														pickerChild.ItemsSource = childName;
+														childName.Add(DectionaryFields[generalStackLayout.Children[i].Id].allowedValues[picker.SelectedIndex].children[j].value);
 													}
+													pickerChild.ItemsSource = childName;
+												}
 											}
 										};
 
@@ -658,42 +659,36 @@ namespace RTMobile.issues
 			//Полученное значение добавляем в JSON для отправки
 
 
-
-
-
-
-
-
-
-
-
-
-
+			//Переменнаяы для заполнения полей
 			string fields = "";
-			string commentField = "";
-			//Переменная для отлова незаполненного обязательного поля
-			bool checkTransition = true;
 			//Создаем переменную для построения json-запроса для совершения перехода
 			string jsonRequestCreate = "{ ";
-			for (int i = 1, j = 0; i < generalStackLayout.Children.Count && checkTransition; ++i)
+			//Переменная для отлова незаполненного обязательного поля
+			bool checkRequeredFields = true;
+			bool checkFieldGuid = false;
+			for (int i = 0; i < generalStackLayout.Children.Count && checkRequeredFields == true; ++i, checkFieldGuid = false)
 			{
-				//Увеличиваем значение только в том случае если поле не является label (шапкой/дополнением к основному полю)
-				if (generalStackLayout.Children[i].GetType() != typeof(Label))
+				if (DectionaryFields.ContainsKey(generalStackLayout.Children[i].Id))
 				{
-					if (Fields[j].schema.custom.Length == 0)
+					checkFieldGuid = true;
+				}
+				//Если поле есть (guid совпали), то проверяем тип и добавляем в запрос
+				if (checkFieldGuid)
+				{
+					if (DectionaryFields[generalStackLayout.Children[i].Id].schema.custom.Length == 0)
 					{
 						//Если поле системное, то проверяем тип поля
 						//Проверяем тип поля и выводим соответствующее отображение
-						switch (Fields[j].schema.type)
+						switch (DectionaryFields[generalStackLayout.Children[i].Id].schema.type)
 						{
 							//Выгружаем список пользователей для данной задачи
 							case "user":
 								{
-									if (Fields[j].required == true)
+									if (DectionaryFields[generalStackLayout.Children[i].Id].required == true)
 									{
 										if (((SearchBar)generalStackLayout.Children[i]).Text == null)
 										{
-											checkTransition = false;
+											checkRequeredFields = false;
 											break;
 										}
 									}
@@ -707,26 +702,23 @@ namespace RTMobile.issues
 									Request requestUser = new Request(jsonRequestIssue);
 
 									user = requestUser.GetResponses<List<User>>();
-									if (user.Count > 0)
+									if (user!=null&& user.Count > 0)
 									{
 										if (fields.Length > 0)
 										{
 											fields += ", ";
 										}
-										fields += "\"" + Fields[j].name + "\":{\"name\":\"" + user[0].name + "\"}";
+										fields += "\"" + DectionaryFields[generalStackLayout.Children[i].Id].name + "\":{\"name\":\"" + user[0].name + "\"}";
 									}
-									//Увеличиваем счетчик полей на единицу, т.к. мы ранее создавали для этого типа поля два поля (searchBar и grid)
-									++i;
-
 									break;
 								}
 							case "priority":
 							case "option":
 							case "resolution":
 								{
-									if (((Picker)generalStackLayout.Children[i]).SelectedIndex == -1 && Fields[j].required == true)
+									if (((Picker)generalStackLayout.Children[i]).SelectedIndex == -1 && DectionaryFields[generalStackLayout.Children[i].Id].required == true)
 									{
-										checkTransition = false;
+										checkRequeredFields = false;
 										break;
 									}
 									int selectedIndex = ((Picker)generalStackLayout.Children[i]).SelectedIndex;
@@ -737,35 +729,36 @@ namespace RTMobile.issues
 										{
 											fields += ", ";
 										}
-										fields += "\"" + Fields[j].name + "\":{\"name\":\"" + ((Picker)generalStackLayout.Children[i]).Items[selectedIndex] + "\"}";
+										fields += "\"" + DectionaryFields[generalStackLayout.Children[i].Id].name + "\":{\"name\":\"" + ((Picker)generalStackLayout.Children[i]).Items[selectedIndex] + "\"}";
 									}
 									break;
 								}
 							case "string":
 								{
 
-									if (Fields[j].required == true)
+									if (DectionaryFields[generalStackLayout.Children[i].Id].required == true)
 									{
 										if (((Entry)generalStackLayout.Children[i]).Text == null)
 										{
-											checkTransition = false;
+											checkRequeredFields = false;
 											break;
 										}
 									}
-									if (((Entry)generalStackLayout.Children[i]).Text.Length > 0)
+									if (((Entry)generalStackLayout.Children[i]).Text != null&& ((Entry)generalStackLayout.Children[i]).Text.Length > 0)
 									{
 										if (fields.Length > 0)
 										{
 											fields += ", ";
 										}
-										fields += "\"" + Fields[j].name + "\":{\"name\":\"" + ((Entry)generalStackLayout.Children[i]).Text + "\"}";
+										//fields += "\"" + DectionaryFields[generalStackLayout.Children[i].Id].name + "\":{\"name\":\"" + ((Entry)generalStackLayout.Children[i]).Text + "\"}";
+										fields += "\"" + DectionaryFields[generalStackLayout.Children[i].Id].name + "\":\"" + ((Entry)generalStackLayout.Children[i]).Text + "\"";
 									}
 									break;
 								}
 							case "array":
 								{
 									//Проверяем какой массив данных необходимо принять на вход
-									switch (Fields[j].schema.items)
+									switch (DectionaryFields[generalStackLayout.Children[i].Id].schema.items)
 									{
 										case "attachment":
 											{
@@ -773,12 +766,11 @@ namespace RTMobile.issues
 											}
 										case "issuelinks":
 											{
-												if (Fields[j].required == true)
+												if (DectionaryFields[generalStackLayout.Children[i].Id].required == true)
 												{
 													if (((SearchBar)generalStackLayout.Children[i]).Text == null && ((Picker)generalStackLayout.Children[i]).SelectedIndex == -1)
 													{
-														checkTransition = false;
-														i += 2;
+														checkRequeredFields = false;
 														break;
 													}
 												}
@@ -789,7 +781,7 @@ namespace RTMobile.issues
 													{
 														fields += ", ";
 													}
-													fields += "\"" + Fields[j].name + "\":{\"name\":\"" + ((Picker)generalStackLayout.Children[i]).Items[selectedIndex] + "\"}";
+													fields += "\"" + DectionaryFields[generalStackLayout.Children[i].Id].name + "\":{\"name\":\"" + ((Picker)generalStackLayout.Children[i]).Items[selectedIndex] + "\"}";
 												}
 												//Увеличиваем счетчик полей на единицу, т.к. мы ранее создавали для этого типа поля два поля (searchBar и grid и picker)
 												++i;
@@ -801,9 +793,6 @@ namespace RTMobile.issues
 													}
 													fields += "\"issuelinks\":{\"name\":\"" + ((SearchBar)generalStackLayout.Children[i]).Text + "\"}";
 												}
-												//Увеличиваем счетчик полей на единицу, т.к. мы ранее создавали для этого типа поля два поля (searchBar и grid и picker)
-												++i;
-
 												break;
 											}
 									}
@@ -820,43 +809,48 @@ namespace RTMobile.issues
 									{
 										fields += ", ";
 									}
-									fields += "\"" + Fields[j].name + "\":{\"name\":\"" + ((DatePicker)generalStackLayout.Children[i]).Date.ToString() + "\"}";
-									break;
-								}
-							case "comment":
-								{
-									if (Fields[j].required == true)
-									{
-										if (((Entry)generalStackLayout.Children[i]).Text == null)
-										{
-											checkTransition = false;
-											break;
-										}
-									}
-									if (((Entry)generalStackLayout.Children[i]).Text.Length > 0)
-									{
-										commentField = "\"update\":{\"comment\":[{\"add\":{\"body\":\"" + ((Entry)generalStackLayout.Children[i]).Text + "\"}}]}";
-									}
-
+									//fields += "\"" + DectionaryFields[generalStackLayout.Children[i].Id].name + "\":{\"name\":\"" + ((DatePicker)generalStackLayout.Children[i]).Date.ToString() + "\"}";
+									fields += "\"" + DectionaryFields[generalStackLayout.Children[i].Id].name + "\":\"" + ((DatePicker)generalStackLayout.Children[i]).Date.ToString("yyyy-MM-dd") + "\"";
 									break;
 								}
 						}
 					}
 					else
 					{
-						switch (Fields[i].schema.type)
+						switch (DectionaryFields[generalStackLayout.Children[i].Id].schema.type)
 						{
 							case "option-with-child":
 								{
-									i += 2;
+									if (((Picker)generalStackLayout.Children[i]).SelectedIndex == -1 && DectionaryFields[generalStackLayout.Children[i].Id].required == true)
+									{
+										checkRequeredFields = false;
+										break;
+									}
+
+									if (((Picker)generalStackLayout.Children[i]).SelectedIndex != -1)
+									{
+										if (fields.Length > 0)
+										{
+											fields += ", ";
+										}
+										//добавляем категорию
+										fields += "\"" + DectionaryFields[generalStackLayout.Children[i].Id].name + "\":{\"name\":\"" + ((Picker)generalStackLayout.Children[i]).Items[((Picker)generalStackLayout.Children[i]).SelectedIndex] + "\"}";
+
+										if (DectionaryFields[generalStackLayout.Children[i].Id].allowedValues != null && DectionaryFields[generalStackLayout.Children[i].Id].allowedValues[((Picker)generalStackLayout.Children[i]).SelectedIndex].children != null)
+										{
+											//Добавляем подкатегорию
+											fields += ", \"" + DectionaryFields[generalStackLayout.Children[i].Id].name + ":1" +
+													  "\":{\"value\":\"" + ((Picker)generalStackLayout.Children[i + 1]).Items[((Picker)generalStackLayout.Children[i + 1]).SelectedIndex] + "\"}";
+										}
+									}
 									break;
 								}
 							case "option":
 							case "resolution":
 								{
-									if (((Picker)generalStackLayout.Children[i]).SelectedIndex == -1 && Fields[j].required == true)
+									if (((Picker)generalStackLayout.Children[i]).SelectedIndex == -1 && DectionaryFields[generalStackLayout.Children[i].Id].required == true)
 									{
-										checkTransition = false;
+										checkRequeredFields = false;
 										break;
 									}
 									int selectedIndex = ((Picker)generalStackLayout.Children[i]).SelectedIndex;
@@ -867,9 +861,8 @@ namespace RTMobile.issues
 										{
 											fields += ", ";
 										}
-										fields += "\"" + Fields[j].name + "\":{\"name\":\"" + ((Picker)generalStackLayout.Children[i]).Items[selectedIndex] + "\"}";
+										fields += "\"" + DectionaryFields[generalStackLayout.Children[i].Id].name + "\":{\"name\":\"" + ((Picker)generalStackLayout.Children[i]).Items[selectedIndex] + "\"}";
 									}
-
 									break;
 								}
 							case "datetime":
@@ -878,56 +871,56 @@ namespace RTMobile.issues
 									{
 										fields += ", ";
 									}
-									fields += "\"" + Fields[j].name + "\":{\"name\":\"" + ((DatePicker)generalStackLayout.Children[i]).Date.ToString() + "\"}";
+									fields += "\"" + DectionaryFields[generalStackLayout.Children[i].Id].name + "\":{\"name\":\"" + ((DatePicker)generalStackLayout.Children[i]).Date.ToString() + "\"}";
 									break;
 								}
 							case "string":
 								{
-									if (Fields[j].required == true)
+									if (DectionaryFields[generalStackLayout.Children[i].Id].required == true)
 									{
 										if (((Entry)generalStackLayout.Children[i]).Text == null)
 										{
-											checkTransition = false;
+											checkRequeredFields = false;
 											break;
 										}
 									}
-									if (((Entry)generalStackLayout.Children[i]).Text.Length > 0)
+									if (((Entry)generalStackLayout.Children[i]).Text !=null && ((Entry)generalStackLayout.Children[i]).Text.Length > 0)
 									{
 										if (fields.Length > 0)
 										{
 											fields += ", ";
 										}
-										fields += "\"" + Fields[j].name + "\":{\"name\":\"" + ((Entry)generalStackLayout.Children[i]).Text + "\"}";
+										fields += "\"" + DectionaryFields[generalStackLayout.Children[i].Id].name + "\":{\"name\":\"" + ((Entry)generalStackLayout.Children[i]).Text + "\"}";
 									}
 									break;
 								}
 							case "number":
 								{
-									if (Fields[j].required == true)
+									if (DectionaryFields[generalStackLayout.Children[i].Id].required == true)
 									{
 										if (((Entry)generalStackLayout.Children[i]).Text == null)
 										{
-											checkTransition = false;
+											checkRequeredFields = false;
 											break;
 										}
 									}
-									if (((Entry)generalStackLayout.Children[i]).Text.Length > 0)
+									if (((Entry)generalStackLayout.Children[i]).Text != null && ((Entry)generalStackLayout.Children[i]).Text.Length > 0)
 									{
 										if (fields.Length > 0)
 										{
 											fields += ", ";
 										}
-										jsonRequestCreate += "\"" + Fields[j].name + "\":{\"name\":\"" + ((Entry)generalStackLayout.Children[i]).Text + "\"}";
+										jsonRequestCreate += "\"" + DectionaryFields[generalStackLayout.Children[i].Id].name + "\":{\"name\":\"" + ((Entry)generalStackLayout.Children[i]).Text + "\"}";
 									}
 									break;
 								}
 							case "user":
 								{
-									if (Fields[j].required == true)
+									if (DectionaryFields[generalStackLayout.Children[i].Id].required == true)
 									{
 										if (((SearchBar)generalStackLayout.Children[i]).Text == null && ((Picker)generalStackLayout.Children[i]).SelectedIndex == -1)
 										{
-											checkTransition = false;
+											checkRequeredFields = false;
 											break;
 										}
 									}
@@ -942,15 +935,14 @@ namespace RTMobile.issues
 									Request requestUser = new Request(jsonRequestUser);
 
 									user = requestUser.GetResponses<List<User>>();
-									if (user.Count > 0)
+									if (user != null &&user.Count > 0)
 									{
 										if (fields.Length > 0)
 										{
 											fields += ", ";
 										}
-										fields += "\"" + Fields[j].name + "\":{\"name\":\"" + user[0].name + "\"}";
+										fields += "\"" + DectionaryFields[generalStackLayout.Children[i].Id].name + "\":{\"name\":\"" + user[0].name + "\"}";
 									}
-
 									//Увеличиваем счетчик полей на единицу, т.к. мы ранее создавали для этого типа поля два поля (searchBar и grid)
 									++i;
 									break;
@@ -961,22 +953,20 @@ namespace RTMobile.issues
 								}
 						}
 					}
-					++j;
 				}
 			}
 
 			if (fields.Length > 0)
 			{
-				jsonRequestCreate += ", \"fields\":{" + fields + "}";
+				jsonRequestCreate += "\"fields\":{" + fields +
+												  ", \"project\":{\"key\":\"" + projects[projectPic.SelectedIndex].key + "\"}," +
+												  "\"issuetype\":{\"name\":\"" + projects[projectPic.SelectedIndex].issuetypes[typeIssuePic.SelectedIndex].name + "\"}" +
+												  "}";
 			}
-			if (commentField.Length > 0)
-			{
 
-				jsonRequestCreate += ", " + commentField;
-			}
 			//Закрываем запрос
 			jsonRequestCreate += "}";
-			if (checkTransition)
+			if (checkRequeredFields)
 			{
 				//Совершаем переход с полученными данными
 				JSONRequest jsonRequest = new JSONRequest
