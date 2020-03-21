@@ -24,7 +24,29 @@ namespace RTMobile
 		/// </summary>
 		public Request()
 		{ }
+		/// <summary>
+		/// Строка с JSON - заропсом на сервер
+		/// </summary>
 		private string json { get; set; }
+		/// <summary>
+		/// Проверка сервера на доступность
+		/// </summary>
+		/// <returns></returns>
+		public bool verifyServer()
+		{
+			Uri uri = new Uri(CrossSettings.Current.GetValueOrDefault("urlServer", string.Empty));
+			try
+			{
+				HttpWebRequest httpWebRequest = (HttpWebRequest)HttpWebRequest.Create(uri);
+				HttpWebResponse httpWebResponse = (HttpWebResponse)httpWebRequest.GetResponse();
+			}
+			//Если при попытке установить подключение произошли ошибки, то отлавливаем исключение и возвращаем false
+			catch
+			{
+				return false;
+			}
+			return true;
+		}
 		/// <summary>
 		/// Авторизация пользователя и возвращение упешности результата авторизации
 		/// </summary>
