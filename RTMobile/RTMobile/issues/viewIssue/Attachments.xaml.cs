@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Threading.Tasks;
 using Microsoft.AppCenter.Crashes;
 using Plugin.Settings;
 using RTMobile.calendar;
@@ -59,21 +60,44 @@ namespace RTMobile.issues.viewIssue
 					}
 				}
 			}
+			//Скрываем или показываем предупреждение о отсутствии файлов или покаызваем файлы
+			if (attachmentsImage != null && attachmentsImage.Count > 0)
+			{
+				noneImage.IsVisible = false;
+				carouselImages.IsVisible = true;
+				carouselImages.ItemsSource = attachmentsImage;
+			}
+			else
+			{
+				carouselImages.IsVisible = false;
+				noneImage.IsVisible = true;
+			}
 
-			//if (attachmentsImage != null && attachmentsImage.Count > 0)
-			//{
-			//	noneImage.IsVisible = true;
-			//	carouselImages.IsVisible = false;
-			//}
-			//else
-			//{
-			//	carouselImages.IsVisible = true;
-			//	noneImage.IsVisible = false;
-			//}
+			if (attachmentsDocument != null && attachmentsDocument.Count > 0)
+			{
+				noneDocuments.IsVisible = false;
+				carouselDocuments.IsVisible = true;
+				carouselDocuments.ItemsSource = attachmentsDocument;
+			}
+			else
+			{
+				carouselDocuments.IsVisible = false;
+				noneDocuments.IsVisible = true;
+			}
+			if (attachmentsOther != null && attachmentsOther.Count > 0)
+			{
+				noneOthers.IsVisible = false;
+				carouselOthers.IsVisible = true;
+				carouselOthers.ItemsSource = attachmentsOther;
+			}
+			else
+			{
+				carouselOthers.IsVisible = false;
+				noneOthers.IsVisible = true;
+			}
 
-			carouselImages.ItemsSource = attachmentsImage;
-			carouselDocuments.ItemsSource = attachmentsDocument;
-			carouselOthers.ItemsSource = attachmentsOther;
+			
+			
 
 			this.BindingContext = this;
 		}
@@ -114,15 +138,15 @@ namespace RTMobile.issues.viewIssue
 			Navigation.PushAsync(new imageView(attachmentsImage, carouselImages.Position));
 		}
 
-		private void TapGestureRecognizer_Tapped_1(object sender, EventArgs e)
+		private async void TapGestureRecognizer_Tapped_1(object sender, EventArgs e)
 		{
-			Uri uri = new Uri (attachmentsDocument[carouselDocuments.Position].content);		
-			Launcher.TryOpenAsync(uri);
+			Uri uri = new Uri (attachmentsDocument[carouselDocuments.Position].content);
+			await Launcher.TryOpenAsync(uri);
 		}
-		private void TapGestureRecognizer_Tapped_2(object sender, EventArgs e)
+		private async void TapGestureRecognizer_Tapped_2(object sender, EventArgs e)
 		{
 			Uri uri = new Uri(attachmentsOther[carouselOthers.Position].content);
-			Launcher.TryOpenAsync(uri);
+			await Launcher.TryOpenAsync(uri);
 		}
 	}
 }
