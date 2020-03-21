@@ -7,6 +7,7 @@ using RTMobile.calendar;
 using RTMobile.filter;
 using RTMobile.insight;
 using RTMobile.profile;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace RTMobile.issues.viewIssue
@@ -76,39 +77,6 @@ namespace RTMobile.issues.viewIssue
 
 			this.BindingContext = this;
 		}
-		private void TransitionIssue()
-		{
-			try
-			{
-				JSONRequest jsonRequest = new JSONRequest
-				{
-					urlRequest = $"/rest/api/2/issue/{issue.key}/transitions/",
-					methodRequest = "GET"
-				};
-				Request request = new Request(jsonRequest);
-
-				transition = request.GetResponses<RootObject>().transitions;
-				for (int i = 0; i < transition.Count; ++i)
-				{
-					ToolbarItem tb = new ToolbarItem
-					{
-						Text = transition[i].name,
-						Order = ToolbarItemOrder.Secondary,
-						Priority = i + 1
-					};
-					tb.Clicked += async (sender, args) =>
-					{
-						await Navigation.PushAsync(new RTMobile.issues.viewIssue.Transition(int.Parse(transition[((ToolbarItem)sender).Priority - 1].id), issue.key)).ConfigureAwait(true);
-					};
-					ToolbarItems.Add(tb);
-				}
-			}
-			catch (Exception ex)
-			{
-				Console.WriteLine(ex.Message);
-				Crashes.TrackError(ex);
-			}
-		}
 		void ImageButton_Clicked(System.Object sender, System.EventArgs e)
 		{
 			Navigation.PushAsync(new Calendar());
@@ -144,6 +112,17 @@ namespace RTMobile.issues.viewIssue
 		private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
 		{
 			Navigation.PushAsync(new imageView(attachmentsImage, carouselImages.Position));
+		}
+
+		private void TapGestureRecognizer_Tapped_1(object sender, EventArgs e)
+		{
+			Uri uri = new Uri (attachmentsDocument[carouselDocuments.Position].content);		
+			Launcher.TryOpenAsync(uri);
+		}
+		private void TapGestureRecognizer_Tapped_2(object sender, EventArgs e)
+		{
+			Uri uri = new Uri(attachmentsOther[carouselOthers.Position].content);
+			Launcher.TryOpenAsync(uri);
 		}
 	}
 }

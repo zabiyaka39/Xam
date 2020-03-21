@@ -95,6 +95,9 @@
                             <CarouselView.ItemTemplate>
                                 <DataTemplate>
                                     <StackLayout HorizontalOptions="CenterAndExpand" WidthRequest="100">
+                                        <StackLayout.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1"/>
+                                        </StackLayout.GestureRecognizers>
                                         <VisualStateManager.VisualStateGroups>
                                             <VisualStateGroup x:Name="CommonStates">
                                                 <VisualState x:Name="CurrentItem">
@@ -149,6 +152,9 @@
                             <CarouselView.ItemTemplate>
                                 <DataTemplate>
                                     <StackLayout HorizontalOptions="CenterAndExpand" WidthRequest="100">
+                                        <StackLayout.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_2"/>
+                                        </StackLayout.GestureRecognizers>
                                         <VisualStateManager.VisualStateGroups>
                                             <VisualStateGroup x:Name="CommonStates">
                                                 <VisualState x:Name="CurrentItem">
