@@ -1,13 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Threading.Tasks;
-using Microsoft.AppCenter.Crashes;
-using Plugin.Settings;
 using RTMobile.calendar;
 using RTMobile.filter;
 using RTMobile.insight;
-using RTMobile.profile;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
@@ -72,7 +68,6 @@ namespace RTMobile.issues.viewIssue
 				carouselImages.IsVisible = false;
 				noneImage.IsVisible = true;
 			}
-
 			if (attachmentsDocument != null && attachmentsDocument.Count > 0)
 			{
 				noneDocuments.IsVisible = false;
@@ -95,9 +90,6 @@ namespace RTMobile.issues.viewIssue
 				carouselOthers.IsVisible = false;
 				noneOthers.IsVisible = true;
 			}
-
-			
-			
 
 			this.BindingContext = this;
 		}
@@ -141,12 +133,12 @@ namespace RTMobile.issues.viewIssue
 		private async void TapGestureRecognizer_Tapped_1(object sender, EventArgs e)
 		{
 			Uri uri = new Uri (attachmentsDocument[carouselDocuments.Position].content);
-			await Launcher.TryOpenAsync(uri);
+			await Launcher.TryOpenAsync(uri).ConfigureAwait(true);
 		}
 		private async void TapGestureRecognizer_Tapped_2(object sender, EventArgs e)
 		{
 			Uri uri = new Uri(attachmentsOther[carouselOthers.Position].content);
-			await Launcher.TryOpenAsync(uri);
+			await Launcher.TryOpenAsync(uri).ConfigureAwait(true); 
 		}
 	}
 }
