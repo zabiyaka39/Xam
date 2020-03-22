@@ -27,14 +27,15 @@ namespace RTMobile.issues.viewIssue
 			this.issueSummary = issueSummary;
 			this.issueKey = issueKey;
 			InitializeComponent();
-			transitionIssue(issueKey);
+			transitionIssue();
+			issueStartPostRequest();
 			this.BindingContext = this;
 		}
 		void ImageButton_Clicked(System.Object sender, System.EventArgs e)
 		{
 			Navigation.PushAsync(new Calendar());
 		}
-		private void transitionIssue(string issueKey)
+		private void transitionIssue()
 		{
 			try
 			{
@@ -67,7 +68,7 @@ namespace RTMobile.issues.viewIssue
 				Console.WriteLine(ex.ToString());
 			}
 		}
-		async void issueStartPostRequest(string issueKey)
+		void issueStartPostRequest()
 		{
 			try
 			{
