@@ -4,17 +4,35 @@
              x:Class="RTMobile.issues.CreateIssue"
              Title="СОЗДАТЬ ЗАДАЧУ">
     <ContentPage.Content>
-       <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
+        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
                       BackgroundColor="#312F35">
-            <Label Text="РАЗДЕЛ В РАЗРАБОТКЕ..." HorizontalOptions="CenterAndExpand"
-                       VerticalOptions="CenterAndExpand" TextColor="#F0F1F0" FontSize="20"/>
-            <Grid VerticalOptions="End">
+            <Label x:Name="errorMessage" Text="Ошибка!" IsVisible="False" TextColor="#BE0030" FontSize="18" 
+                   HorizontalOptions="Center" VerticalOptions="Start" Margin="20,10,20,0"/>
+            <ScrollView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <StackLayout x:Name="generalStackLayout"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="20,10,20,0">
+                    <Label Text="Проект:"  FontSize="18" TextColor="#F0F1F0" />
+                    <Picker x:Name="projectPic" SelectedIndexChanged="Picker_SelectedIndexChanged" HorizontalOptions="FillAndExpand" VerticalOptions="Start"  FontSize="18" TextColor="#F0F1F0"/>
+                    <Label x:Name="lblTypeIssue" Text="Тип задач" IsVisible="False"  FontSize="18" TextColor="#F0F1F0"/>
+                    <Picker x:Name="typeIssuePic" IsVisible="False" HorizontalOptions="FillAndExpand" FontSize="18" TextColor="#F0F1F0" SelectedIndexChanged="typeIssuePic_SelectedIndexChanged"/>
+                </StackLayout>
+            </ScrollView>
+            <Frame HasShadow="True" CornerRadius="3" BackgroundColor="#BE0030" WidthRequest="167"
+                       HeightRequest="34" HorizontalOptions="FillAndExpand" Padding="0,5,0,5" Margin="0,0,-25,10">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer  NumberOfTapsRequired="1"/>
+                </Frame.GestureRecognizers>
+                <Button Margin="0" Padding="0" BackgroundColor="Transparent" Text="СОЗДАТЬ" FontSize="18" TextColor="#F0F1F0" HorizontalOptions="FillAndExpand"
+                           FontAttributes="Bold" VerticalOptions="Center" Clicked="Button_Clicked" />
+
+            </Frame>
+            <Grid VerticalOptions="End" >
                 <Grid.RowDefinitions>
                     <RowDefinition Height="5"/>
                     <RowDefinition Height="20"/>
                     <RowDefinition Height="5"/>
                 </Grid.RowDefinitions>
-                  <ImageButton Source="home.png" Grid.Column="0" Grid.Row="1"
+               
+                <ImageButton Source="home.png" Grid.Column="0" Grid.Row="1"
                              BackgroundColor="Transparent" Clicked="ImageButton_Clicked_3"></ImageButton>
                 <ImageButton Source="calendar.png" Grid.Column="1" Grid.Row="1"
                              BackgroundColor="Transparent" Clicked="ImageButton_Clicked"></ImageButton>

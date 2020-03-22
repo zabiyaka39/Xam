@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using Microsoft.AppCenter.Crashes;
 using Plugin.Settings;
 using RTMobile.calendar;
@@ -16,6 +17,7 @@ namespace RTMobile.issues.viewIssue
 		public string issueSummary { get; set; }
 		public string issueKey { get; set; }
 		private List<RTMobile.Transition> transition { get; set; }
+		public ObservableCollection<Worklog> worklogs = new ObservableCollection<Worklog>();
 		public WorkJournal()
 		{
 			InitializeComponent();
@@ -36,9 +38,11 @@ namespace RTMobile.issues.viewIssue
 		{
 			try
 			{
-				JSONRequest jsonRequest = new JSONRequest();
-				jsonRequest.urlRequest = $"/rest/api/2/issue/{issueKey}/transitions/";
-				jsonRequest.methodRequest = "GET";
+				JSONRequest jsonRequest = new JSONRequest()
+				{
+					urlRequest = $"/rest/api/2/issue/{issueKey}/transitions/",
+					methodRequest = "GET"
+				};
 				Request request = new Request(jsonRequest);
 
 				transition = request.GetResponses<RootObject>().transitions;
@@ -62,6 +66,34 @@ namespace RTMobile.issues.viewIssue
 				Crashes.TrackError(ex);
 				Console.WriteLine(ex.ToString());
 			}
+		}
+		async void issueStartPostRequest(string issueKey)
+		{
+			try
+			{
+				JSONRequest jsonRequest = new JSONRequest
+				{
+					urlRequest = $"/rest/api/2/issue/{issueKey}/worklog",
+					methodRequest = "GET",
+					maxResults = 50,
+					startAt = 0
+				};
+				RootObject rootObject = new RootObject();
+				Request request = new Request(jsonRequest);
+
+				rootObject = request.GetResponses<RootObject>();
+				if (rootObject != null)
+				{
+					worklogs = rootObject.worklogs;
+				}
+
+			}
+			catch (Exception ex)
+			{
+				Console.WriteLine(ex.Message);
+				Crashes.TrackError(ex);
+			}
+
 		}
 		void ImageButton_Clicked_1(System.Object sender, System.EventArgs e)
 		{

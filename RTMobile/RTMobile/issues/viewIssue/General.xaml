@@ -21,7 +21,7 @@
                       BackgroundColor="#4A4C50">
 
             <Frame Grid.Row="0" Grid.Column="0" HasShadow="True" CornerRadius="5"
-                   x:Name="detailFrame" BackgroundColor="#FFFFFF" HeightRequest="170" Margin="10,20,10,10" Padding="10,0,10,0">
+                   x:Name="detailFrame" BackgroundColor="#FFFFFF" HeightRequest="200" Margin="10,20,10,10" Padding="10,0,10,0">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="25"/>
@@ -46,13 +46,13 @@
                     </Grid>
                     <ScrollView  x:Name="detailIssue" Grid.Row="1" Grid.Column="0" HorizontalOptions="FillAndExpand"
                                     VerticalOptions="FillAndExpand" Margin="0,0,10,0">
-                        <Grid Padding="0" >
-                            <Label Text="Тема:" Grid.Column="0" Grid.Row="0" VerticalOptions="Start"/>
+                        <Grid Padding="0" Margin="0" >
+                            <Label Text="Тема:" Grid.Column="0" Grid.Row="0" VerticalOptions="Start" Padding="0"/>
                             <Label x:Name="summaryIssue" Grid.Column="1" Grid.Row="0"
                                    Text="{Binding Path=issue.fields.summary}" HorizontalTextAlignment="End"
-                                   HorizontalOptions="EndAndExpand" VerticalOptions="Start" />
+                                   HorizontalOptions="EndAndExpand" VerticalOptions="Start" Padding="0"/>
 
-                            <Label x:Name="typeIssueLbl" Text="Тип задачи:" Grid.Column="0" Grid.Row="1" VerticalOptions="Start"/>
+                            <Label x:Name="typeIssueLbl" Text="Тип задачи:" Grid.Column="0" Grid.Row="1" VerticalOptions="Start" Padding="0"/>
                             <Label x:Name="typeIssue" Grid.Column="1" Grid.Row="1"
                                    Text="{Binding Path=issue.fields.issuetype.name}" HorizontalTextAlignment="End"
                                    HorizontalOptions="EndAndExpand" VerticalOptions="Start"/>
@@ -101,23 +101,26 @@
                                  HorizontalOptions="FillAndExpand" Grid.Column="0"
                                  Grid.Row="1" Grid.ColumnSpan="2" VerticalOptions="Start"/>
                     </Grid>
-                    <Grid x:Name="dateIssue" Grid.Row="1" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="0,0,10,0">
-                        <Label x:Name ="dateCreateLbl" Text="Дата создания:" Grid.Column="0" Grid.Row="0" VerticalOptions="Start"/>
-                        <Label x:Name="dateCreate" Grid.Column="1" Grid.Row="0" 
-                                   Text="{Binding Path=issue.fields.created}" HorizontalOptions="EndAndExpand" VerticalOptions="Start"/>
+                    <ScrollView  x:Name="dateIssue" Grid.Row="1" Grid.Column="0" HorizontalOptions="FillAndExpand"
+                                    VerticalOptions="FillAndExpand" Margin="0,0,10,0">
+                        <Grid Padding="0" Margin="0" >
+                            <Label x:Name ="dateCreateLbl" Text="Дата создания:" Grid.Column="0" Grid.Row="0" VerticalOptions="Start"/>
+                            <Label x:Name="dateCreate" Grid.Column="1" Grid.Row="0" 
+                                   Text="{Binding Path=issue.fields.created}" HorizontalOptions="EndAndExpand" VerticalOptions="Start" Padding="0" />
 
-                        <Label x:Name="dateUpdateLbl" Text="Обновлено:" Grid.Column="0" Grid.Row="1" VerticalOptions="Start"/>
-                        <Label x:Name="dateUpdate" Grid.Column="1" Grid.Row="1"
+                            <Label x:Name="dateUpdateLbl" Text="Обновлено:" Grid.Column="0" Grid.Row="1" VerticalOptions="Start"/>
+                            <Label x:Name="dateUpdate" Grid.Column="1" Grid.Row="1"
                                    Text="{Binding Path=issue.fields.updated}" HorizontalOptions="EndAndExpand" VerticalOptions="Start"/>
 
-                        <Label x:Name="dateresolutionLbl" Text="Дата решения:" Grid.Column="0" Grid.Row="2" VerticalOptions="Start"/>
-                        <Label x:Name="dateresolution" Grid.Column="1" Grid.Row="2"
+                            <Label x:Name="dateresolutionLbl" Text="Дата решения:" Grid.Column="0" Grid.Row="2" VerticalOptions="Start"/>
+                            <Label x:Name="dateresolution" Grid.Column="1" Grid.Row="2"
                                    Text="{Binding Path=issue.fields.resolutiondate}" HorizontalOptions="EndAndExpand" VerticalOptions="Start"/>
 
-                        <Label x:Name="dateCloseLbl" Text="Дата закрытия:" Grid.Column="0" Grid.Row="3" VerticalOptions="Start"/>
-                        <Label x:Name="dateClose" Grid.Column="1" Grid.Row="3"
+                            <Label x:Name="dateCloseLbl" Text="Дата закрытия:" Grid.Column="0" Grid.Row="3" VerticalOptions="Start"/>
+                            <Label x:Name="dateClose" Grid.Column="1" Grid.Row="3"
                                    Text="{Binding Path=issue.fields.resolutiondate}" HorizontalOptions="EndAndExpand" VerticalOptions="Start"/>
-                    </Grid>
+                        </Grid>
+                    </ScrollView>
                     <ImageButton x:Name="showDate" Source="arrowUp.png"  Grid.Column="0" BackgroundColor="Transparent"
                                  Clicked="showDate_Clicked" Grid.Row="2" HorizontalOptions="Center" VerticalOptions="End" Margin="0,0,0,10"/>
                 </Grid>

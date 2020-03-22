@@ -18,7 +18,13 @@ namespace RTMobile.issues.viewIssue
 		{
 			this.issue = issue;
 			InitializeComponent();
-			description.Text = issue.fields.description;
+			if (issue != null && issue.fields != null)
+			{
+				if (issue.fields.description != null && issue.fields.description.Length > 0)
+				{
+					description.Text = issue.fields.description;
+				}
+			}
 			this.BindingContext = this;
 		}
 

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using Microsoft.AppCenter.Crashes;
 using Plugin.Settings;
 using RTMobile.calendar;
 using RTMobile.filter;
@@ -16,7 +17,7 @@ namespace RTMobile.issues
 	{
 		public ObservableCollection<Issue> issues { get; set; }
 		private string filterIssue { get; set; }
-		string typeSort = "";
+		//string typeSort = "";
 		public AllIssuesView()
 		{
 			InitializeComponent();
@@ -114,6 +115,7 @@ namespace RTMobile.issues
 			catch (Exception ex)
 			{
 				Console.WriteLine(ex.ToString());
+				Crashes.TrackError(ex);
 				await DisplayAlert("Error issues", ex.ToString(), "OK").ConfigureAwait(true);
 			}
 		}
@@ -127,12 +129,15 @@ namespace RTMobile.issues
 		{
 			try
 			{
-				JSONRequest jsonRequest = new JSONRequest();
-				jsonRequest.urlRequest = "/rest/api/2/search?";
-				jsonRequest.methodRequest = "POST";
-				jsonRequest.jql = filterIssue + " ORDER BY " + sortField + " " + typeSort;
-				jsonRequest.maxResults = 50;
-				jsonRequest.startAt = 0;
+				JSONRequest jsonRequest = new JSONRequest()
+				{
+
+					urlRequest = "/rest/api/2/search?",
+					methodRequest = "POST",
+					jql = filterIssue + " ORDER BY " + sortField + " " + typeSort,
+					maxResults = 50,
+					startAt = 0
+				};
 
 				RootObject rootObject = new RootObject();
 				Request request = new Request(jsonRequest);

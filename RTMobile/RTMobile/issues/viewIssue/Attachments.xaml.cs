@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Threading.Tasks;
 using Microsoft.AppCenter.Crashes;
 using Plugin.Settings;
 using RTMobile.calendar;
 using RTMobile.filter;
 using RTMobile.insight;
 using RTMobile.profile;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace RTMobile.issues.viewIssue
@@ -14,71 +16,90 @@ namespace RTMobile.issues.viewIssue
 	public partial class Attachments : ContentPage
 	{
 		Issue issue = new Issue();
-		ObservableCollection<Attachment> attachmentsImage { get; set; }
-		ObservableCollection<Attachment> attachmentsDocument { get; set; }
-		ObservableCollection<Attachment> attachmentsOther { get; set; }
+		private ObservableCollection<Attachment> attachmentsImage = new ObservableCollection<Attachment>();
+		private ObservableCollection<Attachment> attachmentsDocument = new ObservableCollection<Attachment>();
+		private ObservableCollection<Attachment> attachmentsOther = new ObservableCollection<Attachment>();
 		private List<RTMobile.Transition> transition { get; set; }//Переходы по заявке
 		public Attachments(Issue issue)
 		{
+			List<Attachment> atach = new List<Attachment>();
 			InitializeComponent();
 			//TransitionIssue();
 			this.issue = issue;
 			if (issue != null && issue.fields != null)
 			{
-				for(int i=0; i<issue.fields.attachment.Count; ++i)
+				for (int i = 0; i < issue.fields.attachment.Count; ++i)
 				{
+					try
+					{
+						switch (issue.fields.attachment[i].mimeType)
+						{
+							case "image":
+								{
+									attachmentsImage.Add(issue.fields.attachment[i]);
+									break;
+								}
+							case "text":
+								{
+									attachmentsDocument.Add(issue.fields.attachment[i]);
+									break;
+								}
+							default:
+								{
+									
+									atach.Add(issue.fields.attachment[i]);
+									attachmentsOther.Add(issue.fields.attachment[i]);
+									break;
+								}
+						}
+					}
+					catch (Exception ex)
+					{
+						Console.WriteLine(ex.Message);
 
+					}
 				}
-				attachmentsImage = issue.fields.attachment;
+			}
+			//Скрываем или показываем предупреждение о отсутствии файлов или покаызваем файлы
+			if (attachmentsImage != null && attachmentsImage.Count > 0)
+			{
+				noneImage.IsVisible = false;
+				carouselImages.IsVisible = true;
+				carouselImages.ItemsSource = attachmentsImage;
+			}
+			else
+			{
+				carouselImages.IsVisible = false;
+				noneImage.IsVisible = true;
 			}
 
-			//if (attachmentsImage != null && attachmentsImage.Count > 0)
-			//{
-			//	noneImage.IsVisible = true;
-			//	carouselImages.IsVisible = false;
-			//}
-			//else
-			//{
-			//	carouselImages.IsVisible = true;
-			//	noneImage.IsVisible = false;
-			//}
+			if (attachmentsDocument != null && attachmentsDocument.Count > 0)
+			{
+				noneDocuments.IsVisible = false;
+				carouselDocuments.IsVisible = true;
+				carouselDocuments.ItemsSource = attachmentsDocument;
+			}
+			else
+			{
+				carouselDocuments.IsVisible = false;
+				noneDocuments.IsVisible = true;
+			}
+			if (attachmentsOther != null && attachmentsOther.Count > 0)
+			{
+				noneOthers.IsVisible = false;
+				carouselOthers.IsVisible = true;
+				carouselOthers.ItemsSource = attachmentsOther;
+			}
+			else
+			{
+				carouselOthers.IsVisible = false;
+				noneOthers.IsVisible = true;
+			}
 
-			carouselImages.ItemsSource = attachmentsImage;
+			
+			
 
 			this.BindingContext = this;
-		}
-		private void TransitionIssue()
-		{
-			try
-			{
-				JSONRequest jsonRequest = new JSONRequest
-				{
-					urlRequest = $"/rest/api/2/issue/{issue.key}/transitions/",
-					methodRequest = "GET"
-				};
-				Request request = new Request(jsonRequest);
-
-				transition = request.GetResponses<RootObject>().transitions;
-				for (int i = 0; i < transition.Count; ++i)
-				{
-					ToolbarItem tb = new ToolbarItem
-					{
-						Text = transition[i].name,
-						Order = ToolbarItemOrder.Secondary,
-						Priority = i + 1
-					};
-					tb.Clicked += async (sender, args) =>
-					{
-						await Navigation.PushAsync(new RTMobile.issues.viewIssue.Transition(int.Parse(transition[((ToolbarItem)sender).Priority - 1].id), issue.key)).ConfigureAwait(true);
-					};
-					ToolbarItems.Add(tb);
-				}
-			}
-			catch (Exception ex)
-			{
-				Console.WriteLine(ex.Message);
-				Crashes.TrackError(ex);
-			}
 		}
 		void ImageButton_Clicked(System.Object sender, System.EventArgs e)
 		{
@@ -111,6 +132,21 @@ namespace RTMobile.issues.viewIssue
 		void ToolbarItem_Clicked_3(System.Object sender, System.EventArgs e)
 		{
 			Navigation.PushAsync(new Comment(issue.key, issue.fields.summary));
+		}			
+		private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+		{
+			Navigation.PushAsync(new imageView(attachmentsImage, carouselImages.Position));
+		}
+
+		private async void TapGestureRecognizer_Tapped_1(object sender, EventArgs e)
+		{
+			Uri uri = new Uri (attachmentsDocument[carouselDocuments.Position].content);
+			await Launcher.TryOpenAsync(uri);
+		}
+		private async void TapGestureRecognizer_Tapped_2(object sender, EventArgs e)
+		{
+			Uri uri = new Uri(attachmentsOther[carouselOthers.Position].content);
+			await Launcher.TryOpenAsync(uri);
 		}
 	}
 }

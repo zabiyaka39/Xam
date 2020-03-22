@@ -25,6 +25,24 @@ namespace RTMobile
 			InitializeComponent();
 			login.Text = CrossSettings.Current.GetValueOrDefault("login", "");
 			password.Text = CrossSettings.Current.GetValueOrDefault("password", "");
+			Request request = new Request();
+			if (request.verifyServer())
+			{
+				frameLogin.IsEnabled = true;
+				buttonLogin.IsEnabled = true;
+				errorMessage.IsVisible = false;
+				errorMessage.FontAttributes = FontAttributes.None;
+				errorMessage.Margin = new Thickness(0, -15, 0, 0);
+			}
+			else
+			{
+				frameLogin.IsEnabled = false;
+				buttonLogin.IsEnabled = false;				
+				errorMessage.IsVisible = true;
+				errorMessage.Text = "Сервер не доступен!";
+				errorMessage.FontAttributes = FontAttributes.Bold;
+				errorMessage.Margin = new Thickness(0, -15, 0, 15);
+			}
 			//ToolbarItem toolbar = new ToolbarItem
 			//{
 			//    Text = "Настройки",
@@ -47,7 +65,7 @@ namespace RTMobile
 				if (login.Text != null && login.Text.Length > 0 && password.Text != null && password.Text.Length > 0)
 				{
 					if (request.authorization(login.Text.Trim(' '), password.Text))
-					{
+					{						
 						errorMessage.IsVisible = false;
 						errorMessage1.IsVisible = false;
 						errorMessage.IsVisible = false;
@@ -63,6 +81,7 @@ namespace RTMobile
 						CrossSettings.Current.Remove("password");
 						errorMessage.IsVisible = true;
 						errorMessage1.IsVisible = true;
+						errorMessage.Text = "Вход не выполнен!";
 					}
 				}
 				else

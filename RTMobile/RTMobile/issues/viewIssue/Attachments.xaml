@@ -22,9 +22,9 @@
                       BackgroundColor="#4A4C50">
             <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="200"/>
-                    <RowDefinition Height="200"/>
-                    <RowDefinition Height="200"/>
+                    <RowDefinition Height="170"/>
+                    <RowDefinition Height="170"/>
+                    <RowDefinition Height="170"/>
                 </Grid.RowDefinitions>
                 <Frame Grid.Row="0" Grid.Column="0" HasShadow="True" CornerRadius="5"
                    BackgroundColor="#FFFFFF" Margin="10,10,10,10" Padding="10,10,10,0">
@@ -36,10 +36,14 @@
                         <BoxView HorizontalOptions="FillAndExpand" VerticalOptions="Center"
                                                      CornerRadius="50" Margin="-5,0,0,10" BackgroundColor="#4A4C50"
                                                      HeightRequest="1"/>
-                        <CarouselView x:Name="carouselImages" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  PeekAreaInsets="100" HorizontalScrollBarVisibility="Always">
+                        <CarouselView x:Name="carouselImages" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" PeekAreaInsets="100" 
+                                      HorizontalScrollBarVisibility="Always">
                             <CarouselView.ItemTemplate>
                                 <DataTemplate>
                                     <StackLayout>
+                                        <StackLayout.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                                        </StackLayout.GestureRecognizers>
                                         <VisualStateManager.VisualStateGroups>
                                             <VisualStateGroup x:Name="CommonStates">
                                                 <VisualState x:Name="CurrentItem">
@@ -71,9 +75,9 @@
                                 </DataTemplate>
                             </CarouselView.ItemTemplate>
                         </CarouselView>
-                        <StackLayout x:Name="noneImage" BackgroundColor="#4A4C50" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <StackLayout x:Name="noneImage" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="0"  IsVisible="False">
                             <Label Text="Изображения отсутствуют" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" 
-                                   TextColor="#F0F1F0" FontSize="16" IsVisible="False" />
+                                   TextColor="#4A4C50" FontSize="16"/>
                         </StackLayout>
                     </StackLayout>
                 </Frame>
@@ -87,36 +91,107 @@
                         <BoxView HorizontalOptions="FillAndExpand" VerticalOptions="Center"
                                                      CornerRadius="50" Margin="-5,0,0,10" BackgroundColor="#4A4C50"
                                                      HeightRequest="1"/>
-                        <CarouselView x:Name="carouselDocuments">
+                        <CarouselView x:Name="carouselDocuments" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" PeekAreaInsets="100" HorizontalScrollBarVisibility="Always" >
                             <CarouselView.ItemTemplate>
                                 <DataTemplate>
-                                    <StackLayout>
-                                        <Label Text="{Binding filename}" FontSize="16"/>
+                                    <StackLayout HorizontalOptions="CenterAndExpand" WidthRequest="80">
+                                        <StackLayout.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1"/>
+                                        </StackLayout.GestureRecognizers>
+                                        <VisualStateManager.VisualStateGroups>
+                                            <VisualStateGroup x:Name="CommonStates">
+                                                <VisualState x:Name="CurrentItem">
+                                                    <VisualState.Setters>
+                                                        <Setter Property="Scale" Value="1" />
+                                                    </VisualState.Setters>
+                                                </VisualState>
+                                                <VisualState x:Name="PreviousItem">
+                                                    <VisualState.Setters>
+                                                        <Setter Property="Opacity" Value="0.5" />
+                                                        <Setter Property="Scale" Value="0.7" />
+                                                    </VisualState.Setters>
+                                                </VisualState>
+                                                <VisualState x:Name="NextItem">
+                                                    <VisualState.Setters>
+                                                        <Setter Property="Opacity" Value="0.5" />
+                                                        <Setter Property="Scale" Value="0.7" />
+                                                    </VisualState.Setters>
+                                                </VisualState>
+                                                <VisualState x:Name="DefaultItem">
+                                                    <VisualState.Setters>
+                                                        <Setter Property="Opacity" Value="0.25" />
+                                                    </VisualState.Setters>
+                                                </VisualState>
+                                            </VisualStateGroup>
+                                        </VisualStateManager.VisualStateGroups>
+                                        <Frame HorizontalOptions="Center" VerticalOptions="FillAndExpand" WidthRequest="80" HasShadow="True" >
+                                            <Label Text="{Binding extension}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                                        </Frame>
+                                        <Label Text="{Binding filename}" FontSize="10" HorizontalTextAlignment="Center" LineBreakMode="MiddleTruncation"/>
                                     </StackLayout>
                                 </DataTemplate>
                             </CarouselView.ItemTemplate>
                         </CarouselView>
-                        <StackLayout x:Name="noneDocuments" BackgroundColor="#4A4C50" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <StackLayout x:Name="noneDocuments" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  IsVisible="False" >
                             <Label Text="Документы отсутствуют" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" 
-                                   TextColor="#F0F1F0" FontSize="16" IsVisible="False"  />
+                                   TextColor="#4A4C50" FontSize="16" />
                         </StackLayout>
                     </StackLayout>
                 </Frame>
                 <Frame Grid.Row="2" Grid.Column="0" HasShadow="True" CornerRadius="5"
-                  BackgroundColor="#FFFFFF" Margin="10,0,10,10" Padding="10,0,10,0">
+                  BackgroundColor="#FFFFFF" Margin="10,0,10,10" Padding="10,10,10,0">
                     <StackLayout>
-                        <CarouselView x:Name="carouselOthers">
+                        <StackLayout VerticalOptions="Center" HorizontalOptions="FillAndExpand" HeightRequest="20" Orientation="Horizontal">
+                            <Image Source="folder.png" />
+                            <Label Text="Другое"/>
+                        </StackLayout>
+                        <BoxView HorizontalOptions="FillAndExpand" VerticalOptions="Center"
+                                                     CornerRadius="50" Margin="-5,0,0,10" BackgroundColor="#4A4C50"
+                                                     HeightRequest="1"/>
+                        <CarouselView x:Name="carouselOthers" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" PeekAreaInsets="100" HorizontalScrollBarVisibility="Always" >
                             <CarouselView.ItemTemplate>
                                 <DataTemplate>
-                                    <StackLayout>
-                                        <Label Text="{Binding filename}" FontSize="16"/>
+                                    <StackLayout HorizontalOptions="CenterAndExpand" WidthRequest="80">
+                                        <StackLayout.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_2"/>
+                                        </StackLayout.GestureRecognizers>
+                                        <VisualStateManager.VisualStateGroups>
+                                            <VisualStateGroup x:Name="CommonStates">
+                                                <VisualState x:Name="CurrentItem">
+                                                    <VisualState.Setters>
+                                                        <Setter Property="Scale" Value="1" />
+                                                    </VisualState.Setters>
+                                                </VisualState>
+                                                <VisualState x:Name="PreviousItem">
+                                                    <VisualState.Setters>
+                                                        <Setter Property="Opacity" Value="0.5" />
+                                                        <Setter Property="Scale" Value="0.7" />
+                                                    </VisualState.Setters>
+                                                </VisualState>
+                                                <VisualState x:Name="NextItem">
+                                                    <VisualState.Setters>
+                                                        <Setter Property="Opacity" Value="0.5" />
+                                                        <Setter Property="Scale" Value="0.7" />
+                                                    </VisualState.Setters>
+                                                </VisualState>
+                                                <VisualState x:Name="DefaultItem">
+                                                    <VisualState.Setters>
+                                                        <Setter Property="Opacity" Value="0.25" />
+                                                    </VisualState.Setters>
+                                                </VisualState>
+                                            </VisualStateGroup>
+                                        </VisualStateManager.VisualStateGroups>
+                                        <Frame HorizontalOptions="Center" VerticalOptions="FillAndExpand" WidthRequest="80" HasShadow="True">
+                                            <Label Text="{Binding extension}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                                        </Frame>
+                                        <Label Text="{Binding filename}" FontSize="10" HorizontalTextAlignment="Center" LineBreakMode="MiddleTruncation"/>
                                     </StackLayout>
                                 </DataTemplate>
                             </CarouselView.ItemTemplate>
                         </CarouselView>
-                        <StackLayout x:Name="noneOthers" BackgroundColor="#4A4C50" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <StackLayout x:Name="noneOthers" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  IsVisible="False" >
                             <Label Text="Файлы отсутствуют" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" 
-                                   TextColor="#F0F1F0" FontSize="16" IsVisible="False"  />
+                                   TextColor="#4A4C50" FontSize="16"/>
                         </StackLayout>
                     </StackLayout>
                 </Frame>

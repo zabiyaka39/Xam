@@ -53,12 +53,12 @@
                            FontAttributes="Bold" VerticalOptions="Center"/>
                 </Frame>
 
-                <Frame HasShadow="True" CornerRadius="3" BackgroundColor="#BE0030" WidthRequest="167"
+                <Frame x:Name="frameLogin" HasShadow="True" CornerRadius="3" BackgroundColor="#BE0030" WidthRequest="167"
                        HeightRequest="34" HorizontalOptions="StartAndExpand" Padding="0,5,0,5" Margin="0,0,0,10">
                     <Frame.GestureRecognizers>
                         <TapGestureRecognizer Tapped="Button_Clicked" NumberOfTapsRequired="1"/>
                     </Frame.GestureRecognizers>
-                    <Button Margin="0" Padding="0" BackgroundColor="Transparent" Text="ВОЙТИ" FontSize="18" TextColor="#F0F1F0" HorizontalOptions="Center"
+                    <Button x:Name="buttonLogin" Margin="0" Padding="0" BackgroundColor="Transparent" Text="ВОЙТИ" FontSize="18" TextColor="#F0F1F0" HorizontalOptions="Center"
                            FontAttributes="Bold" VerticalOptions="Center" Clicked="Button_Clicked"/>
                 </Frame>
             </StackLayout>

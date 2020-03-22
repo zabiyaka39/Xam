@@ -12,7 +12,7 @@ namespace RTMobile.issues.viewIssue
 	public partial class General : ContentPage
 	{
 		public List<Fields> fieldIssue { get; set; }//поля заявки
-		public List<RTMobile.Transition> transition;//Переходы по заявке
+		public List<RTMobile.Transition> transition { get; set; }//Переходы по заявке
 		public Issue issue { get; set; }
 		public General()
 		{
@@ -29,9 +29,14 @@ namespace RTMobile.issues.viewIssue
 				try
 				{
 					//Делаем запрпос на получение расширенных данных по задаче				
-					JSONRequest jsonRequest = new JSONRequest();
-					jsonRequest.urlRequest = $"/rest/api/2/issue/{issue.key}?expand=names,schema";
-					jsonRequest.methodRequest = "GET";
+					JSONRequest jsonRequest = new JSONRequest()
+					{
+						//Показ всех полей, даже не видимых
+						//urlRequest = $"/rest/api/2/issue/{issue.key}?expand=names,schema",
+						//Показываем только видимые поля
+						urlRequest = $"/rest/api/2/issue/{issue.key}/editmeta",
+						methodRequest = "GET"
+					};
 					Request request = new Request(jsonRequest);
 
 					fieldIssue = request.GetCustomField();
@@ -48,7 +53,7 @@ namespace RTMobile.issues.viewIssue
 				}
 			}
 			this.BindingContext = this;
-		}		
+		}
 		void ImageButton_Clicked(System.Object sender, System.EventArgs e)
 		{
 			Navigation.PushAsync(new Calendar());

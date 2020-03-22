@@ -1260,7 +1260,7 @@
           "lib/MonoAndroid/Com.Android.DeskClock.dll": {}
         }
       },
-      "Xamarin.Essentials/1.5.0": {
+      "Xamarin.Essentials/1.5.1": {
         "type": "package",
         "dependencies": {
           "Xamarin.Android.Support.Compat": "28.0.0.3",
@@ -1316,7 +1316,7 @@
           "System.Net.Http": "4.3.4",
           "System.Xml.XmlSerializer": "4.3.0",
           "Xam.Plugins.Settings": "3.1.1",
-          "Xamarin.Essentials": "1.5.0",
+          "Xamarin.Essentials": "1.5.1",
           "Xamarin.Forms": "4.5.0.356"
         },
         "compile": {
@@ -3773,10 +3773,10 @@
         "xamarin.android.verticalviewpager.nuspec"
       ]
     },
-    "Xamarin.Essentials/1.5.0": {
-      "sha512": "smsjVQ05+EUpynNmzDVOKu4hE17c5WZU79cgWxAkZtJPXqJdNUoqFpj34n4s32QsPdLSgRE/B48+64q1ycqD+Q==",
+    "Xamarin.Essentials/1.5.1": {
+      "sha512": "XEKAp7BXfZkTGbMqySXtuhwxb06ULjkJNQ8p44e8amOPm4m4VTVV92F13ov0a8NFNU+6JFm98510QK9Q/HBD5A==",
       "type": "package",
-      "path": "xamarin.essentials/1.5.0",
+      "path": "xamarin.essentials/1.5.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -3817,7 +3817,7 @@
         "lib/xamarinwatchos10/Xamarin.Essentials.pdb",
         "lib/xamarinwatchos10/Xamarin.Essentials.xml",
         "readme.txt",
-        "xamarin.essentials.1.5.0.nupkg.sha512",
+        "xamarin.essentials.1.5.1.nupkg.sha512",
         "xamarin.essentials.nuspec"
       ]
     },
@@ -4126,29 +4126,29 @@
       "Xamarin.Android.Support.v7.AppCompat >= 28.0.0.3",
       "Xamarin.Android.Support.v7.CardView >= 28.0.0.3",
       "Xamarin.Android.Support.v7.MediaRouter >= 28.0.0.3",
-      "Xamarin.Essentials >= 1.5.0",
+      "Xamarin.Essentials >= 1.5.1",
       "Xamarin.Forms >= 4.5.0.356"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\sekisov\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\wwwge\\.nuget\\packages\\": {},
+    "D:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\project\\Mobile\\RTMobile\\RTMobile\\RTMobile.Android\\RTMobile.Android.csproj",
+      "projectUniqueName": "D:\\Project\\Jira\\rtmobile\\RTMobile\\RTMobile.Android\\RTMobile.Android.csproj",
       "projectName": "RTMobile.Android",
-      "projectPath": "F:\\project\\Mobile\\RTMobile\\RTMobile\\RTMobile.Android\\RTMobile.Android.csproj",
-      "packagesPath": "C:\\Users\\sekisov\\.nuget\\packages\\",
-      "outputPath": "F:\\project\\Mobile\\RTMobile\\RTMobile\\RTMobile.Android\\obj\\",
+      "projectPath": "D:\\Project\\Jira\\rtmobile\\RTMobile\\RTMobile.Android\\RTMobile.Android.csproj",
+      "packagesPath": "C:\\Users\\wwwge\\.nuget\\packages\\",
+      "outputPath": "D:\\Project\\Jira\\rtmobile\\RTMobile\\RTMobile.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\"
+        "D:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\sekisov\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\wwwge\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -4162,8 +4162,8 @@
       "frameworks": {
         "monoandroid90": {
           "projectReferences": {
-            "F:\\project\\Mobile\\RTMobile\\RTMobile\\RTMobile\\RTMobile.csproj": {
-              "projectPath": "F:\\project\\Mobile\\RTMobile\\RTMobile\\RTMobile\\RTMobile.csproj"
+            "D:\\Project\\Jira\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj": {
+              "projectPath": "D:\\Project\\Jira\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj"
             }
           }
         }
@@ -4230,7 +4230,7 @@
           },
           "Xamarin.Essentials": {
             "target": "Package",
-            "version": "[1.5.0, )"
+            "version": "[1.5.1, )"
           },
           "Xamarin.Forms": {
             "target": "Package",

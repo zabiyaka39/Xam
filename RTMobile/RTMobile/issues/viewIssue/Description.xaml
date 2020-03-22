@@ -52,7 +52,7 @@
                         <ScrollView x:Name="descriptionScroll" Grid.Row="1" Grid.Column="0" HorizontalOptions="FillAndExpand"
                                     VerticalOptions="FillAndExpand" Margin="0,0,10,0">
                             <Editor x:Name="description" IsReadOnly="True" VerticalOptions="FillAndExpand" FontSize="14" TextColor="#4A4C50" 
-                                    Text="Описание отсутствует"/>
+                                    Placeholder="Описание отсутствует"/>
                         </ScrollView>
                         <ImageButton x:Name="showDescription" Source="arrowUp.png"  Grid.Column="0" BackgroundColor="Transparent"
                                  Clicked="showDescriptionIssue_Clicked" Grid.Row="2" HorizontalOptions="Center" VerticalOptions="End" Margin="0,0,0,10"/>

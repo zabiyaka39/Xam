@@ -15,15 +15,42 @@ namespace RTMobile
 	/// </summary>
 	public class JSONRequest
 	{
+		/// <summary>
+		/// Поисковый запрос в формате JQL
+		/// </summary>
 		public string jql { get; set; }
+		/// <summary>
+		/// Отправляемы поля (те что будут находится в запросе в параметре fields)
+		/// </summary>
 		public string fields { get; set; }
+		/// <summary>
+		/// Дополнительные (расширенные) параметры получения запроса
+		/// </summary>
 		public string expand { get; set; }
+		/// <summary>
+		/// Начало запроса (с какого элемента показывать)
+		/// </summary>
 		public int startAt { get; set; }
+		/// <summary>
+		/// Максимальные искомый пул (максимальное количество врезультатов которое необходимо показать (MAX - 1000))
+		/// </summary>
 		public int maxResults { get; set; }
+		/// <summary>
+		/// Содержание запроса (тело)
+		/// </summary>
 		public string body { get; set; }
+		/// <summary>
+		/// Сортировка которую необходимо произвести для полученного результата
+		/// </summary>
 		public string orderBy { get; set; }
+		/// <summary>
+		/// Адрес запроса на сервер
+		/// </summary>
 		[JsonIgnore]
 		public string urlRequest { get; set; }
+		/// <summary>
+		/// Метод запроса (POST, GET, PUT, ...)
+		/// </summary>
 		[JsonIgnore]
 		public string methodRequest { get; set; }
 	}
@@ -55,10 +82,7 @@ namespace RTMobile
 		public string created
 		{
 			get { return _created; }
-			set
-			{
-				_created = (Convert.ToDateTime(value)).ToString("dd.MM.yyyy H:mm");
-			}
+			set => _created = Convert.ToDateTime(value).ToString("dd.MM.yyyy H:mm");
 		}
 		public List<Item> items { get; set; }
 		public HistoryMetadata historyMetadata { get; set; }
@@ -134,9 +158,10 @@ namespace RTMobile
 				}
 
 				WebClient webClient = new WebClient();
-				string credentials = Convert.ToBase64String(Encoding.ASCII.GetBytes(CrossSettings.Current.GetValueOrDefault("login", string.Empty) + ":" + CrossSettings.Current.GetValueOrDefault("password", string.Empty)));
-				webClient.Headers[HttpRequestHeader.Authorization] = "Basic " + credentials;
+				string authorize = Convert.ToBase64String(Encoding.ASCII.GetBytes(CrossSettings.Current.GetValueOrDefault("login", string.Empty) + ":" + CrossSettings.Current.GetValueOrDefault("password", string.Empty)));
+				webClient.Headers[HttpRequestHeader.Authorization] = "Basic " + authorize;
 				var byteArray = webClient.DownloadData(uri);
+				webClient.Dispose();
 				image.Source = ImageSource.FromStream(() => new MemoryStream(byteArray));
 				return image.Source;
 			}
@@ -150,6 +175,7 @@ namespace RTMobile
 		public string description { get; set; }
 		public Uri iconUrl { get; set; }
 		public string name { get; set; }
+		public string expand { get; set; }
 		public bool subtask { get; set; }
 		public long avatarId { get; set; }
 	}
@@ -207,9 +233,10 @@ namespace RTMobile
 					}
 				}
 				WebClient webClient = new WebClient();
-				string credentials = Convert.ToBase64String(Encoding.ASCII.GetBytes(CrossSettings.Current.GetValueOrDefault("login", string.Empty) + ":" + CrossSettings.Current.GetValueOrDefault("password", string.Empty)));
-				webClient.Headers[HttpRequestHeader.Authorization] = "Basic " + credentials;
+				string authorize = Convert.ToBase64String(Encoding.ASCII.GetBytes(CrossSettings.Current.GetValueOrDefault("login", string.Empty) + ":" + CrossSettings.Current.GetValueOrDefault("password", string.Empty)));
+				webClient.Headers[HttpRequestHeader.Authorization] = "Basic " + authorize;
 				var byteArray = webClient.DownloadData(uri);
+				webClient.Dispose();
 				img.Source = ImageSource.FromStream(() => new MemoryStream(byteArray));
 				return img.Source;
 			}
@@ -291,9 +318,10 @@ namespace RTMobile
 				}
 
 				WebClient webClient = new WebClient();
-				string credentials = Convert.ToBase64String(Encoding.ASCII.GetBytes(CrossSettings.Current.GetValueOrDefault("login", string.Empty) + ":" + CrossSettings.Current.GetValueOrDefault("password", string.Empty)));
-				webClient.Headers[HttpRequestHeader.Authorization] = "Basic " + credentials;
+				string authorize = Convert.ToBase64String(Encoding.ASCII.GetBytes(CrossSettings.Current.GetValueOrDefault("login", string.Empty) + ":" + CrossSettings.Current.GetValueOrDefault("password", string.Empty)));
+				webClient.Headers[HttpRequestHeader.Authorization] = "Basic " + authorize;
 				var byteArray = webClient.DownloadData(uri);
+				webClient.Dispose();
 				image.Source = ImageSource.FromStream(() => new MemoryStream(byteArray));
 				return image.Source;
 			}
@@ -400,6 +428,9 @@ namespace RTMobile
 
 	public class Attachment
 	{
+		/// <summary>
+		/// Классификация форматов заружаемых в систему
+		/// </summary>
 		private static Dictionary<string, string> countries = new Dictionary<string, string>
 		{
 			{"image/png", "image"},
@@ -471,16 +502,43 @@ namespace RTMobile
 			{"text/x-setext", "text"},
 			{"text/x-ms-contact", "text"}
 		};
+		/// <summary>
+		/// Обязательность поля для заполнения
+		/// </summary>
 		public bool required { get; set; }
+		/// <summary>
+		/// Тип вложения
+		/// </summary>
 		public string type { get; set; }
+		/// <summary>
+		/// Схема вложения
+		/// </summary>
 		public Schema schema { get; set; }
+		/// <summary>
+		/// Имя загруженного файла
+		/// </summary>
 		public string name { get; set; }
+		/// <summary>
+		/// Список производимых операций с полем
+		/// </summary>
 		public List<object> operations { get; set; }
 		public string self { get; set; }
+		/// <summary>
+		/// Номер загруженного файла
+		/// </summary>
 		public string id { get; set; }
+		/// <summary>
+		/// Имя загруженного файла с расширением
+		/// </summary>
 		public string filename { get; set; }
+		/// <summary>
+		/// Данные об авторе загруженного файла
+		/// </summary>
 		public Author author { get; set; }
 		private string _created { get; set; }
+		/// <summary>
+		/// Дата создания файла
+		/// </summary>
 		public string created
 		{
 			get { return _created; }
@@ -489,9 +547,15 @@ namespace RTMobile
 				_created = (Convert.ToDateTime(value)).ToString("dd.MM.yyyy H:mm");
 			}
 		}
+		/// <summary>
+		/// Размер файла
+		/// </summary>
 		public int size { get; set; }
-
+		public string extension { get; set; }
 		private string _mimeType { get; set; }
+		/// <summary>
+		/// Тип файла (сравнивается со словарем после чего получает группу принадлежности файлов)
+		/// </summary>
 		public string mimeType
 		{
 			get
@@ -500,7 +564,8 @@ namespace RTMobile
 			}
 			set
 			{
-				if (!countries.ContainsKey(value))
+				extension = Path.GetExtension(filename);
+				if (countries.ContainsKey(value))
 				{
 					_mimeType = countries[value];
 				}
@@ -510,7 +575,46 @@ namespace RTMobile
 				}
 			}
 		}
+		/// <summary>
+		/// Исходное изображение
+		/// </summary>
+		public ImageSource contentImage
+		{
+			get
+			{
+				if (mimeType == "image")
+				{
+					Image image = new Image();
+					Uri uri = new Uri(CrossSettings.Current.GetValueOrDefault("urlServer", string.Empty));
+					//выбираем изображение с максимальным разрешением, при его наличии
+					if (content != null)
+					{
+						uri = new Uri(content);
+					}
+					else
+						return null;
+					WebClient webClient = new WebClient();
+					string authorize = Convert.ToBase64String(Encoding.ASCII.GetBytes(CrossSettings.Current.GetValueOrDefault("login", string.Empty) + ":" + CrossSettings.Current.GetValueOrDefault("password", string.Empty)));
+					webClient.Headers[HttpRequestHeader.Authorization] = "Basic " + authorize;
+					var byteArray = webClient.DownloadData(uri);
+					webClient.Dispose();
+					image.Source = ImageSource.FromStream(() => new MemoryStream(byteArray));
+					return image.Source;
+				}
+				else
+				{
+					return null;
+				}
+			}
+			set
+			{
+				contentImage = value;
+			}
+		}
 		public string content { get; set; }
+		/// <summary>
+		/// Превью изображения
+		/// </summary>
 		public ImageSource thumbnailImage
 		{
 			get
@@ -524,9 +628,10 @@ namespace RTMobile
 				}
 
 				WebClient webClient = new WebClient();
-				string credentials = Convert.ToBase64String(Encoding.ASCII.GetBytes(CrossSettings.Current.GetValueOrDefault("login", string.Empty) + ":" + CrossSettings.Current.GetValueOrDefault("password", string.Empty)));
-				webClient.Headers[HttpRequestHeader.Authorization] = "Basic " + credentials;
+				string authorize = Convert.ToBase64String(Encoding.ASCII.GetBytes(CrossSettings.Current.GetValueOrDefault("login", string.Empty) + ":" + CrossSettings.Current.GetValueOrDefault("password", string.Empty)));
+				webClient.Headers[HttpRequestHeader.Authorization] = "Basic " + authorize;
 				var byteArray = webClient.DownloadData(uri);
+				webClient.Dispose();
 				image.Source = ImageSource.FromStream(() => new MemoryStream(byteArray));
 				return image.Source;
 			}
@@ -535,6 +640,9 @@ namespace RTMobile
 				thumbnailImage = value;
 			}
 		}
+		/// <summary>
+		/// Адрес превью изображения
+		/// </summary>
 		public Uri thumbnail { get; set; }
 	}
 	public class AllowedValue
@@ -554,9 +662,10 @@ namespace RTMobile
 				}
 
 				WebClient webClient = new WebClient();
-				string credentials = Convert.ToBase64String(Encoding.ASCII.GetBytes(CrossSettings.Current.GetValueOrDefault("login", string.Empty) + ":" + CrossSettings.Current.GetValueOrDefault("password", string.Empty)));
-				webClient.Headers[HttpRequestHeader.Authorization] = "Basic " + credentials;
+				string authorize = Convert.ToBase64String(Encoding.ASCII.GetBytes(CrossSettings.Current.GetValueOrDefault("login", string.Empty) + ":" + CrossSettings.Current.GetValueOrDefault("password", string.Empty)));
+				webClient.Headers[HttpRequestHeader.Authorization] = "Basic " + authorize;
 				var byteArray = webClient.DownloadData(uri);
+				webClient.Dispose();
 				image.Source = ImageSource.FromStream(() => new MemoryStream(byteArray));
 				return image.Source;
 			}
@@ -570,6 +679,13 @@ namespace RTMobile
 		public string iconUrl { get; set; }
 		public bool subtask { get; set; }
 		public long avatarId { get; set; }
+		public List<Child> children { get; set; }
+	}
+	public class Child
+	{
+		public string self { get; set; }
+		public string value { get; set; }
+		public string id { get; set; }
 	}
 	public class Schema
 	{
@@ -687,16 +803,13 @@ namespace RTMobile
 		public string resolutiondate
 		{
 			get { return _updated; }
-			set
-			{
-				_updated = (Convert.ToDateTime(value)).ToString("dd.MM.yyyy H:mm");
-			}
+			set => _updated = Convert.ToDateTime(value).ToString("dd.MM.yyyy H:mm");
 		}
 		private string _resolutiondate { get; set; }
 		public string Resolutiondate
 		{
 			get { return _resolutiondate; }
-			set => _resolutiondate = (Convert.ToDateTime(value)).ToString("dd.MM.yyyy H:mm");
+			set => _resolutiondate = Convert.ToDateTime(value).ToString("dd.MM.yyyy H:mm");
 		}
 		private string _updated;
 		public string name { get; set; }
@@ -732,6 +845,7 @@ namespace RTMobile
 		public bool isGlobal { get; set; } = false;
 		public bool isConditional { get; set; } = false;
 		public bool isInitial { get; set; } = false;
+		public Guid idFieldScreen { get; set; }
 	}
 	public class Issue
 	{
@@ -771,13 +885,13 @@ namespace RTMobile
 		public List<string> errorMessages { get; set; }
 		public Errors errors { get; set; }
 		public List<User> users { get; set; }
-		public List<Worklog> worklogs { get; set; }
 		public List<Project> projects { get; set; }
 		public List<Section> sections { get; set; }
 		public List<Issuelink> issueLinkTypes { get; set; }
 		public List<Transition> transitions { get; set; }
 		public ObservableCollection<Issue> issues { get; set; }
 		public ObservableCollection<Comment> comments { get; set; }
+		public ObservableCollection<Worklog> worklogs { get; set; }
 		public Changelog changelog { get; set; }
 		public Session session { get; set; }
 		public LoginInfo loginInfo { get; set; }

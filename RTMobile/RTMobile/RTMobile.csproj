@@ -42,7 +42,7 @@
     <PackageReference Include="System.Xml.XmlSerializer" Version="4.3.0" />
     <PackageReference Include="Xam.Plugins.Settings" Version="3.1.1" />
     <PackageReference Include="Xamarin.Forms" Version="4.5.0.356" />
-    <PackageReference Include="Xamarin.Essentials" Version="1.5.0" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.5.1" />
   </ItemGroup>
 
   <ItemGroup>
@@ -58,7 +58,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="dataIssue\photoView.xaml">
+    <EmbeddedResource Update="issues\viewIssue\imageView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
@@ -69,7 +69,6 @@
     <Folder Include="calendar\" />
     <Folder Include="filter\" />
     <Folder Include="insight\" />
-    <Folder Include="issues\" />
     <Folder Include="notification\" />
     <Folder Include="profile\" />
   </ItemGroup>
