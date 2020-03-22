@@ -885,13 +885,13 @@ namespace RTMobile
 		public List<string> errorMessages { get; set; }
 		public Errors errors { get; set; }
 		public List<User> users { get; set; }
-		public List<Worklog> worklogs { get; set; }
 		public List<Project> projects { get; set; }
 		public List<Section> sections { get; set; }
 		public List<Issuelink> issueLinkTypes { get; set; }
 		public List<Transition> transitions { get; set; }
 		public ObservableCollection<Issue> issues { get; set; }
 		public ObservableCollection<Comment> comments { get; set; }
+		public ObservableCollection<Worklog> worklogs { get; set; }
 		public Changelog changelog { get; set; }
 		public Session session { get; set; }
 		public LoginInfo loginInfo { get; set; }
