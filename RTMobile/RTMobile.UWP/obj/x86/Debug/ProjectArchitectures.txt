@@ -1,1 +1,1 @@
-F:\project\Mobile\RTMobile\RTMobile\RTMobile.UWP\RTMobile.UWP.csproj;x86
+D:\Project\Jira\rtmobile\RTMobile\RTMobile.UWP\RTMobile.UWP.csproj;x86

@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <Machine>PC-1341</Machine>
-    <WindowsUser>sekisov</WindowsUser>
+    <Machine>BS</Machine>
+    <WindowsUser>wwwge</WindowsUser>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetOsVersion>10.0</TargetOsVersion>
     <TargetOsDescription>Windows 10.0</TargetOsDescription>
@@ -10,253 +10,250 @@
     <PackageArchitecture>x86</PackageArchitecture>
     <PackageIdentityName>ec0cc741-fd3e-485c-81be-68815c480690</PackageIdentityName>
     <PackageIdentityPublisher>CN=9016596b-bc42-4bff-a509-547a73340138</PackageIdentityPublisher>
-    <IntermediateOutputPath>F:\project\Mobile\RTMobile\RTMobile\RTMobile.UWP\obj\x86\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>D:\Project\Jira\rtmobile\RTMobile\RTMobile.UWP\obj\x86\Debug\</IntermediateOutputPath>
     <RemoteDeploymentType></RemoteDeploymentType>
     <PackageRegistrationPath></PackageRegistrationPath>
     <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
-    <LayoutDir>F:\project\Mobile\RTMobile\RTMobile\RTMobile.UWP\bin\x86\Debug\AppX</LayoutDir>
+    <LayoutDir>D:\Project\Jira\rtmobile\RTMobile\RTMobile.UWP\bin\x86\Debug\AppX</LayoutDir>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="F:\project\Mobile\RTMobile\RTMobile\RTMobile.UWP\bin\x86\Debug\Core\AppxManifest.xml">
+    <AppXManifest Include="D:\Project\Jira\rtmobile\RTMobile\RTMobile.UWP\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="F:\project\Mobile\RTMobile\RTMobile\RTMobile.UWP\bin\x86\Debug\RTMobile.UWP.exe">
+    <AppxPackagedFile Include="D:\Project\Jira\rtmobile\RTMobile\RTMobile.UWP\bin\x86\Debug\RTMobile.UWP.exe">
       <PackagePath>entrypoint\RTMobile.UWP.exe</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sekisov\.nuget\packages\carouselview\7.0.3.1\lib\netstandard2.0\CarouselView.dll">
+    <AppxPackagedFile Include="C:\Users\wwwge\.nuget\packages\carouselview\7.0.3.1\lib\netstandard2.0\CarouselView.dll">
       <PackagePath>CarouselView.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sekisov\.nuget\packages\carouselview.formsplugin\5.2.0\lib\UAP10\CarouselView.FormsPlugin.Abstractions.dll">
+    <AppxPackagedFile Include="C:\Users\wwwge\.nuget\packages\carouselview.formsplugin\5.2.0\lib\UAP10\CarouselView.FormsPlugin.Abstractions.dll">
       <PackagePath>CarouselView.FormsPlugin.Abstractions.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sekisov\.nuget\packages\carouselview.formsplugin\5.2.0\lib\UAP10\CarouselView.FormsPlugin.UWP.dll">
+    <AppxPackagedFile Include="C:\Users\wwwge\.nuget\packages\carouselview.formsplugin\5.2.0\lib\UAP10\CarouselView.FormsPlugin.UWP.dll">
       <PackagePath>CarouselView.FormsPlugin.UWP.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sekisov\.nuget\packages\microsoft.appcenter\3.0.0\lib\uap10.0\Microsoft.AppCenter.dll">
+    <AppxPackagedFile Include="C:\Users\wwwge\.nuget\packages\microsoft.appcenter\3.0.0\lib\uap10.0\Microsoft.AppCenter.dll">
       <PackagePath>Microsoft.AppCenter.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sekisov\.nuget\packages\microsoft.appcenter.analytics\3.0.0\lib\uap10.0\Microsoft.AppCenter.Analytics.dll">
+    <AppxPackagedFile Include="C:\Users\wwwge\.nuget\packages\microsoft.appcenter.analytics\3.0.0\lib\uap10.0\Microsoft.AppCenter.Analytics.dll">
       <PackagePath>Microsoft.AppCenter.Analytics.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sekisov\.nuget\packages\microsoft.appcenter.crashes\3.0.0\lib\uap10.0\Microsoft.AppCenter.Crashes.dll">
+    <AppxPackagedFile Include="C:\Users\wwwge\.nuget\packages\microsoft.appcenter.crashes\3.0.0\lib\uap10.0\Microsoft.AppCenter.Crashes.dll">
       <PackagePath>Microsoft.AppCenter.Crashes.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sekisov\.nuget\packages\microsoft.dotnet.platformabstractions\2.0.4\lib\netstandard1.3\Microsoft.DotNet.PlatformAbstractions.dll">
+    <AppxPackagedFile Include="C:\Users\wwwge\.nuget\packages\microsoft.dotnet.platformabstractions\2.0.4\lib\netstandard1.3\Microsoft.DotNet.PlatformAbstractions.dll">
       <PackagePath>Microsoft.DotNet.PlatformAbstractions.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sekisov\.nuget\packages\microsoft.extensions.dependencymodel\2.0.4\lib\netstandard1.6\Microsoft.Extensions.DependencyModel.dll">
+    <AppxPackagedFile Include="C:\Users\wwwge\.nuget\packages\microsoft.extensions.dependencymodel\2.0.4\lib\netstandard1.6\Microsoft.Extensions.DependencyModel.dll">
       <PackagePath>Microsoft.Extensions.DependencyModel.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sekisov\.nuget\packages\microsoft.extensions.platformabstractions\1.1.0\lib\netstandard1.3\Microsoft.Extensions.PlatformAbstractions.dll">
+    <AppxPackagedFile Include="C:\Users\wwwge\.nuget\packages\microsoft.extensions.platformabstractions\1.1.0\lib\netstandard1.3\Microsoft.Extensions.PlatformAbstractions.dll">
       <PackagePath>Microsoft.Extensions.PlatformAbstractions.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sekisov\.nuget\packages\microsoft.identitymodel.jsonwebtokens\5.6.0\lib\netstandard2.0\Microsoft.IdentityModel.JsonWebTokens.dll">
+    <AppxPackagedFile Include="C:\Users\wwwge\.nuget\packages\microsoft.identitymodel.jsonwebtokens\5.6.0\lib\netstandard2.0\Microsoft.IdentityModel.JsonWebTokens.dll">
       <PackagePath>Microsoft.IdentityModel.JsonWebTokens.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sekisov\.nuget\packages\microsoft.identitymodel.logging\5.6.0\lib\netstandard2.0\Microsoft.IdentityModel.Logging.dll">
+    <AppxPackagedFile Include="C:\Users\wwwge\.nuget\packages\microsoft.identitymodel.logging\5.6.0\lib\netstandard2.0\Microsoft.IdentityModel.Logging.dll">
       <PackagePath>Microsoft.IdentityModel.Logging.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sekisov\.nuget\packages\microsoft.identitymodel.tokens\5.6.0\lib\netstandard2.0\Microsoft.IdentityModel.Tokens.dll">
+    <AppxPackagedFile Include="C:\Users\wwwge\.nuget\packages\microsoft.identitymodel.tokens\5.6.0\lib\netstandard2.0\Microsoft.IdentityModel.Tokens.dll">
       <PackagePath>Microsoft.IdentityModel.Tokens.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sekisov\.nuget\packages\nancy\2.0.0\lib\netstandard2.0\Nancy.dll">
+    <AppxPackagedFile Include="C:\Users\wwwge\.nuget\packages\nancy\2.0.0\lib\netstandard2.0\Nancy.dll">
       <PackagePath>Nancy.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sekisov\.nuget\packages\newtonsoft.json\12.0.3\lib\netstandard2.0\Newtonsoft.Json.dll">
+    <AppxPackagedFile Include="C:\Users\wwwge\.nuget\packages\newtonsoft.json\12.0.3\lib\netstandard2.0\Newtonsoft.Json.dll">
       <PackagePath>Newtonsoft.Json.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\UWPNuGetPackages\runtime.win10-x86.microsoft.netcore.universalwindowsplatform\6.2.9\runtimes\win10-x86\lib\uap10.0.15138\System.Runtime.dll">
       <PackagePath>System.Runtime.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sekisov\.nuget\packages\sqlitepclraw.bundle_green\2.0.2\lib\netstandard2.0\SQLitePCLRaw.batteries_v2.dll">
+    <AppxPackagedFile Include="C:\Users\wwwge\.nuget\packages\sqlitepclraw.bundle_green\2.0.2\lib\netstandard2.0\SQLitePCLRaw.batteries_v2.dll">
       <PackagePath>SQLitePCLRaw.batteries_v2.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sekisov\.nuget\packages\sqlitepclraw.core\2.0.2\lib\netstandard2.0\SQLitePCLRaw.core.dll">
+    <AppxPackagedFile Include="C:\Users\wwwge\.nuget\packages\sqlitepclraw.core\2.0.2\lib\netstandard2.0\SQLitePCLRaw.core.dll">
       <PackagePath>SQLitePCLRaw.core.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sekisov\.nuget\packages\sqlitepclraw.lib.e_sqlite3\2.0.2\runtimes\win10-x86\nativeassets\uap10.0\e_sqlite3.dll">
+    <AppxPackagedFile Include="C:\Users\wwwge\.nuget\packages\sqlitepclraw.lib.e_sqlite3\2.0.2\runtimes\win10-x86\nativeassets\uap10.0\e_sqlite3.dll">
       <PackagePath>e_sqlite3.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sekisov\.nuget\packages\sqlitepclraw.provider.e_sqlite3\2.0.2\lib\uap10.0\SQLitePCLRaw.provider.e_sqlite3.dll">
+    <AppxPackagedFile Include="C:\Users\wwwge\.nuget\packages\sqlitepclraw.provider.e_sqlite3\2.0.2\lib\uap10.0\SQLitePCLRaw.provider.e_sqlite3.dll">
       <PackagePath>SQLitePCLRaw.provider.e_sqlite3.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sekisov\.nuget\packages\system.collections.immutable\1.6.0\lib\netstandard2.0\System.Collections.Immutable.dll">
+    <AppxPackagedFile Include="C:\Users\wwwge\.nuget\packages\system.collections.immutable\1.6.0\lib\netstandard2.0\System.Collections.Immutable.dll">
       <PackagePath>System.Collections.Immutable.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sekisov\.nuget\packages\system.identitymodel.tokens.jwt\5.6.0\lib\netstandard2.0\System.IdentityModel.Tokens.Jwt.dll">
+    <AppxPackagedFile Include="C:\Users\wwwge\.nuget\packages\system.identitymodel.tokens.jwt\5.6.0\lib\netstandard2.0\System.IdentityModel.Tokens.Jwt.dll">
       <PackagePath>System.IdentityModel.Tokens.Jwt.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sekisov\.nuget\packages\system.reflection.metadata\1.7.0\lib\netstandard2.0\System.Reflection.Metadata.dll">
+    <AppxPackagedFile Include="C:\Users\wwwge\.nuget\packages\system.reflection.metadata\1.7.0\lib\netstandard2.0\System.Reflection.Metadata.dll">
       <PackagePath>System.Reflection.Metadata.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sekisov\.nuget\packages\system.runtime.compilerservices.unsafe\4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll">
+    <AppxPackagedFile Include="C:\Users\wwwge\.nuget\packages\system.runtime.compilerservices.unsafe\4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll">
       <PackagePath>System.Runtime.CompilerServices.Unsafe.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Microsoft\Xamarin\NuGet\win2d.uwp\1.20.0\runtimes\win10-x86\native\Microsoft.Graphics.Canvas.dll">
+    <AppxPackagedFile Include="D:\Microsoft\Xamarin\NuGet\win2d.uwp\1.20.0\runtimes\win10-x86\native\Microsoft.Graphics.Canvas.dll">
       <PackagePath>Microsoft.Graphics.Canvas.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sekisov\.nuget\packages\xam.plugins.settings\3.1.1\lib\UAP10\Plugin.Settings.Abstractions.dll">
+    <AppxPackagedFile Include="C:\Users\wwwge\.nuget\packages\xam.plugins.settings\3.1.1\lib\UAP10\Plugin.Settings.Abstractions.dll">
       <PackagePath>Plugin.Settings.Abstractions.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sekisov\.nuget\packages\xam.plugins.settings\3.1.1\lib\UAP10\Plugin.Settings.dll">
+    <AppxPackagedFile Include="C:\Users\wwwge\.nuget\packages\xam.plugins.settings\3.1.1\lib\UAP10\Plugin.Settings.dll">
       <PackagePath>Plugin.Settings.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sekisov\.nuget\packages\xamarin.essentials\1.3.1\lib\uap10.0.16299\Xamarin.Essentials.dll">
+    <AppxPackagedFile Include="C:\Users\wwwge\.nuget\packages\xamarin.essentials\1.5.1\lib\uap10.0.16299\Xamarin.Essentials.dll">
       <PackagePath>Xamarin.Essentials.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sekisov\.nuget\packages\xamarin.forms\4.3.0.991221\lib\uap10.0\Xamarin.Forms.Core.dll">
+    <AppxPackagedFile Include="C:\Users\wwwge\.nuget\packages\xamarin.forms\4.5.0.356\lib\uap10.0.16299\Xamarin.Forms.Core.dll">
       <PackagePath>Xamarin.Forms.Core.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sekisov\.nuget\packages\xamarin.forms\4.3.0.991221\lib\uap10.0\Xamarin.Forms.Platform.UAP.dll">
+    <AppxPackagedFile Include="C:\Users\wwwge\.nuget\packages\xamarin.forms\4.5.0.356\lib\uap10.0.16299\Xamarin.Forms.Platform.UAP.dll">
       <PackagePath>Xamarin.Forms.Platform.UAP.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sekisov\.nuget\packages\xamarin.forms\4.3.0.991221\lib\uap10.0\Xamarin.Forms.Platform.dll">
+    <AppxPackagedFile Include="C:\Users\wwwge\.nuget\packages\xamarin.forms\4.5.0.356\lib\uap10.0.16299\Xamarin.Forms.Platform.dll">
       <PackagePath>Xamarin.Forms.Platform.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sekisov\.nuget\packages\xamarin.forms\4.3.0.991221\lib\uap10.0\Xamarin.Forms.Xaml.dll">
+    <AppxPackagedFile Include="C:\Users\wwwge\.nuget\packages\xamarin.forms\4.5.0.356\lib\uap10.0.16299\Xamarin.Forms.Xaml.dll">
       <PackagePath>Xamarin.Forms.Xaml.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\project\Mobile\RTMobile\RTMobile\RTMobile\bin\Debug\netstandard2.0\RTMobile.dll">
+    <AppxPackagedFile Include="D:\Project\Jira\rtmobile\RTMobile\RTMobile\bin\Debug\netstandard2.0\RTMobile.dll">
       <PackagePath>RTMobile.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Microsoft\Xamarin\NuGet\win2d.uwp\1.20.0\lib\uap10.0\Microsoft.Graphics.Canvas.winmd">
+    <AppxPackagedFile Include="D:\Microsoft\Xamarin\NuGet\win2d.uwp\1.20.0\lib\uap10.0\Microsoft.Graphics.Canvas.winmd">
       <PackagePath>Microsoft.Graphics.Canvas.winmd</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\bin\10.0.17763.0\XamlCompiler\Microsoft.UI.Xaml.Markup.winmd">
       <PackagePath>Microsoft.UI.Xaml.Markup.winmd</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sekisov\.nuget\packages\carouselview.formsplugin\5.2.0\lib\UAP10\CarouselView.FormsPlugin.UWP\CarouselView.FormsPlugin.UWP.xr.xml">
+    <AppxPackagedFile Include="C:\Users\wwwge\.nuget\packages\carouselview.formsplugin\5.2.0\lib\UAP10\CarouselView.FormsPlugin.UWP\CarouselView.FormsPlugin.UWP.xr.xml">
       <PackagePath>CarouselView.FormsPlugin.UWP\CarouselView.FormsPlugin.UWP.xr.xml</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sekisov\.nuget\packages\xamarin.forms\4.3.0.991221\lib\uap10.0\Xamarin.Forms.Platform.UAP\Xamarin.Forms.Platform.UAP.xr.xml">
+    <AppxPackagedFile Include="C:\Users\wwwge\.nuget\packages\xamarin.forms\4.5.0.356\lib\uap10.0.16299\Xamarin.Forms.Platform.UAP\Xamarin.Forms.Platform.UAP.xr.xml">
       <PackagePath>Xamarin.Forms.Platform.UAP\Xamarin.Forms.Platform.UAP.xr.xml</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\project\Mobile\RTMobile\RTMobile\RTMobile.UWP\Assets\LargeTile.scale-100.png">
+    <AppxPackagedFile Include="D:\Project\Jira\rtmobile\RTMobile\RTMobile.UWP\Assets\LargeTile.scale-100.png">
       <PackagePath>Assets\LargeTile.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\project\Mobile\RTMobile\RTMobile\RTMobile.UWP\Assets\LargeTile.scale-200.png">
+    <AppxPackagedFile Include="D:\Project\Jira\rtmobile\RTMobile\RTMobile.UWP\Assets\LargeTile.scale-200.png">
       <PackagePath>Assets\LargeTile.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\project\Mobile\RTMobile\RTMobile\RTMobile.UWP\Assets\LargeTile.scale-400.png">
+    <AppxPackagedFile Include="D:\Project\Jira\rtmobile\RTMobile\RTMobile.UWP\Assets\LargeTile.scale-400.png">
       <PackagePath>Assets\LargeTile.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\project\Mobile\RTMobile\RTMobile\RTMobile.UWP\Assets\SmallTile.scale-100.png">
+    <AppxPackagedFile Include="D:\Project\Jira\rtmobile\RTMobile\RTMobile.UWP\Assets\SmallTile.scale-100.png">
       <PackagePath>Assets\SmallTile.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\project\Mobile\RTMobile\RTMobile\RTMobile.UWP\Assets\SmallTile.scale-200.png">
+    <AppxPackagedFile Include="D:\Project\Jira\rtmobile\RTMobile\RTMobile.UWP\Assets\SmallTile.scale-200.png">
       <PackagePath>Assets\SmallTile.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\project\Mobile\RTMobile\RTMobile\RTMobile.UWP\Assets\SmallTile.scale-400.png">
+    <AppxPackagedFile Include="D:\Project\Jira\rtmobile\RTMobile\RTMobile.UWP\Assets\SmallTile.scale-400.png">
       <PackagePath>Assets\SmallTile.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\project\Mobile\RTMobile\RTMobile\RTMobile.UWP\Assets\SplashScreen.scale-100.png">
+    <AppxPackagedFile Include="D:\Project\Jira\rtmobile\RTMobile\RTMobile.UWP\Assets\SplashScreen.scale-100.png">
       <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\project\Mobile\RTMobile\RTMobile\RTMobile.UWP\Assets\SplashScreen.scale-200.png">
+    <AppxPackagedFile Include="D:\Project\Jira\rtmobile\RTMobile\RTMobile.UWP\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\project\Mobile\RTMobile\RTMobile\RTMobile.UWP\Assets\SplashScreen.scale-400.png">
+    <AppxPackagedFile Include="D:\Project\Jira\rtmobile\RTMobile\RTMobile.UWP\Assets\SplashScreen.scale-400.png">
       <PackagePath>Assets\SplashScreen.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\project\Mobile\RTMobile\RTMobile\RTMobile.UWP\Assets\Square150x150Logo.scale-100.png">
+    <AppxPackagedFile Include="D:\Project\Jira\rtmobile\RTMobile\RTMobile.UWP\Assets\Square150x150Logo.scale-100.png">
       <PackagePath>Assets\Square150x150Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\project\Mobile\RTMobile\RTMobile\RTMobile.UWP\Assets\Square150x150Logo.scale-200.png">
+    <AppxPackagedFile Include="D:\Project\Jira\rtmobile\RTMobile\RTMobile.UWP\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\project\Mobile\RTMobile\RTMobile\RTMobile.UWP\Assets\Square150x150Logo.scale-400.png">
+    <AppxPackagedFile Include="D:\Project\Jira\rtmobile\RTMobile\RTMobile.UWP\Assets\Square150x150Logo.scale-400.png">
       <PackagePath>Assets\Square150x150Logo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\project\Mobile\RTMobile\RTMobile\RTMobile.UWP\Assets\Square44x44Logo.altform-unplated_targetsize-16.png">
+    <AppxPackagedFile Include="D:\Project\Jira\rtmobile\RTMobile\RTMobile.UWP\Assets\Square44x44Logo.altform-unplated_targetsize-16.png">
       <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-16.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\project\Mobile\RTMobile\RTMobile\RTMobile.UWP\Assets\Square44x44Logo.altform-unplated_targetsize-256.png">
+    <AppxPackagedFile Include="D:\Project\Jira\rtmobile\RTMobile\RTMobile.UWP\Assets\Square44x44Logo.altform-unplated_targetsize-256.png">
       <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-256.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\project\Mobile\RTMobile\RTMobile\RTMobile.UWP\Assets\Square44x44Logo.altform-unplated_targetsize-48.png">
+    <AppxPackagedFile Include="D:\Project\Jira\rtmobile\RTMobile\RTMobile.UWP\Assets\Square44x44Logo.altform-unplated_targetsize-48.png">
       <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-48.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\project\Mobile\RTMobile\RTMobile\RTMobile.UWP\Assets\Square44x44Logo.scale-100.png">
+    <AppxPackagedFile Include="D:\Project\Jira\rtmobile\RTMobile\RTMobile.UWP\Assets\Square44x44Logo.scale-100.png">
       <PackagePath>Assets\Square44x44Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\project\Mobile\RTMobile\RTMobile\RTMobile.UWP\Assets\Square44x44Logo.scale-200.png">
+    <AppxPackagedFile Include="D:\Project\Jira\rtmobile\RTMobile\RTMobile.UWP\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\project\Mobile\RTMobile\RTMobile\RTMobile.UWP\Assets\Square44x44Logo.scale-400.png">
+    <AppxPackagedFile Include="D:\Project\Jira\rtmobile\RTMobile\RTMobile.UWP\Assets\Square44x44Logo.scale-400.png">
       <PackagePath>Assets\Square44x44Logo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\project\Mobile\RTMobile\RTMobile\RTMobile.UWP\Assets\Square44x44Logo.targetsize-16.png">
+    <AppxPackagedFile Include="D:\Project\Jira\rtmobile\RTMobile\RTMobile.UWP\Assets\Square44x44Logo.targetsize-16.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-16.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\project\Mobile\RTMobile\RTMobile\RTMobile.UWP\Assets\Square44x44Logo.targetsize-256.png">
+    <AppxPackagedFile Include="D:\Project\Jira\rtmobile\RTMobile\RTMobile.UWP\Assets\Square44x44Logo.targetsize-256.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-256.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\project\Mobile\RTMobile\RTMobile\RTMobile.UWP\Assets\Square44x44Logo.targetsize-48.png">
+    <AppxPackagedFile Include="D:\Project\Jira\rtmobile\RTMobile\RTMobile.UWP\Assets\Square44x44Logo.targetsize-48.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-48.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\project\Mobile\RTMobile\RTMobile\RTMobile.UWP\Assets\StoreLogo.scale-100.png">
+    <AppxPackagedFile Include="D:\Project\Jira\rtmobile\RTMobile\RTMobile.UWP\Assets\StoreLogo.scale-100.png">
       <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\project\Mobile\RTMobile\RTMobile\RTMobile.UWP\Assets\StoreLogo.scale-200.png">
+    <AppxPackagedFile Include="D:\Project\Jira\rtmobile\RTMobile\RTMobile.UWP\Assets\StoreLogo.scale-200.png">
       <PackagePath>Assets\StoreLogo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\project\Mobile\RTMobile\RTMobile\RTMobile.UWP\Assets\StoreLogo.scale-400.png">
+    <AppxPackagedFile Include="D:\Project\Jira\rtmobile\RTMobile\RTMobile.UWP\Assets\StoreLogo.scale-400.png">
       <PackagePath>Assets\StoreLogo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\project\Mobile\RTMobile\RTMobile\RTMobile.UWP\Assets\Wide310x150Logo.scale-100.png">
+    <AppxPackagedFile Include="D:\Project\Jira\rtmobile\RTMobile\RTMobile.UWP\Assets\Wide310x150Logo.scale-100.png">
       <PackagePath>Assets\Wide310x150Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\project\Mobile\RTMobile\RTMobile\RTMobile.UWP\Assets\Wide310x150Logo.scale-200.png">
+    <AppxPackagedFile Include="D:\Project\Jira\rtmobile\RTMobile\RTMobile.UWP\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\project\Mobile\RTMobile\RTMobile\RTMobile.UWP\Assets\Wide310x150Logo.scale-400.png">
+    <AppxPackagedFile Include="D:\Project\Jira\rtmobile\RTMobile\RTMobile.UWP\Assets\Wide310x150Logo.scale-400.png">
       <PackagePath>Assets\Wide310x150Logo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\project\Mobile\RTMobile\RTMobile\RTMobile.UWP\Properties\Default.rd.xml">
+    <AppxPackagedFile Include="D:\Project\Jira\rtmobile\RTMobile\RTMobile.UWP\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\project\Mobile\RTMobile\RTMobile\RTMobile.UWP\bin\x86\Debug\RTMobile.UWP.xr.xml">
+    <AppxPackagedFile Include="D:\Project\Jira\rtmobile\RTMobile\RTMobile.UWP\bin\x86\Debug\RTMobile.UWP.xr.xml">
       <PackagePath>RTMobile.UWP.xr.xml</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\project\Mobile\RTMobile\RTMobile\RTMobile.UWP\bin\x86\Debug\Microsoft.UI.Xaml\DensityStyles\Compact.xbf">
-      <PackagePath>Microsoft.UI.Xaml\DensityStyles\Compact.xbf</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\project\Mobile\RTMobile\RTMobile\RTMobile.UWP\bin\x86\Debug\App.xbf">
+    <AppxPackagedFile Include="D:\Project\Jira\rtmobile\RTMobile\RTMobile.UWP\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\project\Mobile\RTMobile\RTMobile\RTMobile.UWP\bin\x86\Debug\MainPage.xbf">
+    <AppxPackagedFile Include="D:\Project\Jira\rtmobile\RTMobile\RTMobile.UWP\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.UniversalCRT.Debug\10.0.17763.0\\redist\Debug\x86\ucrtbased.dll">
@@ -265,23 +262,55 @@
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.17763.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sekisov\.nuget\packages\microsoft.ui.xaml\2.1.190606001\build\..\lib\uap10.0\Microsoft.UI.Xaml.winmd">
+    <AppxPackagedFile Include="C:\Users\wwwge\.nuget\packages\microsoft.ui.xaml\2.3.191211002\buildTransitive\..\lib\uap10.0\Microsoft.UI.Xaml.winmd">
       <PackagePath>WinMetadata\Microsoft.UI.Xaml.winmd</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\project\Mobile\RTMobile\RTMobile\RTMobile.UWP\bin\x86\Debug\resources.pri">
+    <AppxPackagedFile Include="D:\Project\Jira\rtmobile\RTMobile\RTMobile.UWP\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\project\Mobile\RTMobile\RTMobile\RTMobile.UWP\bin\x86\Debug\Core\RTMobile.UWP.exe">
+    <AppxPackagedFile Include="D:\Project\Jira\rtmobile\RTMobile\RTMobile.UWP\bin\x86\Debug\Core\RTMobile.UWP.exe">
       <PackagePath>RTMobile.UWP.exe</PackagePath>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
-    <ResolvedSDKReference Include="C:\Users\sekisov\.nuget\packages\microsoft.ui.xaml\2.1.190606001\build\..\tools\AppX\x86\Release\Microsoft.UI.Xaml.2.1.appx">
-      <Name>Microsoft.UI.Xaml.2.1</Name>
-      <Version>2.11906.6001.0</Version>
+    <ResolvedSDKReference Include="C:\Users\wwwge\.nuget\packages\microsoft.ui.xaml\2.3.191211002\buildTransitive\..\tools\AppX\x86\Release\Microsoft.UI.Xaml.2.3.appx">
+      <Name>Microsoft.UI.Xaml.2.3</Name>
+      <Version>2.31912.11002.0</Version>
       <Architecture>x86</Architecture>
-      <FrameworkIdentity>Name = Microsoft.UI.Xaml.2.1, MinVersion = 2.11906.6001.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
-      <AppxLocation>C:\Users\sekisov\.nuget\packages\microsoft.ui.xaml\2.1.190606001\build\..\tools\AppX\x86\Release\Microsoft.UI.Xaml.2.1.appx</AppxLocation>
+      <FrameworkIdentity>Name = Microsoft.UI.Xaml.2.3, MinVersion = 2.31912.11002.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Users\wwwge\.nuget\packages\microsoft.ui.xaml\2.3.191211002\buildTransitive\..\tools\AppX\x86\Release\Microsoft.UI.Xaml.2.3.appx</AppxLocation>
+      <MoreInfo></MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Users\wwwge\.nuget\packages\microsoft.ui.xaml\2.3.191211002\buildTransitive\..\tools\AppX\x86\Release\Microsoft.UI.Xaml.2.3.appx">
+      <Name>Microsoft.UI.Xaml.2.3</Name>
+      <Version>2.31912.11002.0</Version>
+      <Architecture>Win32</Architecture>
+      <FrameworkIdentity>Name = Microsoft.UI.Xaml.2.3, MinVersion = 2.31912.11002.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Users\wwwge\.nuget\packages\microsoft.ui.xaml\2.3.191211002\buildTransitive\..\tools\AppX\x86\Release\Microsoft.UI.Xaml.2.3.appx</AppxLocation>
+      <MoreInfo></MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Users\wwwge\.nuget\packages\microsoft.ui.xaml\2.3.191211002\buildTransitive\..\tools\AppX\x64\Release\Microsoft.UI.Xaml.2.3.appx">
+      <Name>Microsoft.UI.Xaml.2.3</Name>
+      <Version>2.31912.11002.0</Version>
+      <Architecture>x64</Architecture>
+      <FrameworkIdentity>Name = Microsoft.UI.Xaml.2.3, MinVersion = 2.31912.11002.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Users\wwwge\.nuget\packages\microsoft.ui.xaml\2.3.191211002\buildTransitive\..\tools\AppX\x64\Release\Microsoft.UI.Xaml.2.3.appx</AppxLocation>
+      <MoreInfo></MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Users\wwwge\.nuget\packages\microsoft.ui.xaml\2.3.191211002\buildTransitive\..\tools\AppX\arm\Release\Microsoft.UI.Xaml.2.3.appx">
+      <Name>Microsoft.UI.Xaml.2.3</Name>
+      <Version>2.31912.11002.0</Version>
+      <Architecture>arm</Architecture>
+      <FrameworkIdentity>Name = Microsoft.UI.Xaml.2.3, MinVersion = 2.31912.11002.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Users\wwwge\.nuget\packages\microsoft.ui.xaml\2.3.191211002\buildTransitive\..\tools\AppX\arm\Release\Microsoft.UI.Xaml.2.3.appx</AppxLocation>
+      <MoreInfo></MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Users\wwwge\.nuget\packages\microsoft.ui.xaml\2.3.191211002\buildTransitive\..\tools\AppX\arm64\Release\Microsoft.UI.Xaml.2.3.appx">
+      <Name>Microsoft.UI.Xaml.2.3</Name>
+      <Version>2.31912.11002.0</Version>
+      <Architecture>arm64</Architecture>
+      <FrameworkIdentity>Name = Microsoft.UI.Xaml.2.3, MinVersion = 2.31912.11002.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Users\wwwge\.nuget\packages\microsoft.ui.xaml\2.3.191211002\buildTransitive\..\tools\AppX\arm64\Release\Microsoft.UI.Xaml.2.3.appx</AppxLocation>
       <MoreInfo></MoreInfo>
     </ResolvedSDKReference>
     <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\UWPNuGetPackages\runtime.win10-x86.microsoft.net.uwpcoreruntimesdk\2.2.9\build\..\tools\Appx\Microsoft.NET.CoreRuntime.2.2.appx">

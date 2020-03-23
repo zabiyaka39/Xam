@@ -44,12 +44,12 @@ namespace RTMobile
 		/// </summary>
 		public string orderBy { get; set; }
 		/// <summary>
-		/// Адрес запроса на сервер
+		/// Адрес запроса на сервер, игнорируем при сериализации в JSON
 		/// </summary>
 		[JsonIgnore]
 		public string urlRequest { get; set; }
 		/// <summary>
-		/// Метод запроса (POST, GET, PUT, ...)
+		/// Метод запроса (POST, GET, PUT, ...), игнорируем при сериализации в JSON
 		/// </summary>
 		[JsonIgnore]
 		public string methodRequest { get; set; }
@@ -60,9 +60,21 @@ namespace RTMobile
 	/// </summary>
 	public class Changelog
 	{
+		/// <summary>
+		/// Начальная позиция
+		/// </summary>
 		public int startAt { get; set; }
+		/// <summary>
+		/// максимальное количество выводимых результатов
+		/// </summary>
 		public int maxResults { get; set; }
+		/// <summary>
+		/// Общее количество полученных результатов
+		/// </summary>
 		public int total { get; set; }
+		/// <summary>
+		/// Коллекция истории задачи
+		/// </summary>
 		public ObservableCollection<History> histories { get; set; }
 	}
 	/// <summary>
@@ -76,12 +88,25 @@ namespace RTMobile
 	/// </summary>
 	public class History
 	{
+		/// <summary>
+		/// Номер записи
+		/// </summary>
 		public string id { get; set; }
-		public Author author { get; set; }
+		/// <summary>
+		/// Автор записи
+		/// </summary>
+		public User author { get; set; }
+		/// <summary>
+		/// Дата создания записи
+		/// </summary>
 		private string _created { get; set; }
+		/// <summary>
+		/// Дата создания записи
+		/// </summary>
 		public string created
 		{
 			get { return _created; }
+			//Конвертация даты в общепринятый формат 
 			set => _created = Convert.ToDateTime(value).ToString("dd.MM.yyyy H:mm");
 		}
 		public List<Item> items { get; set; }
@@ -112,29 +137,6 @@ namespace RTMobile
 		public Schema schema { get; set; }
 		public List<string> operations { get; set; }
 		public List<AllowedValue> allowedValues { get; set; }
-	}
-	public class Assignee
-	{
-		public string self { get; set; }
-		public string name { get; set; }
-		public string key { get; set; }
-		public string emailAddress { get; set; }
-		public string displayName { get; set; }
-		public bool active { get; set; }
-		public string timeZone { get; set; }
-		[JsonProperty("avatarUrls")]
-		public Urls AvatarUrls { get; set; }
-	}
-
-	public class Reporter
-	{
-		public string self { get; set; }
-		public string name { get; set; }
-		public string key { get; set; }
-		public string emailAddress { get; set; }
-		public string displayName { get; set; }
-		public bool active { get; set; }
-		public string timeZone { get; set; }
 	}
 	public class Votes
 	{
@@ -331,26 +333,28 @@ namespace RTMobile
 			}
 		}
 		public string self { get; set; }
+		/// <summary>
+		/// Описание статуса
+		/// </summary>
 		public string description { get; set; }
+		/// <summary>
+		/// Адрес иконки статуса
+		/// </summary>
 		public Uri iconUrl { get; set; }
+		/// <summary>
+		/// Название статуса
+		/// </summary>
 		public string name { get; set; }
+		/// <summary>
+		/// Номер статуса
+		/// </summary>
 		public string id { get; set; }
+		/// <summary>
+		/// Категория сатуса
+		/// </summary>
 		public StatusCategory statusCategory { get; set; }
 	}
-
-	public class Creator
-	{
-		public string self { get; set; }
-		public string name { get; set; }
-		public string key { get; set; }
-		public string emailAddress { get; set; }
-		public string displayName { get; set; }
-		public bool active { get; set; }
-		public string timeZone { get; set; }
-
-		[JsonProperty("avatarUrls")]
-		public Urls AvatarUrls { get; set; }
-	}
+	
 	/// <summary>
 	/// Значение внешний или внутренний будет комментарий
 	/// </summary>
@@ -388,7 +392,7 @@ namespace RTMobile
 		public int startAt { get; set; }
 		public string self { get; set; }
 		public string id { get; set; }
-		public Author author { get; set; }
+		public User author { get; set; }
 		public string body { get; set; }
 		public UpdateAuthor updateAuthor { get; set; }
 		private string _created { get; set; }
@@ -534,7 +538,7 @@ namespace RTMobile
 		/// <summary>
 		/// Данные об авторе загруженного файла
 		/// </summary>
-		public Author author { get; set; }
+		public User author { get; set; }
 		private string _created { get; set; }
 		/// <summary>
 		/// Дата создания файла
@@ -717,7 +721,7 @@ namespace RTMobile
 	public class Worklog
 	{
 		public string self { get; set; }
-		public Author author { get; set; }
+		public User author { get; set; }
 		public UpdateAuthor updateAuthor { get; set; }
 		public string comment { get; set; }
 		private string _created { get; set; }
@@ -752,18 +756,6 @@ namespace RTMobile
 		public string id { get; set; }
 		public string issueId { get; set; }
 	}
-	public class Author
-	{
-		public string self { get; set; }
-		public string name { get; set; }
-		public string key { get; set; }
-		public string emailAddress { get; set; }
-		[JsonProperty("avatarUrls")]
-		public Urls AvatarUrls { get; set; }
-		public string displayName { get; set; }
-		public bool active { get; set; }
-		public string timeZone { get; set; }
-	}
 
 	public class Issuelink
 	{
@@ -790,14 +782,14 @@ namespace RTMobile
 		public List<string> operations { get; set; }
 		public List<Issuelink> issuelinks { get; set; }
 		public Resolution resolution { get; set; }
-		public Assignee assignee { get; set; }
+		public User assignee { get; set; }
 		public ObservableCollection<Attachment> attachment { get; set; }
-		public Reporter reporter { get; set; }
+		public User reporter { get; set; }
 		public Votes votes { get; set; }
 		public Issuetype issuetype { get; set; }
 		public Project project { get; set; }
 		public Status status { get; set; }
-		public Creator creator { get; set; }
+		public User creator { get; set; }
 		public Watches watches { get; set; }
 		public Schema schema { get; set; }
 		public string resolutiondate

@@ -84,7 +84,6 @@ namespace RTMobile
         public string emailAddress { get; set; } = "Отсутствует";
         [JsonProperty("avatarUrls")]
         public Urls AvatarUrls { get; set; }
-
        
         public string displayName { get; set; } = "Отсутствует";
         public bool active { get; set; }
