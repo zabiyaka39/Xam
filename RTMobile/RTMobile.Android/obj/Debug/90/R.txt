@@ -1257,7 +1257,7 @@ int drawable timeupdate 0x7f07015a
 int drawable tooltip_frame_dark 0x7f07015b
 int drawable tooltip_frame_light 0x7f07015c
 int drawable up 0x7f07015d
-int drawable visability 0x7f07015e
+int drawable visibility 0x7f07015e
 int drawable visibilityoff 0x7f07015f
 int id ALT 0x7f080000
 int id CTRL 0x7f080001

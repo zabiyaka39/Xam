@@ -210,7 +210,7 @@
     <AndroidResource Include="Resources\drawable\timeUpdate.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\visability.png" />
+    <AndroidResource Include="Resources\drawable\visibility.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\visibilityOff.png" />

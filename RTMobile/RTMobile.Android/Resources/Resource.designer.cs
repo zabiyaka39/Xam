@@ -11363,7 +11363,7 @@ namespace RTMobile.Droid
 			public const int Up = 2131165533;
 			
 			// aapt resource value: 0x7F07015E
-			public const int visability = 2131165534;
+			public const int visibility = 2131165534;
 			
 			// aapt resource value: 0x7F07015F
 			public const int visibilityOff = 2131165535;

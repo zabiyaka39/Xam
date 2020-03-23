@@ -154,4 +154,3 @@ D:\Project\Jira\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\XamlC.stamp
 D:\Project\Jira\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\RTMobile.csproj.CopyComplete
 D:\Project\Jira\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\RTMobile.dll
 D:\Project\Jira\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\RTMobile.pdb
-D:\Project\Jira\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\RTMobile.csprojAssemblyReference.cache

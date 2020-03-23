@@ -30,11 +30,11 @@ namespace RTMobile
 		/// <summary>
 		/// Начало запроса (с какого элемента показывать)
 		/// </summary>
-		public int startAt { get; set; }
+		public string startAt { get; set; }
 		/// <summary>
 		/// Максимальные искомый пул (максимальное количество врезультатов которое необходимо показать (MAX - 1000))
 		/// </summary>
-		public int maxResults { get; set; }
+		public string maxResults { get; set; } 
 		/// <summary>
 		/// Содержание запроса (тело)
 		/// </summary>
@@ -261,7 +261,7 @@ namespace RTMobile
 		public Uri The32X32 { get; set; }
 	}
 
-	public class Watches
+	public class Watchers
 	{
 		public string self { get; set; }
 		public int watchCount { get; set; }
@@ -274,7 +274,7 @@ namespace RTMobile
 		public string displayName { get; set; }
 		public bool active { get; set; }
 		public string timeZone { get; set; }
-		public List<Watches> watchers { get; set; }
+		public ObservableCollection<User> watchers { get; set; }
 	}
 
 	public class StatusCategory
@@ -790,7 +790,7 @@ namespace RTMobile
 		public Project project { get; set; }
 		public Status status { get; set; }
 		public User creator { get; set; }
-		public Watches watches { get; set; }
+		public Watchers watches { get; set; }
 		public Schema schema { get; set; }
 		public string resolutiondate
 		{

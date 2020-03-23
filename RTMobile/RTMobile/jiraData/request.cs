@@ -127,12 +127,13 @@ namespace RTMobile
 			{
 				if (httpWebRequest.Method == "POST")
 				{
-					if (this.json != null && this.json.Length > 0)
+					if (json != null && json.Length > 0)
 					{
-						if (json.Length > 0)
-						{
-							this.json = json;
-						}
+						this.json = json;
+					}
+					//Исключаем пустой JSON-запрос сформированный на этапе создания подключения к серверу
+					if (this.json != null && this.json.Length > 2)
+					{
 						using (StreamWriter streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
 						{
 							streamWriter.Write(this.json);

@@ -4990,7 +4990,7 @@ public final class R {
     public static final int tooltip_frame_dark=0x7f07015b;
     public static final int tooltip_frame_light=0x7f07015c;
     public static final int up=0x7f07015d;
-    public static final int visability=0x7f07015e;
+    public static final int visibility=0x7f07015e;
     public static final int visibilityoff=0x7f07015f;
   }
   public static final class id {

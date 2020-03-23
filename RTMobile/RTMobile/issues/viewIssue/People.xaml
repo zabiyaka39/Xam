@@ -154,16 +154,17 @@
                                         <ColumnDefinition Width="20"/>
                                         <ColumnDefinition Width="60"/>
                                         <ColumnDefinition Width="Auto"/>
-                                    </Grid.ColumnDefinitions>
-                                    
-                                    
-                                    
+                                    </Grid.ColumnDefinitions>                                    
                                 </Grid>
 
                             </ScrollView>
                             <StackLayout Grid.Column="0" Grid.Row="2" VerticalOptions="End" Margin="0,0,0,0" Orientation="Horizontal">
-                                <Image Source="visibilityOff.png" HorizontalOptions="Start" HeightRequest="20"/>
-                                <Label Text="Прекратить наблюдение" HorizontalOptions="StartAndExpand" FontSize="12"/>
+                                <Image x:Name="stopStartWatchingImage" Source="visibility.png" HorizontalOptions="Start" HeightRequest="20"/>
+                                <Label x:Name="stopStartWatching" Text="Установить наблюдение" HorizontalOptions="StartAndExpand" FontSize="12">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_2"/>
+                                    </Label.GestureRecognizers>
+                                </Label>
                                 <Image Source="addWatchers.png" HorizontalOptions="EndAndExpand" HeightRequest="20"/>
                                 <Label Text="Добавить наблюдателей" HorizontalOptions="End" FontSize="12"/>
                             </StackLayout>

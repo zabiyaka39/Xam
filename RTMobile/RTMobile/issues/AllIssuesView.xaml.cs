@@ -83,8 +83,8 @@ namespace RTMobile.issues
 					urlRequest = "/rest/api/2/search",
 					methodRequest = "POST",
 					jql = filterIssue,
-					maxResults = 50,
-					startAt = 0,
+					maxResults = "50",
+					startAt = "0"
 				};
 
 				RootObject rootObject = new RootObject();
@@ -135,8 +135,8 @@ namespace RTMobile.issues
 					urlRequest = "/rest/api/2/search?",
 					methodRequest = "POST",
 					jql = filterIssue + " ORDER BY " + sortField + " " + typeSort,
-					maxResults = 50,
-					startAt = 0
+					maxResults = "50",
+					startAt = "0"
 				};
 
 				RootObject rootObject = new RootObject();

@@ -2052,7 +2052,6 @@ D:\Project\Jira\rtmobile\RTMobile\RTMobile.Android\obj\Debug\90\res\drawable\set
 D:\Project\Jira\rtmobile\RTMobile\RTMobile.Android\obj\Debug\90\res\drawable\time.png
 D:\Project\Jira\rtmobile\RTMobile\RTMobile.Android\obj\Debug\90\res\drawable\timestart.png
 D:\Project\Jira\rtmobile\RTMobile\RTMobile.Android\obj\Debug\90\res\drawable\timeupdate.png
-D:\Project\Jira\rtmobile\RTMobile\RTMobile.Android\obj\Debug\90\res\drawable\visability.png
 D:\Project\Jira\rtmobile\RTMobile\RTMobile.Android\obj\Debug\90\res\drawable\visibilityoff.png
 D:\Project\Jira\rtmobile\RTMobile\RTMobile.Android\obj\Debug\90\res\drawable\image.png
 D:\Project\Jira\rtmobile\RTMobile\RTMobile.Android\obj\Debug\90\res\drawable\files.png
@@ -2542,4 +2541,5 @@ D:\Project\Jira\rtmobile\RTMobile\RTMobile.Android\obj\Debug\90\stamp\_ConvertRe
 D:\Project\Jira\rtmobile\RTMobile\RTMobile.Android\obj\Debug\90\stamp\_GenerateJavaStubs.stamp
 D:\Project\Jira\rtmobile\RTMobile\RTMobile.Android\obj\Debug\90\stamp\_GeneratePackageManagerJava.stamp
 D:\Project\Jira\rtmobile\RTMobile\RTMobile.Android\obj\Debug\90\stamp\_ResolveLibraryProjectImports.stamp
+D:\Project\Jira\rtmobile\RTMobile\RTMobile.Android\obj\Debug\90\res\drawable\visibility.png
 D:\Project\Jira\rtmobile\RTMobile\RTMobile.Android\bin\Debug\RTMobile.dll.mdb

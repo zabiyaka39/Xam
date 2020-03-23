@@ -90,8 +90,8 @@ namespace RTMobile.issues.viewIssue
 				{
 					urlRequest = $"/rest/api/2/issue/{issueKey}/comment",
 					methodRequest = "GET",
-					maxResults = 50,
-					startAt = 0
+					maxResults = "50",
+					startAt = "0"
 				};
 
 				RootObject rootObject = new RootObject();

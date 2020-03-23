@@ -949,3 +949,4 @@ D:\Project\Jira\rtmobile\RTMobile\RTMobile.UWP\obj\x86\Debug\ProjectArchitecture
 D:\Project\Jira\rtmobile\RTMobile\RTMobile.UWP\obj\x86\Debug\.winmd_cache\$Microsoft.Graphics.Canvas.winmd_636160607180000000.json
 D:\Project\Jira\rtmobile\RTMobile\RTMobile.UWP\obj\x86\Debug\.winmd_cache\$Microsoft.Graphics.Canvas.winmd_636160643180000000.json
 D:\Project\Jira\rtmobile\RTMobile\RTMobile.UWP\obj\x86\Debug\.winmd_cache\$Microsoft.UI.Xaml.Markup.winmd_636758444200000000.json
+D:\Project\Jira\rtmobile\RTMobile\RTMobile.UWP\bin\x86\Debug\RTMobile.UWP.exe.CodeAnalysisLog.xml
