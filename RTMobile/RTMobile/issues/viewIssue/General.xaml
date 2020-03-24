@@ -21,7 +21,7 @@
                       BackgroundColor="#4A4C50">
 
             <Frame Grid.Row="0" Grid.Column="0" HasShadow="True" CornerRadius="5"
-                   x:Name="detailFrame" BackgroundColor="#FFFFFF" HeightRequest="200" Margin="10,20,10,10" Padding="10,0,10,0">
+                   x:Name="detailFrame" BackgroundColor="#FFFFFF" HeightRequest="150" Margin="10,20,10,10" Padding="10,0,10,0">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="25"/>
@@ -46,7 +46,14 @@
                     </Grid>
                     <ScrollView  x:Name="detailIssue" Grid.Row="1" Grid.Column="0" HorizontalOptions="FillAndExpand"
                                     VerticalOptions="FillAndExpand" Margin="0,0,10,0">
-                        <Grid Padding="0" Margin="0" >
+                        <Grid Padding="0" Margin="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
                             <Label Text="Тема:" Grid.Column="0" Grid.Row="0" VerticalOptions="Start" Padding="0"/>
                             <Label x:Name="summaryIssue" Grid.Column="1" Grid.Row="0"
                                    Text="{Binding Path=issue.fields.summary}" HorizontalTextAlignment="End"
@@ -78,7 +85,7 @@
                 </Grid>
             </Frame>
             <Frame x:Name="dateFrame" Grid.Row="1" Grid.Column="0" HasShadow="True" CornerRadius="5"
-                       BackgroundColor="#FFFFFF" HeightRequest="200" Margin="10,0,10,10" Padding="10,0,10,0">
+                       BackgroundColor="#FFFFFF" HeightRequest="150" Margin="10,0,10,10" Padding="10,0,10,0">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="25"/>
@@ -126,7 +133,7 @@
                 </Grid>
             </Frame>
             <Frame x:Name="propertyFrame" Grid.Row="2" Grid.Column="0" HasShadow="True" CornerRadius="5"
-                   BackgroundColor="#FFFFFF" Margin="10,0,10,10" Padding="10,0,10,0" HeightRequest="200">
+                   BackgroundColor="#FFFFFF" Margin="10,0,10,10" Padding="10,0,10,0" HeightRequest="150">
                 <Grid Padding="0" Margin="0" x:Name="property" VerticalOptions="FillAndExpand">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="25"/>
@@ -168,6 +175,7 @@
                                      Grid.Row="2" HorizontalOptions="Center" VerticalOptions="End" Margin="0,0,0,10" Clicked="showPropertyIssue_Clicked"/>
                 </Grid>
             </Frame>
+            
             <Grid VerticalOptions="EndAndExpand" BackgroundColor="#323037">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="5"/>

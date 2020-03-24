@@ -155,7 +155,7 @@ namespace RTMobile.issues.viewIssue
 				//Получаем список наблюдателей
 				ObservableCollection<User> watchersTmp = requestWatchers.GetResponses<Watchers>().watchers;
 				//Очищаем старый список
-				for (int i = watchers.Count - 1; i >= 0; --i)
+				for (int i = watchers.Count; i > 0; --i)
 				{
 					watchers.RemoveAt(0);
 				}

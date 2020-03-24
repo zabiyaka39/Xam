@@ -778,7 +778,7 @@ namespace RTMobile
 	{
 		public Comment comment { get; set; }
 		public List<AllowedValue> allowedValues { get; set; }
-		public List<string> subtasks { get; set; }
+		public List<Issue> subtasks { get; set; }
 		public List<string> operations { get; set; }
 		public List<Issuelink> issuelinks { get; set; }
 		public Resolution resolution { get; set; }

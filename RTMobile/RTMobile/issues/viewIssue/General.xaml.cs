@@ -85,7 +85,7 @@ namespace RTMobile.issues.viewIssue
 			else
 			{
 				showPropertyIssue.Source = "arrowUp.png";
-				propertyFrame.HeightRequest = 200;
+				propertyFrame.HeightRequest = 150;
 				propertyIssue.IsVisible = true;
 			}
 		}
@@ -101,7 +101,7 @@ namespace RTMobile.issues.viewIssue
 			else
 			{
 				showDate.Source = "arrowUp.png";
-				dateFrame.HeightRequest = 200;
+				dateFrame.HeightRequest = 150;
 				dateIssue.IsVisible = true;
 			}
 		}
@@ -117,7 +117,7 @@ namespace RTMobile.issues.viewIssue
 			else
 			{
 				showDetailIssue.Source = "arrowUp.png";
-				detailFrame.HeightRequest = 200;
+				detailFrame.HeightRequest = 150;
 				detailIssue.IsVisible = true;
 			}
 		}
