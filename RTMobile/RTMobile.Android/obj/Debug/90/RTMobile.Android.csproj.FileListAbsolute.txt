@@ -1958,8 +1958,6 @@ D:\Project\Jira\rtmobile\RTMobile\RTMobile.Android\obj\Debug\90\adb.props
 D:\Project\Jira\rtmobile\RTMobile\RTMobile.Android\obj\Debug\90\RTMobile.Android.csprojAssemblyReference.cache
 D:\Project\Jira\rtmobile\RTMobile\RTMobile.Android\obj\Debug\90\_VerifyXamarinAndroidSupportVersions.stamp
 D:\Project\Jira\rtmobile\RTMobile\RTMobile.Android\obj\Debug\90\stamp\_BuildLibraryImportsCache.stamp
-D:\Project\Jira\rtmobile\RTMobile\RTMobile.Android\obj\Debug\90\resourcepaths.cache
-D:\Project\Jira\rtmobile\RTMobile\RTMobile.Android\obj\Debug\90\resourcecache.stamp
 D:\Project\Jira\rtmobile\RTMobile\RTMobile.Android\obj\Debug\90\res.flag
 D:\Project\Jira\rtmobile\RTMobile\RTMobile.Android\obj\Debug\90\flata\CBFCDF23391E5995.stamp
 D:\Project\Jira\rtmobile\RTMobile\RTMobile.Android\obj\Debug\90\flata\07306E78071E7EDD.stamp
@@ -2543,3 +2541,6 @@ D:\Project\Jira\rtmobile\RTMobile\RTMobile.Android\obj\Debug\90\stamp\_GenerateP
 D:\Project\Jira\rtmobile\RTMobile\RTMobile.Android\obj\Debug\90\stamp\_ResolveLibraryProjectImports.stamp
 D:\Project\Jira\rtmobile\RTMobile\RTMobile.Android\obj\Debug\90\res\drawable\visibility.png
 D:\Project\Jira\rtmobile\RTMobile\RTMobile.Android\bin\Debug\RTMobile.dll.mdb
+D:\Project\Jira\rtmobile\RTMobile\RTMobile.Android\bin\Debug\RTMobile.RTMobile.aab
+D:\Project\Jira\rtmobile\RTMobile\RTMobile.Android\obj\Debug\90\RTMobile.Android.csproj.CoreCompileInputs.cache
+D:\Project\Jira\rtmobile\RTMobile\RTMobile.Android\obj\Debug\90\android\AndroidManifest.xml

@@ -155,3 +155,4 @@ D:\Project\Jira\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\RTMobile.csp
 D:\Project\Jira\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\RTMobile.dll
 D:\Project\Jira\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\RTMobile.pdb
 D:\Project\Jira\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\RTMobile.csprojAssemblyReference.cache
+D:\Project\Jira\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\RTMobile.csproj.CoreCompileInputs.cache

@@ -17,7 +17,7 @@ namespace RTMobile.issues.viewIssue
 		public string issueSummary { get; set; }
 		public string issueKey { get; set; }
 		private List<RTMobile.Transition> transition { get; set; }
-		public ObservableCollection<Worklog> worklogs = new ObservableCollection<Worklog>();
+		public ObservableCollection<Worklog> worklogs  {get;set;}
 		public WorkJournal()
 		{
 			InitializeComponent();

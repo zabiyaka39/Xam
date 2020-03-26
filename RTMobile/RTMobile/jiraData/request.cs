@@ -25,7 +25,7 @@ namespace RTMobile
 		public Request()
 		{ }
 		/// <summary>
-		/// Строка с JSON - заропсом на сервер
+		/// Строка с JSON - заропсом на серверА
 		/// </summary>
 		private string json { get; set; }
 		/// <summary>
@@ -34,6 +34,10 @@ namespace RTMobile
 		/// <returns></returns>
 		public bool verifyServer()
 		{
+			if (CrossSettings.Current.GetValueOrDefault("urlServer", string.Empty) == null || CrossSettings.Current.GetValueOrDefault("urlServer", string.Empty).Length <= 0)
+			{
+				CrossSettings.Current.AddOrUpdateValue("urlServer", "https://sd.rosohrana.ru");
+			}
 			Uri uri = new Uri(CrossSettings.Current.GetValueOrDefault("urlServer", string.Empty));
 			try
 			{
@@ -57,11 +61,6 @@ namespace RTMobile
 		{
 			if (login.Length > 0)
 			{
-
-				if (CrossSettings.Current.GetValueOrDefault("urlServer", string.Empty).Length <= 0)
-				{
-					CrossSettings.Current.AddOrUpdateValue("urlServer", "https://sd.rosohrana.ru");
-				}
 				//CrossSettings.Current.AddOrUpdateValue("urlServer", "https://sd.rosohrana.ru");
 				Authorization authorization = new Authorization
 				{

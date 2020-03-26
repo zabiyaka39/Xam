@@ -21,14 +21,14 @@
         <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
                       BackgroundColor="#4A4C50">
             <StackLayout HeightRequest="70" BackgroundColor="#323037">
-                <Label Text="{Binding Path=issueKeySummary}"
+                <Label Text="{Binding issueKeySummary}"
                      TextColor="#F0F1F0" FontSize="16" VerticalOptions="CenterAndExpand"
                      HorizontalOptions="CenterAndExpand" Margin="10,0,10,0" MaxLines="2" LineBreakMode="TailTruncation"/>
             </StackLayout>
 
             <ListView VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
-                     BackgroundColor="#4A4C50" HasUnevenRows="True" SeparatorVisibility="None"
-                     ItemsSource="{Binding worklogs}" ItemTapped="ListView_ItemTapped">
+                      BackgroundColor="#4A4C50" HasUnevenRows="True" SeparatorVisibility="None"
+                      ItemsSource="{Binding worklogs}" ItemTapped="ListView_ItemTapped">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -75,7 +75,7 @@
                                         </Grid>
                                         <ScrollView Margin="10,0,10,0" VerticalOptions="StartAndExpand"
                                                   HorizontalOptions="FillAndExpand" Grid.Column="0" Grid.Row="1" Padding="0" >
-                                            <Label VerticalOptions="Start" HorizontalOptions="Start" Text="{Binding Path=body}"
+                                            <Label VerticalOptions="Start" HorizontalOptions="Start" Text="{Binding Path=comment}"
                                                        Grid.Column="0" Grid.Row="0"  TextColor="#F0F1F0"/>
                                         </ScrollView>
                                         <ImageButton x:Name="showHistory" Source="arrowUp.png"  Grid.Column="0"
