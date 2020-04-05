@@ -62,6 +62,7 @@ namespace RTMobile.issues
 			//в тему задачи для выбранного типа проекта
 			if (projectPic.SelectedIndex != -1)
 			{
+				buttonCreateIssue.IsEnabled = false;
 				List<string> typeIssueName = new List<string>();
 				for (int i = 0; i < projects[projectPic.SelectedIndex].issuetypes.Count; ++i)
 				{
@@ -84,6 +85,7 @@ namespace RTMobile.issues
 		{
 			if (typeIssuePic.SelectedIndex != -1)
 			{
+				buttonCreateIssue.IsEnabled = true;
 				JSONRequest jsonRequest = new JSONRequest()
 				{
 					urlRequest = $"/rest/api/2/issue/createmeta?projectKeys={projects[projectPic.SelectedIndex].key}&issuetypeNames={typeIssuePic.Items[typeIssuePic.SelectedIndex]}&expand=projects.issuetypes.fields",

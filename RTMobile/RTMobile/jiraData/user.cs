@@ -78,6 +78,7 @@ namespace RTMobile
     /// </summary>
     public class User
     {
+        public string accountId { get; set; }
         public string self { get; set; }
         public string key { get; set; }
         public string name { get; set; } = "Отсутствует";

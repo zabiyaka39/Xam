@@ -26,7 +26,7 @@ namespace RTMobile
 			login.Text = CrossSettings.Current.GetValueOrDefault("login", "");
 			password.Text = CrossSettings.Current.GetValueOrDefault("password", "");
 			Request request = new Request();
-			if (request.verifyServer())
+			 if (request.verifyServer())
 			{
 				frameLogin.IsEnabled = true;
 				buttonLogin.IsEnabled = true;

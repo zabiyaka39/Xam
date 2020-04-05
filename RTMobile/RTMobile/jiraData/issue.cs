@@ -34,7 +34,7 @@ namespace RTMobile
 		/// <summary>
 		/// Максимальные искомый пул (максимальное количество врезультатов которое необходимо показать (MAX - 1000))
 		/// </summary>
-		public string maxResults { get; set; } 
+		public string maxResults { get; set; }
 		/// <summary>
 		/// Содержание запроса (тело)
 		/// </summary>
@@ -113,6 +113,49 @@ namespace RTMobile
 		public HistoryMetadata historyMetadata { get; set; }
 	}
 	/// <summary>
+	/// Хранение фильтров пользователя
+	/// </summary>
+	public class Filters
+	{
+		public string self { get; set; }
+		public string id { get; set; }
+		public string name { get; set; }
+		public string description { get; set; }
+		public User owner { get; set; }
+		public string jql { get; set; }
+		public string viewUrl { get; set; }
+		public string searchUrl { get; set; }
+		public bool favourite { get; set; }
+		public int favouritedCount { get; set; }
+		public List<object> sharePermissions { get; set; }
+		public Subscriptions subscriptions { get; set; }
+		public string nameSourceImage
+		{
+			get
+			{
+				if (favourite != true)
+				{
+					return "isFavorites.png";
+				}
+				return "notFavorites.png";
+			}
+			set { }
+		}
+
+	}
+	public class Subscriptions
+	{
+		public int size { get; set; }
+		public List<object> items { get; set; }
+		[JsonProperty("max-results")]
+		public int maxResults { get; set; }
+		[JsonProperty("start-index")]
+		public int startIndex { get; set; }
+		[JsonProperty("end-index")]
+		public int endIndex { get; set; }
+	}
+
+	/// <summary>
 	/// Изменения по задачи, какие поля были затронуты, значения до и после, данные по пользователю (группы)
 	/// </summary>
 	public class Item
@@ -190,7 +233,6 @@ namespace RTMobile
 		public string expand { get; set; }
 		public int recent { get; set; }
 		public bool includeArchived { get; set; }
-
 		[JsonProperty("avatarUrls")]
 		public Urls AvatarUrls { get; set; }
 		public string projectTypeKey { get; set; }
@@ -354,7 +396,7 @@ namespace RTMobile
 		/// </summary>
 		public StatusCategory statusCategory { get; set; }
 	}
-	
+
 	/// <summary>
 	/// Значение внешний или внутренний будет комментарий
 	/// </summary>
@@ -418,6 +460,7 @@ namespace RTMobile
 		}
 		public List<Property> properties { get; set; }
 		public ObservableCollection<Comment> comments { get; set; }
+
 	}
 	public class To
 	{
