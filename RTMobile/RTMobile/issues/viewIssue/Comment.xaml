@@ -99,7 +99,6 @@
             </ListView>
             <Label x:Name="noneComment" Text="Комментарии отсутствуют" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" 
                    TextColor="#F0F1F0" FontSize="16" IsVisible="False"/>
-            
 
             <StackLayout Padding="10,0,10,5" BackgroundColor="#4A4C50">
                 <Frame BackgroundColor="#FFF" CornerRadius="5" HorizontalOptions="FillAndExpand" Padding="0" Margin="0">

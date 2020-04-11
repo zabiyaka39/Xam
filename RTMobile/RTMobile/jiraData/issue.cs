@@ -30,11 +30,11 @@ namespace RTMobile
 		/// <summary>
 		/// Начало запроса (с какого элемента показывать)
 		/// </summary>
-		public int startAt { get; set; }
+		public string startAt { get; set; }
 		/// <summary>
 		/// Максимальные искомый пул (максимальное количество врезультатов которое необходимо показать (MAX - 1000))
 		/// </summary>
-		public int maxResults { get; set; }
+		public string maxResults { get; set; }
 		/// <summary>
 		/// Содержание запроса (тело)
 		/// </summary>
@@ -42,6 +42,13 @@ namespace RTMobile
 		/// <summary>
 		/// Сортировка которую необходимо произвести для полученного результата
 		/// </summary>
+
+		public string comment { get; set; }
+			
+		public string started { get; set; }
+
+		public string timeSpentSeconds { get; set; }
+		
 		public string orderBy { get; set; }
 		/// <summary>
 		/// Адрес запроса на сервер
@@ -748,7 +755,33 @@ namespace RTMobile
 			}
 		}
 		public string timeSpent { get; set; }
-		public int timeSpentSeconds { get; set; }
+		
+		private string _timeSpentSeconds { get; set; }
+		public string timeSpentSeconds 
+		{
+			get { return _timeSpentSeconds; }
+
+			set
+			{
+				var time = TimeSpan.FromSeconds(Convert.ToDouble(value));
+
+				_timeSpentSeconds = "Затрачено времени: ";
+
+				if (time.Minutes != 0)
+				{
+					_timeSpentSeconds = _timeSpentSeconds + String.Format("{0} мин.", time.Minutes);
+				}
+				else if (time.Hours != 0)
+				{
+					_timeSpentSeconds = _timeSpentSeconds + String.Format("{0} ч.", time.Hours);
+				}
+				else if (time.Days != 0)
+				{
+					_timeSpentSeconds = _timeSpentSeconds + String.Format("{0} д.", time.Days);
+				}
+
+			}
+		}
 		public string id { get; set; }
 		public string issueId { get; set; }
 	}
