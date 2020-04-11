@@ -58,6 +58,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="insight\objectList.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="issues\viewIssue\imageView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -68,7 +71,6 @@
     <Folder Include="settings\" />
     <Folder Include="calendar\" />
     <Folder Include="filter\" />
-    <Folder Include="insight\" />
     <Folder Include="notification\" />
     <Folder Include="profile\" />
   </ItemGroup>

@@ -141,8 +141,99 @@ namespace RTMobile
 			}
 			set { }
 		}
-
 	}
+	/// <summary>
+	/// Объектная схема Insight
+	/// </summary>
+	public class Objectschema
+	{
+		public int id { get; set; }
+		public string name { get; set; }
+		public string objectSchemaKey { get; set; }
+		public string status { get; set; }
+		public string created { get; set; }
+		public string updated { get; set; }
+		public int objectCount { get; set; }
+		public int objectTypeCount { get; set; }
+		public string description { get; set; }
+	}
+	public class Links
+	{
+		public string self { get; set; }
+	}
+	public class DefaultType
+	{
+		public int id { get; set; }
+		public string name { get; set; }
+	}
+	public class ObjectTypeAttribute
+	{
+		public int id { get; set; }
+		public string name { get; set; }
+		public bool label { get; set; }
+		public int type { get; set; }
+		public DefaultType defaultType { get; set; }
+		public bool editable { get; set; }
+		public bool system { get; set; }
+		public bool sortable { get; set; }
+		public bool summable { get; set; }
+		public int minimumCardinality { get; set; }
+		public int maximumCardinality { get; set; }
+		public bool removable { get; set; }
+		public bool hidden { get; set; }
+		public bool includeChildObjectTypes { get; set; }
+		public bool uniqueAttribute { get; set; }
+		public string options { get; set; }
+		public int position { get; set; }
+		public string description { get; set; }
+		public string additionalValue { get; set; }
+		public string suffix { get; set; }
+		public string regexValidation { get; set; }
+		public string iql { get; set; }
+	}
+	public class ObjectEntry
+	{
+		public int id { get; set; }
+		public string label { get; set; }
+		public string objectKey { get; set; }
+		public ObjectType objectType { get; set; }
+		public string created { get; set; }
+		public string updated { get; set; }
+		public bool hasAvatar { get; set; }
+		public object timestamp { get; set; }
+		public List<Attribute> attributes { get; set; }
+		public Links _links { get; set; }
+		public string name { get; set; }
+	}
+	/// <summary>
+	/// Описание типов Insight
+	/// </summary>
+	public class ObjectType
+	{
+		public int id { get; set; }
+		public string name { get; set; }
+		public int type { get; set; }
+		public int position { get; set; }
+		public string created { get; set; }
+		public string updated { get; set; }
+		public int objectCount { get; set; }
+		public int objectSchemaId { get; set; }
+		public bool inherited { get; set; }
+		public bool abstractObjectType { get; set; }
+		public bool parentObjectTypeInherited { get; set; }
+	}
+	/// <summary>
+	/// Описание атрибутов объекта Insight
+	/// </summary>
+	public class Attribute
+	{
+		public int id { get; set; }
+		public int objectTypeAttributeId { get; set; }
+		public List<object> objectAttributeValues { get; set; }
+		public int objectId { get; set; }
+		public int position { get; set; }
+	}
+
 	public class Subscriptions
 	{
 		public int size { get; set; }
@@ -927,6 +1018,8 @@ namespace RTMobile
 		public ObservableCollection<Issue> issues { get; set; }
 		public ObservableCollection<Comment> comments { get; set; }
 		public ObservableCollection<Worklog> worklogs { get; set; }
+		public ObservableCollection<ObjectEntry> objectEntries { get; set; }
+		public ObservableCollection<Objectschema> objectschemas{ get; set; }
 		public Changelog changelog { get; set; }
 		public Session session { get; set; }
 		public LoginInfo loginInfo { get; set; }

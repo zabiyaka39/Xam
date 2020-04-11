@@ -157,3 +157,4 @@ F:\project\Mobile\RTMobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\RTMobile.c
 F:\project\Mobile\RTMobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\RTMobile.dll
 F:\project\Mobile\RTMobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\RTMobile.pdb
 F:\project\Mobile\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\RTMobile.csproj.CoreCompileInputs.cache
+F:\project\Mobile\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\insight\objectList.xaml.g.cs

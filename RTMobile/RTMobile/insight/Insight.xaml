@@ -6,10 +6,48 @@
     <ContentPage.Content>
           <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
                       BackgroundColor="#312F35">
-            <StackLayout VerticalOptions="FillAndExpand">
-                <Label Text="РАЗДЕЛ В РАЗРАБОТКЕ..." HorizontalOptions="CenterAndExpand"
-                       VerticalOptions="CenterAndExpand" TextColor="#F0F1F0" FontSize="20"/>
-            </StackLayout>
+            <Grid HorizontalOptions="FillAndExpand" BackgroundColor="#323037">
+                <Frame HasShadow="True" CornerRadius="5" Padding="2,2,2,0" Margin="10"
+                       BackgroundColor="#4A4C50">
+                    <SearchBar Placeholder="Найти..." FontSize="16" TextColor="#F0F1F0"
+                               BackgroundColor="#4A4C50" CancelButtonColor="#F0F1F0"
+                               PlaceholderColor="#F0F1F0" 
+                               x:Name="searchIssue"/>
+                </Frame>
+            </Grid>
+            <ScrollView>
+                <ListView  Grid.Row="1" Grid.Column="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" 
+                                   HasUnevenRows="True" SeparatorVisibility="None" ItemTapped="favoritesList_ItemTapped"
+                                   ItemsSource="{Binding insightObject}" x:Name="favoritesList" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.View>
+                                    <Frame CornerRadius="5" Margin="10" BackgroundColor="#F0F1F0">
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="Auto"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Label Grid.Row="0" Grid.Column="0" Text="{Binding Path=name}" TextColor="#9B9CA0" FontSize="20" FontAttributes="Bold"/>
+                                            <Label Grid.Row="1" Grid.Column="0" Text="{Binding Path=description}" TextColor="#9B9CA0" FontSize="12" FontAttributes="Bold"/>
+                                            <Label Grid.Row="2" Grid.Column="1" Text="{Binding Path=created}" TextColor="#9B9CA0" FontSize="12" FontAttributes="Bold" HorizontalTextAlignment="End"/>
+                                            <Label Grid.Row="3" Grid.Column="1" Text="{Binding Path=objectCount}" TextColor="#9B9CA0" FontSize="12" FontAttributes="Bold" HorizontalTextAlignment="End"/>
+                                        </Grid>
+                                    </Frame>
+
+                                </ViewCell.View>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollView>
             <Grid VerticalOptions="End">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="5"/>
