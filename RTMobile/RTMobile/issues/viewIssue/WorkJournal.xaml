@@ -14,21 +14,22 @@
                      Order="Secondary" Priority="999"/>
         <ToolbarItem Text="История" Clicked="ToolbarItem_Clicked"
                      Order="Secondary" Priority="1000"/>
+        
 
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
+        
         <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
                       BackgroundColor="#4A4C50">
             <StackLayout HeightRequest="70" BackgroundColor="#323037">
                 <Label Text="{Binding Path=issueKeySummary}"
                      TextColor="#F0F1F0" FontSize="16" VerticalOptions="CenterAndExpand"
-                     HorizontalOptions="CenterAndExpand" Margin="10,0,10,0" MaxLines="2" LineBreakMode="TailTruncation"/>
+                     HorizontalOptions="CenterAndExpand" Margin="0,0,0,0" MaxLines="2" LineBreakMode="TailTruncation"/>
             </StackLayout>
-
             <ListView VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
-                     BackgroundColor="#4A4C50" HasUnevenRows="True" SeparatorVisibility="None"
-                     ItemsSource="{Binding worklogs}" ItemTapped="ListView_ItemTapped">
+                         BackgroundColor="#4A4C50" HasUnevenRows="True" SeparatorVisibility="None"
+                         ItemsSource="{Binding worklogs}" ItemTapped="ListView_ItemTapped">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -36,77 +37,69 @@
                                 <Grid>
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="Auto"/>
-                                        <RowDefinition Height="Auto"/>
+                                    
                                     </Grid.RowDefinitions>
-                                    <Grid>
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition Height ="Auto"/>
-                                            <RowDefinition Height ="Auto"/>
-                                            <RowDefinition Height="25"/>
-                                        </Grid.RowDefinitions>
-                                        <Grid Padding="10,5,5,5" Margin="0" Grid.Row="0">
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="50"/>
-                                                <ColumnDefinition Width="*"/>
-                                            </Grid.ColumnDefinitions>
+                                    <Frame Grid.Column="0" Grid.Row="0" CornerRadius="5" HorizontalOptions="FillAndExpand" WidthRequest="360"
+                                               Margin="10" Padding="0" BackgroundColor="#FFFFFF" >
+                                        <Grid>
                                             <Grid.RowDefinitions>
-                                                <RowDefinition Height="35"/>
-                                                <RowDefinition Height="30"/>
-                                                <RowDefinition Height="1"/>
+                                                <RowDefinition Height ="Auto"/>
+                                                <RowDefinition Height ="Auto"/>
+                                                <RowDefinition Height="25"/>
                                             </Grid.RowDefinitions>
-                                            <Frame Margin="0, 10, 0, 10" 
-                                                   CornerRadius="50" IsClippedToBounds="True"
-                                                   HorizontalOptions="Start" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" VerticalOptions="Start"
-                                                   HasShadow="True" OutlineColor="Black" BackgroundColor="#FFFFFF">
-                                                <Image Source ="{Binding author.AvatarUrls.image}" Aspect="Fill" Margin="-20" HeightRequest="50"
-                                                       WidthRequest="50"/>
-                                            </Frame>
+                                            <Grid Padding="10,5,5,5" Margin="0" Grid.Row="0">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="50"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="35"/>
+                                                    <RowDefinition Height="30"/>
+                                                    <RowDefinition Height="1"/>
+                                                </Grid.RowDefinitions>
+                                                <Frame Margin="0, 10, 0, 10" 
+                                                               CornerRadius="50" IsClippedToBounds="True"
+                                                               HorizontalOptions="Start" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" VerticalOptions="Start"
+                                                               HasShadow="True" OutlineColor="Black" BackgroundColor="#FFFFFF">
+                                                    <Image Source ="{Binding author.AvatarUrls.image}" Aspect="Fill" Margin="-20" HeightRequest="50"
+                                                                   WidthRequest="50"/>
+                                                </Frame>
 
-                                            <Label Grid.Column="1" Grid.Row="0" Text ="{Binding Path=author.displayname}"
-                                                       FontSize="12" TextColor="#F0F1F0" VerticalOptions="End"/>
-                                            <StackLayout Orientation ="Horizontal" Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
-                                                <Label Text="{Binding Path = created}"
-                                                       FontSize="12" TextColor="#F0F1F0" Grid.Column="1" Grid.Row="1" VerticalOptions="StartAndExpand"/>
-                                            </StackLayout>
+                                                <Label Grid.Column="1" Grid.Row="0" Text ="{Binding Path=author.displayName}"
+                                                                   FontSize="12" TextColor="#4A4C50" VerticalOptions="End"/>
+                                                <Label Grid.Column="1" Grid.Row="1" Text ="{Binding Path=timeSpentSeconds}"
+                                                                   FontSize="12" TextColor="#4A4C50" VerticalOptions="Start"/>
+                                                <StackLayout Orientation ="Horizontal" Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
+                                                    <Label Text="{Binding Path = created}"
+                                                                   FontSize="12" TextColor="#4A4C50" Grid.Column="1" Grid.Row="1" VerticalOptions="StartAndExpand"/>
+                                                </StackLayout>
 
-                                            <BoxView BackgroundColor="#4A4C50" HeightRequest="1" 
-                                                     HorizontalOptions="FillAndExpand" Grid.Column="0" Margin="-5,0,0,0"
-                                                     Grid.Row="2" Grid.ColumnSpan="2" VerticalOptions="Start"/>
+                                                <BoxView BackgroundColor="#4A4C50" HeightRequest="1" 
+                                                                 HorizontalOptions="FillAndExpand" Grid.Column="0" Margin="-5,0,0,0"
+                                                                 Grid.Row="2" Grid.ColumnSpan="2" VerticalOptions="Start"/>
+                                            </Grid>
+                                            <ScrollView Margin="10,0,10,0" VerticalOptions="StartAndExpand"
+                                                              HorizontalOptions="FillAndExpand" Grid.Column="0" Grid.Row="1" Padding="0" >
+                                                <Label VerticalOptions="Start" HorizontalOptions="Start" Text="{Binding Path=comment}"
+                                                                   Grid.Column="0" Grid.Row="0" />
+                                            </ScrollView>
+                                            <ImageButton x:Name="showHistory" Source="arrowUp.png"  Grid.Column="0"
+                                                                     BackgroundColor="Transparent"
+                                                                     Grid.Row="2" HorizontalOptions="Center" VerticalOptions="End"
+                                                                     Margin="0,0,0,10" Clicked="showHistory_Clicked"/>
+
                                         </Grid>
-                                        <ScrollView Margin="10,0,10,0" VerticalOptions="StartAndExpand"
-                                                  HorizontalOptions="FillAndExpand" Grid.Column="0" Grid.Row="1" Padding="0" >
-                                            <Label VerticalOptions="Start" HorizontalOptions="Start" Text="{Binding Path=body}"
-                                                       Grid.Column="0" Grid.Row="0"  TextColor="#F0F1F0"/>
-                                        </ScrollView>
-                                        <ImageButton x:Name="showHistory" Source="arrowUp.png"  Grid.Column="0"
-                                                         BackgroundColor="Transparent"
-                                                         Grid.Row="2" HorizontalOptions="Center" VerticalOptions="End"
-                                                         Margin="0,0,0,10" Clicked="showHistory_Clicked"/>
-
-                                    </Grid>
-
+                                    </Frame>
                                 </Grid>
                             </ViewCell.View>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+          
+            <Button Text="Добавить" Grid.Column="0" Grid.Row="0" HeightRequest="50" Clicked="Add_new_worklog" HorizontalOptions="FillAndExpand" Margin="10,0,10,0" BackgroundColor="Red" TextColor="White"/>
 
-            <StackLayout Padding="10,0,10,5" BackgroundColor="#4A4C50">
-                <Frame BackgroundColor="#FFF" CornerRadius="5" HorizontalOptions="FillAndExpand" Padding="0" Margin="0">
-                    <Grid HorizontalOptions="FillAndExpand">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="25"/>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="25"/>
-                        </Grid.ColumnDefinitions>
-                        <ImageButton BackgroundColor="Transparent" Grid.Column="0" Grid.Row="0" Source="attachment.png" HorizontalOptions="Start" HeightRequest="25" Margin="5,0,0,0"/>
-                        <Entry Grid.Column="1" Grid.Row="0" Placeholder="Введите текст комментария..." FontSize="14" Margin="-5,0,0,0"
-                               PlaceholderColor="#4A4C50" TextColor="#4A4C50" HeightRequest="60" HorizontalOptions="FillAndExpand"/>
-                        <ImageButton BackgroundColor="Transparent" Grid.Column="2" Grid.Row="0" Source="arrowRightDark.png" HeightRequest="15" HorizontalOptions="End" Margin="0,0,10,0"/>
-                    </Grid>
-                </Frame>
-            </StackLayout>
+
 
             <Grid VerticalOptions="End" BackgroundColor="#323037">
                 <Grid.RowDefinitions>

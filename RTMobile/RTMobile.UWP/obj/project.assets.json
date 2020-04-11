@@ -26674,26 +26674,26 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\wwwge\\.nuget\\packages\\": {},
-    "D:\\Microsoft\\Xamarin\\NuGet\\": {},
+    "C:\\Users\\Вазген\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
     "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Project\\Jira\\rtmobile\\RTMobile\\RTMobile.UWP\\RTMobile.UWP.csproj",
+      "projectUniqueName": "C:\\123\\RTMobile\\RTMobile.UWP\\RTMobile.UWP.csproj",
       "projectName": "RTMobile.UWP",
-      "projectPath": "D:\\Project\\Jira\\rtmobile\\RTMobile\\RTMobile.UWP\\RTMobile.UWP.csproj",
-      "packagesPath": "C:\\Users\\wwwge\\.nuget\\packages\\",
-      "outputPath": "D:\\Project\\Jira\\rtmobile\\RTMobile\\RTMobile.UWP\\obj\\",
+      "projectPath": "C:\\123\\RTMobile\\RTMobile.UWP\\RTMobile.UWP.csproj",
+      "packagesPath": "C:\\Users\\Вазген\\.nuget\\packages\\",
+      "outputPath": "C:\\123\\RTMobile\\RTMobile.UWP\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
-        "D:\\Microsoft\\Xamarin\\NuGet\\",
+        "C:\\Microsoft\\Xamarin\\NuGet\\",
         "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\wwwge\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Вазген\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -26707,8 +26707,8 @@
       "frameworks": {
         "uap10.0.16299": {
           "projectReferences": {
-            "D:\\Project\\Jira\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj": {
-              "projectPath": "D:\\Project\\Jira\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj"
+            "C:\\123\\RTMobile\\RTMobile\\RTMobile.csproj": {
+              "projectPath": "C:\\123\\RTMobile\\RTMobile\\RTMobile.csproj"
             }
           }
         }

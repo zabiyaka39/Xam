@@ -37,7 +37,7 @@ namespace RTMobile
 			else
 			{
 				frameLogin.IsEnabled = false;
-				buttonLogin.IsEnabled = false;				
+				buttonLogin.IsEnabled = false;
 				errorMessage.IsVisible = true;
 				errorMessage.Text = "Сервер не доступен!";
 				errorMessage.FontAttributes = FontAttributes.Bold;
@@ -65,14 +65,14 @@ namespace RTMobile
 				if (login.Text != null && login.Text.Length > 0 && password.Text != null && password.Text.Length > 0)
 				{
 					if (request.authorization(login.Text.Trim(' '), password.Text))
-					{						
+					{
 						errorMessage.IsVisible = false;
 						errorMessage1.IsVisible = false;
 						errorMessage.IsVisible = false;
 
 						CrossSettings.Current.AddOrUpdateValue("login", login.Text.Trim(' '));
 						CrossSettings.Current.AddOrUpdateValue("password", password.Text);
-						Analytics.TrackEvent("Выполнен вход в систему: пользователь - " + CrossSettings.Current.GetValueOrDefault("login", "") + ", " + DateTime.Now );
+						Analytics.TrackEvent("Выполнен вход в систему: пользователь - " + CrossSettings.Current.GetValueOrDefault("login", "") + ", " + DateTime.Now);
 						await Navigation.PushModalAsync(new AllIssues()).ConfigureAwait(true);
 					}
 					else
@@ -110,6 +110,9 @@ namespace RTMobile
 		private void Button_Clicked_3(object sender, EventArgs e)
 		{
 
+
 		}
+
+	
 	}
 }
