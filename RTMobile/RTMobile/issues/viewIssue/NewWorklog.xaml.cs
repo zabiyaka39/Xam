@@ -11,10 +11,6 @@ using Xamarin.Forms;
 
 namespace RTMobile.issues.viewIssue
 {
-    
-
-    
-
     public partial class NewWorkjornal : ContentPage
     {
         public string issueSummary { get; set; }
@@ -28,11 +24,7 @@ namespace RTMobile.issues.viewIssue
             InitializeComponent();
          
             DatePick1.MaximumDate = DateTime.Today;
-            DatePick2.MaximumDate = DateTime.Today;
-            
-
-
-
+            DatePick2.MaximumDate = DateTime.Today;            
         }
         private async void Create_new_worklog_Clicked(object sender, EventArgs e)
         {
@@ -53,18 +45,15 @@ namespace RTMobile.issues.viewIssue
                         timeSpentSeconds = Convert.ToString(Totaltime.TotalSeconds),
 
                     };
-
                     RootObject rootObject = new RootObject();
                     Request request = new Request(jsonRequest);
                     rootObject = request.GetResponses<RootObject>();
-
                 }
                 catch (Exception ex)
                 {
                     Console.WriteLine(ex.ToString());
                     await DisplayAlert("Error issues", ex.ToString(), "OK").ConfigureAwait(true);
                     Crashes.TrackError(ex);
-
                 }
 
                 MessagingCenter.Send<NewWorkjornal>(this, "RefreshMainPage");
@@ -72,13 +61,10 @@ namespace RTMobile.issues.viewIssue
             }
             else
             {
-                await DisplayAlert("Ошибка", "Пустой комментарий", "OK").ConfigureAwait(true);
+                await DisplayAlert("Ошибка", "Заполните поле комментарий, комментарий не может быть пустым!", "OK").ConfigureAwait(true);
             }
 
         }
-                
-          
-
         void ImageButton_Clicked_1(System.Object sender, System.EventArgs e)
         {
             Navigation.PushAsync(new Insight());

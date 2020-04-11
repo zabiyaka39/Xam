@@ -96,8 +96,17 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-          
-            <Button Text="Добавить" Grid.Column="0" Grid.Row="0" HeightRequest="50" Clicked="Add_new_worklog" HorizontalOptions="FillAndExpand" Margin="10,0,10,0" BackgroundColor="Red" TextColor="White"/>
+
+            <Frame HasShadow="True" CornerRadius="3" BackgroundColor="#BE0030" WidthRequest="167"
+                       HeightRequest="50" HorizontalOptions="FillAndExpand" Padding="0,5,0,5" Margin="10,0,10,10">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer  NumberOfTapsRequired="1"/>
+                </Frame.GestureRecognizers>
+                <Button Margin="0" Padding="0" BackgroundColor="Transparent" Text="Добавить" FontSize="18" TextColor="#F0F1F0" HorizontalOptions="FillAndExpand"
+                           FontAttributes="Bold" VerticalOptions="Center" Clicked="Add_new_worklog" />
+
+            </Frame>
+            <!--<Button Text="Добавить" Grid.Column="0" Grid.Row="0" HeightRequest="50" Clicked="Add_new_worklog" HorizontalOptions="FillAndExpand" Margin="10,0,10,0" BackgroundColor="Red" TextColor="White"/>-->
 
 
 
