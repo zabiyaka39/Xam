@@ -35,7 +35,7 @@ namespace RTMobile.issues.viewIssue
             if (newComment.Text != null)
             {
                 try
-                {
+                { 
                     JSONRequest jsonRequest = new JSONRequest
                     {
                         urlRequest = $"/rest/api/2/issue/{this.issueKey}/worklog",
