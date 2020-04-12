@@ -136,6 +136,6 @@ namespace RTMobile.issues.viewIssue
 		{
 			Navigation.PushAsync(new Comment(issue.key, issue.fields.summary));
 		}
-
+		
 	}
 }

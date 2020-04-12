@@ -64,6 +64,9 @@
     <EmbeddedResource Update="issues\viewIssue\imageView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="issues\viewIssue\NewWorklog.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
 
   <ItemGroup>
@@ -80,5 +83,11 @@
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="issues\viewIssue\NewWorklog.xaml.cs">
+      <DependentUpon>NewWorklog.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 </Project>
