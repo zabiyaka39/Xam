@@ -196,3 +196,4 @@ F:\project\Mobile\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\RTMobile.A
 F:\project\Mobile\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\RTMobile.AssemblyInfo.cs
 F:\project\Mobile\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\XamlC.stamp
 F:\project\Mobile\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\RTMobile.csproj.CopyComplete
+F:\project\Mobile\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\insight\objectList.xaml.g.cs

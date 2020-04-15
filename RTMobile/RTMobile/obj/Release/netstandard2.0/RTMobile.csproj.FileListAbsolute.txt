@@ -35,11 +35,8 @@ F:\project\Mobile\RTMobile\RTMobile\RTMobile\obj\Release\netstandard2.0\RTMobile
 F:\project\Mobile\RTMobile\RTMobile\RTMobile\obj\Release\netstandard2.0\about\About.xaml.g.cs
 F:\project\Mobile\RTMobile\RTMobile\RTMobile\obj\Release\netstandard2.0\App.xaml.g.cs
 F:\project\Mobile\RTMobile\RTMobile\RTMobile\obj\Release\netstandard2.0\calendar\Calendar.xaml.g.cs
-F:\project\Mobile\RTMobile\RTMobile\RTMobile\obj\Release\netstandard2.0\createIssue.xaml.g.cs
-F:\project\Mobile\RTMobile\RTMobile\RTMobile\obj\Release\netstandard2.0\dataIssue\photoView.xaml.g.cs
 F:\project\Mobile\RTMobile\RTMobile\RTMobile\obj\Release\netstandard2.0\filter\Filter.xaml.g.cs
 F:\project\Mobile\RTMobile\RTMobile\RTMobile\obj\Release\netstandard2.0\insight\Insight.xaml.g.cs
-F:\project\Mobile\RTMobile\RTMobile\RTMobile\obj\Release\netstandard2.0\issuePage.xaml.g.cs
 F:\project\Mobile\RTMobile\RTMobile\RTMobile\obj\Release\netstandard2.0\issues\AllIssues.xaml.g.cs
 F:\project\Mobile\RTMobile\RTMobile\RTMobile\obj\Release\netstandard2.0\issues\AllIssuesView.xaml.g.cs
 F:\project\Mobile\RTMobile\RTMobile\RTMobile\obj\Release\netstandard2.0\issues\CreateIssue.xaml.g.cs
@@ -55,7 +52,6 @@ F:\project\Mobile\RTMobile\RTMobile\RTMobile\obj\Release\netstandard2.0\issues\v
 F:\project\Mobile\RTMobile\RTMobile\RTMobile\obj\Release\netstandard2.0\MainPage.xaml.g.cs
 F:\project\Mobile\RTMobile\RTMobile\RTMobile\obj\Release\netstandard2.0\notification\Notification.xaml.g.cs
 F:\project\Mobile\RTMobile\RTMobile\RTMobile\obj\Release\netstandard2.0\profile\Profile.xaml.g.cs
-F:\project\Mobile\RTMobile\RTMobile\RTMobile\obj\Release\netstandard2.0\searchIssue.xaml.g.cs
 F:\project\Mobile\RTMobile\RTMobile\RTMobile\obj\Release\netstandard2.0\settings\Settings.xaml.g.cs
 F:\project\Mobile\RTMobile\RTMobile\RTMobile\obj\Release\netstandard2.0\RTMobile.AssemblyInfoInputs.cache
 F:\project\Mobile\RTMobile\RTMobile\RTMobile\obj\Release\netstandard2.0\RTMobile.AssemblyInfo.cs
@@ -63,3 +59,7 @@ F:\project\Mobile\RTMobile\RTMobile\RTMobile\obj\Release\netstandard2.0\XamlC.st
 F:\project\Mobile\RTMobile\RTMobile\RTMobile\obj\Release\netstandard2.0\RTMobile.csproj.CopyComplete
 F:\project\Mobile\RTMobile\RTMobile\RTMobile\obj\Release\netstandard2.0\RTMobile.dll
 F:\project\Mobile\RTMobile\RTMobile\RTMobile\obj\Release\netstandard2.0\RTMobile.pdb
+F:\project\Mobile\rtmobile\RTMobile\RTMobile\obj\Release\netstandard2.0\insight\objectList.xaml.g.cs
+F:\project\Mobile\rtmobile\RTMobile\RTMobile\obj\Release\netstandard2.0\issues\viewIssue\imageView.xaml.g.cs
+F:\project\Mobile\rtmobile\RTMobile\RTMobile\obj\Release\netstandard2.0\issues\viewIssue\NewWorklog.xaml.g.cs
+F:\project\Mobile\rtmobile\RTMobile\RTMobile\obj\Release\netstandard2.0\RTMobile.csproj.CoreCompileInputs.cache

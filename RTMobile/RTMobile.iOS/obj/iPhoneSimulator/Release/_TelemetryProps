@@ -1,6 +1,8 @@
+IsIncrementalBuild=true
+IsLocal=False
 EnableLLVM=False
-UseConcurrentGC=true
-LinkerBehavior=None
+UseConcurrentGC=false
+LinkerBehavior=SdkOnly
 AdditionalSupportedEncodings=
 HttpClientImplementation=NSUrlSessionHandler
 SupportedArchitectures=x86_64

@@ -506,12 +506,14 @@ public final class R {
      */
     public static final int backgroundStacked=0x7f030033;
     /**
+     * Tint to apply to the background.
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      */
     public static final int backgroundTint=0x7f030034;
     /**
+     * Blending mode used to apply the background tint.
      * <p>Must be one of the following constant values.</p>
      * <table>
      * <colgroup align="left" />
@@ -1036,6 +1038,7 @@ public final class R {
      */
     public static final int chipStyle=0x7f030076;
     /**
+     * Close button icon
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
@@ -1139,12 +1142,15 @@ public final class R {
      */
     public static final int color=0x7f030083;
     /**
+     * Bright complement to the primary branding color. By default, this is the color applied
+     * to framework controls (via colorControlActivated).
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      */
     public static final int colorAccent=0x7f030084;
     /**
+     * Default color of background imagery for floating components, ex. dialogs, popups, and cards.
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
@@ -1191,12 +1197,16 @@ public final class R {
      */
     public static final int colorError=0x7f03008a;
     /**
+     * The primary branding color for the app. By default, this is the color applied to the
+     * action bar background.
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      */
     public static final int colorPrimary=0x7f03008b;
     /**
+     * Dark variant of the primary branding color. By default, this is the color applied to
+     * the status bar (via statusBarColor) and navigation bar (via navigationBarColor).
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
@@ -1531,6 +1541,7 @@ public final class R {
      */
     public static final int editTextColor=0x7f0300b3;
     /**
+     * Default EditText style.
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
@@ -1538,6 +1549,7 @@ public final class R {
      */
     public static final int editTextStyle=0x7f0300b4;
     /**
+     * Elevation for the action bar itself
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
      * Available units are: px (pixels), dp (density-independent pixels),
@@ -2022,6 +2034,7 @@ public final class R {
      */
     public static final int hoveredFocusedTranslationZ=0x7f0300ec;
     /**
+     * Specifies the drawable used for the application icon.
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
@@ -2073,12 +2086,14 @@ public final class R {
      */
     public static final int iconStartPadding=0x7f0300f2;
     /**
+     * Tint to apply to the icon.
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      */
     public static final int iconTint=0x7f0300f3;
     /**
+     * Blending mode used to apply the icon tint.
      * <p>Must be one of the following constant values.</p>
      * <table>
      * <colgroup align="left" />
@@ -4732,263 +4747,274 @@ public final class R {
     public static final int abc_vector_test=0x7f070059;
     public static final int about=0x7f07005a;
     public static final int addwatchers=0x7f07005b;
-    public static final int arrowdown=0x7f07005c;
-    public static final int arrowright=0x7f07005d;
-    public static final int arrowrightdark=0x7f07005e;
-    public static final int arrowup=0x7f07005f;
-    public static final int attachment=0x7f070060;
-    public static final int avd_hide_password=0x7f070061;
-    public static final int avd_show_password=0x7f070062;
-    public static final int calendar=0x7f070063;
-    public static final int comment=0x7f070064;
-    public static final int commenttoolbar=0x7f070065;
-    public static final int create=0x7f070066;
-    public static final int description=0x7f070067;
-    public static final int design_bottom_navigation_item_background=0x7f070068;
-    public static final int design_fab_background=0x7f070069;
-    public static final int design_ic_visibility=0x7f07006a;
-    public static final int design_ic_visibility_off=0x7f07006b;
-    public static final int design_password_eye=0x7f07006c;
-    public static final int design_snackbar_background=0x7f07006d;
-    public static final int down=0x7f07006e;
-    public static final int exit=0x7f07006f;
-    public static final int filter=0x7f070070;
-    public static final int home=0x7f070071;
-    public static final int ic_audiotrack_dark=0x7f070072;
-    public static final int ic_audiotrack_light=0x7f070073;
-    public static final int ic_dialog_close_dark=0x7f070074;
-    public static final int ic_dialog_close_light=0x7f070075;
-    public static final int ic_group_collapse_00=0x7f070076;
-    public static final int ic_group_collapse_01=0x7f070077;
-    public static final int ic_group_collapse_02=0x7f070078;
-    public static final int ic_group_collapse_03=0x7f070079;
-    public static final int ic_group_collapse_04=0x7f07007a;
-    public static final int ic_group_collapse_05=0x7f07007b;
-    public static final int ic_group_collapse_06=0x7f07007c;
-    public static final int ic_group_collapse_07=0x7f07007d;
-    public static final int ic_group_collapse_08=0x7f07007e;
-    public static final int ic_group_collapse_09=0x7f07007f;
-    public static final int ic_group_collapse_10=0x7f070080;
-    public static final int ic_group_collapse_11=0x7f070081;
-    public static final int ic_group_collapse_12=0x7f070082;
-    public static final int ic_group_collapse_13=0x7f070083;
-    public static final int ic_group_collapse_14=0x7f070084;
-    public static final int ic_group_collapse_15=0x7f070085;
-    public static final int ic_group_expand_00=0x7f070086;
-    public static final int ic_group_expand_01=0x7f070087;
-    public static final int ic_group_expand_02=0x7f070088;
-    public static final int ic_group_expand_03=0x7f070089;
-    public static final int ic_group_expand_04=0x7f07008a;
-    public static final int ic_group_expand_05=0x7f07008b;
-    public static final int ic_group_expand_06=0x7f07008c;
-    public static final int ic_group_expand_07=0x7f07008d;
-    public static final int ic_group_expand_08=0x7f07008e;
-    public static final int ic_group_expand_09=0x7f07008f;
-    public static final int ic_group_expand_10=0x7f070090;
-    public static final int ic_group_expand_11=0x7f070091;
-    public static final int ic_group_expand_12=0x7f070092;
-    public static final int ic_group_expand_13=0x7f070093;
-    public static final int ic_group_expand_14=0x7f070094;
-    public static final int ic_group_expand_15=0x7f070095;
-    public static final int ic_media_pause_dark=0x7f070096;
-    public static final int ic_media_pause_light=0x7f070097;
-    public static final int ic_media_play_dark=0x7f070098;
-    public static final int ic_media_play_light=0x7f070099;
-    public static final int ic_media_stop_dark=0x7f07009a;
-    public static final int ic_media_stop_light=0x7f07009b;
-    public static final int ic_mr_button_connected_00_dark=0x7f07009c;
-    public static final int ic_mr_button_connected_00_light=0x7f07009d;
-    public static final int ic_mr_button_connected_01_dark=0x7f07009e;
-    public static final int ic_mr_button_connected_01_light=0x7f07009f;
-    public static final int ic_mr_button_connected_02_dark=0x7f0700a0;
-    public static final int ic_mr_button_connected_02_light=0x7f0700a1;
-    public static final int ic_mr_button_connected_03_dark=0x7f0700a2;
-    public static final int ic_mr_button_connected_03_light=0x7f0700a3;
-    public static final int ic_mr_button_connected_04_dark=0x7f0700a4;
-    public static final int ic_mr_button_connected_04_light=0x7f0700a5;
-    public static final int ic_mr_button_connected_05_dark=0x7f0700a6;
-    public static final int ic_mr_button_connected_05_light=0x7f0700a7;
-    public static final int ic_mr_button_connected_06_dark=0x7f0700a8;
-    public static final int ic_mr_button_connected_06_light=0x7f0700a9;
-    public static final int ic_mr_button_connected_07_dark=0x7f0700aa;
-    public static final int ic_mr_button_connected_07_light=0x7f0700ab;
-    public static final int ic_mr_button_connected_08_dark=0x7f0700ac;
-    public static final int ic_mr_button_connected_08_light=0x7f0700ad;
-    public static final int ic_mr_button_connected_09_dark=0x7f0700ae;
-    public static final int ic_mr_button_connected_09_light=0x7f0700af;
-    public static final int ic_mr_button_connected_10_dark=0x7f0700b0;
-    public static final int ic_mr_button_connected_10_light=0x7f0700b1;
-    public static final int ic_mr_button_connected_11_dark=0x7f0700b2;
-    public static final int ic_mr_button_connected_11_light=0x7f0700b3;
-    public static final int ic_mr_button_connected_12_dark=0x7f0700b4;
-    public static final int ic_mr_button_connected_12_light=0x7f0700b5;
-    public static final int ic_mr_button_connected_13_dark=0x7f0700b6;
-    public static final int ic_mr_button_connected_13_light=0x7f0700b7;
-    public static final int ic_mr_button_connected_14_dark=0x7f0700b8;
-    public static final int ic_mr_button_connected_14_light=0x7f0700b9;
-    public static final int ic_mr_button_connected_15_dark=0x7f0700ba;
-    public static final int ic_mr_button_connected_15_light=0x7f0700bb;
-    public static final int ic_mr_button_connected_16_dark=0x7f0700bc;
-    public static final int ic_mr_button_connected_16_light=0x7f0700bd;
-    public static final int ic_mr_button_connected_17_dark=0x7f0700be;
-    public static final int ic_mr_button_connected_17_light=0x7f0700bf;
-    public static final int ic_mr_button_connected_18_dark=0x7f0700c0;
-    public static final int ic_mr_button_connected_18_light=0x7f0700c1;
-    public static final int ic_mr_button_connected_19_dark=0x7f0700c2;
-    public static final int ic_mr_button_connected_19_light=0x7f0700c3;
-    public static final int ic_mr_button_connected_20_dark=0x7f0700c4;
-    public static final int ic_mr_button_connected_20_light=0x7f0700c5;
-    public static final int ic_mr_button_connected_21_dark=0x7f0700c6;
-    public static final int ic_mr_button_connected_21_light=0x7f0700c7;
-    public static final int ic_mr_button_connected_22_dark=0x7f0700c8;
-    public static final int ic_mr_button_connected_22_light=0x7f0700c9;
-    public static final int ic_mr_button_connected_23_dark=0x7f0700ca;
-    public static final int ic_mr_button_connected_23_light=0x7f0700cb;
-    public static final int ic_mr_button_connected_24_dark=0x7f0700cc;
-    public static final int ic_mr_button_connected_24_light=0x7f0700cd;
-    public static final int ic_mr_button_connected_25_dark=0x7f0700ce;
-    public static final int ic_mr_button_connected_25_light=0x7f0700cf;
-    public static final int ic_mr_button_connected_26_dark=0x7f0700d0;
-    public static final int ic_mr_button_connected_26_light=0x7f0700d1;
-    public static final int ic_mr_button_connected_27_dark=0x7f0700d2;
-    public static final int ic_mr_button_connected_27_light=0x7f0700d3;
-    public static final int ic_mr_button_connected_28_dark=0x7f0700d4;
-    public static final int ic_mr_button_connected_28_light=0x7f0700d5;
-    public static final int ic_mr_button_connected_29_dark=0x7f0700d6;
-    public static final int ic_mr_button_connected_29_light=0x7f0700d7;
-    public static final int ic_mr_button_connected_30_dark=0x7f0700d8;
-    public static final int ic_mr_button_connected_30_light=0x7f0700d9;
-    public static final int ic_mr_button_connecting_00_dark=0x7f0700da;
-    public static final int ic_mr_button_connecting_00_light=0x7f0700db;
-    public static final int ic_mr_button_connecting_01_dark=0x7f0700dc;
-    public static final int ic_mr_button_connecting_01_light=0x7f0700dd;
-    public static final int ic_mr_button_connecting_02_dark=0x7f0700de;
-    public static final int ic_mr_button_connecting_02_light=0x7f0700df;
-    public static final int ic_mr_button_connecting_03_dark=0x7f0700e0;
-    public static final int ic_mr_button_connecting_03_light=0x7f0700e1;
-    public static final int ic_mr_button_connecting_04_dark=0x7f0700e2;
-    public static final int ic_mr_button_connecting_04_light=0x7f0700e3;
-    public static final int ic_mr_button_connecting_05_dark=0x7f0700e4;
-    public static final int ic_mr_button_connecting_05_light=0x7f0700e5;
-    public static final int ic_mr_button_connecting_06_dark=0x7f0700e6;
-    public static final int ic_mr_button_connecting_06_light=0x7f0700e7;
-    public static final int ic_mr_button_connecting_07_dark=0x7f0700e8;
-    public static final int ic_mr_button_connecting_07_light=0x7f0700e9;
-    public static final int ic_mr_button_connecting_08_dark=0x7f0700ea;
-    public static final int ic_mr_button_connecting_08_light=0x7f0700eb;
-    public static final int ic_mr_button_connecting_09_dark=0x7f0700ec;
-    public static final int ic_mr_button_connecting_09_light=0x7f0700ed;
-    public static final int ic_mr_button_connecting_10_dark=0x7f0700ee;
-    public static final int ic_mr_button_connecting_10_light=0x7f0700ef;
-    public static final int ic_mr_button_connecting_11_dark=0x7f0700f0;
-    public static final int ic_mr_button_connecting_11_light=0x7f0700f1;
-    public static final int ic_mr_button_connecting_12_dark=0x7f0700f2;
-    public static final int ic_mr_button_connecting_12_light=0x7f0700f3;
-    public static final int ic_mr_button_connecting_13_dark=0x7f0700f4;
-    public static final int ic_mr_button_connecting_13_light=0x7f0700f5;
-    public static final int ic_mr_button_connecting_14_dark=0x7f0700f6;
-    public static final int ic_mr_button_connecting_14_light=0x7f0700f7;
-    public static final int ic_mr_button_connecting_15_dark=0x7f0700f8;
-    public static final int ic_mr_button_connecting_15_light=0x7f0700f9;
-    public static final int ic_mr_button_connecting_16_dark=0x7f0700fa;
-    public static final int ic_mr_button_connecting_16_light=0x7f0700fb;
-    public static final int ic_mr_button_connecting_17_dark=0x7f0700fc;
-    public static final int ic_mr_button_connecting_17_light=0x7f0700fd;
-    public static final int ic_mr_button_connecting_18_dark=0x7f0700fe;
-    public static final int ic_mr_button_connecting_18_light=0x7f0700ff;
-    public static final int ic_mr_button_connecting_19_dark=0x7f070100;
-    public static final int ic_mr_button_connecting_19_light=0x7f070101;
-    public static final int ic_mr_button_connecting_20_dark=0x7f070102;
-    public static final int ic_mr_button_connecting_20_light=0x7f070103;
-    public static final int ic_mr_button_connecting_21_dark=0x7f070104;
-    public static final int ic_mr_button_connecting_21_light=0x7f070105;
-    public static final int ic_mr_button_connecting_22_dark=0x7f070106;
-    public static final int ic_mr_button_connecting_22_light=0x7f070107;
-    public static final int ic_mr_button_connecting_23_dark=0x7f070108;
-    public static final int ic_mr_button_connecting_23_light=0x7f070109;
-    public static final int ic_mr_button_connecting_24_dark=0x7f07010a;
-    public static final int ic_mr_button_connecting_24_light=0x7f07010b;
-    public static final int ic_mr_button_connecting_25_dark=0x7f07010c;
-    public static final int ic_mr_button_connecting_25_light=0x7f07010d;
-    public static final int ic_mr_button_connecting_26_dark=0x7f07010e;
-    public static final int ic_mr_button_connecting_26_light=0x7f07010f;
-    public static final int ic_mr_button_connecting_27_dark=0x7f070110;
-    public static final int ic_mr_button_connecting_27_light=0x7f070111;
-    public static final int ic_mr_button_connecting_28_dark=0x7f070112;
-    public static final int ic_mr_button_connecting_28_light=0x7f070113;
-    public static final int ic_mr_button_connecting_29_dark=0x7f070114;
-    public static final int ic_mr_button_connecting_29_light=0x7f070115;
-    public static final int ic_mr_button_connecting_30_dark=0x7f070116;
-    public static final int ic_mr_button_connecting_30_light=0x7f070117;
-    public static final int ic_mr_button_disabled_dark=0x7f070118;
-    public static final int ic_mr_button_disabled_light=0x7f070119;
-    public static final int ic_mr_button_disconnected_dark=0x7f07011a;
-    public static final int ic_mr_button_disconnected_light=0x7f07011b;
-    public static final int ic_mr_button_grey=0x7f07011c;
-    public static final int ic_mtrl_chip_checked_black=0x7f07011d;
-    public static final int ic_mtrl_chip_checked_circle=0x7f07011e;
-    public static final int ic_mtrl_chip_close_circle=0x7f07011f;
-    public static final int ic_vol_type_speaker_dark=0x7f070120;
-    public static final int ic_vol_type_speaker_group_dark=0x7f070121;
-    public static final int ic_vol_type_speaker_group_light=0x7f070122;
-    public static final int ic_vol_type_speaker_light=0x7f070123;
-    public static final int ic_vol_type_tv_dark=0x7f070124;
-    public static final int ic_vol_type_tv_light=0x7f070125;
-    public static final int info=0x7f070126;
-    public static final int insight=0x7f070127;
-    public static final int mr_button_connected_dark=0x7f070128;
-    public static final int mr_button_connected_light=0x7f070129;
-    public static final int mr_button_connecting_dark=0x7f07012a;
-    public static final int mr_button_connecting_light=0x7f07012b;
-    public static final int mr_button_dark=0x7f07012c;
-    public static final int mr_button_light=0x7f07012d;
-    public static final int mr_dialog_close_dark=0x7f07012e;
-    public static final int mr_dialog_close_light=0x7f07012f;
-    public static final int mr_dialog_material_background_dark=0x7f070130;
-    public static final int mr_dialog_material_background_light=0x7f070131;
-    public static final int mr_group_collapse=0x7f070132;
-    public static final int mr_group_expand=0x7f070133;
-    public static final int mr_media_pause_dark=0x7f070134;
-    public static final int mr_media_pause_light=0x7f070135;
-    public static final int mr_media_play_dark=0x7f070136;
-    public static final int mr_media_play_light=0x7f070137;
-    public static final int mr_media_stop_dark=0x7f070138;
-    public static final int mr_media_stop_light=0x7f070139;
-    public static final int mr_vol_type_audiotrack_dark=0x7f07013a;
-    public static final int mr_vol_type_audiotrack_light=0x7f07013b;
-    public static final int mtrl_snackbar_background=0x7f07013c;
-    public static final int mtrl_tabs_default_indicator=0x7f07013d;
-    public static final int navigation_empty_icon=0x7f07013e;
-    public static final int newnotification=0x7f07013f;
-    public static final int next=0x7f070140;
-    public static final int notification=0x7f070141;
-    public static final int notification_action_background=0x7f070142;
-    public static final int notification_bg=0x7f070143;
-    public static final int notification_bg_low=0x7f070144;
-    public static final int notification_bg_low_normal=0x7f070145;
-    public static final int notification_bg_low_pressed=0x7f070146;
-    public static final int notification_bg_normal=0x7f070147;
-    public static final int notification_bg_normal_pressed=0x7f070148;
-    public static final int notification_icon_background=0x7f070149;
-    public static final int notification_template_icon_bg=0x7f07014a;
-    public static final int notification_template_icon_low_bg=0x7f07014b;
-    public static final int notification_tile_bg=0x7f07014c;
-    public static final int notify_panel_notification_icon_bg=0x7f07014d;
-    public static final int person=0x7f07014e;
-    public static final int prev=0x7f07014f;
-    public static final int property=0x7f070150;
-    public static final int rosohranalogo=0x7f070151;
-    public static final int sekisov=0x7f070152;
-    public static final int settings=0x7f070153;
-    public static final int settingtoolbar=0x7f070154;
-    public static final int time=0x7f070155;
-    public static final int timestart=0x7f070156;
-    public static final int timeupdate=0x7f070157;
-    public static final int tooltip_frame_dark=0x7f070158;
-    public static final int tooltip_frame_light=0x7f070159;
-    public static final int up=0x7f07015a;
-    public static final int visability=0x7f07015b;
-    public static final int visibilityoff=0x7f07015c;
+    public static final int all=0x7f07005c;
+    public static final int arrowdown=0x7f07005d;
+    public static final int arrowright=0x7f07005e;
+    public static final int arrowrightdark=0x7f07005f;
+    public static final int arrowup=0x7f070060;
+    public static final int attachment=0x7f070061;
+    public static final int avd_hide_password=0x7f070062;
+    public static final int avd_show_password=0x7f070063;
+    public static final int calendar=0x7f070064;
+    public static final int comment=0x7f070065;
+    public static final int commenttoolbar=0x7f070066;
+    public static final int create=0x7f070067;
+    public static final int description=0x7f070068;
+    public static final int design_bottom_navigation_item_background=0x7f070069;
+    public static final int design_fab_background=0x7f07006a;
+    public static final int design_ic_visibility=0x7f07006b;
+    public static final int design_ic_visibility_off=0x7f07006c;
+    public static final int design_password_eye=0x7f07006d;
+    public static final int design_snackbar_background=0x7f07006e;
+    public static final int down=0x7f07006f;
+    public static final int exit=0x7f070070;
+    public static final int files=0x7f070071;
+    public static final int filter=0x7f070072;
+    public static final int folder=0x7f070073;
+    public static final int group=0x7f070074;
+    public static final int hidemenu=0x7f070075;
+    public static final int home=0x7f070076;
+    public static final int ic_audiotrack_dark=0x7f070077;
+    public static final int ic_audiotrack_light=0x7f070078;
+    public static final int ic_dialog_close_dark=0x7f070079;
+    public static final int ic_dialog_close_light=0x7f07007a;
+    public static final int ic_group_collapse_00=0x7f07007b;
+    public static final int ic_group_collapse_01=0x7f07007c;
+    public static final int ic_group_collapse_02=0x7f07007d;
+    public static final int ic_group_collapse_03=0x7f07007e;
+    public static final int ic_group_collapse_04=0x7f07007f;
+    public static final int ic_group_collapse_05=0x7f070080;
+    public static final int ic_group_collapse_06=0x7f070081;
+    public static final int ic_group_collapse_07=0x7f070082;
+    public static final int ic_group_collapse_08=0x7f070083;
+    public static final int ic_group_collapse_09=0x7f070084;
+    public static final int ic_group_collapse_10=0x7f070085;
+    public static final int ic_group_collapse_11=0x7f070086;
+    public static final int ic_group_collapse_12=0x7f070087;
+    public static final int ic_group_collapse_13=0x7f070088;
+    public static final int ic_group_collapse_14=0x7f070089;
+    public static final int ic_group_collapse_15=0x7f07008a;
+    public static final int ic_group_expand_00=0x7f07008b;
+    public static final int ic_group_expand_01=0x7f07008c;
+    public static final int ic_group_expand_02=0x7f07008d;
+    public static final int ic_group_expand_03=0x7f07008e;
+    public static final int ic_group_expand_04=0x7f07008f;
+    public static final int ic_group_expand_05=0x7f070090;
+    public static final int ic_group_expand_06=0x7f070091;
+    public static final int ic_group_expand_07=0x7f070092;
+    public static final int ic_group_expand_08=0x7f070093;
+    public static final int ic_group_expand_09=0x7f070094;
+    public static final int ic_group_expand_10=0x7f070095;
+    public static final int ic_group_expand_11=0x7f070096;
+    public static final int ic_group_expand_12=0x7f070097;
+    public static final int ic_group_expand_13=0x7f070098;
+    public static final int ic_group_expand_14=0x7f070099;
+    public static final int ic_group_expand_15=0x7f07009a;
+    public static final int ic_media_pause_dark=0x7f07009b;
+    public static final int ic_media_pause_light=0x7f07009c;
+    public static final int ic_media_play_dark=0x7f07009d;
+    public static final int ic_media_play_light=0x7f07009e;
+    public static final int ic_media_stop_dark=0x7f07009f;
+    public static final int ic_media_stop_light=0x7f0700a0;
+    public static final int ic_mr_button_connected_00_dark=0x7f0700a1;
+    public static final int ic_mr_button_connected_00_light=0x7f0700a2;
+    public static final int ic_mr_button_connected_01_dark=0x7f0700a3;
+    public static final int ic_mr_button_connected_01_light=0x7f0700a4;
+    public static final int ic_mr_button_connected_02_dark=0x7f0700a5;
+    public static final int ic_mr_button_connected_02_light=0x7f0700a6;
+    public static final int ic_mr_button_connected_03_dark=0x7f0700a7;
+    public static final int ic_mr_button_connected_03_light=0x7f0700a8;
+    public static final int ic_mr_button_connected_04_dark=0x7f0700a9;
+    public static final int ic_mr_button_connected_04_light=0x7f0700aa;
+    public static final int ic_mr_button_connected_05_dark=0x7f0700ab;
+    public static final int ic_mr_button_connected_05_light=0x7f0700ac;
+    public static final int ic_mr_button_connected_06_dark=0x7f0700ad;
+    public static final int ic_mr_button_connected_06_light=0x7f0700ae;
+    public static final int ic_mr_button_connected_07_dark=0x7f0700af;
+    public static final int ic_mr_button_connected_07_light=0x7f0700b0;
+    public static final int ic_mr_button_connected_08_dark=0x7f0700b1;
+    public static final int ic_mr_button_connected_08_light=0x7f0700b2;
+    public static final int ic_mr_button_connected_09_dark=0x7f0700b3;
+    public static final int ic_mr_button_connected_09_light=0x7f0700b4;
+    public static final int ic_mr_button_connected_10_dark=0x7f0700b5;
+    public static final int ic_mr_button_connected_10_light=0x7f0700b6;
+    public static final int ic_mr_button_connected_11_dark=0x7f0700b7;
+    public static final int ic_mr_button_connected_11_light=0x7f0700b8;
+    public static final int ic_mr_button_connected_12_dark=0x7f0700b9;
+    public static final int ic_mr_button_connected_12_light=0x7f0700ba;
+    public static final int ic_mr_button_connected_13_dark=0x7f0700bb;
+    public static final int ic_mr_button_connected_13_light=0x7f0700bc;
+    public static final int ic_mr_button_connected_14_dark=0x7f0700bd;
+    public static final int ic_mr_button_connected_14_light=0x7f0700be;
+    public static final int ic_mr_button_connected_15_dark=0x7f0700bf;
+    public static final int ic_mr_button_connected_15_light=0x7f0700c0;
+    public static final int ic_mr_button_connected_16_dark=0x7f0700c1;
+    public static final int ic_mr_button_connected_16_light=0x7f0700c2;
+    public static final int ic_mr_button_connected_17_dark=0x7f0700c3;
+    public static final int ic_mr_button_connected_17_light=0x7f0700c4;
+    public static final int ic_mr_button_connected_18_dark=0x7f0700c5;
+    public static final int ic_mr_button_connected_18_light=0x7f0700c6;
+    public static final int ic_mr_button_connected_19_dark=0x7f0700c7;
+    public static final int ic_mr_button_connected_19_light=0x7f0700c8;
+    public static final int ic_mr_button_connected_20_dark=0x7f0700c9;
+    public static final int ic_mr_button_connected_20_light=0x7f0700ca;
+    public static final int ic_mr_button_connected_21_dark=0x7f0700cb;
+    public static final int ic_mr_button_connected_21_light=0x7f0700cc;
+    public static final int ic_mr_button_connected_22_dark=0x7f0700cd;
+    public static final int ic_mr_button_connected_22_light=0x7f0700ce;
+    public static final int ic_mr_button_connected_23_dark=0x7f0700cf;
+    public static final int ic_mr_button_connected_23_light=0x7f0700d0;
+    public static final int ic_mr_button_connected_24_dark=0x7f0700d1;
+    public static final int ic_mr_button_connected_24_light=0x7f0700d2;
+    public static final int ic_mr_button_connected_25_dark=0x7f0700d3;
+    public static final int ic_mr_button_connected_25_light=0x7f0700d4;
+    public static final int ic_mr_button_connected_26_dark=0x7f0700d5;
+    public static final int ic_mr_button_connected_26_light=0x7f0700d6;
+    public static final int ic_mr_button_connected_27_dark=0x7f0700d7;
+    public static final int ic_mr_button_connected_27_light=0x7f0700d8;
+    public static final int ic_mr_button_connected_28_dark=0x7f0700d9;
+    public static final int ic_mr_button_connected_28_light=0x7f0700da;
+    public static final int ic_mr_button_connected_29_dark=0x7f0700db;
+    public static final int ic_mr_button_connected_29_light=0x7f0700dc;
+    public static final int ic_mr_button_connected_30_dark=0x7f0700dd;
+    public static final int ic_mr_button_connected_30_light=0x7f0700de;
+    public static final int ic_mr_button_connecting_00_dark=0x7f0700df;
+    public static final int ic_mr_button_connecting_00_light=0x7f0700e0;
+    public static final int ic_mr_button_connecting_01_dark=0x7f0700e1;
+    public static final int ic_mr_button_connecting_01_light=0x7f0700e2;
+    public static final int ic_mr_button_connecting_02_dark=0x7f0700e3;
+    public static final int ic_mr_button_connecting_02_light=0x7f0700e4;
+    public static final int ic_mr_button_connecting_03_dark=0x7f0700e5;
+    public static final int ic_mr_button_connecting_03_light=0x7f0700e6;
+    public static final int ic_mr_button_connecting_04_dark=0x7f0700e7;
+    public static final int ic_mr_button_connecting_04_light=0x7f0700e8;
+    public static final int ic_mr_button_connecting_05_dark=0x7f0700e9;
+    public static final int ic_mr_button_connecting_05_light=0x7f0700ea;
+    public static final int ic_mr_button_connecting_06_dark=0x7f0700eb;
+    public static final int ic_mr_button_connecting_06_light=0x7f0700ec;
+    public static final int ic_mr_button_connecting_07_dark=0x7f0700ed;
+    public static final int ic_mr_button_connecting_07_light=0x7f0700ee;
+    public static final int ic_mr_button_connecting_08_dark=0x7f0700ef;
+    public static final int ic_mr_button_connecting_08_light=0x7f0700f0;
+    public static final int ic_mr_button_connecting_09_dark=0x7f0700f1;
+    public static final int ic_mr_button_connecting_09_light=0x7f0700f2;
+    public static final int ic_mr_button_connecting_10_dark=0x7f0700f3;
+    public static final int ic_mr_button_connecting_10_light=0x7f0700f4;
+    public static final int ic_mr_button_connecting_11_dark=0x7f0700f5;
+    public static final int ic_mr_button_connecting_11_light=0x7f0700f6;
+    public static final int ic_mr_button_connecting_12_dark=0x7f0700f7;
+    public static final int ic_mr_button_connecting_12_light=0x7f0700f8;
+    public static final int ic_mr_button_connecting_13_dark=0x7f0700f9;
+    public static final int ic_mr_button_connecting_13_light=0x7f0700fa;
+    public static final int ic_mr_button_connecting_14_dark=0x7f0700fb;
+    public static final int ic_mr_button_connecting_14_light=0x7f0700fc;
+    public static final int ic_mr_button_connecting_15_dark=0x7f0700fd;
+    public static final int ic_mr_button_connecting_15_light=0x7f0700fe;
+    public static final int ic_mr_button_connecting_16_dark=0x7f0700ff;
+    public static final int ic_mr_button_connecting_16_light=0x7f070100;
+    public static final int ic_mr_button_connecting_17_dark=0x7f070101;
+    public static final int ic_mr_button_connecting_17_light=0x7f070102;
+    public static final int ic_mr_button_connecting_18_dark=0x7f070103;
+    public static final int ic_mr_button_connecting_18_light=0x7f070104;
+    public static final int ic_mr_button_connecting_19_dark=0x7f070105;
+    public static final int ic_mr_button_connecting_19_light=0x7f070106;
+    public static final int ic_mr_button_connecting_20_dark=0x7f070107;
+    public static final int ic_mr_button_connecting_20_light=0x7f070108;
+    public static final int ic_mr_button_connecting_21_dark=0x7f070109;
+    public static final int ic_mr_button_connecting_21_light=0x7f07010a;
+    public static final int ic_mr_button_connecting_22_dark=0x7f07010b;
+    public static final int ic_mr_button_connecting_22_light=0x7f07010c;
+    public static final int ic_mr_button_connecting_23_dark=0x7f07010d;
+    public static final int ic_mr_button_connecting_23_light=0x7f07010e;
+    public static final int ic_mr_button_connecting_24_dark=0x7f07010f;
+    public static final int ic_mr_button_connecting_24_light=0x7f070110;
+    public static final int ic_mr_button_connecting_25_dark=0x7f070111;
+    public static final int ic_mr_button_connecting_25_light=0x7f070112;
+    public static final int ic_mr_button_connecting_26_dark=0x7f070113;
+    public static final int ic_mr_button_connecting_26_light=0x7f070114;
+    public static final int ic_mr_button_connecting_27_dark=0x7f070115;
+    public static final int ic_mr_button_connecting_27_light=0x7f070116;
+    public static final int ic_mr_button_connecting_28_dark=0x7f070117;
+    public static final int ic_mr_button_connecting_28_light=0x7f070118;
+    public static final int ic_mr_button_connecting_29_dark=0x7f070119;
+    public static final int ic_mr_button_connecting_29_light=0x7f07011a;
+    public static final int ic_mr_button_connecting_30_dark=0x7f07011b;
+    public static final int ic_mr_button_connecting_30_light=0x7f07011c;
+    public static final int ic_mr_button_disabled_dark=0x7f07011d;
+    public static final int ic_mr_button_disabled_light=0x7f07011e;
+    public static final int ic_mr_button_disconnected_dark=0x7f07011f;
+    public static final int ic_mr_button_disconnected_light=0x7f070120;
+    public static final int ic_mr_button_grey=0x7f070121;
+    public static final int ic_mtrl_chip_checked_black=0x7f070122;
+    public static final int ic_mtrl_chip_checked_circle=0x7f070123;
+    public static final int ic_mtrl_chip_close_circle=0x7f070124;
+    public static final int ic_vol_type_speaker_dark=0x7f070125;
+    public static final int ic_vol_type_speaker_group_dark=0x7f070126;
+    public static final int ic_vol_type_speaker_group_light=0x7f070127;
+    public static final int ic_vol_type_speaker_light=0x7f070128;
+    public static final int ic_vol_type_tv_dark=0x7f070129;
+    public static final int ic_vol_type_tv_light=0x7f07012a;
+    public static final int image=0x7f07012b;
+    public static final int info=0x7f07012c;
+    public static final int insight=0x7f07012d;
+    public static final int isfavorites=0x7f07012e;
+    public static final int mr_button_connected_dark=0x7f07012f;
+    public static final int mr_button_connected_light=0x7f070130;
+    public static final int mr_button_connecting_dark=0x7f070131;
+    public static final int mr_button_connecting_light=0x7f070132;
+    public static final int mr_button_dark=0x7f070133;
+    public static final int mr_button_light=0x7f070134;
+    public static final int mr_dialog_close_dark=0x7f070135;
+    public static final int mr_dialog_close_light=0x7f070136;
+    public static final int mr_dialog_material_background_dark=0x7f070137;
+    public static final int mr_dialog_material_background_light=0x7f070138;
+    public static final int mr_group_collapse=0x7f070139;
+    public static final int mr_group_expand=0x7f07013a;
+    public static final int mr_media_pause_dark=0x7f07013b;
+    public static final int mr_media_pause_light=0x7f07013c;
+    public static final int mr_media_play_dark=0x7f07013d;
+    public static final int mr_media_play_light=0x7f07013e;
+    public static final int mr_media_stop_dark=0x7f07013f;
+    public static final int mr_media_stop_light=0x7f070140;
+    public static final int mr_vol_type_audiotrack_dark=0x7f070141;
+    public static final int mr_vol_type_audiotrack_light=0x7f070142;
+    public static final int mtrl_snackbar_background=0x7f070143;
+    public static final int mtrl_tabs_default_indicator=0x7f070144;
+    public static final int navigation_empty_icon=0x7f070145;
+    public static final int newnotification=0x7f070146;
+    public static final int next=0x7f070147;
+    public static final int notfavorites=0x7f070148;
+    public static final int notification=0x7f070149;
+    public static final int notification_action_background=0x7f07014a;
+    public static final int notification_bg=0x7f07014b;
+    public static final int notification_bg_low=0x7f07014c;
+    public static final int notification_bg_low_normal=0x7f07014d;
+    public static final int notification_bg_low_pressed=0x7f07014e;
+    public static final int notification_bg_normal=0x7f07014f;
+    public static final int notification_bg_normal_pressed=0x7f070150;
+    public static final int notification_icon_background=0x7f070151;
+    public static final int notification_template_icon_bg=0x7f070152;
+    public static final int notification_template_icon_low_bg=0x7f070153;
+    public static final int notification_tile_bg=0x7f070154;
+    public static final int notify_panel_notification_icon_bg=0x7f070155;
+    public static final int person=0x7f070156;
+    public static final int prev=0x7f070157;
+    public static final int property=0x7f070158;
+    public static final int rosohranalogo=0x7f070159;
+    public static final int sekisov=0x7f07015a;
+    public static final int settings=0x7f07015b;
+    public static final int settingtoolbar=0x7f07015c;
+    public static final int showmenu=0x7f07015d;
+    public static final int sorted=0x7f07015e;
+    public static final int star=0x7f07015f;
+    public static final int time=0x7f070160;
+    public static final int timestart=0x7f070161;
+    public static final int timeupdate=0x7f070162;
+    public static final int tooltip_frame_dark=0x7f070163;
+    public static final int tooltip_frame_light=0x7f070164;
+    public static final int up=0x7f070165;
+    public static final int visibility=0x7f070166;
+    public static final int visibilityoff=0x7f070167;
   }
   public static final class id {
     public static final int ALT=0x7f080000;
@@ -6002,12 +6028,12 @@ public final class R {
      * <tr><td><code>{@link #ActionBar_customNavigationLayout RTMobile.RTMobile:customNavigationLayout}</code></td><td>Specifies a layout for custom navigation.</td></tr>
      * <tr><td><code>{@link #ActionBar_displayOptions RTMobile.RTMobile:displayOptions}</code></td><td>Options affecting how the action bar is displayed.</td></tr>
      * <tr><td><code>{@link #ActionBar_divider RTMobile.RTMobile:divider}</code></td><td>Specifies the drawable used for item dividers.</td></tr>
-     * <tr><td><code>{@link #ActionBar_elevation RTMobile.RTMobile:elevation}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ActionBar_elevation RTMobile.RTMobile:elevation}</code></td><td>Elevation for the action bar itself</td></tr>
      * <tr><td><code>{@link #ActionBar_height RTMobile.RTMobile:height}</code></td><td></td></tr>
      * <tr><td><code>{@link #ActionBar_hideOnContentScroll RTMobile.RTMobile:hideOnContentScroll}</code></td><td>Set true to hide the action bar on a vertical nested scroll of content.</td></tr>
      * <tr><td><code>{@link #ActionBar_homeAsUpIndicator RTMobile.RTMobile:homeAsUpIndicator}</code></td><td>Specifies a drawable to use for the 'home as up' indicator.</td></tr>
      * <tr><td><code>{@link #ActionBar_homeLayout RTMobile.RTMobile:homeLayout}</code></td><td>Specifies a layout to use for the "home" section of the action bar.</td></tr>
-     * <tr><td><code>{@link #ActionBar_icon RTMobile.RTMobile:icon}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ActionBar_icon RTMobile.RTMobile:icon}</code></td><td>Specifies the drawable used for the application icon.</td></tr>
      * <tr><td><code>{@link #ActionBar_indeterminateProgressStyle RTMobile.RTMobile:indeterminateProgressStyle}</code></td><td>Specifies a style resource to use for an indeterminate progress spinner.</td></tr>
      * <tr><td><code>{@link #ActionBar_itemPadding RTMobile.RTMobile:itemPadding}</code></td><td>Specifies padding that should be applied to the left and right sides of
      * system-provided items in the bar.</td></tr>
@@ -7043,7 +7069,7 @@ public final class R {
      * <tr><td><code>{@link #AppBarLayout_android_background android:background}</code></td><td></td></tr>
      * <tr><td><code>{@link #AppBarLayout_android_touchscreenBlocksFocus android:touchscreenBlocksFocus}</code></td><td></td></tr>
      * <tr><td><code>{@link #AppBarLayout_android_keyboardNavigationCluster android:keyboardNavigationCluster}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppBarLayout_elevation RTMobile.RTMobile:elevation}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppBarLayout_elevation RTMobile.RTMobile:elevation}</code></td><td>Elevation for the action bar itself</td></tr>
      * <tr><td><code>{@link #AppBarLayout_expanded RTMobile.RTMobile:expanded}</code></td><td></td></tr>
      * <tr><td><code>{@link #AppBarLayout_liftOnScroll RTMobile.RTMobile:liftOnScroll}</code></td><td></td></tr>
      * </table>
@@ -7094,8 +7120,9 @@ public final class R {
      */
     public static final int AppBarLayout_android_keyboardNavigationCluster=2;
     /**
-     * <p>This symbol is the offset where the {@link RTMobile.RTMobile.R.attr#elevation}
-     * attribute's value can be found in the {@link #AppBarLayout} array.
+     * <p>
+     * @attr description
+     * Elevation for the action bar itself
      *
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -7796,16 +7823,16 @@ public final class R {
      * <tr><td><code>{@link #AppCompatTheme_buttonStyleSmall RTMobile.RTMobile:buttonStyleSmall}</code></td><td>Small Button style.</td></tr>
      * <tr><td><code>{@link #AppCompatTheme_checkboxStyle RTMobile.RTMobile:checkboxStyle}</code></td><td>Default Checkbox style.</td></tr>
      * <tr><td><code>{@link #AppCompatTheme_checkedTextViewStyle RTMobile.RTMobile:checkedTextViewStyle}</code></td><td>Default CheckedTextView style.</td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_colorAccent RTMobile.RTMobile:colorAccent}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_colorBackgroundFloating RTMobile.RTMobile:colorBackgroundFloating}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_colorAccent RTMobile.RTMobile:colorAccent}</code></td><td>Bright complement to the primary branding color.</td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_colorBackgroundFloating RTMobile.RTMobile:colorBackgroundFloating}</code></td><td>Default color of background imagery for floating components, ex.</td></tr>
      * <tr><td><code>{@link #AppCompatTheme_colorButtonNormal RTMobile.RTMobile:colorButtonNormal}</code></td><td>The color applied to framework buttons in their normal state.</td></tr>
      * <tr><td><code>{@link #AppCompatTheme_colorControlActivated RTMobile.RTMobile:colorControlActivated}</code></td><td>The color applied to framework controls in their activated (ex.</td></tr>
      * <tr><td><code>{@link #AppCompatTheme_colorControlHighlight RTMobile.RTMobile:colorControlHighlight}</code></td><td>The color applied to framework control highlights (ex.</td></tr>
      * <tr><td><code>{@link #AppCompatTheme_colorControlNormal RTMobile.RTMobile:colorControlNormal}</code></td><td>The color applied to framework controls in their normal state.</td></tr>
      * <tr><td><code>{@link #AppCompatTheme_colorError RTMobile.RTMobile:colorError}</code></td><td>Color used for error states and things that need to be drawn to
      * the user's attention.</td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_colorPrimary RTMobile.RTMobile:colorPrimary}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_colorPrimaryDark RTMobile.RTMobile:colorPrimaryDark}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_colorPrimary RTMobile.RTMobile:colorPrimary}</code></td><td>The primary branding color for the app.</td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_colorPrimaryDark RTMobile.RTMobile:colorPrimaryDark}</code></td><td>Dark variant of the primary branding color.</td></tr>
      * <tr><td><code>{@link #AppCompatTheme_colorSwitchThumbNormal RTMobile.RTMobile:colorSwitchThumbNormal}</code></td><td>The color applied to framework switch thumbs in their normal state.</td></tr>
      * <tr><td><code>{@link #AppCompatTheme_controlBackground RTMobile.RTMobile:controlBackground}</code></td><td>The background used by framework controls.</td></tr>
      * <tr><td><code>{@link #AppCompatTheme_dialogCornerRadius RTMobile.RTMobile:dialogCornerRadius}</code></td><td>Preferred corner radius of dialogs.</td></tr>
@@ -7817,7 +7844,7 @@ public final class R {
      * <tr><td><code>{@link #AppCompatTheme_dropdownListPreferredItemHeight RTMobile.RTMobile:dropdownListPreferredItemHeight}</code></td><td>The preferred item height for dropdown lists.</td></tr>
      * <tr><td><code>{@link #AppCompatTheme_editTextBackground RTMobile.RTMobile:editTextBackground}</code></td><td>EditText background drawable.</td></tr>
      * <tr><td><code>{@link #AppCompatTheme_editTextColor RTMobile.RTMobile:editTextColor}</code></td><td>EditText text foreground color.</td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_editTextStyle RTMobile.RTMobile:editTextStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_editTextStyle RTMobile.RTMobile:editTextStyle}</code></td><td>Default EditText style.</td></tr>
      * <tr><td><code>{@link #AppCompatTheme_homeAsUpIndicator RTMobile.RTMobile:homeAsUpIndicator}</code></td><td>Specifies a drawable to use for the 'home as up' indicator.</td></tr>
      * <tr><td><code>{@link #AppCompatTheme_imageButtonStyle RTMobile.RTMobile:imageButtonStyle}</code></td><td>ImageButton background drawable.</td></tr>
      * <tr><td><code>{@link #AppCompatTheme_listChoiceBackgroundIndicator RTMobile.RTMobile:listChoiceBackgroundIndicator}</code></td><td>Drawable used as a background for selected list items.</td></tr>
@@ -9685,7 +9712,7 @@ public final class R {
      * <colgroup align="left" />
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
-     * <tr><td><code>{@link #BottomAppBar_backgroundTint RTMobile.RTMobile:backgroundTint}</code></td><td></td></tr>
+     * <tr><td><code>{@link #BottomAppBar_backgroundTint RTMobile.RTMobile:backgroundTint}</code></td><td>Tint to apply to the background.</td></tr>
      * <tr><td><code>{@link #BottomAppBar_fabAlignmentMode RTMobile.RTMobile:fabAlignmentMode}</code></td><td></td></tr>
      * <tr><td><code>{@link #BottomAppBar_fabCradleMargin RTMobile.RTMobile:fabCradleMargin}</code></td><td></td></tr>
      * <tr><td><code>{@link #BottomAppBar_fabCradleRoundedCornerRadius RTMobile.RTMobile:fabCradleRoundedCornerRadius}</code></td><td></td></tr>
@@ -9704,8 +9731,9 @@ public final class R {
       0x7f0300c7, 0x7f0300e6
     };
     /**
-     * <p>This symbol is the offset where the {@link RTMobile.RTMobile.R.attr#backgroundTint}
-     * attribute's value can be found in the {@link #BottomAppBar} array.
+     * <p>
+     * @attr description
+     * Tint to apply to the background.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
@@ -9787,7 +9815,7 @@ public final class R {
      * <colgroup align="left" />
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
-     * <tr><td><code>{@link #BottomNavigationView_elevation RTMobile.RTMobile:elevation}</code></td><td></td></tr>
+     * <tr><td><code>{@link #BottomNavigationView_elevation RTMobile.RTMobile:elevation}</code></td><td>Elevation for the action bar itself</td></tr>
      * <tr><td><code>{@link #BottomNavigationView_itemBackground RTMobile.RTMobile:itemBackground}</code></td><td></td></tr>
      * <tr><td><code>{@link #BottomNavigationView_itemHorizontalTranslationEnabled RTMobile.RTMobile:itemHorizontalTranslationEnabled}</code></td><td></td></tr>
      * <tr><td><code>{@link #BottomNavigationView_itemIconSize RTMobile.RTMobile:itemIconSize}</code></td><td></td></tr>
@@ -9815,8 +9843,9 @@ public final class R {
       0x7f030108, 0x7f030139
     };
     /**
-     * <p>This symbol is the offset where the {@link RTMobile.RTMobile.R.attr#elevation}
-     * attribute's value can be found in the {@link #BottomNavigationView} array.
+     * <p>
+     * @attr description
+     * Elevation for the action bar itself
      *
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -10279,7 +10308,7 @@ public final class R {
      * <tr><td><code>{@link #Chip_chipStartPadding RTMobile.RTMobile:chipStartPadding}</code></td><td></td></tr>
      * <tr><td><code>{@link #Chip_chipStrokeColor RTMobile.RTMobile:chipStrokeColor}</code></td><td></td></tr>
      * <tr><td><code>{@link #Chip_chipStrokeWidth RTMobile.RTMobile:chipStrokeWidth}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Chip_closeIcon RTMobile.RTMobile:closeIcon}</code></td><td></td></tr>
+     * <tr><td><code>{@link #Chip_closeIcon RTMobile.RTMobile:closeIcon}</code></td><td>Close button icon</td></tr>
      * <tr><td><code>{@link #Chip_closeIconEnabled RTMobile.RTMobile:closeIconEnabled}</code></td><td></td></tr>
      * <tr><td><code>{@link #Chip_closeIconEndPadding RTMobile.RTMobile:closeIconEndPadding}</code></td><td></td></tr>
      * <tr><td><code>{@link #Chip_closeIconSize RTMobile.RTMobile:closeIconSize}</code></td><td></td></tr>
@@ -10581,8 +10610,9 @@ public final class R {
      */
     public static final int Chip_chipStrokeWidth=19;
     /**
-     * <p>This symbol is the offset where the {@link RTMobile.RTMobile.R.attr#closeIcon}
-     * attribute's value can be found in the {@link #Chip} array.
+     * <p>
+     * @attr description
+     * Close button icon
      *
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
@@ -11815,10 +11845,10 @@ public final class R {
      * <colgroup align="left" />
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
-     * <tr><td><code>{@link #FloatingActionButton_backgroundTint RTMobile.RTMobile:backgroundTint}</code></td><td></td></tr>
-     * <tr><td><code>{@link #FloatingActionButton_backgroundTintMode RTMobile.RTMobile:backgroundTintMode}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FloatingActionButton_backgroundTint RTMobile.RTMobile:backgroundTint}</code></td><td>Tint to apply to the background.</td></tr>
+     * <tr><td><code>{@link #FloatingActionButton_backgroundTintMode RTMobile.RTMobile:backgroundTintMode}</code></td><td>Blending mode used to apply the background tint.</td></tr>
      * <tr><td><code>{@link #FloatingActionButton_borderWidth RTMobile.RTMobile:borderWidth}</code></td><td></td></tr>
-     * <tr><td><code>{@link #FloatingActionButton_elevation RTMobile.RTMobile:elevation}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FloatingActionButton_elevation RTMobile.RTMobile:elevation}</code></td><td>Elevation for the action bar itself</td></tr>
      * <tr><td><code>{@link #FloatingActionButton_fabCustomSize RTMobile.RTMobile:fabCustomSize}</code></td><td></td></tr>
      * <tr><td><code>{@link #FloatingActionButton_fabSize RTMobile.RTMobile:fabSize}</code></td><td></td></tr>
      * <tr><td><code>{@link #FloatingActionButton_hideMotionSpec RTMobile.RTMobile:hideMotionSpec}</code></td><td></td></tr>
@@ -11850,8 +11880,9 @@ public final class R {
       0x7f0301de
     };
     /**
-     * <p>This symbol is the offset where the {@link RTMobile.RTMobile.R.attr#backgroundTint}
-     * attribute's value can be found in the {@link #FloatingActionButton} array.
+     * <p>
+     * @attr description
+     * Tint to apply to the background.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
@@ -11861,8 +11892,9 @@ public final class R {
      */
     public static final int FloatingActionButton_backgroundTint=0;
     /**
-     * <p>This symbol is the offset where the {@link RTMobile.RTMobile.R.attr#backgroundTintMode}
-     * attribute's value can be found in the {@link #FloatingActionButton} array.
+     * <p>
+     * @attr description
+     * Blending mode used to apply the background tint.
      *
      * <p>Must be one of the following constant values.</p>
      * <table>
@@ -11900,8 +11932,9 @@ public final class R {
      */
     public static final int FloatingActionButton_borderWidth=2;
     /**
-     * <p>This symbol is the offset where the {@link RTMobile.RTMobile.R.attr#elevation}
-     * attribute's value can be found in the {@link #FloatingActionButton} array.
+     * <p>
+     * @attr description
+     * Elevation for the action bar itself
      *
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -13039,15 +13072,15 @@ public final class R {
      * <tr><td><code>{@link #MaterialButton_android_insetRight android:insetRight}</code></td><td></td></tr>
      * <tr><td><code>{@link #MaterialButton_android_insetTop android:insetTop}</code></td><td></td></tr>
      * <tr><td><code>{@link #MaterialButton_android_insetBottom android:insetBottom}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MaterialButton_backgroundTint RTMobile.RTMobile:backgroundTint}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MaterialButton_backgroundTintMode RTMobile.RTMobile:backgroundTintMode}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MaterialButton_backgroundTint RTMobile.RTMobile:backgroundTint}</code></td><td>Tint to apply to the background.</td></tr>
+     * <tr><td><code>{@link #MaterialButton_backgroundTintMode RTMobile.RTMobile:backgroundTintMode}</code></td><td>Blending mode used to apply the background tint.</td></tr>
      * <tr><td><code>{@link #MaterialButton_cornerRadius RTMobile.RTMobile:cornerRadius}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MaterialButton_icon RTMobile.RTMobile:icon}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MaterialButton_icon RTMobile.RTMobile:icon}</code></td><td>Specifies the drawable used for the application icon.</td></tr>
      * <tr><td><code>{@link #MaterialButton_iconGravity RTMobile.RTMobile:iconGravity}</code></td><td></td></tr>
      * <tr><td><code>{@link #MaterialButton_iconPadding RTMobile.RTMobile:iconPadding}</code></td><td></td></tr>
      * <tr><td><code>{@link #MaterialButton_iconSize RTMobile.RTMobile:iconSize}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MaterialButton_iconTint RTMobile.RTMobile:iconTint}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MaterialButton_iconTintMode RTMobile.RTMobile:iconTintMode}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MaterialButton_iconTint RTMobile.RTMobile:iconTint}</code></td><td>Tint to apply to the icon.</td></tr>
+     * <tr><td><code>{@link #MaterialButton_iconTintMode RTMobile.RTMobile:iconTintMode}</code></td><td>Blending mode used to apply the icon tint.</td></tr>
      * <tr><td><code>{@link #MaterialButton_rippleColor RTMobile.RTMobile:rippleColor}</code></td><td></td></tr>
      * <tr><td><code>{@link #MaterialButton_strokeColor RTMobile.RTMobile:strokeColor}</code></td><td></td></tr>
      * <tr><td><code>{@link #MaterialButton_strokeWidth RTMobile.RTMobile:strokeWidth}</code></td><td></td></tr>
@@ -13144,8 +13177,9 @@ public final class R {
      */
     public static final int MaterialButton_android_insetBottom=3;
     /**
-     * <p>This symbol is the offset where the {@link RTMobile.RTMobile.R.attr#backgroundTint}
-     * attribute's value can be found in the {@link #MaterialButton} array.
+     * <p>
+     * @attr description
+     * Tint to apply to the background.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
@@ -13155,8 +13189,9 @@ public final class R {
      */
     public static final int MaterialButton_backgroundTint=4;
     /**
-     * <p>This symbol is the offset where the {@link RTMobile.RTMobile.R.attr#backgroundTintMode}
-     * attribute's value can be found in the {@link #MaterialButton} array.
+     * <p>
+     * @attr description
+     * Blending mode used to apply the background tint.
      *
      * <p>Must be one of the following constant values.</p>
      * <table>
@@ -13194,8 +13229,9 @@ public final class R {
      */
     public static final int MaterialButton_cornerRadius=6;
     /**
-     * <p>This symbol is the offset where the {@link RTMobile.RTMobile.R.attr#icon}
-     * attribute's value can be found in the {@link #MaterialButton} array.
+     * <p>
+     * @attr description
+     * Specifies the drawable used for the application icon.
      *
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
@@ -13249,8 +13285,9 @@ public final class R {
      */
     public static final int MaterialButton_iconSize=10;
     /**
-     * <p>This symbol is the offset where the {@link RTMobile.RTMobile.R.attr#iconTint}
-     * attribute's value can be found in the {@link #MaterialButton} array.
+     * <p>
+     * @attr description
+     * Tint to apply to the icon.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
@@ -13260,8 +13297,9 @@ public final class R {
      */
     public static final int MaterialButton_iconTint=11;
     /**
-     * <p>This symbol is the offset where the {@link RTMobile.RTMobile.R.attr#iconTintMode}
-     * attribute's value can be found in the {@link #MaterialButton} array.
+     * <p>
+     * @attr description
+     * Blending mode used to apply the icon tint.
      *
      * <p>Must be one of the following constant values.</p>
      * <table>
@@ -13372,12 +13410,12 @@ public final class R {
      * <tr><td><code>{@link #MaterialComponentsTheme_chipGroupStyle RTMobile.RTMobile:chipGroupStyle}</code></td><td></td></tr>
      * <tr><td><code>{@link #MaterialComponentsTheme_chipStandaloneStyle RTMobile.RTMobile:chipStandaloneStyle}</code></td><td></td></tr>
      * <tr><td><code>{@link #MaterialComponentsTheme_chipStyle RTMobile.RTMobile:chipStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MaterialComponentsTheme_colorAccent RTMobile.RTMobile:colorAccent}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MaterialComponentsTheme_colorBackgroundFloating RTMobile.RTMobile:colorBackgroundFloating}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MaterialComponentsTheme_colorPrimary RTMobile.RTMobile:colorPrimary}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MaterialComponentsTheme_colorPrimaryDark RTMobile.RTMobile:colorPrimaryDark}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MaterialComponentsTheme_colorAccent RTMobile.RTMobile:colorAccent}</code></td><td>Bright complement to the primary branding color.</td></tr>
+     * <tr><td><code>{@link #MaterialComponentsTheme_colorBackgroundFloating RTMobile.RTMobile:colorBackgroundFloating}</code></td><td>Default color of background imagery for floating components, ex.</td></tr>
+     * <tr><td><code>{@link #MaterialComponentsTheme_colorPrimary RTMobile.RTMobile:colorPrimary}</code></td><td>The primary branding color for the app.</td></tr>
+     * <tr><td><code>{@link #MaterialComponentsTheme_colorPrimaryDark RTMobile.RTMobile:colorPrimaryDark}</code></td><td>Dark variant of the primary branding color.</td></tr>
      * <tr><td><code>{@link #MaterialComponentsTheme_colorSecondary RTMobile.RTMobile:colorSecondary}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MaterialComponentsTheme_editTextStyle RTMobile.RTMobile:editTextStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MaterialComponentsTheme_editTextStyle RTMobile.RTMobile:editTextStyle}</code></td><td>Default EditText style.</td></tr>
      * <tr><td><code>{@link #MaterialComponentsTheme_floatingActionButtonStyle RTMobile.RTMobile:floatingActionButtonStyle}</code></td><td></td></tr>
      * <tr><td><code>{@link #MaterialComponentsTheme_materialButtonStyle RTMobile.RTMobile:materialButtonStyle}</code></td><td></td></tr>
      * <tr><td><code>{@link #MaterialComponentsTheme_materialCardViewStyle RTMobile.RTMobile:materialCardViewStyle}</code></td><td></td></tr>
@@ -13504,8 +13542,10 @@ public final class R {
      */
     public static final int MaterialComponentsTheme_chipStyle=4;
     /**
-     * <p>This symbol is the offset where the {@link RTMobile.RTMobile.R.attr#colorAccent}
-     * attribute's value can be found in the {@link #MaterialComponentsTheme} array.
+     * <p>
+     * @attr description
+     * Bright complement to the primary branding color. By default, this is the color applied
+     * to framework controls (via colorControlActivated).
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
@@ -13515,8 +13555,9 @@ public final class R {
      */
     public static final int MaterialComponentsTheme_colorAccent=5;
     /**
-     * <p>This symbol is the offset where the {@link RTMobile.RTMobile.R.attr#colorBackgroundFloating}
-     * attribute's value can be found in the {@link #MaterialComponentsTheme} array.
+     * <p>
+     * @attr description
+     * Default color of background imagery for floating components, ex. dialogs, popups, and cards.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
@@ -13526,8 +13567,10 @@ public final class R {
      */
     public static final int MaterialComponentsTheme_colorBackgroundFloating=6;
     /**
-     * <p>This symbol is the offset where the {@link RTMobile.RTMobile.R.attr#colorPrimary}
-     * attribute's value can be found in the {@link #MaterialComponentsTheme} array.
+     * <p>
+     * @attr description
+     * The primary branding color for the app. By default, this is the color applied to the
+     * action bar background.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
@@ -13537,8 +13580,10 @@ public final class R {
      */
     public static final int MaterialComponentsTheme_colorPrimary=7;
     /**
-     * <p>This symbol is the offset where the {@link RTMobile.RTMobile.R.attr#colorPrimaryDark}
-     * attribute's value can be found in the {@link #MaterialComponentsTheme} array.
+     * <p>
+     * @attr description
+     * Dark variant of the primary branding color. By default, this is the color applied to
+     * the status bar (via statusBarColor) and navigation bar (via navigationBarColor).
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
@@ -13559,8 +13604,9 @@ public final class R {
      */
     public static final int MaterialComponentsTheme_colorSecondary=9;
     /**
-     * <p>This symbol is the offset where the {@link RTMobile.RTMobile.R.attr#editTextStyle}
-     * attribute's value can be found in the {@link #MaterialComponentsTheme} array.
+     * <p>
+     * @attr description
+     * Default EditText style.
      *
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
@@ -14056,8 +14102,8 @@ public final class R {
      * action view.</td></tr>
      * <tr><td><code>{@link #MenuItem_alphabeticModifiers RTMobile.RTMobile:alphabeticModifiers}</code></td><td>The alphabetic modifier key.</td></tr>
      * <tr><td><code>{@link #MenuItem_contentDescription RTMobile.RTMobile:contentDescription}</code></td><td>The content description associated with the item.</td></tr>
-     * <tr><td><code>{@link #MenuItem_iconTint RTMobile.RTMobile:iconTint}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MenuItem_iconTintMode RTMobile.RTMobile:iconTintMode}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MenuItem_iconTint RTMobile.RTMobile:iconTint}</code></td><td>Tint to apply to the icon.</td></tr>
+     * <tr><td><code>{@link #MenuItem_iconTintMode RTMobile.RTMobile:iconTintMode}</code></td><td>Blending mode used to apply the icon tint.</td></tr>
      * <tr><td><code>{@link #MenuItem_numericModifiers RTMobile.RTMobile:numericModifiers}</code></td><td>The numeric modifier key.</td></tr>
      * <tr><td><code>{@link #MenuItem_showAsAction RTMobile.RTMobile:showAsAction}</code></td><td>How this item should display in the Action Bar, if present.</td></tr>
      * <tr><td><code>{@link #MenuItem_tooltipText RTMobile.RTMobile:tooltipText}</code></td><td>The tooltip text associated with the item.</td></tr>
@@ -14596,7 +14642,7 @@ public final class R {
      * <tr><td><code>{@link #NavigationView_android_background android:background}</code></td><td></td></tr>
      * <tr><td><code>{@link #NavigationView_android_fitsSystemWindows android:fitsSystemWindows}</code></td><td></td></tr>
      * <tr><td><code>{@link #NavigationView_android_maxWidth android:maxWidth}</code></td><td></td></tr>
-     * <tr><td><code>{@link #NavigationView_elevation RTMobile.RTMobile:elevation}</code></td><td></td></tr>
+     * <tr><td><code>{@link #NavigationView_elevation RTMobile.RTMobile:elevation}</code></td><td>Elevation for the action bar itself</td></tr>
      * <tr><td><code>{@link #NavigationView_headerLayout RTMobile.RTMobile:headerLayout}</code></td><td></td></tr>
      * <tr><td><code>{@link #NavigationView_itemBackground RTMobile.RTMobile:itemBackground}</code></td><td></td></tr>
      * <tr><td><code>{@link #NavigationView_itemHorizontalPadding RTMobile.RTMobile:itemHorizontalPadding}</code></td><td></td></tr>
@@ -14663,8 +14709,9 @@ public final class R {
      */
     public static final int NavigationView_android_maxWidth=2;
     /**
-     * <p>This symbol is the offset where the {@link RTMobile.RTMobile.R.attr#elevation}
-     * attribute's value can be found in the {@link #NavigationView} array.
+     * <p>
+     * @attr description
+     * Elevation for the action bar itself
      *
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -15140,7 +15187,7 @@ public final class R {
      * <tr><td><code>{@link #SearchView_android_maxWidth android:maxWidth}</code></td><td></td></tr>
      * <tr><td><code>{@link #SearchView_android_inputType android:inputType}</code></td><td></td></tr>
      * <tr><td><code>{@link #SearchView_android_imeOptions android:imeOptions}</code></td><td></td></tr>
-     * <tr><td><code>{@link #SearchView_closeIcon RTMobile.RTMobile:closeIcon}</code></td><td></td></tr>
+     * <tr><td><code>{@link #SearchView_closeIcon RTMobile.RTMobile:closeIcon}</code></td><td>Close button icon</td></tr>
      * <tr><td><code>{@link #SearchView_commitIcon RTMobile.RTMobile:commitIcon}</code></td><td>Commit icon shown in the query suggestion row</td></tr>
      * <tr><td><code>{@link #SearchView_defaultQueryHint RTMobile.RTMobile:defaultQueryHint}</code></td><td>Default query hint used when {@code queryHint} is undefined and
      * the search view's {@code SearchableInfo} does not provide a hint.</td></tr>
@@ -15506,7 +15553,7 @@ public final class R {
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
      * <tr><td><code>{@link #SnackbarLayout_android_maxWidth android:maxWidth}</code></td><td></td></tr>
-     * <tr><td><code>{@link #SnackbarLayout_elevation RTMobile.RTMobile:elevation}</code></td><td></td></tr>
+     * <tr><td><code>{@link #SnackbarLayout_elevation RTMobile.RTMobile:elevation}</code></td><td>Elevation for the action bar itself</td></tr>
      * <tr><td><code>{@link #SnackbarLayout_maxActionInlineWidth RTMobile.RTMobile:maxActionInlineWidth}</code></td><td></td></tr>
      * </table>
      * @see #SnackbarLayout_android_maxWidth
@@ -15530,8 +15577,9 @@ public final class R {
      */
     public static final int SnackbarLayout_android_maxWidth=0;
     /**
-     * <p>This symbol is the offset where the {@link RTMobile.RTMobile.R.attr#elevation}
-     * attribute's value can be found in the {@link #SnackbarLayout} array.
+     * <p>
+     * @attr description
+     * Elevation for the action bar itself
      *
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -17752,8 +17800,8 @@ public final class R {
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
      * <tr><td><code>{@link #ViewBackgroundHelper_android_background android:background}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ViewBackgroundHelper_backgroundTint RTMobile.RTMobile:backgroundTint}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ViewBackgroundHelper_backgroundTintMode RTMobile.RTMobile:backgroundTintMode}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ViewBackgroundHelper_backgroundTint RTMobile.RTMobile:backgroundTint}</code></td><td>Tint to apply to the background.</td></tr>
+     * <tr><td><code>{@link #ViewBackgroundHelper_backgroundTintMode RTMobile.RTMobile:backgroundTintMode}</code></td><td>Blending mode used to apply the background tint.</td></tr>
      * </table>
      * @see #ViewBackgroundHelper_android_background
      * @see #ViewBackgroundHelper_backgroundTint
