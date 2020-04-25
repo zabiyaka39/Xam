@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RTMobile.issues.viewIssue.AddWatchersModal"
+             xmlns:pages ="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+             xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup" 
+             x:Name="MyPage">
+    
+
+    <StackLayout VerticalOptions="Center">
+ 
+        <Frame CornerRadius="10" WidthRequest="300" HeightRequest="500" VerticalOptions="Center" HorizontalOptions="Center" >
+            <Grid Padding="10,10,10,10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <BoxView Color="#CBD0CC" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" VerticalOptions="FillAndExpand"
+                    HorizontalOptions="FillAndExpand" CornerRadius="10"/>
+                <SearchBar x:Name="searchbar" Placeholder="Добавить наблюдателя" VerticalOptions="Start" Grid.Column="0" Grid.Row="0"
+                           HorizontalOptions="Start" Grid.ColumnSpan="2" CancelButtonColor="Black" TextChanged="OneTextChenged" Margin="0,0,0,5" BackgroundColor="Transparent" />
+                <ListView  CachingStrategy="RecycleElement" x:Name="searchResult" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" ItemsSource="{Binding usrs}" VerticalOptions="Start" ItemSelected="OneItemSelected"  >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextCell TextColor="Red"
+                                 Text="{Binding displayName}"/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <BoxView Color="#CBD0CC" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" HeightRequest ="2"
+                    HorizontalOptions="FillAndExpand" CornerRadius="10" />
+                <Label Text="Наблюдатели" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" VerticalOptions="End" HorizontalOptions="Center"   />
+                <ListView  CachingStrategy="RecycleElement" x:Name="Additional_result" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2" ItemsSource="{Binding Additional}" VerticalOptions="Start" ItemSelected ="SecondSelectedItem">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.View>
+                                    <StackLayout>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Label x:Name="selected"  Text="{Binding displayName}" Grid.Column="0" HorizontalOptions="StartAndExpand" VerticalOptions="Center" Grid.ColumnSpan="2" />
+                                            <Button Text="X" Grid.Column="3" BackgroundColor="Transparent" BorderColor="Transparent" HorizontalOptions="End" Command="{Binding delWatcher, Source={x:Reference MyPage}}" CommandParameter="{Binding}" />
+                                        </Grid>
+                                    </StackLayout>
+                                </ViewCell.View>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <Button Clicked="Cho" Text="Принять" VerticalOptions="CenterAndExpand" 
+                        HorizontalOptions="CenterAndExpand" Grid.Column="0" Grid.Row="4" BorderColor="Red" Grid.ColumnSpan="2"  FontAttributes="Bold" TextColor="White" BackgroundColor="#BE0030" WidthRequest="300" HeightRequest="50" />
+            </Grid>
+        </Frame>
+
+     
+    </StackLayout>
+    
+
+</pages:PopupPage>

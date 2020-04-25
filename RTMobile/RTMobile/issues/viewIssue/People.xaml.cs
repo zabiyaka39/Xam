@@ -7,6 +7,8 @@ using RTMobile.filter;
 using RTMobile.insight;
 using RTMobile.profile;
 using Xamarin.Forms;
+using Rg.Plugins.Popup.Services;
+
 
 namespace RTMobile.issues.viewIssue
 {
@@ -42,7 +44,8 @@ namespace RTMobile.issues.viewIssue
 				Console.WriteLine(ex.ToString());
 			}
 		}
-		void ImageButton_Clicked(System.Object sender, System.EventArgs e)
+	
+			void ImageButton_Clicked(System.Object sender, System.EventArgs e)
 		{
 			Navigation.PushAsync(new Calendar());
 		}
@@ -126,7 +129,17 @@ namespace RTMobile.issues.viewIssue
 			{
 				await Navigation.PushAsync(new Profile(selectedIssue.name)).ConfigureAwait(true);
 			}
-			((ListView)sender).SelectedItem = null;
+			((ListView)sender).SelectedItem = null;	
 		}
+
+		void Choice_watchers(object sender, EventArgs e)
+		{
+			 PopupNavigation.Instance.PushAsync(new AddWatchersModal(issue.key));
+
+			
+	
+		}
+
+
 	}
 }

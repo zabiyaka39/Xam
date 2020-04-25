@@ -25,6 +25,7 @@ public class MonoPackageManager_Resources {
 		"Newtonsoft.Json.dll",
 		"Plugin.Settings.Abstractions.dll",
 		"Plugin.Settings.dll",
+		"Rg.Plugins.Popup.dll",
 		"RTMobile.dll",
 		"System.IdentityModel.Tokens.Jwt.dll",
 		"Xamarin.Android.Arch.Core.Common.dll",

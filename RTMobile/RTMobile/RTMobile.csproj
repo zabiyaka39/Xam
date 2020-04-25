@@ -28,8 +28,8 @@
   <ItemGroup>
     <PackageReference Include="CarouselView" Version="7.0.3.1" />
     <PackageReference Include="CarouselView.FormsPlugin" Version="5.2.0" />
-    <PackageReference Include="Microsoft.AppCenter.Analytics" Version="3.0.0" />
-    <PackageReference Include="Microsoft.AppCenter.Crashes" Version="3.0.0" />
+    <PackageReference Include="Microsoft.AppCenter.Analytics" Version="3.1.0" />
+    <PackageReference Include="Microsoft.AppCenter.Crashes" Version="3.1.0" />
     <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.9.8">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -37,12 +37,13 @@
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
     <PackageReference Include="Nancy" Version="2.0.0" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
-    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="5.6.0" />
+    <PackageReference Include="Rg.Plugins.Popup" Version="2.0.0.2" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.5.0" />
     <PackageReference Include="System.Net.Http" Version="4.3.4" />
     <PackageReference Include="System.Xml.XmlSerializer" Version="4.3.0" />
     <PackageReference Include="Xam.Plugins.Settings" Version="3.1.1" />
-    <PackageReference Include="Xamarin.Forms" Version="4.5.0.356" />
-    <PackageReference Include="Xamarin.Essentials" Version="1.5.1" />
+    <PackageReference Include="Xamarin.Forms" Version="4.5.0.617" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.5.2" />
   </ItemGroup>
 
   <ItemGroup>
@@ -62,6 +63,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="issues\viewIssue\NewWorklog.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="issues\viewIssue\AddWatchersModal.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
@@ -86,6 +90,9 @@
   <ItemGroup>
     <Compile Update="issues\viewIssue\NewWorklog.xaml.cs">
       <DependentUpon>NewWorklog.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="issues\viewIssue\AddWatchersModal.xaml.cs">
+      <DependentUpon>AddWatchersModal.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 </Project>
