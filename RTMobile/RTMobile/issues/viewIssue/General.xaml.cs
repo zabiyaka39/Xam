@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using Microsoft.AppCenter.Crashes;
 using Plugin.Settings;
 using RTMobile.calendar;
@@ -11,8 +12,17 @@ namespace RTMobile.issues.viewIssue
 {
 	public partial class General : ContentPage
 	{
-		public List<Fields> fieldIssue { get; set; }//поля заявки
-		public List<RTMobile.Transition> transition { get; set; }//Переходы по заявке
+		/// <summary>
+		/// Поля задачи
+		/// </summary>
+		public List<Fields> fieldIssue { get; set; }
+		/// <summary>
+		/// /Время в задаче (дата создания, SLA, ...)
+		/// </summary>
+		ObservableCollection<Fields> timeIssue { get; set; }
+		/// Переходы по задачи
+		/// </summary>
+		public List<RTMobile.Transition> transition { get; set; }
 		public Issue issue { get; set; }
 		public General()
 		{
@@ -28,6 +38,38 @@ namespace RTMobile.issues.viewIssue
 			{
 				try
 				{
+					if (issue != null && issue.fields != null)
+					{
+						ObservableCollection<Fields> tmpTimeIssue = new ObservableCollection<Fields>();
+						tmpTimeIssue.Add(new Fields { name = "Дата создания:", value = issue.fields.created });
+
+						if (issue.fields.updated != null)
+						{
+							tmpTimeIssue.Add(new Fields { name = "Обновлено:", value = issue.fields.updated });
+						}
+						if (issue.fields.resolutiondate != null)
+						{
+							tmpTimeIssue.Add(new Fields { name = "Дата решения:", value = issue.fields.resolutiondate });
+						}
+						JSONRequest jsonRequestSLA = new JSONRequest()
+						{
+							//Получаем все доступные SLA
+							urlRequest = $"/rest/servicedeskapi/request/{issue.key}/sla",
+							methodRequest = "GET"
+						};
+						Request requestSLA = new Request(jsonRequestSLA);
+						SLA timeSLAIssue = requestSLA.GetResponses<SLA>();
+
+						for (int i = 0; i < timeSLAIssue.Values.Count; ++i)
+						{
+							if (timeSLAIssue.Values[i].OngoingCycle != null)
+							{
+								tmpTimeIssue.Add(new Fields { name = timeSLAIssue.Values[i].name, value = timeSLAIssue.Values[i].OngoingCycle.RemainingTime.Friendly });
+							}
+						}
+						timeIssue = tmpTimeIssue;
+						dateIssue.ItemsSource = timeIssue;
+					}
 					//Делаем запрпос на получение расширенных данных по задаче				
 					JSONRequest jsonRequest = new JSONRequest()
 					{
@@ -136,6 +178,6 @@ namespace RTMobile.issues.viewIssue
 		{
 			Navigation.PushAsync(new Comment(issue.key, issue.fields.summary));
 		}
-		
+
 	}
 }

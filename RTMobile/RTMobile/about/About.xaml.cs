@@ -16,6 +16,7 @@ namespace RTMobile.about
             InitializeComponent();
             VersionTracking.Track();
             versionApp.Text ="Версия: " + VersionTracking.CurrentVersion; 
+
         }
         void ImageButton_Clicked(System.Object sender, System.EventArgs e)
         {

@@ -44,11 +44,11 @@ namespace RTMobile
 		/// </summary>
 
 		public string comment { get; set; }
-			
+
 		public string started { get; set; }
 
 		public string timeSpentSeconds { get; set; }
-		
+
 		public string orderBy { get; set; }
 		/// <summary>
 		/// Адрес запроса на сервер, игнорируем при сериализации в JSON
@@ -339,16 +339,18 @@ namespace RTMobile
 	/// <summary>
 	/// Адреса изображений и изображение
 	/// </summary>
-	public partial class Urls
+	public class Urls
 	{
 		//изображение для выгрузки
 		public ImageSource image
 		{
 			get
 			{
+				//Создаем временную переменную
 				Image img = new Image();
+				//Указываем адрес сервера с изображением 
 				Uri uri = new Uri(CrossSettings.Current.GetValueOrDefault("urlServer", string.Empty));
-				//выбираем изображение с максимальным разрешением, при его наличии
+				//Выбираем изображение с максимальным разрешением, при его наличии берем адрес для полученного изображения для совершения запроса
 				if (The48X48 != null)
 				{
 					uri = The48X48;
@@ -374,11 +376,17 @@ namespace RTMobile
 						}
 					}
 				}
+				//Создаем клиент для подключению к серверу с изображением
 				WebClient webClient = new WebClient();
+				//Добавляем данные для авторизации
 				string authorize = Convert.ToBase64String(Encoding.ASCII.GetBytes(CrossSettings.Current.GetValueOrDefault("login", string.Empty) + ":" + CrossSettings.Current.GetValueOrDefault("password", string.Empty)));
+				//Указываем тип авторизации
 				webClient.Headers[HttpRequestHeader.Authorization] = "Basic " + authorize;
-				var byteArray = webClient.DownloadData(uri);
+				//Скачиваем данные по указанному адресу
+				byte[] byteArray = webClient.DownloadData(uri);
+				//Закрываем подключение
 				webClient.Dispose();
+				//Присваиваем полученное значение для возврата
 				img.Source = ImageSource.FromStream(() => new MemoryStream(byteArray));
 				return img.Source;
 			}
@@ -391,14 +399,14 @@ namespace RTMobile
 		[JsonProperty("48x48")]
 		public Uri The48X48 { get; set; }
 
+		[JsonProperty("32x32")]
+		public Uri The32X32 { get; set; }
+
 		[JsonProperty("24x24")]
 		public Uri The24X24 { get; set; }
 
 		[JsonProperty("16x16")]
 		public Uri The16X16 { get; set; }
-
-		[JsonProperty("32x32")]
-		public Uri The32X32 { get; set; }
 	}
 
 	public class Watchers
@@ -500,6 +508,9 @@ namespace RTMobile
 	/// </summary>
 	public class Value
 	{
+		public ValueLinks Links { get; set; }
+		public List<CompletedCycle> CompletedCycles { get; set; }
+		public OngoingCycle OngoingCycle { get; set; }
 		public bool Internal { get; set; }
 		public string id { get; set; }
 		public string name { get; set; }
@@ -893,9 +904,9 @@ namespace RTMobile
 			}
 		}
 		public string timeSpent { get; set; }
-		
+
 		private string _timeSpentSeconds { get; set; }
-		public string timeSpentSeconds 
+		public string timeSpentSeconds
 		{
 			get { return _timeSpentSeconds; }
 
@@ -922,6 +933,64 @@ namespace RTMobile
 		}
 		public string id { get; set; }
 		public string issueId { get; set; }
+	}
+	public class SLA
+	{
+		public List<object> Expands { get; set; }
+		public long Size { get; set; }
+		public long Start { get; set; }
+		public long Limit { get; set; }
+		public bool IsLastPage { get; set; }
+		public TemperaturesLinks Links { get; set; }
+		public List<Value> Values { get; set; }
+	}
+
+	public class TemperaturesLinks
+	{
+		public Uri Base { get; set; }
+		public string Context { get; set; }
+		public Uri Next { get; set; }
+		public Uri Prev { get; set; }
+	}
+
+	public class CompletedCycle
+	{
+		public Time StartTime { get; set; }
+		public Time StopTime { get; set; }
+		public bool Breached { get; set; }
+		public ElapsedTime GoalDuration { get; set; }
+		public ElapsedTime ElapsedTime { get; set; }
+		public ElapsedTime RemainingTime { get; set; }
+	}
+
+	public class ElapsedTime
+	{
+		public long Millis { get; set; }
+		public string Friendly { get; set; }
+	}
+
+	public class Time
+	{
+		public string Iso8601 { get; set; }
+		public string Jira { get; set; }
+		public string Friendly { get; set; }
+		public long EpochMillis { get; set; }
+	}
+
+	public class ValueLinks
+	{
+		public Uri Self { get; set; }
+	}
+
+	public class OngoingCycle
+	{
+		public Time StartTime { get; set; }
+		public bool Breached { get; set; }
+		public bool Paused { get; set; }
+		public bool WithinCalendarHours { get; set; }
+		public ElapsedTime GoalDuration { get; set; }
+		public ElapsedTime ElapsedTime { get; set; }
+		public ElapsedTime RemainingTime { get; set; }
 	}
 
 	public class Issuelink
@@ -1052,7 +1121,7 @@ namespace RTMobile
 		public ObservableCollection<Comment> comments { get; set; }
 		public ObservableCollection<Worklog> worklogs { get; set; }
 		public ObservableCollection<ObjectEntry> objectEntries { get; set; }
-		public ObservableCollection<Objectschema> objectschemas{ get; set; }
+		public ObservableCollection<Objectschema> objectschemas { get; set; }
 		public Changelog changelog { get; set; }
 		public Session session { get; set; }
 		public LoginInfo loginInfo { get; set; }

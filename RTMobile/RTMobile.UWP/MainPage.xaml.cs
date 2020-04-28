@@ -19,6 +19,7 @@ namespace RTMobile.UWP
     {
         public MainPage()
         {
+            FFImageLoading.Forms.Platform.CachedImageRenderer.Init();
             this.InitializeComponent();
 
             LoadApplication(new RTMobile.App());

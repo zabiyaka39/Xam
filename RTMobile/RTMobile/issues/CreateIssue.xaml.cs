@@ -1,10 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
+using FFImageLoading;
+using FFImageLoading.Forms;
 using RTMobile.calendar;
 using RTMobile.filter;
 using RTMobile.insight;
+using Service.Shared.Clients;
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
 namespace RTMobile.issues
 {
@@ -128,9 +133,8 @@ namespace RTMobile.issues
 								//Выгружаем список пользователей для данной задачи
 								case "user":
 									{
-
 										List<User> user = new List<User>();
-										List<string> userDisplayName = new List<string>();
+										List<User> userDisplayName = new List<User>();
 
 										//Создаем поисковый бар для поиска и отображения пользователей имеющих доступ к задаче
 										SearchBar searchBar = new SearchBar
@@ -145,7 +149,7 @@ namespace RTMobile.issues
 										};
 
 										Grid grid = new Grid();
-										ListView listView = new ListView()
+										ListView listView = new ListView(ListViewCachingStrategy.RecycleElement)
 										{
 											IsVisible = false,
 											VerticalOptions = LayoutOptions.Start,
@@ -169,13 +173,63 @@ namespace RTMobile.issues
 
 												user = requestUser.GetResponses<RootObject>().users;
 
-												for (int j = 0; j < user.Count; ++j)
+												//for (int j = 0; j < user.Count; ++j)
+												//{
+												//	userDisplayName.Add(user[j].displayName);
+												//}
+												List<User> userTmp = new List<User>();
+												List<ImageSource> imageSource = new List<ImageSource>();
+												for (int n = 0; n < user.Count; ++n)
 												{
-													userDisplayName.Add(user[j].displayName);
+													if (user[n].displayName.ToLower().Contains(keyword.ToLower()))
+													{
+														userTmp.Add(user[n]);
+													}
 												}
+												//List<string> suggestion = userDisplayName.FindAll(c => c.ToLower().Contains(keyword.ToLower()));
 
-												var suggestion = userDisplayName.Where(c => c.ToLower().Contains(keyword.ToLower()));
-												listView.ItemsSource = suggestion;
+												//listView.ItemsSource = userTmp;
+												//listView.IsVisible = true;
+												//listView.ItemTemplate = new DataTemplate(() =>
+												//{
+												//	var grids = new Grid();
+												//	var nameLabel = new Label { FontAttributes = FontAttributes.Bold };
+												//	var ageLabel = new Image();
+
+
+												//	nameLabel.SetBinding(Label.TextProperty, "displayName");
+
+
+												//Изображение с динамической загрузкой
+												//CachedImage cachedImage = new CachedImage
+												//{
+												//	Source = "https://sd.rosohrana.ru/secure/useravatar?size=small&ownerId=safronov&avatarId=13507",
+												//	LoadingPlaceholder = "drawable/about.png",
+												//	ErrorPlaceholder = "Ошибка",
+												//	WidthRequest = 150,
+												//	HeightRequest = 150,
+												//	RetryCount = 5,
+												//	RetryDelay = 450,
+												//	DownsampleHeight=20,
+												//	DownsampleWidth = 20,
+												//	DownsampleToViewSize = true
+
+												//};
+
+
+												//cachedImage.SetBinding(CachedImage.SourceProperty, "maxFormat");
+
+												//grids.Children.Add(nameLabel);
+												//grids.Children.Add(cachedImage, 2, 0);
+												//return new ViewCell { View = grids };
+												//ImageCell imageCell = new ImageCell();
+												//imageCell.SetBinding(ImageCell.TextProperty, "displayName");
+												//imageCell.SetBinding(ImageCell.ImageSourceProperty, "avatar");
+												//return imageCell;
+												//});
+
+												listView.ItemsSource = userTmp;
+
 												listView.IsVisible = true;
 											}
 											else
@@ -194,13 +248,12 @@ namespace RTMobile.issues
 											{
 												listView.ItemsSource = userDisplayName.Where(c => c.Equals(args.Item as string));
 												listView.IsVisible = true;
-												searchBar.Text = args.Item as string;
+												searchBar.Text = (args.Item as User).displayName;
 											}
 											listView.IsVisible = false;
 										};
 
 										//Добавляем все в грид для удобства поиска элементов при переходе
-
 										generalStackLayout.Children.Add(searchBar);
 										generalStackLayout.Children.Add(grid);
 
@@ -704,7 +757,7 @@ namespace RTMobile.issues
 									Request requestUser = new Request(jsonRequestIssue);
 
 									user = requestUser.GetResponses<List<User>>();
-									if (user!=null&& user.Count > 0)
+									if (user != null && user.Count > 0)
 									{
 										if (fields.Length > 0)
 										{
@@ -746,7 +799,7 @@ namespace RTMobile.issues
 											break;
 										}
 									}
-									if (((Entry)generalStackLayout.Children[i]).Text != null&& ((Entry)generalStackLayout.Children[i]).Text.Length > 0)
+									if (((Entry)generalStackLayout.Children[i]).Text != null && ((Entry)generalStackLayout.Children[i]).Text.Length > 0)
 									{
 										if (fields.Length > 0)
 										{
@@ -886,7 +939,7 @@ namespace RTMobile.issues
 											break;
 										}
 									}
-									if (((Entry)generalStackLayout.Children[i]).Text !=null && ((Entry)generalStackLayout.Children[i]).Text.Length > 0)
+									if (((Entry)generalStackLayout.Children[i]).Text != null && ((Entry)generalStackLayout.Children[i]).Text.Length > 0)
 									{
 										if (fields.Length > 0)
 										{
@@ -937,7 +990,7 @@ namespace RTMobile.issues
 									Request requestUser = new Request(jsonRequestUser);
 
 									user = requestUser.GetResponses<List<User>>();
-									if (user != null &&user.Count > 0)
+									if (user != null && user.Count > 0)
 									{
 										if (fields.Length > 0)
 										{

@@ -1,9 +1,12 @@
-﻿using Microsoft.AppCenter.Analytics;
+﻿using FFImageLoading;
+using FFImageLoading.Config;
+using Microsoft.AppCenter.Analytics;
 using Microsoft.AppCenter.Crashes;
 using Plugin.Settings;
 using RTMobile.about;
 using RTMobile.issues;
 using RTMobile.settings;
+using Service.Shared.Clients;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -26,7 +29,7 @@ namespace RTMobile
 			login.Text = CrossSettings.Current.GetValueOrDefault("login", "");
 			password.Text = CrossSettings.Current.GetValueOrDefault("password", "");
 			Request request = new Request();
-			 if (request.verifyServer())
+			if (request.verifyServer())
 			{
 				frameLogin.IsEnabled = true;
 				buttonLogin.IsEnabled = true;
@@ -40,6 +43,7 @@ namespace RTMobile
 				buttonLogin.IsEnabled = false;
 				errorMessage.IsVisible = true;
 				errorMessage.Text = "Сервер не доступен!";
+				errorMessage1.Text = "Повторите попытку позже!";
 				errorMessage.FontAttributes = FontAttributes.Bold;
 				errorMessage.Margin = new Thickness(0, -15, 0, 15);
 			}
@@ -68,12 +72,18 @@ namespace RTMobile
 					{
 						errorMessage.IsVisible = false;
 						errorMessage1.IsVisible = false;
-						errorMessage.IsVisible = false;
 
 						CrossSettings.Current.AddOrUpdateValue("login", login.Text.Trim(' '));
 						CrossSettings.Current.AddOrUpdateValue("password", password.Text);
-						Analytics.TrackEvent("Выполнен вход в систему: пользователь - " + CrossSettings.Current.GetValueOrDefault("login", "") + ", " + DateTime.Now);
+						Analytics.TrackEvent("Выполнен вход в систему: пользователь - " + CrossSettings.Current.GetValueOrDefault("login", string.Empty) + ", " + DateTime.Now);
+
+						//Инициализируем данные о авторизации при подключении для получения изображений в FFImageLoading
+						ImageService.Instance.Config.HttpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic",
+							Convert.ToBase64String(System.Text.ASCIIEncoding.ASCII.GetBytes($"{CrossSettings.Current.GetValueOrDefault("login", login.Text)}:{CrossSettings.Current.AddOrUpdateValue("password", password.Text)}")));
+
+
 						await Navigation.PushModalAsync(new AllIssues()).ConfigureAwait(true);
+
 					}
 					else
 					{
@@ -113,6 +123,6 @@ namespace RTMobile
 
 		}
 
-	
+
 	}
 }

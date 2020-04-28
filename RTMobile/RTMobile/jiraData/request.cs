@@ -704,8 +704,6 @@ namespace RTMobile
 		public List<Fields> GetCustomField()
 		{
 			List<Fields> fields = new List<Fields>();
-
-
 			WebResponse httpResponse = this.httpWebRequest.GetResponse();
 			//Отправляем запрос для получения списка полей задачи
 			using (StreamReader streamReader = new StreamReader(httpResponse.GetResponseStream()))
