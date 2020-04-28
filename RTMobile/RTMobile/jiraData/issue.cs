@@ -45,6 +45,8 @@ namespace RTMobile
 
 		public string comment { get; set; }
 
+		public string name { get;set; }
+			
 		public string started { get; set; }
 
 		public string timeSpentSeconds { get; set; }
@@ -412,7 +414,7 @@ namespace RTMobile
 	public class Watchers
 	{
 		public string self { get; set; }
-		public int watchCount { get; set; }
+		public string watchCount { get; set; }
 		public bool isWatching { get; set; }
 		public string name { get; set; }
 		public string key { get; set; }
@@ -1122,6 +1124,7 @@ namespace RTMobile
 		public ObservableCollection<Worklog> worklogs { get; set; }
 		public ObservableCollection<ObjectEntry> objectEntries { get; set; }
 		public ObservableCollection<Objectschema> objectschemas { get; set; }
+		public ObservableCollection<Watches> watchers { get; set; }
 		public Changelog changelog { get; set; }
 		public Session session { get; set; }
 		public LoginInfo loginInfo { get; set; }
