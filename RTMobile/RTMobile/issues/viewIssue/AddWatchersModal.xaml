@@ -5,66 +5,59 @@
              xmlns:pages ="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
              xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup" 
              x:Name="MyPage">
-    
 
-    <StackLayout VerticalOptions="Center">
- 
-        <Frame CornerRadius="10" WidthRequest="300" HeightRequest="500" VerticalOptions="Center" HorizontalOptions="Center" >
-            <Grid Padding="10,10,10,10">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <BoxView Color="#CBD0CC" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" VerticalOptions="FillAndExpand"
-                    HorizontalOptions="FillAndExpand" CornerRadius="10"/>
-                <SearchBar x:Name="searchbar" Placeholder="Добавить наблюдателя" VerticalOptions="Start" Grid.Column="0" Grid.Row="0"
-                           HorizontalOptions="Start" Grid.ColumnSpan="2" CancelButtonColor="Black" TextChanged="OneTextChenged" Margin="0,0,0,5" BackgroundColor="Transparent" />
-                <ListView  CachingStrategy="RecycleElement" x:Name="searchResult" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" ItemsSource="{Binding usrs}" VerticalOptions="Start" ItemSelected="OneItemSelected"  >
+    <StackLayout VerticalOptions="FillAndExpand" BackgroundColor="#CC312F35" Padding="20">
+        <Frame CornerRadius="10" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="#4A4C50" HasShadow="True">
+            <StackLayout VerticalOptions="FillAndExpand">
+                <Frame BackgroundColor="#F0F1F0" HorizontalOptions="FillAndExpand" CornerRadius="10" Padding="0" x:Name="frameSearch"> 
+                    <StackLayout VerticalOptions="FillAndExpand">
+                        <SearchBar x:Name="searchbar" Placeholder="Добавить наблюдателя" VerticalOptions="Start" Grid.Column="0" Grid.Row="0"
+                               HorizontalOptions="Start" CancelButtonColor="Black" TextChanged="OneTextChenged" Margin="0,0,0,0" BackgroundColor="#F0F1F0" />                        
+                    </StackLayout>
+                </Frame>
+                <ListView IsVisible="False" CachingStrategy="RecycleElement" x:Name="searchResult" HorizontalOptions="FillAndExpand"
+                          ItemsSource="{Binding usrs}" VerticalOptions="Start" ItemSelected="OneItemSelected" Margin="0,-15,0,10" BackgroundColor="#F0F1F0">
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <TextCell TextColor="Red"
-                                 Text="{Binding displayName}"/>
+                            <TextCell TextColor="#000000" Text="{Binding displayName}"/>
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-                <BoxView Color="#CBD0CC" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" HeightRequest ="2"
-                    HorizontalOptions="FillAndExpand" CornerRadius="10" />
-                <Label Text="Наблюдатели" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" VerticalOptions="End" HorizontalOptions="Center"   />
-                <ListView  CachingStrategy="RecycleElement" x:Name="Additional_result" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2" ItemsSource="{Binding Additional}" VerticalOptions="Start" ItemSelected ="SecondSelectedItem">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <ViewCell>
-                                <ViewCell.View>
-                                    <StackLayout>
-                                        <Grid>
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="*"/>
-                                                <ColumnDefinition Width="*"/>
-                                                <ColumnDefinition Width="*"/>
-                                            </Grid.ColumnDefinitions>
-                                            <Label x:Name="selected"  Text="{Binding displayName}" Grid.Column="0" HorizontalOptions="StartAndExpand" VerticalOptions="Center" Grid.ColumnSpan="2" />
-                                            <Button Text="X" Grid.Column="3" BackgroundColor="Transparent" BorderColor="Transparent" HorizontalOptions="End" Command="{Binding delWatcher, Source={x:Reference MyPage}}" CommandParameter="{Binding}" />
-                                        </Grid>
-                                    </StackLayout>
-                                </ViewCell.View>
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-                <Button Clicked="Cho" Text="Принять" VerticalOptions="CenterAndExpand" 
-                        HorizontalOptions="CenterAndExpand" Grid.Column="0" Grid.Row="4" BorderColor="Red" Grid.ColumnSpan="2"  FontAttributes="Bold" TextColor="White" BackgroundColor="#BE0030" WidthRequest="300" HeightRequest="50" />
-            </Grid>
+                
+                <Frame CornerRadius="10" VerticalOptions="Start" HeightRequest="300" >
+                    <StackLayout>
+                        <Label Text="Наблюдатели" HorizontalOptions="Center"/>
+                        <BoxView HeightRequest="1" BackgroundColor="#000000"/>
+                        <ListView CachingStrategy="RecycleElement" x:Name="Additional_result" ItemsSource="{Binding Additional}" VerticalOptions="Start" ItemSelected ="SecondSelectedItem">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <ViewCell.View>
+                                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                                                <Label x:Name="selected" Text="{Binding displayName}" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                                <Button Text="X" BackgroundColor="Transparent" BorderColor="Transparent" HorizontalOptions="End" Command="{Binding delWatcher, Source={x:Reference MyPage}}" CommandParameter="{Binding}"/>
+                                            </StackLayout>
+                                        </ViewCell.View>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </StackLayout>
+                </Frame>
+
+                <Frame HasShadow="True" CornerRadius="5" BackgroundColor="#BE0030" WidthRequest="167"
+                       HorizontalOptions="FillAndExpand" Padding="0,5,0,5" Margin="0,0,0,10" VerticalOptions="EndAndExpand">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer  NumberOfTapsRequired="1"/>
+                    </Frame.GestureRecognizers>
+                    <Button Margin="0" Padding="0" BackgroundColor="Transparent" Text="ПРИНЯТЬ" FontSize="18" TextColor="#F0F1F0" HorizontalOptions="FillAndExpand"
+                            FontAttributes="Bold" VerticalOptions="Center" Clicked="Cho"/>
+                </Frame>
+            </StackLayout>
         </Frame>
 
-     
+
     </StackLayout>
-    
+
 
 </pages:PopupPage>

@@ -59,8 +59,8 @@ namespace RTMobile.issues.viewIssue
 				Console.WriteLine(ex.ToString());
 			}
 		}
-	
-			void ImageButton_Clicked(System.Object sender, System.EventArgs e)
+
+		void ImageButton_Clicked(System.Object sender, System.EventArgs e)
 		{
 			Navigation.PushAsync(new Calendar());
 		}
@@ -133,7 +133,7 @@ namespace RTMobile.issues.viewIssue
 			{
 				await Navigation.PushAsync(new Profile(selectedIssue.name)).ConfigureAwait(true);
 			}
-			((ListView)sender).SelectedItem = null;	
+			((ListView)sender).SelectedItem = null;
 		}
 		private void TapGestureRecognizer_Tapped_2(object sender, EventArgs e)
 		{
@@ -203,6 +203,10 @@ namespace RTMobile.issues.viewIssue
 				stopStartWatching.Text = "Прекратить наблюдение";
 				stopStartWatchingImage.Source = "visibilityOff.png";
 			}
+		}
+		void Choice_watchers(object sender, EventArgs e)
+		{
+			PopupNavigation.Instance.PushAsync(new AddWatchersModal(issue.key));
 		}
 	}
 }

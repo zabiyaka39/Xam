@@ -1124,7 +1124,7 @@ namespace RTMobile
 		public ObservableCollection<Worklog> worklogs { get; set; }
 		public ObservableCollection<ObjectEntry> objectEntries { get; set; }
 		public ObservableCollection<Objectschema> objectschemas { get; set; }
-		public ObservableCollection<Watches> watchers { get; set; }
+		public ObservableCollection<Watchers> watchers { get; set; }
 		public Changelog changelog { get; set; }
 		public Session session { get; set; }
 		public LoginInfo loginInfo { get; set; }

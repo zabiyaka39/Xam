@@ -47,13 +47,17 @@
               "target": "Package",
               "version": "[6.2.9, )"
             },
+            "Rg.Plugins.Popup": {
+              "target": "Package",
+              "version": "[2.0.0.2, )"
+            },
             "Xamarin.Essentials": {
               "target": "Package",
               "version": "[1.5.1, )"
             },
             "Xamarin.Forms": {
               "target": "Package",
-              "version": "[4.5.0.356, )"
+              "version": "[4.5.0.617, )"
             }
           },
           "imports": [
@@ -165,6 +169,10 @@
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[12.0.3, )"
+            },
+            "Rg.Plugins.Popup": {
+              "target": "Package",
+              "version": "[2.0.0.2, )"
             },
             "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",

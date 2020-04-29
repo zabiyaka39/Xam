@@ -18,131 +18,130 @@
 
     </ContentPage.ToolbarItems>
     <ContentPage.Content >
-       
-            <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
-                          BackgroundColor="#4A4C50">
-                <StackLayout x:Name="generalPeopleFrame" VerticalOptions="FillAndExpand">
-                    <Frame Grid.Row="0" Grid.Column="0" HasShadow="True" CornerRadius="5"
-                       x:Name="generalFrame" BackgroundColor="#FFFFFF" HeightRequest="210" Margin="10,20,10,10" Padding="10,0,10,0">
-                        <Grid>
+        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
+                      BackgroundColor="#4A4C50">
+            <StackLayout x:Name="generalPeopleFrame" VerticalOptions="FillAndExpand">
+                <Frame Grid.Row="0" Grid.Column="0" HasShadow="True" CornerRadius="5"
+                   x:Name="generalFrame" BackgroundColor="#FFFFFF" HeightRequest="210" Margin="10,20,10,10" Padding="10,0,10,0">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="25"/>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0" Grid.Column="0" Padding="0" Margin="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="15"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="25"/>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="25"/>
+                                <RowDefinition Height="21"/>
+                                <RowDefinition Height="1"/>
                             </Grid.RowDefinitions>
-                            <Grid Grid.Row="0" Grid.Column="0" Padding="0" Margin="0">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="15"/>
-                                    <ColumnDefinition Width="*"/>
-                                </Grid.ColumnDefinitions>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="21"/>
-                                    <RowDefinition Height="1"/>
-                                </Grid.RowDefinitions>
-                                <Image Source="info.png" Grid.Column="0" Grid.Row="0" VerticalOptions="Center" />
-                                <Label Text="Основные" Grid.Column="1" Grid.Row="0" VerticalOptions="Center" />
+                            <Image Source="info.png" Grid.Column="0" Grid.Row="0" VerticalOptions="Center" />
+                            <Label Text="Основные" Grid.Column="1" Grid.Row="0" VerticalOptions="Center" />
 
-                                <BoxView BackgroundColor="#4A4C50" HeightRequest="1" Margin="-20,0,-20,0"
-                                     HorizontalOptions="FillAndExpand" Grid.Column="0"
-                                     Grid.Row="1" Grid.ColumnSpan="2" VerticalOptions="Start"/>
-                            </Grid>
-                            <ScrollView x:Name="generalPeople" Grid.Row="1" Grid.Column="0" HorizontalOptions="FillAndExpand"
-                                        VerticalOptions="FillAndExpand" Margin="0,0,10,0">
-                                <Grid Padding="0">
-                                    <Label Text="Автор:" Grid.Column="0" Grid.Row="0" VerticalOptions="Center" FontSize="13"/>
-                                    <Frame Margin="20, 10, 0, 10" 
-                                           CornerRadius="50" IsClippedToBounds="True"
-                                           HeightRequest="10" WidthRequest="10"
-                                           HorizontalOptions="End" Grid.Column="1" Grid.Row="0" VerticalOptions="Center"
-                                           HasShadow="True" OutlineColor="Black" BackgroundColor="#FFFFFF" >
-                                        <Image x:Name="creatorImg" Source ="{Binding issue.fields.creator.AvatarUrls.image}" Aspect="AspectFill" Margin="-20"
-                                               HeightRequest="10" WidthRequest="10"/>
-                                        <Frame.GestureRecognizers>
-                                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
-                                        </Frame.GestureRecognizers>
-                                    </Frame>
-                                    <Label x:Name="nameReporter" Grid.Column="2" Grid.Row="0" FontSize="13"
-                                       Text="{Binding Path=issue.fields.creator.displayName}" HorizontalOptions="EndAndExpand" VerticalOptions="Center" >
-                                        <Label.GestureRecognizers>
-                                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
-                                        </Label.GestureRecognizers>
-                                    </Label>
-                                    <Label Text="Исполнитель:" Grid.Column="0" Grid.Row="1" VerticalOptions="Center" FontSize="13"/>
-
-
-                                    <Frame Margin="20, 10, 0, 10" 
-                                           CornerRadius="50" IsClippedToBounds="True"
-                                           HeightRequest="10" WidthRequest="10"
-                                           HorizontalOptions="End" Grid.Column="1" Grid.Row="1" VerticalOptions="Center"
-                                           HasShadow="True" OutlineColor="Black" BackgroundColor="#FFFFFF">
-                                        <Image x:Name="assigneeImg" Source ="{Binding issue.fields.assignee.AvatarUrls.image}" Aspect="AspectFill" Margin="-20"
-                                               HeightRequest="10" WidthRequest="10"/>
-                                        <Frame.GestureRecognizers>
-                                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1"/>
-                                        </Frame.GestureRecognizers>
-                                    </Frame>
-                                    <Label x:Name="nameAssigne" Grid.Column="2" Grid.Row="1" FontSize="13"
-                                       Text="{Binding Path=issue.fields.assignee.displayName}" HorizontalOptions="EndAndExpand" VerticalOptions="Center" />
-
-                                </Grid>
-                            </ScrollView>
-                            <ImageButton x:Name="showGeneralPeople" Source="arrowUp.png"  Grid.Column="0" BackgroundColor="Transparent"
-                                     Grid.Row="2" HorizontalOptions="Center" VerticalOptions="End" Margin="0,0,0,10" Clicked="showGeneralPeople_Clicked"/>
+                            <BoxView BackgroundColor="#4A4C50" HeightRequest="1" Margin="-20,0,-20,0"
+                                 HorizontalOptions="FillAndExpand" Grid.Column="0"
+                                 Grid.Row="1" Grid.ColumnSpan="2" VerticalOptions="Start"/>
                         </Grid>
-                    </Frame>
+                        <ScrollView x:Name="generalPeople" Grid.Row="1" Grid.Column="0" HorizontalOptions="FillAndExpand"
+                                    VerticalOptions="FillAndExpand" Margin="0,0,10,0">
+                            <Grid Padding="0">
+                                <Label Text="Автор:" Grid.Column="0" Grid.Row="0" VerticalOptions="Center" FontSize="13"/>
+                                <Frame Margin="20, 10, 0, 10" 
+                                       CornerRadius="50" IsClippedToBounds="True"
+                                       HeightRequest="10" WidthRequest="10"
+                                       HorizontalOptions="End" Grid.Column="1" Grid.Row="0" VerticalOptions="Center"
+                                       HasShadow="True" OutlineColor="Black" BackgroundColor="#FFFFFF" >
+                                    <Image x:Name="creatorImg" Source ="{Binding issue.fields.creator.AvatarUrls.image}" Aspect="AspectFill" Margin="-20"
+                                           HeightRequest="10" WidthRequest="10"/>
+                                    <Frame.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                                    </Frame.GestureRecognizers>
+                                </Frame>
+                                <Label x:Name="nameReporter" Grid.Column="2" Grid.Row="0" FontSize="13"
+                                   Text="{Binding Path=issue.fields.creator.displayName}" HorizontalOptions="EndAndExpand" VerticalOptions="Center" >
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                                    </Label.GestureRecognizers>
+                                </Label>
+                                <Label Text="Исполнитель:" Grid.Column="0" Grid.Row="1" VerticalOptions="Center" FontSize="13"/>
 
-                    <Frame Grid.Row="0" Grid.Column="0" HasShadow="True" CornerRadius="5"
-                       x:Name="watcherFrame" BackgroundColor="#FFFFFF" HeightRequest="250" Margin="10,0,10,20" Padding="10,0,10,0">
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="25"/>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="25"/>
-                            </Grid.RowDefinitions>
-                            <Grid Grid.Row="0" Grid.Column="0" Padding="0" Margin="0">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="15"/>
-                                    <ColumnDefinition Width="*"/>
-                                </Grid.ColumnDefinitions>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="21"/>
-                                    <RowDefinition Height="1"/>
-                                </Grid.RowDefinitions>
-                                <Image Source="visability.png" Grid.Column="0" Grid.Row="0" VerticalOptions="Center" />
-                                <Label Text="Наблюдатели" Grid.Column="1" Grid.Row="0" VerticalOptions="Center" />
 
-                                <BoxView BackgroundColor="#4A4C50" HeightRequest="1" Margin="-20,0,-20,0"
-                                     HorizontalOptions="FillAndExpand" Grid.Column="0"
-                                     Grid.Row="1" Grid.ColumnSpan="2" VerticalOptions="Start"/>
+                                <Frame Margin="20, 10, 0, 10" 
+                                       CornerRadius="50" IsClippedToBounds="True"
+                                       HeightRequest="10" WidthRequest="10"
+                                       HorizontalOptions="End" Grid.Column="1" Grid.Row="1" VerticalOptions="Center"
+                                       HasShadow="True" OutlineColor="Black" BackgroundColor="#FFFFFF">
+                                    <Image x:Name="assigneeImg" Source ="{Binding issue.fields.assignee.AvatarUrls.image}" Aspect="AspectFill" Margin="-20"
+                                           HeightRequest="10" WidthRequest="10"/>
+                                    <Frame.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1"/>
+                                    </Frame.GestureRecognizers>
+                                </Frame>
+                                <Label x:Name="nameAssigne" Grid.Column="2" Grid.Row="1" FontSize="13"
+                                   Text="{Binding Path=issue.fields.assignee.displayName}" HorizontalOptions="EndAndExpand" VerticalOptions="Center" />
+
                             </Grid>
-                            <StackLayout x:Name="watcherPeople" Grid.Row="1" Grid.Column="0" HorizontalOptions="FillAndExpand"
-                                        VerticalOptions="FillAndExpand" Margin="0,0,0,0">
-                                <ListView  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
-                                           HasUnevenRows="True" SeparatorVisibility="None"
-                                           ItemsSource="{Binding Path=watchers}"
-                                           ItemTapped="ListView_ItemTapped">
-                                    <ListView.ItemTemplate>
-                                        <DataTemplate>
-                                            <ViewCell>
-                                                <ViewCell.View>
-                                                    <Grid>
-                                                        <Grid.ColumnDefinitions>
-                                                            <ColumnDefinition Width="Auto"/>
-                                                            <ColumnDefinition Width="*"/>
-                                                        </Grid.ColumnDefinitions>
-                                                        <Frame Margin="0, 10, 0, 10"  
-                                                                       CornerRadius="50" IsClippedToBounds="True"
-                                                                       HeightRequest="5" WidthRequest="5"
-                                                                       HorizontalOptions="Start" Grid.Column="0" Grid.Row="0" VerticalOptions="Start"
-                                                                       HasShadow="True" OutlineColor="Black" BackgroundColor="#FFFFFF">
-                                                            <Image Source ="{Binding Path=AvatarUrls.image}" Aspect="AspectFill" Margin="-20"
-                                                                        HeightRequest="5" WidthRequest="5"/>
-                                                        </Frame>
-                                                        <Label x:Name="nameAssigne" Grid.Column="1" Grid.Row="0" FontSize="13"
-                                                               Text="{Binding Path=displayName}" HorizontalOptions="Start"
-                                                               VerticalOptions="Center" />
+                        </ScrollView>
+                        <ImageButton x:Name="showGeneralPeople" Source="arrowUp.png"  Grid.Column="0" BackgroundColor="Transparent"
+                                 Grid.Row="2" HorizontalOptions="Center" VerticalOptions="End" Margin="0,0,0,10" Clicked="showGeneralPeople_Clicked"/>
+                    </Grid>
+                </Frame>
 
-                                                    </Grid>
+                <Frame Grid.Row="0" Grid.Column="0" HasShadow="True" CornerRadius="5"
+                   x:Name="watcherFrame" BackgroundColor="#FFFFFF" HeightRequest="250" Margin="10,0,10,20" Padding="10,0,10,0">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="25"/>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0" Grid.Column="0" Padding="0" Margin="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="15"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="21"/>
+                                <RowDefinition Height="1"/>
+                            </Grid.RowDefinitions>
+                            <Image Source="visability.png" Grid.Column="0" Grid.Row="0" VerticalOptions="Center" />
+                            <Label Text="Наблюдатели" Grid.Column="1" Grid.Row="0" VerticalOptions="Center" />
+
+                            <BoxView BackgroundColor="#4A4C50" HeightRequest="1" Margin="-20,0,-20,0"
+                                 HorizontalOptions="FillAndExpand" Grid.Column="0"
+                                 Grid.Row="1" Grid.ColumnSpan="2" VerticalOptions="Start"/>
+                        </Grid>
+                        <StackLayout x:Name="watcherPeople" Grid.Row="1" Grid.Column="0" HorizontalOptions="FillAndExpand"
+                                    VerticalOptions="FillAndExpand" Margin="0,0,0,0">
+                            <ListView  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
+                                       HasUnevenRows="True" SeparatorVisibility="None"
+                                       ItemsSource="{Binding Path=watchers}"
+                                       ItemTapped="ListView_ItemTapped">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ViewCell>
+                                            <ViewCell.View>
+                                                <Grid>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto"/>
+                                                        <ColumnDefinition Width="*"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <Frame Margin="0, 10, 0, 10"  
+                                                                   CornerRadius="50" IsClippedToBounds="True"
+                                                                   HeightRequest="5" WidthRequest="5"
+                                                                   HorizontalOptions="Start" Grid.Column="0" Grid.Row="0" VerticalOptions="Start"
+                                                                   HasShadow="True" OutlineColor="Black" BackgroundColor="#FFFFFF">
+                                                        <Image Source ="{Binding Path=AvatarUrls.image}" Aspect="AspectFill" Margin="-20"
+                                                                    HeightRequest="5" WidthRequest="5"/>
+                                                    </Frame>
+                                                    <Label x:Name="nameAssigne" Grid.Column="1" Grid.Row="0" FontSize="13"
+                                                           Text="{Binding Path=displayName}" HorizontalOptions="Start"
+                                                           VerticalOptions="Center" />
+
+                                                </Grid>
 
                                             </ViewCell.View>
                                         </ViewCell>
@@ -155,37 +154,10 @@
                                         <ColumnDefinition Width="20"/>
                                         <ColumnDefinition Width="60"/>
                                         <ColumnDefinition Width="Auto"/>
-                                    </Grid.ColumnDefinitions>                                    
+                                    </Grid.ColumnDefinitions>
                                 </Grid>
-
-                                </ScrollView>
-                                <StackLayout Grid.Column="0" Grid.Row="2" VerticalOptions="End" Margin="0,0,0,0" Orientation="Horizontal">
-                                    <Image Source="visibilityOff.png" HorizontalOptions="Start" HeightRequest="20"/>
-                                    <Label Text="Прекратить наблюдение" HorizontalOptions="StartAndExpand" FontSize="12"/>
-                                    <Frame BackgroundColor="Transparent" BorderColor="Transparent" >
-                                        <Grid>
-                                            <Grid.RowDefinitions>
-                                                <RowDefinition Height="auto"/>
-                                            </Grid.RowDefinitions>
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="auto"/>
-                                                <ColumnDefinition Width="auto"/>
-                                            </Grid.ColumnDefinitions>
-                                            <Image Source="addWatchers.png" HorizontalOptions="EndAndExpand" HeightRequest="20" Grid.Row="0" Grid.Column="0"/>
-                                            <Label Text="Добавить наблюдателей" HorizontalOptions="End" FontSize="12"  Grid.Row="0" Grid.Column="1"/>
-                                        </Grid>
-                                        <Frame.GestureRecognizers>
-                                            <TapGestureRecognizer Tapped="Choice_watchers" NumberOfTapsRequired="1" />
-                                        </Frame.GestureRecognizers>
-                                    </Frame>
-                                </StackLayout>
-                            </StackLayout>
-                            <ImageButton x:Name="showWatcherPeople" Source="arrowUp.png" BackgroundColor="Transparent" Grid.Column="0" Grid.Row="2"
-                                         HorizontalOptions="Center" VerticalOptions="End" Margin="0,0,0,10" Clicked="showWatcherPeople_Clicked"/>
-                        </Grid>
-                    </Frame>
-                </StackLayout>
                             </ScrollView>
+                            
                             <StackLayout Grid.Column="0" Grid.Row="2" VerticalOptions="End" Margin="0,0,0,0" Orientation="Horizontal">
                                 <Image x:Name="stopStartWatchingImage" Source="visibility.png" HorizontalOptions="Start" HeightRequest="20"/>
                                 <Label x:Name="stopStartWatching" Text="Установить наблюдение" HorizontalOptions="StartAndExpand" FontSize="12">
@@ -193,8 +165,20 @@
                                         <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_2"/>
                                     </Label.GestureRecognizers>
                                 </Label>
-                                <Image Source="addWatchers.png" HorizontalOptions="EndAndExpand" HeightRequest="20"/>
-                                <Label Text="Добавить наблюдателей" HorizontalOptions="End" FontSize="12"/>
+                                <Grid>
+                                    <Grid.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="Choice_watchers" NumberOfTapsRequired="1" />
+                                    </Grid.GestureRecognizers>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="auto"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="auto"/>
+                                        <ColumnDefinition Width="auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Image Source="addWatchers.png" HorizontalOptions="EndAndExpand" HeightRequest="20" Grid.Row="0" Grid.Column="0"/>
+                                    <Label Text="Добавить наблюдателей" HorizontalOptions="End" FontSize="12"  Grid.Row="0" Grid.Column="1"/>
+                                </Grid>
                             </StackLayout>
                         </StackLayout>
                         <ImageButton x:Name="showWatcherPeople" Source="arrowUp.png" BackgroundColor="Transparent" Grid.Column="0" Grid.Row="2"
@@ -203,22 +187,21 @@
                 </Frame>
             </StackLayout>
 
-                <Grid VerticalOptions="End" BackgroundColor="#323037">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="5"/>
-                        <RowDefinition Height="20"/>
-                        <RowDefinition Height="5"/>
-                    </Grid.RowDefinitions>
-                    <ImageButton Source="home.png" Grid.Column="0" Grid.Row="1"
-                                 BackgroundColor="Transparent" Clicked="ImageButton_Clicked_3"></ImageButton>
-                    <ImageButton Source="calendar.png" Grid.Column="1" Grid.Row="1"
-                                 BackgroundColor="Transparent" Clicked="ImageButton_Clicked"></ImageButton>
-                    <ImageButton Source="insight.png" Grid.Column="2" Grid.Row="1"
-                                 BackgroundColor="Transparent" Clicked="ImageButton_Clicked_1"></ImageButton>
-                    <ImageButton Source="filter.png" Grid.Column="3" Grid.Row="1"
-                                 BackgroundColor="Transparent" Clicked="ImageButton_Clicked_2"></ImageButton>
-                </Grid>
-            </StackLayout>
- 
+            <Grid VerticalOptions="End" BackgroundColor="#323037">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="5"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="5"/>
+                </Grid.RowDefinitions>
+                <ImageButton Source="home.png" Grid.Column="0" Grid.Row="1"
+                             BackgroundColor="Transparent" Clicked="ImageButton_Clicked_3"></ImageButton>
+                <ImageButton Source="calendar.png" Grid.Column="1" Grid.Row="1"
+                             BackgroundColor="Transparent" Clicked="ImageButton_Clicked"></ImageButton>
+                <ImageButton Source="insight.png" Grid.Column="2" Grid.Row="1"
+                             BackgroundColor="Transparent" Clicked="ImageButton_Clicked_1"></ImageButton>
+                <ImageButton Source="filter.png" Grid.Column="3" Grid.Row="1"
+                             BackgroundColor="Transparent" Clicked="ImageButton_Clicked_2"></ImageButton>
+            </Grid>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>
