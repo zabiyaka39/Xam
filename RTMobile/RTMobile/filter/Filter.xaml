@@ -3,20 +3,203 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="RTMobile.filter.Filter"
              Title="ФИЛЬТР" >
-    <ContentPage.Content>
-         <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
-                      BackgroundColor="#312F35">
-            <StackLayout VerticalOptions="FillAndExpand">
-                <Label Text="РАЗДЕЛ В РАЗРАБОТКЕ..." HorizontalOptions="CenterAndExpand"
-                       VerticalOptions="CenterAndExpand" TextColor="#F0F1F0" FontSize="20"/>
-            </StackLayout>
-            <Grid VerticalOptions="End">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="ГОТОВО" Clicked="ToolbarItem_Clicked"
+                     Order="Primary" Priority="0"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>       
+        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
+                      BackgroundColor="#4A4C50">
+            <Grid HorizontalOptions="FillAndExpand" BackgroundColor="#323037">
+                <Frame HasShadow="True" CornerRadius="5" Padding="2,2,2,0" Margin="10"
+                       BackgroundColor="#4A4C50">
+                    <SearchBar Placeholder="Найти..." FontSize="16" TextColor="#F0F1F0"
+                               BackgroundColor="#4A4C50" CancelButtonColor="#F0F1F0"
+                               PlaceholderColor="#F0F1F0" 
+                               x:Name="searchIssue"/>
+                </Frame>
+            </Grid>
+            <Frame Grid.Row="0" Grid.Column="0" HasShadow="True" CornerRadius="5"
+                   x:Name="detailFrame" BackgroundColor="#FFFFFF" HeightRequest="200" Margin="10,10,10,10" Padding="10,10,10,-20">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="25"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0" Grid.Column="0" Padding="0" Margin="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="15"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="21"/>
+                            <RowDefinition Height="1"/>
+                        </Grid.RowDefinitions>
+                        <Image Source="star.png" Grid.Column="0" Grid.Row="0" VerticalOptions="Center" />
+                        <Label Text="Избранные фильтры" Grid.Column="1" Grid.Row="0" VerticalOptions="Center" />
+
+                        <BoxView BackgroundColor="#4A4C50" HeightRequest="1" Margin="-20,0,-20,0"
+                                 HorizontalOptions="FillAndExpand" Grid.Column="0"
+                                 Grid.Row="1" Grid.ColumnSpan="2" VerticalOptions="Start"/>
+                    </Grid>
+                    <ListView  Grid.Row="1" Grid.Column="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" 
+                                   HasUnevenRows="True" SeparatorVisibility="None" 
+                                   ItemsSource="{Binding favorites}" x:Name="favoritesList" >
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <ViewCell.View>
+                                        <Grid Margin="5,15,5,5">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="20"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="1"/>
+                                            </Grid.RowDefinitions>
+                                            <Label Grid.Column="0" Grid.Row="0" Text="{Binding Path=name}"/>
+                                            <Image Source="isFavorites.png"  Grid.Column="1" Grid.Row="0" />
+                                            <BoxView  Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" BackgroundColor="#4A4C50" HeightRequest="1" Margin="-20,0,-20,0"
+                                                          HorizontalOptions="FillAndExpand"  VerticalOptions="Start"/>
+                                        </Grid>
+
+                                    </ViewCell.View>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Grid>
+            </Frame>
+            <Frame Grid.Row="0" Grid.Column="0" HasShadow="True" CornerRadius="5"
+                   BackgroundColor="#FFFFFF" HeightRequest="250" Margin="10,10,10,10" Padding="10,10,10,-20">
+                <ScrollView VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                    <StackLayout VerticalOptions="FillAndExpand">
+                        <Grid Grid.Row="0" Grid.Column="0" Padding="0" Margin="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="15"/>
+                                <ColumnDefinition Width="330"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="21"/>
+                                <RowDefinition Height="1"/>
+                            </Grid.RowDefinitions>
+                            <Image Source="visibility.png" Grid.Column="0" Grid.Row="0" VerticalOptions="Center" />
+                            <Label Text="Недавно просмотренные" Grid.Column="1" Grid.Row="0" VerticalOptions="Center" />
+                            <Label Text="▼" Grid.Column="2" Grid.Row="0" HorizontalOptions="End" VerticalOptions="EndAndExpand" Margin="0,0,0,0"/>
+                            <BoxView BackgroundColor="#4A4C50" HeightRequest="1" Margin="-20,0,-20,0"
+                                 HorizontalOptions="FillAndExpand" Grid.Column="0"
+                                 Grid.Row="1" Grid.ColumnSpan="3" VerticalOptions="Start"/>
+                        </Grid>
+
+                        <Grid Grid.Row="0" Grid.Column="0" Padding="0" Margin="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="15"/>
+                                <ColumnDefinition Width="330"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="21"/>
+                                <RowDefinition Height="1"/>
+                            </Grid.RowDefinitions>
+                            <Image Source="all.png" Grid.Column="0" Grid.Row="0" VerticalOptions="Center" />
+                            <Label Text="Все фильтры" Grid.Column="1" Grid.Row="0" VerticalOptions="Center" />
+                            <Label Text="▼" Grid.Column="2" Grid.Row="0" HorizontalOptions="End" VerticalOptions="EndAndExpand" Margin="0,0,0,0"/>
+                            <BoxView BackgroundColor="#4A4C50" HeightRequest="1" Margin="-20,0,-20,0"
+                                 HorizontalOptions="FillAndExpand" Grid.Column="0"
+                                 Grid.Row="1" Grid.ColumnSpan="3" VerticalOptions="Start"/>
+                        </Grid>
+
+                        <Grid Grid.Row="0" Grid.Column="0" Padding="0" Margin="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="15"/>
+                                <ColumnDefinition Width="330"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="21"/>
+                                <RowDefinition Height="1"/>
+                            </Grid.RowDefinitions>
+                            <Image Source="sorted.png" Grid.Column="0" Grid.Row="0" VerticalOptions="Center" />
+                            <Label Text="Сортировка" Grid.Column="1" Grid.Row="0" VerticalOptions="Center" >
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="TapGestureRecognizer_Tapped_1"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+                            <Label x:Name="buttonShowSorted" Text="▼" Grid.Column="2" Grid.Row="0" HorizontalOptions="End" VerticalOptions="EndAndExpand" Margin="0,0,0,0">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="TapGestureRecognizer_Tapped_1"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+                            <BoxView BackgroundColor="#4A4C50" HeightRequest="1" Margin="-20,0,-20,0"
+                                 HorizontalOptions="FillAndExpand" Grid.Column="0"
+                                 Grid.Row="1" Grid.ColumnSpan="3" VerticalOptions="Start"/>
+                            <Grid Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="3" x:Name="sorted" IsVisible="False">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="50"/>
+                                </Grid.RowDefinitions>
+                                <Picker x:Name="typeSort" Grid.Row="0" Title="Выберете тип сортировки задач" HorizontalOptions="FillAndExpand" FontSize="16">
+                                    <Picker.ItemsSource>
+                                        <x:Array Type="{x:Type x:String}">
+                                            <x:String>По убыванию</x:String>
+                                            <x:String>По возрастанию</x:String>
+                                        </x:Array>
+                                    </Picker.ItemsSource>
+                                </Picker>
+                            </Grid>
+                        </Grid>
+                        <Grid Grid.Row="0" Grid.Column="0" Padding="0" Margin="0,0,0,20" >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="15"/>
+                                <ColumnDefinition Width="330"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="21"/>
+                                <RowDefinition Height="1"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Image Source="group.png" Grid.Column="0" Grid.Row="0" VerticalOptions="Center" />
+                            <Label Text="Группировка" Grid.Column="1" Grid.Row="0" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="TapGestureRecognizer_Tapped"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+                            <Label x:Name="buttonShowGroup" Text="▼" Grid.Column="2"  Grid.Row="0" HorizontalOptions="End" VerticalOptions="EndAndExpand" Margin="0,0,0,0">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="TapGestureRecognizer_Tapped"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+                            <BoxView BackgroundColor="#4A4C50" HeightRequest="1" Margin="-20,0,-20,0"
+                                 HorizontalOptions="FillAndExpand" Grid.Column="0"
+                                 Grid.Row="1" Grid.ColumnSpan="3" VerticalOptions="Start"/>
+                            <Grid Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="3" x:Name="grouping" IsVisible="False">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="50"/>
+                                </Grid.RowDefinitions>
+                                <Picker x:Name="typeGroup" Grid.Row="0" Title="Выберете тип группировки задач" HorizontalOptions="FillAndExpand" FontSize="16">
+                                    <Picker.ItemsSource>
+                                        <x:Array Type="{x:Type x:String}">
+                                            <x:String>Отсутствует</x:String>
+                                            <x:String>По проектам</x:String>
+                                            <x:String>По статусу</x:String>
+                                        </x:Array>
+                                    </Picker.ItemsSource>
+                                </Picker>
+                            </Grid>
+                        </Grid>
+                    </StackLayout>
+                </ScrollView>
+            </Frame>
+            <Grid VerticalOptions="EndAndExpand" BackgroundColor="#323037">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="5"/>
                     <RowDefinition Height="20"/>
                     <RowDefinition Height="5"/>
                 </Grid.RowDefinitions>
-               <ImageButton Source="home.png" Grid.Column="0" Grid.Row="1"
+                <ImageButton Source="home.png" Grid.Column="0" Grid.Row="1"
                              BackgroundColor="Transparent" Clicked="ImageButton_Clicked_3"></ImageButton>
                 <ImageButton Source="calendar.png" Grid.Column="1" Grid.Row="1"
                              BackgroundColor="Transparent" Clicked="ImageButton_Clicked"></ImageButton>

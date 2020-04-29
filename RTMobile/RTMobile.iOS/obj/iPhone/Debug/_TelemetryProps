@@ -1,3 +1,5 @@
+IsIncrementalBuild=true
+IsLocal=False
 EnableLLVM=False
 UseConcurrentGC=false
 LinkerBehavior=SdkOnly

@@ -44,19 +44,21 @@ namespace RTMobile
 		/// </summary>
 
 		public string comment { get; set; }
+
+		public string name { get;set; }
 			
 		public string started { get; set; }
 
 		public string timeSpentSeconds { get; set; }
-		
+
 		public string orderBy { get; set; }
 		/// <summary>
-		/// Адрес запроса на сервер
+		/// Адрес запроса на сервер, игнорируем при сериализации в JSON
 		/// </summary>
 		[JsonIgnore]
 		public string urlRequest { get; set; }
 		/// <summary>
-		/// Метод запроса (POST, GET, PUT, ...)
+		/// Метод запроса (POST, GET, PUT, ...), игнорируем при сериализации в JSON
 		/// </summary>
 		[JsonIgnore]
 		public string methodRequest { get; set; }
@@ -67,9 +69,21 @@ namespace RTMobile
 	/// </summary>
 	public class Changelog
 	{
+		/// <summary>
+		/// Начальная позиция
+		/// </summary>
 		public int startAt { get; set; }
+		/// <summary>
+		/// максимальное количество выводимых результатов
+		/// </summary>
 		public int maxResults { get; set; }
+		/// <summary>
+		/// Общее количество полученных результатов
+		/// </summary>
 		public int total { get; set; }
+		/// <summary>
+		/// Коллекция истории задачи
+		/// </summary>
 		public ObservableCollection<History> histories { get; set; }
 	}
 	/// <summary>
@@ -83,17 +97,164 @@ namespace RTMobile
 	/// </summary>
 	public class History
 	{
+		/// <summary>
+		/// Номер записи
+		/// </summary>
 		public string id { get; set; }
-		public Author author { get; set; }
+		/// <summary>
+		/// Автор записи
+		/// </summary>
+		public User author { get; set; }
+		/// <summary>
+		/// Дата создания записи
+		/// </summary>
 		private string _created { get; set; }
+		/// <summary>
+		/// Дата создания записи
+		/// </summary>
 		public string created
 		{
 			get { return _created; }
+			//Конвертация даты в общепринятый формат 
 			set => _created = Convert.ToDateTime(value).ToString("dd.MM.yyyy H:mm");
 		}
 		public List<Item> items { get; set; }
 		public HistoryMetadata historyMetadata { get; set; }
 	}
+	/// <summary>
+	/// Хранение фильтров пользователя
+	/// </summary>
+	public class Filters
+	{
+		public string self { get; set; }
+		public string id { get; set; }
+		public string name { get; set; }
+		public string description { get; set; }
+		public User owner { get; set; }
+		public string jql { get; set; }
+		public string viewUrl { get; set; }
+		public string searchUrl { get; set; }
+		public bool favourite { get; set; }
+		public int favouritedCount { get; set; }
+		public List<object> sharePermissions { get; set; }
+		public Subscriptions subscriptions { get; set; }
+		public string nameSourceImage
+		{
+			get
+			{
+				if (favourite != true)
+				{
+					return "isFavorites.png";
+				}
+				return "notFavorites.png";
+			}
+			set { }
+		}
+	}
+	/// <summary>
+	/// Объектная схема Insight
+	/// </summary>
+	public class Objectschema
+	{
+		public int id { get; set; }
+		public string name { get; set; }
+		public string objectSchemaKey { get; set; }
+		public string status { get; set; }
+		public string created { get; set; }
+		public string updated { get; set; }
+		public int objectCount { get; set; }
+		public int objectTypeCount { get; set; }
+		public string description { get; set; }
+	}
+	public class Links
+	{
+		public string self { get; set; }
+	}
+	public class DefaultType
+	{
+		public int id { get; set; }
+		public string name { get; set; }
+	}
+	public class ObjectTypeAttribute
+	{
+		public int id { get; set; }
+		public string name { get; set; }
+		public bool label { get; set; }
+		public int type { get; set; }
+		public DefaultType defaultType { get; set; }
+		public bool editable { get; set; }
+		public bool system { get; set; }
+		public bool sortable { get; set; }
+		public bool summable { get; set; }
+		public int minimumCardinality { get; set; }
+		public int maximumCardinality { get; set; }
+		public bool removable { get; set; }
+		public bool hidden { get; set; }
+		public bool includeChildObjectTypes { get; set; }
+		public bool uniqueAttribute { get; set; }
+		public string options { get; set; }
+		public int position { get; set; }
+		public string description { get; set; }
+		public string additionalValue { get; set; }
+		public string suffix { get; set; }
+		public string regexValidation { get; set; }
+		public string iql { get; set; }
+	}
+	public class ObjectEntry
+	{
+		public int id { get; set; }
+		public string label { get; set; }
+		public string objectKey { get; set; }
+		public ObjectType objectType { get; set; }
+		public string created { get; set; }
+		public string updated { get; set; }
+		public bool hasAvatar { get; set; }
+		public object timestamp { get; set; }
+		public List<Attribute> attributes { get; set; }
+		public Links _links { get; set; }
+		public string name { get; set; }
+	}
+	/// <summary>
+	/// Описание типов Insight
+	/// </summary>
+	public class ObjectType
+	{
+		public int id { get; set; }
+		public string name { get; set; }
+		public int type { get; set; }
+		public int position { get; set; }
+		public string created { get; set; }
+		public string updated { get; set; }
+		public int objectCount { get; set; }
+		public int objectSchemaId { get; set; }
+		public bool inherited { get; set; }
+		public bool abstractObjectType { get; set; }
+		public bool parentObjectTypeInherited { get; set; }
+	}
+	/// <summary>
+	/// Описание атрибутов объекта Insight
+	/// </summary>
+	public class Attribute
+	{
+		public int id { get; set; }
+		public int objectTypeAttributeId { get; set; }
+		public List<object> objectAttributeValues { get; set; }
+		public int objectId { get; set; }
+		public int position { get; set; }
+	}
+
+	public class Subscriptions
+	{
+		public int size { get; set; }
+		public List<object> items { get; set; }
+		[JsonProperty("max-results")]
+		public int maxResults { get; set; }
+		[JsonProperty("start-index")]
+		public int startIndex { get; set; }
+		[JsonProperty("end-index")]
+		public int endIndex { get; set; }
+	}
+
 	/// <summary>
 	/// Изменения по задачи, какие поля были затронуты, значения до и после, данные по пользователю (группы)
 	/// </summary>
@@ -119,29 +280,6 @@ namespace RTMobile
 		public Schema schema { get; set; }
 		public List<string> operations { get; set; }
 		public List<AllowedValue> allowedValues { get; set; }
-	}
-	public class Assignee
-	{
-		public string self { get; set; }
-		public string name { get; set; }
-		public string key { get; set; }
-		public string emailAddress { get; set; }
-		public string displayName { get; set; }
-		public bool active { get; set; }
-		public string timeZone { get; set; }
-		[JsonProperty("avatarUrls")]
-		public Urls AvatarUrls { get; set; }
-	}
-
-	public class Reporter
-	{
-		public string self { get; set; }
-		public string name { get; set; }
-		public string key { get; set; }
-		public string emailAddress { get; set; }
-		public string displayName { get; set; }
-		public bool active { get; set; }
-		public string timeZone { get; set; }
 	}
 	public class Votes
 	{
@@ -195,7 +333,6 @@ namespace RTMobile
 		public string expand { get; set; }
 		public int recent { get; set; }
 		public bool includeArchived { get; set; }
-
 		[JsonProperty("avatarUrls")]
 		public Urls AvatarUrls { get; set; }
 		public string projectTypeKey { get; set; }
@@ -204,16 +341,18 @@ namespace RTMobile
 	/// <summary>
 	/// Адреса изображений и изображение
 	/// </summary>
-	public partial class Urls
+	public class Urls
 	{
 		//изображение для выгрузки
 		public ImageSource image
 		{
 			get
 			{
+				//Создаем временную переменную
 				Image img = new Image();
+				//Указываем адрес сервера с изображением 
 				Uri uri = new Uri(CrossSettings.Current.GetValueOrDefault("urlServer", string.Empty));
-				//выбираем изображение с максимальным разрешением, при его наличии
+				//Выбираем изображение с максимальным разрешением, при его наличии берем адрес для полученного изображения для совершения запроса
 				if (The48X48 != null)
 				{
 					uri = The48X48;
@@ -239,11 +378,17 @@ namespace RTMobile
 						}
 					}
 				}
+				//Создаем клиент для подключению к серверу с изображением
 				WebClient webClient = new WebClient();
+				//Добавляем данные для авторизации
 				string authorize = Convert.ToBase64String(Encoding.ASCII.GetBytes(CrossSettings.Current.GetValueOrDefault("login", string.Empty) + ":" + CrossSettings.Current.GetValueOrDefault("password", string.Empty)));
+				//Указываем тип авторизации
 				webClient.Headers[HttpRequestHeader.Authorization] = "Basic " + authorize;
-				var byteArray = webClient.DownloadData(uri);
+				//Скачиваем данные по указанному адресу
+				byte[] byteArray = webClient.DownloadData(uri);
+				//Закрываем подключение
 				webClient.Dispose();
+				//Присваиваем полученное значение для возврата
 				img.Source = ImageSource.FromStream(() => new MemoryStream(byteArray));
 				return img.Source;
 			}
@@ -256,20 +401,20 @@ namespace RTMobile
 		[JsonProperty("48x48")]
 		public Uri The48X48 { get; set; }
 
+		[JsonProperty("32x32")]
+		public Uri The32X32 { get; set; }
+
 		[JsonProperty("24x24")]
 		public Uri The24X24 { get; set; }
 
 		[JsonProperty("16x16")]
 		public Uri The16X16 { get; set; }
-
-		[JsonProperty("32x32")]
-		public Uri The32X32 { get; set; }
 	}
 
-	public class Watches
+	public class Watchers
 	{
 		public string self { get; set; }
-		public int watchCount { get; set; }
+		public string watchCount { get; set; }
 		public bool isWatching { get; set; }
 		public string name { get; set; }
 		public string key { get; set; }
@@ -279,7 +424,7 @@ namespace RTMobile
 		public string displayName { get; set; }
 		public bool active { get; set; }
 		public string timeZone { get; set; }
-		public List<Watches> watchers { get; set; }
+		public ObservableCollection<User> watchers { get; set; }
 	}
 
 	public class StatusCategory
@@ -338,31 +483,36 @@ namespace RTMobile
 			}
 		}
 		public string self { get; set; }
+		/// <summary>
+		/// Описание статуса
+		/// </summary>
 		public string description { get; set; }
+		/// <summary>
+		/// Адрес иконки статуса
+		/// </summary>
 		public Uri iconUrl { get; set; }
+		/// <summary>
+		/// Название статуса
+		/// </summary>
 		public string name { get; set; }
+		/// <summary>
+		/// Номер статуса
+		/// </summary>
 		public string id { get; set; }
+		/// <summary>
+		/// Категория сатуса
+		/// </summary>
 		public StatusCategory statusCategory { get; set; }
 	}
 
-	public class Creator
-	{
-		public string self { get; set; }
-		public string name { get; set; }
-		public string key { get; set; }
-		public string emailAddress { get; set; }
-		public string displayName { get; set; }
-		public bool active { get; set; }
-		public string timeZone { get; set; }
-
-		[JsonProperty("avatarUrls")]
-		public Urls AvatarUrls { get; set; }
-	}
 	/// <summary>
 	/// Значение внешний или внутренний будет комментарий
 	/// </summary>
 	public class Value
 	{
+		public ValueLinks Links { get; set; }
+		public List<CompletedCycle> CompletedCycles { get; set; }
+		public OngoingCycle OngoingCycle { get; set; }
 		public bool Internal { get; set; }
 		public string id { get; set; }
 		public string name { get; set; }
@@ -395,7 +545,7 @@ namespace RTMobile
 		public int startAt { get; set; }
 		public string self { get; set; }
 		public string id { get; set; }
-		public Author author { get; set; }
+		public User author { get; set; }
 		public string body { get; set; }
 		public UpdateAuthor updateAuthor { get; set; }
 		private string _created { get; set; }
@@ -421,6 +571,7 @@ namespace RTMobile
 		}
 		public List<Property> properties { get; set; }
 		public ObservableCollection<Comment> comments { get; set; }
+
 	}
 	public class To
 	{
@@ -541,7 +692,7 @@ namespace RTMobile
 		/// <summary>
 		/// Данные об авторе загруженного файла
 		/// </summary>
-		public Author author { get; set; }
+		public User author { get; set; }
 		private string _created { get; set; }
 		/// <summary>
 		/// Дата создания файла
@@ -724,7 +875,7 @@ namespace RTMobile
 	public class Worklog
 	{
 		public string self { get; set; }
-		public Author author { get; set; }
+		public User author { get; set; }
 		public UpdateAuthor updateAuthor { get; set; }
 		public string comment { get; set; }
 		private string _created { get; set; }
@@ -755,9 +906,9 @@ namespace RTMobile
 			}
 		}
 		public string timeSpent { get; set; }
-		
+
 		private string _timeSpentSeconds { get; set; }
-		public string timeSpentSeconds 
+		public string timeSpentSeconds
 		{
 			get { return _timeSpentSeconds; }
 
@@ -785,17 +936,63 @@ namespace RTMobile
 		public string id { get; set; }
 		public string issueId { get; set; }
 	}
-	public class Author
+	public class SLA
 	{
-		public string self { get; set; }
-		public string name { get; set; }
-		public string key { get; set; }
-		public string emailAddress { get; set; }
-		[JsonProperty("avatarUrls")]
-		public Urls AvatarUrls { get; set; }
-		public string displayName { get; set; }
-		public bool active { get; set; }
-		public string timeZone { get; set; }
+		public List<object> Expands { get; set; }
+		public long Size { get; set; }
+		public long Start { get; set; }
+		public long Limit { get; set; }
+		public bool IsLastPage { get; set; }
+		public TemperaturesLinks Links { get; set; }
+		public List<Value> Values { get; set; }
+	}
+
+	public class TemperaturesLinks
+	{
+		public Uri Base { get; set; }
+		public string Context { get; set; }
+		public Uri Next { get; set; }
+		public Uri Prev { get; set; }
+	}
+
+	public class CompletedCycle
+	{
+		public Time StartTime { get; set; }
+		public Time StopTime { get; set; }
+		public bool Breached { get; set; }
+		public ElapsedTime GoalDuration { get; set; }
+		public ElapsedTime ElapsedTime { get; set; }
+		public ElapsedTime RemainingTime { get; set; }
+	}
+
+	public class ElapsedTime
+	{
+		public long Millis { get; set; }
+		public string Friendly { get; set; }
+	}
+
+	public class Time
+	{
+		public string Iso8601 { get; set; }
+		public string Jira { get; set; }
+		public string Friendly { get; set; }
+		public long EpochMillis { get; set; }
+	}
+
+	public class ValueLinks
+	{
+		public Uri Self { get; set; }
+	}
+
+	public class OngoingCycle
+	{
+		public Time StartTime { get; set; }
+		public bool Breached { get; set; }
+		public bool Paused { get; set; }
+		public bool WithinCalendarHours { get; set; }
+		public ElapsedTime GoalDuration { get; set; }
+		public ElapsedTime ElapsedTime { get; set; }
+		public ElapsedTime RemainingTime { get; set; }
 	}
 
 	public class Issuelink
@@ -819,19 +1016,19 @@ namespace RTMobile
 	{
 		public Comment comment { get; set; }
 		public List<AllowedValue> allowedValues { get; set; }
-		public List<string> subtasks { get; set; }
+		public List<Issue> subtasks { get; set; }
 		public List<string> operations { get; set; }
 		public List<Issuelink> issuelinks { get; set; }
 		public Resolution resolution { get; set; }
-		public Assignee assignee { get; set; }
+		public User assignee { get; set; }
 		public ObservableCollection<Attachment> attachment { get; set; }
-		public Reporter reporter { get; set; }
+		public User reporter { get; set; }
 		public Votes votes { get; set; }
 		public Issuetype issuetype { get; set; }
 		public Project project { get; set; }
 		public Status status { get; set; }
-		public Creator creator { get; set; }
-		public Watches watches { get; set; }
+		public User creator { get; set; }
+		public Watchers watches { get; set; }
 		public Schema schema { get; set; }
 		public string resolutiondate
 		{
@@ -925,6 +1122,9 @@ namespace RTMobile
 		public ObservableCollection<Issue> issues { get; set; }
 		public ObservableCollection<Comment> comments { get; set; }
 		public ObservableCollection<Worklog> worklogs { get; set; }
+		public ObservableCollection<ObjectEntry> objectEntries { get; set; }
+		public ObservableCollection<Objectschema> objectschemas { get; set; }
+		public ObservableCollection<Watchers> watchers { get; set; }
 		public Changelog changelog { get; set; }
 		public Session session { get; set; }
 		public LoginInfo loginInfo { get; set; }

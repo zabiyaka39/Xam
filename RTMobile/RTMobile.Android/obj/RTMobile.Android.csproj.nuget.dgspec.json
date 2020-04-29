@@ -66,6 +66,10 @@
               "target": "Package",
               "version": "[12.0.3, )"
             },
+            "Rg.Plugins.Popup": {
+              "target": "Package",
+              "version": "[2.0.0.2, )"
+            },
             "Xam.Plugins.Settings": {
               "target": "Package",
               "version": "[3.1.1, )"
@@ -104,7 +108,7 @@
             },
             "Xamarin.Forms": {
               "target": "Package",
-              "version": "[4.5.0.356, )"
+              "version": "[4.5.0.617, )"
             }
           }
         }
@@ -159,11 +163,11 @@
             },
             "Microsoft.AppCenter.Analytics": {
               "target": "Package",
-              "version": "[3.0.0, )"
+              "version": "[3.1.0, )"
             },
             "Microsoft.AppCenter.Crashes": {
               "target": "Package",
-              "version": "[3.0.0, )"
+              "version": "[3.1.0, )"
             },
             "Microsoft.CSharp": {
               "target": "Package",
@@ -189,9 +193,13 @@
               "target": "Package",
               "version": "[12.0.3, )"
             },
+            "Rg.Plugins.Popup": {
+              "target": "Package",
+              "version": "[2.0.0.2, )"
+            },
             "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",
-              "version": "[5.6.0, )"
+              "version": "[6.5.0, )"
             },
             "System.Net.Http": {
               "target": "Package",
@@ -207,11 +215,19 @@
             },
             "Xamarin.Essentials": {
               "target": "Package",
-              "version": "[1.5.1, )"
+              "version": "[1.5.2, )"
+            },
+            "Xamarin.FFImageLoading": {
+              "target": "Package",
+              "version": "[2.4.11.982, )"
+            },
+            "Xamarin.FFImageLoading.Forms": {
+              "target": "Package",
+              "version": "[2.4.11.982, )"
             },
             "Xamarin.Forms": {
               "target": "Package",
-              "version": "[4.5.0.356, )"
+              "version": "[4.5.0.617, )"
             }
           },
           "imports": [

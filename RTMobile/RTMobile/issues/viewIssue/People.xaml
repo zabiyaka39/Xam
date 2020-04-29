@@ -53,7 +53,7 @@
                                        CornerRadius="50" IsClippedToBounds="True"
                                        HeightRequest="10" WidthRequest="10"
                                        HorizontalOptions="End" Grid.Column="1" Grid.Row="0" VerticalOptions="Center"
-                                       HasShadow="True" OutlineColor="Black" BackgroundColor="#FFFFFF" >                                    
+                                       HasShadow="True" OutlineColor="Black" BackgroundColor="#FFFFFF" >
                                     <Image x:Name="creatorImg" Source ="{Binding issue.fields.creator.AvatarUrls.image}" Aspect="AspectFill" Margin="-20"
                                            HeightRequest="10" WidthRequest="10"/>
                                     <Frame.GestureRecognizers>
@@ -67,7 +67,7 @@
                                     </Label.GestureRecognizers>
                                 </Label>
                                 <Label Text="Исполнитель:" Grid.Column="0" Grid.Row="1" VerticalOptions="Center" FontSize="13"/>
-                                
+
 
                                 <Frame Margin="20, 10, 0, 10" 
                                        CornerRadius="50" IsClippedToBounds="True"
@@ -155,17 +155,30 @@
                                         <ColumnDefinition Width="60"/>
                                         <ColumnDefinition Width="Auto"/>
                                     </Grid.ColumnDefinitions>
-                                    
-                                    
-                                    
                                 </Grid>
-
                             </ScrollView>
+                            
                             <StackLayout Grid.Column="0" Grid.Row="2" VerticalOptions="End" Margin="0,0,0,0" Orientation="Horizontal">
-                                <Image Source="visibilityOff.png" HorizontalOptions="Start" HeightRequest="20"/>
-                                <Label Text="Прекратить наблюдение" HorizontalOptions="StartAndExpand" FontSize="12"/>
-                                <Image Source="addWatchers.png" HorizontalOptions="EndAndExpand" HeightRequest="20"/>
-                                <Label Text="Добавить наблюдателей" HorizontalOptions="End" FontSize="12"/>
+                                <Image x:Name="stopStartWatchingImage" Source="visibility.png" HorizontalOptions="Start" HeightRequest="20"/>
+                                <Label x:Name="stopStartWatching" Text="Установить наблюдение" HorizontalOptions="StartAndExpand" FontSize="12">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_2"/>
+                                    </Label.GestureRecognizers>
+                                </Label>
+                                <Grid>
+                                    <Grid.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="Choice_watchers" NumberOfTapsRequired="1" />
+                                    </Grid.GestureRecognizers>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="auto"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="auto"/>
+                                        <ColumnDefinition Width="auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Image Source="addWatchers.png" HorizontalOptions="EndAndExpand" HeightRequest="20" Grid.Row="0" Grid.Column="0"/>
+                                    <Label Text="Добавить наблюдателей" HorizontalOptions="End" FontSize="12"  Grid.Row="0" Grid.Column="1"/>
+                                </Grid>
                             </StackLayout>
                         </StackLayout>
                         <ImageButton x:Name="showWatcherPeople" Source="arrowUp.png" BackgroundColor="Transparent" Grid.Column="0" Grid.Row="2"

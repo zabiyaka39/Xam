@@ -107,8 +107,6 @@ namespace RTMobile.issues.viewIssue
 											var keyword = searchBar.Text;
 											if (keyword.Length >= 1)
 											{
-
-
 												var suggestion = userDisplayName.Where(c => c.ToLower().Contains(keyword.ToLower()));
 												listView.ItemsSource = suggestion;
 												listView.IsVisible = true;

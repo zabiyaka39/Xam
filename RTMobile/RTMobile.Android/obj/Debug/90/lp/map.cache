@@ -2,6 +2,8 @@ CarouselView
 CarouselView.FormsPlugin.Android
 Com.Android.DeskClock
 Com.ViewPagerIndicator
+FFImageLoading.Forms.Platform
+FFImageLoading.Platform
 FormsViewGroup
 Microsoft.AppCenter.Analytics.Android.Bindings
 Microsoft.AppCenter.Analytics
@@ -10,6 +12,7 @@ Microsoft.AppCenter.Crashes.Android.Bindings
 Microsoft.AppCenter.Crashes
 Microsoft.AppCenter
 Plugin.Settings
+Rg.Plugins.Popup
 Xamarin.Android.Arch.Core.Common
 Xamarin.Android.Arch.Core.Runtime
 Xamarin.Android.Arch.Lifecycle.Common

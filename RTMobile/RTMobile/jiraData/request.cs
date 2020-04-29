@@ -25,7 +25,7 @@ namespace RTMobile
 		public Request()
 		{ }
 		/// <summary>
-		/// Строка с JSON - заропсом на сервер
+		/// Строка с JSON - заропсом на серверА
 		/// </summary>
 		private string json { get; set; }
 		/// <summary>
@@ -34,6 +34,10 @@ namespace RTMobile
 		/// <returns></returns>
 		public bool verifyServer()
 		{
+			if (CrossSettings.Current.GetValueOrDefault("urlServer", string.Empty) == null || CrossSettings.Current.GetValueOrDefault("urlServer", string.Empty).Length <= 0)
+			{
+				CrossSettings.Current.AddOrUpdateValue("urlServer", "https://sd.rosohrana.ru");
+			}
 			Uri uri = new Uri(CrossSettings.Current.GetValueOrDefault("urlServer", string.Empty));
 			try
 			{
@@ -57,11 +61,6 @@ namespace RTMobile
 		{
 			if (login.Length > 0)
 			{
-
-				if (CrossSettings.Current.GetValueOrDefault("urlServer", string.Empty).Length <= 0)
-				{
-					CrossSettings.Current.AddOrUpdateValue("urlServer", "https://sd.rosohrana.ru");
-				}
 				//CrossSettings.Current.AddOrUpdateValue("urlServer", "https://sd.rosohrana.ru");
 				Authorization authorization = new Authorization
 				{
@@ -127,12 +126,13 @@ namespace RTMobile
 			{
 				if (httpWebRequest.Method == "POST")
 				{
-					if (this.json != null && this.json.Length > 0)
+					if (json != null && json.Length > 0)
 					{
-						if (json.Length > 0)
-						{
-							this.json = json;
-						}
+						this.json = json;
+					}
+					//Исключаем пустой JSON-запрос сформированный на этапе создания подключения к серверу
+					if (this.json != null && this.json.Length > 2)
+					{
 						using (StreamWriter streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
 						{
 							streamWriter.Write(this.json);
@@ -703,8 +703,6 @@ namespace RTMobile
 		public List<Fields> GetCustomField()
 		{
 			List<Fields> fields = new List<Fields>();
-
-
 			WebResponse httpResponse = this.httpWebRequest.GetResponse();
 			//Отправляем запрос для получения списка полей задачи
 			using (StreamReader streamReader = new StreamReader(httpResponse.GetResponseStream()))
