@@ -3111,7 +3111,6 @@ F:\project\Mobile\rtmobile\RTMobile\RTMobile.Android\obj\Debug\90\flata\ED2AD209
 F:\project\Mobile\rtmobile\RTMobile\RTMobile.Android\obj\Debug\90\flata\22787670D4D31059.flata
 F:\project\Mobile\rtmobile\RTMobile\RTMobile.Android\obj\Debug\90\RTMobile.Android.csproj.CoreCompileInputs.cache
 F:\project\Mobile\rtmobile\RTMobile\RTMobile.Android\obj\Debug\90\android\AndroidManifest.xml
-F:\project\Mobile\rtmobile\RTMobile\RTMobile.Android\bin\Debug\RTMobile.dll.mdb
 F:\project\Mobile\rtmobile\RTMobile\RTMobile.Android\obj\Debug\90\res\drawable\visibility.png
 F:\project\Mobile\rtmobile\RTMobile\RTMobile.Android\obj\Debug\90\res\drawable\star.png
 F:\project\Mobile\rtmobile\RTMobile\RTMobile.Android\obj\Debug\90\res\drawable\isfavorites.png
@@ -3815,3 +3814,4 @@ C:\RT\rtmobile\RTMobile\RTMobile.Android\obj\Debug\90\stamp\_GenerateJavaStubs.s
 C:\RT\rtmobile\RTMobile\RTMobile.Android\obj\Debug\90\stamp\_GeneratePackageManagerJava.stamp
 C:\RT\rtmobile\RTMobile\RTMobile.Android\obj\Debug\90\stamp\_ResolveLibraryProjectImports.stamp
 C:\RT\rtmobile\RTMobile\RTMobile.Android\obj\Debug\90\stamp\SetupDependenciesForDesigner.stamp
+F:\project\Mobile\rtmobile\RTMobile\RTMobile.Android\bin\Debug\RTMobile.dll.mdb
