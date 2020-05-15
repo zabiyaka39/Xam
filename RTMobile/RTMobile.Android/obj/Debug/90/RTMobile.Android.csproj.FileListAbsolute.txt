@@ -3814,4 +3814,4 @@ C:\RT\rtmobile\RTMobile\RTMobile.Android\obj\Debug\90\stamp\_ConvertResourcesCas
 C:\RT\rtmobile\RTMobile\RTMobile.Android\obj\Debug\90\stamp\_GenerateJavaStubs.stamp
 C:\RT\rtmobile\RTMobile\RTMobile.Android\obj\Debug\90\stamp\_GeneratePackageManagerJava.stamp
 C:\RT\rtmobile\RTMobile\RTMobile.Android\obj\Debug\90\stamp\_ResolveLibraryProjectImports.stamp
-C:\RT\rtmobile\RTMobile\RTMobile.Android\obj\Debug\90\stamp\SetupDependenciesForDesigner.stamp
+C:\RT\rtmobile\RTMobile\RTMobile.Android\obj\Debug\90\res\drawable\relatedissue.png

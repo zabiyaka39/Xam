@@ -76,9 +76,13 @@ namespace RTMobile.issues
 					typeIssueName.Add(projects[projectPic.SelectedIndex].issuetypes[i].name);
 				}
 				//Все поля кроме первых 4 (тип и проект с label) удаляем
-				for (int i = 4; i < generalStackLayout.Children.Count; ++i)
+				for (int i = 4; i < generalStackLayout.Children.Count;)
 				{
 					generalStackLayout.Children.RemoveAt(i);
+				}
+				for (int i = 0; i < necessarily_fields.Children.Count;)
+				{
+					necessarily_fields.Children.RemoveAt(i);
 				}
 				typeIssuePic.ItemsSource = typeIssueName;
 				//Показываем  label и выпадающий список с типами задач
@@ -115,9 +119,19 @@ namespace RTMobile.issues
 		}
 
 		private void typeIssuePic_SelectedIndexChanged(object sender, EventArgs e)
-		{
+		{	
+			
 			if (typeIssuePic.SelectedIndex != -1)
 			{
+				for (int i = 4; i < generalStackLayout.Children.Count;)
+				{
+					generalStackLayout.Children.RemoveAt(i);
+				}
+				for (int i = 0; i < necessarily_fields.Children.Count;)
+				{
+					necessarily_fields.Children.RemoveAt(i);
+				}
+
 				buttonCreateIssue.IsEnabled = true;
 				JSONRequest jsonRequest = new JSONRequest()
 				{
@@ -126,12 +140,6 @@ namespace RTMobile.issues
 				};
 				Request request = new Request(jsonRequest);
 				Fields = request.GetFieldScreenCreate();
-
-				//Все поля кроме первых 4 (тип и проект с label) удаляем
-				for (int i = 4; i < generalStackLayout.Children.Count; ++i)
-				{
-					generalStackLayout.Children.RemoveAt(i);
-				}
 
 				void determination_requered(Xamarin.Forms.StackLayout type_stack, Fields Field )
 				{
@@ -726,7 +734,7 @@ namespace RTMobile.issues
 						{
 							label.Text += "*";
 							generalStackLayout.Children.Add(label);
-							determination_requered(generalStackLayout, Fields[i] );
+							determination_requered(generalStackLayout, Fields[i]);
 
 						}
 						else

@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="RTMobile.insight.InsightMenu">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#312F35" VerticalOptions="Start"  Orientation="Horizontal">
+            <Frame  HasShadow="True" CornerRadius="5" BackgroundColor="#FFFFFF" Margin="10,20,10,10" Padding="10,0,10,0">
+                <StackLayout>
+                    <StackLayout Orientation="Horizontal" Margin="0,10,0,0">
+                        <Image Source="relatedIssue.png" WidthRequest="20" HeightRequest="20"/>
+                        <Label Text="Связанные запросы" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
+                    </StackLayout>
+                    <BoxView BackgroundColor ="#312F35" HeightRequest="1" Margin="0,0,0,0" />
+                    <ScrollView>
+                        <ListView ItemsSource="{Binding listConnectedIssue}" ItemTapped="ListView_ItemTapped" HasUnevenRows="True" >
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                     <StackLayout Orientation="Horizontal" Margin="0,10,0,10">
+                                            <Image Source="{Binding Path= fields.issuetype.icon}" />
+                                            <Label HorizontalOptions="StartAndExpand" MaxLines="1">
+                                                <Label.FormattedText>
+                                                    <FormattedString>
+                                                        <Span Text="{Binding key}"/>
+                                                        <Span Text=" - "/>
+                                                        <Span Text="{Binding Path= fields.summary}"/>
+                                                    </FormattedString>
+                                                </Label.FormattedText>
+                                            </Label>
+                                        </StackLayout> 
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                    </ScrollView>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
