@@ -41,6 +41,20 @@ namespace RTMobile.insight
                 }
             }
             this.BindingContext = this;
+            
+        }
+
+        void OpenField(object sender, ItemTappedEventArgs e)
+        {
+            if (e.Item != null)
+            {
+                ObjectEntry selectedSchema = e.Item as ObjectEntry;
+                if (selectedSchema != null)
+                {
+                 Navigation.PushAsync(new InsightMenu(selectedSchema)).ConfigureAwait(true);
+                }
+
+            }
         }
         void ImageButton_Clicked(System.Object sender, System.EventArgs e)
         {

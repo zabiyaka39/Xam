@@ -13924,49 +13924,52 @@ namespace RTMobile.Droid
 			public const int property = 2131165528;
 			
 			// aapt resource value: 0x7F070159
-			public const int rosohranaLogo = 2131165529;
+			public const int relatedIssue = 2131165529;
 			
 			// aapt resource value: 0x7F07015A
-			public const int sekisov = 2131165530;
+			public const int rosohranaLogo = 2131165530;
 			
 			// aapt resource value: 0x7F07015B
-			public const int settings = 2131165531;
+			public const int sekisov = 2131165531;
 			
 			// aapt resource value: 0x7F07015C
-			public const int settingToolBar = 2131165532;
+			public const int settings = 2131165532;
 			
 			// aapt resource value: 0x7F07015D
-			public const int showMenu = 2131165533;
+			public const int settingToolBar = 2131165533;
 			
 			// aapt resource value: 0x7F07015E
-			public const int sorted = 2131165534;
+			public const int showMenu = 2131165534;
 			
 			// aapt resource value: 0x7F07015F
-			public const int star = 2131165535;
+			public const int sorted = 2131165535;
 			
 			// aapt resource value: 0x7F070160
-			public const int time = 2131165536;
+			public const int star = 2131165536;
 			
 			// aapt resource value: 0x7F070161
-			public const int timeStart = 2131165537;
+			public const int time = 2131165537;
 			
 			// aapt resource value: 0x7F070162
-			public const int timeUpdate = 2131165538;
+			public const int timeStart = 2131165538;
 			
 			// aapt resource value: 0x7F070163
-			public const int tooltip_frame_dark = 2131165539;
+			public const int timeUpdate = 2131165539;
 			
 			// aapt resource value: 0x7F070164
-			public const int tooltip_frame_light = 2131165540;
+			public const int tooltip_frame_dark = 2131165540;
 			
 			// aapt resource value: 0x7F070165
-			public const int Up = 2131165541;
+			public const int tooltip_frame_light = 2131165541;
 			
 			// aapt resource value: 0x7F070166
-			public const int visibility = 2131165542;
+			public const int Up = 2131165542;
 			
 			// aapt resource value: 0x7F070167
-			public const int visibilityOff = 2131165543;
+			public const int visibility = 2131165543;
+			
+			// aapt resource value: 0x7F070168
+			public const int visibilityOff = 2131165544;
 			
 			static Drawable()
 			{

@@ -1110,6 +1110,10 @@ namespace RTMobile
 		public string comment { get; set; }
 	}
 
+	public partial class JiraIssue
+	{
+		public string jiraIssueKey { get; set; }
+	}
 	public class RootObject
 	{
 		public List<string> errorMessages { get; set; }
@@ -1147,6 +1151,8 @@ namespace RTMobile
 		public bool active { get; set; }
 		public string timeZone { get; set; }
 		public string locale { get; set; }
+		public List<JiraIssue> jiraIssues { get; set; }
+		public string allIssuesQuery { get; set; }
 
 	}
 }

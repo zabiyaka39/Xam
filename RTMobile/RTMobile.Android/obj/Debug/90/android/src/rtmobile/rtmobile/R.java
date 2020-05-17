@@ -5000,21 +5000,22 @@ public final class R {
     public static final int person=0x7f070156;
     public static final int prev=0x7f070157;
     public static final int property=0x7f070158;
-    public static final int rosohranalogo=0x7f070159;
-    public static final int sekisov=0x7f07015a;
-    public static final int settings=0x7f07015b;
-    public static final int settingtoolbar=0x7f07015c;
-    public static final int showmenu=0x7f07015d;
-    public static final int sorted=0x7f07015e;
-    public static final int star=0x7f07015f;
-    public static final int time=0x7f070160;
-    public static final int timestart=0x7f070161;
-    public static final int timeupdate=0x7f070162;
-    public static final int tooltip_frame_dark=0x7f070163;
-    public static final int tooltip_frame_light=0x7f070164;
-    public static final int up=0x7f070165;
-    public static final int visibility=0x7f070166;
-    public static final int visibilityoff=0x7f070167;
+    public static final int relatedissue=0x7f070159;
+    public static final int rosohranalogo=0x7f07015a;
+    public static final int sekisov=0x7f07015b;
+    public static final int settings=0x7f07015c;
+    public static final int settingtoolbar=0x7f07015d;
+    public static final int showmenu=0x7f07015e;
+    public static final int sorted=0x7f07015f;
+    public static final int star=0x7f070160;
+    public static final int time=0x7f070161;
+    public static final int timestart=0x7f070162;
+    public static final int timeupdate=0x7f070163;
+    public static final int tooltip_frame_dark=0x7f070164;
+    public static final int tooltip_frame_light=0x7f070165;
+    public static final int up=0x7f070166;
+    public static final int visibility=0x7f070167;
+    public static final int visibilityoff=0x7f070168;
   }
   public static final class id {
     public static final int ALT=0x7f080000;

@@ -238,3 +238,5 @@ C:\RT\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\issues\viewIssue\AddWa
 C:\RT\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\XamlC.stamp
 F:\project\Mobile\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\insight\objectList.xaml.g.cs
 F:\project\Mobile\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\issues\viewIssue\AddWatchersModal.xaml.g.cs
+C:\RT\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\insight\objectList.xaml.g.cs
+C:\RT\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\insight\InsightMenu.xaml.g.cs
