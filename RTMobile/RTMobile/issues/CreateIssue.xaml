@@ -14,6 +14,7 @@
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
                     </Grid.RowDefinitions>
                     <StackLayout x:Name="generalStackLayout"  HorizontalOptions="FillAndExpand"  Margin="20,10,20,0" Grid.Row ="0">
                         <Label Text="Проект:"  FontSize="18" TextColor="#F0F1F0" />
@@ -21,8 +22,10 @@
                         <Label x:Name="lblTypeIssue" Text="Тип задач" IsVisible="False"  FontSize="18" TextColor="#F0F1F0"/>
                         <Picker x:Name="typeIssuePic" IsVisible="False" HorizontalOptions="FillAndExpand" FontSize="18" TextColor="#F0F1F0" SelectedIndexChanged="typeIssuePic_SelectedIndexChanged"/>
                     </StackLayout>
-                    <Button x:Name="extended_button" Text="+" Clicked="button_show_necessarily" VerticalOptions ="StartAndExpand"  Grid.Row ="1" BackgroundColor="#228B22" TextColor="White" IsVisible="False" FontSize="20"/>
-                    <StackLayout IsVisible="False" x:Name="necessarily_fields" VerticalOptions="FillAndExpand" Grid.Row ="2">
+                    <BoxView HeightRequest="1" BackgroundColor="#F0F1F0" Grid.Row="1" IsVisible="False" x:Name="delimiter" HorizontalOptions="FillAndExpand"/>
+                    <Button x:Name="extended_button" Text="Показать необязательные поля" Clicked="button_show_necessarily" VerticalOptions ="StartAndExpand"  Grid.Row ="2" BackgroundColor="Transparent"
+                            TextColor="#F0F1F0" IsVisible="False" FontSize="16"/>
+                    <StackLayout IsVisible="False" x:Name="necessarily_fields" VerticalOptions="FillAndExpand" Grid.Row ="3">
                     </StackLayout>
                 </Grid>
             </ScrollView>
