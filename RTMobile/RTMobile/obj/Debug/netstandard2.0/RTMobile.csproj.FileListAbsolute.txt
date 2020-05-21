@@ -205,7 +205,6 @@ C:\RT\rtmobile\RTMobile\RTMobile\bin\Debug\netstandard2.0\Xamarin.iOS.dll
 C:\RT\rtmobile\RTMobile\RTMobile\bin\Debug\netstandard2.0\Mono.Android.pdb
 C:\RT\rtmobile\RTMobile\RTMobile\bin\Debug\netstandard2.0\Mono.Android.xml
 C:\RT\rtmobile\RTMobile\RTMobile\bin\Debug\netstandard2.0\Xamarin.iOS.xml
-C:\RT\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\RTMobile.csprojAssemblyReference.cache
 C:\RT\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\about\About.xaml.g.cs
 C:\RT\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\App.xaml.g.cs
 C:\RT\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\calendar\Calendar.xaml.g.cs
@@ -240,3 +239,4 @@ F:\project\Mobile\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\insight\ob
 F:\project\Mobile\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\issues\viewIssue\AddWatchersModal.xaml.g.cs
 C:\RT\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\insight\objectList.xaml.g.cs
 C:\RT\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\insight\InsightMenu.xaml.g.cs
+C:\RT\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\RTMobile.csprojAssemblyReference.cache

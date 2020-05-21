@@ -62,6 +62,8 @@ namespace RTMobile
 		/// </summary>
 		[JsonIgnore]
 		public string methodRequest { get; set; }
+
+		
 	}
 
 	/// <summary>

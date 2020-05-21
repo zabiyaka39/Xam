@@ -3186,7 +3186,6 @@ C:\RT\rtmobile\RTMobile\RTMobile.Android\bin\Debug\RTMobile.RTMobile-Signed.aab
 C:\RT\rtmobile\RTMobile\RTMobile.Android\bin\Debug\RTMobile.RTMobile-Signed.apk
 C:\RT\rtmobile\RTMobile\RTMobile.Android\bin\Debug\RTMobile.dll
 C:\RT\rtmobile\RTMobile\RTMobile.Android\bin\Debug\RTMobile.pdb
-C:\RT\rtmobile\RTMobile\RTMobile.Android\bin\Debug\RTMobile.dll.mdb
 C:\RT\rtmobile\RTMobile\RTMobile.Android\obj\Debug\90\MonoAndroid,Version=v9.0.AssemblyAttributes.cs
 C:\RT\rtmobile\RTMobile\RTMobile.Android\obj\Debug\90\build.props
 C:\RT\rtmobile\RTMobile\RTMobile.Android\obj\Debug\90\adb.props
@@ -3815,3 +3814,4 @@ C:\RT\rtmobile\RTMobile\RTMobile.Android\obj\Debug\90\stamp\_GenerateJavaStubs.s
 C:\RT\rtmobile\RTMobile\RTMobile.Android\obj\Debug\90\stamp\_GeneratePackageManagerJava.stamp
 C:\RT\rtmobile\RTMobile\RTMobile.Android\obj\Debug\90\stamp\_ResolveLibraryProjectImports.stamp
 C:\RT\rtmobile\RTMobile\RTMobile.Android\obj\Debug\90\res\drawable\relatedissue.png
+C:\RT\rtmobile\RTMobile\RTMobile.Android\bin\Debug\RTMobile.dll.mdb
