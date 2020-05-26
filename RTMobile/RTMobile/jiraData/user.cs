@@ -22,6 +22,12 @@ namespace RTMobile
 	/// </summary>
 	public class Groups
 	{
+		[JsonProperty("name")]
+		public string Name { get; set; }
+
+		[JsonProperty("self")]
+		public Uri Self { get; set; }
+
 		public int size { get; set; }
 		public List<Item> items { get; set; }
 	}

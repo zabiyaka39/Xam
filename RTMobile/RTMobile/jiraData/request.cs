@@ -173,7 +173,6 @@ namespace RTMobile
 				//десериализуем в переменную с типом dynamic
 				Nancy.Json.Simple.JsonObject objectCustomField = js.Deserialize<dynamic>(result);
 
-				//string str = objectCustomField["transitions"][0][3];
 				//проходимся по всем полученным customField и получаем значения
 
 				try
@@ -703,6 +702,8 @@ namespace RTMobile
 		public List<Fields> GetCustomField()
 		{
 			List<Fields> fields = new List<Fields>();
+
+
 			WebResponse httpResponse = this.httpWebRequest.GetResponse();
 			//Отправляем запрос для получения списка полей задачи
 			using (StreamReader streamReader = new StreamReader(httpResponse.GetResponseStream()))
@@ -724,117 +725,18 @@ namespace RTMobile
 							for (int i = 0; i < ((dynamic)(field.Value)).Count; ++i)
 							{
 								foreach (KeyValuePair<string, object> fieldTransaction in ((dynamic)(field.Value))[i])
-								{ 
+								{
 								}
 							}
 						}
 					}
-
-					//Определяем тип выбранного поля
-					//switch (field)
-					//{
-					//	//Добавляем customField если это выпадающий список
-					//	case "option":
-					//		{
-					//			//проверяем на наличие заполнения поля
-					//			if (field.Value != null)
-					//			{
-					//				dynamic keyValue = field.Value;
-					//				foreach (System.Collections.Generic.KeyValuePair<string, object> valueCustomFeildOption in keyValue)
-					//				{
-					//					//ищем поле value для получения значения
-					//					if (valueCustomFeildOption.Key == "value")
-					//					{
-					//						Fields tmpFiled = new Fields
-					//						{
-					//							name = objectCustomField["names"][field.Key],
-					//							value = valueCustomFeildOption.Value.ToString()
-					//						};
-					//						fields.Add(tmpFiled);
-					//						break;
-					//					}
-					//				}
-					//			}
-					//			break;
-					//		}
-					//	//Добавляем customField если это перечисление нескольких элементов (например insight)
-					//	case "any":
-					//		{
-					//			if (field.Value != null)
-					//			{
-					//				dynamic keyValue = field.Value;
-					//				string arrayElement = "";
-					//				foreach (var arrayCustomField in keyValue)
-					//				{
-					//					arrayElement += arrayCustomField + "\n";
-					//				}
-					//				arrayElement = arrayElement.Trim('\n');
-					//				Fields tmpFiled = new Fields
-					//				{
-					//					name = objectCustomField["names"][field.Key],
-					//					value = arrayElement.ToString()
-					//				};
-					//				fields.Add(tmpFiled);
-					//			}
-					//			break;
-					//		}
-					//	//Добавляем customField если это число или строка
-					//	case "number":
-					//	case "string":
-					//		{
-					//			if (field.Value != null)
-					//			{
-					//				//Убираем пустые элементы
-					//				if (field.Value.ToString().Trim(' ').Length > 0)
-					//				{
-					//					if (field.Key.ToLower() != "description" && field.Key.ToLower() != "summary")
-					//					{
-					//						Fields tmpFiled = new Fields
-					//						{
-					//							name = objectCustomField["names"][field.Key],
-					//							value = field.Value.ToString()
-					//						};
-					//						fields.Add(tmpFiled);
-					//					}
-					//				}
-					//			}
-					//			break;
-					//		}
-					//	//Добавляем customField если это многоуровневый список (2 уровня)
-					//	case "option-with-child":
-					//		{
-					//			if (field.Value != null)
-					//			{
-					//				dynamic keyValue = field.Value;
-					//				Fields tmpFiled = new Fields();
-					//				foreach (System.Collections.Generic.KeyValuePair<string, object> valueCustomFeildOption in keyValue)
-					//				{
-					//					//ищем поле value для получения значения
-					//					if (valueCustomFeildOption.Key.ToLower() == "value")
-					//					{
-					//						tmpFiled.name = objectCustomField["names"][field.Key];
-					//						tmpFiled.value = valueCustomFeildOption.Value.ToString();
-					//					}
-					//					if (valueCustomFeildOption.Key.ToLower() == "child")
-					//					{
-					//						dynamic child = valueCustomFeildOption.Value;
-					//						foreach (System.Collections.Generic.KeyValuePair<string, object> valueCustomFeildOptionChild in child)
-					//						{
-					//							if (valueCustomFeildOptionChild.Key.ToLower() == "value")
-					//							{
-					//								tmpFiled.value += "-" + valueCustomFeildOptionChild.Value.ToString();
-					//							}
-					//						}
-					//					}
-					//				}
-					//				fields.Add(tmpFiled);
-					//			}
-					//			break;
-					//		}
-					//}
 				}
 			}
 			return fields;
 		}
+
+
+
+		
 	}
 }

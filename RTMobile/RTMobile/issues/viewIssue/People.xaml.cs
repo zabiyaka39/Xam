@@ -17,7 +17,6 @@ namespace RTMobile.issues.viewIssue
 	{
 		public Issue issue { get; set; }
 		public ObservableCollection<User> watchers { get; set; }
-		private List<RTMobile.Transition> transition { get; set; }
 		public People(Issue issue)
 		{
 			InitializeComponent();
