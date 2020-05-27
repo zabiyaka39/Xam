@@ -4,10 +4,10 @@
              x:Class="RTMobile.filter.Filter"
              Title="ФИЛЬТР" >
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="ГОТОВО" Clicked="ToolbarItem_Clicked"
+        <ToolbarItem Text="Применить" Clicked="ToolbarItem_Clicked"
                      Order="Primary" Priority="0"/>
     </ContentPage.ToolbarItems>
-    <ContentPage.Content>       
+    <ContentPage.Content>
         <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
                       BackgroundColor="#4A4C50">
             <Grid HorizontalOptions="FillAndExpand" BackgroundColor="#323037">
@@ -44,8 +44,8 @@
                                  Grid.Row="1" Grid.ColumnSpan="2" VerticalOptions="Start"/>
                     </Grid>
                     <ListView  Grid.Row="1" Grid.Column="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" 
-                                   HasUnevenRows="True" SeparatorVisibility="None" 
-                                   ItemsSource="{Binding favorites}" x:Name="favoritesList" >
+                               HasUnevenRows="True" SeparatorVisibility="Default" 
+                               ItemsSource="{Binding favorites}" x:Name="favoritesList" ItemSelected="favoritesList_ItemSelected" >
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell>
@@ -59,10 +59,8 @@
                                                 <RowDefinition Height="*"/>
                                                 <RowDefinition Height="1"/>
                                             </Grid.RowDefinitions>
-                                            <Label Grid.Column="0" Grid.Row="0" Text="{Binding Path=name}"/>
+                                            <Label Grid.Column="0" Grid.Row="0" Text="{Binding Path=Name}"/>
                                             <Image Source="isFavorites.png"  Grid.Column="1" Grid.Row="0" />
-                                            <BoxView  Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" BackgroundColor="#4A4C50" HeightRequest="1" Margin="-20,0,-20,0"
-                                                          HorizontalOptions="FillAndExpand"  VerticalOptions="Start"/>
                                         </Grid>
 
                                     </ViewCell.View>
@@ -72,6 +70,7 @@
                     </ListView>
                 </Grid>
             </Frame>
+
             <Frame Grid.Row="0" Grid.Column="0" HasShadow="True" CornerRadius="5"
                    BackgroundColor="#FFFFFF" HeightRequest="250" Margin="10,10,10,10" Padding="10,10,10,-20">
                 <ScrollView VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
@@ -87,11 +86,32 @@
                                 <RowDefinition Height="1"/>
                             </Grid.RowDefinitions>
                             <Image Source="visibility.png" Grid.Column="0" Grid.Row="0" VerticalOptions="Center" />
-                            <Label Text="Недавно просмотренные" Grid.Column="1" Grid.Row="0" VerticalOptions="Center" />
-                            <Label Text="▼" Grid.Column="2" Grid.Row="0" HorizontalOptions="End" VerticalOptions="EndAndExpand" Margin="0,0,0,0"/>
+                            <Label Text="Недавно просмотренные" Grid.Column="1" Grid.Row="0" VerticalOptions="Center" >
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="TapGestureRecognizer_Tapped_3"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+                            <Label Text="▼" Grid.Column="2" Grid.Row="0" HorizontalOptions="End" VerticalOptions="EndAndExpand" Margin="0,0,0,0" x:Name="buttonShowLastFilters">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="TapGestureRecognizer_Tapped_3"/>
+                                </Label.GestureRecognizers>
+                            </Label>
                             <BoxView BackgroundColor="#4A4C50" HeightRequest="1" Margin="-20,0,-20,0"
                                  HorizontalOptions="FillAndExpand" Grid.Column="0"
                                  Grid.Row="1" Grid.ColumnSpan="3" VerticalOptions="Start"/>
+                            <ListView  Grid.Row="2" Grid.Column="0" HeightRequest="200"
+                                   SeparatorVisibility="Default"  Grid.ColumnSpan="3" IsVisible="False"
+                                   ItemsSource="{Binding lastFilters}" x:Name="lastFilterList"  ItemSelected="lastFilterList_ItemSelected">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ViewCell Height="40" >
+                                            <ViewCell.View>
+                                                <Label Text="{Binding Path=Name}" VerticalOptions="Center"/>
+                                            </ViewCell.View>
+                                        </ViewCell>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
                         </Grid>
 
                         <Grid Grid.Row="0" Grid.Column="0" Padding="0" Margin="0">
@@ -103,13 +123,35 @@
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="21"/>
                                 <RowDefinition Height="1"/>
+                                <RowDefinition Height="Auto"/>
                             </Grid.RowDefinitions>
                             <Image Source="all.png" Grid.Column="0" Grid.Row="0" VerticalOptions="Center" />
-                            <Label Text="Все фильтры" Grid.Column="1" Grid.Row="0" VerticalOptions="Center" />
-                            <Label Text="▼" Grid.Column="2" Grid.Row="0" HorizontalOptions="End" VerticalOptions="EndAndExpand" Margin="0,0,0,0"/>
+                            <Label Text="Все фильтры" Grid.Column="1" Grid.Row="0" VerticalOptions="Center" >
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="TapGestureRecognizer_Tapped_2"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+                            <Label Text="▼" Grid.Column="2" Grid.Row="0" HorizontalOptions="End" VerticalOptions="EndAndExpand" Margin="0,0,0,0" x:Name="buttonShowAllFilters">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="TapGestureRecognizer_Tapped_2"/>
+                                </Label.GestureRecognizers>
+                            </Label>
                             <BoxView BackgroundColor="#4A4C50" HeightRequest="1" Margin="-20,0,-20,0"
                                  HorizontalOptions="FillAndExpand" Grid.Column="0"
                                  Grid.Row="1" Grid.ColumnSpan="3" VerticalOptions="Start"/>
+                            <ListView  Grid.Row="2" Grid.Column="0" HeightRequest="200"
+                                   SeparatorVisibility="Default"  Grid.ColumnSpan="3" IsVisible="False"
+                                   ItemsSource="{Binding allFilters}" x:Name="allFilterList" ItemSelected="allFilterList_ItemSelected" >
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ViewCell Height="40" >
+                                            <ViewCell.View>
+                                                <Label Text="{Binding Path=Name}" VerticalOptions="Center"/>
+                                            </ViewCell.View>
+                                        </ViewCell>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
                         </Grid>
 
                         <Grid Grid.Row="0" Grid.Column="0" Padding="0" Margin="0">
@@ -150,6 +192,7 @@
                                 </Picker>
                             </Grid>
                         </Grid>
+
                         <Grid Grid.Row="0" Grid.Column="0" Padding="0" Margin="0,0,0,20" >
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="15"/>

@@ -121,28 +121,51 @@ namespace RTMobile
 		public List<Item> items { get; set; }
 		public HistoryMetadata historyMetadata { get; set; }
 	}
+	public partial class SharePermission
+	{
+		[JsonProperty("id")]
+		public long Id { get; set; }
+
+		[JsonProperty("type")]
+		public string Type { get; set; }
+
+		[JsonProperty("group")]
+		public Groups Group { get; set; }
+
+		[JsonProperty("view")]
+		public bool View { get; set; }
+
+		[JsonProperty("edit")]
+		public bool Edit { get; set; }
+	}
+	public partial class SharedUsers
+	{
+		[JsonProperty("size")]
+		public long Size { get; set; }
+
+		[JsonProperty("items")]
+		public List<object> Items { get; set; }
+
+		[JsonProperty("max-results")]
+		public long MaxResults { get; set; }
+
+		[JsonProperty("start-index")]
+		public long StartIndex { get; set; }
+
+		[JsonProperty("end-index")]
+		public long EndIndex { get; set; }
+	}
 	/// <summary>
 	/// Хранение фильтров пользователя
 	/// </summary>
 	public class Filters
 	{
-		public string self { get; set; }
-		public string id { get; set; }
-		public string name { get; set; }
-		public string description { get; set; }
-		public User owner { get; set; }
-		public string jql { get; set; }
-		public string viewUrl { get; set; }
-		public string searchUrl { get; set; }
-		public bool favourite { get; set; }
 		public int favouritedCount { get; set; }
-		public List<object> sharePermissions { get; set; }
-		public Subscriptions subscriptions { get; set; }
 		public string nameSourceImage
 		{
 			get
 			{
-				if (favourite != true)
+				if (Favourite != true)
 				{
 					return "isFavorites.png";
 				}
@@ -150,6 +173,46 @@ namespace RTMobile
 			}
 			set { }
 		}
+
+		[JsonProperty("self")]
+		public Uri Self { get; set; }
+
+		[JsonProperty("id")]
+		public int Id { get; set; }
+
+		[JsonProperty("name")]
+		public string Name { get; set; }
+
+		[JsonProperty("description")]
+		public string Description { get; set; }
+
+		[JsonProperty("owner")]
+		public User Owner { get; set; }
+
+		[JsonProperty("jql")]
+		public string Jql { get; set; }
+
+		[JsonProperty("viewUrl")]
+		public Uri ViewUrl { get; set; }
+
+		[JsonProperty("searchUrl")]
+		public Uri SearchUrl { get; set; }
+
+		[JsonProperty("favourite")]
+		public bool Favourite { get; set; }
+
+		[JsonProperty("sharePermissions")]
+		public List<SharePermission> SharePermissions { get; set; }
+
+		[JsonProperty("editable")]
+		public bool Editable { get; set; }
+
+		[JsonProperty("sharedUsers")]
+		public SharedUsers SharedUsers { get; set; }
+
+		[JsonProperty("subscriptions")]
+		public SharedUsers Subscriptions { get; set; }
+
 	}
 	/// <summary>
 	/// Объектная схема Insight
@@ -305,7 +368,7 @@ namespace RTMobile
 				WebClient webClient = new WebClient();
 				string authorize = Convert.ToBase64String(Encoding.ASCII.GetBytes(CrossSettings.Current.GetValueOrDefault("login", string.Empty) + ":" + CrossSettings.Current.GetValueOrDefault("password", string.Empty)));
 				webClient.Headers[HttpRequestHeader.Authorization] = "Basic " + authorize;
-				var byteArray = webClient.DownloadData(uri);
+				byte[] byteArray = webClient.DownloadData(uri);
 				webClient.Dispose();
 				image.Source = ImageSource.FromStream(() => new MemoryStream(byteArray));
 				return image.Source;
@@ -1110,6 +1173,10 @@ namespace RTMobile
 		public string comment { get; set; }
 	}
 
+	public partial class JiraIssue
+	{
+		public string jiraIssueKey { get; set; }
+	}
 	public class RootObject
 	{
 		public List<string> errorMessages { get; set; }
@@ -1125,6 +1192,7 @@ namespace RTMobile
 		public ObservableCollection<ObjectEntry> objectEntries { get; set; }
 		public ObservableCollection<Objectschema> objectschemas { get; set; }
 		public ObservableCollection<Watchers> watchers { get; set; }
+		public ObservableCollection<Filters> filters { get; set; }
 		public Changelog changelog { get; set; }
 		public Session session { get; set; }
 		public LoginInfo loginInfo { get; set; }
@@ -1147,6 +1215,8 @@ namespace RTMobile
 		public bool active { get; set; }
 		public string timeZone { get; set; }
 		public string locale { get; set; }
+		public List<JiraIssue> jiraIssues { get; set; }
+		public string allIssuesQuery { get; set; }
 
 	}
 }

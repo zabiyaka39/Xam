@@ -44,9 +44,72 @@ namespace RTMobile.issues
 		{
 			Navigation.PushAsync(new Insight());
 		}
+
+		public async void GoToback()
+		{
+			MessagingCenter.Subscribe<Filter, JSONRequest>(this, "RefreshMainPage", (sender, e) =>
+			{
+				 Console.WriteLine("text");
+				 try
+				 {
+					 RootObject rootObject = new RootObject();
+					 Request request = new Request(e);
+
+					 rootObject = request.GetResponses<RootObject>();
+
+					 //Проверка на пустой список задач
+					 try
+					 {
+						 if (issues != null)
+						 {
+							 //Очищаем список задач
+							 for (int i = issues.Count; i > 0; --i)
+							 {
+								 issues.RemoveAt(0);
+							 }
+						 }
+						 else
+						 {
+							 issues = new ObservableCollection<Issue>();
+						 }
+						 //Заполняем списком полученным при запросе
+						 if (rootObject != null && rootObject.issues != null)
+						 {
+							 for (int i = 0; i < rootObject.issues.Count; ++i)
+							 {
+								 issues.Add(rootObject.issues[i]);
+							 }
+						 }
+					 }
+					 catch (Exception ex)
+					 {
+						 Console.WriteLine(ex.Message);
+						 Crashes.TrackError(ex);
+					 }
+				 }
+				 catch (Exception ex)
+				 {
+					 Console.WriteLine(ex.Message);
+					 Crashes.TrackError(ex);
+				 }
+
+
+				 this.BindingContext = this;
+			 });
+		}
+
+
 		void ImageButton_Clicked_2(System.Object sender, System.EventArgs e)
 		{
+			//Полученный фильтр 
+			string filterJQL = "";
+			//Тип сортировки (по убыванию или по возрастанию)
+			string sorted = "";
+			//Наличие группировки
+			int grouped = -1;
+
 			Navigation.PushAsync(new Filter());
+			GoToback();
 		}
 		void ImageButton_Clicked_3(System.Object sender, System.EventArgs e)
 		{
@@ -104,7 +167,7 @@ namespace RTMobile.issues
 					//Заполняем списком полученным при запросе
 					if (rootObject != null && rootObject.issues != null)
 					{
-						for(int i =0; i < rootObject.issues.Count; ++i)
+						for (int i = 0; i < rootObject.issues.Count; ++i)
 						{
 							issues.Add(rootObject.issues[i]);
 						}
@@ -112,6 +175,8 @@ namespace RTMobile.issues
 				}
 				catch (Exception ex)
 				{
+					Console.WriteLine(ex.Message);
+					Crashes.TrackError(ex);
 					await DisplayAlert("Error", ex.ToString(), "OK").ConfigureAwait(true);
 				}
 			}
@@ -125,10 +190,6 @@ namespace RTMobile.issues
 		private void ImageButton_Clicked_4(object sender, EventArgs e)
 		{
 
-		}
-		private async void Button_Clicked(object sender, EventArgs e)
-		{
-			await Navigation.PushAsync(new RTMobile.issues.viewIssue.Transition(721, "IT-3757")).ConfigureAwait(true);
 		}
 
 		private void SearchBar_SearchButtonPressed(object sender, EventArgs e)

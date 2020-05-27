@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile.iOS\\RTMobile.iOS.csproj": {}
+    "F:\\project\\Mobile\\RTMobile\\RTMobile\\RTMobile.iOS\\RTMobile.iOS.csproj": {}
   },
   "projects": {
-    "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile.iOS\\RTMobile.iOS.csproj": {
+    "F:\\project\\Mobile\\RTMobile\\RTMobile\\RTMobile.iOS\\RTMobile.iOS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile.iOS\\RTMobile.iOS.csproj",
+        "projectUniqueName": "F:\\project\\Mobile\\RTMobile\\RTMobile\\RTMobile.iOS\\RTMobile.iOS.csproj",
         "projectName": "RTMobile.iOS",
-        "projectPath": "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile.iOS\\RTMobile.iOS.csproj",
+        "projectPath": "F:\\project\\Mobile\\RTMobile\\RTMobile\\RTMobile.iOS\\RTMobile.iOS.csproj",
         "packagesPath": "C:\\Users\\sekisov\\.nuget\\packages\\",
-        "outputPath": "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile.iOS\\obj\\",
+        "outputPath": "F:\\project\\Mobile\\RTMobile\\RTMobile\\RTMobile.iOS\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
@@ -32,8 +32,8 @@
         "frameworks": {
           "xamarinios10": {
             "projectReferences": {
-              "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj": {
-                "projectPath": "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj"
+              "F:\\project\\Mobile\\RTMobile\\RTMobile\\RTMobile\\RTMobile.csproj": {
+                "projectPath": "F:\\project\\Mobile\\RTMobile\\RTMobile\\RTMobile\\RTMobile.csproj"
               }
             }
           }
@@ -69,14 +69,14 @@
         }
       }
     },
-    "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj": {
+    "F:\\project\\Mobile\\RTMobile\\RTMobile\\RTMobile\\RTMobile.csproj": {
       "version": "1.0.0.2",
       "restore": {
-        "projectUniqueName": "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj",
+        "projectUniqueName": "F:\\project\\Mobile\\RTMobile\\RTMobile\\RTMobile\\RTMobile.csproj",
         "projectName": "RTMobile",
-        "projectPath": "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj",
+        "projectPath": "F:\\project\\Mobile\\RTMobile\\RTMobile\\RTMobile\\RTMobile.csproj",
         "packagesPath": "C:\\Users\\sekisov\\.nuget\\packages\\",
-        "outputPath": "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile\\obj\\",
+        "outputPath": "F:\\project\\Mobile\\RTMobile\\RTMobile\\RTMobile\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -118,11 +118,11 @@
             },
             "Microsoft.AppCenter.Analytics": {
               "target": "Package",
-              "version": "[3.1.0, )"
+              "version": "[3.2.1, )"
             },
             "Microsoft.AppCenter.Crashes": {
               "target": "Package",
-              "version": "[3.1.0, )"
+              "version": "[3.2.1, )"
             },
             "Microsoft.CSharp": {
               "target": "Package",
@@ -132,7 +132,7 @@
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[2.9.8, )"
+              "version": "[3.0.0, )"
             },
             "NETStandard.Library": {
               "suppressParent": "All",
@@ -158,7 +158,7 @@
             },
             "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",
-              "version": "[6.5.0, )"
+              "version": "[6.5.1, )"
             },
             "System.Net.Http": {
               "target": "Package",
@@ -178,7 +178,7 @@
             },
             "Xamarin.Essentials": {
               "target": "Package",
-              "version": "[1.5.2, )"
+              "version": "[1.5.3.2, )"
             },
             "Xamarin.FFImageLoading": {
               "target": "Package",
@@ -190,7 +190,7 @@
             },
             "Xamarin.Forms": {
               "target": "Package",
-              "version": "[4.5.0.617, )"
+              "version": "[4.6.0.772, )"
             }
           },
           "imports": [

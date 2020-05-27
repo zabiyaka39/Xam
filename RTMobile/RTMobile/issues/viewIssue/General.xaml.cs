@@ -107,7 +107,7 @@ namespace RTMobile.issues.viewIssue
 		}
 
 		void ImageButton_Clicked_2(System.Object sender, System.EventArgs e)
-		{
+		{			
 			Navigation.PushAsync(new Filter());
 		}
 

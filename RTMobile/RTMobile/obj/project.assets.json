@@ -24,7 +24,7 @@
           "lib/netstandard2.0/CarouselView.FormsPlugin.Abstractions.dll": {}
         }
       },
-      "Microsoft.AppCenter/3.1.0": {
+      "Microsoft.AppCenter/3.2.1": {
         "type": "package",
         "compile": {
           "lib/netstandard1.0/Microsoft.AppCenter.dll": {}
@@ -33,10 +33,10 @@
           "lib/netstandard1.0/Microsoft.AppCenter.dll": {}
         }
       },
-      "Microsoft.AppCenter.Analytics/3.1.0": {
+      "Microsoft.AppCenter.Analytics/3.2.1": {
         "type": "package",
         "dependencies": {
-          "Microsoft.AppCenter": "3.1.0"
+          "Microsoft.AppCenter": "3.2.1"
         },
         "compile": {
           "lib/netstandard1.0/Microsoft.AppCenter.Analytics.dll": {}
@@ -45,10 +45,10 @@
           "lib/netstandard1.0/Microsoft.AppCenter.Analytics.dll": {}
         }
       },
-      "Microsoft.AppCenter.Crashes/3.1.0": {
+      "Microsoft.AppCenter.Crashes/3.2.1": {
         "type": "package",
         "dependencies": {
-          "Microsoft.AppCenter": "3.1.0"
+          "Microsoft.AppCenter": "3.2.1"
         },
         "compile": {
           "lib/netstandard1.0/Microsoft.AppCenter.Crashes.dll": {}
@@ -57,25 +57,25 @@
           "lib/netstandard1.0/Microsoft.AppCenter.Crashes.dll": {}
         }
       },
-      "Microsoft.CodeAnalysis.FxCopAnalyzers/2.9.8": {
+      "Microsoft.CodeAnalysis.FxCopAnalyzers/3.0.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.CodeAnalysis.VersionCheckAnalyzer": "[2.9.8]",
-          "Microsoft.CodeQuality.Analyzers": "[2.9.8]",
-          "Microsoft.NetCore.Analyzers": "[2.9.8]",
-          "Microsoft.NetFramework.Analyzers": "[2.9.8]"
+          "Microsoft.CodeAnalysis.VersionCheckAnalyzer": "[3.0.0]",
+          "Microsoft.CodeQuality.Analyzers": "[3.0.0]",
+          "Microsoft.NetCore.Analyzers": "[3.0.0]",
+          "Microsoft.NetFramework.Analyzers": "[3.0.0]"
         },
         "build": {
           "build/Microsoft.CodeAnalysis.FxCopAnalyzers.props": {}
         }
       },
-      "Microsoft.CodeAnalysis.VersionCheckAnalyzer/2.9.8": {
+      "Microsoft.CodeAnalysis.VersionCheckAnalyzer/3.0.0": {
         "type": "package",
         "build": {
           "build/Microsoft.CodeAnalysis.VersionCheckAnalyzer.props": {}
         }
       },
-      "Microsoft.CodeQuality.Analyzers/2.9.8": {
+      "Microsoft.CodeQuality.Analyzers/3.0.0": {
         "type": "package",
         "build": {
           "build/Microsoft.CodeQuality.Analyzers.props": {}
@@ -138,10 +138,10 @@
           "lib/netstandard1.3/Microsoft.Extensions.PlatformAbstractions.dll": {}
         }
       },
-      "Microsoft.IdentityModel.JsonWebTokens/6.5.0": {
+      "Microsoft.IdentityModel.JsonWebTokens/6.5.1": {
         "type": "package",
         "dependencies": {
-          "Microsoft.IdentityModel.Tokens": "6.5.0"
+          "Microsoft.IdentityModel.Tokens": "6.5.1"
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.IdentityModel.JsonWebTokens.dll": {}
@@ -150,7 +150,7 @@
           "lib/netstandard2.0/Microsoft.IdentityModel.JsonWebTokens.dll": {}
         }
       },
-      "Microsoft.IdentityModel.Logging/6.5.0": {
+      "Microsoft.IdentityModel.Logging/6.5.1": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/Microsoft.IdentityModel.Logging.dll": {}
@@ -159,11 +159,11 @@
           "lib/netstandard2.0/Microsoft.IdentityModel.Logging.dll": {}
         }
       },
-      "Microsoft.IdentityModel.Tokens/6.5.0": {
+      "Microsoft.IdentityModel.Tokens/6.5.1": {
         "type": "package",
         "dependencies": {
           "Microsoft.CSharp": "4.5.0",
-          "Microsoft.IdentityModel.Logging": "6.5.0",
+          "Microsoft.IdentityModel.Logging": "6.5.1",
           "System.Security.Cryptography.Cng": "4.5.0"
         },
         "compile": {
@@ -173,7 +173,7 @@
           "lib/netstandard2.0/Microsoft.IdentityModel.Tokens.dll": {}
         }
       },
-      "Microsoft.NetCore.Analyzers/2.9.8": {
+      "Microsoft.NetCore.Analyzers/3.0.0": {
         "type": "package",
         "build": {
           "build/Microsoft.NetCore.Analyzers.props": {}
@@ -197,7 +197,7 @@
           "lib/netstandard1.0/_._": {}
         }
       },
-      "Microsoft.NetFramework.Analyzers/2.9.8": {
+      "Microsoft.NetFramework.Analyzers/3.0.0": {
         "type": "package",
         "build": {
           "build/Microsoft.NetFramework.Analyzers.props": {}
@@ -677,11 +677,11 @@
           }
         }
       },
-      "System.IdentityModel.Tokens.Jwt/6.5.0": {
+      "System.IdentityModel.Tokens.Jwt/6.5.1": {
         "type": "package",
         "dependencies": {
-          "Microsoft.IdentityModel.JsonWebTokens": "6.5.0",
-          "Microsoft.IdentityModel.Tokens": "6.5.0"
+          "Microsoft.IdentityModel.JsonWebTokens": "6.5.1",
+          "Microsoft.IdentityModel.Tokens": "6.5.1"
         },
         "compile": {
           "lib/netstandard2.0/System.IdentityModel.Tokens.Jwt.dll": {}
@@ -1525,7 +1525,7 @@
           "lib/netstandard1.0/Plugin.Settings.dll": {}
         }
       },
-      "Xamarin.Essentials/1.5.2": {
+      "Xamarin.Essentials/1.5.3.2": {
         "type": "package",
         "dependencies": {
           "System.Numerics.Vectors": "4.5.0"
@@ -1561,7 +1561,7 @@
           "lib/netstandard1.0/FFImageLoading.Forms.dll": {}
         }
       },
-      "Xamarin.Forms/4.5.0.617": {
+      "Xamarin.Forms/4.6.0.772": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/Xamarin.Forms.Core.dll": {},
@@ -1617,10 +1617,10 @@
         "lib/portable-net45+netcore45+wpa81+wp8+MonoAndroid10+Xamarin.iOS10/CarouselView.FormsPlugin.Abstractions.dll"
       ]
     },
-    "Microsoft.AppCenter/3.1.0": {
-      "sha512": "CHGMZIvOQxfiupheTAGEr1NeYRWtdy92iItG48l2rXI0bjRtSn34Tqtu7pR+IGKpBA5wIAgDSPFfyhFB4QxofA==",
+    "Microsoft.AppCenter/3.2.1": {
+      "sha512": "3t2lTMEbhDNPEXCurKBS8wRag4xtloGm9E7F4DpLIRhJtTCYgcIwvajPYj3WE0LjSzhrMKEn9tCaORHDAsdmaw==",
       "type": "package",
-      "path": "microsoft.appcenter/3.1.0",
+      "path": "microsoft.appcenter/3.2.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1638,14 +1638,14 @@
         "lib/netstandard1.0/Microsoft.AppCenter.xml",
         "lib/uap10.0/Microsoft.AppCenter.dll",
         "lib/uap10.0/Microsoft.AppCenter.xml",
-        "microsoft.appcenter.3.1.0.nupkg.sha512",
+        "microsoft.appcenter.3.2.1.nupkg.sha512",
         "microsoft.appcenter.nuspec"
       ]
     },
-    "Microsoft.AppCenter.Analytics/3.1.0": {
-      "sha512": "txNI5dJ6qK9wL/aYt7GJa7CChm6QmYxln10p7mOpiC5nC+Pq5ca1MtK+AQzA0PG1Txuy1L1o87YpAzfLmSPOMw==",
+    "Microsoft.AppCenter.Analytics/3.2.1": {
+      "sha512": "38HJ5GxKMI3Hyy32SiPxcZfOEL8aBKcV2MR/BLCKR9VlNt4ZpbdJLU/4yoFi/n8zkyFkJykVSA8ADtOjekYseA==",
       "type": "package",
-      "path": "microsoft.appcenter.analytics/3.1.0",
+      "path": "microsoft.appcenter.analytics/3.2.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1663,14 +1663,14 @@
         "lib/netstandard1.0/Microsoft.AppCenter.Analytics.xml",
         "lib/uap10.0/Microsoft.AppCenter.Analytics.dll",
         "lib/uap10.0/Microsoft.AppCenter.Analytics.xml",
-        "microsoft.appcenter.analytics.3.1.0.nupkg.sha512",
+        "microsoft.appcenter.analytics.3.2.1.nupkg.sha512",
         "microsoft.appcenter.analytics.nuspec"
       ]
     },
-    "Microsoft.AppCenter.Crashes/3.1.0": {
-      "sha512": "cHpcpoXpIiqKWeGR8NipTQb7ffuD3AMal2wiLtrbWM3C3p8BCwhy3xck8eOutS4CoE5uM9380EKWrEEQ0PWQqg==",
+    "Microsoft.AppCenter.Crashes/3.2.1": {
+      "sha512": "T3nFFv+Zq0oGHawKkqo6x6Aox+dITbKxsTuDMtuyTStTEhKuwXuIx08xoViMF0oDHjYk0NHSZICOVKoUjwuBzQ==",
       "type": "package",
-      "path": "microsoft.appcenter.crashes/3.1.0",
+      "path": "microsoft.appcenter.crashes/3.2.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1688,14 +1688,14 @@
         "lib/netstandard1.0/Microsoft.AppCenter.Crashes.xml",
         "lib/uap10.0/Microsoft.AppCenter.Crashes.dll",
         "lib/uap10.0/Microsoft.AppCenter.Crashes.xml",
-        "microsoft.appcenter.crashes.3.1.0.nupkg.sha512",
+        "microsoft.appcenter.crashes.3.2.1.nupkg.sha512",
         "microsoft.appcenter.crashes.nuspec"
       ]
     },
-    "Microsoft.CodeAnalysis.FxCopAnalyzers/2.9.8": {
-      "sha512": "FZhO7S+xinFrcRvPyIxPbFgY0Jg3X+KNkawhg7wwoVxnT/ySdoO162dyIMXfQQ6/qCmjNFHmTDXiNlpPNvKNyQ==",
+    "Microsoft.CodeAnalysis.FxCopAnalyzers/3.0.0": {
+      "sha512": "ea8bbNa4fzS/s55AUCAvYjb6Y3lFysFVfEwt9zIwR/NeFpOcUluIleOXSUPAyUtwBFugn01aWvNfMVmIwnvgqQ==",
       "type": "package",
-      "path": "microsoft.codeanalysis.fxcopanalyzers/2.9.8",
+      "path": "microsoft.codeanalysis.fxcopanalyzers/3.0.0",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
@@ -1733,7 +1733,7 @@
         "editorconfig/SecurityRulesEnabled/.editorconfig",
         "editorconfig/UsageRulesDefault/.editorconfig",
         "editorconfig/UsageRulesEnabled/.editorconfig",
-        "microsoft.codeanalysis.fxcopanalyzers.2.9.8.nupkg.sha512",
+        "microsoft.codeanalysis.fxcopanalyzers.3.0.0.nupkg.sha512",
         "microsoft.codeanalysis.fxcopanalyzers.nuspec",
         "rulesets/AllRulesDefault.ruleset",
         "rulesets/AllRulesDisabled.ruleset",
@@ -1775,10 +1775,10 @@
         "tools/uninstall.ps1"
       ]
     },
-    "Microsoft.CodeAnalysis.VersionCheckAnalyzer/2.9.8": {
-      "sha512": "iSjqkECKpagJPjzc7sMjD6rQWSznVYqTfUZ96yR0r0jDzA45TymBof350tlOfGDRvn4OrU/KKJav21/oZDttrA==",
+    "Microsoft.CodeAnalysis.VersionCheckAnalyzer/3.0.0": {
+      "sha512": "RL9OdvWLhtQXcvxK2EPbXM9LandLcDG14Ndz5baVH2aiyvEB11VrHfrzLNoEE5B2/zhRGqN+BHsBg21f75wG9g==",
       "type": "package",
-      "path": "microsoft.codeanalysis.versioncheckanalyzer/2.9.8",
+      "path": "microsoft.codeanalysis.versioncheckanalyzer/3.0.0",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
@@ -1812,7 +1812,7 @@
         "editorconfig/PortedFromFxCopRulesEnabled/.editorconfig",
         "editorconfig/ReliabilityRulesDefault/.editorconfig",
         "editorconfig/ReliabilityRulesEnabled/.editorconfig",
-        "microsoft.codeanalysis.versioncheckanalyzer.2.9.8.nupkg.sha512",
+        "microsoft.codeanalysis.versioncheckanalyzer.3.0.0.nupkg.sha512",
         "microsoft.codeanalysis.versioncheckanalyzer.nuspec",
         "rulesets/AllRulesDefault.ruleset",
         "rulesets/AllRulesDisabled.ruleset",
@@ -1827,10 +1827,10 @@
         "tools/uninstall.ps1"
       ]
     },
-    "Microsoft.CodeQuality.Analyzers/2.9.8": {
-      "sha512": "KevAiJKuolGKK84jDHMVGJjBAigH/86xyCVtbOzh5avUYzW7jPErdJW708byKKMiVKTwv027mbKCNnnOgNQHsA==",
+    "Microsoft.CodeQuality.Analyzers/3.0.0": {
+      "sha512": "pOROTgdPa+15sYfEMvDlWlDEedCO1SuRLrRjX36Ltli3SmhZawC2Vgws4crz1XMs9WRzBo8WIJM5WRzGNsOSmQ==",
       "type": "package",
-      "path": "microsoft.codequality.analyzers/2.9.8",
+      "path": "microsoft.codequality.analyzers/3.0.0",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
@@ -1896,7 +1896,7 @@
         "editorconfig/SecurityRulesEnabled/.editorconfig",
         "editorconfig/UsageRulesDefault/.editorconfig",
         "editorconfig/UsageRulesEnabled/.editorconfig",
-        "microsoft.codequality.analyzers.2.9.8.nupkg.sha512",
+        "microsoft.codequality.analyzers.3.0.0.nupkg.sha512",
         "microsoft.codequality.analyzers.nuspec",
         "rulesets/AllRulesDefault.ruleset",
         "rulesets/AllRulesDisabled.ruleset",
@@ -2040,10 +2040,10 @@
         "microsoft.extensions.platformabstractions.nuspec"
       ]
     },
-    "Microsoft.IdentityModel.JsonWebTokens/6.5.0": {
-      "sha512": "9h0AqqcKck8pjrX1KCfm3pLrsH/nWa6Lt5G7kCee9bfbmMa6cxHOlLtgp9sp+hXuiHsjMv4YtpPCFEoFNsHwyA==",
+    "Microsoft.IdentityModel.JsonWebTokens/6.5.1": {
+      "sha512": "zOnP8Hv6JcA+E2qeHGVo6KM7lV7J9kj2a/+VasTTqZ1mkLhnxTLpX7oZ3n8HJ7hZXuG2KY3P/EaCt6eApM30kQ==",
       "type": "package",
-      "path": "microsoft.identitymodel.jsonwebtokens/6.5.0",
+      "path": "microsoft.identitymodel.jsonwebtokens/6.5.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2053,14 +2053,14 @@
         "lib/net461/Microsoft.IdentityModel.JsonWebTokens.xml",
         "lib/netstandard2.0/Microsoft.IdentityModel.JsonWebTokens.dll",
         "lib/netstandard2.0/Microsoft.IdentityModel.JsonWebTokens.xml",
-        "microsoft.identitymodel.jsonwebtokens.6.5.0.nupkg.sha512",
+        "microsoft.identitymodel.jsonwebtokens.6.5.1.nupkg.sha512",
         "microsoft.identitymodel.jsonwebtokens.nuspec"
       ]
     },
-    "Microsoft.IdentityModel.Logging/6.5.0": {
-      "sha512": "H1QRoz+tKrNcQfRWIREWrzWLAXXp2G8YuYndS3JNGJ05HIjYg9x04fbcfh/0zV7zLRDaNfJjpwLFQJ23L6S7oQ==",
+    "Microsoft.IdentityModel.Logging/6.5.1": {
+      "sha512": "iujlW4mgBKaib0gB3wbJLCCRhaNmxt504O5aGMdIH0JLIjCw+LbX+q3SFf3u0C29rYErvQQ9xeAtGywjvSGLxg==",
       "type": "package",
-      "path": "microsoft.identitymodel.logging/6.5.0",
+      "path": "microsoft.identitymodel.logging/6.5.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2070,14 +2070,14 @@
         "lib/net461/Microsoft.IdentityModel.Logging.xml",
         "lib/netstandard2.0/Microsoft.IdentityModel.Logging.dll",
         "lib/netstandard2.0/Microsoft.IdentityModel.Logging.xml",
-        "microsoft.identitymodel.logging.6.5.0.nupkg.sha512",
+        "microsoft.identitymodel.logging.6.5.1.nupkg.sha512",
         "microsoft.identitymodel.logging.nuspec"
       ]
     },
-    "Microsoft.IdentityModel.Tokens/6.5.0": {
-      "sha512": "43mUg9N8dTn8Eb8bRd4Z7cBOwAgJRSV3vOs76V45HJhQutodXGTH2JhLW601LFCEEjy5gH2Ab89A2OVeWyErLQ==",
+    "Microsoft.IdentityModel.Tokens/6.5.1": {
+      "sha512": "+kKU5tbizQmXee6iYJwqxROInlohMYhKYbLa37BUnU/YBhCvPapi2iywE4bVgno2NOF78p7VBERd/s+gYM/9dA==",
       "type": "package",
-      "path": "microsoft.identitymodel.tokens/6.5.0",
+      "path": "microsoft.identitymodel.tokens/6.5.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2087,14 +2087,14 @@
         "lib/net461/Microsoft.IdentityModel.Tokens.xml",
         "lib/netstandard2.0/Microsoft.IdentityModel.Tokens.dll",
         "lib/netstandard2.0/Microsoft.IdentityModel.Tokens.xml",
-        "microsoft.identitymodel.tokens.6.5.0.nupkg.sha512",
+        "microsoft.identitymodel.tokens.6.5.1.nupkg.sha512",
         "microsoft.identitymodel.tokens.nuspec"
       ]
     },
-    "Microsoft.NetCore.Analyzers/2.9.8": {
-      "sha512": "zbGttCZ8T5wJiBDhgIaFWTrYa/X7zbCnQ76PEu/B4gb64KY+yB9gjkndsKWR+2TbOId76PN7WrSQAn+W7gr5jQ==",
+    "Microsoft.NetCore.Analyzers/3.0.0": {
+      "sha512": "JdjhkobYjmQAu4JpsEALDAr7xig2pzXMsXGilHJ2gvmUaUSBjYObw53CBaIkRXmPu0DaDPN8ze9LCtsRd1R8UA==",
       "type": "package",
-      "path": "microsoft.netcore.analyzers/2.9.8",
+      "path": "microsoft.netcore.analyzers/3.0.0",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
@@ -2154,7 +2154,7 @@
         "editorconfig/SecurityRulesEnabled/.editorconfig",
         "editorconfig/UsageRulesDefault/.editorconfig",
         "editorconfig/UsageRulesEnabled/.editorconfig",
-        "microsoft.netcore.analyzers.2.9.8.nupkg.sha512",
+        "microsoft.netcore.analyzers.3.0.0.nupkg.sha512",
         "microsoft.netcore.analyzers.nuspec",
         "rulesets/AllRulesDefault.ruleset",
         "rulesets/AllRulesDisabled.ruleset",
@@ -2209,10 +2209,10 @@
         "runtime.json"
       ]
     },
-    "Microsoft.NetFramework.Analyzers/2.9.8": {
-      "sha512": "8fZYJqeKBW5uuKBact26IeOBogchn5Km85klHqHneRY7Jxp+ERtrw8zJVumNFUVL68pIcf4uKPOY7zfBQ7eY3A==",
+    "Microsoft.NetFramework.Analyzers/3.0.0": {
+      "sha512": "Q0sB3JYld9JMa9/HKtioIxhqmOohEku1FkfSC/uf0usGcCIhm6GYWU565klP64jC2kzmjFIu/6fkHEIYRqZCQQ==",
       "type": "package",
-      "path": "microsoft.netframework.analyzers/2.9.8",
+      "path": "microsoft.netframework.analyzers/3.0.0",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
@@ -2264,7 +2264,7 @@
         "editorconfig/PortedFromFxCopRulesEnabled/.editorconfig",
         "editorconfig/SecurityRulesDefault/.editorconfig",
         "editorconfig/SecurityRulesEnabled/.editorconfig",
-        "microsoft.netframework.analyzers.2.9.8.nupkg.sha512",
+        "microsoft.netframework.analyzers.3.0.0.nupkg.sha512",
         "microsoft.netframework.analyzers.nuspec",
         "rulesets/AllRulesDefault.ruleset",
         "rulesets/AllRulesDisabled.ruleset",
@@ -3576,10 +3576,10 @@
         "system.globalization.extensions.nuspec"
       ]
     },
-    "System.IdentityModel.Tokens.Jwt/6.5.0": {
-      "sha512": "x1I1BcZrgF8CPWuR8pu6ip9wiQVSULozPSJLyAwMPt6f9bW8/u43OGxiaqLHnA0ybHrpOz3Misiu/D97gsYb+A==",
+    "System.IdentityModel.Tokens.Jwt/6.5.1": {
+      "sha512": "2t8+04Ozz4vX10X1h+lqV8X7PkLUSRTr+kRY4QNpAeTUngqGqv180A1JDK2piGEKCvNbm6xGGkajL9STgI0JJA==",
       "type": "package",
-      "path": "system.identitymodel.tokens.jwt/6.5.0",
+      "path": "system.identitymodel.tokens.jwt/6.5.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -3589,7 +3589,7 @@
         "lib/net461/System.IdentityModel.Tokens.Jwt.xml",
         "lib/netstandard2.0/System.IdentityModel.Tokens.Jwt.dll",
         "lib/netstandard2.0/System.IdentityModel.Tokens.Jwt.xml",
-        "system.identitymodel.tokens.jwt.6.5.0.nupkg.sha512",
+        "system.identitymodel.tokens.jwt.6.5.1.nupkg.sha512",
         "system.identitymodel.tokens.jwt.nuspec"
       ]
     },
@@ -6066,10 +6066,10 @@
         "xam.plugins.settings.nuspec"
       ]
     },
-    "Xamarin.Essentials/1.5.2": {
-      "sha512": "qHxkrkx5jIC0X/qWhxCPZ3MuuOJm8bfCzAoUtlpOBSE4oV0JhrkTezK0A+IV+k/MeJ3zKc8FexaIXah9rlCTIw==",
+    "Xamarin.Essentials/1.5.3.2": {
+      "sha512": "BSLgDJUOPFRwTpQaftM+s4qb/MsTjrqXulEYDOcK6KF3i0Orf75zo3RwRfqnQ8WfpoEFxW/v0jgcPWCvOMgHxg==",
       "type": "package",
-      "path": "xamarin.essentials/1.5.2",
+      "path": "xamarin.essentials/1.5.3.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -6110,7 +6110,7 @@
         "lib/xamarinwatchos10/Xamarin.Essentials.pdb",
         "lib/xamarinwatchos10/Xamarin.Essentials.xml",
         "readme.txt",
-        "xamarin.essentials.1.5.2.nupkg.sha512",
+        "xamarin.essentials.1.5.3.2.nupkg.sha512",
         "xamarin.essentials.nuspec"
       ]
     },
@@ -6224,10 +6224,10 @@
         "xamarin.ffimageloading.forms.nuspec"
       ]
     },
-    "Xamarin.Forms/4.5.0.617": {
-      "sha512": "tB/h7bHEylOgNT+521SRnbmO+LCe5R3lPboD/icCMpa+FdjmxhZQ7+fIIPFDbhY2dqYetGRnAeJWXVx4NLbmAw==",
+    "Xamarin.Forms/4.6.0.772": {
+      "sha512": "tRxuc7x0PgLYZRjRvs2mm3D8KnkKgCCYOuXHnqOjcXWUJWBDmexM8R7LxWPyEBSLMU55SGl+RRcFvHZcOSsgMA==",
       "type": "package",
-      "path": "xamarin.forms/4.5.0.617",
+      "path": "xamarin.forms/4.6.0.772",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -6490,8 +6490,8 @@
         "lib/uap10.0.14393/Xamarin.Forms.Platform.UAP/Microsoft.UI.Xaml/Themes/generic.xaml",
         "lib/uap10.0.14393/Xamarin.Forms.Platform.UAP/PageControlStyle.xaml",
         "lib/uap10.0.14393/Xamarin.Forms.Platform.UAP/PickerStyle.xaml",
+        "lib/uap10.0.14393/Xamarin.Forms.Platform.UAP/PromptDialog.xaml",
         "lib/uap10.0.14393/Xamarin.Forms.Platform.UAP/Resources.xaml",
-        "lib/uap10.0.14393/Xamarin.Forms.Platform.UAP/Shell/ShellStyles.xaml",
         "lib/uap10.0.14393/Xamarin.Forms.Platform.UAP/SliderStyle.xaml",
         "lib/uap10.0.14393/Xamarin.Forms.Platform.UAP/StepperControl.xaml",
         "lib/uap10.0.14393/Xamarin.Forms.Platform.UAP/TabbedPageStyle.xaml",
@@ -6522,6 +6522,7 @@
         "lib/uap10.0.16299/Xamarin.Forms.Platform.UAP/Microsoft.UI.Xaml/Themes/generic.xaml",
         "lib/uap10.0.16299/Xamarin.Forms.Platform.UAP/PageControlStyle.xaml",
         "lib/uap10.0.16299/Xamarin.Forms.Platform.UAP/PickerStyle.xaml",
+        "lib/uap10.0.16299/Xamarin.Forms.Platform.UAP/PromptDialog.xaml",
         "lib/uap10.0.16299/Xamarin.Forms.Platform.UAP/Resources.xaml",
         "lib/uap10.0.16299/Xamarin.Forms.Platform.UAP/Shell/ShellStyles.xaml",
         "lib/uap10.0.16299/Xamarin.Forms.Platform.UAP/SliderStyle.xaml",
@@ -6532,7 +6533,7 @@
         "lib/uap10.0.16299/Xamarin.Forms.Xaml.dll",
         "lib/uap10.0.16299/Xamarin.Forms.Xaml.pdb",
         "lib/uap10.0.16299/Xamarin.Forms.Xaml.xml",
-        "xamarin.forms.4.5.0.617.nupkg.sha512",
+        "xamarin.forms.4.6.0.772.nupkg.sha512",
         "xamarin.forms.nuspec"
       ]
     }
@@ -6541,24 +6542,24 @@
     ".NETStandard,Version=v2.0": [
       "CarouselView >= 7.0.3.1",
       "CarouselView.FormsPlugin >= 5.2.0",
-      "Microsoft.AppCenter.Analytics >= 3.1.0",
-      "Microsoft.AppCenter.Crashes >= 3.1.0",
+      "Microsoft.AppCenter.Analytics >= 3.2.1",
+      "Microsoft.AppCenter.Crashes >= 3.2.1",
       "Microsoft.CSharp >= 4.7.0",
-      "Microsoft.CodeAnalysis.FxCopAnalyzers >= 2.9.8",
+      "Microsoft.CodeAnalysis.FxCopAnalyzers >= 3.0.0",
       "NETStandard.Library >= 2.0.3",
       "Nancy >= 2.0.0",
       "Newtonsoft.Json >= 12.0.3",
       "RestSharp >= 106.11.4",
       "Rg.Plugins.Popup >= 2.0.0.2",
-      "System.IdentityModel.Tokens.Jwt >= 6.5.0",
+      "System.IdentityModel.Tokens.Jwt >= 6.5.1",
       "System.Net.Http >= 4.3.4",
       "System.Xml.XmlSerializer >= 4.3.0",
       "Xam.Plugin.Media >= 5.0.1",
       "Xam.Plugins.Settings >= 3.1.1",
-      "Xamarin.Essentials >= 1.5.2",
+      "Xamarin.Essentials >= 1.5.3.2",
       "Xamarin.FFImageLoading >= 2.4.11.982",
       "Xamarin.FFImageLoading.Forms >= 2.4.11.982",
-      "Xamarin.Forms >= 4.5.0.617"
+      "Xamarin.Forms >= 4.6.0.772"
     ]
   },
   "packageFolders": {
@@ -6615,11 +6616,11 @@
           },
           "Microsoft.AppCenter.Analytics": {
             "target": "Package",
-            "version": "[3.1.0, )"
+            "version": "[3.2.1, )"
           },
           "Microsoft.AppCenter.Crashes": {
             "target": "Package",
-            "version": "[3.1.0, )"
+            "version": "[3.2.1, )"
           },
           "Microsoft.CSharp": {
             "target": "Package",
@@ -6629,7 +6630,7 @@
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
             "suppressParent": "All",
             "target": "Package",
-            "version": "[2.9.8, )"
+            "version": "[3.0.0, )"
           },
           "NETStandard.Library": {
             "suppressParent": "All",
@@ -6655,7 +6656,7 @@
           },
           "System.IdentityModel.Tokens.Jwt": {
             "target": "Package",
-            "version": "[6.5.0, )"
+            "version": "[6.5.1, )"
           },
           "System.Net.Http": {
             "target": "Package",
@@ -6675,7 +6676,7 @@
           },
           "Xamarin.Essentials": {
             "target": "Package",
-            "version": "[1.5.2, )"
+            "version": "[1.5.3.2, )"
           },
           "Xamarin.FFImageLoading": {
             "target": "Package",
@@ -6687,7 +6688,7 @@
           },
           "Xamarin.Forms": {
             "target": "Package",
-            "version": "[4.5.0.617, )"
+            "version": "[4.6.0.772, )"
           }
         },
         "imports": [

@@ -29,7 +29,7 @@
           "lib/UAP10/CarouselView.FormsPlugin.UWP.dll": {}
         }
       },
-      "Microsoft.AppCenter/3.1.0": {
+      "Microsoft.AppCenter/3.2.1": {
         "type": "package",
         "dependencies": {
           "Microsoft.NETCore.UniversalWindowsPlatform": "6.2.8",
@@ -43,10 +43,10 @@
           "lib/uap10.0/Microsoft.AppCenter.dll": {}
         }
       },
-      "Microsoft.AppCenter.Analytics/3.1.0": {
+      "Microsoft.AppCenter.Analytics/3.2.1": {
         "type": "package",
         "dependencies": {
-          "Microsoft.AppCenter": "3.1.0"
+          "Microsoft.AppCenter": "3.2.1"
         },
         "compile": {
           "lib/uap10.0/Microsoft.AppCenter.Analytics.dll": {}
@@ -55,10 +55,10 @@
           "lib/uap10.0/Microsoft.AppCenter.Analytics.dll": {}
         }
       },
-      "Microsoft.AppCenter.Crashes/3.1.0": {
+      "Microsoft.AppCenter.Crashes/3.2.1": {
         "type": "package",
         "dependencies": {
-          "Microsoft.AppCenter": "3.1.0",
+          "Microsoft.AppCenter": "3.2.1",
           "System.Reflection.Metadata": "1.7.0"
         },
         "compile": {
@@ -125,10 +125,10 @@
           "lib/netstandard1.3/Microsoft.Extensions.PlatformAbstractions.dll": {}
         }
       },
-      "Microsoft.IdentityModel.JsonWebTokens/6.5.0": {
+      "Microsoft.IdentityModel.JsonWebTokens/6.5.1": {
         "type": "package",
         "dependencies": {
-          "Microsoft.IdentityModel.Tokens": "6.5.0"
+          "Microsoft.IdentityModel.Tokens": "6.5.1"
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.IdentityModel.JsonWebTokens.dll": {}
@@ -137,7 +137,7 @@
           "lib/netstandard2.0/Microsoft.IdentityModel.JsonWebTokens.dll": {}
         }
       },
-      "Microsoft.IdentityModel.Logging/6.5.0": {
+      "Microsoft.IdentityModel.Logging/6.5.1": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/Microsoft.IdentityModel.Logging.dll": {}
@@ -146,11 +146,11 @@
           "lib/netstandard2.0/Microsoft.IdentityModel.Logging.dll": {}
         }
       },
-      "Microsoft.IdentityModel.Tokens/6.5.0": {
+      "Microsoft.IdentityModel.Tokens/6.5.1": {
         "type": "package",
         "dependencies": {
           "Microsoft.CSharp": "4.5.0",
-          "Microsoft.IdentityModel.Logging": "6.5.0",
+          "Microsoft.IdentityModel.Logging": "6.5.1",
           "System.Security.Cryptography.Cng": "4.5.0"
         },
         "compile": {
@@ -1015,11 +1015,11 @@
           }
         }
       },
-      "System.IdentityModel.Tokens.Jwt/6.5.0": {
+      "System.IdentityModel.Tokens.Jwt/6.5.1": {
         "type": "package",
         "dependencies": {
-          "Microsoft.IdentityModel.JsonWebTokens": "6.5.0",
-          "Microsoft.IdentityModel.Tokens": "6.5.0"
+          "Microsoft.IdentityModel.JsonWebTokens": "6.5.1",
+          "Microsoft.IdentityModel.Tokens": "6.5.1"
         },
         "compile": {
           "lib/netstandard2.0/System.IdentityModel.Tokens.Jwt.dll": {}
@@ -1972,22 +1972,22 @@
         "dependencies": {
           "CarouselView": "7.0.3.1",
           "CarouselView.FormsPlugin": "5.2.0",
-          "Microsoft.AppCenter.Analytics": "3.1.0",
-          "Microsoft.AppCenter.Crashes": "3.1.0",
+          "Microsoft.AppCenter.Analytics": "3.2.1",
+          "Microsoft.AppCenter.Crashes": "3.2.1",
           "Microsoft.CSharp": "4.7.0",
           "Nancy": "2.0.0",
           "Newtonsoft.Json": "12.0.3",
           "RestSharp": "106.11.4",
           "Rg.Plugins.Popup": "2.0.0.2",
-          "System.IdentityModel.Tokens.Jwt": "6.5.0",
+          "System.IdentityModel.Tokens.Jwt": "6.5.1",
           "System.Net.Http": "4.3.4",
           "System.Xml.XmlSerializer": "4.3.0",
           "Xam.Plugin.Media": "5.0.1",
           "Xam.Plugins.Settings": "3.1.1",
-          "Xamarin.Essentials": "1.5.2",
+          "Xamarin.Essentials": "1.5.3.2",
           "Xamarin.FFImageLoading": "2.4.11.982",
           "Xamarin.FFImageLoading.Forms": "2.4.11.982",
-          "Xamarin.Forms": "4.5.0.617"
+          "Xamarin.Forms": "4.6.0.772"
         },
         "compile": {
           "bin/placeholder/RTMobile.dll": {}
@@ -2025,7 +2025,7 @@
           "lib/UAP10/CarouselView.FormsPlugin.UWP.dll": {}
         }
       },
-      "Microsoft.AppCenter/3.1.0": {
+      "Microsoft.AppCenter/3.2.1": {
         "type": "package",
         "dependencies": {
           "Microsoft.NETCore.UniversalWindowsPlatform": "6.2.8",
@@ -2039,10 +2039,10 @@
           "lib/uap10.0/Microsoft.AppCenter.dll": {}
         }
       },
-      "Microsoft.AppCenter.Analytics/3.1.0": {
+      "Microsoft.AppCenter.Analytics/3.2.1": {
         "type": "package",
         "dependencies": {
-          "Microsoft.AppCenter": "3.1.0"
+          "Microsoft.AppCenter": "3.2.1"
         },
         "compile": {
           "lib/uap10.0/Microsoft.AppCenter.Analytics.dll": {}
@@ -2051,10 +2051,10 @@
           "lib/uap10.0/Microsoft.AppCenter.Analytics.dll": {}
         }
       },
-      "Microsoft.AppCenter.Crashes/3.1.0": {
+      "Microsoft.AppCenter.Crashes/3.2.1": {
         "type": "package",
         "dependencies": {
-          "Microsoft.AppCenter": "3.1.0",
+          "Microsoft.AppCenter": "3.2.1",
           "System.Reflection.Metadata": "1.7.0"
         },
         "compile": {
@@ -2121,10 +2121,10 @@
           "lib/netstandard1.3/Microsoft.Extensions.PlatformAbstractions.dll": {}
         }
       },
-      "Microsoft.IdentityModel.JsonWebTokens/6.5.0": {
+      "Microsoft.IdentityModel.JsonWebTokens/6.5.1": {
         "type": "package",
         "dependencies": {
-          "Microsoft.IdentityModel.Tokens": "6.5.0"
+          "Microsoft.IdentityModel.Tokens": "6.5.1"
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.IdentityModel.JsonWebTokens.dll": {}
@@ -2133,7 +2133,7 @@
           "lib/netstandard2.0/Microsoft.IdentityModel.JsonWebTokens.dll": {}
         }
       },
-      "Microsoft.IdentityModel.Logging/6.5.0": {
+      "Microsoft.IdentityModel.Logging/6.5.1": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/Microsoft.IdentityModel.Logging.dll": {}
@@ -2142,11 +2142,11 @@
           "lib/netstandard2.0/Microsoft.IdentityModel.Logging.dll": {}
         }
       },
-      "Microsoft.IdentityModel.Tokens/6.5.0": {
+      "Microsoft.IdentityModel.Tokens/6.5.1": {
         "type": "package",
         "dependencies": {
           "Microsoft.CSharp": "4.5.0",
-          "Microsoft.IdentityModel.Logging": "6.5.0",
+          "Microsoft.IdentityModel.Logging": "6.5.1",
           "System.Security.Cryptography.Cng": "4.5.0"
         },
         "compile": {
@@ -3300,11 +3300,11 @@
           "runtimes/win/lib/netstandard1.3/System.Globalization.Extensions.dll": {}
         }
       },
-      "System.IdentityModel.Tokens.Jwt/6.5.0": {
+      "System.IdentityModel.Tokens.Jwt/6.5.1": {
         "type": "package",
         "dependencies": {
-          "Microsoft.IdentityModel.JsonWebTokens": "6.5.0",
-          "Microsoft.IdentityModel.Tokens": "6.5.0"
+          "Microsoft.IdentityModel.JsonWebTokens": "6.5.1",
+          "Microsoft.IdentityModel.Tokens": "6.5.1"
         },
         "compile": {
           "lib/netstandard2.0/System.IdentityModel.Tokens.Jwt.dll": {}
@@ -4181,22 +4181,22 @@
         "dependencies": {
           "CarouselView": "7.0.3.1",
           "CarouselView.FormsPlugin": "5.2.0",
-          "Microsoft.AppCenter.Analytics": "3.1.0",
-          "Microsoft.AppCenter.Crashes": "3.1.0",
+          "Microsoft.AppCenter.Analytics": "3.2.1",
+          "Microsoft.AppCenter.Crashes": "3.2.1",
           "Microsoft.CSharp": "4.7.0",
           "Nancy": "2.0.0",
           "Newtonsoft.Json": "12.0.3",
           "RestSharp": "106.11.4",
           "Rg.Plugins.Popup": "2.0.0.2",
-          "System.IdentityModel.Tokens.Jwt": "6.5.0",
+          "System.IdentityModel.Tokens.Jwt": "6.5.1",
           "System.Net.Http": "4.3.4",
           "System.Xml.XmlSerializer": "4.3.0",
           "Xam.Plugin.Media": "5.0.1",
           "Xam.Plugins.Settings": "3.1.1",
-          "Xamarin.Essentials": "1.5.2",
+          "Xamarin.Essentials": "1.5.3.2",
           "Xamarin.FFImageLoading": "2.4.11.982",
           "Xamarin.FFImageLoading.Forms": "2.4.11.982",
-          "Xamarin.Forms": "4.5.0.617"
+          "Xamarin.Forms": "4.6.0.772"
         },
         "compile": {
           "bin/placeholder/RTMobile.dll": {}
@@ -4234,7 +4234,7 @@
           "lib/UAP10/CarouselView.FormsPlugin.UWP.dll": {}
         }
       },
-      "Microsoft.AppCenter/3.1.0": {
+      "Microsoft.AppCenter/3.2.1": {
         "type": "package",
         "dependencies": {
           "Microsoft.NETCore.UniversalWindowsPlatform": "6.2.8",
@@ -4248,10 +4248,10 @@
           "lib/uap10.0/Microsoft.AppCenter.dll": {}
         }
       },
-      "Microsoft.AppCenter.Analytics/3.1.0": {
+      "Microsoft.AppCenter.Analytics/3.2.1": {
         "type": "package",
         "dependencies": {
-          "Microsoft.AppCenter": "3.1.0"
+          "Microsoft.AppCenter": "3.2.1"
         },
         "compile": {
           "lib/uap10.0/Microsoft.AppCenter.Analytics.dll": {}
@@ -4260,10 +4260,10 @@
           "lib/uap10.0/Microsoft.AppCenter.Analytics.dll": {}
         }
       },
-      "Microsoft.AppCenter.Crashes/3.1.0": {
+      "Microsoft.AppCenter.Crashes/3.2.1": {
         "type": "package",
         "dependencies": {
-          "Microsoft.AppCenter": "3.1.0",
+          "Microsoft.AppCenter": "3.2.1",
           "System.Reflection.Metadata": "1.7.0"
         },
         "compile": {
@@ -4330,10 +4330,10 @@
           "lib/netstandard1.3/Microsoft.Extensions.PlatformAbstractions.dll": {}
         }
       },
-      "Microsoft.IdentityModel.JsonWebTokens/6.5.0": {
+      "Microsoft.IdentityModel.JsonWebTokens/6.5.1": {
         "type": "package",
         "dependencies": {
-          "Microsoft.IdentityModel.Tokens": "6.5.0"
+          "Microsoft.IdentityModel.Tokens": "6.5.1"
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.IdentityModel.JsonWebTokens.dll": {}
@@ -4342,7 +4342,7 @@
           "lib/netstandard2.0/Microsoft.IdentityModel.JsonWebTokens.dll": {}
         }
       },
-      "Microsoft.IdentityModel.Logging/6.5.0": {
+      "Microsoft.IdentityModel.Logging/6.5.1": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/Microsoft.IdentityModel.Logging.dll": {}
@@ -4351,11 +4351,11 @@
           "lib/netstandard2.0/Microsoft.IdentityModel.Logging.dll": {}
         }
       },
-      "Microsoft.IdentityModel.Tokens/6.5.0": {
+      "Microsoft.IdentityModel.Tokens/6.5.1": {
         "type": "package",
         "dependencies": {
           "Microsoft.CSharp": "4.5.0",
-          "Microsoft.IdentityModel.Logging": "6.5.0",
+          "Microsoft.IdentityModel.Logging": "6.5.1",
           "System.Security.Cryptography.Cng": "4.5.0"
         },
         "compile": {
@@ -5552,11 +5552,11 @@
           "runtimes/win/lib/netstandard1.3/System.Globalization.Extensions.dll": {}
         }
       },
-      "System.IdentityModel.Tokens.Jwt/6.5.0": {
+      "System.IdentityModel.Tokens.Jwt/6.5.1": {
         "type": "package",
         "dependencies": {
-          "Microsoft.IdentityModel.JsonWebTokens": "6.5.0",
-          "Microsoft.IdentityModel.Tokens": "6.5.0"
+          "Microsoft.IdentityModel.JsonWebTokens": "6.5.1",
+          "Microsoft.IdentityModel.Tokens": "6.5.1"
         },
         "compile": {
           "lib/netstandard2.0/System.IdentityModel.Tokens.Jwt.dll": {}
@@ -6433,22 +6433,22 @@
         "dependencies": {
           "CarouselView": "7.0.3.1",
           "CarouselView.FormsPlugin": "5.2.0",
-          "Microsoft.AppCenter.Analytics": "3.1.0",
-          "Microsoft.AppCenter.Crashes": "3.1.0",
+          "Microsoft.AppCenter.Analytics": "3.2.1",
+          "Microsoft.AppCenter.Crashes": "3.2.1",
           "Microsoft.CSharp": "4.7.0",
           "Nancy": "2.0.0",
           "Newtonsoft.Json": "12.0.3",
           "RestSharp": "106.11.4",
           "Rg.Plugins.Popup": "2.0.0.2",
-          "System.IdentityModel.Tokens.Jwt": "6.5.0",
+          "System.IdentityModel.Tokens.Jwt": "6.5.1",
           "System.Net.Http": "4.3.4",
           "System.Xml.XmlSerializer": "4.3.0",
           "Xam.Plugin.Media": "5.0.1",
           "Xam.Plugins.Settings": "3.1.1",
-          "Xamarin.Essentials": "1.5.2",
+          "Xamarin.Essentials": "1.5.3.2",
           "Xamarin.FFImageLoading": "2.4.11.982",
           "Xamarin.FFImageLoading.Forms": "2.4.11.982",
-          "Xamarin.Forms": "4.5.0.617"
+          "Xamarin.Forms": "4.6.0.772"
         },
         "compile": {
           "bin/placeholder/RTMobile.dll": {}
@@ -6486,7 +6486,7 @@
           "lib/UAP10/CarouselView.FormsPlugin.UWP.dll": {}
         }
       },
-      "Microsoft.AppCenter/3.1.0": {
+      "Microsoft.AppCenter/3.2.1": {
         "type": "package",
         "dependencies": {
           "Microsoft.NETCore.UniversalWindowsPlatform": "6.2.8",
@@ -6500,10 +6500,10 @@
           "lib/uap10.0/Microsoft.AppCenter.dll": {}
         }
       },
-      "Microsoft.AppCenter.Analytics/3.1.0": {
+      "Microsoft.AppCenter.Analytics/3.2.1": {
         "type": "package",
         "dependencies": {
-          "Microsoft.AppCenter": "3.1.0"
+          "Microsoft.AppCenter": "3.2.1"
         },
         "compile": {
           "lib/uap10.0/Microsoft.AppCenter.Analytics.dll": {}
@@ -6512,10 +6512,10 @@
           "lib/uap10.0/Microsoft.AppCenter.Analytics.dll": {}
         }
       },
-      "Microsoft.AppCenter.Crashes/3.1.0": {
+      "Microsoft.AppCenter.Crashes/3.2.1": {
         "type": "package",
         "dependencies": {
-          "Microsoft.AppCenter": "3.1.0",
+          "Microsoft.AppCenter": "3.2.1",
           "System.Reflection.Metadata": "1.7.0"
         },
         "compile": {
@@ -6582,10 +6582,10 @@
           "lib/netstandard1.3/Microsoft.Extensions.PlatformAbstractions.dll": {}
         }
       },
-      "Microsoft.IdentityModel.JsonWebTokens/6.5.0": {
+      "Microsoft.IdentityModel.JsonWebTokens/6.5.1": {
         "type": "package",
         "dependencies": {
-          "Microsoft.IdentityModel.Tokens": "6.5.0"
+          "Microsoft.IdentityModel.Tokens": "6.5.1"
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.IdentityModel.JsonWebTokens.dll": {}
@@ -6594,7 +6594,7 @@
           "lib/netstandard2.0/Microsoft.IdentityModel.JsonWebTokens.dll": {}
         }
       },
-      "Microsoft.IdentityModel.Logging/6.5.0": {
+      "Microsoft.IdentityModel.Logging/6.5.1": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/Microsoft.IdentityModel.Logging.dll": {}
@@ -6603,11 +6603,11 @@
           "lib/netstandard2.0/Microsoft.IdentityModel.Logging.dll": {}
         }
       },
-      "Microsoft.IdentityModel.Tokens/6.5.0": {
+      "Microsoft.IdentityModel.Tokens/6.5.1": {
         "type": "package",
         "dependencies": {
           "Microsoft.CSharp": "4.5.0",
-          "Microsoft.IdentityModel.Logging": "6.5.0",
+          "Microsoft.IdentityModel.Logging": "6.5.1",
           "System.Security.Cryptography.Cng": "4.5.0"
         },
         "compile": {
@@ -7804,11 +7804,11 @@
           "runtimes/win/lib/netstandard1.3/System.Globalization.Extensions.dll": {}
         }
       },
-      "System.IdentityModel.Tokens.Jwt/6.5.0": {
+      "System.IdentityModel.Tokens.Jwt/6.5.1": {
         "type": "package",
         "dependencies": {
-          "Microsoft.IdentityModel.JsonWebTokens": "6.5.0",
-          "Microsoft.IdentityModel.Tokens": "6.5.0"
+          "Microsoft.IdentityModel.JsonWebTokens": "6.5.1",
+          "Microsoft.IdentityModel.Tokens": "6.5.1"
         },
         "compile": {
           "lib/netstandard2.0/System.IdentityModel.Tokens.Jwt.dll": {}
@@ -8682,22 +8682,22 @@
         "dependencies": {
           "CarouselView": "7.0.3.1",
           "CarouselView.FormsPlugin": "5.2.0",
-          "Microsoft.AppCenter.Analytics": "3.1.0",
-          "Microsoft.AppCenter.Crashes": "3.1.0",
+          "Microsoft.AppCenter.Analytics": "3.2.1",
+          "Microsoft.AppCenter.Crashes": "3.2.1",
           "Microsoft.CSharp": "4.7.0",
           "Nancy": "2.0.0",
           "Newtonsoft.Json": "12.0.3",
           "RestSharp": "106.11.4",
           "Rg.Plugins.Popup": "2.0.0.2",
-          "System.IdentityModel.Tokens.Jwt": "6.5.0",
+          "System.IdentityModel.Tokens.Jwt": "6.5.1",
           "System.Net.Http": "4.3.4",
           "System.Xml.XmlSerializer": "4.3.0",
           "Xam.Plugin.Media": "5.0.1",
           "Xam.Plugins.Settings": "3.1.1",
-          "Xamarin.Essentials": "1.5.2",
+          "Xamarin.Essentials": "1.5.3.2",
           "Xamarin.FFImageLoading": "2.4.11.982",
           "Xamarin.FFImageLoading.Forms": "2.4.11.982",
-          "Xamarin.Forms": "4.5.0.617"
+          "Xamarin.Forms": "4.6.0.772"
         },
         "compile": {
           "bin/placeholder/RTMobile.dll": {}
@@ -8735,7 +8735,7 @@
           "lib/UAP10/CarouselView.FormsPlugin.UWP.dll": {}
         }
       },
-      "Microsoft.AppCenter/3.1.0": {
+      "Microsoft.AppCenter/3.2.1": {
         "type": "package",
         "dependencies": {
           "Microsoft.NETCore.UniversalWindowsPlatform": "6.2.8",
@@ -8749,10 +8749,10 @@
           "lib/uap10.0/Microsoft.AppCenter.dll": {}
         }
       },
-      "Microsoft.AppCenter.Analytics/3.1.0": {
+      "Microsoft.AppCenter.Analytics/3.2.1": {
         "type": "package",
         "dependencies": {
-          "Microsoft.AppCenter": "3.1.0"
+          "Microsoft.AppCenter": "3.2.1"
         },
         "compile": {
           "lib/uap10.0/Microsoft.AppCenter.Analytics.dll": {}
@@ -8761,10 +8761,10 @@
           "lib/uap10.0/Microsoft.AppCenter.Analytics.dll": {}
         }
       },
-      "Microsoft.AppCenter.Crashes/3.1.0": {
+      "Microsoft.AppCenter.Crashes/3.2.1": {
         "type": "package",
         "dependencies": {
-          "Microsoft.AppCenter": "3.1.0",
+          "Microsoft.AppCenter": "3.2.1",
           "System.Reflection.Metadata": "1.7.0"
         },
         "compile": {
@@ -8831,10 +8831,10 @@
           "lib/netstandard1.3/Microsoft.Extensions.PlatformAbstractions.dll": {}
         }
       },
-      "Microsoft.IdentityModel.JsonWebTokens/6.5.0": {
+      "Microsoft.IdentityModel.JsonWebTokens/6.5.1": {
         "type": "package",
         "dependencies": {
-          "Microsoft.IdentityModel.Tokens": "6.5.0"
+          "Microsoft.IdentityModel.Tokens": "6.5.1"
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.IdentityModel.JsonWebTokens.dll": {}
@@ -8843,7 +8843,7 @@
           "lib/netstandard2.0/Microsoft.IdentityModel.JsonWebTokens.dll": {}
         }
       },
-      "Microsoft.IdentityModel.Logging/6.5.0": {
+      "Microsoft.IdentityModel.Logging/6.5.1": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/Microsoft.IdentityModel.Logging.dll": {}
@@ -8852,11 +8852,11 @@
           "lib/netstandard2.0/Microsoft.IdentityModel.Logging.dll": {}
         }
       },
-      "Microsoft.IdentityModel.Tokens/6.5.0": {
+      "Microsoft.IdentityModel.Tokens/6.5.1": {
         "type": "package",
         "dependencies": {
           "Microsoft.CSharp": "4.5.0",
-          "Microsoft.IdentityModel.Logging": "6.5.0",
+          "Microsoft.IdentityModel.Logging": "6.5.1",
           "System.Security.Cryptography.Cng": "4.5.0"
         },
         "compile": {
@@ -10010,11 +10010,11 @@
           "runtimes/win/lib/netstandard1.3/System.Globalization.Extensions.dll": {}
         }
       },
-      "System.IdentityModel.Tokens.Jwt/6.5.0": {
+      "System.IdentityModel.Tokens.Jwt/6.5.1": {
         "type": "package",
         "dependencies": {
-          "Microsoft.IdentityModel.JsonWebTokens": "6.5.0",
-          "Microsoft.IdentityModel.Tokens": "6.5.0"
+          "Microsoft.IdentityModel.JsonWebTokens": "6.5.1",
+          "Microsoft.IdentityModel.Tokens": "6.5.1"
         },
         "compile": {
           "lib/netstandard2.0/System.IdentityModel.Tokens.Jwt.dll": {}
@@ -10891,22 +10891,22 @@
         "dependencies": {
           "CarouselView": "7.0.3.1",
           "CarouselView.FormsPlugin": "5.2.0",
-          "Microsoft.AppCenter.Analytics": "3.1.0",
-          "Microsoft.AppCenter.Crashes": "3.1.0",
+          "Microsoft.AppCenter.Analytics": "3.2.1",
+          "Microsoft.AppCenter.Crashes": "3.2.1",
           "Microsoft.CSharp": "4.7.0",
           "Nancy": "2.0.0",
           "Newtonsoft.Json": "12.0.3",
           "RestSharp": "106.11.4",
           "Rg.Plugins.Popup": "2.0.0.2",
-          "System.IdentityModel.Tokens.Jwt": "6.5.0",
+          "System.IdentityModel.Tokens.Jwt": "6.5.1",
           "System.Net.Http": "4.3.4",
           "System.Xml.XmlSerializer": "4.3.0",
           "Xam.Plugin.Media": "5.0.1",
           "Xam.Plugins.Settings": "3.1.1",
-          "Xamarin.Essentials": "1.5.2",
+          "Xamarin.Essentials": "1.5.3.2",
           "Xamarin.FFImageLoading": "2.4.11.982",
           "Xamarin.FFImageLoading.Forms": "2.4.11.982",
-          "Xamarin.Forms": "4.5.0.617"
+          "Xamarin.Forms": "4.6.0.772"
         },
         "compile": {
           "bin/placeholder/RTMobile.dll": {}
@@ -10944,7 +10944,7 @@
           "lib/UAP10/CarouselView.FormsPlugin.UWP.dll": {}
         }
       },
-      "Microsoft.AppCenter/3.1.0": {
+      "Microsoft.AppCenter/3.2.1": {
         "type": "package",
         "dependencies": {
           "Microsoft.NETCore.UniversalWindowsPlatform": "6.2.8",
@@ -10958,10 +10958,10 @@
           "lib/uap10.0/Microsoft.AppCenter.dll": {}
         }
       },
-      "Microsoft.AppCenter.Analytics/3.1.0": {
+      "Microsoft.AppCenter.Analytics/3.2.1": {
         "type": "package",
         "dependencies": {
-          "Microsoft.AppCenter": "3.1.0"
+          "Microsoft.AppCenter": "3.2.1"
         },
         "compile": {
           "lib/uap10.0/Microsoft.AppCenter.Analytics.dll": {}
@@ -10970,10 +10970,10 @@
           "lib/uap10.0/Microsoft.AppCenter.Analytics.dll": {}
         }
       },
-      "Microsoft.AppCenter.Crashes/3.1.0": {
+      "Microsoft.AppCenter.Crashes/3.2.1": {
         "type": "package",
         "dependencies": {
-          "Microsoft.AppCenter": "3.1.0",
+          "Microsoft.AppCenter": "3.2.1",
           "System.Reflection.Metadata": "1.7.0"
         },
         "compile": {
@@ -11040,10 +11040,10 @@
           "lib/netstandard1.3/Microsoft.Extensions.PlatformAbstractions.dll": {}
         }
       },
-      "Microsoft.IdentityModel.JsonWebTokens/6.5.0": {
+      "Microsoft.IdentityModel.JsonWebTokens/6.5.1": {
         "type": "package",
         "dependencies": {
-          "Microsoft.IdentityModel.Tokens": "6.5.0"
+          "Microsoft.IdentityModel.Tokens": "6.5.1"
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.IdentityModel.JsonWebTokens.dll": {}
@@ -11052,7 +11052,7 @@
           "lib/netstandard2.0/Microsoft.IdentityModel.JsonWebTokens.dll": {}
         }
       },
-      "Microsoft.IdentityModel.Logging/6.5.0": {
+      "Microsoft.IdentityModel.Logging/6.5.1": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/Microsoft.IdentityModel.Logging.dll": {}
@@ -11061,11 +11061,11 @@
           "lib/netstandard2.0/Microsoft.IdentityModel.Logging.dll": {}
         }
       },
-      "Microsoft.IdentityModel.Tokens/6.5.0": {
+      "Microsoft.IdentityModel.Tokens/6.5.1": {
         "type": "package",
         "dependencies": {
           "Microsoft.CSharp": "4.5.0",
-          "Microsoft.IdentityModel.Logging": "6.5.0",
+          "Microsoft.IdentityModel.Logging": "6.5.1",
           "System.Security.Cryptography.Cng": "4.5.0"
         },
         "compile": {
@@ -12262,11 +12262,11 @@
           "runtimes/win/lib/netstandard1.3/System.Globalization.Extensions.dll": {}
         }
       },
-      "System.IdentityModel.Tokens.Jwt/6.5.0": {
+      "System.IdentityModel.Tokens.Jwt/6.5.1": {
         "type": "package",
         "dependencies": {
-          "Microsoft.IdentityModel.JsonWebTokens": "6.5.0",
-          "Microsoft.IdentityModel.Tokens": "6.5.0"
+          "Microsoft.IdentityModel.JsonWebTokens": "6.5.1",
+          "Microsoft.IdentityModel.Tokens": "6.5.1"
         },
         "compile": {
           "lib/netstandard2.0/System.IdentityModel.Tokens.Jwt.dll": {}
@@ -13143,22 +13143,22 @@
         "dependencies": {
           "CarouselView": "7.0.3.1",
           "CarouselView.FormsPlugin": "5.2.0",
-          "Microsoft.AppCenter.Analytics": "3.1.0",
-          "Microsoft.AppCenter.Crashes": "3.1.0",
+          "Microsoft.AppCenter.Analytics": "3.2.1",
+          "Microsoft.AppCenter.Crashes": "3.2.1",
           "Microsoft.CSharp": "4.7.0",
           "Nancy": "2.0.0",
           "Newtonsoft.Json": "12.0.3",
           "RestSharp": "106.11.4",
           "Rg.Plugins.Popup": "2.0.0.2",
-          "System.IdentityModel.Tokens.Jwt": "6.5.0",
+          "System.IdentityModel.Tokens.Jwt": "6.5.1",
           "System.Net.Http": "4.3.4",
           "System.Xml.XmlSerializer": "4.3.0",
           "Xam.Plugin.Media": "5.0.1",
           "Xam.Plugins.Settings": "3.1.1",
-          "Xamarin.Essentials": "1.5.2",
+          "Xamarin.Essentials": "1.5.3.2",
           "Xamarin.FFImageLoading": "2.4.11.982",
           "Xamarin.FFImageLoading.Forms": "2.4.11.982",
-          "Xamarin.Forms": "4.5.0.617"
+          "Xamarin.Forms": "4.6.0.772"
         },
         "compile": {
           "bin/placeholder/RTMobile.dll": {}
@@ -13196,7 +13196,7 @@
           "lib/UAP10/CarouselView.FormsPlugin.UWP.dll": {}
         }
       },
-      "Microsoft.AppCenter/3.1.0": {
+      "Microsoft.AppCenter/3.2.1": {
         "type": "package",
         "dependencies": {
           "Microsoft.NETCore.UniversalWindowsPlatform": "6.2.8",
@@ -13210,10 +13210,10 @@
           "lib/uap10.0/Microsoft.AppCenter.dll": {}
         }
       },
-      "Microsoft.AppCenter.Analytics/3.1.0": {
+      "Microsoft.AppCenter.Analytics/3.2.1": {
         "type": "package",
         "dependencies": {
-          "Microsoft.AppCenter": "3.1.0"
+          "Microsoft.AppCenter": "3.2.1"
         },
         "compile": {
           "lib/uap10.0/Microsoft.AppCenter.Analytics.dll": {}
@@ -13222,10 +13222,10 @@
           "lib/uap10.0/Microsoft.AppCenter.Analytics.dll": {}
         }
       },
-      "Microsoft.AppCenter.Crashes/3.1.0": {
+      "Microsoft.AppCenter.Crashes/3.2.1": {
         "type": "package",
         "dependencies": {
-          "Microsoft.AppCenter": "3.1.0",
+          "Microsoft.AppCenter": "3.2.1",
           "System.Reflection.Metadata": "1.7.0"
         },
         "compile": {
@@ -13292,10 +13292,10 @@
           "lib/netstandard1.3/Microsoft.Extensions.PlatformAbstractions.dll": {}
         }
       },
-      "Microsoft.IdentityModel.JsonWebTokens/6.5.0": {
+      "Microsoft.IdentityModel.JsonWebTokens/6.5.1": {
         "type": "package",
         "dependencies": {
-          "Microsoft.IdentityModel.Tokens": "6.5.0"
+          "Microsoft.IdentityModel.Tokens": "6.5.1"
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.IdentityModel.JsonWebTokens.dll": {}
@@ -13304,7 +13304,7 @@
           "lib/netstandard2.0/Microsoft.IdentityModel.JsonWebTokens.dll": {}
         }
       },
-      "Microsoft.IdentityModel.Logging/6.5.0": {
+      "Microsoft.IdentityModel.Logging/6.5.1": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/Microsoft.IdentityModel.Logging.dll": {}
@@ -13313,11 +13313,11 @@
           "lib/netstandard2.0/Microsoft.IdentityModel.Logging.dll": {}
         }
       },
-      "Microsoft.IdentityModel.Tokens/6.5.0": {
+      "Microsoft.IdentityModel.Tokens/6.5.1": {
         "type": "package",
         "dependencies": {
           "Microsoft.CSharp": "4.5.0",
-          "Microsoft.IdentityModel.Logging": "6.5.0",
+          "Microsoft.IdentityModel.Logging": "6.5.1",
           "System.Security.Cryptography.Cng": "4.5.0"
         },
         "compile": {
@@ -14471,11 +14471,11 @@
           "runtimes/win/lib/netstandard1.3/System.Globalization.Extensions.dll": {}
         }
       },
-      "System.IdentityModel.Tokens.Jwt/6.5.0": {
+      "System.IdentityModel.Tokens.Jwt/6.5.1": {
         "type": "package",
         "dependencies": {
-          "Microsoft.IdentityModel.JsonWebTokens": "6.5.0",
-          "Microsoft.IdentityModel.Tokens": "6.5.0"
+          "Microsoft.IdentityModel.JsonWebTokens": "6.5.1",
+          "Microsoft.IdentityModel.Tokens": "6.5.1"
         },
         "compile": {
           "lib/netstandard2.0/System.IdentityModel.Tokens.Jwt.dll": {}
@@ -15352,22 +15352,22 @@
         "dependencies": {
           "CarouselView": "7.0.3.1",
           "CarouselView.FormsPlugin": "5.2.0",
-          "Microsoft.AppCenter.Analytics": "3.1.0",
-          "Microsoft.AppCenter.Crashes": "3.1.0",
+          "Microsoft.AppCenter.Analytics": "3.2.1",
+          "Microsoft.AppCenter.Crashes": "3.2.1",
           "Microsoft.CSharp": "4.7.0",
           "Nancy": "2.0.0",
           "Newtonsoft.Json": "12.0.3",
           "RestSharp": "106.11.4",
           "Rg.Plugins.Popup": "2.0.0.2",
-          "System.IdentityModel.Tokens.Jwt": "6.5.0",
+          "System.IdentityModel.Tokens.Jwt": "6.5.1",
           "System.Net.Http": "4.3.4",
           "System.Xml.XmlSerializer": "4.3.0",
           "Xam.Plugin.Media": "5.0.1",
           "Xam.Plugins.Settings": "3.1.1",
-          "Xamarin.Essentials": "1.5.2",
+          "Xamarin.Essentials": "1.5.3.2",
           "Xamarin.FFImageLoading": "2.4.11.982",
           "Xamarin.FFImageLoading.Forms": "2.4.11.982",
-          "Xamarin.Forms": "4.5.0.617"
+          "Xamarin.Forms": "4.6.0.772"
         },
         "compile": {
           "bin/placeholder/RTMobile.dll": {}
@@ -15405,7 +15405,7 @@
           "lib/UAP10/CarouselView.FormsPlugin.UWP.dll": {}
         }
       },
-      "Microsoft.AppCenter/3.1.0": {
+      "Microsoft.AppCenter/3.2.1": {
         "type": "package",
         "dependencies": {
           "Microsoft.NETCore.UniversalWindowsPlatform": "6.2.8",
@@ -15419,10 +15419,10 @@
           "lib/uap10.0/Microsoft.AppCenter.dll": {}
         }
       },
-      "Microsoft.AppCenter.Analytics/3.1.0": {
+      "Microsoft.AppCenter.Analytics/3.2.1": {
         "type": "package",
         "dependencies": {
-          "Microsoft.AppCenter": "3.1.0"
+          "Microsoft.AppCenter": "3.2.1"
         },
         "compile": {
           "lib/uap10.0/Microsoft.AppCenter.Analytics.dll": {}
@@ -15431,10 +15431,10 @@
           "lib/uap10.0/Microsoft.AppCenter.Analytics.dll": {}
         }
       },
-      "Microsoft.AppCenter.Crashes/3.1.0": {
+      "Microsoft.AppCenter.Crashes/3.2.1": {
         "type": "package",
         "dependencies": {
-          "Microsoft.AppCenter": "3.1.0",
+          "Microsoft.AppCenter": "3.2.1",
           "System.Reflection.Metadata": "1.7.0"
         },
         "compile": {
@@ -15501,10 +15501,10 @@
           "lib/netstandard1.3/Microsoft.Extensions.PlatformAbstractions.dll": {}
         }
       },
-      "Microsoft.IdentityModel.JsonWebTokens/6.5.0": {
+      "Microsoft.IdentityModel.JsonWebTokens/6.5.1": {
         "type": "package",
         "dependencies": {
-          "Microsoft.IdentityModel.Tokens": "6.5.0"
+          "Microsoft.IdentityModel.Tokens": "6.5.1"
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.IdentityModel.JsonWebTokens.dll": {}
@@ -15513,7 +15513,7 @@
           "lib/netstandard2.0/Microsoft.IdentityModel.JsonWebTokens.dll": {}
         }
       },
-      "Microsoft.IdentityModel.Logging/6.5.0": {
+      "Microsoft.IdentityModel.Logging/6.5.1": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/Microsoft.IdentityModel.Logging.dll": {}
@@ -15522,11 +15522,11 @@
           "lib/netstandard2.0/Microsoft.IdentityModel.Logging.dll": {}
         }
       },
-      "Microsoft.IdentityModel.Tokens/6.5.0": {
+      "Microsoft.IdentityModel.Tokens/6.5.1": {
         "type": "package",
         "dependencies": {
           "Microsoft.CSharp": "4.5.0",
-          "Microsoft.IdentityModel.Logging": "6.5.0",
+          "Microsoft.IdentityModel.Logging": "6.5.1",
           "System.Security.Cryptography.Cng": "4.5.0"
         },
         "compile": {
@@ -16723,11 +16723,11 @@
           "runtimes/win/lib/netstandard1.3/System.Globalization.Extensions.dll": {}
         }
       },
-      "System.IdentityModel.Tokens.Jwt/6.5.0": {
+      "System.IdentityModel.Tokens.Jwt/6.5.1": {
         "type": "package",
         "dependencies": {
-          "Microsoft.IdentityModel.JsonWebTokens": "6.5.0",
-          "Microsoft.IdentityModel.Tokens": "6.5.0"
+          "Microsoft.IdentityModel.JsonWebTokens": "6.5.1",
+          "Microsoft.IdentityModel.Tokens": "6.5.1"
         },
         "compile": {
           "lib/netstandard2.0/System.IdentityModel.Tokens.Jwt.dll": {}
@@ -17604,22 +17604,22 @@
         "dependencies": {
           "CarouselView": "7.0.3.1",
           "CarouselView.FormsPlugin": "5.2.0",
-          "Microsoft.AppCenter.Analytics": "3.1.0",
-          "Microsoft.AppCenter.Crashes": "3.1.0",
+          "Microsoft.AppCenter.Analytics": "3.2.1",
+          "Microsoft.AppCenter.Crashes": "3.2.1",
           "Microsoft.CSharp": "4.7.0",
           "Nancy": "2.0.0",
           "Newtonsoft.Json": "12.0.3",
           "RestSharp": "106.11.4",
           "Rg.Plugins.Popup": "2.0.0.2",
-          "System.IdentityModel.Tokens.Jwt": "6.5.0",
+          "System.IdentityModel.Tokens.Jwt": "6.5.1",
           "System.Net.Http": "4.3.4",
           "System.Xml.XmlSerializer": "4.3.0",
           "Xam.Plugin.Media": "5.0.1",
           "Xam.Plugins.Settings": "3.1.1",
-          "Xamarin.Essentials": "1.5.2",
+          "Xamarin.Essentials": "1.5.3.2",
           "Xamarin.FFImageLoading": "2.4.11.982",
           "Xamarin.FFImageLoading.Forms": "2.4.11.982",
-          "Xamarin.Forms": "4.5.0.617"
+          "Xamarin.Forms": "4.6.0.772"
         },
         "compile": {
           "bin/placeholder/RTMobile.dll": {}
@@ -17667,10 +17667,10 @@
         "lib/portable-net45+netcore45+wpa81+wp8+MonoAndroid10+Xamarin.iOS10/CarouselView.FormsPlugin.Abstractions.dll"
       ]
     },
-    "Microsoft.AppCenter/3.1.0": {
-      "sha512": "CHGMZIvOQxfiupheTAGEr1NeYRWtdy92iItG48l2rXI0bjRtSn34Tqtu7pR+IGKpBA5wIAgDSPFfyhFB4QxofA==",
+    "Microsoft.AppCenter/3.2.1": {
+      "sha512": "3t2lTMEbhDNPEXCurKBS8wRag4xtloGm9E7F4DpLIRhJtTCYgcIwvajPYj3WE0LjSzhrMKEn9tCaORHDAsdmaw==",
       "type": "package",
-      "path": "microsoft.appcenter/3.1.0",
+      "path": "microsoft.appcenter/3.2.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -17688,14 +17688,14 @@
         "lib/netstandard1.0/Microsoft.AppCenter.xml",
         "lib/uap10.0/Microsoft.AppCenter.dll",
         "lib/uap10.0/Microsoft.AppCenter.xml",
-        "microsoft.appcenter.3.1.0.nupkg.sha512",
+        "microsoft.appcenter.3.2.1.nupkg.sha512",
         "microsoft.appcenter.nuspec"
       ]
     },
-    "Microsoft.AppCenter.Analytics/3.1.0": {
-      "sha512": "txNI5dJ6qK9wL/aYt7GJa7CChm6QmYxln10p7mOpiC5nC+Pq5ca1MtK+AQzA0PG1Txuy1L1o87YpAzfLmSPOMw==",
+    "Microsoft.AppCenter.Analytics/3.2.1": {
+      "sha512": "38HJ5GxKMI3Hyy32SiPxcZfOEL8aBKcV2MR/BLCKR9VlNt4ZpbdJLU/4yoFi/n8zkyFkJykVSA8ADtOjekYseA==",
       "type": "package",
-      "path": "microsoft.appcenter.analytics/3.1.0",
+      "path": "microsoft.appcenter.analytics/3.2.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -17713,14 +17713,14 @@
         "lib/netstandard1.0/Microsoft.AppCenter.Analytics.xml",
         "lib/uap10.0/Microsoft.AppCenter.Analytics.dll",
         "lib/uap10.0/Microsoft.AppCenter.Analytics.xml",
-        "microsoft.appcenter.analytics.3.1.0.nupkg.sha512",
+        "microsoft.appcenter.analytics.3.2.1.nupkg.sha512",
         "microsoft.appcenter.analytics.nuspec"
       ]
     },
-    "Microsoft.AppCenter.Crashes/3.1.0": {
-      "sha512": "cHpcpoXpIiqKWeGR8NipTQb7ffuD3AMal2wiLtrbWM3C3p8BCwhy3xck8eOutS4CoE5uM9380EKWrEEQ0PWQqg==",
+    "Microsoft.AppCenter.Crashes/3.2.1": {
+      "sha512": "T3nFFv+Zq0oGHawKkqo6x6Aox+dITbKxsTuDMtuyTStTEhKuwXuIx08xoViMF0oDHjYk0NHSZICOVKoUjwuBzQ==",
       "type": "package",
-      "path": "microsoft.appcenter.crashes/3.1.0",
+      "path": "microsoft.appcenter.crashes/3.2.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -17738,7 +17738,7 @@
         "lib/netstandard1.0/Microsoft.AppCenter.Crashes.xml",
         "lib/uap10.0/Microsoft.AppCenter.Crashes.dll",
         "lib/uap10.0/Microsoft.AppCenter.Crashes.xml",
-        "microsoft.appcenter.crashes.3.1.0.nupkg.sha512",
+        "microsoft.appcenter.crashes.3.2.1.nupkg.sha512",
         "microsoft.appcenter.crashes.nuspec"
       ]
     },
@@ -17857,10 +17857,10 @@
         "microsoft.extensions.platformabstractions.nuspec"
       ]
     },
-    "Microsoft.IdentityModel.JsonWebTokens/6.5.0": {
-      "sha512": "9h0AqqcKck8pjrX1KCfm3pLrsH/nWa6Lt5G7kCee9bfbmMa6cxHOlLtgp9sp+hXuiHsjMv4YtpPCFEoFNsHwyA==",
+    "Microsoft.IdentityModel.JsonWebTokens/6.5.1": {
+      "sha512": "zOnP8Hv6JcA+E2qeHGVo6KM7lV7J9kj2a/+VasTTqZ1mkLhnxTLpX7oZ3n8HJ7hZXuG2KY3P/EaCt6eApM30kQ==",
       "type": "package",
-      "path": "microsoft.identitymodel.jsonwebtokens/6.5.0",
+      "path": "microsoft.identitymodel.jsonwebtokens/6.5.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -17870,14 +17870,14 @@
         "lib/net461/Microsoft.IdentityModel.JsonWebTokens.xml",
         "lib/netstandard2.0/Microsoft.IdentityModel.JsonWebTokens.dll",
         "lib/netstandard2.0/Microsoft.IdentityModel.JsonWebTokens.xml",
-        "microsoft.identitymodel.jsonwebtokens.6.5.0.nupkg.sha512",
+        "microsoft.identitymodel.jsonwebtokens.6.5.1.nupkg.sha512",
         "microsoft.identitymodel.jsonwebtokens.nuspec"
       ]
     },
-    "Microsoft.IdentityModel.Logging/6.5.0": {
-      "sha512": "H1QRoz+tKrNcQfRWIREWrzWLAXXp2G8YuYndS3JNGJ05HIjYg9x04fbcfh/0zV7zLRDaNfJjpwLFQJ23L6S7oQ==",
+    "Microsoft.IdentityModel.Logging/6.5.1": {
+      "sha512": "iujlW4mgBKaib0gB3wbJLCCRhaNmxt504O5aGMdIH0JLIjCw+LbX+q3SFf3u0C29rYErvQQ9xeAtGywjvSGLxg==",
       "type": "package",
-      "path": "microsoft.identitymodel.logging/6.5.0",
+      "path": "microsoft.identitymodel.logging/6.5.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -17887,14 +17887,14 @@
         "lib/net461/Microsoft.IdentityModel.Logging.xml",
         "lib/netstandard2.0/Microsoft.IdentityModel.Logging.dll",
         "lib/netstandard2.0/Microsoft.IdentityModel.Logging.xml",
-        "microsoft.identitymodel.logging.6.5.0.nupkg.sha512",
+        "microsoft.identitymodel.logging.6.5.1.nupkg.sha512",
         "microsoft.identitymodel.logging.nuspec"
       ]
     },
-    "Microsoft.IdentityModel.Tokens/6.5.0": {
-      "sha512": "43mUg9N8dTn8Eb8bRd4Z7cBOwAgJRSV3vOs76V45HJhQutodXGTH2JhLW601LFCEEjy5gH2Ab89A2OVeWyErLQ==",
+    "Microsoft.IdentityModel.Tokens/6.5.1": {
+      "sha512": "+kKU5tbizQmXee6iYJwqxROInlohMYhKYbLa37BUnU/YBhCvPapi2iywE4bVgno2NOF78p7VBERd/s+gYM/9dA==",
       "type": "package",
-      "path": "microsoft.identitymodel.tokens/6.5.0",
+      "path": "microsoft.identitymodel.tokens/6.5.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -17904,7 +17904,7 @@
         "lib/net461/Microsoft.IdentityModel.Tokens.xml",
         "lib/netstandard2.0/Microsoft.IdentityModel.Tokens.dll",
         "lib/netstandard2.0/Microsoft.IdentityModel.Tokens.xml",
-        "microsoft.identitymodel.tokens.6.5.0.nupkg.sha512",
+        "microsoft.identitymodel.tokens.6.5.1.nupkg.sha512",
         "microsoft.identitymodel.tokens.nuspec"
       ]
     },
@@ -24353,10 +24353,10 @@
         "system.globalization.extensions.nuspec"
       ]
     },
-    "System.IdentityModel.Tokens.Jwt/6.5.0": {
-      "sha512": "x1I1BcZrgF8CPWuR8pu6ip9wiQVSULozPSJLyAwMPt6f9bW8/u43OGxiaqLHnA0ybHrpOz3Misiu/D97gsYb+A==",
+    "System.IdentityModel.Tokens.Jwt/6.5.1": {
+      "sha512": "2t8+04Ozz4vX10X1h+lqV8X7PkLUSRTr+kRY4QNpAeTUngqGqv180A1JDK2piGEKCvNbm6xGGkajL9STgI0JJA==",
       "type": "package",
-      "path": "system.identitymodel.tokens.jwt/6.5.0",
+      "path": "system.identitymodel.tokens.jwt/6.5.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -24366,7 +24366,7 @@
         "lib/net461/System.IdentityModel.Tokens.Jwt.xml",
         "lib/netstandard2.0/System.IdentityModel.Tokens.Jwt.dll",
         "lib/netstandard2.0/System.IdentityModel.Tokens.Jwt.xml",
-        "system.identitymodel.tokens.jwt.6.5.0.nupkg.sha512",
+        "system.identitymodel.tokens.jwt.6.5.1.nupkg.sha512",
         "system.identitymodel.tokens.jwt.nuspec"
       ]
     },
@@ -27407,11 +27407,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile.UWP\\RTMobile.UWP.csproj",
+      "projectUniqueName": "F:\\project\\Mobile\\RTMobile\\RTMobile\\RTMobile.UWP\\RTMobile.UWP.csproj",
       "projectName": "RTMobile.UWP",
-      "projectPath": "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile.UWP\\RTMobile.UWP.csproj",
+      "projectPath": "F:\\project\\Mobile\\RTMobile\\RTMobile\\RTMobile.UWP\\RTMobile.UWP.csproj",
       "packagesPath": "C:\\Users\\sekisov\\.nuget\\packages\\",
-      "outputPath": "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile.UWP\\obj\\",
+      "outputPath": "F:\\project\\Mobile\\RTMobile\\RTMobile\\RTMobile.UWP\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -27433,8 +27433,8 @@
       "frameworks": {
         "uap10.0.16299": {
           "projectReferences": {
-            "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj": {
-              "projectPath": "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj"
+            "F:\\project\\Mobile\\RTMobile\\RTMobile\\RTMobile\\RTMobile.csproj": {
+              "projectPath": "F:\\project\\Mobile\\RTMobile\\RTMobile\\RTMobile\\RTMobile.csproj"
             }
           }
         }
@@ -27496,8 +27496,25 @@
       "code": "NU1605",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Обнаружено понижение версии пакета Xamarin.Essentials с 1.5.2 на 1.5.1. Чтобы выбрать другую версию, создайте ссылку на пакет напрямую из проекта. \r\n RTMobile.UWP -> RTMobile -> Xamarin.Essentials (>= 1.5.2) \r\n RTMobile.UWP -> Xamarin.Essentials (>= 1.5.1)",
+      "message": "Обнаружено понижение версии пакета Xamarin.Essentials с 1.5.3.2 на 1.5.1. Чтобы выбрать другую версию, создайте ссылку на пакет напрямую из проекта. \r\n RTMobile.UWP -> RTMobile -> Xamarin.Essentials (>= 1.5.3.2) \r\n RTMobile.UWP -> Xamarin.Essentials (>= 1.5.1)",
       "libraryId": "Xamarin.Essentials",
+      "targetGraphs": [
+        "UAP,Version=v10.0.16299",
+        "UAP,Version=v10.0.16299/win10-arm",
+        "UAP,Version=v10.0.16299/win10-arm-aot",
+        "UAP,Version=v10.0.16299/win10-arm64-aot",
+        "UAP,Version=v10.0.16299/win10-x64",
+        "UAP,Version=v10.0.16299/win10-x64-aot",
+        "UAP,Version=v10.0.16299/win10-x86",
+        "UAP,Version=v10.0.16299/win10-x86-aot"
+      ]
+    },
+    {
+      "code": "NU1605",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Обнаружено понижение версии пакета Xamarin.Forms с 4.6.0.772 на 4.5.0.617. Чтобы выбрать другую версию, создайте ссылку на пакет напрямую из проекта. \r\n RTMobile.UWP -> RTMobile -> Xamarin.Forms (>= 4.6.0.772) \r\n RTMobile.UWP -> Xamarin.Forms (>= 4.5.0.617)",
+      "libraryId": "Xamarin.Forms",
       "targetGraphs": [
         "UAP,Version=v10.0.16299",
         "UAP,Version=v10.0.16299/win10-arm",

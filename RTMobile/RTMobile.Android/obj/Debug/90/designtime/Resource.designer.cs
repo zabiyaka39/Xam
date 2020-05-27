@@ -14105,53 +14105,56 @@ namespace RTMobile.Droid
 			// aapt resource value: 0x7F070154
 			public const int property = 2131165524;
 			
+			// aapt resource value: 0x7F070155
+			public const int relatedIssue = 2131165525;
+			
 			// aapt resource value: 0x7F070003
 			public const int RosohranaLogo = 2131165187;
 			
-			// aapt resource value: 0x7F070155
-			public const int rosohranaLogo = 2131165525;
-			
 			// aapt resource value: 0x7F070156
-			public const int sekisov = 2131165526;
-			
-			// aapt resource value: 0x7F070158
-			public const int settings = 2131165528;
+			public const int rosohranaLogo = 2131165526;
 			
 			// aapt resource value: 0x7F070157
-			public const int settingToolBar = 2131165527;
+			public const int sekisov = 2131165527;
 			
 			// aapt resource value: 0x7F070159
-			public const int showMenu = 2131165529;
+			public const int settings = 2131165529;
+			
+			// aapt resource value: 0x7F070158
+			public const int settingToolBar = 2131165528;
 			
 			// aapt resource value: 0x7F07015A
-			public const int sorted = 2131165530;
+			public const int showMenu = 2131165530;
 			
 			// aapt resource value: 0x7F07015B
-			public const int star = 2131165531;
+			public const int sorted = 2131165531;
 			
 			// aapt resource value: 0x7F07015C
-			public const int time = 2131165532;
+			public const int star = 2131165532;
 			
 			// aapt resource value: 0x7F07015D
-			public const int timeStart = 2131165533;
+			public const int time = 2131165533;
 			
 			// aapt resource value: 0x7F07015E
-			public const int timeUpdate = 2131165534;
+			public const int timeStart = 2131165534;
 			
 			// aapt resource value: 0x7F07015F
-			public const int tooltip_frame_dark = 2131165535;
+			public const int timeUpdate = 2131165535;
 			
 			// aapt resource value: 0x7F070160
-			public const int tooltip_frame_light = 2131165536;
+			public const int tooltip_frame_dark = 2131165536;
+			
+			// aapt resource value: 0x7F070161
+			public const int tooltip_frame_light = 2131165537;
 			
 			// aapt resource value: 0x7F070004
 			public const int Up = 2131165188;
 			
-			// aapt resource value: 0x7F070161
-			public const int visibility = 2131165537;
-			
 			// aapt resource value: 0x7F070162
-			public const int visibilityOff = 2131165538;
+			public const int visibility = 2131165538;
+			
+			// aapt resource value: 0x7F070163
+			public const int visibilityOff = 2131165539;
 			
 			static Drawable()
 			{
