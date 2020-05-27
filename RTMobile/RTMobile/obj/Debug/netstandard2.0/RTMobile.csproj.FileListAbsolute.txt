@@ -238,3 +238,8 @@ F:\project\Mobile\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\RTMobile.d
 F:\project\Mobile\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\RTMobile.pdb
 F:\project\Mobile\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\RTMobile.csproj.CoreCompileInputs.cache
 F:\project\Mobile\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\XamlC.stamp
+F:\project\Mobile\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\insight\AttachmentsObjectInsight.xaml.g.cs
+F:\project\Mobile\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\insight\GeneralObjectInsight.xaml.g.cs
+F:\project\Mobile\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\insight\IssueObjectInsight.xaml.g.cs
+F:\project\Mobile\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\insight\LinkObjectInsight.xaml.g.cs
+F:\project\Mobile\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\insight\TabPageObjectInsight.xaml.g.cs

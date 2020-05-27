@@ -30,7 +30,7 @@ namespace RTMobile
 			password.Text = CrossSettings.Current.GetValueOrDefault("password", "");
 			Request request = new Request();
 
-			request.uploadFile();
+			//request.uploadFile();
 
 
 			if (request.verifyServer())

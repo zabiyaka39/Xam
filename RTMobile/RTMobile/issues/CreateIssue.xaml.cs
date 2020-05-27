@@ -138,11 +138,6 @@ namespace RTMobile.issues
 				Request request = new Request(jsonRequest);
 				Fields = request.GetFieldScreenCreate();
 
-				void determination_requered(Xamarin.Forms.StackLayout type_stack, Fields Field )
-				{
-					generalStackLayout.Children.RemoveAt(i);
-				}
-
 				void determination_requered(Xamarin.Forms.StackLayout typeStack, Fields Field)
 				{
 					if (Field.schema.custom.Length == 0)
@@ -275,8 +270,8 @@ namespace RTMobile.issues
 									};
 
 									//Добавляем все в грид для удобства поиска элементов при переходе
-									type_stack.Children.Add(searchBar);
-									type_stack.Children.Add(grid);
+									typeStack.Children.Add(searchBar);
+									typeStack.Children.Add(grid);
 
 									DectionaryFields.Add(searchBar.Id, Field);
 
@@ -303,7 +298,7 @@ namespace RTMobile.issues
 									picker.Title = "Выберите значение...";
 									picker.ItemsSource = resolutionValues;
 
-									type_stack.Children.Add(picker);
+									typeStack.Children.Add(picker);
 									DectionaryFields.Add(picker.Id, Field);
 									break;
 								}
@@ -319,7 +314,7 @@ namespace RTMobile.issues
 										FontSize = 16
 									};
 
-									type_stack.Children.Add(entry);
+									typeStack.Children.Add(entry);
 									DectionaryFields.Add(entry.Id, Field);
 
 									break;
@@ -337,7 +332,7 @@ namespace RTMobile.issues
 													HorizontalOptions = LayoutOptions.FillAndExpand,
 													Margin = new Thickness(0, 0, 0, 20),
 												};
-												type_stack.Children.Add(button);
+												typeStack.Children.Add(button);
 												DectionaryFields.Add(button.Id, Field);
 												break;
 											}
@@ -368,7 +363,7 @@ namespace RTMobile.issues
 												}
 												picker.Title = "Выберите значение...";
 
-												type_stack.Children.Add(picker);
+												typeStack.Children.Add(picker);
 
 												List<string> issueDisplayName = new List<string>();
 												if (Field.autoCompleteUrl.Length > 0)
@@ -459,8 +454,8 @@ namespace RTMobile.issues
 													listView.IsVisible = false;
 												};
 
-												type_stack.Children.Add(searchBar);
-												type_stack.Children.Add(grid);
+												typeStack.Children.Add(searchBar);
+												typeStack.Children.Add(grid);
 
 												DectionaryFields.Add(searchBar.Id, Field);
 
@@ -476,7 +471,7 @@ namespace RTMobile.issues
 										TextColor = Color.FromHex("#F0F1F0"),
 										Date = DateTime.Now
 									};
-									type_stack.Children.Add(datePicker);
+									typeStack.Children.Add(datePicker);
 
 									DectionaryFields.Add(datePicker.Id, Field);
 									break;
@@ -540,8 +535,8 @@ namespace RTMobile.issues
 										}
 									};
 
-									type_stack.Children.Add(picker);
-									type_stack.Children.Add(pickerChild);
+									typeStack.Children.Add(picker);
+									typeStack.Children.Add(pickerChild);
 
 									DectionaryFields.Add(picker.Id, Field);
 									break;
@@ -566,7 +561,7 @@ namespace RTMobile.issues
 									picker.Title = "Выберите значение...";
 									picker.ItemsSource = resolutionValues;
 
-									type_stack.Children.Add(picker);
+									typeStack.Children.Add(picker);
 
 									DectionaryFields.Add(picker.Id, Field);
 									break;
@@ -578,7 +573,7 @@ namespace RTMobile.issues
 										TextColor = Color.FromHex("#F0F1F0"),
 										Date = DateTime.Now
 									};
-									type_stack.Children.Add(datePicker);
+									typeStack.Children.Add(datePicker);
 
 									DectionaryFields.Add(datePicker.Id, Field);
 									break;
@@ -594,7 +589,7 @@ namespace RTMobile.issues
 										Margin = new Thickness(0, 0, 0, 20),
 										FontSize = 16
 									};
-									type_stack.Children.Add(entry);
+									typeStack.Children.Add(entry);
 									DectionaryFields.Add(entry.Id, Field);
 									break;
 								}
@@ -611,7 +606,7 @@ namespace RTMobile.issues
 										Keyboard = Keyboard.Numeric
 									};
 
-									type_stack.Children.Add(entry);
+									typeStack.Children.Add(entry);
 									DectionaryFields.Add(entry.Id, Field);
 									break;
 								}
@@ -704,8 +699,8 @@ namespace RTMobile.issues
 										}
 										listView.IsVisible = false;
 									};
-									type_stack.Children.Add(searchBar);
-									type_stack.Children.Add(grid);
+									typeStack.Children.Add(searchBar);
+									typeStack.Children.Add(grid);
 									DectionaryFields.Add(searchBar.Id, Field);
 									break;
 								}

@@ -3819,3 +3819,4 @@ F:\project\Mobile\rtmobile\RTMobile\RTMobile.Android\obj\Debug\90\android\assets
 F:\project\Mobile\rtmobile\RTMobile\RTMobile.Android\obj\Debug\90\android\assets\Plugin.Media.pdb
 F:\project\Mobile\rtmobile\RTMobile\RTMobile.Android\obj\Debug\90\android\src\crc646957603ea1820544\MediaPickerActivity.java
 F:\project\Mobile\rtmobile\RTMobile\RTMobile.Android\obj\Debug\90\android\assets\RestSharp.dll
+F:\project\Mobile\rtmobile\RTMobile\RTMobile.Android\obj\Debug\90\res\drawable\relatedissue.png
