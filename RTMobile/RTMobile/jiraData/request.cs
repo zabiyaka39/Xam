@@ -13,6 +13,12 @@ using Microsoft.CSharp;
 using System.Collections.ObjectModel;
 using Xamarin.Forms;
 using Microsoft.AppCenter.Crashes;
+using Plugin.Media.Abstractions;
+using Plugin.Media;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Collections.Specialized;
+using RestSharp;
 
 namespace RTMobile
 {
@@ -67,10 +73,8 @@ namespace RTMobile
 					username = login,
 					password = password
 				};
-
 				this.httpWebRequest = (HttpWebRequest)WebRequest.Create(CrossSettings.Current.GetValueOrDefault("urlServer", string.Empty) + "/rest/auth/1/session");
 				this.httpWebRequest.Headers.Add(HttpRequestHeader.Authorization, "Basic " + Convert.ToBase64String(Encoding.Default.GetBytes(login + ":" + password)));
-
 				this.httpWebRequest.ContentType = "application/json";
 				this.httpWebRequest.Method = "POST";
 				this.json = JsonConvert.SerializeObject(authorization);
@@ -154,6 +158,62 @@ namespace RTMobile
 			}
 			return rootObject;
 		}
+
+		private MediaFile _mediaFile;
+
+		public async void uploadFile()
+		{
+			//Инициализируем проверку доступности разрешения работы с файловой системой
+			await CrossMedia.Current.Initialize();
+			//Выполняем поиск по системе необходимого файла
+			if (CrossMedia.Current.IsPickPhotoSupported)
+			{
+				_mediaFile = await CrossMedia.Current.PickPhotoAsync().ConfigureAwait(true);
+			}
+
+			if (_mediaFile != null)
+			{
+				MultipartFormDataContent content = new MultipartFormDataContent();
+				content.Add(new StreamContent(_mediaFile.GetStream()), "\"multipart/form-data\"", $"\"{_mediaFile.Path}\"");
+
+
+				HttpWebRequest httpWebRequest1 = (HttpWebRequest)WebRequest.Create("https://sd.rosohrana.ru/rest/api/2/issue/IT-5744/attachments");
+				httpWebRequest1.Headers.Add(HttpRequestHeader.Authorization, "Basic " + Convert.ToBase64String(Encoding.Default.GetBytes("sekisov:28651455gsbua1A")));
+				////this.httpWebRequest.Headers.Add("X-Atlassian-Token", "no-check");
+				////this.httpWebRequest.Timeout = -1;
+				using (StreamWriter streamWriter = new StreamWriter(httpWebRequest1.GetRequestStream()))
+				{
+					//streamWriter.Write("file", content);
+				}
+				WebResponse httpResponse = httpWebRequest1.GetResponse();
+				//using (StreamReader streamReader = new StreamReader(httpResponse.GetResponseStream()))
+				//{
+				//	string result = streamReader.ReadToEnd();
+				//}
+
+
+
+
+				var client = new RestClient("https://sd.rosohrana.ru/rest/api/2/issue/IT-5744/attachments");
+				client.Timeout = -1;
+				var request = new RestRequest(Method.POST);
+				request.AddHeader("X-Atlassian-Token", "no-check");
+				request.AddHeader("Authorization", "Basic " + Convert.ToBase64String(Encoding.Default.GetBytes("sekisov:28651455gsbua1A")));
+				request.AddFile("file", _mediaFile.Path);
+				IRestResponse response = client.Execute(request);
+				Console.WriteLine(response.Content);
+			}
+
+
+
+		}
+
+
+
+
+
+
+
 		/// <summary>
 		/// Список полей при переходе
 		/// </summary>
@@ -724,7 +784,7 @@ namespace RTMobile
 							for (int i = 0; i < ((dynamic)(field.Value)).Count; ++i)
 							{
 								foreach (KeyValuePair<string, object> fieldTransaction in ((dynamic)(field.Value))[i])
-								{ 
+								{
 								}
 							}
 						}

@@ -1,7 +1,6 @@
 ﻿using RTMobile.insight;
 using RTMobile.calendar;
 using RTMobile.settings;
-using RTMobile.about;
 using Xamarin.Forms;
 using RTMobile.profile;
 using System;

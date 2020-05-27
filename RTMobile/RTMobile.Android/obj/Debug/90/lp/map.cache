@@ -11,6 +11,7 @@ Microsoft.AppCenter.Android.Bindings
 Microsoft.AppCenter.Crashes.Android.Bindings
 Microsoft.AppCenter.Crashes
 Microsoft.AppCenter
+Plugin.Media
 Plugin.Settings
 Rg.Plugins.Popup
 Xamarin.Android.Arch.Core.Common

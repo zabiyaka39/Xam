@@ -8,9 +8,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("RTMobile.about.About.xaml", "about/About.xaml", typeof(global::RTMobile.about.About))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("RTMobile.about.About.xaml", "about/About.xaml", typeof(global::RTMobile.About))]
 
-namespace RTMobile.about {
+namespace RTMobile {
     
     
     [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("about\\About.xaml")]

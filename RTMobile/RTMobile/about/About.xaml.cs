@@ -7,7 +7,7 @@ using RTMobile.profile;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
-namespace RTMobile.about
+namespace RTMobile
 {
     public partial class About : ContentPage
     {

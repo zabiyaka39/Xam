@@ -3,7 +3,6 @@ using FFImageLoading.Config;
 using Microsoft.AppCenter.Analytics;
 using Microsoft.AppCenter.Crashes;
 using Plugin.Settings;
-using RTMobile.about;
 using RTMobile.issues;
 using RTMobile.settings;
 using Service.Shared.Clients;
@@ -25,10 +24,15 @@ namespace RTMobile
 	{
 		public MainPage()
 		{
-			InitializeComponent();
+			InitializeComponent();			
+
 			login.Text = CrossSettings.Current.GetValueOrDefault("login", "");
 			password.Text = CrossSettings.Current.GetValueOrDefault("password", "");
 			Request request = new Request();
+
+			request.uploadFile();
+
+
 			if (request.verifyServer())
 			{
 				frameLogin.IsEnabled = true;

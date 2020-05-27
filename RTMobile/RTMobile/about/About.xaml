@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="RTMobile.about.About"
+             x:Class="RTMobile.About"
              Title="О ПРИЛОЖЕНИИ">
     <ContentPage.Content>
         <StackLayout BackgroundColor="#312F35" HorizontalOptions="FillAndExpand"
