@@ -969,7 +969,6 @@ namespace RTMobile
 			}
 		}
 		public string timeSpent { get; set; }
-
 		private string _timeSpentSeconds { get; set; }
 		public string timeSpentSeconds
 		{
@@ -1077,6 +1076,10 @@ namespace RTMobile
 	}
 	public class Fields
 	{
+		[JsonProperty("child")]
+		public Child Child { get; set; }
+		[JsonProperty("iconUrl")]
+		public string IconUrl { get; set; }
 		public Comment comment { get; set; }
 		public List<AllowedValue> allowedValues { get; set; }
 		public List<Issue> subtasks { get; set; }
@@ -1093,32 +1096,9 @@ namespace RTMobile
 		public User creator { get; set; }
 		public Watchers watches { get; set; }
 		public Schema schema { get; set; }
-		public string resolutiondate
-		{
-			get { return _updated; }
-			set => _updated = Convert.ToDateTime(value).ToString("dd.MM.yyyy H:mm");
-		}
-		private string _resolutiondate { get; set; }
-		public string Resolutiondate
-		{
-			get { return _resolutiondate; }
-			set => _resolutiondate = Convert.ToDateTime(value).ToString("dd.MM.yyyy H:mm");
-		}
-		private string _updated;
-		public string name { get; set; }
-		public string key { get; set; }
-		public string displayName { get; set; }
+
+
 		public string autoCompleteUrl { get; set; }
-		public string value { get; set; }
-		public string defaultValue { get; set; } = "Заполните значение...";
-		public string updated
-		{
-			get { return _updated; }
-			set => _updated = Convert.ToDateTime(value).ToString("dd.MM.yyyy H:mm");
-		}
-		public string description { get; set; }
-		public string summary { get; set; }
-		public string duedate { get; set; }
 		private string _created;
 		public string created
 		{
@@ -1131,6 +1111,58 @@ namespace RTMobile
 				_created = (Convert.ToDateTime(value)).ToString("dd.MM.yyyy H:mm");
 			}
 		}
+		public string displayName { get; set; }
+		/// <summary>
+		/// Отображаемое значение поля пользователю
+		/// </summary>
+		[JsonProperty("displayNameField")]
+		public string DisplayNameField { get; set; }
+		public string defaultValue { get; set; } = "Заполните значение...";
+		public string duedate { get; set; }
+		public string description { get; set; }
+		[JsonProperty("id")]
+		public int Id { get; set; }
+		[JsonProperty("items")]
+		public string Items { get; set; }
+		[JsonProperty("custom")]
+		public string Custom { get; set; }
+		/// <summary>
+		/// Id поля
+		/// </summary>
+		[JsonProperty("customId")]
+		public string CustomId { get; set; }
+		public string key { get; set; }
+		[JsonProperty("nameField")]
+		public string NameField { get; set; }
+		public string name { get; set; }
+		public string resolutiondate
+		{
+			get { return _updated; }
+			set => _updated = Convert.ToDateTime(value).ToString("dd.MM.yyyy H:mm");
+		}
+		private string _resolutiondate { get; set; }
+		public string Resolutiondate
+		{
+			get { return _resolutiondate; }
+			set => _resolutiondate = Convert.ToDateTime(value).ToString("dd.MM.yyyy H:mm");
+		}
+		[JsonProperty("self")]
+		public string Self { get; set; }
+		public string summary { get; set; }
+		[JsonProperty("type")]
+		public string Type { get; set; }
+		private string _updated;
+		/// <summary>
+		/// Наименование поля в системе
+		/// </summary>
+		public string updated
+		{
+			get { return _updated; }
+			set => _updated = Convert.ToDateTime(value).ToString("dd.MM.yyyy H:mm");
+		}
+		public string value { get; set; }
+
+
 		public bool required { get; set; } = false;
 		public bool hasScreen { get; set; } = true;
 		public bool isAvailable { get; set; } = true;

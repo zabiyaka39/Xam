@@ -19,6 +19,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Collections.Specialized;
 using RestSharp;
+using Newtonsoft.Json.Linq;
 
 namespace RTMobile
 {
@@ -411,7 +412,7 @@ namespace RTMobile
 																											allowedValues.id = (string)allowedValueNameField.Value;
 																											break;
 																										}
-																									case "value":
+																									case "Value":
 																										{
 																											allowedValues.value = (string)allowedValueNameField.Value;
 																											break;
@@ -452,7 +453,7 @@ namespace RTMobile
 																																children[h].self = (string)fieldChildren.Value;
 																																break;
 																															}
-																														case "value":
+																														case "Value":
 																															{
 																																children[h].value = (string)fieldChildren.Value;
 																																break;
@@ -508,6 +509,7 @@ namespace RTMobile
 			}
 			return fields;
 		}
+
 		/// <summary>
 		/// Получаем список названий полей и значений задачи
 		/// </summary>
@@ -701,7 +703,7 @@ namespace RTMobile
 																							allowedValues.id = (string)allowedValueNameField.Value;
 																							break;
 																						}
-																					case "value":
+																					case "Value":
 																						{
 																							allowedValues.value = (string)allowedValueNameField.Value;
 																							break;
@@ -755,11 +757,184 @@ namespace RTMobile
 			}
 			return fields;
 		}
-		/// <summary>
-		/// Получаем список названий полей и значений задачи
-		/// </summary>
-		/// <returns></returns>
-		public List<Fields> GetCustomField()
+
+
+
+
+
+
+
+
+
+
+
+
+
+		public List<Fields> GetFieldsIssue(string json = "")
+		{
+			List<Fields> Fields = new List<Fields>();
+			try
+			{
+				if (httpWebRequest.Method == "POST")
+				{
+					if (json != null && json.Length > 0)
+					{
+						this.json = json;
+					}
+					//Исключаем пустой JSON-запрос сформированный на этапе создания подключения к серверу
+					if (this.json != null && this.json.Length > 2)
+					{
+						using (StreamWriter streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
+						{
+							streamWriter.Write(this.json);
+						}
+					}
+				}
+				WebResponse httpResponse = this.httpWebRequest.GetResponse();
+
+				using (StreamReader streamReader = new StreamReader(httpResponse.GetResponseStream()))
+				{
+					JObject jsonConvert = JObject.Parse(streamReader.ReadToEnd());
+					if (jsonConvert["fields"] != null)
+					{
+						if (jsonConvert["editmeta"] != null && jsonConvert["editmeta"]["fields"] != null)
+						{
+							foreach (var fields in jsonConvert["editmeta"]["fields"])
+							{
+								Schema schemaFields = JsonConvert.DeserializeObject<Schema>(fields.First["schema"].ToString());
+								//Получаем имя поля в системе	
+								string nameField = fields.First.Path.Substring(fields.First.Path.LastIndexOf(".") + 1);
+								//Проверяем является ли данное поле системным, если нет, то добавляем на экран просмотра информации
+								if (schemaFields.customId > 0)
+								{
+									switch (schemaFields.type)
+									{
+										case "string":
+											{
+												Fields.Add(new Fields
+												{
+													//Заполняем значение поля
+													value = jsonConvert["fields"][nameField].ToString(),
+													//Заполняем имя поля в системе
+													NameField = nameField,
+													//Заполняем человекочитаемое имя поля для удобства отображения
+													DisplayNameField = jsonConvert["names"][nameField].ToString()
+												});
+												//Проверяем на наличие элемента, если элемент равен null, то надо переопределить элемент
+												//с именем и описанием, для удобочитаемого формата
+												if (Fields[Fields.Count - 1] == null)
+												{
+													Fields[Fields.Count - 1] = new Fields()
+													{
+														DisplayNameField = jsonConvert["names"][nameField].ToString(),
+														value = "Не определено",
+														NameField = nameField,
+														schema = schemaFields
+													};
+												}
+												break;
+											}
+										case "array":
+											{
+												Fields.Add(JsonConvert.DeserializeObject<Fields>(jsonConvert["fields"][nameField][0].ToString()));
+
+												//Проверяем на наличие элемента, если элемент равен null, то надо переопределить элемент
+												//с именем и описанием, для удобочитаемого формата
+												if (Fields[Fields.Count - 1] == null)
+												{
+													Fields[Fields.Count - 1] = new Fields()
+													{
+														value = "Не определено",
+														schema = schemaFields
+													};
+												}
+												//Изменяем значение поля, т.к. все значения должны храниться в Value, а в некоторых запросах получаем в Name или displayName (человекочитаемый формат)
+												if (Fields[Fields.Count - 1].value == null)
+												{
+													if (Fields[Fields.Count - 1].displayName != null)
+													{
+														Fields[Fields.Count - 1].value = Fields[Fields.Count - 1].displayName;
+													}
+													else
+													{
+														if (Fields[Fields.Count - 1].name != null)
+														{
+															Fields[Fields.Count - 1].value = Fields[Fields.Count - 1].name;
+														}
+													}
+												}
+												Fields[Fields.Count - 1].DisplayNameField = jsonConvert["names"][nameField].ToString();
+												Fields[Fields.Count - 1].NameField = nameField;
+												break;
+											}
+										default:
+											{
+												Fields.Add(JsonConvert.DeserializeObject<Fields>(jsonConvert["fields"][nameField].ToString()));
+
+												//Проверяем на наличие элемента, если элемент равен null, то надо переопределить элемент
+												//с именем и описанием, для удобочитаемого формата
+												if (Fields[Fields.Count - 1] == null)
+												{
+													Fields[Fields.Count - 1] = new Fields()
+													{
+														value = "Не определено",
+														schema = schemaFields
+													};
+												}
+												//Изменяем значение поля, т.к. все значения должны храниться в Value, а в некоторых запросах получаем в Name или displayName (человекочитаемый формат)
+												if (Fields[Fields.Count - 1].value == null)
+												{
+													if (Fields[Fields.Count - 1].displayName != null)
+													{
+														Fields[Fields.Count - 1].value = Fields[Fields.Count - 1].displayName;
+													}
+													else
+													{
+														if (Fields[Fields.Count - 1].name != null)
+														{
+															Fields[Fields.Count - 1].value = Fields[Fields.Count - 1].name;
+														}
+													}
+												}
+												if (Fields[Fields.Count - 1].Child != null)
+												{
+													Fields[Fields.Count - 1].value += " - ";
+												}
+												Fields[Fields.Count - 1].NameField = nameField;
+												Fields[Fields.Count - 1].DisplayNameField = jsonConvert["names"][nameField].ToString();
+												break;
+											}
+									}
+								}
+							}
+						}
+
+					}
+				}
+			}
+			catch (Exception ex)
+			{
+				Console.WriteLine(ex.Message);
+			}
+			
+			return Fields;
+		}
+
+	
+
+
+
+
+
+
+
+
+
+	/// <summary>
+	/// Получаем список названий полей и значений задачи
+	/// </summary>
+	/// <returns></returns>
+	public List<Fields> GetCustomField()
 		{
 			List<Fields> fields = new List<Fields>();
 

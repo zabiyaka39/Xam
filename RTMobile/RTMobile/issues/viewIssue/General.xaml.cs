@@ -76,12 +76,15 @@ namespace RTMobile.issues.viewIssue
 						//Показ всех полей, даже не видимых
 						//urlRequest = $"/rest/api/2/issue/{issue.key}?expand=names,schema",
 						//Показываем только видимые поля
-						urlRequest = $"/rest/api/2/issue/{issue.key}/editmeta",
+						urlRequest = $"/rest/api/2/issue/{issue.key}?expand=names,editmeta",
 						methodRequest = "GET"
 					};
 					Request request = new Request(jsonRequest);
 
-					fieldIssue = request.GetCustomField();
+					//fieldIssue = request.GetCustomField();
+
+
+					fieldIssue = request.GetFieldsIssue();
 				}
 				catch (Exception ex)
 				{
