@@ -104,81 +104,54 @@ namespace RTMobile
 					Convert.ToBase64String(Encoding.Default.GetBytes(CrossSettings.Current.GetValueOrDefault("login", string.Empty) +
 					":" +
 					CrossSettings.Current.GetValueOrDefault("password", string.Empty))));
-				this.httpWebRequest.Method = jsonRequest.methodRequest;
-				this.httpWebRequest.ContentType = "application/json";
-				this.json = JsonConvert.SerializeObject(jsonRequest,
-													Newtonsoft.Json.Formatting.None,
-													new JsonSerializerSettings
-													{
-														NullValueHandling = NullValueHandling.Ignore
-													});
-			/*	if (jsonRequest.file_filovich != null)
+				// если в запррос передается файл, формируется http реквест
+				if (jsonRequest.fileUploadJira != null)
 				{
-					string file = @"C:\123.png";
-					string paramName = "file";
-					string contentType = "image/jpeg";
-					this.httpWebRequest.Headers.Add("X-Atlassian-Token", "nocheck");
-					string formdataTemplate = "Content-Disposition: form-data; name=\"{0}\"\r\n\r\n{1}";
 					string boundary = "-------------------" + DateTime.Now.Ticks.ToString("x");
-					this.httpWebRequest.ContentType = "multipart/form-data; boundary=" + boundary;
 					byte[] boundarybytes = System.Text.Encoding.ASCII.GetBytes("\r\n--" + boundary + "\r\n");
-					NameValueCollection nvc = new NameValueCollection();
-					nvc.Add("id", "TTR");
-					nvc.Add("btn-submit-photo", "Upload");
+
+					this.httpWebRequest.Headers.Add("X-Atlassian-Token", "nocheck");
+					this.httpWebRequest.Method = "POST";
+					this.httpWebRequest.KeepAlive = true;
+					this.httpWebRequest.ContentType = string.Format("multipart/form-data; boundary={0}", boundary);
+					this.httpWebRequest.Credentials = System.Net.CredentialCache.DefaultCredentials;
+					
+					
+					// сериализация http запроса и файла и запись в поток сетевого взаимодействия 
+					
 					Stream rs = this.httpWebRequest.GetRequestStream();
 					
-					foreach (string key in nvc.Keys)
-					{
-						rs.Write(boundarybytes, 0, boundarybytes.Length);
-						string formitem = string.Format(formdataTemplate, key, nvc[key]);
-						byte[] formitembytes = System.Text.Encoding.UTF8.GetBytes(formitem);
-						rs.Write(formitembytes, 0, formitembytes.Length);
-					}
 					rs.Write(boundarybytes, 0, boundarybytes.Length);
-
-					string headerTemplate = "Content-Disposition:  name=\"{0}\"; filename=\"{1}\"\r\nContent-Type: {2}\r\n\r\n";
-					string header = string.Format(headerTemplate, paramName, file, contentType);
-					byte[] headerbytes = System.Text.Encoding.UTF8.GetBytes(header);
+					string header = "Content-Disposition: form-data; name =\"file\"; filename=\"{0}\"\r\nContent-Type: application/octet-stream\r\n\r\n";
+					string headerTemplate = string.Format(header, jsonRequest.fileUploadJiraName);
+					byte[] headerbytes = System.Text.Encoding.UTF8.GetBytes(headerTemplate);
 					rs.Write(headerbytes, 0, headerbytes.Length);
 
-					using (FileStream filestream = new FileStream(file, FileMode.Open, FileAccess.Read))
+					FileStream fileStream = new FileStream(jsonRequest.fileUploadJira, FileMode.Open, FileAccess.Read);
+					byte[] buffer = new byte[4096];
+					int bytesRead = 0;
+					while ((bytesRead = fileStream.Read(buffer, 0, buffer.Length)) != 0)
 					{
-						byte[] buffer = new byte[4096];
-						int bytesRead = 0;
-						while((bytesRead = filestream.Read(buffer, 0, buffer.Length)) != 0)
-						{
-							rs.Write(buffer,0, bytesRead);
-						}
+						rs.Write(buffer, 0, bytesRead);
 					}
-
+					fileStream.Close();
+					
+					
 					byte[] trailer = System.Text.Encoding.ASCII.GetBytes("\r\n--" + boundary + "--\r\n");
 					rs.Write(trailer, 0, trailer.Length);
 					rs.Close();
 
-					WebResponse wrs = null;
-					try
+					using (var oResponse = (HttpWebResponse)this.httpWebRequest.GetResponse())
 					{
-						wrs = this.httpWebRequest.GetResponse();
-						using (Stream stream2 = wrs.GetResponseStream())
+						using (var reader = new StreamReader(oResponse.GetResponseStream()))
 						{
-							StreamReader reader2 = new StreamReader(stream2);
+							var responseData = reader.ReadToEnd();
 						}
 					}
-					catch (Exception ex)
-					{
-						
-						Console.WriteLine(ex.Message);
-						
-					}
-					finally 
-					{
-						this.httpWebRequest = null;
-					}
-					
-
 				}
 				else
 				{
+					this.httpWebRequest.Method = jsonRequest.methodRequest;
 					this.httpWebRequest.ContentType = "application/json";
 					this.json = JsonConvert.SerializeObject(jsonRequest,
 														Newtonsoft.Json.Formatting.None,
@@ -186,8 +159,7 @@ namespace RTMobile
 														{
 															NullValueHandling = NullValueHandling.Ignore
 														});
-				}*/
-				
+				}
 				
 			}
 			catch (Exception ex)
@@ -196,10 +168,6 @@ namespace RTMobile
 				Crashes.TrackError(ex);
 			}
 		}
-
-
-		
-
 		/// <summary>
 		/// Метод для получения данных 
 		/// </summary>

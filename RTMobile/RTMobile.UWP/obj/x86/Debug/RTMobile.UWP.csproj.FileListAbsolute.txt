@@ -1052,3 +1052,9 @@ C:\RT\rtmobile\RTMobile\RTMobile.UWP\obj\x86\Debug\MultipleQualifiersPerDimensio
 C:\RT\rtmobile\RTMobile\RTMobile.UWP\obj\x86\Debug\ProjectArchitectures.txt
 C:\RT\rtmobile\RTMobile\RTMobile.UWP\obj\x86\Debug\.winmd_cache\$Microsoft.Graphics.Canvas.winmd_636160607180000000.json
 C:\RT\rtmobile\RTMobile\RTMobile.UWP\obj\x86\Debug\.winmd_cache\$Microsoft.UI.Xaml.Markup.winmd_636758444200000000.json
+C:\RT\rtmobile\RTMobile\RTMobile.UWP\bin\x86\Debug\Plugin.FilePicker.Abstractions.dll
+C:\RT\rtmobile\RTMobile\RTMobile.UWP\bin\x86\Debug\Plugin.FilePicker.Abstractions.pdb
+C:\RT\rtmobile\RTMobile\RTMobile.UWP\bin\x86\Debug\Plugin.FilePicker.pdb
+C:\RT\rtmobile\RTMobile\RTMobile.UWP\bin\x86\Debug\Plugin.FilePicker.dll
+C:\RT\rtmobile\RTMobile\RTMobile.UWP\obj\x86\Debug\Plugin.FilePicker.pri.xml
+C:\RT\rtmobile\RTMobile\RTMobile.UWP\bin\x86\Debug\RTMobile.UWP.exe.CodeAnalysisLog.xml

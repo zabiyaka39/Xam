@@ -88,6 +88,9 @@ microsoft.appcenter.AndroidHttpClientAdapter;crc64350623dcb797cc38.AndroidHttpCl
 Microsoft.AppCenter.ServiceCall, Microsoft.AppCenter;crc64350623dcb797cc38.ServiceCall
 Microsoft.AppCenter.ServiceCall;crc64350623dcb797cc38.ServiceCall
 microsoft.appcenter.ServiceCall;crc64350623dcb797cc38.ServiceCall
+Plugin.FilePicker.FilePickerActivity, Plugin.FilePicker;crc64424a8adc5a1fbe28.FilePickerActivity
+Plugin.FilePicker.FilePickerActivity;crc64424a8adc5a1fbe28.FilePickerActivity
+plugin.filepicker.FilePickerActivity;crc64424a8adc5a1fbe28.FilePickerActivity
 Rg.Plugins.Popup.Droid.Renderers.PopupPageRenderer, Rg.Plugins.Popup;crc643dd37f507f3d9710.PopupPageRenderer
 Rg.Plugins.Popup.Droid.Renderers.PopupPageRenderer;crc643dd37f507f3d9710.PopupPageRenderer
 rg.plugins.popup.droid.renderers.PopupPageRenderer;crc643dd37f507f3d9710.PopupPageRenderer

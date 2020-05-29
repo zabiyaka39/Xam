@@ -27,6 +27,8 @@ public class MonoPackageManager_Resources {
 		"Microsoft.IdentityModel.Tokens.dll",
 		"Nancy.dll",
 		"Newtonsoft.Json.dll",
+		"Plugin.FilePicker.Abstractions.dll",
+		"Plugin.FilePicker.dll",
 		"Plugin.Settings.Abstractions.dll",
 		"Plugin.Settings.dll",
 		"Rg.Plugins.Popup.dll",

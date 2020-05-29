@@ -165,7 +165,6 @@ C:\RT\rtmobile\RTMobile\RTMobile.iOS\bin\iPhone\Debug\zh-Hant\Xamarin.Forms.Plat
 C:\RT\rtmobile\RTMobile\RTMobile.iOS\bin\iPhone\Debug\RTMobile.dll
 C:\RT\rtmobile\RTMobile\RTMobile.iOS\bin\iPhone\Debug\Xamarin.Forms.Platform.iOS.dll
 C:\RT\rtmobile\RTMobile\RTMobile.iOS\bin\iPhone\Debug\RTMobile.pdb
-C:\RT\rtmobile\RTMobile\RTMobile.iOS\bin\iPhone\Debug\RTMobile.dll.mdb
 C:\RT\rtmobile\RTMobile\RTMobile.iOS\bin\iPhone\Debug\Xamarin.Forms.Platform.iOS.pdb
 C:\RT\rtmobile\RTMobile\RTMobile.iOS\obj\iPhone\Debug\device-builds\iphone10.5-13.4.1\ibtool\_BundleResourceWithLogicalName.items
 C:\RT\rtmobile\RTMobile\RTMobile.iOS\obj\iPhone\Debug\device-builds\iphone10.5-13.4.1\actool\_PartialAppManifest.items
@@ -178,3 +177,9 @@ C:\RT\rtmobile\RTMobile\RTMobile.iOS\obj\iPhone\Debug\XamlC.stamp
 C:\RT\rtmobile\RTMobile\RTMobile.iOS\obj\iPhone\Debug\RTMobile.iOS.csproj.CopyComplete
 C:\RT\rtmobile\RTMobile\RTMobile.iOS\obj\iPhone\Debug\RTMobile.iOS.exe
 C:\RT\rtmobile\RTMobile\RTMobile.iOS\obj\iPhone\Debug\RTMobile.iOS.pdb
+C:\RT\rtmobile\RTMobile\RTMobile.iOS\bin\iPhone\Debug\Plugin.FilePicker.Abstractions.dll
+C:\RT\rtmobile\RTMobile\RTMobile.iOS\bin\iPhone\Debug\Plugin.FilePicker.Abstractions.pdb
+C:\RT\rtmobile\RTMobile\RTMobile.iOS\bin\iPhone\Debug\Plugin.FilePicker.pdb
+C:\RT\rtmobile\RTMobile\RTMobile.iOS\bin\iPhone\Debug\Plugin.FilePicker.dll
+C:\RT\rtmobile\RTMobile\RTMobile.iOS\bin\iPhone\Debug\RTMobile.iOS.exe.CodeAnalysisLog.xml
+C:\RT\rtmobile\RTMobile\RTMobile.iOS\bin\iPhone\Debug\RTMobile.iOS.exe.lastcodeanalysissucceeded

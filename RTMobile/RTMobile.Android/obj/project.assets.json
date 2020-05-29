@@ -454,6 +454,17 @@
           "lib/MonoAndroid10/_._": {}
         }
       },
+      "Xam.Plugin.FilePicker/1.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/MonoAndroid10/Plugin.FilePicker.Abstractions.dll": {},
+          "lib/MonoAndroid10/Plugin.FilePicker.dll": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid10/Plugin.FilePicker.Abstractions.dll": {},
+          "lib/MonoAndroid10/Plugin.FilePicker.dll": {}
+        }
+      },
       "Xam.Plugins.Settings/3.1.1": {
         "type": "package",
         "compile": {
@@ -1337,6 +1348,18 @@
           "buildTransitive/Xamarin.Forms.targets": {}
         }
       },
+      "Xamarin.Plugin.FilePicker/2.1.34": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Java.Interop"
+        ],
+        "compile": {
+          "lib/monoandroid90/Plugin.FilePicker.dll": {}
+        },
+        "runtime": {
+          "lib/monoandroid90/Plugin.FilePicker.dll": {}
+        }
+      },
       "RTMobile/1.0.0.2": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -1352,11 +1375,13 @@
           "System.IdentityModel.Tokens.Jwt": "6.5.0",
           "System.Net.Http": "4.3.4",
           "System.Xml.XmlSerializer": "4.3.0",
+          "Xam.Plugin.FilePicker": "1.1.0",
           "Xam.Plugins.Settings": "3.1.1",
           "Xamarin.Essentials": "1.5.2",
           "Xamarin.FFImageLoading": "2.4.11.982",
           "Xamarin.FFImageLoading.Forms": "2.4.11.982",
-          "Xamarin.Forms": "4.5.0.617"
+          "Xamarin.Forms": "4.5.0.617",
+          "Xamarin.Plugin.FilePicker": "2.1.34"
         },
         "compile": {
           "bin/placeholder/RTMobile.dll": {}
@@ -2953,6 +2978,58 @@
         "system.xml.xmlserializer.nuspec"
       ]
     },
+    "Xam.Plugin.FilePicker/1.1.0": {
+      "sha512": "ORzNG6dEgdBZnIdmbQCpNB4LSSTjBebwGjb1XZrgfbBGjX9muHBfZeQwOnNRvcGlm6fkylzTj2rDslDA1E/JFA==",
+      "type": "package",
+      "path": "xam.plugin.filepicker/1.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/MonoAndroid10/Plugin.FilePicker.Abstractions.dll",
+        "lib/MonoAndroid10/Plugin.FilePicker.Abstractions.pdb",
+        "lib/MonoAndroid10/Plugin.FilePicker.Abstractions.xml",
+        "lib/MonoAndroid10/Plugin.FilePicker.dll",
+        "lib/MonoAndroid10/Plugin.FilePicker.pdb",
+        "lib/MonoAndroid10/Plugin.FilePicker.xml",
+        "lib/MonoTouch10/Plugin.FilePicker.Abstractions.dll",
+        "lib/MonoTouch10/Plugin.FilePicker.Abstractions.xml",
+        "lib/MonoTouch10/Plugin.FilePicker.dll",
+        "lib/MonoTouch10/Plugin.FilePicker.xml",
+        "lib/UAP10/Plugin.FilePicker.Abstractions.dll",
+        "lib/UAP10/Plugin.FilePicker.Abstractions.pdb",
+        "lib/UAP10/Plugin.FilePicker.Abstractions.xml",
+        "lib/UAP10/Plugin.FilePicker.dll",
+        "lib/UAP10/Plugin.FilePicker.pdb",
+        "lib/UAP10/Plugin.FilePicker.xml",
+        "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10/Plugin.FilePicker.Abstractions.dll",
+        "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10/Plugin.FilePicker.Abstractions.pdb",
+        "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10/Plugin.FilePicker.Abstractions.xml",
+        "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10/Plugin.FilePicker.dll",
+        "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10/Plugin.FilePicker.pdb",
+        "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10/Plugin.FilePicker.xml",
+        "lib/win8/Plugin.FilePicker.Abstractions.dll",
+        "lib/win8/Plugin.FilePicker.Abstractions.pdb",
+        "lib/win8/Plugin.FilePicker.Abstractions.xml",
+        "lib/win8/Plugin.FilePicker.dll",
+        "lib/win8/Plugin.FilePicker.pdb",
+        "lib/win8/Plugin.FilePicker.xml",
+        "lib/wp8/Plugin.FilePicker.Abstractions.dll",
+        "lib/wp8/Plugin.FilePicker.Abstractions.pdb",
+        "lib/wp8/Plugin.FilePicker.Abstractions.xml",
+        "lib/wp8/Plugin.FilePicker.dll",
+        "lib/wp8/Plugin.FilePicker.pdb",
+        "lib/wp8/Plugin.FilePicker.xml",
+        "lib/wpa81/Plugin.FilePicker.Abstractions.dll",
+        "lib/wpa81/Plugin.FilePicker.Abstractions.pdb",
+        "lib/wpa81/Plugin.FilePicker.Abstractions.xml",
+        "lib/wpa81/Plugin.FilePicker.dll",
+        "lib/wpa81/Plugin.FilePicker.pdb",
+        "lib/wpa81/Plugin.FilePicker.xml",
+        "readme.txt",
+        "xam.plugin.filepicker.1.1.0.nupkg.sha512",
+        "xam.plugin.filepicker.nuspec"
+      ]
+    },
     "Xam.Plugins.Settings/3.1.1": {
       "sha512": "EQEYQJ64ZLqui5GWkLMavgqitHxwUHZHryTzUD1021UBuz1XwDSjPL45W0K4pPXjz9oKbg7YpRXKPR1luPr/5Q==",
       "type": "package",
@@ -4314,6 +4391,45 @@
         "xamarin.forms.nuspec"
       ]
     },
+    "Xamarin.Plugin.FilePicker/2.1.34": {
+      "sha512": "y1SL60eEECBYqRmJ0E94B9W6+Jl4sZeLlGn4WtTrcKRJv9CGHPH459L1EZXrTlhq5muCNIInfst6FdXLiRqb2A==",
+      "type": "package",
+      "path": "xamarin.plugin.filepicker/2.1.34",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/monoandroid80/Plugin.FilePicker.dll",
+        "lib/monoandroid80/Plugin.FilePicker.pdb",
+        "lib/monoandroid80/Plugin.FilePicker.xml",
+        "lib/monoandroid81/Plugin.FilePicker.dll",
+        "lib/monoandroid81/Plugin.FilePicker.pdb",
+        "lib/monoandroid81/Plugin.FilePicker.xml",
+        "lib/monoandroid90/Plugin.FilePicker.dll",
+        "lib/monoandroid90/Plugin.FilePicker.pdb",
+        "lib/monoandroid90/Plugin.FilePicker.xml",
+        "lib/net45/Plugin.FilePicker.dll",
+        "lib/net45/Plugin.FilePicker.pdb",
+        "lib/net45/Plugin.FilePicker.xml",
+        "lib/netstandard1.0/Plugin.FilePicker.dll",
+        "lib/netstandard1.0/Plugin.FilePicker.pdb",
+        "lib/netstandard1.0/Plugin.FilePicker.xml",
+        "lib/netstandard2.0/Plugin.FilePicker.dll",
+        "lib/netstandard2.0/Plugin.FilePicker.pdb",
+        "lib/netstandard2.0/Plugin.FilePicker.xml",
+        "lib/uap10.0.16299/Plugin.FilePicker.dll",
+        "lib/uap10.0.16299/Plugin.FilePicker.pdb",
+        "lib/uap10.0.16299/Plugin.FilePicker.pri",
+        "lib/uap10.0.16299/Plugin.FilePicker.xml",
+        "lib/xamarinios10/Plugin.FilePicker.dll",
+        "lib/xamarinios10/Plugin.FilePicker.pdb",
+        "lib/xamarinios10/Plugin.FilePicker.xml",
+        "lib/xamarinmac20/Plugin.FilePicker.dll",
+        "lib/xamarinmac20/Plugin.FilePicker.pdb",
+        "lib/xamarinmac20/Plugin.FilePicker.xml",
+        "xamarin.plugin.filepicker.2.1.34.nupkg.sha512",
+        "xamarin.plugin.filepicker.nuspec"
+      ]
+    },
     "RTMobile/1.0.0.2": {
       "type": "project",
       "path": "../RTMobile/RTMobile.csproj",
@@ -4330,6 +4446,7 @@
       "Newtonsoft.Json >= 12.0.3",
       "RTMobile >= 1.0.0.2",
       "Rg.Plugins.Popup >= 2.0.0.2",
+      "Xam.Plugin.FilePicker >= 1.1.0",
       "Xam.Plugins.Settings >= 3.1.1",
       "Xamarin.Android.Support.Core.Utils >= 28.0.0.3",
       "Xamarin.Android.Support.CustomTabs >= 28.0.0.3",
@@ -4339,7 +4456,8 @@
       "Xamarin.Android.Support.v7.CardView >= 28.0.0.3",
       "Xamarin.Android.Support.v7.MediaRouter >= 28.0.0.3",
       "Xamarin.Essentials >= 1.5.1",
-      "Xamarin.Forms >= 4.5.0.617"
+      "Xamarin.Forms >= 4.5.0.617",
+      "Xamarin.Plugin.FilePicker >= 2.1.34"
     ]
   },
   "packageFolders": {
@@ -4412,6 +4530,10 @@
             "target": "Package",
             "version": "[2.0.0.2, )"
           },
+          "Xam.Plugin.FilePicker": {
+            "target": "Package",
+            "version": "[1.1.0, )"
+          },
           "Xam.Plugins.Settings": {
             "target": "Package",
             "version": "[3.1.1, )"
@@ -4451,6 +4573,10 @@
           "Xamarin.Forms": {
             "target": "Package",
             "version": "[4.5.0.617, )"
+          },
+          "Xamarin.Plugin.FilePicker": {
+            "target": "Package",
+            "version": "[2.1.34, )"
           }
         }
       }

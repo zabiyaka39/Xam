@@ -66,5 +66,6 @@ namespace RTMobile.issues.viewIssue
 				Crashes.TrackError(ex);
 			}
 		}
+
 	}
 }
