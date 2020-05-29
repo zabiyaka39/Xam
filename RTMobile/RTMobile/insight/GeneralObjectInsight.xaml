@@ -6,11 +6,128 @@
              mc:Ignorable="d"
              Title="СВЕДЕНИЯ"
              x:Class="RTMobile.insight.GeneralObjectInsight">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Комментарии" Icon="commentToolBar.png" Clicked="ToolbarItem_Clicked"
+                     Order="Primary" Priority="0"/>
+        <ToolbarItem Text="   _________________   " 
+                     Order="Secondary" Priority="997"/>
+        <ToolbarItem Text="Комментарии" Icon="comment.png"  Clicked="ToolbarItem_Clicked_1"
+                     Order="Secondary" Priority="998"/>
+        <ToolbarItem Text="Рабочий журнал" Clicked="ToolbarItem_Clicked_1"
+                     Order="Secondary" Priority="999"/>
+        <ToolbarItem Text="История" Clicked="ToolbarItem_Clicked"
+                     Order="Secondary" Priority="1000"/>
+    </ContentPage.ToolbarItems>
+
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
+                      BackgroundColor="#4A4C50">
+
+            <Frame Grid.Row="0" Grid.Column="0" HasShadow="True" CornerRadius="5"
+                   x:Name="detailFrame" BackgroundColor="#FFFFFF" HeightRequest="300" Margin="10,20,10,10" Padding="10,0,10,0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="25"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0" Grid.Column="0" Padding="0" Margin="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="15"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="21"/>
+                            <RowDefinition Height="1"/>
+                        </Grid.RowDefinitions>
+                        <Image Source="info.png" Grid.Column="0" Grid.Row="0" VerticalOptions="Center" />
+                        <Label Text="Детали задачи" Grid.Column="1" Grid.Row="0" VerticalOptions="Center" />
+
+                        <BoxView BackgroundColor="#4A4C50" HeightRequest="1" Margin="-20,0,-20,0"
+                                 HorizontalOptions="FillAndExpand" Grid.Column="0"
+                                 Grid.Row="1" Grid.ColumnSpan="2" VerticalOptions="Start"/>
+                    </Grid>
+                    <ScrollView  x:Name="detailIssue" Grid.Row="1" Grid.Column="0" HorizontalOptions="FillAndExpand"
+                                 VerticalOptions="FillAndExpand" Margin="0,0,10,0">
+                        <ListView x:Name="InformationObject"  Grid.Row="1" Grid.Column="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
+                                  HasUnevenRows="True" SeparatorVisibility="None" >
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <ViewCell.View>
+                                            <Grid>
+                                                <Label Text="{Binding name}" Grid.Column="0"/>
+                                                <Label Text="{Binding value}" Grid.Column="1" HorizontalTextAlignment="End"/>
+                                            </Grid>
+                                        </ViewCell.View>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </ScrollView>
+                    <ImageButton x:Name="showDetailIssue" Source="arrowUp.png"  Grid.Column="0" BackgroundColor="Transparent"
+                                 Clicked="showDetailIssue_Clicked" Grid.Row="2" HorizontalOptions="Center" VerticalOptions="End" Margin="0,0,0,10"/>
+                </Grid>
+            </Frame>
+            <Frame x:Name="dateFrame" Grid.Row="1" Grid.Column="0" HasShadow="True" CornerRadius="5"
+                   BackgroundColor="#FFFFFF" HeightRequest="150" Margin="10,0,10,10" Padding="10,0,10,0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="25"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0" Grid.Column="0" Padding="0" Margin="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="15"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="21"/>
+                            <RowDefinition Height="1"/>
+                        </Grid.RowDefinitions>
+                        <Image Source="time.png" Grid.Column="0" Grid.Row="0" VerticalOptions="Center" />
+                        <Label Text="Даты" Grid.Column="1" Grid.Row="0" VerticalOptions="Center" />
+
+                        <BoxView BackgroundColor="#4A4C50" HeightRequest="1" Margin="-20,0,-20,0"
+                                 HorizontalOptions="FillAndExpand" Grid.Column="0"
+                                 Grid.Row="1" Grid.ColumnSpan="2" VerticalOptions="Start"/>
+                    </Grid>
+                    <ListView x:Name="DateObject"  Grid.Row="1" Grid.Column="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
+                              HasUnevenRows="True" SeparatorVisibility="None" >
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <ViewCell.View>
+                                        <Grid>
+                                            <Label Text="{Binding name}" Grid.Column="0"/>
+                                            <Label Text="{Binding value}" Grid.Column="1" HorizontalTextAlignment="End"/>
+                                        </Grid>
+                                    </ViewCell.View>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                    <ImageButton x:Name="showDate" Source="arrowUp.png"  Grid.Column="0" BackgroundColor="Transparent"
+                                 Clicked="showDate_Clicked" Grid.Row="2" HorizontalOptions="Center" VerticalOptions="End" Margin="0,0,0,10"/>
+                </Grid>
+            </Frame>
+
+            <Grid VerticalOptions="EndAndExpand" BackgroundColor="#323037">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="5"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="5"/>
+                </Grid.RowDefinitions>
+                <ImageButton Source="home.png" Grid.Column="0" Grid.Row="1"
+                             BackgroundColor="Transparent" Clicked="ImageButton_Clicked_3"></ImageButton>
+                <ImageButton Source="calendar.png" Grid.Column="1" Grid.Row="1"
+                             BackgroundColor="Transparent" Clicked="ImageButton_Clicked"></ImageButton>
+                <ImageButton Source="insight.png" Grid.Column="2" Grid.Row="1"
+                             BackgroundColor="Transparent" Clicked="ImageButton_Clicked_1"></ImageButton>
+                <ImageButton Source="filter.png" Grid.Column="3" Grid.Row="1"
+                             BackgroundColor="Transparent" Clicked="ImageButton_Clicked_2"></ImageButton>
+            </Grid>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

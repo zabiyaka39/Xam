@@ -758,18 +758,10 @@ namespace RTMobile
 			return fields;
 		}
 
-
-
-
-
-
-
-
-
-
-
-
-
+		/// <summary>
+		/// Получаем список названий полей и значений задачи
+		/// </summary>
+		/// <returns></returns>
 		public List<Fields> GetFieldsIssue(string json = "")
 		{
 			List<Fields> Fields = new List<Fields>();
@@ -919,59 +911,5 @@ namespace RTMobile
 			
 			return Fields;
 		}
-
-	
-
-
-
-
-
-
-
-
-
-	/// <summary>
-	/// Получаем список названий полей и значений задачи
-	/// </summary>
-	/// <returns></returns>
-	public List<Fields> GetCustomField()
-		{
-			List<Fields> fields = new List<Fields>();
-
-
-			WebResponse httpResponse = this.httpWebRequest.GetResponse();
-			//Отправляем запрос для получения списка полей задачи
-			using (StreamReader streamReader = new StreamReader(httpResponse.GetResponseStream()))
-			{
-				//читаем поток
-				string result = streamReader.ReadToEnd();
-				//Создаем JAVA серелиазатор для возможности чтения элементов по названию, а не по полю класса, т.к. нам заранее не известны названия и количество полей в задаче и их количество может меняться
-				JavaScriptSerializer js = new JavaScriptSerializer();
-				//десериализуем в переменную с типом dynamic
-				dynamic objectCustomField = js.Deserialize<dynamic>(result);
-
-				//проходимся по всем полученным customField и получаем значения
-				foreach (System.Collections.Generic.KeyValuePair<string, object> field in objectCustomField)
-				{
-					if (field.Key == "fields")
-					{
-						if (((dynamic)(field.Value)).Count > 0)
-						{
-							for (int i = 0; i < ((dynamic)(field.Value)).Count; ++i)
-							{
-								foreach (KeyValuePair<string, object> fieldTransaction in ((dynamic)(field.Value))[i])
-								{
-								}
-							}
-						}
-					}
-				}
-			}
-			return fields;
-		}
-
-
-
-		
 	}
 }

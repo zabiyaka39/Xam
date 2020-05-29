@@ -48,11 +48,11 @@
                                     VerticalOptions="FillAndExpand" Margin="0,0,10,0">
                         <Grid Padding="0" Margin="0">
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="auto"/>
-                                <RowDefinition Height="auto"/>
-                                <RowDefinition Height="auto"/>
-                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
                             </Grid.RowDefinitions>
                             <Label Text="Тема:" Grid.Column="0" Grid.Row="0" VerticalOptions="Start" Padding="0"/>
                             <Label x:Name="summaryIssue" Grid.Column="1" Grid.Row="0"
