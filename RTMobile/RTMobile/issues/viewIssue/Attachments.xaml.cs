@@ -8,20 +8,26 @@ using Xamarin.Essentials;
 using Xamarin.Forms;
 using Plugin.FilePicker;
 using System.Threading.Tasks;
+using Plugin.FilePicker.Abstractions;
+using Plugin.Media.Abstractions;
+using Plugin.Media;
+using System.Net.Http;
+using System.Net.Mime;
+using System.Net.Http.Headers;
 
 namespace RTMobile.issues.viewIssue
 {
 	public partial class Attachments : ContentPage
 	{
 		Issue issue = new Issue();
-		
+
 		private ObservableCollection<Attachment> attachmentsImage = new ObservableCollection<Attachment>();
 		private ObservableCollection<Attachment> attachmentsDocument = new ObservableCollection<Attachment>();
 		private ObservableCollection<Attachment> attachmentsOther = new ObservableCollection<Attachment>();
 		private List<RTMobile.Transition> transition { get; set; }//Переходы по заявке
 		public Attachments(Issue issue)
 		{
-			
+
 			InitializeComponent();
 			//TransitionIssue();
 			this.issue = issue;
@@ -31,9 +37,21 @@ namespace RTMobile.issues.viewIssue
 
 		public void issueFieldsRefresh(Fields fields)
 		{
-			List<Attachment> atach = new List<Attachment>();
+
 			if (issue != null && fields != null)
 			{
+				for (int i = attachmentsImage.Count; i > 0; --i)
+				{
+					attachmentsImage.RemoveAt(0);
+				}
+				for (int i = attachmentsDocument.Count; i > 0; --i)
+				{
+					attachmentsDocument.RemoveAt(0);
+				}
+				for (int i = attachmentsOther.Count; i > 0; --i)
+				{
+					attachmentsOther.RemoveAt(0);
+				}
 				for (int i = 0; i < fields.attachment.Count; ++i)
 				{
 					try
@@ -52,8 +70,6 @@ namespace RTMobile.issues.viewIssue
 								}
 							default:
 								{
-
-									atach.Add(fields.attachment[i]);
 									attachmentsOther.Add(fields.attachment[i]);
 									break;
 								}
@@ -105,31 +121,50 @@ namespace RTMobile.issues.viewIssue
 		//Кнопка при нажатии которой открывается файловый менеджер
 		private async void upload_Button(object sender, EventArgs e)
 		{
-			var file = await CrossFilePicker.Current.PickFile();
-			string fileUpload = file.FilePath;
-			string fileName = file.FileName;
+			MediaFile _mediaFile = null;
 
-			//добавление файла
-			JSONRequest jsonRequest = new JSONRequest()
+			//Инициализируем проверку доступности разрешения работы с файловой системой
+			await CrossMedia.Current.Initialize();
+			//Выполняем поиск по системе необходимого файла
+			if (CrossMedia.Current.IsPickPhotoSupported)
 			{
-				urlRequest = $"/rest/api/2/issue/{issue.key}/attachments",
-				methodRequest = "POST",
-				fileUploadJira = fileUpload,
-				fileUploadJiraName=fileName
+				_mediaFile = await CrossMedia.Current.PickPhotoAsync().ConfigureAwait(true);
+			}
 
-			};
-			Request request = new Request(jsonRequest);
-			// обновление отображения вложений
-			JSONRequest jsonRequest2 = new JSONRequest()
+			if (_mediaFile != null)
 			{
-				urlRequest = $"/rest/api/2/issue/{issue.key}",
-				methodRequest = "GET"
+				string boundary = DateTime.Now.Ticks.ToString("x");
 
-			};
-			Request request2 = new Request(jsonRequest2);
-			Fields fields = request2.GetResponses<Issue>().fields;
-			issueFieldsRefresh(fields);
-			
+				MultipartFormDataContent content = new MultipartFormDataContent(boundary);
+
+				var streamContent = new StreamContent(_mediaFile.GetStream());
+				//Задаем MimeType файлу
+				streamContent.Headers.ContentType = new MediaTypeHeaderValue(MimeTypes.GetMimeType(_mediaFile.Path));
+
+				content.Add(streamContent, "\"file\"", $"\"{_mediaFile.Path}\"");
+
+				Byte[] byteArray = await content.ReadAsByteArrayAsync().ConfigureAwait(true);
+				JSONRequest jsonRequest = new JSONRequest()
+				{
+					urlRequest = $"/rest/api/2/issue/{issue.key}/attachments",
+					methodRequest = "POST",
+					FileUpload = content,
+					FileUploadByte = byteArray
+
+				};
+				Request request = new Request(jsonRequest);
+
+				// обновление отображения вложений
+				JSONRequest jsonRequest2 = new JSONRequest()
+				{
+					urlRequest = $"/rest/api/2/issue/{issue.key}",
+					methodRequest = "GET"
+
+				};
+				Request request2 = new Request(jsonRequest2);
+				Fields fields = request2.GetResponses<Issue>().fields;
+				issueFieldsRefresh(fields);
+			}
 		}
 		void ImageButton_Clicked(System.Object sender, System.EventArgs e)
 		{
@@ -162,7 +197,7 @@ namespace RTMobile.issues.viewIssue
 		void ToolbarItem_Clicked_3(System.Object sender, System.EventArgs e)
 		{
 			Navigation.PushAsync(new Comment(issue.key, issue.fields.summary));
-		}			
+		}
 		private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
 		{
 			Navigation.PushAsync(new imageView(attachmentsImage, carouselImages.Position));
@@ -170,13 +205,13 @@ namespace RTMobile.issues.viewIssue
 
 		private async void TapGestureRecognizer_Tapped_1(object sender, EventArgs e)
 		{
-			Uri uri = new Uri (attachmentsDocument[carouselDocuments.Position].content);
+			Uri uri = new Uri(attachmentsDocument[carouselDocuments.Position].content);
 			await Launcher.TryOpenAsync(uri).ConfigureAwait(true);
 		}
 		private async void TapGestureRecognizer_Tapped_2(object sender, EventArgs e)
 		{
 			Uri uri = new Uri(attachmentsOther[carouselOthers.Position].content);
-			await Launcher.TryOpenAsync(uri).ConfigureAwait(true); 
+			await Launcher.TryOpenAsync(uri).ConfigureAwait(true);
 		}
 	}
 }

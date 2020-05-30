@@ -58,7 +58,7 @@ namespace RTMobile
 				return false;
 			}
 			return true;
-			
+
 		}
 		/// <summary>
 		/// Авторизация пользователя и возвращение упешности результата авторизации
@@ -94,6 +94,7 @@ namespace RTMobile
 				return false;
 			}
 		}
+
 		/// <summary>
 		/// Создаем подключение для запроса данных
 		/// </summary>
@@ -107,50 +108,40 @@ namespace RTMobile
 					Convert.ToBase64String(Encoding.Default.GetBytes(CrossSettings.Current.GetValueOrDefault("login", string.Empty) +
 					":" +
 					CrossSettings.Current.GetValueOrDefault("password", string.Empty))));
-				// если в запррос передается файл, формируется http реквест
-				if (jsonRequest.fileUploadJira != null)
-				{
-					string boundary = "-------------------" + DateTime.Now.Ticks.ToString("x");
-					byte[] boundarybytes = System.Text.Encoding.ASCII.GetBytes("\r\n--" + boundary + "\r\n");
+				this.httpWebRequest.KeepAlive = true;
 
+				if (jsonRequest.FileUpload != null)
+				{			
 					this.httpWebRequest.Headers.Add("X-Atlassian-Token", "nocheck");
 					this.httpWebRequest.Method = "POST";
-					this.httpWebRequest.KeepAlive = true;
-					this.httpWebRequest.ContentType = string.Format("multipart/form-data; boundary={0}", boundary);
+					this.httpWebRequest.ContentType = jsonRequest.FileUpload.Headers.ContentType.ToString();
+					this.httpWebRequest.ContentLength = jsonRequest.FileUpload.Headers.ContentLength.Value;
 					this.httpWebRequest.Credentials = System.Net.CredentialCache.DefaultCredentials;
-					
-					
-					// сериализация http запроса и файла и запись в поток сетевого взаимодействия 
-					
-					Stream rs = this.httpWebRequest.GetRequestStream();
-					
-					rs.Write(boundarybytes, 0, boundarybytes.Length);
-					string header = "Content-Disposition: form-data; name =\"file\"; filename=\"{0}\"\r\nContent-Type: application/octet-stream\r\n\r\n";
-					string headerTemplate = string.Format(header, jsonRequest.fileUploadJiraName);
-					byte[] headerbytes = System.Text.Encoding.UTF8.GetBytes(headerTemplate);
-					rs.Write(headerbytes, 0, headerbytes.Length);
 
-					FileStream fileStream = new FileStream(jsonRequest.fileUploadJira, FileMode.Open, FileAccess.Read);
-					byte[] buffer = new byte[4096];
-					int bytesRead = 0;
-					while ((bytesRead = fileStream.Read(buffer, 0, buffer.Length)) != 0)
+					Stream requestStream = this.httpWebRequest.GetRequestStream();
+					try
 					{
-						rs.Write(buffer, 0, bytesRead);
+						requestStream.Write(jsonRequest.FileUploadByte, 0, jsonRequest.FileUploadByte.Length);
 					}
-					fileStream.Close();
-					
-					
-					byte[] trailer = System.Text.Encoding.ASCII.GetBytes("\r\n--" + boundary + "--\r\n");
-					rs.Write(trailer, 0, trailer.Length);
-					rs.Close();
+					catch (Exception ex)
+					{
+						Console.WriteLine(ex.Message);
+						Crashes.TrackError(ex);
+					}
+					requestStream.Close();
 
-					using (var oResponse = (HttpWebResponse)this.httpWebRequest.GetResponse())
-					{
-						using (var reader = new StreamReader(oResponse.GetResponseStream()))
-						{
-							var responseData = reader.ReadToEnd();
-						}
-					}
+					HttpWebResponse myHttpWebResponse = (HttpWebResponse)this.httpWebRequest.GetResponse();
+
+					Stream responseStream = myHttpWebResponse.GetResponseStream();
+
+					StreamReader myStreamReader = new StreamReader(responseStream, Encoding.Default);
+
+					string pageContent = myStreamReader.ReadToEnd();
+
+					myStreamReader.Close();
+					responseStream.Close();
+
+					myHttpWebResponse.Close();
 				}
 				else
 				{
@@ -163,7 +154,7 @@ namespace RTMobile
 															NullValueHandling = NullValueHandling.Ignore
 														});
 				}
-				
+
 			}
 			catch (Exception ex)
 			{
@@ -211,67 +202,10 @@ namespace RTMobile
 			return rootObject;
 		}
 
-		private MediaFile _mediaFile;
-
-		public async void uploadFile()
-		{
-			//Инициализируем проверку доступности разрешения работы с файловой системой
-			await CrossMedia.Current.Initialize();
-			//Выполняем поиск по системе необходимого файла
-			if (CrossMedia.Current.IsPickPhotoSupported)
-			{
-				_mediaFile = await CrossMedia.Current.PickPhotoAsync().ConfigureAwait(true);
-			}
-
-			if (_mediaFile != null)
-			{
-				MultipartFormDataContent content = new MultipartFormDataContent();
-				content.Add(new StreamContent(_mediaFile.GetStream()), "\"multipart/form-data\"", $"\"{_mediaFile.Path}\"");
-
-
-				HttpWebRequest httpWebRequest1 = (HttpWebRequest)WebRequest.Create("https://sd.rosohrana.ru/rest/api/2/issue/IT-5744/attachments");
-				httpWebRequest1.Headers.Add(HttpRequestHeader.Authorization, "Basic " + Convert.ToBase64String(Encoding.Default.GetBytes("sekisov:28651455gsbua1A")));
-				////this.httpWebRequest.Headers.Add("X-Atlassian-Token", "no-check");
-				////this.httpWebRequest.Timeout = -1;
-				using (StreamWriter streamWriter = new StreamWriter(httpWebRequest1.GetRequestStream()))
-				{
-					//streamWriter.Write("file", content);
-				}
-				WebResponse httpResponse = httpWebRequest1.GetResponse();
-				//using (StreamReader streamReader = new StreamReader(httpResponse.GetResponseStream()))
-				//{
-				//	string result = streamReader.ReadToEnd();
-				//}
-
-
-
-
-				var client = new RestClient("https://sd.rosohrana.ru/rest/api/2/issue/IT-5744/attachments");
-				client.Timeout = -1;
-				var request = new RestRequest(Method.POST);
-				request.AddHeader("X-Atlassian-Token", "no-check");
-				request.AddHeader("Authorization", "Basic " + Convert.ToBase64String(Encoding.Default.GetBytes("sekisov:28651455gsbua1A")));
-				request.AddFile("file", _mediaFile.Path);
-				IRestResponse response = client.Execute(request);
-				Console.WriteLine(response.Content);
-			}
-
-
-
-		}
-
-
-
-
-
-
-
 		/// <summary>
 		/// Список полей при переходе
 		/// </summary>
 		/// <returns></returns>
-		/// 
-
 		public List<Fields> GetFieldScreenCreate()
 		{
 			List<Fields> fields = new List<Fields>();
@@ -961,7 +895,7 @@ namespace RTMobile
 			{
 				Console.WriteLine(ex.Message);
 			}
-			
+
 			return Fields;
 		}
 	}

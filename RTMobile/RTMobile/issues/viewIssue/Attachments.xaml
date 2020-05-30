@@ -196,7 +196,13 @@
                     </StackLayout>
                 </Frame>
             </Grid>
-            <Button Clicked="upload_Button" Text="Загрузить вложение" WidthRequest="50" HeightRequest="50"/>
+            <Frame BackgroundColor="#F0F1F0" HorizontalOptions="End" CornerRadius="50" HeightRequest="50" WidthRequest="50" Padding="0" Margin="0,0,10,10">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="upload_Button"/>
+                </Frame.GestureRecognizers>
+                <Label Text="+" FontSize="20" TextColor="#312F35" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Padding="0"/>
+            </Frame>
+            <!--<Button  Clicked="upload_Button" Text="Загрузить вложение" WidthRequest="50" HeightRequest="50"/>-->
             <Grid VerticalOptions="End" BackgroundColor="#312F35">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="5"/>

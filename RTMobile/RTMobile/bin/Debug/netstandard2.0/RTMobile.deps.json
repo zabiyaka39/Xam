@@ -11,16 +11,17 @@
         "dependencies": {
           "CarouselView": "7.0.3.1",
           "CarouselView.FormsPlugin": "5.2.0",
-          "Microsoft.AppCenter.Analytics": "3.2.1",
-          "Microsoft.AppCenter.Crashes": "3.2.1",
+          "Microsoft.AppCenter.Analytics": "3.2.2",
+          "Microsoft.AppCenter.Crashes": "3.2.2",
           "Microsoft.CSharp": "4.7.0",
           "Microsoft.CodeAnalysis.FxCopAnalyzers": "3.0.0",
+          "MimeTypes": "2.0.1",
           "NETStandard.Library": "2.0.3",
           "Nancy": "2.0.0",
           "Newtonsoft.Json": "12.0.3",
           "RestSharp": "106.11.4",
           "Rg.Plugins.Popup": "2.0.0.2",
-          "System.IdentityModel.Tokens.Jwt": "6.5.1",
+          "System.IdentityModel.Tokens.Jwt": "6.6.0",
           "System.Net.Http": "4.3.4",
           "System.Xml.XmlSerializer": "4.3.0",
           "Xam.Plugin.Media": "5.0.1",
@@ -28,7 +29,8 @@
           "Xamarin.Essentials": "1.5.3.2",
           "Xamarin.FFImageLoading": "2.4.11.982",
           "Xamarin.FFImageLoading.Forms": "2.4.11.982",
-          "Xamarin.Forms": "4.6.0.772",
+          "Xamarin.Forms": "4.6.0.800",
+          "Xamarin.Plugin.FilePicker": "2.1.41",
           "Windows.Foundation.UniversalApiContract": "7.0.0.0"
         },
         "runtime": {
@@ -38,7 +40,7 @@
       "CarouselView/7.0.3.1": {
         "dependencies": {
           "NETStandard.Library": "2.0.3",
-          "Xamarin.Forms": "4.6.0.772"
+          "Xamarin.Forms": "4.6.0.800"
         },
         "runtime": {
           "lib/netstandard2.0/CarouselView.dll": {
@@ -55,7 +57,7 @@
           }
         }
       },
-      "Microsoft.AppCenter/3.2.1": {
+      "Microsoft.AppCenter/3.2.2": {
         "runtime": {
           "lib/netstandard1.0/Microsoft.AppCenter.dll": {
             "assemblyVersion": "0.0.0.0",
@@ -63,9 +65,9 @@
           }
         }
       },
-      "Microsoft.AppCenter.Analytics/3.2.1": {
+      "Microsoft.AppCenter.Analytics/3.2.2": {
         "dependencies": {
-          "Microsoft.AppCenter": "3.2.1"
+          "Microsoft.AppCenter": "3.2.2"
         },
         "runtime": {
           "lib/netstandard1.0/Microsoft.AppCenter.Analytics.dll": {
@@ -74,9 +76,9 @@
           }
         }
       },
-      "Microsoft.AppCenter.Crashes/3.2.1": {
+      "Microsoft.AppCenter.Crashes/3.2.2": {
         "dependencies": {
-          "Microsoft.AppCenter": "3.2.1"
+          "Microsoft.AppCenter": "3.2.2"
         },
         "runtime": {
           "lib/netstandard1.0/Microsoft.AppCenter.Crashes.dll": {
@@ -148,9 +150,9 @@
           }
         }
       },
-      "Microsoft.IdentityModel.JsonWebTokens/6.5.1": {
+      "Microsoft.IdentityModel.JsonWebTokens/6.6.0": {
         "dependencies": {
-          "Microsoft.IdentityModel.Tokens": "6.5.1"
+          "Microsoft.IdentityModel.Tokens": "6.6.0"
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.IdentityModel.JsonWebTokens.dll": {
@@ -159,7 +161,7 @@
           }
         }
       },
-      "Microsoft.IdentityModel.Logging/6.5.1": {
+      "Microsoft.IdentityModel.Logging/6.6.0": {
         "runtime": {
           "lib/netstandard2.0/Microsoft.IdentityModel.Logging.dll": {
             "assemblyVersion": "6.5.1.0",
@@ -167,10 +169,10 @@
           }
         }
       },
-      "Microsoft.IdentityModel.Tokens/6.5.1": {
+      "Microsoft.IdentityModel.Tokens/6.6.0": {
         "dependencies": {
           "Microsoft.CSharp": "4.7.0",
-          "Microsoft.IdentityModel.Logging": "6.5.1",
+          "Microsoft.IdentityModel.Logging": "6.6.0",
           "System.Security.Cryptography.Cng": "4.5.0"
         },
         "runtime": {
@@ -191,6 +193,7 @@
           "System.Runtime": "4.3.0"
         }
       },
+      "MimeTypes/2.0.1": {},
       "Nancy/2.0.0": {
         "dependencies": {
           "Microsoft.Extensions.DependencyModel": "2.0.4",
@@ -231,7 +234,7 @@
       },
       "Rg.Plugins.Popup/2.0.0.2": {
         "dependencies": {
-          "Xamarin.Forms": "4.6.0.772"
+          "Xamarin.Forms": "4.6.0.800"
         },
         "runtime": {
           "lib/netstandard2.0/Rg.Plugins.Popup.dll": {
@@ -481,10 +484,10 @@
           "System.Runtime.InteropServices": "4.3.0"
         }
       },
-      "System.IdentityModel.Tokens.Jwt/6.5.1": {
+      "System.IdentityModel.Tokens.Jwt/6.6.0": {
         "dependencies": {
-          "Microsoft.IdentityModel.JsonWebTokens": "6.5.1",
-          "Microsoft.IdentityModel.Tokens": "6.5.1"
+          "Microsoft.IdentityModel.JsonWebTokens": "6.6.0",
+          "Microsoft.IdentityModel.Tokens": "6.6.0"
         },
         "runtime": {
           "lib/netstandard2.0/System.IdentityModel.Tokens.Jwt.dll": {
@@ -1149,7 +1152,7 @@
       "Xamarin.FFImageLoading.Forms/2.4.11.982": {
         "dependencies": {
           "Xamarin.FFImageLoading": "2.4.11.982",
-          "Xamarin.Forms": "4.6.0.772"
+          "Xamarin.Forms": "4.6.0.800"
         },
         "runtime": {
           "lib/netstandard1.0/FFImageLoading.Forms.dll": {
@@ -1158,7 +1161,7 @@
           }
         }
       },
-      "Xamarin.Forms/4.6.0.772": {
+      "Xamarin.Forms/4.6.0.800": {
         "runtime": {
           "lib/netstandard2.0/Xamarin.Forms.Core.dll": {
             "assemblyVersion": "2.0.0.0",
@@ -1171,6 +1174,14 @@
           "lib/netstandard2.0/Xamarin.Forms.Xaml.dll": {
             "assemblyVersion": "2.0.0.0",
             "fileVersion": "4.6.0.467"
+          }
+        }
+      },
+      "Xamarin.Plugin.FilePicker/2.1.41": {
+        "runtime": {
+          "lib/netstandard2.0/Plugin.FilePicker.dll": {
+            "assemblyVersion": "2.1.0.0",
+            "fileVersion": "2.1.0.0"
           }
         }
       },
@@ -1204,26 +1215,26 @@
       "path": "carouselview.formsplugin/5.2.0",
       "hashPath": "carouselview.formsplugin.5.2.0.nupkg.sha512"
     },
-    "Microsoft.AppCenter/3.2.1": {
+    "Microsoft.AppCenter/3.2.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-3t2lTMEbhDNPEXCurKBS8wRag4xtloGm9E7F4DpLIRhJtTCYgcIwvajPYj3WE0LjSzhrMKEn9tCaORHDAsdmaw==",
-      "path": "microsoft.appcenter/3.2.1",
-      "hashPath": "microsoft.appcenter.3.2.1.nupkg.sha512"
+      "sha512": "sha512-qmpnmCQnNKx8a4xRtDEj7T6MOPPC9fnMfYmxDdMMKDEl4cUxwBp0RrUTuKzatfSo6txKbCRrBlrcPfUmNcOvkA==",
+      "path": "microsoft.appcenter/3.2.2",
+      "hashPath": "microsoft.appcenter.3.2.2.nupkg.sha512"
     },
-    "Microsoft.AppCenter.Analytics/3.2.1": {
+    "Microsoft.AppCenter.Analytics/3.2.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-38HJ5GxKMI3Hyy32SiPxcZfOEL8aBKcV2MR/BLCKR9VlNt4ZpbdJLU/4yoFi/n8zkyFkJykVSA8ADtOjekYseA==",
-      "path": "microsoft.appcenter.analytics/3.2.1",
-      "hashPath": "microsoft.appcenter.analytics.3.2.1.nupkg.sha512"
+      "sha512": "sha512-+HMUgzHkD9TdWc5gChc5lj7gFluTbzGQn5mwdsWSMS4AXi3HK4Axj9HSYt1M9jFW/dK/PKxY9ysCDOk4AnxMLA==",
+      "path": "microsoft.appcenter.analytics/3.2.2",
+      "hashPath": "microsoft.appcenter.analytics.3.2.2.nupkg.sha512"
     },
-    "Microsoft.AppCenter.Crashes/3.2.1": {
+    "Microsoft.AppCenter.Crashes/3.2.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-T3nFFv+Zq0oGHawKkqo6x6Aox+dITbKxsTuDMtuyTStTEhKuwXuIx08xoViMF0oDHjYk0NHSZICOVKoUjwuBzQ==",
-      "path": "microsoft.appcenter.crashes/3.2.1",
-      "hashPath": "microsoft.appcenter.crashes.3.2.1.nupkg.sha512"
+      "sha512": "sha512-OcRqm6vzuV0rUj9xE6qa/jHFJn0qin26o9R+11hDl7Lh/IQxzm5ReNVRNkOTK3W8Y6bdiDXDwBHfdFQlvbserg==",
+      "path": "microsoft.appcenter.crashes/3.2.2",
+      "hashPath": "microsoft.appcenter.crashes.3.2.2.nupkg.sha512"
     },
     "Microsoft.CodeAnalysis.FxCopAnalyzers/3.0.0": {
       "type": "package",
@@ -1274,26 +1285,26 @@
       "path": "microsoft.extensions.platformabstractions/1.1.0",
       "hashPath": "microsoft.extensions.platformabstractions.1.1.0.nupkg.sha512"
     },
-    "Microsoft.IdentityModel.JsonWebTokens/6.5.1": {
+    "Microsoft.IdentityModel.JsonWebTokens/6.6.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-zOnP8Hv6JcA+E2qeHGVo6KM7lV7J9kj2a/+VasTTqZ1mkLhnxTLpX7oZ3n8HJ7hZXuG2KY3P/EaCt6eApM30kQ==",
-      "path": "microsoft.identitymodel.jsonwebtokens/6.5.1",
-      "hashPath": "microsoft.identitymodel.jsonwebtokens.6.5.1.nupkg.sha512"
+      "sha512": "sha512-ZhzG2+nxbGDJ67vY0e9kuJEtPpA53EhkhXpLWlBOUzEGd085ojJT3XPLK74mC+mjsXpZqWj5pHtgbB77gSqJeg==",
+      "path": "microsoft.identitymodel.jsonwebtokens/6.6.0",
+      "hashPath": "microsoft.identitymodel.jsonwebtokens.6.6.0.nupkg.sha512"
     },
-    "Microsoft.IdentityModel.Logging/6.5.1": {
+    "Microsoft.IdentityModel.Logging/6.6.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-iujlW4mgBKaib0gB3wbJLCCRhaNmxt504O5aGMdIH0JLIjCw+LbX+q3SFf3u0C29rYErvQQ9xeAtGywjvSGLxg==",
-      "path": "microsoft.identitymodel.logging/6.5.1",
-      "hashPath": "microsoft.identitymodel.logging.6.5.1.nupkg.sha512"
+      "sha512": "sha512-OWfHX7bXKTEBXcD9b+0Tx7dWBaqF4wht7RmS6q+9vAXHiNpRG/wkoFKhOp1Yus0Xd1xAXXHSkAKxgmn/SRD1KA==",
+      "path": "microsoft.identitymodel.logging/6.6.0",
+      "hashPath": "microsoft.identitymodel.logging.6.6.0.nupkg.sha512"
     },
-    "Microsoft.IdentityModel.Tokens/6.5.1": {
+    "Microsoft.IdentityModel.Tokens/6.6.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-+kKU5tbizQmXee6iYJwqxROInlohMYhKYbLa37BUnU/YBhCvPapi2iywE4bVgno2NOF78p7VBERd/s+gYM/9dA==",
-      "path": "microsoft.identitymodel.tokens/6.5.1",
-      "hashPath": "microsoft.identitymodel.tokens.6.5.1.nupkg.sha512"
+      "sha512": "sha512-fNfhlY7AEB9y/jooK6xI1vH+7rmq7c2kTEk7j/5SSy25iHRB1twrG8+He9sHxBQqIXhrQliMEwi4GXZInzO4ww==",
+      "path": "microsoft.identitymodel.tokens/6.6.0",
+      "hashPath": "microsoft.identitymodel.tokens.6.6.0.nupkg.sha512"
     },
     "Microsoft.NetCore.Analyzers/3.0.0": {
       "type": "package",
@@ -1329,6 +1340,13 @@
       "sha512": "sha512-9ZQKCWxH7Ijp9BfahvL2Zyf1cJIk8XYLF6Yjzr2yi0b2cOut/HQ31qf1ThHAgCc3WiZMdnWcfJCgN82/0UunxA==",
       "path": "microsoft.win32.primitives/4.3.0",
       "hashPath": "microsoft.win32.primitives.4.3.0.nupkg.sha512"
+    },
+    "MimeTypes/2.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-wN2eEA/5uSjmpTw9sfoAunl/IYW4yPMBGcqN7gcn7BhyVcIc782Yntj6kZYvDTo44FnDseIY7EpCwQXnbLfDpw==",
+      "path": "mimetypes/2.0.1",
+      "hashPath": "mimetypes.2.0.1.nupkg.sha512"
     },
     "Nancy/2.0.0": {
       "type": "package",
@@ -1575,12 +1593,12 @@
       "path": "system.globalization.extensions/4.3.0",
       "hashPath": "system.globalization.extensions.4.3.0.nupkg.sha512"
     },
-    "System.IdentityModel.Tokens.Jwt/6.5.1": {
+    "System.IdentityModel.Tokens.Jwt/6.6.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-2t8+04Ozz4vX10X1h+lqV8X7PkLUSRTr+kRY4QNpAeTUngqGqv180A1JDK2piGEKCvNbm6xGGkajL9STgI0JJA==",
-      "path": "system.identitymodel.tokens.jwt/6.5.1",
-      "hashPath": "system.identitymodel.tokens.jwt.6.5.1.nupkg.sha512"
+      "sha512": "sha512-irSFzRuejokJUb0z/tkHq1x0WCCuk8wtJ85Sql7YaUqSQXPLmKi7zFjVI1UAUX+yANmD673VwN+n64lEq/vW6Q==",
+      "path": "system.identitymodel.tokens.jwt/6.6.0",
+      "hashPath": "system.identitymodel.tokens.jwt.6.6.0.nupkg.sha512"
     },
     "System.IO/4.3.0": {
       "type": "package",
@@ -1918,12 +1936,19 @@
       "path": "xamarin.ffimageloading.forms/2.4.11.982",
       "hashPath": "xamarin.ffimageloading.forms.2.4.11.982.nupkg.sha512"
     },
-    "Xamarin.Forms/4.6.0.772": {
+    "Xamarin.Forms/4.6.0.800": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-tRxuc7x0PgLYZRjRvs2mm3D8KnkKgCCYOuXHnqOjcXWUJWBDmexM8R7LxWPyEBSLMU55SGl+RRcFvHZcOSsgMA==",
-      "path": "xamarin.forms/4.6.0.772",
-      "hashPath": "xamarin.forms.4.6.0.772.nupkg.sha512"
+      "sha512": "sha512-9BkqdiqdaigD+QlHqmHHMm32NNo7mnuIG+fOgIbSbzzqT1MKN+KPVgem8OUkKOnFP4u6piq9D99xrVafKSztIg==",
+      "path": "xamarin.forms/4.6.0.800",
+      "hashPath": "xamarin.forms.4.6.0.800.nupkg.sha512"
+    },
+    "Xamarin.Plugin.FilePicker/2.1.41": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-SFJp7AEq6YFZ72mw+CxGMQcMzBYhA0b5NkhSyE5b+prCiNli7bKI5pWOT+mbyFng0En8LfeY0dEbedpkecQFQw==",
+      "path": "xamarin.plugin.filepicker/2.1.41",
+      "hashPath": "xamarin.plugin.filepicker.2.1.41.nupkg.sha512"
     },
     "Windows.Foundation.UniversalApiContract/7.0.0.0": {
       "type": "reference",

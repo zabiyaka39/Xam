@@ -30,9 +30,6 @@ namespace RTMobile
 			password.Text = CrossSettings.Current.GetValueOrDefault("password", "");
 			Request request = new Request();
 
-			//request.uploadFile();
-
-
 			if (request.verifyServer())
 			{
 				frameLogin.IsEnabled = true;
