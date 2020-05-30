@@ -31,7 +31,10 @@ namespace RTMobile.issues.viewIssue
 			InitializeComponent();
 			//TransitionIssue();
 			this.issue = issue;
-			issueFieldsRefresh(issue.fields);
+			if (issue != null)
+			{
+				issueFieldsRefresh(issue.fields);
+			}
 			this.BindingContext = this;
 		}
 
