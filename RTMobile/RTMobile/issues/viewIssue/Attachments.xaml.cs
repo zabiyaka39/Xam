@@ -6,45 +6,55 @@ using RTMobile.filter;
 using RTMobile.insight;
 using Xamarin.Essentials;
 using Xamarin.Forms;
+using Plugin.FilePicker;
+using System.Threading.Tasks;
 
 namespace RTMobile.issues.viewIssue
 {
 	public partial class Attachments : ContentPage
 	{
 		Issue issue = new Issue();
+		
 		private ObservableCollection<Attachment> attachmentsImage = new ObservableCollection<Attachment>();
 		private ObservableCollection<Attachment> attachmentsDocument = new ObservableCollection<Attachment>();
 		private ObservableCollection<Attachment> attachmentsOther = new ObservableCollection<Attachment>();
 		private List<RTMobile.Transition> transition { get; set; }//Переходы по заявке
 		public Attachments(Issue issue)
 		{
-			List<Attachment> atach = new List<Attachment>();
+			
 			InitializeComponent();
 			//TransitionIssue();
 			this.issue = issue;
-			if (issue != null && issue.fields != null)
+			issueFieldsRefresh(issue.fields);
+			this.BindingContext = this;
+		}
+
+		public void issueFieldsRefresh(Fields fields)
+		{
+			List<Attachment> atach = new List<Attachment>();
+			if (issue != null && fields != null)
 			{
-				for (int i = 0; i < issue.fields.attachment.Count; ++i)
+				for (int i = 0; i < fields.attachment.Count; ++i)
 				{
 					try
 					{
-						switch (issue.fields.attachment[i].mimeType)
+						switch (fields.attachment[i].mimeType)
 						{
 							case "image":
 								{
-									attachmentsImage.Add(issue.fields.attachment[i]);
+									attachmentsImage.Add(fields.attachment[i]);
 									break;
 								}
 							case "text":
 								{
-									attachmentsDocument.Add(issue.fields.attachment[i]);
+									attachmentsDocument.Add(fields.attachment[i]);
 									break;
 								}
 							default:
 								{
-									
-									atach.Add(issue.fields.attachment[i]);
-									attachmentsOther.Add(issue.fields.attachment[i]);
+
+									atach.Add(fields.attachment[i]);
+									attachmentsOther.Add(fields.attachment[i]);
 									break;
 								}
 						}
@@ -90,8 +100,36 @@ namespace RTMobile.issues.viewIssue
 				carouselOthers.IsVisible = false;
 				noneOthers.IsVisible = true;
 			}
+		}
 
-			this.BindingContext = this;
+		//Кнопка при нажатии которой открывается файловый менеджер
+		private async void upload_Button(object sender, EventArgs e)
+		{
+			var file = await CrossFilePicker.Current.PickFile();
+			string fileUpload = file.FilePath;
+			string fileName = file.FileName;
+
+			//добавление файла
+			JSONRequest jsonRequest = new JSONRequest()
+			{
+				urlRequest = $"/rest/api/2/issue/{issue.key}/attachments",
+				methodRequest = "POST",
+				fileUploadJira = fileUpload,
+				fileUploadJiraName=fileName
+
+			};
+			Request request = new Request(jsonRequest);
+			// обновление отображения вложений
+			JSONRequest jsonRequest2 = new JSONRequest()
+			{
+				urlRequest = $"/rest/api/2/issue/{issue.key}",
+				methodRequest = "GET"
+
+			};
+			Request request2 = new Request(jsonRequest2);
+			Fields fields = request2.GetResponses<Issue>().fields;
+			issueFieldsRefresh(fields);
+			
 		}
 		void ImageButton_Clicked(System.Object sender, System.EventArgs e)
 		{

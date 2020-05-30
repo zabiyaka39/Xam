@@ -196,6 +196,7 @@
                     </StackLayout>
                 </Frame>
             </Grid>
+            <Button Clicked="upload_Button" Text="Загрузить вложение" WidthRequest="50" HeightRequest="50"/>
             <Grid VerticalOptions="End" BackgroundColor="#312F35">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="5"/>

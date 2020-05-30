@@ -62,6 +62,10 @@ namespace RTMobile
 		/// </summary>
 		[JsonIgnore]
 		public string methodRequest { get; set; }
+		[JsonIgnore]
+		public string fileUploadJira { get; set; }
+		[JsonIgnore]
+		public string fileUploadJiraName { set; get; }
 	}
 
 	/// <summary>

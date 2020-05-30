@@ -21,6 +21,7 @@ using System.Collections.Specialized;
 using RestSharp;
 using Newtonsoft.Json.Linq;
 
+
 namespace RTMobile
 {
 	class Request
@@ -57,6 +58,7 @@ namespace RTMobile
 				return false;
 			}
 			return true;
+			
 		}
 		/// <summary>
 		/// Авторизация пользователя и возвращение упешности результата авторизации
@@ -101,18 +103,67 @@ namespace RTMobile
 			try
 			{
 				this.httpWebRequest = (HttpWebRequest)WebRequest.Create(CrossSettings.Current.GetValueOrDefault("urlServer", string.Empty) + jsonRequest.urlRequest);
-				this.httpWebRequest.ContentType = "application/json";
-				this.httpWebRequest.Method = jsonRequest.methodRequest;
 				this.httpWebRequest.Headers.Add(HttpRequestHeader.Authorization, "Basic " +
 					Convert.ToBase64String(Encoding.Default.GetBytes(CrossSettings.Current.GetValueOrDefault("login", string.Empty) +
 					":" +
 					CrossSettings.Current.GetValueOrDefault("password", string.Empty))));
-				this.json = JsonConvert.SerializeObject(jsonRequest,
+				// если в запррос передается файл, формируется http реквест
+				if (jsonRequest.fileUploadJira != null)
+				{
+					string boundary = "-------------------" + DateTime.Now.Ticks.ToString("x");
+					byte[] boundarybytes = System.Text.Encoding.ASCII.GetBytes("\r\n--" + boundary + "\r\n");
+
+					this.httpWebRequest.Headers.Add("X-Atlassian-Token", "nocheck");
+					this.httpWebRequest.Method = "POST";
+					this.httpWebRequest.KeepAlive = true;
+					this.httpWebRequest.ContentType = string.Format("multipart/form-data; boundary={0}", boundary);
+					this.httpWebRequest.Credentials = System.Net.CredentialCache.DefaultCredentials;
+					
+					
+					// сериализация http запроса и файла и запись в поток сетевого взаимодействия 
+					
+					Stream rs = this.httpWebRequest.GetRequestStream();
+					
+					rs.Write(boundarybytes, 0, boundarybytes.Length);
+					string header = "Content-Disposition: form-data; name =\"file\"; filename=\"{0}\"\r\nContent-Type: application/octet-stream\r\n\r\n";
+					string headerTemplate = string.Format(header, jsonRequest.fileUploadJiraName);
+					byte[] headerbytes = System.Text.Encoding.UTF8.GetBytes(headerTemplate);
+					rs.Write(headerbytes, 0, headerbytes.Length);
+
+					FileStream fileStream = new FileStream(jsonRequest.fileUploadJira, FileMode.Open, FileAccess.Read);
+					byte[] buffer = new byte[4096];
+					int bytesRead = 0;
+					while ((bytesRead = fileStream.Read(buffer, 0, buffer.Length)) != 0)
+					{
+						rs.Write(buffer, 0, bytesRead);
+					}
+					fileStream.Close();
+					
+					
+					byte[] trailer = System.Text.Encoding.ASCII.GetBytes("\r\n--" + boundary + "--\r\n");
+					rs.Write(trailer, 0, trailer.Length);
+					rs.Close();
+
+					using (var oResponse = (HttpWebResponse)this.httpWebRequest.GetResponse())
+					{
+						using (var reader = new StreamReader(oResponse.GetResponseStream()))
+						{
+							var responseData = reader.ReadToEnd();
+						}
+					}
+				}
+				else
+				{
+					this.httpWebRequest.Method = jsonRequest.methodRequest;
+					this.httpWebRequest.ContentType = "application/json";
+					this.json = JsonConvert.SerializeObject(jsonRequest,
 														Newtonsoft.Json.Formatting.None,
 														new JsonSerializerSettings
 														{
 															NullValueHandling = NullValueHandling.Ignore
 														});
+				}
+				
 			}
 			catch (Exception ex)
 			{
@@ -219,6 +270,8 @@ namespace RTMobile
 		/// Список полей при переходе
 		/// </summary>
 		/// <returns></returns>
+		/// 
+
 		public List<Fields> GetFieldScreenCreate()
 		{
 			List<Fields> fields = new List<Fields>();
