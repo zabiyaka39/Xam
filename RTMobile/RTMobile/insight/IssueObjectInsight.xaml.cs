@@ -19,7 +19,6 @@ namespace RTMobile.insight
 		public IssueObjectInsight(ObjectEntry selectedField)
 		{
 			InitializeComponent();
-			InitializeComponent();
 			if (selectedField != null)
 			{
 				takejiraIssueList(selectedField);

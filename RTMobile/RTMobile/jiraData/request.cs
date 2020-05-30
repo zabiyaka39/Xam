@@ -21,6 +21,7 @@ using System.Collections.Specialized;
 using RestSharp;
 using Newtonsoft.Json.Linq;
 
+
 namespace RTMobile
 {
 	class Request
@@ -57,6 +58,7 @@ namespace RTMobile
 				return false;
 			}
 			return true;
+
 		}
 		/// <summary>
 		/// Авторизация пользователя и возвращение упешности результата авторизации
@@ -92,6 +94,7 @@ namespace RTMobile
 				return false;
 			}
 		}
+
 		/// <summary>
 		/// Создаем подключение для запроса данных
 		/// </summary>
@@ -101,18 +104,57 @@ namespace RTMobile
 			try
 			{
 				this.httpWebRequest = (HttpWebRequest)WebRequest.Create(CrossSettings.Current.GetValueOrDefault("urlServer", string.Empty) + jsonRequest.urlRequest);
-				this.httpWebRequest.ContentType = "application/json";
-				this.httpWebRequest.Method = jsonRequest.methodRequest;
 				this.httpWebRequest.Headers.Add(HttpRequestHeader.Authorization, "Basic " +
 					Convert.ToBase64String(Encoding.Default.GetBytes(CrossSettings.Current.GetValueOrDefault("login", string.Empty) +
 					":" +
 					CrossSettings.Current.GetValueOrDefault("password", string.Empty))));
-				this.json = JsonConvert.SerializeObject(jsonRequest,
+				this.httpWebRequest.KeepAlive = true;
+
+				if (jsonRequest.FileUpload != null)
+				{			
+					this.httpWebRequest.Headers.Add("X-Atlassian-Token", "nocheck");
+					this.httpWebRequest.Method = "POST";
+					this.httpWebRequest.ContentType = jsonRequest.FileUpload.Headers.ContentType.ToString();
+					this.httpWebRequest.ContentLength = jsonRequest.FileUpload.Headers.ContentLength.Value;
+					this.httpWebRequest.Credentials = System.Net.CredentialCache.DefaultCredentials;
+
+					Stream requestStream = this.httpWebRequest.GetRequestStream();
+					try
+					{
+						requestStream.Write(jsonRequest.FileUploadByte, 0, jsonRequest.FileUploadByte.Length);
+					}
+					catch (Exception ex)
+					{
+						Console.WriteLine(ex.Message);
+						Crashes.TrackError(ex);
+					}
+					requestStream.Close();
+
+					HttpWebResponse myHttpWebResponse = (HttpWebResponse)this.httpWebRequest.GetResponse();
+
+					Stream responseStream = myHttpWebResponse.GetResponseStream();
+
+					StreamReader myStreamReader = new StreamReader(responseStream, Encoding.Default);
+
+					string pageContent = myStreamReader.ReadToEnd();
+
+					myStreamReader.Close();
+					responseStream.Close();
+
+					myHttpWebResponse.Close();
+				}
+				else
+				{
+					this.httpWebRequest.Method = jsonRequest.methodRequest;
+					this.httpWebRequest.ContentType = "application/json";
+					this.json = JsonConvert.SerializeObject(jsonRequest,
 														Newtonsoft.Json.Formatting.None,
 														new JsonSerializerSettings
 														{
 															NullValueHandling = NullValueHandling.Ignore
 														});
+				}
+
 			}
 			catch (Exception ex)
 			{
@@ -159,61 +201,6 @@ namespace RTMobile
 			}
 			return rootObject;
 		}
-
-		private MediaFile _mediaFile;
-
-		public async void uploadFile()
-		{
-			//Инициализируем проверку доступности разрешения работы с файловой системой
-			await CrossMedia.Current.Initialize();
-			//Выполняем поиск по системе необходимого файла
-			if (CrossMedia.Current.IsPickPhotoSupported)
-			{
-				_mediaFile = await CrossMedia.Current.PickPhotoAsync().ConfigureAwait(true);
-			}
-
-			if (_mediaFile != null)
-			{
-				MultipartFormDataContent content = new MultipartFormDataContent();
-				content.Add(new StreamContent(_mediaFile.GetStream()), "\"multipart/form-data\"", $"\"{_mediaFile.Path}\"");
-
-
-				HttpWebRequest httpWebRequest1 = (HttpWebRequest)WebRequest.Create("https://sd.rosohrana.ru/rest/api/2/issue/IT-5744/attachments");
-				httpWebRequest1.Headers.Add(HttpRequestHeader.Authorization, "Basic " + Convert.ToBase64String(Encoding.Default.GetBytes("sekisov:28651455gsbua1A")));
-				////this.httpWebRequest.Headers.Add("X-Atlassian-Token", "no-check");
-				////this.httpWebRequest.Timeout = -1;
-				using (StreamWriter streamWriter = new StreamWriter(httpWebRequest1.GetRequestStream()))
-				{
-					//streamWriter.Write("file", content);
-				}
-				WebResponse httpResponse = httpWebRequest1.GetResponse();
-				//using (StreamReader streamReader = new StreamReader(httpResponse.GetResponseStream()))
-				//{
-				//	string result = streamReader.ReadToEnd();
-				//}
-
-
-
-
-				var client = new RestClient("https://sd.rosohrana.ru/rest/api/2/issue/IT-5744/attachments");
-				client.Timeout = -1;
-				var request = new RestRequest(Method.POST);
-				request.AddHeader("X-Atlassian-Token", "no-check");
-				request.AddHeader("Authorization", "Basic " + Convert.ToBase64String(Encoding.Default.GetBytes("sekisov:28651455gsbua1A")));
-				request.AddFile("file", _mediaFile.Path);
-				IRestResponse response = client.Execute(request);
-				Console.WriteLine(response.Content);
-			}
-
-
-
-		}
-
-
-
-
-
-
 
 		/// <summary>
 		/// Список полей при переходе
@@ -758,18 +745,10 @@ namespace RTMobile
 			return fields;
 		}
 
-
-
-
-
-
-
-
-
-
-
-
-
+		/// <summary>
+		/// Получаем список названий полей и значений задачи
+		/// </summary>
+		/// <returns></returns>
 		public List<Fields> GetFieldsIssue(string json = "")
 		{
 			List<Fields> Fields = new List<Fields>();
@@ -916,62 +895,8 @@ namespace RTMobile
 			{
 				Console.WriteLine(ex.Message);
 			}
-			
+
 			return Fields;
 		}
-
-	
-
-
-
-
-
-
-
-
-
-	/// <summary>
-	/// Получаем список названий полей и значений задачи
-	/// </summary>
-	/// <returns></returns>
-	public List<Fields> GetCustomField()
-		{
-			List<Fields> fields = new List<Fields>();
-
-
-			WebResponse httpResponse = this.httpWebRequest.GetResponse();
-			//Отправляем запрос для получения списка полей задачи
-			using (StreamReader streamReader = new StreamReader(httpResponse.GetResponseStream()))
-			{
-				//читаем поток
-				string result = streamReader.ReadToEnd();
-				//Создаем JAVA серелиазатор для возможности чтения элементов по названию, а не по полю класса, т.к. нам заранее не известны названия и количество полей в задаче и их количество может меняться
-				JavaScriptSerializer js = new JavaScriptSerializer();
-				//десериализуем в переменную с типом dynamic
-				dynamic objectCustomField = js.Deserialize<dynamic>(result);
-
-				//проходимся по всем полученным customField и получаем значения
-				foreach (System.Collections.Generic.KeyValuePair<string, object> field in objectCustomField)
-				{
-					if (field.Key == "fields")
-					{
-						if (((dynamic)(field.Value)).Count > 0)
-						{
-							for (int i = 0; i < ((dynamic)(field.Value)).Count; ++i)
-							{
-								foreach (KeyValuePair<string, object> fieldTransaction in ((dynamic)(field.Value))[i])
-								{
-								}
-							}
-						}
-					}
-				}
-			}
-			return fields;
-		}
-
-
-
-		
 	}
 }

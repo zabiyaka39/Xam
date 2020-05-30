@@ -142,10 +142,10 @@
           "lib/netstandard1.3/Microsoft.Extensions.PlatformAbstractions.dll": {}
         }
       },
-      "Microsoft.IdentityModel.JsonWebTokens/6.5.1": {
+      "Microsoft.IdentityModel.JsonWebTokens/6.6.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.IdentityModel.Tokens": "6.5.1"
+          "Microsoft.IdentityModel.Tokens": "6.6.0"
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.IdentityModel.JsonWebTokens.dll": {}
@@ -154,7 +154,7 @@
           "lib/netstandard2.0/Microsoft.IdentityModel.JsonWebTokens.dll": {}
         }
       },
-      "Microsoft.IdentityModel.Logging/6.5.1": {
+      "Microsoft.IdentityModel.Logging/6.6.0": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/Microsoft.IdentityModel.Logging.dll": {}
@@ -163,11 +163,11 @@
           "lib/netstandard2.0/Microsoft.IdentityModel.Logging.dll": {}
         }
       },
-      "Microsoft.IdentityModel.Tokens/6.5.1": {
+      "Microsoft.IdentityModel.Tokens/6.6.0": {
         "type": "package",
         "dependencies": {
           "Microsoft.CSharp": "4.5.0",
-          "Microsoft.IdentityModel.Logging": "6.5.1",
+          "Microsoft.IdentityModel.Logging": "6.6.0",
           "System.Security.Cryptography.Cng": "4.5.0"
         },
         "compile": {
@@ -184,6 +184,26 @@
         },
         "runtime": {
           "lib/netstandard1.0/_._": {}
+        }
+      },
+      "MimeMapping/1.0.1.26": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/MimeMapping.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/MimeMapping.dll": {}
+        }
+      },
+      "MimeTypes/2.0.1": {
+        "type": "package",
+        "contentFiles": {
+          "contentFiles/cs/netstandard2.1/MimeTypes.cs.pp": {
+            "buildAction": "Compile",
+            "codeLanguage": "cs",
+            "copyToOutput": false,
+            "ppOutputPath": "MimeTypes.cs"
+          }
         }
       },
       "Nancy/2.0.0": {
@@ -303,11 +323,11 @@
           "lib/MonoAndroid10/_._": {}
         }
       },
-      "System.IdentityModel.Tokens.Jwt/6.5.1": {
+      "System.IdentityModel.Tokens.Jwt/6.6.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.IdentityModel.JsonWebTokens": "6.5.1",
-          "Microsoft.IdentityModel.Tokens": "6.5.1"
+          "Microsoft.IdentityModel.JsonWebTokens": "6.6.0",
+          "Microsoft.IdentityModel.Tokens": "6.6.0"
         },
         "compile": {
           "lib/netstandard2.0/System.IdentityModel.Tokens.Jwt.dll": {}
@@ -461,6 +481,17 @@
         },
         "runtime": {
           "lib/MonoAndroid10/_._": {}
+        }
+      },
+      "Xam.Plugin.FilePicker/1.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/MonoAndroid10/Plugin.FilePicker.Abstractions.dll": {},
+          "lib/MonoAndroid10/Plugin.FilePicker.dll": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid10/Plugin.FilePicker.Abstractions.dll": {},
+          "lib/MonoAndroid10/Plugin.FilePicker.dll": {}
         }
       },
       "Xam.Plugin.Media/5.0.1": {
@@ -1362,20 +1393,32 @@
           "buildTransitive/Xamarin.Forms.targets": {}
         }
       },
+      "Xamarin.Plugin.FilePicker/2.1.34": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Java.Interop"
+        ],
+        "compile": {
+          "lib/monoandroid90/Plugin.FilePicker.dll": {}
+        },
+        "runtime": {
+          "lib/monoandroid90/Plugin.FilePicker.dll": {}
+        }
+      },
       "RTMobile/1.0.0.2": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "CarouselView": "7.0.3.1",
           "CarouselView.FormsPlugin": "5.2.0",
-          "Microsoft.AppCenter.Analytics": "3.2.1",
-          "Microsoft.AppCenter.Crashes": "3.2.1",
+          "Microsoft.AppCenter.Analytics": "3.2.2",
+          "Microsoft.AppCenter.Crashes": "3.2.2",
           "Microsoft.CSharp": "4.7.0",
           "Nancy": "2.0.0",
           "Newtonsoft.Json": "12.0.3",
           "RestSharp": "106.11.4",
           "Rg.Plugins.Popup": "2.0.0.2",
-          "System.IdentityModel.Tokens.Jwt": "6.5.1",
+          "System.IdentityModel.Tokens.Jwt": "6.6.0",
           "System.Net.Http": "4.3.4",
           "System.Xml.XmlSerializer": "4.3.0",
           "Xam.Plugin.Media": "5.0.1",
@@ -1383,7 +1426,8 @@
           "Xamarin.Essentials": "1.5.3.2",
           "Xamarin.FFImageLoading": "2.4.11.982",
           "Xamarin.FFImageLoading.Forms": "2.4.11.982",
-          "Xamarin.Forms": "4.6.0.772"
+          "Xamarin.Forms": "4.6.0.800",
+          "Xamarin.Plugin.FilePicker": "2.1.41"
         },
         "compile": {
           "bin/placeholder/RTMobile.dll": {}
@@ -1621,10 +1665,10 @@
         "microsoft.extensions.platformabstractions.nuspec"
       ]
     },
-    "Microsoft.IdentityModel.JsonWebTokens/6.5.1": {
-      "sha512": "zOnP8Hv6JcA+E2qeHGVo6KM7lV7J9kj2a/+VasTTqZ1mkLhnxTLpX7oZ3n8HJ7hZXuG2KY3P/EaCt6eApM30kQ==",
+    "Microsoft.IdentityModel.JsonWebTokens/6.6.0": {
+      "sha512": "ZhzG2+nxbGDJ67vY0e9kuJEtPpA53EhkhXpLWlBOUzEGd085ojJT3XPLK74mC+mjsXpZqWj5pHtgbB77gSqJeg==",
       "type": "package",
-      "path": "microsoft.identitymodel.jsonwebtokens/6.5.1",
+      "path": "microsoft.identitymodel.jsonwebtokens/6.6.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1634,14 +1678,14 @@
         "lib/net461/Microsoft.IdentityModel.JsonWebTokens.xml",
         "lib/netstandard2.0/Microsoft.IdentityModel.JsonWebTokens.dll",
         "lib/netstandard2.0/Microsoft.IdentityModel.JsonWebTokens.xml",
-        "microsoft.identitymodel.jsonwebtokens.6.5.1.nupkg.sha512",
+        "microsoft.identitymodel.jsonwebtokens.6.6.0.nupkg.sha512",
         "microsoft.identitymodel.jsonwebtokens.nuspec"
       ]
     },
-    "Microsoft.IdentityModel.Logging/6.5.1": {
-      "sha512": "iujlW4mgBKaib0gB3wbJLCCRhaNmxt504O5aGMdIH0JLIjCw+LbX+q3SFf3u0C29rYErvQQ9xeAtGywjvSGLxg==",
+    "Microsoft.IdentityModel.Logging/6.6.0": {
+      "sha512": "OWfHX7bXKTEBXcD9b+0Tx7dWBaqF4wht7RmS6q+9vAXHiNpRG/wkoFKhOp1Yus0Xd1xAXXHSkAKxgmn/SRD1KA==",
       "type": "package",
-      "path": "microsoft.identitymodel.logging/6.5.1",
+      "path": "microsoft.identitymodel.logging/6.6.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1651,14 +1695,14 @@
         "lib/net461/Microsoft.IdentityModel.Logging.xml",
         "lib/netstandard2.0/Microsoft.IdentityModel.Logging.dll",
         "lib/netstandard2.0/Microsoft.IdentityModel.Logging.xml",
-        "microsoft.identitymodel.logging.6.5.1.nupkg.sha512",
+        "microsoft.identitymodel.logging.6.6.0.nupkg.sha512",
         "microsoft.identitymodel.logging.nuspec"
       ]
     },
-    "Microsoft.IdentityModel.Tokens/6.5.1": {
-      "sha512": "+kKU5tbizQmXee6iYJwqxROInlohMYhKYbLa37BUnU/YBhCvPapi2iywE4bVgno2NOF78p7VBERd/s+gYM/9dA==",
+    "Microsoft.IdentityModel.Tokens/6.6.0": {
+      "sha512": "fNfhlY7AEB9y/jooK6xI1vH+7rmq7c2kTEk7j/5SSy25iHRB1twrG8+He9sHxBQqIXhrQliMEwi4GXZInzO4ww==",
       "type": "package",
-      "path": "microsoft.identitymodel.tokens/6.5.1",
+      "path": "microsoft.identitymodel.tokens/6.6.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1668,7 +1712,7 @@
         "lib/net461/Microsoft.IdentityModel.Tokens.xml",
         "lib/netstandard2.0/Microsoft.IdentityModel.Tokens.dll",
         "lib/netstandard2.0/Microsoft.IdentityModel.Tokens.xml",
-        "microsoft.identitymodel.tokens.6.5.1.nupkg.sha512",
+        "microsoft.identitymodel.tokens.6.6.0.nupkg.sha512",
         "microsoft.identitymodel.tokens.nuspec"
       ]
     },
@@ -1685,6 +1729,38 @@
         "microsoft.netcore.platforms.1.1.0.nupkg.sha512",
         "microsoft.netcore.platforms.nuspec",
         "runtime.json"
+      ]
+    },
+    "MimeMapping/1.0.1.26": {
+      "sha512": "hFupxkMUi+iWvQ9PqiLNtHaPiaXqZIFVAmqogMqi2IaVnOLnmYm0Vw+/1tVW8Gxw8rQtBK+JpqMeIDUCYxpwcQ==",
+      "type": "package",
+      "path": "mimemapping/1.0.1.26",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard1.1/MimeMapping.dll",
+        "lib/netstandard1.1/MimeMapping.xml",
+        "lib/netstandard2.0/MimeMapping.dll",
+        "lib/netstandard2.0/MimeMapping.xml",
+        "lib/netstandard2.1/MimeMapping.dll",
+        "lib/netstandard2.1/MimeMapping.xml",
+        "mimemapping.1.0.1.26.nupkg.sha512",
+        "mimemapping.nuspec"
+      ]
+    },
+    "MimeTypes/2.0.1": {
+      "sha512": "wN2eEA/5uSjmpTw9sfoAunl/IYW4yPMBGcqN7gcn7BhyVcIc782Yntj6kZYvDTo44FnDseIY7EpCwQXnbLfDpw==",
+      "type": "package",
+      "path": "mimetypes/2.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "contentFiles/cs/any/MimeTypes.NullableAttributes.cs.pp",
+        "contentFiles/cs/netcoreapp3.0/MimeTypes.cs.pp",
+        "contentFiles/cs/netstandard2.1/MimeTypes.cs.pp",
+        "images/nuget-icon.png",
+        "mimetypes.2.0.1.nupkg.sha512",
+        "mimetypes.nuspec"
       ]
     },
     "Nancy/2.0.0": {
@@ -2278,10 +2354,10 @@
         "system.dynamic.runtime.nuspec"
       ]
     },
-    "System.IdentityModel.Tokens.Jwt/6.5.1": {
-      "sha512": "2t8+04Ozz4vX10X1h+lqV8X7PkLUSRTr+kRY4QNpAeTUngqGqv180A1JDK2piGEKCvNbm6xGGkajL9STgI0JJA==",
+    "System.IdentityModel.Tokens.Jwt/6.6.0": {
+      "sha512": "irSFzRuejokJUb0z/tkHq1x0WCCuk8wtJ85Sql7YaUqSQXPLmKi7zFjVI1UAUX+yANmD673VwN+n64lEq/vW6Q==",
       "type": "package",
-      "path": "system.identitymodel.tokens.jwt/6.5.1",
+      "path": "system.identitymodel.tokens.jwt/6.6.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2291,7 +2367,7 @@
         "lib/net461/System.IdentityModel.Tokens.Jwt.xml",
         "lib/netstandard2.0/System.IdentityModel.Tokens.Jwt.dll",
         "lib/netstandard2.0/System.IdentityModel.Tokens.Jwt.xml",
-        "system.identitymodel.tokens.jwt.6.5.1.nupkg.sha512",
+        "system.identitymodel.tokens.jwt.6.6.0.nupkg.sha512",
         "system.identitymodel.tokens.jwt.nuspec"
       ]
     },
@@ -2994,6 +3070,58 @@
         "runtimes/aot/lib/netcore50/System.Xml.XmlSerializer.dll",
         "system.xml.xmlserializer.4.3.0.nupkg.sha512",
         "system.xml.xmlserializer.nuspec"
+      ]
+    },
+    "Xam.Plugin.FilePicker/1.1.0": {
+      "sha512": "ORzNG6dEgdBZnIdmbQCpNB4LSSTjBebwGjb1XZrgfbBGjX9muHBfZeQwOnNRvcGlm6fkylzTj2rDslDA1E/JFA==",
+      "type": "package",
+      "path": "xam.plugin.filepicker/1.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/MonoAndroid10/Plugin.FilePicker.Abstractions.dll",
+        "lib/MonoAndroid10/Plugin.FilePicker.Abstractions.pdb",
+        "lib/MonoAndroid10/Plugin.FilePicker.Abstractions.xml",
+        "lib/MonoAndroid10/Plugin.FilePicker.dll",
+        "lib/MonoAndroid10/Plugin.FilePicker.pdb",
+        "lib/MonoAndroid10/Plugin.FilePicker.xml",
+        "lib/MonoTouch10/Plugin.FilePicker.Abstractions.dll",
+        "lib/MonoTouch10/Plugin.FilePicker.Abstractions.xml",
+        "lib/MonoTouch10/Plugin.FilePicker.dll",
+        "lib/MonoTouch10/Plugin.FilePicker.xml",
+        "lib/UAP10/Plugin.FilePicker.Abstractions.dll",
+        "lib/UAP10/Plugin.FilePicker.Abstractions.pdb",
+        "lib/UAP10/Plugin.FilePicker.Abstractions.xml",
+        "lib/UAP10/Plugin.FilePicker.dll",
+        "lib/UAP10/Plugin.FilePicker.pdb",
+        "lib/UAP10/Plugin.FilePicker.xml",
+        "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10/Plugin.FilePicker.Abstractions.dll",
+        "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10/Plugin.FilePicker.Abstractions.pdb",
+        "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10/Plugin.FilePicker.Abstractions.xml",
+        "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10/Plugin.FilePicker.dll",
+        "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10/Plugin.FilePicker.pdb",
+        "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10/Plugin.FilePicker.xml",
+        "lib/win8/Plugin.FilePicker.Abstractions.dll",
+        "lib/win8/Plugin.FilePicker.Abstractions.pdb",
+        "lib/win8/Plugin.FilePicker.Abstractions.xml",
+        "lib/win8/Plugin.FilePicker.dll",
+        "lib/win8/Plugin.FilePicker.pdb",
+        "lib/win8/Plugin.FilePicker.xml",
+        "lib/wp8/Plugin.FilePicker.Abstractions.dll",
+        "lib/wp8/Plugin.FilePicker.Abstractions.pdb",
+        "lib/wp8/Plugin.FilePicker.Abstractions.xml",
+        "lib/wp8/Plugin.FilePicker.dll",
+        "lib/wp8/Plugin.FilePicker.pdb",
+        "lib/wp8/Plugin.FilePicker.xml",
+        "lib/wpa81/Plugin.FilePicker.Abstractions.dll",
+        "lib/wpa81/Plugin.FilePicker.Abstractions.pdb",
+        "lib/wpa81/Plugin.FilePicker.Abstractions.xml",
+        "lib/wpa81/Plugin.FilePicker.dll",
+        "lib/wpa81/Plugin.FilePicker.pdb",
+        "lib/wpa81/Plugin.FilePicker.xml",
+        "readme.txt",
+        "xam.plugin.filepicker.1.1.0.nupkg.sha512",
+        "xam.plugin.filepicker.nuspec"
       ]
     },
     "Xam.Plugin.Media/5.0.1": {
@@ -4397,6 +4525,45 @@
         "xamarin.forms.nuspec"
       ]
     },
+    "Xamarin.Plugin.FilePicker/2.1.34": {
+      "sha512": "y1SL60eEECBYqRmJ0E94B9W6+Jl4sZeLlGn4WtTrcKRJv9CGHPH459L1EZXrTlhq5muCNIInfst6FdXLiRqb2A==",
+      "type": "package",
+      "path": "xamarin.plugin.filepicker/2.1.34",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/monoandroid80/Plugin.FilePicker.dll",
+        "lib/monoandroid80/Plugin.FilePicker.pdb",
+        "lib/monoandroid80/Plugin.FilePicker.xml",
+        "lib/monoandroid81/Plugin.FilePicker.dll",
+        "lib/monoandroid81/Plugin.FilePicker.pdb",
+        "lib/monoandroid81/Plugin.FilePicker.xml",
+        "lib/monoandroid90/Plugin.FilePicker.dll",
+        "lib/monoandroid90/Plugin.FilePicker.pdb",
+        "lib/monoandroid90/Plugin.FilePicker.xml",
+        "lib/net45/Plugin.FilePicker.dll",
+        "lib/net45/Plugin.FilePicker.pdb",
+        "lib/net45/Plugin.FilePicker.xml",
+        "lib/netstandard1.0/Plugin.FilePicker.dll",
+        "lib/netstandard1.0/Plugin.FilePicker.pdb",
+        "lib/netstandard1.0/Plugin.FilePicker.xml",
+        "lib/netstandard2.0/Plugin.FilePicker.dll",
+        "lib/netstandard2.0/Plugin.FilePicker.pdb",
+        "lib/netstandard2.0/Plugin.FilePicker.xml",
+        "lib/uap10.0.16299/Plugin.FilePicker.dll",
+        "lib/uap10.0.16299/Plugin.FilePicker.pdb",
+        "lib/uap10.0.16299/Plugin.FilePicker.pri",
+        "lib/uap10.0.16299/Plugin.FilePicker.xml",
+        "lib/xamarinios10/Plugin.FilePicker.dll",
+        "lib/xamarinios10/Plugin.FilePicker.pdb",
+        "lib/xamarinios10/Plugin.FilePicker.xml",
+        "lib/xamarinmac20/Plugin.FilePicker.dll",
+        "lib/xamarinmac20/Plugin.FilePicker.pdb",
+        "lib/xamarinmac20/Plugin.FilePicker.xml",
+        "xamarin.plugin.filepicker.2.1.34.nupkg.sha512",
+        "xamarin.plugin.filepicker.nuspec"
+      ]
+    },
     "RTMobile/1.0.0.2": {
       "type": "project",
       "path": "../RTMobile/RTMobile.csproj",
@@ -4409,10 +4576,13 @@
       "CarouselView.FormsPlugin >= 5.2.0",
       "Microsoft.AppCenter.Analytics >= 3.0.0",
       "Microsoft.AppCenter.Crashes >= 3.0.0",
+      "MimeMapping >= 1.0.1.26",
+      "MimeTypes >= 2.0.1",
       "Nancy >= 2.0.0",
       "Newtonsoft.Json >= 12.0.3",
       "RTMobile >= 1.0.0.2",
       "Rg.Plugins.Popup >= 2.0.0.2",
+      "Xam.Plugin.FilePicker >= 1.1.0",
       "Xam.Plugins.Settings >= 3.1.1",
       "Xamarin.Android.Support.Core.Utils >= 28.0.0.3",
       "Xamarin.Android.Support.CustomTabs >= 28.0.0.3",
@@ -4422,7 +4592,8 @@
       "Xamarin.Android.Support.v7.CardView >= 28.0.0.3",
       "Xamarin.Android.Support.v7.MediaRouter >= 28.0.0.3",
       "Xamarin.Essentials >= 1.5.1",
-      "Xamarin.Forms >= 4.5.0.617"
+      "Xamarin.Forms >= 4.5.0.617",
+      "Xamarin.Plugin.FilePicker >= 2.1.34"
     ]
   },
   "packageFolders": {
@@ -4483,6 +4654,16 @@
             "target": "Package",
             "version": "[3.0.0, )"
           },
+          "MimeMapping": {
+            "target": "Package",
+            "version": "[1.0.1.26, )"
+          },
+          "MimeTypes": {
+            "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+            "suppressParent": "All",
+            "target": "Package",
+            "version": "[2.0.1, )"
+          },
           "Nancy": {
             "target": "Package",
             "version": "[2.0.0, )"
@@ -4494,6 +4675,10 @@
           "Rg.Plugins.Popup": {
             "target": "Package",
             "version": "[2.0.0.2, )"
+          },
+          "Xam.Plugin.FilePicker": {
+            "target": "Package",
+            "version": "[1.1.0, )"
           },
           "Xam.Plugins.Settings": {
             "target": "Package",
@@ -4534,6 +4719,10 @@
           "Xamarin.Forms": {
             "target": "Package",
             "version": "[4.5.0.617, )"
+          },
+          "Xamarin.Plugin.FilePicker": {
+            "target": "Package",
+            "version": "[2.1.34, )"
           }
         }
       }
@@ -4544,7 +4733,7 @@
       "code": "NU1605",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Обнаружено понижение версии пакета Microsoft.AppCenter.Analytics с 3.2.1 на 3.0.0. Чтобы выбрать другую версию, создайте ссылку на пакет напрямую из проекта. \r\n RTMobile.Android -> RTMobile -> Microsoft.AppCenter.Analytics (>= 3.2.1) \r\n RTMobile.Android -> Microsoft.AppCenter.Analytics (>= 3.0.0)",
+      "message": "Обнаружено понижение версии пакета Microsoft.AppCenter.Analytics с 3.2.2 на 3.0.0. Чтобы выбрать другую версию, создайте ссылку на пакет напрямую из проекта. \r\n RTMobile.Android -> RTMobile -> Microsoft.AppCenter.Analytics (>= 3.2.2) \r\n RTMobile.Android -> Microsoft.AppCenter.Analytics (>= 3.0.0)",
       "libraryId": "Microsoft.AppCenter.Analytics",
       "targetGraphs": [
         "MonoAndroid,Version=v9.0"
@@ -4564,7 +4753,7 @@
       "code": "NU1605",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Обнаружено понижение версии пакета Microsoft.AppCenter.Crashes с 3.2.1 на 3.0.0. Чтобы выбрать другую версию, создайте ссылку на пакет напрямую из проекта. \r\n RTMobile.Android -> RTMobile -> Microsoft.AppCenter.Crashes (>= 3.2.1) \r\n RTMobile.Android -> Microsoft.AppCenter.Crashes (>= 3.0.0)",
+      "message": "Обнаружено понижение версии пакета Microsoft.AppCenter.Crashes с 3.2.2 на 3.0.0. Чтобы выбрать другую версию, создайте ссылку на пакет напрямую из проекта. \r\n RTMobile.Android -> RTMobile -> Microsoft.AppCenter.Crashes (>= 3.2.2) \r\n RTMobile.Android -> Microsoft.AppCenter.Crashes (>= 3.0.0)",
       "libraryId": "Microsoft.AppCenter.Crashes",
       "targetGraphs": [
         "MonoAndroid,Version=v9.0"
@@ -4574,7 +4763,17 @@
       "code": "NU1605",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Обнаружено понижение версии пакета Xamarin.Forms с 4.6.0.772 на 4.5.0.617. Чтобы выбрать другую версию, создайте ссылку на пакет напрямую из проекта. \r\n RTMobile.Android -> RTMobile -> Xamarin.Forms (>= 4.6.0.772) \r\n RTMobile.Android -> Xamarin.Forms (>= 4.5.0.617)",
+      "message": "Обнаружено понижение версии пакета Xamarin.Plugin.FilePicker с 2.1.41 на 2.1.34. Чтобы выбрать другую версию, создайте ссылку на пакет напрямую из проекта. \r\n RTMobile.Android -> RTMobile -> Xamarin.Plugin.FilePicker (>= 2.1.41) \r\n RTMobile.Android -> Xamarin.Plugin.FilePicker (>= 2.1.34)",
+      "libraryId": "Xamarin.Plugin.FilePicker",
+      "targetGraphs": [
+        "MonoAndroid,Version=v9.0"
+      ]
+    },
+    {
+      "code": "NU1605",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Обнаружено понижение версии пакета Xamarin.Forms с 4.6.0.800 на 4.5.0.617. Чтобы выбрать другую версию, создайте ссылку на пакет напрямую из проекта. \r\n RTMobile.Android -> RTMobile -> Xamarin.Forms (>= 4.6.0.800) \r\n RTMobile.Android -> Xamarin.Forms (>= 4.5.0.617)",
       "libraryId": "Xamarin.Forms",
       "targetGraphs": [
         "MonoAndroid,Version=v9.0"

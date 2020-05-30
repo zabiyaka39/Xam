@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Net;
+using System.Net.Http;
 using System.Text;
 using Xamarin.Forms;
 
@@ -62,6 +63,10 @@ namespace RTMobile
 		/// </summary>
 		[JsonIgnore]
 		public string methodRequest { get; set; }
+		[JsonIgnore]
+		public MultipartFormDataContent FileUpload { get; set; }
+		[JsonIgnore]
+		public Byte[] FileUploadByte { get; set; }
 	}
 
 	/// <summary>

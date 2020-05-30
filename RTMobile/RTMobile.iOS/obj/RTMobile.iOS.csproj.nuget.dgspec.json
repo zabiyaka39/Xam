@@ -46,6 +46,10 @@
               "target": "Package",
               "version": "[2.0.0.2, )"
             },
+            "Xam.Plugin.FilePicker": {
+              "target": "Package",
+              "version": "[1.1.0, )"
+            },
             "Xamarin.Essentials": {
               "target": "Package",
               "version": "[1.5.1, )"
@@ -53,6 +57,10 @@
             "Xamarin.Forms": {
               "target": "Package",
               "version": "[4.5.0.617, )"
+            },
+            "Xamarin.Plugin.FilePicker": {
+              "target": "Package",
+              "version": "[2.1.34, )"
             }
           }
         }
@@ -118,11 +126,11 @@
             },
             "Microsoft.AppCenter.Analytics": {
               "target": "Package",
-              "version": "[3.2.1, )"
+              "version": "[3.2.2, )"
             },
             "Microsoft.AppCenter.Crashes": {
               "target": "Package",
-              "version": "[3.2.1, )"
+              "version": "[3.2.2, )"
             },
             "Microsoft.CSharp": {
               "target": "Package",
@@ -133,6 +141,12 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[3.0.0, )"
+            },
+            "MimeTypes": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.1, )"
             },
             "NETStandard.Library": {
               "suppressParent": "All",
@@ -158,7 +172,7 @@
             },
             "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",
-              "version": "[6.5.1, )"
+              "version": "[6.6.0, )"
             },
             "System.Net.Http": {
               "target": "Package",
@@ -190,7 +204,11 @@
             },
             "Xamarin.Forms": {
               "target": "Package",
-              "version": "[4.6.0.772, )"
+              "version": "[4.6.0.800, )"
+            },
+            "Xamarin.Plugin.FilePicker": {
+              "target": "Package",
+              "version": "[2.1.41, )"
             }
           },
           "imports": [
