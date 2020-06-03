@@ -224,7 +224,7 @@
           "lib/netstandard2.0/Nancy.dll": {}
         }
       },
-      "NETStandard.Library/2.0.0": {
+      "NETStandard.Library/2.0.3": {
         "type": "package",
         "dependencies": {
           "Microsoft.NETCore.Platforms": "1.1.0"
@@ -236,7 +236,7 @@
           "lib/netstandard1.0/_._": {}
         },
         "build": {
-          "build/netstandard2.0/_._": {}
+          "build/netstandard2.0/NETStandard.Library.targets": {}
         }
       },
       "Newtonsoft.Json/12.0.3": {
@@ -1778,16 +1778,15 @@
         "nancy.nuspec"
       ]
     },
-    "NETStandard.Library/2.0.0": {
-      "sha512": "7jnbRU+L08FXKMxqUflxEXtVymWvNOrS8yHgu9s6EM8Anr6T/wIX4nZ08j/u3Asz+tCufp3YVwFSEvFTPYmBPA==",
+    "NETStandard.Library/2.0.3": {
+      "sha512": "st47PosZSHrjECdjeIzZQbzivYBJFv6P2nv4cj2ypdI204DO+vZ7l5raGMiX4eXMJ53RfOIg+/s4DHVZ54Nu2A==",
       "type": "package",
-      "path": "netstandard.library/2.0.0",
+      "path": "netstandard.library/2.0.3",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
-        "build/NETStandard.Library.targets",
         "build/netstandard2.0/NETStandard.Library.targets",
         "build/netstandard2.0/ref/Microsoft.Win32.Primitives.dll",
         "build/netstandard2.0/ref/System.AppContext.dll",
@@ -1904,7 +1903,7 @@
         "build/netstandard2.0/ref/netstandard.dll",
         "build/netstandard2.0/ref/netstandard.xml",
         "lib/netstandard1.0/_._",
-        "netstandard.library.2.0.0.nupkg.sha512",
+        "netstandard.library.2.0.3.nupkg.sha512",
         "netstandard.library.nuspec"
       ]
     },
@@ -4578,6 +4577,7 @@
       "Microsoft.AppCenter.Crashes >= 3.0.0",
       "MimeMapping >= 1.0.1.26",
       "MimeTypes >= 2.0.1",
+      "NETStandard.Library >= 2.0.3",
       "Nancy >= 2.0.0",
       "Newtonsoft.Json >= 12.0.3",
       "RTMobile >= 1.0.0.2",
@@ -4597,24 +4597,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\sekisov\\.nuget\\packages\\": {},
+    "C:\\Users\\Вазген\\.nuget\\packages\\": {},
     "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile.Android\\RTMobile.Android.csproj",
+      "projectUniqueName": "C:\\RT\\rtmobile\\RTMobile\\RTMobile.Android\\RTMobile.Android.csproj",
       "projectName": "RTMobile.Android",
-      "projectPath": "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile.Android\\RTMobile.Android.csproj",
-      "packagesPath": "C:\\Users\\sekisov\\.nuget\\packages\\",
-      "outputPath": "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile.Android\\obj\\",
+      "projectPath": "C:\\RT\\rtmobile\\RTMobile\\RTMobile.Android\\RTMobile.Android.csproj",
+      "packagesPath": "C:\\Users\\Вазген\\.nuget\\packages\\",
+      "outputPath": "C:\\RT\\rtmobile\\RTMobile\\RTMobile.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\sekisov\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Вазген\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -4628,8 +4628,8 @@
       "frameworks": {
         "monoandroid90": {
           "projectReferences": {
-            "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj": {
-              "projectPath": "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj"
+            "C:\\RT\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj": {
+              "projectPath": "C:\\RT\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj"
             }
           }
         }
@@ -4663,6 +4663,10 @@
             "suppressParent": "All",
             "target": "Package",
             "version": "[2.0.1, )"
+          },
+          "NETStandard.Library": {
+            "target": "Package",
+            "version": "[2.0.3, )"
           },
           "Nancy": {
             "target": "Package",

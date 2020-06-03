@@ -31,7 +31,9 @@
           "Xamarin.FFImageLoading.Forms": "2.4.11.982",
           "Xamarin.Forms": "4.6.0.800",
           "Xamarin.Plugin.FilePicker": "2.1.41",
-          "Windows.Foundation.UniversalApiContract": "7.0.0.0"
+          "Mono.Android": "0.0.0.0",
+          "Windows.Foundation.UniversalApiContract": "7.0.0.0",
+          "Xamarin.iOS": "0.0.0.0"
         },
         "runtime": {
           "RTMobile.dll": {}
@@ -61,7 +63,7 @@
         "runtime": {
           "lib/netstandard1.0/Microsoft.AppCenter.dll": {
             "assemblyVersion": "0.0.0.0",
-            "fileVersion": "3.2.1.0"
+            "fileVersion": "3.2.2.0"
           }
         }
       },
@@ -72,7 +74,7 @@
         "runtime": {
           "lib/netstandard1.0/Microsoft.AppCenter.Analytics.dll": {
             "assemblyVersion": "0.0.0.0",
-            "fileVersion": "3.2.1.0"
+            "fileVersion": "3.2.2.0"
           }
         }
       },
@@ -83,7 +85,7 @@
         "runtime": {
           "lib/netstandard1.0/Microsoft.AppCenter.Crashes.dll": {
             "assemblyVersion": "0.0.0.0",
-            "fileVersion": "3.2.1.0"
+            "fileVersion": "3.2.2.0"
           }
         }
       },
@@ -156,16 +158,16 @@
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.IdentityModel.JsonWebTokens.dll": {
-            "assemblyVersion": "6.5.1.0",
-            "fileVersion": "6.5.1.10424"
+            "assemblyVersion": "6.6.0.0",
+            "fileVersion": "6.6.0.10522"
           }
         }
       },
       "Microsoft.IdentityModel.Logging/6.6.0": {
         "runtime": {
           "lib/netstandard2.0/Microsoft.IdentityModel.Logging.dll": {
-            "assemblyVersion": "6.5.1.0",
-            "fileVersion": "6.5.1.10424"
+            "assemblyVersion": "6.6.0.0",
+            "fileVersion": "6.6.0.10522"
           }
         }
       },
@@ -177,8 +179,8 @@
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.IdentityModel.Tokens.dll": {
-            "assemblyVersion": "6.5.1.0",
-            "fileVersion": "6.5.1.10424"
+            "assemblyVersion": "6.6.0.0",
+            "fileVersion": "6.6.0.10522"
           }
         }
       },
@@ -491,8 +493,8 @@
         },
         "runtime": {
           "lib/netstandard2.0/System.IdentityModel.Tokens.Jwt.dll": {
-            "assemblyVersion": "6.5.1.0",
-            "fileVersion": "6.5.1.10424"
+            "assemblyVersion": "6.6.0.0",
+            "fileVersion": "6.6.0.10522"
           }
         }
       },
@@ -1165,15 +1167,15 @@
         "runtime": {
           "lib/netstandard2.0/Xamarin.Forms.Core.dll": {
             "assemblyVersion": "2.0.0.0",
-            "fileVersion": "4.6.0.467"
+            "fileVersion": "4.6.0.474"
           },
           "lib/netstandard2.0/Xamarin.Forms.Platform.dll": {
             "assemblyVersion": "2.0.0.0",
-            "fileVersion": "4.6.0.467"
+            "fileVersion": "4.6.0.474"
           },
           "lib/netstandard2.0/Xamarin.Forms.Xaml.dll": {
             "assemblyVersion": "2.0.0.0",
-            "fileVersion": "4.6.0.467"
+            "fileVersion": "4.6.0.474"
           }
         }
       },
@@ -1185,11 +1187,27 @@
           }
         }
       },
+      "Mono.Android/0.0.0.0": {
+        "runtime": {
+          "Mono.Android.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
       "Windows.Foundation.UniversalApiContract/7.0.0.0": {
         "runtime": {
           "Windows.Foundation.UniversalApiContract.winmd": {
             "assemblyVersion": "7.0.0.0",
             "fileVersion": "10.0.17746.1000"
+          }
+        }
+      },
+      "Xamarin.iOS/0.0.0.0": {
+        "runtime": {
+          "Xamarin.iOS.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
           }
         }
       }
@@ -1950,7 +1968,17 @@
       "path": "xamarin.plugin.filepicker/2.1.41",
       "hashPath": "xamarin.plugin.filepicker.2.1.41.nupkg.sha512"
     },
+    "Mono.Android/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
     "Windows.Foundation.UniversalApiContract/7.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Xamarin.iOS/0.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
