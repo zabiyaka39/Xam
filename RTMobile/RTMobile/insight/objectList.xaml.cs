@@ -28,7 +28,7 @@ namespace RTMobile.insight
 				{
 					JSONRequest jsonRequest = new JSONRequest()
 					{
-						urlRequest = $"/rest/insight/1.0/iql/objects?objectSchemaId={objectschema.id}",
+						urlRequest = $"/rest/insight/1.0/iql/objects?objectSchemaId={objectschema.id}&resultPerPage=1000",
 						methodRequest = "GET"
 					};
 					Request request = new Request(jsonRequest);

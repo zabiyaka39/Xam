@@ -1,11 +1,81 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 
 namespace RTMobile.jiraData
 {
-    public class InsightObject
+    public partial class Avatar
+    {
+        [JsonProperty("url16")]
+        public Uri Url16 { get; set; }
+
+        [JsonProperty("url48")]
+        public Uri Url48 { get; set; }
+
+        [JsonProperty("url72")]
+        public Uri Url72 { get; set; }
+
+        [JsonProperty("url144")]
+        public Uri Url144 { get; set; }
+
+        [JsonProperty("url288")]
+        public Uri Url288 { get; set; }
+
+        [JsonProperty("objectId")]
+        public long ObjectId { get; set; }
+    }
+
+    public partial class InsightRoot
+    {
+        [JsonProperty("id")]
+        public long Id { get; set; }
+
+        [JsonProperty("label")]
+        public string Label { get; set; }
+
+        [JsonProperty("objectKey")]
+        public string ObjectKey { get; set; }
+
+        [JsonProperty("avatar")]
+        public Avatar Avatar { get; set; }
+
+        [JsonProperty("objectType")]
+        public ObjectType ObjectType { get; set; }
+
+        [JsonProperty("created")]
+        public string Created { get; set; }
+
+        [JsonProperty("updated")]
+        public string Updated { get; set; }
+
+        [JsonProperty("hasAvatar")]
+        public bool HasAvatar { get; set; }
+
+        [JsonProperty("timestamp")]
+        public long Timestamp { get; set; }
+
+        [JsonProperty("attributes")]
+        public ObservableCollection<Attribute> Attributes { get; set; }
+
+        [JsonProperty("extendedInfo")]
+        public ExtendedInfo ExtendedInfo { get; set; }
+
+        [JsonProperty("_links")]
+        public Links Links { get; set; }
+
+        [JsonProperty("name")]
+        public string Name { get; set; }
+    }    public partial class ExtendedInfo
+    {
+        [JsonProperty("openIssuesExists")]
+        public bool OpenIssuesExists { get; set; }
+
+        [JsonProperty("attachmentsExists")]
+        public bool AttachmentsExists { get; set; }
+    }
+    public partial class Attribute
     {
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public long? Id { get; set; }
@@ -38,7 +108,7 @@ namespace RTMobile.jiraData
         public Status Status { get; set; }
     }
 
-    public  class Status
+    public class Status
     {
         [JsonProperty("id")]
         public long Id { get; set; }

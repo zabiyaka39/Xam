@@ -50,14 +50,14 @@
                     <ScrollView  x:Name="detailIssue" Grid.Row="1" Grid.Column="0" HorizontalOptions="FillAndExpand"
                                  VerticalOptions="FillAndExpand" Margin="0,0,10,0">
                         <ListView x:Name="InformationObject"  Grid.Row="1" Grid.Column="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
-                                  HasUnevenRows="True" SeparatorVisibility="None" ItemsSource="{Binding Insights} ">
+                                  HasUnevenRows="True" SeparatorVisibility="None" ItemsSource="{Binding InsightsInfo} ">
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <ViewCell>
                                         <ViewCell.View>
                                             <Grid>
-                                                <Label Text="{Binding Path = ObjectTypeAttribute.Name}" Grid.Column="0"/>
-                                                <Label Text="{Binding Path = ObjectAttributeValues[0].DisplayValue}" Grid.Column="1" HorizontalTextAlignment="End"/>
+                                                <Label Text="{Binding Path = ObjectTypeAttribute.Name}" Margin="0,0,0,10" FontSize="15"/>
+                                                <Label Text="{Binding Path = ObjectAttributeValues[0].DisplayValue}" HorizontalTextAlignment="End"/>
                                             </Grid>
                                         </ViewCell.View>
                                     </ViewCell>
@@ -94,14 +94,14 @@
                                  Grid.Row="1" Grid.ColumnSpan="2" VerticalOptions="Start"/>
                     </Grid>
                     <ListView x:Name="DateObject"  Grid.Row="1" Grid.Column="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
-                              HasUnevenRows="True" SeparatorVisibility="None" >
+                              HasUnevenRows="True" SeparatorVisibility="None" ItemsSource="{Binding InsightsDate} ">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell>
                                     <ViewCell.View>
                                         <Grid>
-                                            <Label Text="{Binding name}" Grid.Column="0"/>
-                                            <Label Text="{Binding value}" Grid.Column="1" HorizontalTextAlignment="End"/>
+                                            <Label Text="{Binding Path = ObjectTypeAttribute.Name}" Margin="0,0,0,10" FontSize="15" />
+                                            <Label Text="{Binding Path = ObjectAttributeValues[0].DisplayValue}"  HorizontalTextAlignment="End"/>
                                         </Grid>
                                     </ViewCell.View>
                                 </ViewCell>

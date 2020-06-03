@@ -277,6 +277,7 @@ namespace RTMobile.issues
 
 									break;
 								}
+								//Одинаково
 							case "priority":
 							case "option":
 							case "resolution":
@@ -302,6 +303,7 @@ namespace RTMobile.issues
 									DectionaryFields.Add(picker.Id, Field);
 									break;
 								}
+								//Одинаково
 							case "string":
 								{
 									Entry entry = new Entry()
@@ -464,6 +466,7 @@ namespace RTMobile.issues
 									}
 									break;
 								}
+								//Тоже что и datetime
 							case "date":
 								{
 									DatePicker datePicker = new DatePicker
@@ -721,9 +724,9 @@ namespace RTMobile.issues
 						//Создаем label с названием получаемого аргумента для более понятного вида для пользователя
 						Label label = new Label
 						{
-							Text = Fields[i].displayName,
+							Text = Fields[i].name,
 							TextColor = Color.FromHex("#F0F1F0"),
-							FontSize = 14
+							FontSize = 18
 						};
 						//Проверяем на обязательность данного поля
 						if (Fields[i].required)

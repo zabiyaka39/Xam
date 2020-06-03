@@ -16,7 +16,8 @@ namespace RTMobile.insight
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class GeneralObjectInsight : ContentPage
 	{
-		public ObservableCollection<InsightObject> Insights { get; set; }
+		public ObservableCollection<jiraData.Attribute> InsightsInfo { get; set; }
+		public ObservableCollection<jiraData.Attribute> InsightsDate { get; set; }
 		public GeneralObjectInsight(ObjectEntry selectedField)
 		{
 			InitializeComponent();
@@ -32,20 +33,48 @@ namespace RTMobile.insight
 		{
 			JSONRequest jsonRequest = new JSONRequest()
 			{
-				urlRequest = $"/rest/insight/1.0/object/{selectedField.id}/attributes",
+				urlRequest = $"/rest/insight/1.0/object/{selectedField.objectKey}",
 				methodRequest = "GET"
 			};
 			Request request = new Request(jsonRequest);
-			Insights = request.GetResponses<ObservableCollection<InsightObject>>();
-			for (int i = 0; i < Insights.Count; ++i)
+			InsightsInfo = request.GetResponses<InsightRoot>().Attributes;
+
+			for (int i = 0; i < InsightsInfo.Count; ++i)
 			{
-				//Удаляем параметры объекта у которых нет значенийр
-				if (Insights[i].ObjectAttributeValues[0].DisplayValue.Length == 0)
+				if (InsightsInfo[i].ObjectAttributeValues != null && InsightsInfo[i].ObjectAttributeValues.Count > 0)
 				{
-					Insights.RemoveAt(i);
+					//Удаляем параметры объекта у которых нет значенийр
+					if (InsightsInfo[i].ObjectAttributeValues[0].DisplayValue.Length == 0)
+					{
+						InsightsInfo.RemoveAt(i);
+						--i;
+					}
+					else
+					{
+						if (InsightsInfo[i].ObjectTypeAttribute.DefaultType != null)
+						{
+							//Если данные являются датой, то переносим в блок с датами
+							if (InsightsInfo[i].ObjectTypeAttribute.DefaultType.Name == "DateTime")
+							{
+								if (InsightsDate == null)
+								{
+									InsightsDate = new ObservableCollection<jiraData.Attribute>();
+								}
+								InsightsDate.Add(InsightsInfo[i]);
+								InsightsInfo.RemoveAt(i);
+								--i;
+							}
+						}
+					}
+				}
+				else
+				{
+					InsightsInfo.RemoveAt(i);
 					--i;
 				}
 			}
+			//Выставляем размер ListView размером с шрифт + отступ
+			InformationObject.HeightRequest = InsightsInfo.Count * 25;
 		}
 
 		private void ToolbarItem_Clicked(object sender, EventArgs e)

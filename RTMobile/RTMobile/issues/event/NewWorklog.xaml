@@ -45,13 +45,15 @@
                         <Editor x:Name="newComment" Placeholder="Введите текст комментария..." FontSize="18"
                                               PlaceholderColor="#4A4C50" TextColor="#4A4C50" HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand" AutoSize="TextChanges"  Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" />
                     </Grid>
-                </Frame>               
+                </Frame>
             </Grid>
+
             <Frame HasShadow="True" CornerRadius="3" BackgroundColor="#BE0030" WidthRequest="167" Grid.Row="1" Grid.Column="0"
                        HeightRequest="35" HorizontalOptions="FillAndExpand" Padding="0,5,0,5" Margin="10,0,10,10">
                 <Frame.GestureRecognizers>
                     <TapGestureRecognizer  NumberOfTapsRequired="1"/>
                 </Frame.GestureRecognizers>
+
                 <Button Margin="0" Padding="0" BackgroundColor="Transparent" Text="Добавить" FontSize="18" TextColor="#F0F1F0" HorizontalOptions="FillAndExpand"
                            FontAttributes="Bold" VerticalOptions="Center" Clicked="Create_new_worklog_Clicked" />
             </Frame>
