@@ -222,7 +222,7 @@ namespace RTMobile
 						if (jsonConvert.projects[0].issuetypes[0].fields != null)
 						{
 							foreach (dynamic fieldsDeserializate in jsonConvert.projects[0].issuetypes[0].fields)
-							{								
+							{
 								foreach (dynamic checkFieldsDeserializate in fieldsDeserializate)
 								{
 									string str = checkFieldsDeserializate.ToString();
@@ -231,7 +231,7 @@ namespace RTMobile
 									{
 										fields.RemoveAt(fields.Count - 1);
 									}
-								}								
+								}
 							}
 						}
 					}

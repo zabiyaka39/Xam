@@ -88,7 +88,7 @@ namespace RTMobile.issues
 				//Показываем  label и выпадающий список с типами задач
 				typeIssuePic.IsVisible = true;
 				lblTypeIssue.IsVisible = true;
-				
+
 
 			}
 			//Добавить отрисовку полей
@@ -116,8 +116,7 @@ namespace RTMobile.issues
 		}
 
 		private void typeIssuePic_SelectedIndexChanged(object sender, EventArgs e)
-		{	
-			
+		{
 			if (typeIssuePic.SelectedIndex != -1)
 			{
 				for (int i = 4; i < generalStackLayout.Children.Count;)
@@ -140,371 +139,128 @@ namespace RTMobile.issues
 
 				void determination_requered(Xamarin.Forms.StackLayout typeStack, Fields Field)
 				{
-					if (Field.schema.custom.Length == 0)
+					switch (Field.schema.type)
 					{
-						//Если поле системное, то проверяем тип поля
-						//Проверяем тип поля и выводим соответствующее отображение
-						switch (Field.schema.type)
-						{
-							//Выгружаем список пользователей для данной задачи
-							case "user":
+						//Выгружаем список пользователей для данной задачи
+						case "user":
+							{
+								List<User> user = new List<User>();
+								List<string> userDisplayName = new List<string>();
+								if (Field.autoCompleteUrl.Length > 0)
 								{
-									List<User> user = new List<User>();
-									List<User> userDisplayName = new List<User>();
-
-									//Создаем поисковый бар для поиска и отображения пользователей имеющих доступ к задаче
-									SearchBar searchBar = new SearchBar
+									JSONRequest jsonRequestUser = new JSONRequest
 									{
-										Placeholder = Field.defaultValue,
-										TextColor = Color.FromHex("#F0F1F0"),
-										PlaceholderColor = Color.FromHex("#F0F1F0"),
-										HorizontalOptions = LayoutOptions.FillAndExpand,
-										CancelButtonColor = Color.FromHex("#F0F1F0"),
-										Margin = new Thickness(-25, 0, 0, 0),
-										FontSize = 16
+										urlRequest = $"/rest/api/2/user/picker?query=",
+										methodRequest = "GET"
 									};
+									Request requestUser = new Request(jsonRequestUser);
 
-									Grid grid = new Grid();
-									ListView listView = new ListView(ListViewCachingStrategy.RecycleElement)
+									user = requestUser.GetResponses<RootObject>().users;
+
+									for (int j = 0; j < user.Count; ++j)
 									{
-										IsVisible = false,
-										VerticalOptions = LayoutOptions.Start,
-										HeightRequest = 250,
-										BackgroundColor = Color.FromHex("#4A4C50")
+										userDisplayName.Add(user[j].displayName);
+									}
+								}
 
-									};
-									grid.Children.Add(listView);
-									//Событие при вводе символов (показываем только тех пользователей, которые подходят к начатаму вводу пользователя)
-									searchBar.TextChanged += (senders, args) =>
+								//Создаем поисковый бар для поиска и отображения пользователей имеющих доступ к задаче
+								SearchBar searchBar = new SearchBar
+								{
+									Placeholder = Field.defaultValue,
+									TextColor = Color.FromHex("#F0F1F0"),
+									PlaceholderColor = Color.FromHex("#F0F1F0"),
+									HorizontalOptions = LayoutOptions.FillAndExpand,
+									CancelButtonColor = Color.FromHex("#F0F1F0"),
+									Margin = new Thickness(-25, 0, 0, 0),
+									FontSize = 16
+								};
+
+								Grid grid = new Grid();
+								ListView listView = new ListView()
+								{
+									IsVisible = false,
+									VerticalOptions = LayoutOptions.Start,
+									HeightRequest = 250,
+									BackgroundColor = Color.FromHex("#4A4C50")
+
+								};
+								grid.Children.Add(listView);
+								//Событие при вводе символов (показываем только тех пользователей, которые подходят к начатаму вводу пользователя)
+								searchBar.TextChanged += (senders, args) =>
+								{
+									var keyword = searchBar.Text;
+									if (keyword.Length >= 1)
 									{
-										var keyword = searchBar.Text;
-										if (keyword.Length >= 1)
+										JSONRequest jsonRequestIssue = new JSONRequest
 										{
-											JSONRequest jsonRequestUser = new JSONRequest
-											{
-												urlRequest = $"/rest/api/2/user/picker?query=" + keyword.ToLower(),
-												methodRequest = "GET"
-											};
-											Request requestUser = new Request(jsonRequestUser);
+											urlRequest = $"/rest/api/2/user/picker?query=" + keyword.ToLower(),
+											methodRequest = "GET"
+										};
+										Request requestIssue = new Request(jsonRequestIssue);
 
-											user = requestUser.GetResponses<RootObject>().users;
+										user = requestIssue.GetResponses<RootObject>().users;
 
-													//for (int j = 0; j < user.Count; ++j)
-													//{
-													//	userDisplayName.Add(user[j].displayName);
-													//}
-													List<User> userTmp = new List<User>();
-											List<ImageSource> imageSource = new List<ImageSource>();
-											for (int n = 0; n < user.Count; ++n)
-											{
-												if (user[n].displayName.ToLower().Contains(keyword.ToLower()))
-												{
-													userTmp.Add(user[n]);
-												}
-											}
-													//List<string> suggestion = userDisplayName.FindAll(c => c.ToLower().Contains(keyword.ToLower()));
+										userDisplayName.Clear();
 
-													//listView.ItemsSource = userTmp;
-													//listView.IsVisible = true;
-													//listView.ItemTemplate = new DataTemplate(() =>
-													//{
-													//	var grids = new Grid();
-													//	var nameLabel = new Label { FontAttributes = FontAttributes.Bold };
-													//	var ageLabel = new Image();
-
-
-													//	nameLabel.SetBinding(Label.TextProperty, "displayName");
-
-
-													//Изображение с динамической загрузкой
-													//CachedImage cachedImage = new CachedImage
-													//{
-													//	Source = "https://sd.rosohrana.ru/secure/useravatar?size=small&ownerId=safronov&avatarId=13507",
-													//	LoadingPlaceholder = "drawable/about.png",
-													//	ErrorPlaceholder = "Ошибка",
-													//	WidthRequest = 150,
-													//	HeightRequest = 150,
-													//	RetryCount = 5,
-													//	RetryDelay = 450,
-													//	DownsampleHeight=20,
-													//	DownsampleWidth = 20,
-													//	DownsampleToViewSize = true
-
-													//};
-
-
-													//cachedImage.SetBinding(CachedImage.SourceProperty, "maxFormat");
-
-													//grids.Children.Add(nameLabel);
-													//grids.Children.Add(cachedImage, 2, 0);
-													//return new ViewCell { View = grids };
-													//ImageCell imageCell = new ImageCell();
-													//imageCell.SetBinding(ImageCell.TextProperty, "displayName");
-													//imageCell.SetBinding(ImageCell.ImageSourceProperty, "avatar");
-													//return imageCell;
-													//});
-
-													listView.ItemsSource = userTmp;
-
-											listView.IsVisible = true;
-										}
-										else
+										for (int j = 0; j < user.Count; ++j)
 										{
-											listView.IsVisible = false;
+											userDisplayName.Add(user[j].displayName);
 										}
-									};
-									//Заполняем поле выбранным элементом из списка
-									listView.ItemTapped += (senders, args) =>
+
+										var suggestion = userDisplayName.Where(c => c.ToLower().Contains(keyword.ToLower()));
+										listView.ItemsSource = suggestion;
+										listView.IsVisible = true;
+									}
+									else
 									{
-										if (args.Item as string == null)
-										{
-											return;
-										}
-										else
-										{
-											listView.ItemsSource = userDisplayName.Where(c => c.Equals(args.Item as string));
-											listView.IsVisible = true;
-											searchBar.Text = (args.Item as User).displayName;
-										}
 										listView.IsVisible = false;
-									};
-
-									//Добавляем все в грид для удобства поиска элементов при переходе
-									typeStack.Children.Add(searchBar);
-									typeStack.Children.Add(grid);
-
-									DectionaryFields.Add(searchBar.Id, Field);
-
-									break;
-								}
-								//Одинаково
-							case "priority":
-							case "option":
-							case "resolution":
-								{
-									List<string> resolutionValues = new List<string>();
-									for (int j = 0; j < Field.allowedValues.Count; ++j)
-									{
-										resolutionValues.Add(Field.allowedValues[j].value);
 									}
-									Picker picker = new Picker
-									{
-										Title = Field.defaultValue,
-										TextColor = Color.FromHex("#F0F1F0"),
-										TitleColor = Color.FromHex("#F0F1F0"),
-										HorizontalOptions = LayoutOptions.FillAndExpand,
-										Margin = new Thickness(0, 0, 0, 20),
-										FontSize = 16
-									};
-									picker.Title = "Выберите значение...";
-									picker.ItemsSource = resolutionValues;
-
-									typeStack.Children.Add(picker);
-									DectionaryFields.Add(picker.Id, Field);
-									break;
-								}
-								//Одинаково
-							case "string":
+								};
+								//Заполняем поле выбранным элементом из списка
+								listView.ItemTapped += (senders, args) =>
 								{
-									Entry entry = new Entry()
+									if (args.Item as string == null)
 									{
-										Placeholder = "Введите текст",
-										TextColor = Color.FromHex("#F0F1F0"),
-										PlaceholderColor = Color.FromHex("#F0F1F0"),
-										HorizontalOptions = LayoutOptions.FillAndExpand,
-										Margin = new Thickness(0, 0, 0, 20),
-										FontSize = 16
-									};
-
-									typeStack.Children.Add(entry);
-									DectionaryFields.Add(entry.Id, Field);
-
-									break;
-								}
-							case "array":
-								{
-									//Проверяем какой массив данных необходимо принять на вход
-									switch (Field.schema.items)
-									{
-										case "attachment":
-											{
-												Button button = new Button()
-												{
-													Text = "Загрузить файлы...",
-													HorizontalOptions = LayoutOptions.FillAndExpand,
-													Margin = new Thickness(0, 0, 0, 20),
-												};
-												typeStack.Children.Add(button);
-												DectionaryFields.Add(button.Id, Field);
-												break;
-											}
-										case "issuelinks":
-											{
-												Picker picker = new Picker
-												{
-													Title = Field.defaultValue,
-													TextColor = Color.FromHex("#F0F1F0"),
-													TitleColor = Color.FromHex("#F0F1F0"),
-													HorizontalOptions = LayoutOptions.FillAndExpand,
-													Margin = new Thickness(0, 0, 0, 0),
-													FontSize = 16,
-												};
-
-												JSONRequest jsonRequestLink = new JSONRequest
-												{
-													urlRequest = $"/rest/api/2/issueLinkType",
-													methodRequest = "GET"
-												};
-												Request requestIssuelinks = new Request(jsonRequestLink);
-
-												List<Issuelink> issuelinks = requestIssuelinks.GetResponses<RootObject>().issueLinkTypes;
-												for (int j = 0; j < issuelinks.Count; ++j)
-												{
-													picker.Items.Add(issuelinks[j].outward);
-													picker.Items.Add(issuelinks[j].inward);
-												}
-												picker.Title = "Выберите значение...";
-
-												typeStack.Children.Add(picker);
-
-												List<string> issueDisplayName = new List<string>();
-												if (Field.autoCompleteUrl.Length > 0)
-												{
-													//Удаляем адрес сервера для получения только остаточной части запроса API
-													Field.autoCompleteUrl = Field.autoCompleteUrl.Remove(0, (Field.autoCompleteUrl.IndexOf(".ru") + 3));
-
-													JSONRequest jsonRequestIssue = new JSONRequest
-													{
-														urlRequest = Field.autoCompleteUrl,
-														methodRequest = "GET"
-													};
-													Request requestIssue = new Request(jsonRequestIssue);
-
-													List<Issue> issue = requestIssue.GetResponses<RootObject>().sections[0].issues;
-
-													for (int j = 0; j < issue.Count; ++j)
-													{
-														issueDisplayName.Add(issue[j].key + " - " + issue[j].summary);
-													}
-												}
-
-												//Создаем поисковый бар для поиска и отображения списка подходящих задач к данной для связывания
-												SearchBar searchBar = new SearchBar
-												{
-													Placeholder = "Поиск по истории",
-													TextColor = Color.FromHex("#F0F1F0"),
-													PlaceholderColor = Color.FromHex("#F0F1F0"),
-													HorizontalOptions = LayoutOptions.FillAndExpand,
-													CancelButtonColor = Color.FromHex("#F0F1F0"),
-													Margin = new Thickness(-25, 0, 0, 0),
-													FontSize = 16
-												};
-
-												Grid grid = new Grid();
-												ListView listView = new ListView()
-												{
-													IsVisible = false,
-													VerticalOptions = LayoutOptions.Start,
-													HeightRequest = 250,
-													BackgroundColor = Color.FromHex("#4A4C50"),
-												};
-												grid.Children.Add(listView);
-
-												//Событие при вводе символов (показываем только тех пользователей, которые подходят к начатаму вводу пользователя)
-												searchBar.TextChanged += (senders, args) =>
-												{
-													var keyword = searchBar.Text;
-													if (keyword.Length >= 1)
-													{
-														JSONRequest jsonRequestIssue = new JSONRequest
-														{
-															urlRequest = $"/rest/api/2/user/picker?query=" + keyword.ToLower(),
-															methodRequest = "GET"
-														};
-														Request requestIssue = new Request(jsonRequestIssue);
-
-														List<Issue> issue = requestIssue.GetResponses<RootObject>().sections[0].issues;
-
-														issueDisplayName.Clear();
-														for (int j = 0; j < issue.Count; ++j)
-														{
-															issueDisplayName.Add(issue[j].key + " - " + issue[j].summaryText);
-														}
-
-														var suggestion = issueDisplayName.Where(c => c.ToLower().Contains(keyword.ToLower()));
-														listView.ItemsSource = suggestion;
-														listView.IsVisible = true;
-													}
-													else
-													{
-														listView.IsVisible = false;
-													}
-												};
-												//Заполняем поле выбранным элементом из списка
-												listView.ItemTapped += (senders, args) =>
-												{
-													if (args.Item as string == null)
-													{
-														return;
-													}
-													else
-													{
-														listView.ItemsSource = issueDisplayName.Where(c => c.Equals(args.Item as string));
-														listView.IsVisible = true;
-														searchBar.Text = args.Item as string;
-													}
-													listView.IsVisible = false;
-												};
-
-												typeStack.Children.Add(searchBar);
-												typeStack.Children.Add(grid);
-
-												DectionaryFields.Add(searchBar.Id, Field);
-
-												break;
-											}
+										return;
 									}
-									break;
-								}
-								//Тоже что и datetime
-							case "date":
-								{
-									DatePicker datePicker = new DatePicker
+									else
 									{
-										TextColor = Color.FromHex("#F0F1F0"),
-										Date = DateTime.Now
-									};
-									typeStack.Children.Add(datePicker);
-
-									DectionaryFields.Add(datePicker.Id, Field);
-									break;
-								}
-						}
-					}
-					else
-					{
-						switch (Field.schema.type)
-						{
-							case "option-with-child":
-								{
-									List<string> optionChild = new List<string>();
-									for (int j = 0; j < Field.allowedValues.Count; ++j)
-									{
-										optionChild.Add(Field.allowedValues[j].value);
+										listView.ItemsSource = userDisplayName.Where(c => c.Equals(args.Item as string));
+										listView.IsVisible = true;
+											//searchBar.Text = (args.Item as User).displayName;
+											searchBar.Text = args.Item as string;
 									}
-									Picker picker = new Picker
-									{
-										Title = Field.defaultValue,
-										TextColor = Color.FromHex("#F0F1F0"),
-										TitleColor = Color.FromHex("#F0F1F0"),
-										HorizontalOptions = LayoutOptions.FillAndExpand,
-										Margin = new Thickness(0, 0, 0, 10),
-										FontSize = 16
-									};
-									picker.Title = "Выберите значение...";
-									picker.ItemsSource = optionChild;
+									listView.IsVisible = false;
+								};
+								typeStack.Children.Add(searchBar);
+								typeStack.Children.Add(grid);
+								DectionaryFields.Add(searchBar.Id, Field);
+								break;
+							}
+						case "priority":
+						case "option":
+						case "resolution":
+							{
+								List<string> resolutionValues = new List<string>();
+								for (int j = 0; j < Field.allowedValues.Count; ++j)
+								{
+									resolutionValues.Add(Field.allowedValues[j].value);
+								}
+								Picker picker = new Picker
+								{
+									Title = Field.defaultValue,
+									TextColor = Color.FromHex("#F0F1F0"),
+									TitleColor = Color.FromHex("#F0F1F0"),
+									HorizontalOptions = LayoutOptions.FillAndExpand,
+									Margin = new Thickness(0, 0, 0, 20),
+									FontSize = 16
+								};
+								picker.Title = "Выберите значение...";
+								picker.ItemsSource = resolutionValues;
+								//Если при выборе поля у него имеется "потомок" (доп. поле), то показываем его
 
-
+								if (Field.allowedValues != null)
+								{
 									Picker pickerChild = new Picker
 									{
 										Title = Field.defaultValue,
@@ -514,14 +270,12 @@ namespace RTMobile.issues
 										Margin = new Thickness(0, 0, 0, 20),
 										FontSize = 16
 									};
-									picker.Title = "Выберите значение...";
-									//Присваиваем ID поля для дальнейшего поиска и выводу корректной информации
-									Field.idFieldScreen = picker.Id;
 									picker.SelectedIndexChanged += (senders, args) =>
 									{
 										if (picker.SelectedIndex > -1)
 										{
-											List<string> childName = new List<string>();
+												//Проверяем на наличие "потомков" 
+												List<string> childName = new List<string>();
 											Console.WriteLine(picker.Items[picker.SelectedIndex]);
 											for (int j = 0; j < DectionaryFields[picker.Id].allowedValues.Count; ++j)
 											{
@@ -532,188 +286,193 @@ namespace RTMobile.issues
 														childName.Add(DectionaryFields[picker.Id].allowedValues[j].children[k].value);
 													}
 												}
+												pickerChild.ItemsSource = childName;
 											}
-
-											pickerChild.ItemsSource = childName;
 										}
 									};
-
-									typeStack.Children.Add(picker);
 									typeStack.Children.Add(pickerChild);
-
-									DectionaryFields.Add(picker.Id, Field);
-									break;
 								}
-							case "option":
-							case "resolution":
-								{
-									List<string> resolutionValues = new List<string>();
-									for (int j = 0; j < Field.allowedValues.Count; ++j)
-									{
-										resolutionValues.Add(Field.allowedValues[j].value);
-									}
-									Picker picker = new Picker
-									{
-										Title = Field.defaultValue,
-										TextColor = Color.FromHex("#F0F1F0"),
-										TitleColor = Color.FromHex("#F0F1F0"),
-										HorizontalOptions = LayoutOptions.FillAndExpand,
-										Margin = new Thickness(0, 0, 0, 20),
-										FontSize = 16
-									};
-									picker.Title = "Выберите значение...";
-									picker.ItemsSource = resolutionValues;
 
-									typeStack.Children.Add(picker);
+								typeStack.Children.Add(picker);
+								DectionaryFields.Add(picker.Id, Field);
+								break;
+							}
+						case "string":
+							{
+								Entry entry = new Entry()
+								{
+									Placeholder = "Введите текст",
+									TextColor = Color.FromHex("#F0F1F0"),
+									PlaceholderColor = Color.FromHex("#F0F1F0"),
+									HorizontalOptions = LayoutOptions.FillAndExpand,
+									Margin = new Thickness(0, 0, 0, 20),
+									FontSize = 16
+								};
 
-									DectionaryFields.Add(picker.Id, Field);
-									break;
-								}
-							case "datetime":
-								{
-									DatePicker datePicker = new DatePicker
-									{
-										TextColor = Color.FromHex("#F0F1F0"),
-										Date = DateTime.Now
-									};
-									typeStack.Children.Add(datePicker);
+								typeStack.Children.Add(entry);
+								DectionaryFields.Add(entry.Id, Field);
 
-									DectionaryFields.Add(datePicker.Id, Field);
-									break;
-								}
-							case "string":
+								break;
+							}
+						case "array":
+							{
+								//Проверяем какой массив данных необходимо принять на вход
+								switch (Field.schema.items)
 								{
-									Entry entry = new Entry()
-									{
-										Placeholder = "Введите текст",
-										TextColor = Color.FromHex("#F0F1F0"),
-										PlaceholderColor = Color.FromHex("#F0F1F0"),
-										HorizontalOptions = LayoutOptions.FillAndExpand,
-										Margin = new Thickness(0, 0, 0, 20),
-										FontSize = 16
-									};
-									typeStack.Children.Add(entry);
-									DectionaryFields.Add(entry.Id, Field);
-									break;
-								}
-							case "number":
-								{
-									Entry entry = new Entry()
-									{
-										Placeholder = "Введите значение",
-										TextColor = Color.FromHex("#F0F1F0"),
-										PlaceholderColor = Color.FromHex("#F0F1F0"),
-										HorizontalOptions = LayoutOptions.FillAndExpand,
-										Margin = new Thickness(0, 0, 0, 20),
-										FontSize = 16,
-										Keyboard = Keyboard.Numeric
-									};
-
-									typeStack.Children.Add(entry);
-									DectionaryFields.Add(entry.Id, Field);
-									break;
-								}
-							case "user":
-								{
-									List<User> user = new List<User>();
-									List<string> userDisplayName = new List<string>();
-									if (Field.autoCompleteUrl.Length > 0)
-									{
-										JSONRequest jsonRequestUser = new JSONRequest
+									case "attachment":
 										{
-											urlRequest = $"/rest/api/2/user/picker?query=",
-											methodRequest = "GET"
-										};
-										Request requestUser = new Request(jsonRequestUser);
-
-										user = requestUser.GetResponses<RootObject>().users;
-
-										for (int j = 0; j < user.Count; ++j)
-										{
-											userDisplayName.Add(user[j].displayName);
-										}
-									}
-
-									//Создаем поисковый бар для поиска и отображения пользователей имеющих доступ к задаче
-									SearchBar searchBar = new SearchBar
-									{
-										Placeholder = Field.defaultValue,
-										TextColor = Color.FromHex("#F0F1F0"),
-										PlaceholderColor = Color.FromHex("#F0F1F0"),
-										HorizontalOptions = LayoutOptions.FillAndExpand,
-										CancelButtonColor = Color.FromHex("#F0F1F0"),
-										Margin = new Thickness(-25, 0, 0, 0),
-										FontSize = 16
-									};
-
-									Grid grid = new Grid();
-									ListView listView = new ListView()
-									{
-										IsVisible = false,
-										VerticalOptions = LayoutOptions.Start,
-										HeightRequest = 250,
-										BackgroundColor = Color.FromHex("#4A4C50")
-
-									};
-									grid.Children.Add(listView);
-									//Событие при вводе символов (показываем только тех пользователей, которые подходят к начатаму вводу пользователя)
-									searchBar.TextChanged += (senders, args) =>
-									{
-										var keyword = searchBar.Text;
-										if (keyword.Length >= 1)
-										{
-											JSONRequest jsonRequestIssue = new JSONRequest
+											Button button = new Button()
 											{
-												urlRequest = $"/rest/api/2/user/picker?query=" + keyword.ToLower(),
+												Text = "Загрузить файлы...",
+												HorizontalOptions = LayoutOptions.FillAndExpand,
+												Margin = new Thickness(0, 0, 0, 20),
+											};
+											typeStack.Children.Add(button);
+											DectionaryFields.Add(button.Id, Field);
+											break;
+										}
+									case "issuelinks":
+										{
+											Picker picker = new Picker
+											{
+												Title = Field.defaultValue,
+												TextColor = Color.FromHex("#F0F1F0"),
+												TitleColor = Color.FromHex("#F0F1F0"),
+												HorizontalOptions = LayoutOptions.FillAndExpand,
+												Margin = new Thickness(0, 0, 0, 0),
+												FontSize = 16,
+											};
+
+											JSONRequest jsonRequestLink = new JSONRequest
+											{
+												urlRequest = $"/rest/api/2/issueLinkType",
 												methodRequest = "GET"
 											};
-											Request requestIssue = new Request(jsonRequestIssue);
+											Request requestIssuelinks = new Request(jsonRequestLink);
 
-											user = requestIssue.GetResponses<RootObject>().users;
-
-											userDisplayName.Clear();
-
-											for (int j = 0; j < user.Count; ++j)
+											List<Issuelink> issuelinks = requestIssuelinks.GetResponses<RootObject>().issueLinkTypes;
+											for (int j = 0; j < issuelinks.Count; ++j)
 											{
-												userDisplayName.Add(user[j].displayName);
+												picker.Items.Add(issuelinks[j].outward);
+												picker.Items.Add(issuelinks[j].inward);
+											}
+											picker.Title = "Выберите значение...";
+
+											typeStack.Children.Add(picker);
+
+											List<string> issueDisplayName = new List<string>();
+											if (Field.autoCompleteUrl.Length > 0)
+											{
+												//Удаляем адрес сервера для получения только остаточной части запроса API
+												Field.autoCompleteUrl = Field.autoCompleteUrl.Remove(0, (Field.autoCompleteUrl.IndexOf(".ru") + 3));
+
+												JSONRequest jsonRequestIssue = new JSONRequest
+												{
+													urlRequest = Field.autoCompleteUrl,
+													methodRequest = "GET"
+												};
+												Request requestIssue = new Request(jsonRequestIssue);
+
+												List<Issue> issue = requestIssue.GetResponses<RootObject>().sections[0].issues;
+
+												for (int j = 0; j < issue.Count; ++j)
+												{
+													issueDisplayName.Add(issue[j].key + " - " + issue[j].summary);
+												}
 											}
 
-											var suggestion = userDisplayName.Where(c => c.ToLower().Contains(keyword.ToLower()));
-											listView.ItemsSource = suggestion;
-											listView.IsVisible = true;
-										}
-										else
-										{
-											listView.IsVisible = false;
-										}
-									};
-									//Заполняем поле выбранным элементом из списка
-									listView.ItemTapped += (senders, args) =>
-									{
-										if (args.Item as string == null)
-										{
-											return;
-										}
-										else
-										{
-											listView.ItemsSource = userDisplayName.Where(c => c.Equals(args.Item as string));
-											listView.IsVisible = true;
-											searchBar.Text = args.Item as string;
-										}
-										listView.IsVisible = false;
-									};
-									typeStack.Children.Add(searchBar);
-									typeStack.Children.Add(grid);
-									DectionaryFields.Add(searchBar.Id, Field);
-									break;
-								}
-							case "any":
-								{
-									break;
-								}
-						}
-					}
+											//Создаем поисковый бар для поиска и отображения списка подходящих задач к данной для связывания
+											SearchBar searchBar = new SearchBar
+											{
+												Placeholder = "Поиск по истории",
+												TextColor = Color.FromHex("#F0F1F0"),
+												PlaceholderColor = Color.FromHex("#F0F1F0"),
+												HorizontalOptions = LayoutOptions.FillAndExpand,
+												CancelButtonColor = Color.FromHex("#F0F1F0"),
+												Margin = new Thickness(-25, 0, 0, 0),
+												FontSize = 16
+											};
 
+											Grid grid = new Grid();
+											ListView listView = new ListView()
+											{
+												IsVisible = false,
+												VerticalOptions = LayoutOptions.Start,
+												HeightRequest = 250,
+												BackgroundColor = Color.FromHex("#4A4C50"),
+											};
+											grid.Children.Add(listView);
+
+											//Событие при вводе символов (показываем только тех пользователей, которые подходят к начатаму вводу пользователя)
+											searchBar.TextChanged += (senders, args) =>
+											{
+												var keyword = searchBar.Text;
+												if (keyword.Length >= 1)
+												{
+													JSONRequest jsonRequestIssue = new JSONRequest
+													{
+														urlRequest = $"/rest/api/2/user/picker?query=" + keyword.ToLower(),
+														methodRequest = "GET"
+													};
+													Request requestIssue = new Request(jsonRequestIssue);
+
+													List<Issue> issue = requestIssue.GetResponses<RootObject>().sections[0].issues;
+
+													issueDisplayName.Clear();
+													for (int j = 0; j < issue.Count; ++j)
+													{
+														issueDisplayName.Add(issue[j].key + " - " + issue[j].summaryText);
+													}
+
+													var suggestion = issueDisplayName.Where(c => c.ToLower().Contains(keyword.ToLower()));
+													listView.ItemsSource = suggestion;
+													listView.IsVisible = true;
+												}
+												else
+												{
+													listView.IsVisible = false;
+												}
+											};
+											//Заполняем поле выбранным элементом из списка
+											listView.ItemTapped += (senders, args) =>
+											{
+												if (args.Item as string == null)
+												{
+													return;
+												}
+												else
+												{
+													listView.ItemsSource = issueDisplayName.Where(c => c.Equals(args.Item as string));
+													listView.IsVisible = true;
+													searchBar.Text = args.Item as string;
+												}
+												listView.IsVisible = false;
+											};
+
+											typeStack.Children.Add(searchBar);
+											typeStack.Children.Add(grid);
+
+											DectionaryFields.Add(searchBar.Id, Field);
+
+											break;
+										}
+								}
+								break;
+							}
+						case "date":
+						case "datetime":
+							{
+								DatePicker datePicker = new DatePicker
+								{
+									TextColor = Color.FromHex("#F0F1F0"),
+									Date = DateTime.Now
+								};
+								typeStack.Children.Add(datePicker);
+
+								DectionaryFields.Add(datePicker.Id, Field);
+								break;
+							}
+					}
 				}
 
 				for (int i = 0; i < Fields.Count; ++i)
@@ -740,7 +499,7 @@ namespace RTMobile.issues
 							necessarily_fields.Children.Add(label);
 							determination_requered(necessarily_fields, Fields[i]);
 						}
-						delimiter.IsVisible = true; 
+						delimiter.IsVisible = true;
 						extended_button.IsVisible = true;
 					}
 
