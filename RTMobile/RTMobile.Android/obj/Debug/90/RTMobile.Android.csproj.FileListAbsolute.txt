@@ -3772,7 +3772,6 @@ F:\project\Mobile\rtmobile\RTMobile\RTMobile.Android\obj\Debug\90\android\assets
 F:\project\Mobile\rtmobile\RTMobile\RTMobile.Android\obj\Debug\90\android\assets\Plugin.FilePicker.dll
 F:\project\Mobile\rtmobile\RTMobile\RTMobile.Android\obj\Debug\90\android\assets\Plugin.FilePicker.pdb
 F:\project\Mobile\rtmobile\RTMobile\RTMobile.Android\obj\Debug\90\android\src\crc64424a8adc5a1fbe28\FilePickerActivity.java
-F:\project\Mobile\rtmobile\RTMobile\RTMobile.Android\obj\Debug\90\NuGet\8aec2afe9fbdb69ee9e7326ec747d3955db314e1\MimeTypes\2.0.1\MimeTypes.cs
 F:\project\Mobile\rtmobile\RTMobile\RTMobile.Android\obj\Debug\90\android\assets\MimeMapping.dll
 F:\project\Mobile\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\flata\D8F84B13EEE1D689.stamp
 F:\project\Mobile\RTMobile\RTMobile\RTMobile.Android\obj\Debug\90\flata\1434FA48D0E1F1C1.stamp

@@ -97,6 +97,9 @@
                 </ListView.ItemTemplate>
             </ListView>
 
+           
+            
+            
             <Frame HasShadow="True" CornerRadius="3" BackgroundColor="#BE0030" WidthRequest="167"
                        HeightRequest="50" HorizontalOptions="FillAndExpand" Padding="0,5,0,5" Margin="10,0,10,10">
                 <Frame.GestureRecognizers>
@@ -108,7 +111,12 @@
             </Frame>
             <!--<Button Text="Добавить" Grid.Column="0" Grid.Row="0" HeightRequest="50" Clicked="Add_new_worklog" HorizontalOptions="FillAndExpand" Margin="10,0,10,0" BackgroundColor="Red" TextColor="White"/>-->
 
-
+            <!--Frame BackgroundColor="#F0F1F0" HorizontalOptions="End" CornerRadius="50" HeightRequest="70" WidthRequest="50" Padding="0" Margin="0,0,10,10">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Add_new_worklog"/>
+                </Frame.GestureRecognizers>
+                <Label Text="+" FontSize="20" TextColor="#312F35" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Padding="0"/>
+            </Frame>-->
 
             <Grid VerticalOptions="End" BackgroundColor="#323037">
                 <Grid.RowDefinitions>

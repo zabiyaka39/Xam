@@ -26,6 +26,10 @@ namespace RTMobile.insight
 			}
 			this.BindingContext = this;
 		}
+		/// <summary>
+		/// Запрос на получение списка задач связанных с данным объектом
+		/// </summary>
+		/// <param name="selectedField"></param>
 		void takejiraIssueList(ObjectEntry selectedField)
 		{
 			JSONRequest jsonRequest = new JSONRequest()
@@ -37,7 +41,9 @@ namespace RTMobile.insight
 			listissue = request.GetResponses<RootObject>().jiraIssues;
 			takejiraIssue();
 		}
-
+		/// <summary>
+		/// Получаем дополнительную информацию по задаче (иконку, тему)
+		/// </summary>
 		void takejiraIssue()
 		{
 			if (listissue != null)
