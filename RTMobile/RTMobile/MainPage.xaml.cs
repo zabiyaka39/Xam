@@ -17,11 +17,16 @@ using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using Rg.Plugins.Popup.Services;
+using Rg.Plugins.Popup.Extensions;
+using RTMobile.jiraData;
+
 namespace RTMobile
 {
 	[DesignTimeVisible(false)]
 	public partial class MainPage : ContentPage
 	{
+
 		public MainPage()
 		{
 			InitializeComponent();			
@@ -63,7 +68,7 @@ namespace RTMobile
 		}
 
 		private async void Button_Clicked(object sender, EventArgs e)
-		{
+		{	
 			Request request = new Request();
 			try
 			{
@@ -71,6 +76,7 @@ namespace RTMobile
 				{
 					if (request.authorization(login.Text.Trim(' '), password.Text))
 					{
+						await PopupNavigation.Instance.PushAsync(new StatusBar());
 						errorMessage.IsVisible = false;
 						errorMessage1.IsVisible = false;
 
@@ -84,6 +90,7 @@ namespace RTMobile
 
 
 						await Navigation.PushModalAsync(new AllIssues()).ConfigureAwait(true);
+						PopupNavigation.Instance.PopAsync(true);
 
 					}
 					else
@@ -106,6 +113,7 @@ namespace RTMobile
 				Crashes.TrackError(ex);
 				Console.WriteLine(ex.ToString());
 			}
+			
 		}
 
 		private async void Button_Clicked_1(object sender, EventArgs e)

@@ -249,3 +249,5 @@ C:\RT\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\XamlC.stamp
 C:\RT\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\RTMobile.csproj.CopyComplete
 C:\RT\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\RTMobile.dll
 C:\RT\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\RTMobile.pdb
+C:\RT\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\jiraData\StatusBar.xaml.g.cs
+C:\RT\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\RTMobile.csprojAssemblyReference.cache
