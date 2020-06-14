@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "F:\\project\\Mobile\\RTMobile\\RTMobile\\RTMobile.iOS\\RTMobile.iOS.csproj": {}
+    "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile.iOS\\RTMobile.iOS.csproj": {}
   },
   "projects": {
-    "F:\\project\\Mobile\\RTMobile\\RTMobile\\RTMobile.iOS\\RTMobile.iOS.csproj": {
+    "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile.iOS\\RTMobile.iOS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\project\\Mobile\\RTMobile\\RTMobile\\RTMobile.iOS\\RTMobile.iOS.csproj",
+        "projectUniqueName": "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile.iOS\\RTMobile.iOS.csproj",
         "projectName": "RTMobile.iOS",
-        "projectPath": "F:\\project\\Mobile\\RTMobile\\RTMobile\\RTMobile.iOS\\RTMobile.iOS.csproj",
+        "projectPath": "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile.iOS\\RTMobile.iOS.csproj",
         "packagesPath": "C:\\Users\\sekisov\\.nuget\\packages\\",
-        "outputPath": "F:\\project\\Mobile\\RTMobile\\RTMobile\\RTMobile.iOS\\obj\\",
+        "outputPath": "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile.iOS\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
@@ -32,8 +32,8 @@
         "frameworks": {
           "xamarinios10": {
             "projectReferences": {
-              "F:\\project\\Mobile\\RTMobile\\RTMobile\\RTMobile\\RTMobile.csproj": {
-                "projectPath": "F:\\project\\Mobile\\RTMobile\\RTMobile\\RTMobile\\RTMobile.csproj"
+              "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj": {
+                "projectPath": "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj"
               }
             }
           }
@@ -42,6 +42,16 @@
       "frameworks": {
         "xamarinios10": {
           "dependencies": {
+            "MimeTypes": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.1, )"
+            },
+            "NETStandard.Library": {
+              "target": "Package",
+              "version": "[2.0.3, )"
+            },
             "Rg.Plugins.Popup": {
               "target": "Package",
               "version": "[2.0.0.2, )"
@@ -77,14 +87,14 @@
         }
       }
     },
-    "F:\\project\\Mobile\\RTMobile\\RTMobile\\RTMobile\\RTMobile.csproj": {
+    "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj": {
       "version": "1.0.0.2",
       "restore": {
-        "projectUniqueName": "F:\\project\\Mobile\\RTMobile\\RTMobile\\RTMobile\\RTMobile.csproj",
+        "projectUniqueName": "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj",
         "projectName": "RTMobile",
-        "projectPath": "F:\\project\\Mobile\\RTMobile\\RTMobile\\RTMobile\\RTMobile.csproj",
+        "projectPath": "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj",
         "packagesPath": "C:\\Users\\sekisov\\.nuget\\packages\\",
-        "outputPath": "F:\\project\\Mobile\\RTMobile\\RTMobile\\RTMobile\\obj\\",
+        "outputPath": "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -221,7 +231,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
         }
       }
     }

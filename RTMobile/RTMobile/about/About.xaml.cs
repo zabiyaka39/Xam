@@ -1,22 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Javax.Security.Auth;
 using RTMobile.calendar;
 using RTMobile.filter;
 using RTMobile.insight;
-using RTMobile.profile;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using System.Net.Mail;
-using System.Threading.Tasks;
 using Plugin.Settings;
-using Windows.UI.Xaml.Controls.Maps;
 using System.Net;
 
 namespace RTMobile
 {
-    public partial class About : ContentPage
+	public partial class About : ContentPage
     {
         List<string> recipients { get; set; }
         string mail { get; set; }

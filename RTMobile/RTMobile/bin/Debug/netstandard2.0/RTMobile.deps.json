@@ -31,9 +31,7 @@
           "Xamarin.FFImageLoading.Forms": "2.4.11.982",
           "Xamarin.Forms": "4.6.0.800",
           "Xamarin.Plugin.FilePicker": "2.1.41",
-          "Mono.Android": "0.0.0.0",
-          "Windows.Foundation.UniversalApiContract": "7.0.0.0",
-          "Xamarin.iOS": "0.0.0.0"
+          "Windows.Foundation.UniversalApiContract": "7.0.0.0"
         },
         "runtime": {
           "RTMobile.dll": {}
@@ -1187,27 +1185,11 @@
           }
         }
       },
-      "Mono.Android/0.0.0.0": {
-        "runtime": {
-          "Mono.Android.dll": {
-            "assemblyVersion": "0.0.0.0",
-            "fileVersion": "0.0.0.0"
-          }
-        }
-      },
       "Windows.Foundation.UniversalApiContract/7.0.0.0": {
         "runtime": {
           "Windows.Foundation.UniversalApiContract.winmd": {
             "assemblyVersion": "7.0.0.0",
             "fileVersion": "10.0.17746.1000"
-          }
-        }
-      },
-      "Xamarin.iOS/0.0.0.0": {
-        "runtime": {
-          "Xamarin.iOS.dll": {
-            "assemblyVersion": "0.0.0.0",
-            "fileVersion": "0.0.0.0"
           }
         }
       }
@@ -1968,17 +1950,7 @@
       "path": "xamarin.plugin.filepicker/2.1.41",
       "hashPath": "xamarin.plugin.filepicker.2.1.41.nupkg.sha512"
     },
-    "Mono.Android/0.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
     "Windows.Foundation.UniversalApiContract/7.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Xamarin.iOS/0.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""

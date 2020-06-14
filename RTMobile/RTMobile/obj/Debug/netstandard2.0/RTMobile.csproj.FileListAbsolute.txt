@@ -243,3 +243,6 @@ F:\project\Mobile\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\issues\eve
 F:\project\Mobile\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\issues\event\CreateIssue.xaml.g.cs
 F:\project\Mobile\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\issues\event\imageView.xaml.g.cs
 F:\project\Mobile\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\issues\event\NewWorklog.xaml.g.cs
+F:\project\Mobile\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\RTMobile.Properties.Resources.resources
+F:\project\Mobile\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\RTMobile.csproj.GenerateResource.cache
+F:\project\Mobile\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\jiraData\StatusBar.xaml.g.cs

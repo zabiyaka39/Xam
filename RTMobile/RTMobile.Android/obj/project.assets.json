@@ -4603,11 +4603,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\project\\Mobile\\RTMobile\\RTMobile\\RTMobile.Android\\RTMobile.Android.csproj",
+      "projectUniqueName": "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile.Android\\RTMobile.Android.csproj",
       "projectName": "RTMobile.Android",
-      "projectPath": "F:\\project\\Mobile\\RTMobile\\RTMobile\\RTMobile.Android\\RTMobile.Android.csproj",
+      "projectPath": "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile.Android\\RTMobile.Android.csproj",
       "packagesPath": "C:\\Users\\sekisov\\.nuget\\packages\\",
-      "outputPath": "F:\\project\\Mobile\\RTMobile\\RTMobile\\RTMobile.Android\\obj\\",
+      "outputPath": "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -4628,8 +4628,8 @@
       "frameworks": {
         "monoandroid90": {
           "projectReferences": {
-            "F:\\project\\Mobile\\RTMobile\\RTMobile\\RTMobile\\RTMobile.csproj": {
-              "projectPath": "F:\\project\\Mobile\\RTMobile\\RTMobile\\RTMobile\\RTMobile.csproj"
+            "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj": {
+              "projectPath": "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj"
             }
           }
         }

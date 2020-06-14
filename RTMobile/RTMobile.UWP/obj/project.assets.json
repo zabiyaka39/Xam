@@ -382,6 +382,17 @@
           "buildTransitive/Microsoft.UI.Xaml.props": {}
         }
       },
+      "MimeTypes/2.0.1": {
+        "type": "package",
+        "contentFiles": {
+          "contentFiles/cs/any/MimeTypes.NullableAttributes.cs.pp": {
+            "buildAction": "Compile",
+            "codeLanguage": "cs",
+            "copyToOutput": false,
+            "ppOutputPath": "MimeTypes.NullableAttributes.cs"
+          }
+        }
+      },
       "Nancy/2.0.0": {
         "type": "package",
         "dependencies": {
@@ -2410,6 +2421,17 @@
         },
         "compile": {
           "ref/netstandard1.3/Microsoft.Win32.Primitives.dll": {}
+        }
+      },
+      "MimeTypes/2.0.1": {
+        "type": "package",
+        "contentFiles": {
+          "contentFiles/cs/any/MimeTypes.NullableAttributes.cs.pp": {
+            "buildAction": "Compile",
+            "codeLanguage": "cs",
+            "copyToOutput": false,
+            "ppOutputPath": "MimeTypes.NullableAttributes.cs"
+          }
         }
       },
       "Nancy/2.0.0": {
@@ -4640,6 +4662,17 @@
         },
         "compile": {
           "ref/netstandard1.3/Microsoft.Win32.Primitives.dll": {}
+        }
+      },
+      "MimeTypes/2.0.1": {
+        "type": "package",
+        "contentFiles": {
+          "contentFiles/cs/any/MimeTypes.NullableAttributes.cs.pp": {
+            "buildAction": "Compile",
+            "codeLanguage": "cs",
+            "copyToOutput": false,
+            "ppOutputPath": "MimeTypes.NullableAttributes.cs"
+          }
         }
       },
       "Nancy/2.0.0": {
@@ -6915,6 +6948,17 @@
           "ref/netstandard1.3/Microsoft.Win32.Primitives.dll": {}
         }
       },
+      "MimeTypes/2.0.1": {
+        "type": "package",
+        "contentFiles": {
+          "contentFiles/cs/any/MimeTypes.NullableAttributes.cs.pp": {
+            "buildAction": "Compile",
+            "codeLanguage": "cs",
+            "copyToOutput": false,
+            "ppOutputPath": "MimeTypes.NullableAttributes.cs"
+          }
+        }
+      },
       "Nancy/2.0.0": {
         "type": "package",
         "dependencies": {
@@ -9185,6 +9229,17 @@
           "ref/netstandard1.3/Microsoft.Win32.Primitives.dll": {}
         }
       },
+      "MimeTypes/2.0.1": {
+        "type": "package",
+        "contentFiles": {
+          "contentFiles/cs/any/MimeTypes.NullableAttributes.cs.pp": {
+            "buildAction": "Compile",
+            "codeLanguage": "cs",
+            "copyToOutput": false,
+            "ppOutputPath": "MimeTypes.NullableAttributes.cs"
+          }
+        }
+      },
       "Nancy/2.0.0": {
         "type": "package",
         "dependencies": {
@@ -11413,6 +11468,17 @@
         },
         "compile": {
           "ref/netstandard1.3/Microsoft.Win32.Primitives.dll": {}
+        }
+      },
+      "MimeTypes/2.0.1": {
+        "type": "package",
+        "contentFiles": {
+          "contentFiles/cs/any/MimeTypes.NullableAttributes.cs.pp": {
+            "buildAction": "Compile",
+            "codeLanguage": "cs",
+            "copyToOutput": false,
+            "ppOutputPath": "MimeTypes.NullableAttributes.cs"
+          }
         }
       },
       "Nancy/2.0.0": {
@@ -13688,6 +13754,17 @@
           "ref/netstandard1.3/Microsoft.Win32.Primitives.dll": {}
         }
       },
+      "MimeTypes/2.0.1": {
+        "type": "package",
+        "contentFiles": {
+          "contentFiles/cs/any/MimeTypes.NullableAttributes.cs.pp": {
+            "buildAction": "Compile",
+            "codeLanguage": "cs",
+            "copyToOutput": false,
+            "ppOutputPath": "MimeTypes.NullableAttributes.cs"
+          }
+        }
+      },
       "Nancy/2.0.0": {
         "type": "package",
         "dependencies": {
@@ -15916,6 +15993,17 @@
         },
         "compile": {
           "ref/netstandard1.3/Microsoft.Win32.Primitives.dll": {}
+        }
+      },
+      "MimeTypes/2.0.1": {
+        "type": "package",
+        "contentFiles": {
+          "contentFiles/cs/any/MimeTypes.NullableAttributes.cs.pp": {
+            "buildAction": "Compile",
+            "codeLanguage": "cs",
+            "copyToOutput": false,
+            "ppOutputPath": "MimeTypes.NullableAttributes.cs"
+          }
         }
       },
       "Nancy/2.0.0": {
@@ -18539,6 +18627,21 @@
         "ref/xamarinmac20/_._",
         "ref/xamarintvos10/_._",
         "ref/xamarinwatchos10/_._"
+      ]
+    },
+    "MimeTypes/2.0.1": {
+      "sha512": "wN2eEA/5uSjmpTw9sfoAunl/IYW4yPMBGcqN7gcn7BhyVcIc782Yntj6kZYvDTo44FnDseIY7EpCwQXnbLfDpw==",
+      "type": "package",
+      "path": "mimetypes/2.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "contentFiles/cs/any/MimeTypes.NullableAttributes.cs.pp",
+        "contentFiles/cs/netcoreapp3.0/MimeTypes.cs.pp",
+        "contentFiles/cs/netstandard2.1/MimeTypes.cs.pp",
+        "images/nuget-icon.png",
+        "mimetypes.2.0.1.nupkg.sha512",
+        "mimetypes.nuspec"
       ]
     },
     "Nancy/2.0.0": {
@@ -27651,6 +27754,8 @@
   "projectFileDependencyGroups": {
     "UAP,Version=v10.0.16299": [
       "Microsoft.NETCore.UniversalWindowsPlatform >= 6.2.9",
+      "MimeTypes >= 2.0.1",
+      "NETStandard.Library >= 2.0.3",
       "RTMobile >= 1.0.0.2",
       "Rg.Plugins.Popup >= 2.0.0.2",
       "Xam.Plugin.FilePicker >= 1.1.0",
@@ -27667,11 +27772,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\project\\Mobile\\RTMobile\\RTMobile\\RTMobile.UWP\\RTMobile.UWP.csproj",
+      "projectUniqueName": "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile.UWP\\RTMobile.UWP.csproj",
       "projectName": "RTMobile.UWP",
-      "projectPath": "F:\\project\\Mobile\\RTMobile\\RTMobile\\RTMobile.UWP\\RTMobile.UWP.csproj",
+      "projectPath": "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile.UWP\\RTMobile.UWP.csproj",
       "packagesPath": "C:\\Users\\sekisov\\.nuget\\packages\\",
-      "outputPath": "F:\\project\\Mobile\\RTMobile\\RTMobile\\RTMobile.UWP\\obj\\",
+      "outputPath": "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile.UWP\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -27693,8 +27798,8 @@
       "frameworks": {
         "uap10.0.16299": {
           "projectReferences": {
-            "F:\\project\\Mobile\\RTMobile\\RTMobile\\RTMobile\\RTMobile.csproj": {
-              "projectPath": "F:\\project\\Mobile\\RTMobile\\RTMobile\\RTMobile\\RTMobile.csproj"
+            "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj": {
+              "projectPath": "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj"
             }
           }
         }
@@ -27706,6 +27811,16 @@
           "Microsoft.NETCore.UniversalWindowsPlatform": {
             "target": "Package",
             "version": "[6.2.9, )"
+          },
+          "MimeTypes": {
+            "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+            "suppressParent": "All",
+            "target": "Package",
+            "version": "[2.0.1, )"
+          },
+          "NETStandard.Library": {
+            "target": "Package",
+            "version": "[2.0.3, )"
           },
           "Rg.Plugins.Popup": {
             "target": "Package",
