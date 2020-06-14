@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Javax.Security.Auth;
 using RTMobile.calendar;
 using RTMobile.filter;
 using RTMobile.insight;
@@ -67,7 +66,6 @@ namespace RTMobile
         {
             try
             {   
-
                 MailAddress from = new MailAddress(String.Format("{0}.@rosohrana.ru",CrossSettings.Current.GetValueOrDefault("login", string.Empty)));
                 MailAddress to = new MailAddress("a.kotochigov@rosohrana.ru");
                 MailMessage message = new MailMessage(from, to);
