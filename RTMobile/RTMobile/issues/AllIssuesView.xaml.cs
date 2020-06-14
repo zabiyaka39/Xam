@@ -10,11 +10,15 @@ using RTMobile.issues.viewIssue;
 using RTMobile.notification;
 using RTMobile.profile;
 using Xamarin.Forms;
+using System.Threading.Tasks;
+using System.Drawing;
+
 
 namespace RTMobile.issues
 {
 	public partial class AllIssuesView : ContentPage
 	{
+		
 		public ObservableCollection<Issue> issues { get; set; }
 		private string filterIssue { get; set; }
 		//string typeSort = "";
@@ -33,6 +37,7 @@ namespace RTMobile.issues
 				issuesList.IsVisible = false;
 				noneIssue.IsVisible = true;
 			}
+
 			this.BindingContext = this;
 		}
 
@@ -133,6 +138,7 @@ namespace RTMobile.issues
 		/// </summary>
 		async void issueStartPostRequest()
 		{
+			
 			try
 			{
 				JSONRequest jsonRequest = new JSONRequest()
@@ -170,6 +176,8 @@ namespace RTMobile.issues
 						for (int i = 0; i < rootObject.issues.Count; ++i)
 						{
 							issues.Add(rootObject.issues[i]);
+							Console.WriteLine(rootObject.issues[i].fields.status.statusCategory.colorJ);
+
 						}
 					}
 				}

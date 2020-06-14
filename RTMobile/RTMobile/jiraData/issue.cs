@@ -46,8 +46,8 @@ namespace RTMobile
 
 		public string comment { get; set; }
 
-		public string name { get;set; }
-			
+		public string name { get; set; }
+
 		public string started { get; set; }
 
 		public string timeSpentSeconds { get; set; }
@@ -500,21 +500,24 @@ namespace RTMobile
 		public string self { get; set; }
 		public int id { get; set; }
 		public string key { get; set; }
-		public string colorName
-		{
-			//get; set;
+		public string colorName { get; set; }
+		public string colorJ
+        {
 			get
 			{
-				Color slateBlue = System.Drawing.Color.FromName(this.color.ToString());
-
-				string str = slateBlue.ToHex().ToString();
-				return slateBlue.ToHex().ToString();
-			}
-			set
-			{
-
+				Dictionary<string, string> colorsJira = new Dictionary<string, string>
+					{
+						{"medium-gray","#666b6"},
+						{"green", "#008000" },
+						{"yellow", "#FFFF00"},
+						{"brown","#A52A2A"},
+						{"warm-red","#F7403A"},
+						{"blue-gray", "#6699cc"}
+					};
+				return colorsJira[colorName];
 			}
 		}
+			
 		public Color color
 		{
 			private get;
