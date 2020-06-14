@@ -121,7 +121,7 @@ namespace RTMobile
 		{
 			get { return _created; }
 			//Конвертация даты в общепринятый формат 
-			set => _created = Convert.ToDateTime(value).ToString("dd.MM.yyyy H:mm");
+			set => _created = Convert.ToDateTime(value).ToString("dd.MM.yyyy HH:mm");
 		}
 		public List<Item> items { get; set; }
 		public HistoryMetadata historyMetadata { get; set; }
@@ -502,14 +502,14 @@ namespace RTMobile
 		public string key { get; set; }
 		public string colorName { get; set; }
 		public string colorJ
-        {
+		{
 			get
 			{
 				Dictionary<string, string> colorsJira = new Dictionary<string, string>
 					{
 						{"medium-gray","#666b6"},
 						{"green", "#008000" },
-						{"yellow", "#FFFF00"},
+						{"yellow", "#FFA500"},
 						{"brown","#A52A2A"},
 						{"warm-red","#F7403A"},
 						{"blue-gray", "#6699cc"}
@@ -517,7 +517,7 @@ namespace RTMobile
 				return colorsJira[colorName];
 			}
 		}
-			
+
 		public Color color
 		{
 			private get;
@@ -628,7 +628,7 @@ namespace RTMobile
 			}
 			set
 			{
-				_created = (Convert.ToDateTime(value)).ToString("dd.MM.yyyy H:mm");
+				_created = (Convert.ToDateTime(value)).ToString("dd.MM.yyyy HH:mm");
 			}
 		}
 		private string _updated { get; set; }
@@ -637,7 +637,7 @@ namespace RTMobile
 			get { return _updated; }
 			set
 			{
-				_updated = (Convert.ToDateTime(value)).ToString("dd.MM.yyyy H:mm");
+				_updated = (Convert.ToDateTime(value)).ToString("dd.MM.yyyy HH:mm");
 			}
 		}
 		public List<Property> properties { get; set; }
@@ -773,7 +773,7 @@ namespace RTMobile
 			get { return _created; }
 			set
 			{
-				_created = (Convert.ToDateTime(value)).ToString("dd.MM.yyyy H:mm");
+				_created = (Convert.ToDateTime(value)).ToString("dd.MM.yyyy HH:mm");
 			}
 		}
 		/// <summary>
@@ -955,7 +955,7 @@ namespace RTMobile
 			get { return _created; }
 			set
 			{
-				_created = (Convert.ToDateTime(value)).ToString("dd.MM.yyyy H:mm");
+				_created = (Convert.ToDateTime(value)).ToString("dd.MM.yyyy HH:mm");
 			}
 		}
 		private string _updated { get; set; }
@@ -964,7 +964,7 @@ namespace RTMobile
 			get { return _updated; }
 			set
 			{
-				_updated = (Convert.ToDateTime(value)).ToString("dd.MM.yyyy H:mm");
+				_updated = (Convert.ToDateTime(value)).ToString("dd.MM.yyyy HH:mm");
 			}
 		}
 		private string _started { get; set; }
@@ -973,7 +973,7 @@ namespace RTMobile
 			get { return _started; }
 			set
 			{
-				_started = (Convert.ToDateTime(value)).ToString("dd.MM.yyyy H:mm");
+				_started = (Convert.ToDateTime(value)).ToString("dd.MM.yyyy HH:mm");
 			}
 		}
 		public string timeSpent { get; set; }
@@ -1105,7 +1105,6 @@ namespace RTMobile
 		public Watchers watches { get; set; }
 		public Schema schema { get; set; }
 
-
 		public string autoCompleteUrl { get; set; }
 		private string _created;
 		public string created
@@ -1116,7 +1115,7 @@ namespace RTMobile
 			}
 			set
 			{
-				_created = (Convert.ToDateTime(value)).ToString("dd.MM.yyyy H:mm");
+				_created = (Convert.ToDateTime(value)).ToString("dd.MM.yyyy HH:mm");
 			}
 		}
 		public string displayName { get; set; }
@@ -1127,7 +1126,25 @@ namespace RTMobile
 		public string DisplayNameField { get; set; }
 		public string defaultValue { get; set; } = "Заполните значение...";
 		public string duedate { get; set; }
-		public string description { get; set; }
+		private string _description { get; set; }
+		public string description
+		{
+			get
+			{
+				return _description;
+			}
+			set
+			{
+				if (value == null)
+				{
+					_description = "Описание отсутствует";
+				}
+				else
+				{
+					_description = value;
+				}
+			}
+		}
 		[JsonProperty("id")]
 		public int Id { get; set; }
 		[JsonProperty("items")]
@@ -1146,13 +1163,13 @@ namespace RTMobile
 		public string resolutiondate
 		{
 			get { return _updated; }
-			set => _updated = Convert.ToDateTime(value).ToString("dd.MM.yyyy H:mm");
+			set => _updated = Convert.ToDateTime(value).ToString("dd.MM.yyyy HH:mm");
 		}
 		private string _resolutiondate { get; set; }
 		public string Resolutiondate
 		{
 			get { return _resolutiondate; }
-			set => _resolutiondate = Convert.ToDateTime(value).ToString("dd.MM.yyyy H:mm");
+			set => _resolutiondate = Convert.ToDateTime(value).ToString("dd.MM.yyyy HH:mm");
 		}
 		[JsonProperty("self")]
 		public string Self { get; set; }
@@ -1166,7 +1183,7 @@ namespace RTMobile
 		public string updated
 		{
 			get { return _updated; }
-			set => _updated = Convert.ToDateTime(value).ToString("dd.MM.yyyy H:mm");
+			set => _updated = Convert.ToDateTime(value).ToString("dd.MM.yyyy HH:mm");
 		}
 		public string value { get; set; }
 

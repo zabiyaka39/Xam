@@ -137,8 +137,7 @@ namespace RTMobile.issues
 		/// Выгрузка всех задач
 		/// </summary>
 		async void issueStartPostRequest()
-		{
-			
+		{			
 			try
 			{
 				JSONRequest jsonRequest = new JSONRequest()

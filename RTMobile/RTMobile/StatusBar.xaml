@@ -8,7 +8,4 @@
     <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
         <ActivityIndicator IsRunning="true" />
     </StackLayout>
-
-
-
 </pages:PopupPage>

@@ -98,7 +98,7 @@
     <EmbeddedResource Update="issues\event\AddWatchersModal.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="jiraData\StatusBar.xaml">
+    <EmbeddedResource Update="StatusBar.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
@@ -125,7 +125,7 @@
     <Compile Update="issues\event\AddWatchersModal.xaml.cs">
       <DependentUpon>AddWatchersModal.xaml</DependentUpon>
     </Compile>
-    <Compile Update="jiraData\StatusBar.xaml.cs">
+    <Compile Update="StatusBar.xaml.cs">
       <DependentUpon>StatusBar.xaml</DependentUpon>
     </Compile>
   </ItemGroup>

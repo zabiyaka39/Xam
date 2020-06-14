@@ -50,20 +50,20 @@ namespace RTMobile
             if (fb.IsVisible == true)
             {
                 fb.IsVisible = false;
-              
+                arroW.Source = "arrowDown.png";
+                boxViewSeparator.IsVisible = false;
             }
             else
             {
                 fb.IsVisible = true;
-                
+                arroW.Source = "arrowUp.png";
+                boxViewSeparator.IsVisible = true;
             }
-
         }
         private async Task SendEmailAsync()
         {
             try
             {   
-
                 MailAddress from = new MailAddress(String.Format("{0}.@rosohrana.ru",CrossSettings.Current.GetValueOrDefault("login", string.Empty)));
                 MailAddress to = new MailAddress("a.kotochigov@rosohrana.ru");
                 MailMessage message = new MailMessage(from, to);
