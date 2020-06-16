@@ -5064,24 +5064,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\sekisov\\.nuget\\packages\\": {},
+    "C:\\Users\\Вазген\\.nuget\\packages\\": {},
     "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile.iOS\\RTMobile.iOS.csproj",
+      "projectUniqueName": "C:\\RT\\rtmobile\\RTMobile\\RTMobile.iOS\\RTMobile.iOS.csproj",
       "projectName": "RTMobile.iOS",
-      "projectPath": "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile.iOS\\RTMobile.iOS.csproj",
-      "packagesPath": "C:\\Users\\sekisov\\.nuget\\packages\\",
-      "outputPath": "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile.iOS\\obj\\",
+      "projectPath": "C:\\RT\\rtmobile\\RTMobile\\RTMobile.iOS\\RTMobile.iOS.csproj",
+      "packagesPath": "C:\\Users\\Вазген\\.nuget\\packages\\",
+      "outputPath": "C:\\RT\\rtmobile\\RTMobile\\RTMobile.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\sekisov\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Вазген\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -5095,8 +5095,8 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj": {
-              "projectPath": "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj"
+            "C:\\RT\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj": {
+              "projectPath": "C:\\RT\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj"
             }
           }
         }
