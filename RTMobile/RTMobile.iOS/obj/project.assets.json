@@ -681,7 +681,7 @@
           "lib/xamarinios10/Plugin.FilePicker.dll": {}
         }
       },
-      "RTMobile/1.0.0.2": {
+      "REM/1.1.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
@@ -706,10 +706,10 @@
           "Xamarin.Plugin.FilePicker": "2.1.41"
         },
         "compile": {
-          "bin/placeholder/RTMobile.dll": {}
+          "bin/placeholder/REM.dll": {}
         },
         "runtime": {
-          "bin/placeholder/RTMobile.dll": {}
+          "bin/placeholder/REM.dll": {}
         }
       }
     },
@@ -1357,7 +1357,7 @@
           "lib/xamarinios10/Plugin.FilePicker.dll": {}
         }
       },
-      "RTMobile/1.0.0.2": {
+      "REM/1.1.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
@@ -1382,10 +1382,10 @@
           "Xamarin.Plugin.FilePicker": "2.1.41"
         },
         "compile": {
-          "bin/placeholder/RTMobile.dll": {}
+          "bin/placeholder/REM.dll": {}
         },
         "runtime": {
-          "bin/placeholder/RTMobile.dll": {}
+          "bin/placeholder/REM.dll": {}
         }
       }
     },
@@ -2033,7 +2033,7 @@
           "lib/xamarinios10/Plugin.FilePicker.dll": {}
         }
       },
-      "RTMobile/1.0.0.2": {
+      "REM/1.1.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
@@ -2058,10 +2058,10 @@
           "Xamarin.Plugin.FilePicker": "2.1.41"
         },
         "compile": {
-          "bin/placeholder/RTMobile.dll": {}
+          "bin/placeholder/REM.dll": {}
         },
         "runtime": {
-          "bin/placeholder/RTMobile.dll": {}
+          "bin/placeholder/REM.dll": {}
         }
       }
     },
@@ -2709,7 +2709,7 @@
           "lib/xamarinios10/Plugin.FilePicker.dll": {}
         }
       },
-      "RTMobile/1.0.0.2": {
+      "REM/1.1.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
@@ -2734,10 +2734,10 @@
           "Xamarin.Plugin.FilePicker": "2.1.41"
         },
         "compile": {
-          "bin/placeholder/RTMobile.dll": {}
+          "bin/placeholder/REM.dll": {}
         },
         "runtime": {
-          "bin/placeholder/RTMobile.dll": {}
+          "bin/placeholder/REM.dll": {}
         }
       }
     }
@@ -5045,7 +5045,7 @@
         "xamarin.plugin.filepicker.nuspec"
       ]
     },
-    "RTMobile/1.0.0.2": {
+    "REM/1.1.0": {
       "type": "project",
       "path": "../RTMobile/RTMobile.csproj",
       "msbuildProject": "../RTMobile/RTMobile.csproj"
@@ -5055,7 +5055,7 @@
     "Xamarin.iOS,Version=v1.0": [
       "MimeTypes >= 2.0.1",
       "NETStandard.Library >= 2.0.3",
-      "RTMobile >= 1.0.0.2",
+      "REM >= 1.1.0",
       "Rg.Plugins.Popup >= 2.0.0.2",
       "Xam.Plugin.FilePicker >= 1.1.0",
       "Xamarin.Essentials >= 1.5.1",
@@ -5155,7 +5155,7 @@
       "code": "NU1605",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Обнаружено понижение версии пакета Xamarin.Essentials с 1.5.3.2 на 1.5.1. Чтобы выбрать другую версию, создайте ссылку на пакет напрямую из проекта. \r\n RTMobile.iOS -> RTMobile -> Xamarin.Essentials (>= 1.5.3.2) \r\n RTMobile.iOS -> Xamarin.Essentials (>= 1.5.1)",
+      "message": "Обнаружено понижение версии пакета Xamarin.Essentials с 1.5.3.2 на 1.5.1. Чтобы выбрать другую версию, создайте ссылку на пакет напрямую из проекта. \r\n RTMobile.iOS -> REM -> Xamarin.Essentials (>= 1.5.3.2) \r\n RTMobile.iOS -> Xamarin.Essentials (>= 1.5.1)",
       "libraryId": "Xamarin.Essentials",
       "targetGraphs": [
         "Xamarin.iOS,Version=v1.0",
@@ -5168,7 +5168,7 @@
       "code": "NU1605",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Обнаружено понижение версии пакета Xamarin.Plugin.FilePicker с 2.1.41 на 2.1.34. Чтобы выбрать другую версию, создайте ссылку на пакет напрямую из проекта. \r\n RTMobile.iOS -> RTMobile -> Xamarin.Plugin.FilePicker (>= 2.1.41) \r\n RTMobile.iOS -> Xamarin.Plugin.FilePicker (>= 2.1.34)",
+      "message": "Обнаружено понижение версии пакета Xamarin.Plugin.FilePicker с 2.1.41 на 2.1.34. Чтобы выбрать другую версию, создайте ссылку на пакет напрямую из проекта. \r\n RTMobile.iOS -> REM -> Xamarin.Plugin.FilePicker (>= 2.1.41) \r\n RTMobile.iOS -> Xamarin.Plugin.FilePicker (>= 2.1.34)",
       "libraryId": "Xamarin.Plugin.FilePicker",
       "targetGraphs": [
         "Xamarin.iOS,Version=v1.0",
@@ -5181,7 +5181,7 @@
       "code": "NU1605",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Обнаружено понижение версии пакета Xamarin.Forms с 4.6.0.800 на 4.5.0.617. Чтобы выбрать другую версию, создайте ссылку на пакет напрямую из проекта. \r\n RTMobile.iOS -> RTMobile -> Xamarin.Forms (>= 4.6.0.800) \r\n RTMobile.iOS -> Xamarin.Forms (>= 4.5.0.617)",
+      "message": "Обнаружено понижение версии пакета Xamarin.Forms с 4.6.0.800 на 4.5.0.617. Чтобы выбрать другую версию, создайте ссылку на пакет напрямую из проекта. \r\n RTMobile.iOS -> REM -> Xamarin.Forms (>= 4.6.0.800) \r\n RTMobile.iOS -> Xamarin.Forms (>= 4.5.0.617)",
       "libraryId": "Xamarin.Forms",
       "targetGraphs": [
         "Xamarin.iOS,Version=v1.0",

@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Net.Http;
 using FFImageLoading;
 using FFImageLoading.Forms;
+using Plugin.Settings;
 using RTMobile.calendar;
 using RTMobile.filter;
 using RTMobile.insight;
+using RTMobile.jiraData;
 using Service.Shared.Clients;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -143,14 +146,21 @@ namespace RTMobile.issues
 					{
 						//Выгружаем список пользователей для данной задачи
 						case "user":
+						case "any":
 							{
 								List<User> user = new List<User>();
-								List<string> userDisplayName = new List<string>();
-								if (Field.autoCompleteUrl.Length > 0)
+								ObservableCollection<InsightRoot> insights = new ObservableCollection<InsightRoot>();
+								//Наименования пользователей или объектов Insight
+								List<string> objectName = new List<string>();
+								string urlRequestData = "";
+
+								if (Field.autoCompleteUrl != null && Field.autoCompleteUrl.Length > 0)
 								{
+									urlRequestData = "/rest/api/2/user/picker?query=";
+
 									JSONRequest jsonRequestUser = new JSONRequest
 									{
-										urlRequest = $"/rest/api/2/user/picker?query=",
+										urlRequest = urlRequestData,
 										methodRequest = "GET"
 									};
 									Request requestUser = new Request(jsonRequestUser);
@@ -159,7 +169,44 @@ namespace RTMobile.issues
 
 									for (int j = 0; j < user.Count; ++j)
 									{
-										userDisplayName.Add(user[j].displayName);
+										objectName.Add(user[j].displayName);
+									}
+								}
+								else
+								{
+									//Если это поле Insight, то применяем обработчик запроса информации по API Insight
+									if (Field.schema.type.ToLower() == "any")
+									{
+										//Ищем подходящий номер схемы для поиска в Insight
+										//Добавляем 18 символов которые обозначают изначальные данные поиска
+										int startSearch = Field.editHtml.IndexOf("data-fieldconfig=") + 18;
+										//Так же обрезаем на 19 символов для выбора только номера схемы в числовом формате
+										int endSearch = Field.editHtml.IndexOf(" ", startSearch);
+										int numberConfigSchema = -1;
+										if (startSearch > -1 && endSearch > -1)
+										{
+											numberConfigSchema = Convert.ToInt32(Field.editHtml.Substring(startSearch, endSearch - startSearch - 1));
+										}
+										if (numberConfigSchema > -1)
+										{
+											urlRequestData = $"/rest/insight/1.0/customfield/default/{numberConfigSchema}/objects";
+
+											JSONRequest jsonRequestInsight = new JSONRequest
+											{
+												urlRequest = urlRequestData,
+												currentProject = projects[projectPic.SelectedIndex].id,
+												currentReporter = CrossSettings.Current.GetValueOrDefault("login", string.Empty),
+												methodRequest = "POST"
+											};
+											Request requestInsight = new Request(jsonRequestInsight);
+
+											insights = requestInsight.GetResponses<RootObject>().objects;
+
+											for (int j = 0; j < user.Count; ++j)
+											{
+												objectName.Add(insights[j].Label);
+											}
+										}
 									}
 								}
 
@@ -185,37 +232,69 @@ namespace RTMobile.issues
 
 								};
 								grid.Children.Add(listView);
+
 								//Событие при вводе символов (показываем только тех пользователей, которые подходят к начатаму вводу пользователя)
 								searchBar.TextChanged += (senders, args) =>
 								{
 									var keyword = searchBar.Text;
 									if (keyword.Length >= 1)
 									{
-										JSONRequest jsonRequestIssue = new JSONRequest
+										//Проверяем является ли данное поле Insight или это иное
+										if (insights.Count == 0)
 										{
-											urlRequest = $"/rest/api/2/user/picker?query=" + keyword.ToLower(),
-											methodRequest = "GET"
-										};
-										Request requestIssue = new Request(jsonRequestIssue);
+											JSONRequest jsonRequestIssue = new JSONRequest
+											{
+												urlRequest = urlRequestData + keyword.ToLower(),
+												methodRequest = "GET"
+											};
+											Request requestIssue = new Request(jsonRequestIssue);
 
-										user = requestIssue.GetResponses<RootObject>().users;
+											user = requestIssue.GetResponses<RootObject>().users;
 
-										userDisplayName.Clear();
+											objectName.Clear();
 
-										for (int j = 0; j < user.Count; ++j)
-										{
-											userDisplayName.Add(user[j].displayName);
+											for (int j = 0; j < user.Count; ++j)
+											{
+												objectName.Add(user[j].displayName);
+											}
+
+											var suggestion = objectName.Where(c => c.ToLower().Contains(keyword.ToLower()));
+											listView.ItemsSource = suggestion;
+											listView.IsVisible = true;
 										}
+										else
+										{
+											//Делаем запрос на поиск подходящих объектов
+											JSONRequest jsonRequestInsightSearch = new JSONRequest
+											{
+												urlRequest = urlRequestData,
+												currentProject = projects[projectPic.SelectedIndex].id,
+												currentReporter = CrossSettings.Current.GetValueOrDefault("login", string.Empty),
+												query = keyword.ToLower(),
+												methodRequest = "POST"
+											};
+											Request requestIssue = new Request(jsonRequestInsightSearch);
 
-										var suggestion = userDisplayName.Where(c => c.ToLower().Contains(keyword.ToLower()));
-										listView.ItemsSource = suggestion;
-										listView.IsVisible = true;
+											insights = requestIssue.GetResponses<RootObject>().objects;
+
+											objectName.Clear();
+
+											for (int j = 0; j < insights.Count; ++j)
+											{
+												objectName.Add(insights[j].Label);
+											}
+
+											var suggestion = objectName.Where(c => c.ToLower().Contains(keyword.ToLower()));
+											listView.ItemsSource = suggestion;
+											listView.IsVisible = true;
+										}
 									}
 									else
 									{
 										listView.IsVisible = false;
 									}
 								};
+
 								//Заполняем поле выбранным элементом из списка
 								listView.ItemTapped += (senders, args) =>
 								{
@@ -225,10 +304,10 @@ namespace RTMobile.issues
 									}
 									else
 									{
-										listView.ItemsSource = userDisplayName.Where(c => c.Equals(args.Item as string));
+										listView.ItemsSource = objectName.Where(c => c.Equals(args.Item as string));
 										listView.IsVisible = true;
-											//searchBar.Text = (args.Item as User).displayName;
-											searchBar.Text = args.Item as string;
+										//searchBar.Text = (args.Item as User).displayName;
+										searchBar.Text = args.Item as string;
 									}
 									listView.IsVisible = false;
 								};
@@ -239,12 +318,17 @@ namespace RTMobile.issues
 							}
 						case "priority":
 						case "option":
+						case "option-with-child":
 						case "resolution":
+
 							{
 								List<string> resolutionValues = new List<string>();
-								for (int j = 0; j < Field.allowedValues.Count; ++j)
+								if (Field.allowedValues != null)
 								{
-									resolutionValues.Add(Field.allowedValues[j].value);
+									for (int j = 0; j < Field.allowedValues.Count; ++j)
+									{
+										resolutionValues.Add(Field.allowedValues[j].value);
+									}
 								}
 								Picker picker = new Picker
 								{
@@ -252,12 +336,18 @@ namespace RTMobile.issues
 									TextColor = Color.FromHex("#F0F1F0"),
 									TitleColor = Color.FromHex("#F0F1F0"),
 									HorizontalOptions = LayoutOptions.FillAndExpand,
-									Margin = new Thickness(0, 0, 0, 20),
+									Margin = new Thickness(0, 0, 0, 0),
 									FontSize = 16
 								};
-								picker.Title = "Выберите значение...";
+								if (picker.Title.Length == 0)
+								{
+									picker.Title = "Выберите значение...";
+								}
 								picker.ItemsSource = resolutionValues;
+
 								//Если при выборе поля у него имеется "потомок" (доп. поле), то показываем его
+
+								typeStack.Children.Add(picker);
 
 								if (Field.allowedValues != null)
 								{
@@ -270,12 +360,13 @@ namespace RTMobile.issues
 										Margin = new Thickness(0, 0, 0, 20),
 										FontSize = 16
 									};
+									pickerChild.Items.Add("Не заполнено");
 									picker.SelectedIndexChanged += (senders, args) =>
 									{
 										if (picker.SelectedIndex > -1)
 										{
-												//Проверяем на наличие "потомков" 
-												List<string> childName = new List<string>();
+											//Проверяем на наличие "потомков" 
+											List<string> childName = new List<string>();
 											Console.WriteLine(picker.Items[picker.SelectedIndex]);
 											for (int j = 0; j < DectionaryFields[picker.Id].allowedValues.Count; ++j)
 											{
@@ -292,8 +383,6 @@ namespace RTMobile.issues
 									};
 									typeStack.Children.Add(pickerChild);
 								}
-
-								typeStack.Children.Add(picker);
 								DectionaryFields.Add(picker.Id, Field);
 								break;
 							}
@@ -454,6 +543,32 @@ namespace RTMobile.issues
 
 											DectionaryFields.Add(searchBar.Id, Field);
 
+											break;
+										}
+									case "component":
+										{
+											List<string> resolutionValues = new List<string>();
+											for (int j = 0; j < Field.allowedValues.Count; ++j)
+											{
+												if (Field.allowedValues[j].name != null)
+												{
+													resolutionValues.Add(Field.allowedValues[j].name);
+												}
+											}
+											Picker picker = new Picker
+											{
+												Title = Field.defaultValue,
+												TextColor = Color.FromHex("#F0F1F0"),
+												TitleColor = Color.FromHex("#F0F1F0"),
+												HorizontalOptions = LayoutOptions.FillAndExpand,
+												Margin = new Thickness(0, 0, 0, 20),
+												FontSize = 16
+											};
+											picker.Title = "Выберите значение...";
+											picker.ItemsSource = resolutionValues;
+
+											typeStack.Children.Add(picker);
+											DectionaryFields.Add(picker.Id, Field);
 											break;
 										}
 								}

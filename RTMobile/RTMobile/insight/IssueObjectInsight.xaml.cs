@@ -14,7 +14,7 @@ namespace RTMobile.insight
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class IssueObjectInsight : ContentPage
 	{
-		public List<JiraIssue> listissue { get; set; }
+		public ObservableCollection<JiraIssue> listissue { get; set; }
 		public ObservableCollection<Issue> listConnectedIssue { get; set; }
 		public IssueObjectInsight(ObjectEntry selectedField)
 		{

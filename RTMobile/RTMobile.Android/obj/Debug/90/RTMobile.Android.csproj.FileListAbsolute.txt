@@ -3761,7 +3761,6 @@ C:\RT\rtmobile\RTMobile\RTMobile.Android\obj\Debug\90\stamp\_GenerateJavaStubs.s
 C:\RT\rtmobile\RTMobile\RTMobile.Android\obj\Debug\90\stamp\_GeneratePackageManagerJava.stamp
 C:\RT\rtmobile\RTMobile\RTMobile.Android\obj\Debug\90\stamp\_ResolveLibraryProjectImports.stamp
 C:\RT\rtmobile\RTMobile\RTMobile.Android\obj\Debug\90\stamp\SetupDependenciesForDesigner.stamp
-F:\project\Mobile\rtmobile\RTMobile\RTMobile.Android\bin\Debug\RTMobile.dll.mdb
 F:\project\Mobile\rtmobile\RTMobile\RTMobile.Android\obj\Debug\90\android\assets\Plugin.Media.dll
 F:\project\Mobile\rtmobile\RTMobile\RTMobile.Android\obj\Debug\90\android\assets\Plugin.Media.pdb
 F:\project\Mobile\rtmobile\RTMobile\RTMobile.Android\obj\Debug\90\android\src\crc646957603ea1820544\MediaPickerActivity.java
@@ -3821,3 +3820,4 @@ F:\project\Mobile\rtmobile\RTMobile\RTMobile.Android\obj\Debug\90\flata\5A519CF9
 F:\project\Mobile\rtmobile\RTMobile\RTMobile.Android\obj\Debug\90\flata\D2D9426B58F1039E.flata
 F:\project\Mobile\rtmobile\RTMobile\RTMobile.Android\obj\Debug\90\flata\C2C8FF4E0FF1777E.flata
 F:\project\Mobile\rtmobile\RTMobile\RTMobile.Android\obj\Debug\90\flata\868C90871AF16A46.flata
+F:\project\Mobile\rtmobile\RTMobile\RTMobile.Android\bin\Debug\RTMobile.dll.mdb

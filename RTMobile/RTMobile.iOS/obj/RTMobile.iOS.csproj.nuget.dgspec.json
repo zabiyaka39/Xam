@@ -88,10 +88,10 @@
       }
     },
     "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj": {
-      "version": "1.0.0.2",
+      "version": "1.1.0",
       "restore": {
         "projectUniqueName": "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj",
-        "projectName": "RTMobile",
+        "projectName": "REM",
         "projectPath": "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj",
         "packagesPath": "C:\\Users\\sekisov\\.nuget\\packages\\",
         "outputPath": "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile\\obj\\",

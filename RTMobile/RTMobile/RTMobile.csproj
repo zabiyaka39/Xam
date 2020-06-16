@@ -3,21 +3,23 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <Copyright>Секисов Владислав Александрович</Copyright>
-    <PackageLicenseExpression>Что не делается, делается к лучшему</PackageLicenseExpression>
+    <PackageLicenseExpression></PackageLicenseExpression>
     <Authors>Секисов Владислав Александрович</Authors>
     <Company>ООО "Росохрана Телеком"</Company>
     <Description>Приложение для работы в системе учета задач Jira</Description>
-    <PackageTags>RTMobile</PackageTags>
+    <PackageTags>REM</PackageTags>
     <ApplicationIcon>rosohranaLogo.ico</ApplicationIcon>
     <Win32Resource />
     <PackageIcon>rosohranaLogo.png</PackageIcon>
     <PackageIconUrl />
     <RepositoryUrl>https://bb.rosohrana.ru/projects/JIRA/repos/rtmobile/browse</RepositoryUrl>
     <RepositoryType>Bitbucket</RepositoryType>
-    <AssemblyVersion>1.0.0.2</AssemblyVersion>
-    <FileVersion>1.0.0.2</FileVersion>
+    <AssemblyVersion>1.1.0.0</AssemblyVersion>
+    <FileVersion>1.1.0.0</FileVersion>
     <SignAssembly>false</SignAssembly>
-    <Version>1.0.0.2</Version>
+    <Version>1.1.0.0</Version>
+    <Product>REM</Product>
+    <PackageId>REM</PackageId>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

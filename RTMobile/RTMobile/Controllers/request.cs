@@ -217,6 +217,36 @@ namespace RTMobile
 				dynamic jsonConvert = JObject.Parse(streamReader.ReadToEnd());
 				if (jsonConvert.projects != null)
 				{
+
+					RootObject rootObject = new RootObject();
+					List<Fields> fieldsExtend = new List<Fields>();
+					if (jsonConvert.projects[0].id != null && jsonConvert.projects[0].issuetypes != null && jsonConvert.projects[0].issuetypes[0] != null && jsonConvert.projects[0].issuetypes[0].id != null)
+					{
+						//Запрос на получение дополнительной информации по полям
+						JSONRequest jsonRequestExtendedInformation = new JSONRequest()
+						{
+							//urlRequest = $"/rest/api/2/project",
+							//Получаем только проекты которые доступны пользователю
+							urlRequest = $"/secure/QuickCreateIssue!default.jspa?decorator=none&pid={jsonConvert.projects[0].id}&issuetype={jsonConvert.projects[0].issuetypes[0].id}",
+							methodRequest = "GET"
+						};
+
+						Request requestExtended = new Request(jsonRequestExtendedInformation);
+						WebResponse httpResponseExtended = requestExtended.httpWebRequest.GetResponse();
+						using (StreamReader streamReaderExtended = new StreamReader(httpResponseExtended.GetResponseStream()))
+						{
+							dynamic jsonConvertExtended = JObject.Parse(streamReaderExtended.ReadToEnd());						
+							if (jsonConvertExtended.fields != null)
+							{
+								for (int i = 0; i < jsonConvertExtended.fields.Count; ++i)
+								{
+									string sss = jsonConvertExtended.fields[i].ToString();
+									fieldsExtend.Add(JsonConvert.DeserializeObject<Fields>(jsonConvertExtended.fields[i].ToString()));
+								}
+							}
+						}
+					}
+
 					if (jsonConvert.projects[0].issuetypes != null)
 					{
 						if (jsonConvert.projects[0].issuetypes[0].fields != null)
@@ -225,11 +255,17 @@ namespace RTMobile
 							{
 								foreach (dynamic checkFieldsDeserializate in fieldsDeserializate)
 								{
-									string str = checkFieldsDeserializate.ToString();
 									fields.Add(JsonConvert.DeserializeObject<Fields>(checkFieldsDeserializate.ToString()));
+									fields[fields.Count - 1].NameField = fieldsDeserializate.Name.ToString();
+									//Если имеются системные поля то убираем их из списка на вывод
 									if (fields[fields.Count - 1].schema.type == "project" || fields[fields.Count - 1].schema.type == "issuetype")
 									{
 										fields.RemoveAt(fields.Count - 1);
+									}
+									else
+									{
+										//если поле не удалено, то добавляем параметр editHtml полученный ранее
+										fields[fields.Count - 1].editHtml = fieldsExtend[fieldsExtend.FindIndex(fiel => fiel.Id == fields[fields.Count - 1].NameField)].editHtml;
 									}
 								}
 							}

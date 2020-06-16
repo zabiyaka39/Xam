@@ -74,13 +74,10 @@
                                                     <ColumnDefinition Width="20"/>
                                                     <ColumnDefinition Width="20"/>
                                                 </Grid.ColumnDefinitions>
+                                                <!--<Image Source="{Binding Path=fields.issuetype.icon}" Grid.Column="0"/>-->
                                                 <Label Text="{Binding Path=fields.issuetype.name}" FontAttributes="Bold"
                                                    FontSize="13" Grid.Column="0" Padding="10,0,0,-5" 
                                                    Grid.Row="0" Margin="-10,0,0,0" Grid.ColumnSpan="2" HorizontalOptions="Fill" />
-                                                <!--<Image Source="comment.png" Grid.Column="1" VerticalOptions="End"
-                                                   Grid.Row="0" Margin="0,0,-10,0" HorizontalOptions="End"/>
-                                                <Label Text="{Binding Path=fields.comment.total}" Grid.Column="2" FontSize="12" HorizontalOptions="End"
-                                                   Grid.Row="0" Margin="-10,-3,0,0" TextColor="#CCCCCC"/>-->
                                             </Grid>
 
                                             <Grid Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="4" HorizontalOptions="FillAndExpand">

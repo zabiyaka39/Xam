@@ -1405,7 +1405,7 @@
           "lib/monoandroid90/Plugin.FilePicker.dll": {}
         }
       },
-      "RTMobile/1.0.0.2": {
+      "REM/1.1.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
@@ -1430,10 +1430,10 @@
           "Xamarin.Plugin.FilePicker": "2.1.41"
         },
         "compile": {
-          "bin/placeholder/RTMobile.dll": {}
+          "bin/placeholder/REM.dll": {}
         },
         "runtime": {
-          "bin/placeholder/RTMobile.dll": {}
+          "bin/placeholder/REM.dll": {}
         }
       }
     }
@@ -4563,7 +4563,7 @@
         "xamarin.plugin.filepicker.nuspec"
       ]
     },
-    "RTMobile/1.0.0.2": {
+    "REM/1.1.0": {
       "type": "project",
       "path": "../RTMobile/RTMobile.csproj",
       "msbuildProject": "../RTMobile/RTMobile.csproj"
@@ -4580,7 +4580,7 @@
       "NETStandard.Library >= 2.0.3",
       "Nancy >= 2.0.0",
       "Newtonsoft.Json >= 12.0.3",
-      "RTMobile >= 1.0.0.2",
+      "REM >= 1.1.0",
       "Rg.Plugins.Popup >= 2.0.0.2",
       "Xam.Plugin.FilePicker >= 1.1.0",
       "Xam.Plugins.Settings >= 3.1.1",
@@ -4737,7 +4737,7 @@
       "code": "NU1605",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Обнаружено понижение версии пакета Microsoft.AppCenter.Analytics с 3.2.2 на 3.0.0. Чтобы выбрать другую версию, создайте ссылку на пакет напрямую из проекта. \r\n RTMobile.Android -> RTMobile -> Microsoft.AppCenter.Analytics (>= 3.2.2) \r\n RTMobile.Android -> Microsoft.AppCenter.Analytics (>= 3.0.0)",
+      "message": "Обнаружено понижение версии пакета Microsoft.AppCenter.Analytics с 3.2.2 на 3.0.0. Чтобы выбрать другую версию, создайте ссылку на пакет напрямую из проекта. \r\n RTMobile.Android -> REM -> Microsoft.AppCenter.Analytics (>= 3.2.2) \r\n RTMobile.Android -> Microsoft.AppCenter.Analytics (>= 3.0.0)",
       "libraryId": "Microsoft.AppCenter.Analytics",
       "targetGraphs": [
         "MonoAndroid,Version=v9.0"
@@ -4747,7 +4747,7 @@
       "code": "NU1605",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Обнаружено понижение версии пакета Xamarin.Essentials с 1.5.3.2 на 1.5.1. Чтобы выбрать другую версию, создайте ссылку на пакет напрямую из проекта. \r\n RTMobile.Android -> RTMobile -> Xamarin.Essentials (>= 1.5.3.2) \r\n RTMobile.Android -> Xamarin.Essentials (>= 1.5.1)",
+      "message": "Обнаружено понижение версии пакета Xamarin.Essentials с 1.5.3.2 на 1.5.1. Чтобы выбрать другую версию, создайте ссылку на пакет напрямую из проекта. \r\n RTMobile.Android -> REM -> Xamarin.Essentials (>= 1.5.3.2) \r\n RTMobile.Android -> Xamarin.Essentials (>= 1.5.1)",
       "libraryId": "Xamarin.Essentials",
       "targetGraphs": [
         "MonoAndroid,Version=v9.0"
@@ -4757,7 +4757,7 @@
       "code": "NU1605",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Обнаружено понижение версии пакета Microsoft.AppCenter.Crashes с 3.2.2 на 3.0.0. Чтобы выбрать другую версию, создайте ссылку на пакет напрямую из проекта. \r\n RTMobile.Android -> RTMobile -> Microsoft.AppCenter.Crashes (>= 3.2.2) \r\n RTMobile.Android -> Microsoft.AppCenter.Crashes (>= 3.0.0)",
+      "message": "Обнаружено понижение версии пакета Microsoft.AppCenter.Crashes с 3.2.2 на 3.0.0. Чтобы выбрать другую версию, создайте ссылку на пакет напрямую из проекта. \r\n RTMobile.Android -> REM -> Microsoft.AppCenter.Crashes (>= 3.2.2) \r\n RTMobile.Android -> Microsoft.AppCenter.Crashes (>= 3.0.0)",
       "libraryId": "Microsoft.AppCenter.Crashes",
       "targetGraphs": [
         "MonoAndroid,Version=v9.0"
@@ -4767,7 +4767,7 @@
       "code": "NU1605",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Обнаружено понижение версии пакета Xamarin.Plugin.FilePicker с 2.1.41 на 2.1.34. Чтобы выбрать другую версию, создайте ссылку на пакет напрямую из проекта. \r\n RTMobile.Android -> RTMobile -> Xamarin.Plugin.FilePicker (>= 2.1.41) \r\n RTMobile.Android -> Xamarin.Plugin.FilePicker (>= 2.1.34)",
+      "message": "Обнаружено понижение версии пакета Xamarin.Plugin.FilePicker с 2.1.41 на 2.1.34. Чтобы выбрать другую версию, создайте ссылку на пакет напрямую из проекта. \r\n RTMobile.Android -> REM -> Xamarin.Plugin.FilePicker (>= 2.1.41) \r\n RTMobile.Android -> Xamarin.Plugin.FilePicker (>= 2.1.34)",
       "libraryId": "Xamarin.Plugin.FilePicker",
       "targetGraphs": [
         "MonoAndroid,Version=v9.0"
@@ -4777,7 +4777,7 @@
       "code": "NU1605",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Обнаружено понижение версии пакета Xamarin.Forms с 4.6.0.800 на 4.5.0.617. Чтобы выбрать другую версию, создайте ссылку на пакет напрямую из проекта. \r\n RTMobile.Android -> RTMobile -> Xamarin.Forms (>= 4.6.0.800) \r\n RTMobile.Android -> Xamarin.Forms (>= 4.5.0.617)",
+      "message": "Обнаружено понижение версии пакета Xamarin.Forms с 4.6.0.800 на 4.5.0.617. Чтобы выбрать другую версию, создайте ссылку на пакет напрямую из проекта. \r\n RTMobile.Android -> REM -> Xamarin.Forms (>= 4.6.0.800) \r\n RTMobile.Android -> Xamarin.Forms (>= 4.5.0.617)",
       "libraryId": "Xamarin.Forms",
       "targetGraphs": [
         "MonoAndroid,Version=v9.0"

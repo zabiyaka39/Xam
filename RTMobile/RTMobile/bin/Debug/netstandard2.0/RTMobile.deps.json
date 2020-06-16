@@ -7,7 +7,7 @@
   "targets": {
     ".NETStandard,Version=v2.0": {},
     ".NETStandard,Version=v2.0/": {
-      "RTMobile/1.0.0.2": {
+      "RTMobile/1.1.0.0": {
         "dependencies": {
           "CarouselView": "7.0.3.1",
           "CarouselView.FormsPlugin": "5.2.0",
@@ -1196,7 +1196,7 @@
     }
   },
   "libraries": {
-    "RTMobile/1.0.0.2": {
+    "RTMobile/1.1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

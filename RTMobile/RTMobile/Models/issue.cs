@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using Plugin.Settings;
+using RTMobile.jiraData;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -47,6 +48,22 @@ namespace RTMobile
 		public string comment { get; set; }
 
 		public string name { get; set; }
+		/// <summary>
+		/// Наименование текущего проекта
+		/// </summary>
+		public string currentProject { get; set; }
+		/// <summary>
+		/// /Наименование текущей задачи
+		/// </summary>
+		public string currentIssueId { get; set; }
+		/// <summary>
+		/// Наименование пользователя для получения доступа к схеме
+		/// </summary>
+		public string currentReporter { get; set; }
+		/// <summary>
+		/// Запрос
+		/// </summary>
+		public string query { get; set; }
 
 		public string started { get; set; }
 
@@ -878,6 +895,7 @@ namespace RTMobile
 	{
 		public string self { get; set; }
 		public string value { get; set; }
+		public string name { get; set; }
 		public ImageSource icon
 		{
 			get
@@ -1104,7 +1122,7 @@ namespace RTMobile
 		public User creator { get; set; }
 		public Watchers watches { get; set; }
 		public Schema schema { get; set; }
-
+		public Guid idFieldScreen { get; set; }
 		public string autoCompleteUrl { get; set; }
 		private string _created;
 		public string created
@@ -1146,7 +1164,7 @@ namespace RTMobile
 			}
 		}
 		[JsonProperty("id")]
-		public int Id { get; set; }
+		public string Id { get; set; }
 		[JsonProperty("items")]
 		public string Items { get; set; }
 		[JsonProperty("custom")]
@@ -1157,6 +1175,7 @@ namespace RTMobile
 		[JsonProperty("customId")]
 		public string CustomId { get; set; }
 		public string key { get; set; }
+		public string label { get; set; }
 		[JsonProperty("nameField")]
 		public string NameField { get; set; }
 		public string name { get; set; }
@@ -1186,8 +1205,6 @@ namespace RTMobile
 			set => _updated = Convert.ToDateTime(value).ToString("dd.MM.yyyy HH:mm");
 		}
 		public string value { get; set; }
-
-
 		public bool required { get; set; } = false;
 		public bool hasScreen { get; set; } = true;
 		public bool isAvailable { get; set; } = true;
@@ -1195,7 +1212,8 @@ namespace RTMobile
 		public bool isGlobal { get; set; } = false;
 		public bool isConditional { get; set; } = false;
 		public bool isInitial { get; set; } = false;
-		public Guid idFieldScreen { get; set; }
+		public string editHtml { get; set; }
+
 	}
 	public class Issue
 	{
@@ -1245,11 +1263,14 @@ namespace RTMobile
 		public List<Transition> transitions { get; set; }
 		public ObservableCollection<Issue> issues { get; set; }
 		public ObservableCollection<Comment> comments { get; set; }
+		public ObservableCollection<Fields> fields { get; set; }
 		public ObservableCollection<Worklog> worklogs { get; set; }
 		public ObservableCollection<ObjectEntry> objectEntries { get; set; }
 		public ObservableCollection<Objectschema> objectschemas { get; set; }
+		public ObservableCollection<InsightRoot> objects { get; set; }
 		public ObservableCollection<Watchers> watchers { get; set; }
 		public ObservableCollection<Filters> filters { get; set; }
+		public ObservableCollection<JiraIssue> jiraIssues { get; set; }
 		public Changelog changelog { get; set; }
 		public Session session { get; set; }
 		public LoginInfo loginInfo { get; set; }
@@ -1272,7 +1293,6 @@ namespace RTMobile
 		public bool active { get; set; }
 		public string timeZone { get; set; }
 		public string locale { get; set; }
-		public List<JiraIssue> jiraIssues { get; set; }
 		public string allIssuesQuery { get; set; }
 
 	}
