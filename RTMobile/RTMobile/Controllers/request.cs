@@ -255,6 +255,7 @@ namespace RTMobile
 							{
 								foreach (dynamic checkFieldsDeserializate in fieldsDeserializate)
 								{
+									string ssss = checkFieldsDeserializate.ToString();
 									fields.Add(JsonConvert.DeserializeObject<Fields>(checkFieldsDeserializate.ToString()));
 									fields[fields.Count - 1].NameField = fieldsDeserializate.Name.ToString();
 									//Если имеются системные поля то убираем их из списка на вывод
@@ -431,11 +432,6 @@ namespace RTMobile
 																case "name":
 																	{
 																		fieldTmp.displayName = (string)fieldTransactionInformation.Value;
-																		break;
-																	}
-																case "defaultValue":
-																	{
-																		fieldTmp.defaultValue = (string)fieldTransactionInformation.Value;
 																		break;
 																	}
 																case "autoCompleteUrl":

@@ -82,7 +82,7 @@ namespace RTMobile.issues.viewIssue
 									//Создаем поисковый бар для поиска и отображения пользователей имеющих доступ к задаче
 									SearchBar searchBar = new SearchBar
 									{
-										Placeholder = fieldIssue[i].defaultValue,
+										Placeholder = "Заполните значение...",
 										TextColor = Color.FromHex("#F0F1F0"),
 										PlaceholderColor = Color.FromHex("#F0F1F0"),
 										HorizontalOptions = LayoutOptions.FillAndExpand,
@@ -151,7 +151,7 @@ namespace RTMobile.issues.viewIssue
 									}
 									Picker picker = new Picker
 									{
-										Title = fieldIssue[i].defaultValue,
+										Title = "Заполните значение...",
 										TextColor = Color.FromHex("#F0F1F0"),
 										TitleColor = Color.FromHex("#F0F1F0"),
 										HorizontalOptions = LayoutOptions.FillAndExpand,
@@ -199,7 +199,6 @@ namespace RTMobile.issues.viewIssue
 											{
 												Picker picker = new Picker
 												{
-													Title = fieldIssue[i].defaultValue,
 													TextColor = Color.FromHex("#F0F1F0"),
 													TitleColor = Color.FromHex("#F0F1F0"),
 													HorizontalOptions = LayoutOptions.FillAndExpand,
@@ -361,7 +360,6 @@ namespace RTMobile.issues.viewIssue
 									}
 									Picker picker = new Picker
 									{
-										Title = fieldIssue[i].defaultValue,
 										TextColor = Color.FromHex("#F0F1F0"),
 										TitleColor = Color.FromHex("#F0F1F0"),
 										HorizontalOptions = LayoutOptions.FillAndExpand,
@@ -439,7 +437,7 @@ namespace RTMobile.issues.viewIssue
 									//Создаем поисковый бар для поиска и отображения пользователей имеющих доступ к задаче
 									SearchBar searchBar = new SearchBar
 									{
-										Placeholder = fieldIssue[i].defaultValue,
+										Placeholder = "Заполните значение...",
 										TextColor = Color.FromHex("#F0F1F0"),
 										PlaceholderColor = Color.FromHex("#F0F1F0"),
 										HorizontalOptions = LayoutOptions.FillAndExpand,

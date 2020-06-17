@@ -1142,7 +1142,6 @@ namespace RTMobile
 		/// </summary>
 		[JsonProperty("displayNameField")]
 		public string DisplayNameField { get; set; }
-		public string defaultValue { get; set; } = "Заполните значение...";
 		public string duedate { get; set; }
 		private string _description { get; set; }
 		public string description
