@@ -223,20 +223,34 @@ namespace RTMobile.filter
 			{
 				CrossSettings.Current.AddOrUpdateValue("lastFilters", tmpFilter + "," + numberFilter.ToString());
 			}
-			string sorted = "";
-			if (typeSort.SelectedIndex == 0)
+			string sorted = "";			
+
+			JSONRequest jsonRequestFilter = new JSONRequest()
 			{
-				sorted = "ORDER BY key ASC";
-			}
-			else
+				urlRequest = $"/rest/api/2/filter/{numberFilter.ToString()}",
+				methodRequest = "GET"
+			};
+
+			Request request = new Request(jsonRequestFilter);
+			Filters filter = request.GetResponses<Filters>();
+
+			if (filter.Jql.IndexOf("ORDER") == -1)
 			{
-				sorted = "ORDER BY key DESC";
+				if (typeSort.SelectedIndex == 0)
+				{
+					sorted = "ORDER BY key ASC";
+				}
+				else
+				{
+					sorted = "ORDER BY key DESC";
+				}
 			}
+
 			JSONRequest jsonRequest = new JSONRequest()
 			{
 				urlRequest = "/rest/api/2/search",
 				methodRequest = "POST",
-				jql = jqlFilter + " " + sorted,
+				jql = filter.Jql + " " + sorted,
 				maxResults = "50",
 				startAt = "0"
 			};
@@ -273,8 +287,8 @@ namespace RTMobile.filter
 		{
 			if (e.SelectedItemIndex != -1)
 			{
-				numberFilter = favorites[e.SelectedItemIndex].Id;
-				jqlFilter = favorites[e.SelectedItemIndex].Jql;
+				numberFilter = favorites[e.SelectedItemIndex-1].Id;
+				jqlFilter = favorites[e.SelectedItemIndex-1].Jql;
 				lastFilterList.SelectedItem = -1;
 				allFilterList.SelectedItem = -1;
 			}
@@ -283,8 +297,8 @@ namespace RTMobile.filter
 		{
 			if (e.SelectedItemIndex != -1)
 			{
-				numberFilter = favorites[e.SelectedItemIndex].Id;
-				jqlFilter = favorites[e.SelectedItemIndex].Jql;
+				numberFilter = lastFilters[e.SelectedItemIndex].Id;
+				jqlFilter = lastFilters[e.SelectedItemIndex].Jql;
 				favoritesList.SelectedItem = -1;
 				allFilterList.SelectedItem = -1;
 			}
@@ -293,8 +307,8 @@ namespace RTMobile.filter
 		{
 			if (e.SelectedItemIndex != -1)
 			{
-				numberFilter = favorites[e.SelectedItemIndex].Id;
-				jqlFilter = favorites[e.SelectedItemIndex].Jql;
+				numberFilter = allFilters[e.SelectedItemIndex].Id;
+				jqlFilter = allFilters[e.SelectedItemIndex].Jql;
 				lastFilterList.SelectedItem = -1;
 				favoritesList.SelectedItem = -1;
 			}
