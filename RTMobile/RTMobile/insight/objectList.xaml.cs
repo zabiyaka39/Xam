@@ -1,5 +1,4 @@
-﻿using Java.Security;
-using Microsoft.AppCenter.Crashes;
+﻿using Microsoft.AppCenter.Crashes;
 using RTMobile.calendar;
 using RTMobile.filter;
 using RTMobile.issues.viewIssue;
