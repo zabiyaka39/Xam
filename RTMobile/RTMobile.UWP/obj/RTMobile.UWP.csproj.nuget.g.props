@@ -45,5 +45,6 @@
     <PkgMicrosoft_UI_Xaml Condition=" '$(PkgMicrosoft_UI_Xaml)' == '' ">C:\Users\sekisov\.nuget\packages\microsoft.ui.xaml\2.3.191211002</PkgMicrosoft_UI_Xaml>
     <PkgMicrosoft_Net_UWPCoreRuntimeSdk Condition=" '$(PkgMicrosoft_Net_UWPCoreRuntimeSdk)' == '' ">C:\Users\sekisov\.nuget\packages\microsoft.net.uwpcoreruntimesdk\2.2.9</PkgMicrosoft_Net_UWPCoreRuntimeSdk>
     <PkgMicrosoft_Net_Native_Compiler Condition=" '$(PkgMicrosoft_Net_Native_Compiler)' == '' ">C:\Users\sekisov\.nuget\packages\microsoft.net.native.compiler\2.2.7-rel-27913-00</PkgMicrosoft_Net_Native_Compiler>
+    <PkgMicrosoft_CodeAnalysis_Analyzers Condition=" '$(PkgMicrosoft_CodeAnalysis_Analyzers)' == '' ">C:\Users\sekisov\.nuget\packages\microsoft.codeanalysis.analyzers\3.0.0</PkgMicrosoft_CodeAnalysis_Analyzers>
   </PropertyGroup>
 </Project>

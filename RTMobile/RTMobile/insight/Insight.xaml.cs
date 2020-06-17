@@ -11,7 +11,11 @@ namespace RTMobile.insight
 {
     public partial class Insight : ContentPage
     {
+        delegate void ListOblectProject();
         public ObservableCollection<Objectschema> insightObject { get; set; }
+        
+
+
         public Insight()
         {
             InitializeComponent();

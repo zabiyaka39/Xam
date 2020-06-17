@@ -8,9 +8,11 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Windows.System.Power.Diagnostics;
 using Xamarin.Forms;
+using Xamarin.Forms.Internals;
 using Xamarin.Forms.Xaml;
+
 
 namespace RTMobile.insight
 {
@@ -18,12 +20,25 @@ namespace RTMobile.insight
 	public partial class objectList : ContentPage
 	{
 		public ObservableCollection<ObjectEntry> insightObject { get; set; }
+		private delegate object Poster();
+		public ObservableCollection<ObjectEntry> InsightProjectStuff { get; set; }
+		private Dictionary<int, Poster> Shemaobj;
+
+
 		public objectList(Objectschema objectschema)
 		{
 			InitializeComponent();
 			Title = objectschema.name;
 			if (objectschema != null)
 			{
+                
+            
+				Shemaobj = new Dictionary<int, Poster>
+				{
+					{6, KPA_object}
+				};
+			
+	
 				try
 				{
 					JSONRequest jsonRequest = new JSONRequest()
@@ -34,6 +49,20 @@ namespace RTMobile.insight
 					Request request = new Request(jsonRequest);
 					//Получаем список избранных фильтров
 					insightObject = (request.GetResponses<RootObject>()).objectEntries;
+					if (Shemaobj.ContainsKey(objectschema.id))
+					{
+						Shemaobj[objectschema.id]();
+					}
+					else
+                    {
+						InsightProjectStuff = new ObservableCollection<ObjectEntry>();
+						insightObject.ForEach<ObjectEntry>((item) =>
+						{
+
+							InsightProjectStuff.Add(item);
+
+						});
+					}
 				}
 				catch (Exception ex)
 				{
@@ -43,6 +72,19 @@ namespace RTMobile.insight
 			}
 			this.BindingContext = this;
 
+		}
+
+		async Task KPA_object()
+        {
+			InsightProjectStuff = new ObservableCollection<ObjectEntry>();
+			Task KPA = Task.Run(() =>
+			{
+				foreach (ObjectEntry obj in insightObject)
+				{
+					if ((string)obj.objectType.name == "Рубеж")
+						InsightProjectStuff.Add(obj);
+				}
+			});
 		}
 
 		async void OpenField(object sender, ItemTappedEventArgs e)
