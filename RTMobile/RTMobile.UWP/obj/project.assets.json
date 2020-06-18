@@ -2009,7 +2009,7 @@
           "Nancy": "2.0.0",
           "Newtonsoft.Json": "12.0.3",
           "RestSharp": "106.11.4",
-          "Rg.Plugins.Popup": "2.0.0.2",
+          "Rg.Plugins.Popup": "2.0.0.3",
           "System.IdentityModel.Tokens.Jwt": "6.6.0",
           "System.Net.Http": "4.3.4",
           "System.Xml.XmlSerializer": "4.3.0",
@@ -2018,7 +2018,7 @@
           "Xamarin.Essentials": "1.5.3.2",
           "Xamarin.FFImageLoading": "2.4.11.982",
           "Xamarin.FFImageLoading.Forms": "2.4.11.982",
-          "Xamarin.Forms": "4.6.0.800",
+          "Xamarin.Forms": "4.7.0.968",
           "Xamarin.Plugin.FilePicker": "2.1.41"
         },
         "compile": {
@@ -4250,7 +4250,7 @@
           "Nancy": "2.0.0",
           "Newtonsoft.Json": "12.0.3",
           "RestSharp": "106.11.4",
-          "Rg.Plugins.Popup": "2.0.0.2",
+          "Rg.Plugins.Popup": "2.0.0.3",
           "System.IdentityModel.Tokens.Jwt": "6.6.0",
           "System.Net.Http": "4.3.4",
           "System.Xml.XmlSerializer": "4.3.0",
@@ -4259,7 +4259,7 @@
           "Xamarin.Essentials": "1.5.3.2",
           "Xamarin.FFImageLoading": "2.4.11.982",
           "Xamarin.FFImageLoading.Forms": "2.4.11.982",
-          "Xamarin.Forms": "4.6.0.800",
+          "Xamarin.Forms": "4.7.0.968",
           "Xamarin.Plugin.FilePicker": "2.1.41"
         },
         "compile": {
@@ -6534,7 +6534,7 @@
           "Nancy": "2.0.0",
           "Newtonsoft.Json": "12.0.3",
           "RestSharp": "106.11.4",
-          "Rg.Plugins.Popup": "2.0.0.2",
+          "Rg.Plugins.Popup": "2.0.0.3",
           "System.IdentityModel.Tokens.Jwt": "6.6.0",
           "System.Net.Http": "4.3.4",
           "System.Xml.XmlSerializer": "4.3.0",
@@ -6543,7 +6543,7 @@
           "Xamarin.Essentials": "1.5.3.2",
           "Xamarin.FFImageLoading": "2.4.11.982",
           "Xamarin.FFImageLoading.Forms": "2.4.11.982",
-          "Xamarin.Forms": "4.6.0.800",
+          "Xamarin.Forms": "4.7.0.968",
           "Xamarin.Plugin.FilePicker": "2.1.41"
         },
         "compile": {
@@ -8815,7 +8815,7 @@
           "Nancy": "2.0.0",
           "Newtonsoft.Json": "12.0.3",
           "RestSharp": "106.11.4",
-          "Rg.Plugins.Popup": "2.0.0.2",
+          "Rg.Plugins.Popup": "2.0.0.3",
           "System.IdentityModel.Tokens.Jwt": "6.6.0",
           "System.Net.Http": "4.3.4",
           "System.Xml.XmlSerializer": "4.3.0",
@@ -8824,7 +8824,7 @@
           "Xamarin.Essentials": "1.5.3.2",
           "Xamarin.FFImageLoading": "2.4.11.982",
           "Xamarin.FFImageLoading.Forms": "2.4.11.982",
-          "Xamarin.Forms": "4.6.0.800",
+          "Xamarin.Forms": "4.7.0.968",
           "Xamarin.Plugin.FilePicker": "2.1.41"
         },
         "compile": {
@@ -11056,7 +11056,7 @@
           "Nancy": "2.0.0",
           "Newtonsoft.Json": "12.0.3",
           "RestSharp": "106.11.4",
-          "Rg.Plugins.Popup": "2.0.0.2",
+          "Rg.Plugins.Popup": "2.0.0.3",
           "System.IdentityModel.Tokens.Jwt": "6.6.0",
           "System.Net.Http": "4.3.4",
           "System.Xml.XmlSerializer": "4.3.0",
@@ -11065,7 +11065,7 @@
           "Xamarin.Essentials": "1.5.3.2",
           "Xamarin.FFImageLoading": "2.4.11.982",
           "Xamarin.FFImageLoading.Forms": "2.4.11.982",
-          "Xamarin.Forms": "4.6.0.800",
+          "Xamarin.Forms": "4.7.0.968",
           "Xamarin.Plugin.FilePicker": "2.1.41"
         },
         "compile": {
@@ -13340,7 +13340,7 @@
           "Nancy": "2.0.0",
           "Newtonsoft.Json": "12.0.3",
           "RestSharp": "106.11.4",
-          "Rg.Plugins.Popup": "2.0.0.2",
+          "Rg.Plugins.Popup": "2.0.0.3",
           "System.IdentityModel.Tokens.Jwt": "6.6.0",
           "System.Net.Http": "4.3.4",
           "System.Xml.XmlSerializer": "4.3.0",
@@ -13349,7 +13349,7 @@
           "Xamarin.Essentials": "1.5.3.2",
           "Xamarin.FFImageLoading": "2.4.11.982",
           "Xamarin.FFImageLoading.Forms": "2.4.11.982",
-          "Xamarin.Forms": "4.6.0.800",
+          "Xamarin.Forms": "4.7.0.968",
           "Xamarin.Plugin.FilePicker": "2.1.41"
         },
         "compile": {
@@ -15581,7 +15581,7 @@
           "Nancy": "2.0.0",
           "Newtonsoft.Json": "12.0.3",
           "RestSharp": "106.11.4",
-          "Rg.Plugins.Popup": "2.0.0.2",
+          "Rg.Plugins.Popup": "2.0.0.3",
           "System.IdentityModel.Tokens.Jwt": "6.6.0",
           "System.Net.Http": "4.3.4",
           "System.Xml.XmlSerializer": "4.3.0",
@@ -15590,7 +15590,7 @@
           "Xamarin.Essentials": "1.5.3.2",
           "Xamarin.FFImageLoading": "2.4.11.982",
           "Xamarin.FFImageLoading.Forms": "2.4.11.982",
-          "Xamarin.Forms": "4.6.0.800",
+          "Xamarin.Forms": "4.7.0.968",
           "Xamarin.Plugin.FilePicker": "2.1.41"
         },
         "compile": {
@@ -17865,7 +17865,7 @@
           "Nancy": "2.0.0",
           "Newtonsoft.Json": "12.0.3",
           "RestSharp": "106.11.4",
-          "Rg.Plugins.Popup": "2.0.0.2",
+          "Rg.Plugins.Popup": "2.0.0.3",
           "System.IdentityModel.Tokens.Jwt": "6.6.0",
           "System.Net.Http": "4.3.4",
           "System.Xml.XmlSerializer": "4.3.0",
@@ -17874,7 +17874,7 @@
           "Xamarin.Essentials": "1.5.3.2",
           "Xamarin.FFImageLoading": "2.4.11.982",
           "Xamarin.FFImageLoading.Forms": "2.4.11.982",
-          "Xamarin.Forms": "4.6.0.800",
+          "Xamarin.Forms": "4.7.0.968",
           "Xamarin.Plugin.FilePicker": "2.1.41"
         },
         "compile": {
@@ -27879,6 +27879,23 @@
       "code": "NU1605",
       "level": "Warning",
       "warningLevel": 1,
+      "message": "Обнаружено понижение версии пакета Rg.Plugins.Popup с 2.0.0.3 на 2.0.0.2. Чтобы выбрать другую версию, создайте ссылку на пакет напрямую из проекта. \r\n RTMobile.UWP -> REM -> Rg.Plugins.Popup (>= 2.0.0.3) \r\n RTMobile.UWP -> Rg.Plugins.Popup (>= 2.0.0.2)",
+      "libraryId": "Rg.Plugins.Popup",
+      "targetGraphs": [
+        "UAP,Version=v10.0.16299",
+        "UAP,Version=v10.0.16299/win10-arm",
+        "UAP,Version=v10.0.16299/win10-arm-aot",
+        "UAP,Version=v10.0.16299/win10-arm64-aot",
+        "UAP,Version=v10.0.16299/win10-x64",
+        "UAP,Version=v10.0.16299/win10-x64-aot",
+        "UAP,Version=v10.0.16299/win10-x86",
+        "UAP,Version=v10.0.16299/win10-x86-aot"
+      ]
+    },
+    {
+      "code": "NU1605",
+      "level": "Warning",
+      "warningLevel": 1,
       "message": "Обнаружено понижение версии пакета Xamarin.Essentials с 1.5.3.2 на 1.5.1. Чтобы выбрать другую версию, создайте ссылку на пакет напрямую из проекта. \r\n RTMobile.UWP -> REM -> Xamarin.Essentials (>= 1.5.3.2) \r\n RTMobile.UWP -> Xamarin.Essentials (>= 1.5.1)",
       "libraryId": "Xamarin.Essentials",
       "targetGraphs": [
@@ -27913,7 +27930,7 @@
       "code": "NU1605",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Обнаружено понижение версии пакета Xamarin.Forms с 4.6.0.800 на 4.5.0.617. Чтобы выбрать другую версию, создайте ссылку на пакет напрямую из проекта. \r\n RTMobile.UWP -> REM -> Xamarin.Forms (>= 4.6.0.800) \r\n RTMobile.UWP -> Xamarin.Forms (>= 4.5.0.617)",
+      "message": "Обнаружено понижение версии пакета Xamarin.Forms с 4.7.0.968 на 4.5.0.617. Чтобы выбрать другую версию, создайте ссылку на пакет напрямую из проекта. \r\n RTMobile.UWP -> REM -> Xamarin.Forms (>= 4.7.0.968) \r\n RTMobile.UWP -> Xamarin.Forms (>= 4.5.0.617)",
       "libraryId": "Xamarin.Forms",
       "targetGraphs": [
         "UAP,Version=v10.0.16299",

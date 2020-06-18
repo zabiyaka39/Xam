@@ -195,21 +195,11 @@
               "target": "Package",
               "version": "[4.7.0, )"
             },
-            "Microsoft.CodeAnalysis": {
-              "target": "Package",
-              "version": "[3.6.0, )"
-            },
-            "Microsoft.CodeAnalysis.FxCopAnalyzers": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[3.0.0, )"
-            },
             "MimeTypes": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[2.0.1, )"
+              "version": "[2.0.2, )"
             },
             "NETStandard.Library": {
               "suppressParent": "All",
@@ -231,7 +221,7 @@
             },
             "Rg.Plugins.Popup": {
               "target": "Package",
-              "version": "[2.0.0.2, )"
+              "version": "[2.0.0.3, )"
             },
             "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",
@@ -267,7 +257,7 @@
             },
             "Xamarin.Forms": {
               "target": "Package",
-              "version": "[4.6.0.847, )"
+              "version": "[4.7.0.968, )"
             },
             "Xamarin.Plugin.FilePicker": {
               "target": "Package",

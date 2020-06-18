@@ -1,4 +1,5 @@
 ﻿using Microsoft.AppCenter.Crashes;
+using RTMobile.jiraData;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -19,8 +20,7 @@ namespace RTMobile.insight
 		{
 			InitializeComponent();
 			takejiraIssueList(selectedField);
-			this.BindingContext = this;
-		
+			this.BindingContext = this;		
 		}
 
 
@@ -43,10 +43,10 @@ namespace RTMobile.insight
 
 		async private void ListView_ItemTapped(object sender, ItemTappedEventArgs e)
 		{
-			Issue selectedIssue = e.Item as Issue;
+			ObjectEntry selectedIssue = e.Item as ObjectEntry;
 			if (selectedIssue != null)
 			{
-				await Navigation.PushAsync(new RTMobile.issues.viewIssue.TabPageIssue(selectedIssue)).ConfigureAwait(true);
+				await Navigation.PushAsync(new TabPageObjectInsight(selectedIssue)).ConfigureAwait(true);
 			}
 			((ListView)sender).SelectedItem = null;
 		}
