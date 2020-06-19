@@ -72,11 +72,19 @@ namespace RTMobile
 			Request request = new Request();
 			try
 			{
+				try
+				{
+					await PopupNavigation.Instance.PushAsync(new StatusBar());
+				}
+				catch (Exception ex)
+				{
+					Console.WriteLine(ex.ToString());
+				}
 				if (login.Text != null && login.Text.Length > 0 && password.Text != null && password.Text.Length > 0)
 				{
 					if (request.authorization(login.Text.Trim(' '), password.Text))
 					{
-						await PopupNavigation.Instance.PushAsync(new StatusBar());
+						
 						errorMessage.IsVisible = false;
 						errorMessage1.IsVisible = false;
 
@@ -90,8 +98,6 @@ namespace RTMobile
 
 
 						await Navigation.PushModalAsync(new AllIssues()).ConfigureAwait(true);
-						PopupNavigation.Instance.PopAsync(true);
-
 					}
 					else
 					{
@@ -106,6 +112,14 @@ namespace RTMobile
 				{
 					errorMessage.IsVisible = true;
 					errorMessage1.IsVisible = true;
+				}
+				try
+				{
+					PopupNavigation.Instance.PopAsync(true);
+				}
+				catch (Exception ex)
+				{
+					Console.WriteLine(ex.ToString());
 				}
 			}
 			catch (Exception ex)

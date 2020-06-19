@@ -175,17 +175,6 @@
           "lib/netstandard1.0/_._": {}
         }
       },
-      "MimeTypes/2.0.1": {
-        "type": "package",
-        "contentFiles": {
-          "contentFiles/cs/netstandard2.1/MimeTypes.cs.pp": {
-            "buildAction": "Compile",
-            "codeLanguage": "cs",
-            "copyToOutput": false,
-            "ppOutputPath": "MimeTypes.cs"
-          }
-        }
-      },
       "Nancy/2.0.0": {
         "type": "package",
         "dependencies": {
@@ -237,7 +226,7 @@
           "lib/netstandard2.0/RestSharp.dll": {}
         }
       },
-      "Rg.Plugins.Popup/2.0.0.2": {
+      "Rg.Plugins.Popup/2.0.0.3": {
         "type": "package",
         "dependencies": {
           "Xamarin.Forms": "4.5.0.530"
@@ -509,7 +498,7 @@
           "lib/Xamarin.iOS10/Plugin.Settings.dll": {}
         }
       },
-      "Xamarin.Essentials/1.5.1": {
+      "Xamarin.Essentials/1.5.3.2": {
         "type": "package",
         "frameworkAssemblies": [
           "OpenTK-1.0",
@@ -551,7 +540,7 @@
           "lib/Xamarin.iOS10/FFImageLoading.Forms.dll": {}
         }
       },
-      "Xamarin.Forms/4.5.0.617": {
+      "Xamarin.Forms/4.7.0.968": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Xamarin.Forms.Core.dll": {},
@@ -672,8 +661,11 @@
           "buildTransitive/Xamarin.Forms.targets": {}
         }
       },
-      "Xamarin.Plugin.FilePicker/2.1.34": {
+      "Xamarin.Plugin.FilePicker/2.1.41": {
         "type": "package",
+        "frameworkAssemblies": [
+          "System.Drawing.Common.dll"
+        ],
         "compile": {
           "lib/xamarinios10/Plugin.FilePicker.dll": {}
         },
@@ -887,17 +879,6 @@
           "lib/netstandard1.0/_._": {}
         }
       },
-      "MimeTypes/2.0.1": {
-        "type": "package",
-        "contentFiles": {
-          "contentFiles/cs/netstandard2.1/MimeTypes.cs.pp": {
-            "buildAction": "Compile",
-            "codeLanguage": "cs",
-            "copyToOutput": false,
-            "ppOutputPath": "MimeTypes.cs"
-          }
-        }
-      },
       "Nancy/2.0.0": {
         "type": "package",
         "dependencies": {
@@ -949,7 +930,7 @@
           "lib/netstandard2.0/RestSharp.dll": {}
         }
       },
-      "Rg.Plugins.Popup/2.0.0.2": {
+      "Rg.Plugins.Popup/2.0.0.3": {
         "type": "package",
         "dependencies": {
           "Xamarin.Forms": "4.5.0.530"
@@ -1185,7 +1166,7 @@
           "lib/Xamarin.iOS10/Plugin.Settings.dll": {}
         }
       },
-      "Xamarin.Essentials/1.5.1": {
+      "Xamarin.Essentials/1.5.3.2": {
         "type": "package",
         "frameworkAssemblies": [
           "OpenTK-1.0",
@@ -1227,7 +1208,7 @@
           "lib/Xamarin.iOS10/FFImageLoading.Forms.dll": {}
         }
       },
-      "Xamarin.Forms/4.5.0.617": {
+      "Xamarin.Forms/4.7.0.968": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Xamarin.Forms.Core.dll": {},
@@ -1348,8 +1329,11 @@
           "buildTransitive/Xamarin.Forms.targets": {}
         }
       },
-      "Xamarin.Plugin.FilePicker/2.1.34": {
+      "Xamarin.Plugin.FilePicker/2.1.41": {
         "type": "package",
+        "frameworkAssemblies": [
+          "System.Drawing.Common.dll"
+        ],
         "compile": {
           "lib/xamarinios10/Plugin.FilePicker.dll": {}
         },
@@ -1563,17 +1547,6 @@
           "lib/netstandard1.0/_._": {}
         }
       },
-      "MimeTypes/2.0.1": {
-        "type": "package",
-        "contentFiles": {
-          "contentFiles/cs/netstandard2.1/MimeTypes.cs.pp": {
-            "buildAction": "Compile",
-            "codeLanguage": "cs",
-            "copyToOutput": false,
-            "ppOutputPath": "MimeTypes.cs"
-          }
-        }
-      },
       "Nancy/2.0.0": {
         "type": "package",
         "dependencies": {
@@ -1625,7 +1598,7 @@
           "lib/netstandard2.0/RestSharp.dll": {}
         }
       },
-      "Rg.Plugins.Popup/2.0.0.2": {
+      "Rg.Plugins.Popup/2.0.0.3": {
         "type": "package",
         "dependencies": {
           "Xamarin.Forms": "4.5.0.530"
@@ -1861,7 +1834,7 @@
           "lib/Xamarin.iOS10/Plugin.Settings.dll": {}
         }
       },
-      "Xamarin.Essentials/1.5.1": {
+      "Xamarin.Essentials/1.5.3.2": {
         "type": "package",
         "frameworkAssemblies": [
           "OpenTK-1.0",
@@ -1903,7 +1876,7 @@
           "lib/Xamarin.iOS10/FFImageLoading.Forms.dll": {}
         }
       },
-      "Xamarin.Forms/4.5.0.617": {
+      "Xamarin.Forms/4.7.0.968": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Xamarin.Forms.Core.dll": {},
@@ -2024,8 +1997,11 @@
           "buildTransitive/Xamarin.Forms.targets": {}
         }
       },
-      "Xamarin.Plugin.FilePicker/2.1.34": {
+      "Xamarin.Plugin.FilePicker/2.1.41": {
         "type": "package",
+        "frameworkAssemblies": [
+          "System.Drawing.Common.dll"
+        ],
         "compile": {
           "lib/xamarinios10/Plugin.FilePicker.dll": {}
         },
@@ -2239,17 +2215,6 @@
           "lib/netstandard1.0/_._": {}
         }
       },
-      "MimeTypes/2.0.1": {
-        "type": "package",
-        "contentFiles": {
-          "contentFiles/cs/netstandard2.1/MimeTypes.cs.pp": {
-            "buildAction": "Compile",
-            "codeLanguage": "cs",
-            "copyToOutput": false,
-            "ppOutputPath": "MimeTypes.cs"
-          }
-        }
-      },
       "Nancy/2.0.0": {
         "type": "package",
         "dependencies": {
@@ -2301,7 +2266,7 @@
           "lib/netstandard2.0/RestSharp.dll": {}
         }
       },
-      "Rg.Plugins.Popup/2.0.0.2": {
+      "Rg.Plugins.Popup/2.0.0.3": {
         "type": "package",
         "dependencies": {
           "Xamarin.Forms": "4.5.0.530"
@@ -2537,7 +2502,7 @@
           "lib/Xamarin.iOS10/Plugin.Settings.dll": {}
         }
       },
-      "Xamarin.Essentials/1.5.1": {
+      "Xamarin.Essentials/1.5.3.2": {
         "type": "package",
         "frameworkAssemblies": [
           "OpenTK-1.0",
@@ -2579,7 +2544,7 @@
           "lib/Xamarin.iOS10/FFImageLoading.Forms.dll": {}
         }
       },
-      "Xamarin.Forms/4.5.0.617": {
+      "Xamarin.Forms/4.7.0.968": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Xamarin.Forms.Core.dll": {},
@@ -2700,8 +2665,11 @@
           "buildTransitive/Xamarin.Forms.targets": {}
         }
       },
-      "Xamarin.Plugin.FilePicker/2.1.34": {
+      "Xamarin.Plugin.FilePicker/2.1.41": {
         "type": "package",
+        "frameworkAssemblies": [
+          "System.Drawing.Common.dll"
+        ],
         "compile": {
           "lib/xamarinios10/Plugin.FilePicker.dll": {}
         },
@@ -3035,21 +3003,6 @@
         "runtime.json"
       ]
     },
-    "MimeTypes/2.0.1": {
-      "sha512": "wN2eEA/5uSjmpTw9sfoAunl/IYW4yPMBGcqN7gcn7BhyVcIc782Yntj6kZYvDTo44FnDseIY7EpCwQXnbLfDpw==",
-      "type": "package",
-      "path": "mimetypes/2.0.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "contentFiles/cs/any/MimeTypes.NullableAttributes.cs.pp",
-        "contentFiles/cs/netcoreapp3.0/MimeTypes.cs.pp",
-        "contentFiles/cs/netstandard2.1/MimeTypes.cs.pp",
-        "images/nuget-icon.png",
-        "mimetypes.2.0.1.nupkg.sha512",
-        "mimetypes.nuspec"
-      ]
-    },
     "Nancy/2.0.0": {
       "sha512": "z2GMxQFbDbxqzCfkomyeqLNXW4G2NdvU727HBaP+QQ0/hm1jw9PTqHyzoB2M9aKeC5AKYmQmt9GvwR5CHL/ReA==",
       "type": "package",
@@ -3241,10 +3194,10 @@
         "restsharp.png"
       ]
     },
-    "Rg.Plugins.Popup/2.0.0.2": {
-      "sha512": "UExzgLevcih/oDokftGPKRqaefS65ByAOeaFzfr1Qy2opeyv9+eR0hDWotGb0hPI5JFHD7NJv5aK6NbTM3WuLw==",
+    "Rg.Plugins.Popup/2.0.0.3": {
+      "sha512": "/lrKxxsdaF9T+YEnVDaUMj0angdRyvpngSmX8veY/QYhSjT4x3guJTsL8O8D4egDf7MI5McnmMAsst0tkN1LOA==",
       "type": "package",
-      "path": "rg.plugins.popup/2.0.0.2",
+      "path": "rg.plugins.popup/2.0.0.3",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -3285,7 +3238,7 @@
         "lib/xamarinwatchos10/Rg.Plugins.Popup.pdb",
         "lib/xamarinwatchos10/Rg.Plugins.Popup.xml",
         "readme.txt",
-        "rg.plugins.popup.2.0.0.2.nupkg.sha512",
+        "rg.plugins.popup.2.0.0.3.nupkg.sha512",
         "rg.plugins.popup.nuspec"
       ]
     },
@@ -4536,10 +4489,10 @@
         "xam.plugins.settings.nuspec"
       ]
     },
-    "Xamarin.Essentials/1.5.1": {
-      "sha512": "XEKAp7BXfZkTGbMqySXtuhwxb06ULjkJNQ8p44e8amOPm4m4VTVV92F13ov0a8NFNU+6JFm98510QK9Q/HBD5A==",
+    "Xamarin.Essentials/1.5.3.2": {
+      "sha512": "BSLgDJUOPFRwTpQaftM+s4qb/MsTjrqXulEYDOcK6KF3i0Orf75zo3RwRfqnQ8WfpoEFxW/v0jgcPWCvOMgHxg==",
       "type": "package",
-      "path": "xamarin.essentials/1.5.1",
+      "path": "xamarin.essentials/1.5.3.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -4580,7 +4533,7 @@
         "lib/xamarinwatchos10/Xamarin.Essentials.pdb",
         "lib/xamarinwatchos10/Xamarin.Essentials.xml",
         "readme.txt",
-        "xamarin.essentials.1.5.1.nupkg.sha512",
+        "xamarin.essentials.1.5.3.2.nupkg.sha512",
         "xamarin.essentials.nuspec"
       ]
     },
@@ -4694,13 +4647,14 @@
         "xamarin.ffimageloading.forms.nuspec"
       ]
     },
-    "Xamarin.Forms/4.5.0.617": {
-      "sha512": "tB/h7bHEylOgNT+521SRnbmO+LCe5R3lPboD/icCMpa+FdjmxhZQ7+fIIPFDbhY2dqYetGRnAeJWXVx4NLbmAw==",
+    "Xamarin.Forms/4.7.0.968": {
+      "sha512": "VvHI/VXyDZcCLYXywh9A8gVtldD8XCLR8hujZVdlKGh87HIXAUW0b+uLFsvyMB8COwNce0w56ycgD/tXtLgFRA==",
       "type": "package",
-      "path": "xamarin.forms/4.5.0.617",
+      "path": "xamarin.forms/4.7.0.968",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
+        "Assets/xamarin_128x128.png",
         "build/MonoAndroid10/proguard.cfg",
         "build/XCODE10/Xamarin.Forms.Platform.iOS.dll",
         "build/XCODE10/Xamarin.Forms.Platform.iOS.pdb",
@@ -4960,8 +4914,8 @@
         "lib/uap10.0.14393/Xamarin.Forms.Platform.UAP/Microsoft.UI.Xaml/Themes/generic.xaml",
         "lib/uap10.0.14393/Xamarin.Forms.Platform.UAP/PageControlStyle.xaml",
         "lib/uap10.0.14393/Xamarin.Forms.Platform.UAP/PickerStyle.xaml",
+        "lib/uap10.0.14393/Xamarin.Forms.Platform.UAP/PromptDialog.xaml",
         "lib/uap10.0.14393/Xamarin.Forms.Platform.UAP/Resources.xaml",
-        "lib/uap10.0.14393/Xamarin.Forms.Platform.UAP/Shell/ShellStyles.xaml",
         "lib/uap10.0.14393/Xamarin.Forms.Platform.UAP/SliderStyle.xaml",
         "lib/uap10.0.14393/Xamarin.Forms.Platform.UAP/StepperControl.xaml",
         "lib/uap10.0.14393/Xamarin.Forms.Platform.UAP/TabbedPageStyle.xaml",
@@ -4992,6 +4946,7 @@
         "lib/uap10.0.16299/Xamarin.Forms.Platform.UAP/Microsoft.UI.Xaml/Themes/generic.xaml",
         "lib/uap10.0.16299/Xamarin.Forms.Platform.UAP/PageControlStyle.xaml",
         "lib/uap10.0.16299/Xamarin.Forms.Platform.UAP/PickerStyle.xaml",
+        "lib/uap10.0.16299/Xamarin.Forms.Platform.UAP/PromptDialog.xaml",
         "lib/uap10.0.16299/Xamarin.Forms.Platform.UAP/Resources.xaml",
         "lib/uap10.0.16299/Xamarin.Forms.Platform.UAP/Shell/ShellStyles.xaml",
         "lib/uap10.0.16299/Xamarin.Forms.Platform.UAP/SliderStyle.xaml",
@@ -5002,17 +4957,20 @@
         "lib/uap10.0.16299/Xamarin.Forms.Xaml.dll",
         "lib/uap10.0.16299/Xamarin.Forms.Xaml.pdb",
         "lib/uap10.0.16299/Xamarin.Forms.Xaml.xml",
-        "xamarin.forms.4.5.0.617.nupkg.sha512",
+        "xamarin.forms.4.7.0.968.nupkg.sha512",
         "xamarin.forms.nuspec"
       ]
     },
-    "Xamarin.Plugin.FilePicker/2.1.34": {
-      "sha512": "y1SL60eEECBYqRmJ0E94B9W6+Jl4sZeLlGn4WtTrcKRJv9CGHPH459L1EZXrTlhq5muCNIInfst6FdXLiRqb2A==",
+    "Xamarin.Plugin.FilePicker/2.1.41": {
+      "sha512": "SFJp7AEq6YFZ72mw+CxGMQcMzBYhA0b5NkhSyE5b+prCiNli7bKI5pWOT+mbyFng0En8LfeY0dEbedpkecQFQw==",
       "type": "package",
-      "path": "xamarin.plugin.filepicker/2.1.34",
+      "path": "xamarin.plugin.filepicker/2.1.41",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
+        "lib/monoandroid10.0/Plugin.FilePicker.dll",
+        "lib/monoandroid10.0/Plugin.FilePicker.pdb",
+        "lib/monoandroid10.0/Plugin.FilePicker.xml",
         "lib/monoandroid80/Plugin.FilePicker.dll",
         "lib/monoandroid80/Plugin.FilePicker.pdb",
         "lib/monoandroid80/Plugin.FilePicker.xml",
@@ -5041,7 +4999,7 @@
         "lib/xamarinmac20/Plugin.FilePicker.dll",
         "lib/xamarinmac20/Plugin.FilePicker.pdb",
         "lib/xamarinmac20/Plugin.FilePicker.xml",
-        "xamarin.plugin.filepicker.2.1.34.nupkg.sha512",
+        "xamarin.plugin.filepicker.2.1.41.nupkg.sha512",
         "xamarin.plugin.filepicker.nuspec"
       ]
     },
@@ -5053,14 +5011,13 @@
   },
   "projectFileDependencyGroups": {
     "Xamarin.iOS,Version=v1.0": [
-      "MimeTypes >= 2.0.1",
       "NETStandard.Library >= 2.0.3",
       "REM >= 1.1.0",
-      "Rg.Plugins.Popup >= 2.0.0.2",
+      "Rg.Plugins.Popup >= 2.0.0.3",
       "Xam.Plugin.FilePicker >= 1.1.0",
-      "Xamarin.Essentials >= 1.5.1",
-      "Xamarin.Forms >= 4.5.0.617",
-      "Xamarin.Plugin.FilePicker >= 2.1.34"
+      "Xamarin.Essentials >= 1.5.3.2",
+      "Xamarin.Forms >= 4.7.0.968",
+      "Xamarin.Plugin.FilePicker >= 2.1.41"
     ]
   },
   "packageFolders": {
@@ -5105,19 +5062,13 @@
     "frameworks": {
       "xamarinios10": {
         "dependencies": {
-          "MimeTypes": {
-            "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-            "suppressParent": "All",
-            "target": "Package",
-            "version": "[2.0.1, )"
-          },
           "NETStandard.Library": {
             "target": "Package",
             "version": "[2.0.3, )"
           },
           "Rg.Plugins.Popup": {
             "target": "Package",
-            "version": "[2.0.0.2, )"
+            "version": "[2.0.0.3, )"
           },
           "Xam.Plugin.FilePicker": {
             "target": "Package",
@@ -5125,15 +5076,15 @@
           },
           "Xamarin.Essentials": {
             "target": "Package",
-            "version": "[1.5.1, )"
+            "version": "[1.5.3.2, )"
           },
           "Xamarin.Forms": {
             "target": "Package",
-            "version": "[4.5.0.617, )"
+            "version": "[4.7.0.968, )"
           },
           "Xamarin.Plugin.FilePicker": {
             "target": "Package",
-            "version": "[2.1.34, )"
+            "version": "[2.1.41, )"
           }
         }
       }
@@ -5149,59 +5100,5 @@
         "#import": []
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1605",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Обнаружено понижение версии пакета Rg.Plugins.Popup с 2.0.0.3 на 2.0.0.2. Чтобы выбрать другую версию, создайте ссылку на пакет напрямую из проекта. \r\n RTMobile.iOS -> REM -> Rg.Plugins.Popup (>= 2.0.0.3) \r\n RTMobile.iOS -> Rg.Plugins.Popup (>= 2.0.0.2)",
-      "libraryId": "Rg.Plugins.Popup",
-      "targetGraphs": [
-        "Xamarin.iOS,Version=v1.0",
-        "Xamarin.iOS,Version=v1.0/win",
-        "Xamarin.iOS,Version=v1.0/win-x64",
-        "Xamarin.iOS,Version=v1.0/win-x86"
-      ]
-    },
-    {
-      "code": "NU1605",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Обнаружено понижение версии пакета Xamarin.Essentials с 1.5.3.2 на 1.5.1. Чтобы выбрать другую версию, создайте ссылку на пакет напрямую из проекта. \r\n RTMobile.iOS -> REM -> Xamarin.Essentials (>= 1.5.3.2) \r\n RTMobile.iOS -> Xamarin.Essentials (>= 1.5.1)",
-      "libraryId": "Xamarin.Essentials",
-      "targetGraphs": [
-        "Xamarin.iOS,Version=v1.0",
-        "Xamarin.iOS,Version=v1.0/win",
-        "Xamarin.iOS,Version=v1.0/win-x64",
-        "Xamarin.iOS,Version=v1.0/win-x86"
-      ]
-    },
-    {
-      "code": "NU1605",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Обнаружено понижение версии пакета Xamarin.Plugin.FilePicker с 2.1.41 на 2.1.34. Чтобы выбрать другую версию, создайте ссылку на пакет напрямую из проекта. \r\n RTMobile.iOS -> REM -> Xamarin.Plugin.FilePicker (>= 2.1.41) \r\n RTMobile.iOS -> Xamarin.Plugin.FilePicker (>= 2.1.34)",
-      "libraryId": "Xamarin.Plugin.FilePicker",
-      "targetGraphs": [
-        "Xamarin.iOS,Version=v1.0",
-        "Xamarin.iOS,Version=v1.0/win",
-        "Xamarin.iOS,Version=v1.0/win-x64",
-        "Xamarin.iOS,Version=v1.0/win-x86"
-      ]
-    },
-    {
-      "code": "NU1605",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Обнаружено понижение версии пакета Xamarin.Forms с 4.7.0.968 на 4.5.0.617. Чтобы выбрать другую версию, создайте ссылку на пакет напрямую из проекта. \r\n RTMobile.iOS -> REM -> Xamarin.Forms (>= 4.7.0.968) \r\n RTMobile.iOS -> Xamarin.Forms (>= 4.5.0.617)",
-      "libraryId": "Xamarin.Forms",
-      "targetGraphs": [
-        "Xamarin.iOS,Version=v1.0",
-        "Xamarin.iOS,Version=v1.0/win",
-        "Xamarin.iOS,Version=v1.0/win-x64",
-        "Xamarin.iOS,Version=v1.0/win-x86"
-      ]
-    }
-  ]
+  }
 }
