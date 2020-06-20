@@ -16,6 +16,7 @@ namespace RTMobile.insight
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class GeneralObjectInsight : ContentPage
 	{
+		public ObjectEntry selectedField { get; set; }
 		public ObservableCollection<jiraData.Attribute> InsightsInfo { get; set; }
 		public ObservableCollection<jiraData.Attribute> InsightsDate { get; set; }
 		public GeneralObjectInsight(ObjectEntry selectedField)
@@ -25,7 +26,9 @@ namespace RTMobile.insight
 			{
 				InsightGeneralOptions(selectedField);
 				Title = selectedField.name;
+				this.selectedField = selectedField;
 			}
+			
 			this.BindingContext = this;
 		}
 
@@ -85,6 +88,11 @@ namespace RTMobile.insight
 		private void ToolbarItem_Clicked_1(object sender, EventArgs e)
 		{
 
+		}
+		
+		private void ToolbarItem_Clicked_QR(object sender, System.EventArgs e)
+		{
+			Navigation.PushAsync(new QRgen(selectedField));
 		}
 		void ImageButton_Clicked(System.Object sender, System.EventArgs e)
 		{

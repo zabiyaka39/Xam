@@ -31,6 +31,8 @@
           "Xamarin.FFImageLoading.Forms": "2.4.11.982",
           "Xamarin.Forms": "4.6.0.800",
           "Xamarin.Plugin.FilePicker": "2.1.41",
+          "ZXing.Net.Mobile": "2.4.1",
+          "ZXing.Net.Mobile.Forms": "2.4.1",
           "Mono.Android": "0.0.0.0",
           "Windows.Foundation.UniversalApiContract": "7.0.0.0",
           "Xamarin.iOS": "0.0.0.0"
@@ -1187,6 +1189,34 @@
           }
         }
       },
+      "ZXing.Net.Mobile/2.4.1": {
+        "runtime": {
+          "lib/netstandard1.0/ZXing.Net.Mobile.Core.dll": {
+            "assemblyVersion": "2.4.1.0",
+            "fileVersion": "2.4.1.0"
+          },
+          "lib/netstandard1.0/ZXingNetMobile.dll": {
+            "assemblyVersion": "2.4.1.0",
+            "fileVersion": "2.4.1.0"
+          },
+          "lib/netstandard1.0/zxing.portable.dll": {
+            "assemblyVersion": "0.16.2.0",
+            "fileVersion": "0.16.2.0"
+          }
+        }
+      },
+      "ZXing.Net.Mobile.Forms/2.4.1": {
+        "dependencies": {
+          "Xamarin.Forms": "4.6.0.800",
+          "ZXing.Net.Mobile": "2.4.1"
+        },
+        "runtime": {
+          "lib/netstandard1.0/ZXing.Net.Mobile.Forms.dll": {
+            "assemblyVersion": "2.4.1.0",
+            "fileVersion": "2.4.1.0"
+          }
+        }
+      },
       "Mono.Android/0.0.0.0": {
         "runtime": {
           "Mono.Android.dll": {
@@ -1967,6 +1997,20 @@
       "sha512": "sha512-SFJp7AEq6YFZ72mw+CxGMQcMzBYhA0b5NkhSyE5b+prCiNli7bKI5pWOT+mbyFng0En8LfeY0dEbedpkecQFQw==",
       "path": "xamarin.plugin.filepicker/2.1.41",
       "hashPath": "xamarin.plugin.filepicker.2.1.41.nupkg.sha512"
+    },
+    "ZXing.Net.Mobile/2.4.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-iCL2WcqOyUnC1iFFdzXijk0EXfoLMDqW88MyhoTZigSyhJZM2C5hKgSZVyfx9E35tgkde/IZwHkk8cVDnbQlYg==",
+      "path": "zxing.net.mobile/2.4.1",
+      "hashPath": "zxing.net.mobile.2.4.1.nupkg.sha512"
+    },
+    "ZXing.Net.Mobile.Forms/2.4.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-7z+MfL8TbfE36s1GGvrnlkhLUOV5dgdn1gYhUb3GU2W6YXzpfF39k6EqkmFsyNm1O07evTaKFgh7UTOqcWub3g==",
+      "path": "zxing.net.mobile.forms/2.4.1",
+      "hashPath": "zxing.net.mobile.forms.2.4.1.nupkg.sha512"
     },
     "Mono.Android/0.0.0.0": {
       "type": "reference",

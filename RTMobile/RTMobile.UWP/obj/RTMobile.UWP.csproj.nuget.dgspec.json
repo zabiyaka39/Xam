@@ -76,6 +76,14 @@
             "Xamarin.Plugin.FilePicker": {
               "target": "Package",
               "version": "[2.1.34, )"
+            },
+            "ZXing.Net.Mobile": {
+              "target": "Package",
+              "version": "[2.4.1, )"
+            },
+            "ZXing.Net.Mobile.Forms": {
+              "target": "Package",
+              "version": "[2.4.1, )"
             }
           },
           "imports": [
@@ -240,6 +248,14 @@
             "Xamarin.Plugin.FilePicker": {
               "target": "Package",
               "version": "[2.1.41, )"
+            },
+            "ZXing.Net.Mobile": {
+              "target": "Package",
+              "version": "[2.4.1, )"
+            },
+            "ZXing.Net.Mobile.Forms": {
+              "target": "Package",
+              "version": "[2.4.1, )"
             }
           },
           "imports": [

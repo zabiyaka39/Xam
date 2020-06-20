@@ -8,6 +8,7 @@ public class MonoPackageManager_Resources {
 		"CarouselView.FormsPlugin.Android.dll",
 		"Com.Android.DeskClock.dll",
 		"Com.ViewPagerIndicator.dll",
+		"FastAndroidCamera.dll",
 		"FFImageLoading.dll",
 		"FFImageLoading.Forms.dll",
 		"FFImageLoading.Forms.Platform.dll",
@@ -81,6 +82,11 @@ public class MonoPackageManager_Resources {
 		"Xamarin.Forms.Platform.Android.dll",
 		"Xamarin.Forms.Platform.dll",
 		"Xamarin.Forms.Xaml.dll",
+		"ZXing.Net.Mobile.Core.dll",
+		"ZXing.Net.Mobile.Forms.Android.dll",
+		"ZXing.Net.Mobile.Forms.dll",
+		"zxing.portable.dll",
+		"ZXingNetMobile.dll",
 	};
 	public static String[] Dependencies = new String[]{
 	};
