@@ -43,7 +43,7 @@ namespace RTMobile.Droid
 				HttpClient = httpClient,
 				VerboseLogging = true				
 			});
-
+			ZXing.Net.Mobile.Forms.Android.Platform.Init();
 
 			ToolbarResource = Resource.Layout.Toolbar;
 			TabLayoutResource = Resource.Layout.Tabbar;
@@ -57,11 +57,14 @@ namespace RTMobile.Droid
 			global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
 			LoadApplication(new App());
 			Xamarin.Essentials.Platform.Init(this, savedInstanceState);
+			global::ZXing.Net.Mobile.Forms.Android.Platform.Init();
 		}
+
+
 		public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
 		{
 			Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
-
+			global::ZXing.Net.Mobile.Android.PermissionsHandler.OnRequestPermissionsResult(requestCode, permissions, grantResults);
 			base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
 		}
 		public override void OnBackPressed()
