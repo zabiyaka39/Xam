@@ -18,6 +18,7 @@
           "NETStandard.Library": "2.0.3",
           "Nancy": "2.0.0",
           "Newtonsoft.Json": "12.0.3",
+          "Plugin.Fingerprint": "2.1.1",
           "RestSharp": "106.11.4",
           "Rg.Plugins.Popup": "2.0.0.3",
           "System.IdentityModel.Tokens.Jwt": "6.6.0",
@@ -30,7 +31,11 @@
           "Xamarin.FFImageLoading.Forms": "2.4.11.982",
           "Xamarin.Forms": "4.7.0.968",
           "Xamarin.Plugin.FilePicker": "2.1.41",
-          "Windows.Foundation.UniversalApiContract": "7.0.0.0"
+          "ZXing.Net.Mobile": "2.4.1",
+          "ZXing.Net.Mobile.Forms": "2.4.1",
+          "Mono.Android": "0.0.0.0",
+          "Windows.Foundation.UniversalApiContract": "7.0.0.0",
+          "Xamarin.iOS": "0.0.0.0"
         },
         "runtime": {
           "RTMobile.dll": {}
@@ -208,6 +213,14 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {
             "assemblyVersion": "12.0.0.0",
             "fileVersion": "12.0.3.23909"
+          }
+        }
+      },
+      "Plugin.Fingerprint/2.1.1": {
+        "runtime": {
+          "lib/netstandard2.0/Plugin.Fingerprint.dll": {
+            "assemblyVersion": "2.1.1.0",
+            "fileVersion": "2.1.1.0"
           }
         }
       },
@@ -1172,11 +1185,55 @@
           }
         }
       },
+      "ZXing.Net.Mobile/2.4.1": {
+        "runtime": {
+          "lib/netstandard1.0/ZXing.Net.Mobile.Core.dll": {
+            "assemblyVersion": "2.4.1.0",
+            "fileVersion": "2.4.1.0"
+          },
+          "lib/netstandard1.0/ZXingNetMobile.dll": {
+            "assemblyVersion": "2.4.1.0",
+            "fileVersion": "2.4.1.0"
+          },
+          "lib/netstandard1.0/zxing.portable.dll": {
+            "assemblyVersion": "0.16.2.0",
+            "fileVersion": "0.16.2.0"
+          }
+        }
+      },
+      "ZXing.Net.Mobile.Forms/2.4.1": {
+        "dependencies": {
+          "Xamarin.Forms": "4.7.0.968",
+          "ZXing.Net.Mobile": "2.4.1"
+        },
+        "runtime": {
+          "lib/netstandard1.0/ZXing.Net.Mobile.Forms.dll": {
+            "assemblyVersion": "2.4.1.0",
+            "fileVersion": "2.4.1.0"
+          }
+        }
+      },
+      "Mono.Android/0.0.0.0": {
+        "runtime": {
+          "Mono.Android.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
       "Windows.Foundation.UniversalApiContract/7.0.0.0": {
         "runtime": {
           "Windows.Foundation.UniversalApiContract.winmd": {
             "assemblyVersion": "7.0.0.0",
             "fileVersion": "10.0.17746.1000"
+          }
+        }
+      },
+      "Xamarin.iOS/0.0.0.0": {
+        "runtime": {
+          "Xamarin.iOS.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
           }
         }
       }
@@ -1320,6 +1377,13 @@
       "sha512": "sha512-6mgjfnRB4jKMlzHSl+VD+oUc1IebOZabkbyWj2RiTgWwYPPuaK1H97G1sHqGwPlS5npiF5Q0OrxN1wni2n5QWg==",
       "path": "newtonsoft.json/12.0.3",
       "hashPath": "newtonsoft.json.12.0.3.nupkg.sha512"
+    },
+    "Plugin.Fingerprint/2.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Hg4C6OoTy3Emhb2HefaTmaq0nk1SKDe2q8oMUbovrNMQFrkKV1orr+pcDnoVWeRQVygMvWl1tXJMb2XSuFO4jg==",
+      "path": "plugin.fingerprint/2.1.1",
+      "hashPath": "plugin.fingerprint.2.1.1.nupkg.sha512"
     },
     "RestSharp/106.11.4": {
       "type": "package",
@@ -1902,7 +1966,31 @@
       "path": "xamarin.plugin.filepicker/2.1.41",
       "hashPath": "xamarin.plugin.filepicker.2.1.41.nupkg.sha512"
     },
+    "ZXing.Net.Mobile/2.4.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-iCL2WcqOyUnC1iFFdzXijk0EXfoLMDqW88MyhoTZigSyhJZM2C5hKgSZVyfx9E35tgkde/IZwHkk8cVDnbQlYg==",
+      "path": "zxing.net.mobile/2.4.1",
+      "hashPath": "zxing.net.mobile.2.4.1.nupkg.sha512"
+    },
+    "ZXing.Net.Mobile.Forms/2.4.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-7z+MfL8TbfE36s1GGvrnlkhLUOV5dgdn1gYhUb3GU2W6YXzpfF39k6EqkmFsyNm1O07evTaKFgh7UTOqcWub3g==",
+      "path": "zxing.net.mobile.forms/2.4.1",
+      "hashPath": "zxing.net.mobile.forms.2.4.1.nupkg.sha512"
+    },
+    "Mono.Android/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
     "Windows.Foundation.UniversalApiContract/7.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Xamarin.iOS/0.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""

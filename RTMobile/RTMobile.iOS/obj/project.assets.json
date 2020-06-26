@@ -217,6 +217,18 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
+      "Plugin.Fingerprint/2.1.1": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Drawing.Common.dll"
+        ],
+        "compile": {
+          "lib/xamarinios10/Plugin.Fingerprint.dll": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/Plugin.Fingerprint.dll": {}
+        }
+      },
       "RestSharp/106.11.4": {
         "type": "package",
         "compile": {
@@ -673,6 +685,34 @@
           "lib/xamarinios10/Plugin.FilePicker.dll": {}
         }
       },
+      "ZXing.Net.Mobile/2.4.1": {
+        "type": "package",
+        "compile": {
+          "lib/Xamarin.iOS10/ZXing.Net.Mobile.Core.dll": {},
+          "lib/Xamarin.iOS10/ZXingNetMobile.dll": {},
+          "lib/Xamarin.iOS10/zxing.portable.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/ZXing.Net.Mobile.Core.dll": {},
+          "lib/Xamarin.iOS10/ZXingNetMobile.dll": {},
+          "lib/Xamarin.iOS10/zxing.portable.dll": {}
+        }
+      },
+      "ZXing.Net.Mobile.Forms/2.4.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "2.5.0.122203",
+          "ZXing.Net.Mobile": "2.4.1"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/ZXing.Net.Mobile.Forms.dll": {},
+          "lib/Xamarin.iOS10/ZXing.Net.Mobile.Forms.iOS.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/ZXing.Net.Mobile.Forms.dll": {},
+          "lib/Xamarin.iOS10/ZXing.Net.Mobile.Forms.iOS.dll": {}
+        }
+      },
       "REM/1.1.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -684,6 +724,7 @@
           "Microsoft.CSharp": "4.7.0",
           "Nancy": "2.0.0",
           "Newtonsoft.Json": "12.0.3",
+          "Plugin.Fingerprint": "2.1.1",
           "RestSharp": "106.11.4",
           "Rg.Plugins.Popup": "2.0.0.3",
           "System.IdentityModel.Tokens.Jwt": "6.6.0",
@@ -695,7 +736,9 @@
           "Xamarin.FFImageLoading": "2.4.11.982",
           "Xamarin.FFImageLoading.Forms": "2.4.11.982",
           "Xamarin.Forms": "4.7.0.968",
-          "Xamarin.Plugin.FilePicker": "2.1.41"
+          "Xamarin.Plugin.FilePicker": "2.1.41",
+          "ZXing.Net.Mobile": "2.4.1",
+          "ZXing.Net.Mobile.Forms": "2.4.1"
         },
         "compile": {
           "bin/placeholder/REM.dll": {}
@@ -921,6 +964,18 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
+      "Plugin.Fingerprint/2.1.1": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Drawing.Common.dll"
+        ],
+        "compile": {
+          "lib/xamarinios10/Plugin.Fingerprint.dll": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/Plugin.Fingerprint.dll": {}
+        }
+      },
       "RestSharp/106.11.4": {
         "type": "package",
         "compile": {
@@ -1341,6 +1396,34 @@
           "lib/xamarinios10/Plugin.FilePicker.dll": {}
         }
       },
+      "ZXing.Net.Mobile/2.4.1": {
+        "type": "package",
+        "compile": {
+          "lib/Xamarin.iOS10/ZXing.Net.Mobile.Core.dll": {},
+          "lib/Xamarin.iOS10/ZXingNetMobile.dll": {},
+          "lib/Xamarin.iOS10/zxing.portable.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/ZXing.Net.Mobile.Core.dll": {},
+          "lib/Xamarin.iOS10/ZXingNetMobile.dll": {},
+          "lib/Xamarin.iOS10/zxing.portable.dll": {}
+        }
+      },
+      "ZXing.Net.Mobile.Forms/2.4.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "2.5.0.122203",
+          "ZXing.Net.Mobile": "2.4.1"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/ZXing.Net.Mobile.Forms.dll": {},
+          "lib/Xamarin.iOS10/ZXing.Net.Mobile.Forms.iOS.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/ZXing.Net.Mobile.Forms.dll": {},
+          "lib/Xamarin.iOS10/ZXing.Net.Mobile.Forms.iOS.dll": {}
+        }
+      },
       "REM/1.1.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -1352,6 +1435,7 @@
           "Microsoft.CSharp": "4.7.0",
           "Nancy": "2.0.0",
           "Newtonsoft.Json": "12.0.3",
+          "Plugin.Fingerprint": "2.1.1",
           "RestSharp": "106.11.4",
           "Rg.Plugins.Popup": "2.0.0.3",
           "System.IdentityModel.Tokens.Jwt": "6.6.0",
@@ -1363,7 +1447,9 @@
           "Xamarin.FFImageLoading": "2.4.11.982",
           "Xamarin.FFImageLoading.Forms": "2.4.11.982",
           "Xamarin.Forms": "4.7.0.968",
-          "Xamarin.Plugin.FilePicker": "2.1.41"
+          "Xamarin.Plugin.FilePicker": "2.1.41",
+          "ZXing.Net.Mobile": "2.4.1",
+          "ZXing.Net.Mobile.Forms": "2.4.1"
         },
         "compile": {
           "bin/placeholder/REM.dll": {}
@@ -1589,6 +1675,18 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
+      "Plugin.Fingerprint/2.1.1": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Drawing.Common.dll"
+        ],
+        "compile": {
+          "lib/xamarinios10/Plugin.Fingerprint.dll": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/Plugin.Fingerprint.dll": {}
+        }
+      },
       "RestSharp/106.11.4": {
         "type": "package",
         "compile": {
@@ -2009,6 +2107,34 @@
           "lib/xamarinios10/Plugin.FilePicker.dll": {}
         }
       },
+      "ZXing.Net.Mobile/2.4.1": {
+        "type": "package",
+        "compile": {
+          "lib/Xamarin.iOS10/ZXing.Net.Mobile.Core.dll": {},
+          "lib/Xamarin.iOS10/ZXingNetMobile.dll": {},
+          "lib/Xamarin.iOS10/zxing.portable.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/ZXing.Net.Mobile.Core.dll": {},
+          "lib/Xamarin.iOS10/ZXingNetMobile.dll": {},
+          "lib/Xamarin.iOS10/zxing.portable.dll": {}
+        }
+      },
+      "ZXing.Net.Mobile.Forms/2.4.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "2.5.0.122203",
+          "ZXing.Net.Mobile": "2.4.1"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/ZXing.Net.Mobile.Forms.dll": {},
+          "lib/Xamarin.iOS10/ZXing.Net.Mobile.Forms.iOS.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/ZXing.Net.Mobile.Forms.dll": {},
+          "lib/Xamarin.iOS10/ZXing.Net.Mobile.Forms.iOS.dll": {}
+        }
+      },
       "REM/1.1.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -2020,6 +2146,7 @@
           "Microsoft.CSharp": "4.7.0",
           "Nancy": "2.0.0",
           "Newtonsoft.Json": "12.0.3",
+          "Plugin.Fingerprint": "2.1.1",
           "RestSharp": "106.11.4",
           "Rg.Plugins.Popup": "2.0.0.3",
           "System.IdentityModel.Tokens.Jwt": "6.6.0",
@@ -2031,7 +2158,9 @@
           "Xamarin.FFImageLoading": "2.4.11.982",
           "Xamarin.FFImageLoading.Forms": "2.4.11.982",
           "Xamarin.Forms": "4.7.0.968",
-          "Xamarin.Plugin.FilePicker": "2.1.41"
+          "Xamarin.Plugin.FilePicker": "2.1.41",
+          "ZXing.Net.Mobile": "2.4.1",
+          "ZXing.Net.Mobile.Forms": "2.4.1"
         },
         "compile": {
           "bin/placeholder/REM.dll": {}
@@ -2257,6 +2386,18 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
+      "Plugin.Fingerprint/2.1.1": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Drawing.Common.dll"
+        ],
+        "compile": {
+          "lib/xamarinios10/Plugin.Fingerprint.dll": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/Plugin.Fingerprint.dll": {}
+        }
+      },
       "RestSharp/106.11.4": {
         "type": "package",
         "compile": {
@@ -2677,6 +2818,34 @@
           "lib/xamarinios10/Plugin.FilePicker.dll": {}
         }
       },
+      "ZXing.Net.Mobile/2.4.1": {
+        "type": "package",
+        "compile": {
+          "lib/Xamarin.iOS10/ZXing.Net.Mobile.Core.dll": {},
+          "lib/Xamarin.iOS10/ZXingNetMobile.dll": {},
+          "lib/Xamarin.iOS10/zxing.portable.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/ZXing.Net.Mobile.Core.dll": {},
+          "lib/Xamarin.iOS10/ZXingNetMobile.dll": {},
+          "lib/Xamarin.iOS10/zxing.portable.dll": {}
+        }
+      },
+      "ZXing.Net.Mobile.Forms/2.4.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "2.5.0.122203",
+          "ZXing.Net.Mobile": "2.4.1"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/ZXing.Net.Mobile.Forms.dll": {},
+          "lib/Xamarin.iOS10/ZXing.Net.Mobile.Forms.iOS.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/ZXing.Net.Mobile.Forms.dll": {},
+          "lib/Xamarin.iOS10/ZXing.Net.Mobile.Forms.iOS.dll": {}
+        }
+      },
       "REM/1.1.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -2688,6 +2857,7 @@
           "Microsoft.CSharp": "4.7.0",
           "Nancy": "2.0.0",
           "Newtonsoft.Json": "12.0.3",
+          "Plugin.Fingerprint": "2.1.1",
           "RestSharp": "106.11.4",
           "Rg.Plugins.Popup": "2.0.0.3",
           "System.IdentityModel.Tokens.Jwt": "6.6.0",
@@ -2699,7 +2869,9 @@
           "Xamarin.FFImageLoading": "2.4.11.982",
           "Xamarin.FFImageLoading.Forms": "2.4.11.982",
           "Xamarin.Forms": "4.7.0.968",
-          "Xamarin.Plugin.FilePicker": "2.1.41"
+          "Xamarin.Plugin.FilePicker": "2.1.41",
+          "ZXing.Net.Mobile": "2.4.1",
+          "ZXing.Net.Mobile.Forms": "2.4.1"
         },
         "compile": {
           "bin/placeholder/REM.dll": {}
@@ -3176,6 +3348,48 @@
         "newtonsoft.json.12.0.3.nupkg.sha512",
         "newtonsoft.json.nuspec",
         "packageIcon.png"
+      ]
+    },
+    "Plugin.Fingerprint/2.1.1": {
+      "sha512": "Hg4C6OoTy3Emhb2HefaTmaq0nk1SKDe2q8oMUbovrNMQFrkKV1orr+pcDnoVWeRQVygMvWl1tXJMb2XSuFO4jg==",
+      "type": "package",
+      "path": "plugin.fingerprint/2.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/monoandroid90/Plugin.Fingerprint.dll",
+        "lib/monoandroid90/Plugin.Fingerprint.pdb",
+        "lib/monoandroid90/Plugin.Fingerprint.xml",
+        "lib/net45/Plugin.Fingerprint.dll",
+        "lib/net45/Plugin.Fingerprint.pdb",
+        "lib/net45/Plugin.Fingerprint.xml",
+        "lib/netstandard2.0/Plugin.Fingerprint.dll",
+        "lib/netstandard2.0/Plugin.Fingerprint.pdb",
+        "lib/netstandard2.0/Plugin.Fingerprint.xml",
+        "lib/tizen40/Plugin.Fingerprint.dll",
+        "lib/tizen40/Plugin.Fingerprint.pdb",
+        "lib/tizen40/Plugin.Fingerprint.xml",
+        "lib/uap10.0.16299/Plugin.Fingerprint.dll",
+        "lib/uap10.0.16299/Plugin.Fingerprint.pdb",
+        "lib/uap10.0.16299/Plugin.Fingerprint.pri",
+        "lib/uap10.0.16299/Plugin.Fingerprint.xml",
+        "lib/xamarinios10/Plugin.Fingerprint.dll",
+        "lib/xamarinios10/Plugin.Fingerprint.dll.mdb",
+        "lib/xamarinios10/Plugin.Fingerprint.pdb",
+        "lib/xamarinios10/Plugin.Fingerprint.xml",
+        "lib/xamarinmac20/Plugin.Fingerprint.dll",
+        "lib/xamarinmac20/Plugin.Fingerprint.pdb",
+        "lib/xamarinmac20/Plugin.Fingerprint.xml",
+        "lib/xamarintvos10/Plugin.Fingerprint.dll",
+        "lib/xamarintvos10/Plugin.Fingerprint.pdb",
+        "lib/xamarintvos10/Plugin.Fingerprint.xml",
+        "lib/xamarinwatchos10/Plugin.Fingerprint.dll",
+        "lib/xamarinwatchos10/Plugin.Fingerprint.pdb",
+        "lib/xamarinwatchos10/Plugin.Fingerprint.xml",
+        "plugin.fingerprint.2.1.1.nupkg.sha512",
+        "plugin.fingerprint.nuspec",
+        "readme.txt",
+        "xamarin_fingerprint.png"
       ]
     },
     "RestSharp/106.11.4": {
@@ -5003,6 +5217,50 @@
         "xamarin.plugin.filepicker.nuspec"
       ]
     },
+    "ZXing.Net.Mobile/2.4.1": {
+      "sha512": "iCL2WcqOyUnC1iFFdzXijk0EXfoLMDqW88MyhoTZigSyhJZM2C5hKgSZVyfx9E35tgkde/IZwHkk8cVDnbQlYg==",
+      "type": "package",
+      "path": "zxing.net.mobile/2.4.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/MonoAndroid71/ZXing.Net.Mobile.Core.dll",
+        "lib/MonoAndroid71/ZXingNetMobile.dll",
+        "lib/MonoAndroid71/zxing.portable.dll",
+        "lib/UAP10/ZXing.Net.Mobile.Core.dll",
+        "lib/UAP10/ZXingNetMobile.dll",
+        "lib/UAP10/ZXingNetMobile.pri",
+        "lib/UAP10/ZXingNetMobile/ZXingNetMobile.xr.xml",
+        "lib/UAP10/zxing.portable.dll",
+        "lib/Xamarin.iOS10/ZXing.Net.Mobile.Core.dll",
+        "lib/Xamarin.iOS10/ZXingNetMobile.dll",
+        "lib/Xamarin.iOS10/zxing.portable.dll",
+        "lib/netstandard1.0/ZXing.Net.Mobile.Core.dll",
+        "lib/netstandard1.0/ZXingNetMobile.dll",
+        "lib/netstandard1.0/zxing.portable.dll",
+        "zxing.net.mobile.2.4.1.nupkg.sha512",
+        "zxing.net.mobile.nuspec"
+      ]
+    },
+    "ZXing.Net.Mobile.Forms/2.4.1": {
+      "sha512": "7z+MfL8TbfE36s1GGvrnlkhLUOV5dgdn1gYhUb3GU2W6YXzpfF39k6EqkmFsyNm1O07evTaKFgh7UTOqcWub3g==",
+      "type": "package",
+      "path": "zxing.net.mobile.forms/2.4.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/MonoAndroid71/ZXing.Net.Mobile.Forms.Android.dll",
+        "lib/MonoAndroid71/ZXing.Net.Mobile.Forms.dll",
+        "lib/UAP10/ZXing.Net.Mobile.Forms.WindowsUniversal.dll",
+        "lib/UAP10/ZXing.Net.Mobile.Forms.WindowsUniversal.pri",
+        "lib/UAP10/ZXing.Net.Mobile.Forms.dll",
+        "lib/Xamarin.iOS10/ZXing.Net.Mobile.Forms.dll",
+        "lib/Xamarin.iOS10/ZXing.Net.Mobile.Forms.iOS.dll",
+        "lib/netstandard1.0/ZXing.Net.Mobile.Forms.dll",
+        "zxing.net.mobile.forms.2.4.1.nupkg.sha512",
+        "zxing.net.mobile.forms.nuspec"
+      ]
+    },
     "REM/1.1.0": {
       "type": "project",
       "path": "../RTMobile/RTMobile.csproj",
@@ -5012,33 +5270,36 @@
   "projectFileDependencyGroups": {
     "Xamarin.iOS,Version=v1.0": [
       "NETStandard.Library >= 2.0.3",
+      "Plugin.Fingerprint >= 2.1.1",
       "REM >= 1.1.0",
       "Rg.Plugins.Popup >= 2.0.0.3",
       "Xam.Plugin.FilePicker >= 1.1.0",
       "Xamarin.Essentials >= 1.5.3.2",
       "Xamarin.Forms >= 4.7.0.968",
-      "Xamarin.Plugin.FilePicker >= 2.1.41"
+      "Xamarin.Plugin.FilePicker >= 2.1.41",
+      "ZXing.Net.Mobile >= 2.4.1",
+      "ZXing.Net.Mobile.Forms >= 2.4.1"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\sekisov\\.nuget\\packages\\": {},
+    "C:\\Users\\Вазген\\.nuget\\packages\\": {},
     "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile.iOS\\RTMobile.iOS.csproj",
+      "projectUniqueName": "C:\\RT\\rtmobile\\RTMobile\\RTMobile.iOS\\RTMobile.iOS.csproj",
       "projectName": "RTMobile.iOS",
-      "projectPath": "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile.iOS\\RTMobile.iOS.csproj",
-      "packagesPath": "C:\\Users\\sekisov\\.nuget\\packages\\",
-      "outputPath": "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile.iOS\\obj\\",
+      "projectPath": "C:\\RT\\rtmobile\\RTMobile\\RTMobile.iOS\\RTMobile.iOS.csproj",
+      "packagesPath": "C:\\Users\\Вазген\\.nuget\\packages\\",
+      "outputPath": "C:\\RT\\rtmobile\\RTMobile\\RTMobile.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\sekisov\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Вазген\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -5052,8 +5313,8 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj": {
-              "projectPath": "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj"
+            "C:\\RT\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj": {
+              "projectPath": "C:\\RT\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj"
             }
           }
         }
@@ -5065,6 +5326,10 @@
           "NETStandard.Library": {
             "target": "Package",
             "version": "[2.0.3, )"
+          },
+          "Plugin.Fingerprint": {
+            "target": "Package",
+            "version": "[2.1.1, )"
           },
           "Rg.Plugins.Popup": {
             "target": "Package",
@@ -5085,6 +5350,14 @@
           "Xamarin.Plugin.FilePicker": {
             "target": "Package",
             "version": "[2.1.41, )"
+          },
+          "ZXing.Net.Mobile": {
+            "target": "Package",
+            "version": "[2.4.1, )"
+          },
+          "ZXing.Net.Mobile.Forms": {
+            "target": "Package",
+            "version": "[2.4.1, )"
           }
         }
       }

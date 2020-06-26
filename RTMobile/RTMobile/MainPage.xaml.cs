@@ -20,6 +20,10 @@ using Xamarin.Forms;
 using Rg.Plugins.Popup.Services;
 using Rg.Plugins.Popup.Extensions;
 using RTMobile.jiraData;
+using Plugin.Fingerprint;
+using Plugin.Fingerprint.Abstractions;
+using Org.Apache.Http.Authentication;
+using Android.Accounts;
 
 namespace RTMobile
 {
@@ -29,10 +33,10 @@ namespace RTMobile
 
 		public MainPage()
 		{
-			InitializeComponent();			
+			InitializeComponent();
 
 			login.Text = CrossSettings.Current.GetValueOrDefault("login", "");
-			password.Text = CrossSettings.Current.GetValueOrDefault("password", "");
+			
 			Request request = new Request();
 
 			if (request.verifyServer())
@@ -67,8 +71,9 @@ namespace RTMobile
 			//ToolbarItems.Add(toolbar);
 		}
 
+	
 		private async void Button_Clicked(object sender, EventArgs e)
-		{	
+		{
 			Request request = new Request();
 			try
 			{
@@ -84,7 +89,7 @@ namespace RTMobile
 				{
 					if (request.authorization(login.Text.Trim(' '), password.Text))
 					{
-						
+
 						errorMessage.IsVisible = false;
 						errorMessage1.IsVisible = false;
 
@@ -101,11 +106,18 @@ namespace RTMobile
 					}
 					else
 					{
-						CrossSettings.Current.Remove("login");
-						CrossSettings.Current.Remove("password");
+						
 						errorMessage.IsVisible = true;
 						errorMessage1.IsVisible = true;
 						errorMessage.Text = "Вход не выполнен!";
+						try
+						{
+							await PopupNavigation.Instance.PopAsync(true);
+						}
+						catch (Exception ex)
+						{
+							Console.WriteLine(ex.ToString());
+						}
 					}
 				}
 				else
@@ -115,7 +127,7 @@ namespace RTMobile
 				}
 				try
 				{
-					PopupNavigation.Instance.PopAsync(true);
+					await PopupNavigation.Instance.PopAsync(true);
 				}
 				catch (Exception ex)
 				{
@@ -124,10 +136,12 @@ namespace RTMobile
 			}
 			catch (Exception ex)
 			{
+				await PopupNavigation.Instance.PopAsync(true);
+				password.Text = "";
 				Crashes.TrackError(ex);
 				Console.WriteLine(ex.ToString());
 			}
-			
+
 		}
 
 		private async void Button_Clicked_1(object sender, EventArgs e)
@@ -140,12 +154,76 @@ namespace RTMobile
 			await Navigation.PushAsync(new Settings()).ConfigureAwait(true);
 		}
 
-		private void Button_Clicked_3(object sender, EventArgs e)
+		private async void FPEntery(object sender, EventArgs e)
 		{
+			bool isFingerprintAvailable = await CrossFingerprint.Current.IsAvailableAsync(false);
+			if (!isFingerprintAvailable)
+			{
+				await DisplayAlert("Ошибка",
+					"Вход по отпечатку пальца недоступен", "OK");
+				return;
+			}
 
+			AuthenticationRequestConfiguration conf =
+				new AuthenticationRequestConfiguration("Аутентификация",
+				"Авторизируйтесь");
+
+			var authResult = await CrossFingerprint.Current.AuthenticateAsync(conf);
+			if (authResult.Authenticated)
+			{
+                try
+                {
+
+					try
+					{
+						await PopupNavigation.Instance.PushAsync(new StatusBar());
+					}
+					catch (Exception ex)
+					{
+						Console.WriteLine(ex.ToString());
+					}
+					Request request = new Request();
+					if (request.authorization(CrossSettings.Current.GetValueOrDefault("login", login.Text.Trim(' ')), CrossSettings.Current.GetValueOrDefault("password", password.Text)))
+					{
+
+						errorMessage.IsVisible = false;
+						errorMessage1.IsVisible = false;
+
+						Analytics.TrackEvent("Выполнен вход в систему: пользователь - " + CrossSettings.Current.GetValueOrDefault("login", string.Empty) + ", " + DateTime.Now);
+
+						//Инициализируем данные о авторизации при подключении для получения изображений в FFImageLoading
+						ImageService.Instance.Config.HttpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic",
+							Convert.ToBase64String(System.Text.ASCIIEncoding.ASCII.GetBytes($"{CrossSettings.Current.GetValueOrDefault("login", login.Text)}:{CrossSettings.Current.GetValueOrDefault("password", password.Text)}")));
+						
+						await Navigation.PushModalAsync(new AllIssues()).ConfigureAwait(true);
+
+						try
+						{
+							await PopupNavigation.Instance.PopAsync(true);
+						}
+						catch (Exception ex)
+						{
+							Console.WriteLine(ex.ToString());
+						}
+					}
+					else
+					{
+						await DisplayAlert("Ошибка", "Ошибка входа! Ведите логин и пароль", "OK");
+					}
+				}
+                catch(Exception ex)
+                {
+					
+					Crashes.TrackError(ex);
+					Console.WriteLine(ex.ToString());
+				}
+
+			}
+			else
+			{
+				await DisplayAlert("Ошибка", "Ошибка входа", "OK");
+			}
 
 		}
-
-
 	}
 }

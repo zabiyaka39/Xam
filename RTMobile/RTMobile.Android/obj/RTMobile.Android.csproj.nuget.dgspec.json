@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile.Android\\RTMobile.Android.csproj": {}
+    "C:\\RT\\rtmobile\\RTMobile\\RTMobile.Android\\RTMobile.Android.csproj": {}
   },
   "projects": {
-    "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile.Android\\RTMobile.Android.csproj": {
+    "C:\\RT\\rtmobile\\RTMobile\\RTMobile.Android\\RTMobile.Android.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile.Android\\RTMobile.Android.csproj",
+        "projectUniqueName": "C:\\RT\\rtmobile\\RTMobile\\RTMobile.Android\\RTMobile.Android.csproj",
         "projectName": "RTMobile.Android",
-        "projectPath": "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile.Android\\RTMobile.Android.csproj",
-        "packagesPath": "C:\\Users\\sekisov\\.nuget\\packages\\",
-        "outputPath": "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile.Android\\obj\\",
+        "projectPath": "C:\\RT\\rtmobile\\RTMobile\\RTMobile.Android\\RTMobile.Android.csproj",
+        "packagesPath": "C:\\Users\\Вазген\\.nuget\\packages\\",
+        "outputPath": "C:\\RT\\rtmobile\\RTMobile\\RTMobile.Android\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\sekisov\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Вазген\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -32,8 +32,8 @@
         "frameworks": {
           "monoandroid90": {
             "projectReferences": {
-              "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj": {
-                "projectPath": "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj"
+              "C:\\RT\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj": {
+                "projectPath": "C:\\RT\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj"
               }
             }
           }
@@ -80,6 +80,14 @@
               "target": "Package",
               "version": "[12.0.3, )"
             },
+            "Plugin.CurrentActivity": {
+              "target": "Package",
+              "version": "[2.1.0.4, )"
+            },
+            "Plugin.Fingerprint": {
+              "target": "Package",
+              "version": "[2.1.1, )"
+            },
             "Rg.Plugins.Popup": {
               "target": "Package",
               "version": "[2.0.0.2, )"
@@ -120,6 +128,22 @@
               "target": "Package",
               "version": "[28.0.0.3, )"
             },
+            "Xamarin.AndroidX.Browser": {
+              "target": "Package",
+              "version": "[1.2.0.1, )"
+            },
+            "Xamarin.AndroidX.Legacy.Support.V4": {
+              "target": "Package",
+              "version": "[1.0.0.1, )"
+            },
+            "Xamarin.AndroidX.Lifecycle.LiveData": {
+              "target": "Package",
+              "version": "[2.2.0.1, )"
+            },
+            "Xamarin.AndroidX.MediaRouter": {
+              "target": "Package",
+              "version": "[1.1.0.1, )"
+            },
             "Xamarin.Essentials": {
               "target": "Package",
               "version": "[1.5.1, )"
@@ -127,6 +151,10 @@
             "Xamarin.Forms": {
               "target": "Package",
               "version": "[4.5.0.617, )"
+            },
+            "Xamarin.Google.Android.Material": {
+              "target": "Package",
+              "version": "[1.0.0.1, )"
             },
             "Xamarin.Plugin.FilePicker": {
               "target": "Package",
@@ -144,21 +172,20 @@
         }
       }
     },
-    "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj": {
+    "C:\\RT\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj": {
       "version": "1.1.0",
       "restore": {
-        "projectUniqueName": "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj",
+        "projectUniqueName": "C:\\RT\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj",
         "projectName": "REM",
-        "projectPath": "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj",
-        "packagesPath": "C:\\Users\\sekisov\\.nuget\\packages\\",
-        "outputPath": "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile\\obj\\",
+        "projectPath": "C:\\RT\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj",
+        "packagesPath": "C:\\Users\\Вазген\\.nuget\\packages\\",
+        "outputPath": "C:\\RT\\rtmobile\\RTMobile\\RTMobile\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\sekisov\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Вазген\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -222,6 +249,10 @@
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[12.0.3, )"
+            },
+            "Plugin.Fingerprint": {
+              "target": "Package",
+              "version": "[2.1.1, )"
             },
             "RestSharp": {
               "target": "Package",
