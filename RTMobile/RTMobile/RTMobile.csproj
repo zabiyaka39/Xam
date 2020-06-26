@@ -39,6 +39,7 @@
     </PackageReference>
     <PackageReference Include="Nancy" Version="2.0.0" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="Plugin.Fingerprint" Version="2.1.1" />
     <PackageReference Include="RestSharp" Version="106.11.4" />
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.5.0" />
     <PackageReference Include="Rg.Plugins.Popup" Version="2.0.0.3" />

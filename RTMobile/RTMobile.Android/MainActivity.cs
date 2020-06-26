@@ -19,6 +19,8 @@ using Service.Shared.Clients;
 using Plugin.Settings;
 using System.Net.Http.Headers;
 using Rg.Plugins.Popup.Services;
+using Plugin.Fingerprint;
+using Plugin.CurrentActivity;
 
 namespace RTMobile.Droid
 {
@@ -31,6 +33,10 @@ namespace RTMobile.Droid
 				   typeof(Analytics), typeof(Crashes));
 			AppCenter.Start("70eacacc-10db-4aed-98da-d55ac5b5940d",
 							   typeof(Analytics), typeof(Crashes));
+			CrossFingerprint.SetCurrentActivityResolver(() => this);
+			CrossCurrentActivity.Current.Init(this, savedInstanceState);
+			TabLayoutResource = Resource.Layout.Tabbar;
+			ToolbarResource = Resource.Layout.Toolbar;
 
 			FFImageLoading.Forms.Platform.CachedImageRenderer.Init(true);
 
@@ -45,8 +51,6 @@ namespace RTMobile.Droid
 			});
 			ZXing.Net.Mobile.Forms.Android.Platform.Init();
 
-			ToolbarResource = Resource.Layout.Toolbar;
-			TabLayoutResource = Resource.Layout.Tabbar;
 
 			base.OnCreate(savedInstanceState);
 
