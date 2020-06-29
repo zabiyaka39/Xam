@@ -16,6 +16,7 @@ Plugin.CurrentActivity
 Plugin.FilePicker
 Plugin.Fingerprint
 Plugin.Media
+Plugin.Permissions
 Plugin.Settings
 Rg.Plugins.Popup
 Xamarin.AndroidX.Activity

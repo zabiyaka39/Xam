@@ -1,5 +1,5 @@
 ﻿using System;
-
+using Plugin.Permissions;
 using Android.App;
 using Android.Content.PM;
 using Android.Runtime;
@@ -69,6 +69,7 @@ namespace RTMobile.Droid
 		{
 			Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
 			global::ZXing.Net.Mobile.Android.PermissionsHandler.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+			Plugin.Permissions.PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
 			base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
 		}
 		public override void OnBackPressed()

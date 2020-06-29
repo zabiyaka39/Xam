@@ -81,7 +81,11 @@
                                     </Frame.GestureRecognizers>
                                 </Frame>
                                 <Label x:Name="nameAssigne" Grid.Column="2" Grid.Row="1" FontSize="13"
-                                   Text="{Binding Path=issue.fields.assignee.displayName}" HorizontalOptions="EndAndExpand" VerticalOptions="Center" />
+                                   Text="{Binding Path=issue.fields.assignee.displayName}" HorizontalOptions="EndAndExpand" VerticalOptions="Center" >
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1"/>
+                                    </Label.GestureRecognizers>
+                                </Label>
 
                             </Grid>
                         </ScrollView>

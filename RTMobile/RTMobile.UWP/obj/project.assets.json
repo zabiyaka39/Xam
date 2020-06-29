@@ -125,10 +125,10 @@
           "lib/netstandard1.3/Microsoft.Extensions.PlatformAbstractions.dll": {}
         }
       },
-      "Microsoft.IdentityModel.JsonWebTokens/6.6.0": {
+      "Microsoft.IdentityModel.JsonWebTokens/6.7.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.IdentityModel.Tokens": "6.6.0"
+          "Microsoft.IdentityModel.Tokens": "6.7.0"
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.IdentityModel.JsonWebTokens.dll": {}
@@ -137,7 +137,7 @@
           "lib/netstandard2.0/Microsoft.IdentityModel.JsonWebTokens.dll": {}
         }
       },
-      "Microsoft.IdentityModel.Logging/6.6.0": {
+      "Microsoft.IdentityModel.Logging/6.7.0": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/Microsoft.IdentityModel.Logging.dll": {}
@@ -146,11 +146,11 @@
           "lib/netstandard2.0/Microsoft.IdentityModel.Logging.dll": {}
         }
       },
-      "Microsoft.IdentityModel.Tokens/6.6.0": {
+      "Microsoft.IdentityModel.Tokens/6.7.0": {
         "type": "package",
         "dependencies": {
           "Microsoft.CSharp": "4.5.0",
-          "Microsoft.IdentityModel.Logging": "6.6.0",
+          "Microsoft.IdentityModel.Logging": "6.7.0",
           "System.Security.Cryptography.Cng": "4.5.0"
         },
         "compile": {
@@ -160,25 +160,25 @@
           "lib/netstandard2.0/Microsoft.IdentityModel.Tokens.dll": {}
         }
       },
-      "Microsoft.Net.Native.Compiler/2.2.7-rel-27913-00": {
+      "Microsoft.Net.Native.Compiler/2.2.8-rel-28605-00": {
         "type": "package",
         "dependencies": {
-          "runtime.win10-arm.Microsoft.Net.Native.Compiler": "2.2.7-rel-27913-00",
-          "runtime.win10-arm64.Microsoft.Net.Native.Compiler": "2.2.7-rel-27913-00",
-          "runtime.win10-x64.Microsoft.Net.Native.Compiler": "2.2.7-rel-27913-00",
-          "runtime.win10-x86.Microsoft.Net.Native.Compiler": "2.2.7-rel-27913-00"
+          "runtime.win10-arm.Microsoft.Net.Native.Compiler": "2.2.8-rel-28605-00",
+          "runtime.win10-arm64.Microsoft.Net.Native.Compiler": "2.2.8-rel-28605-00",
+          "runtime.win10-x64.Microsoft.Net.Native.Compiler": "2.2.8-rel-28605-00",
+          "runtime.win10-x86.Microsoft.Net.Native.Compiler": "2.2.8-rel-28605-00"
         },
         "build": {
           "build/Microsoft.Net.Native.Compiler.props": {},
           "build/Microsoft.Net.Native.Compiler.targets": {}
         }
       },
-      "Microsoft.Net.UWPCoreRuntimeSdk/2.2.9": {
+      "Microsoft.Net.UWPCoreRuntimeSdk/2.2.10": {
         "type": "package",
         "dependencies": {
-          "runtime.win10-arm.Microsoft.Net.UWPCoreRuntimeSdk": "2.2.9",
-          "runtime.win10-x64.Microsoft.Net.UWPCoreRuntimeSdk": "2.2.9",
-          "runtime.win10-x86.Microsoft.Net.UWPCoreRuntimeSdk": "2.2.9"
+          "runtime.win10-arm.Microsoft.Net.UWPCoreRuntimeSdk": "2.2.10",
+          "runtime.win10-x64.Microsoft.Net.UWPCoreRuntimeSdk": "2.2.10",
+          "runtime.win10-x86.Microsoft.Net.UWPCoreRuntimeSdk": "2.2.10"
         },
         "build": {
           "build/Microsoft.Net.UWPCoreRuntimeSdk.props": {}
@@ -202,12 +202,12 @@
           "lib/netstandard1.0/_._": {}
         }
       },
-      "Microsoft.NETCore.UniversalWindowsPlatform/6.2.9": {
+      "Microsoft.NETCore.UniversalWindowsPlatform/6.2.10": {
         "type": "package",
         "dependencies": {
           "Microsoft.NETCore.Platforms": "2.1.0",
-          "Microsoft.Net.Native.Compiler": "2.2.7-rel-27913-00",
-          "Microsoft.Net.UWPCoreRuntimeSdk": "2.2.9",
+          "Microsoft.Net.Native.Compiler": "2.2.8-rel-28605-00",
+          "Microsoft.Net.UWPCoreRuntimeSdk": "2.2.10",
           "NETStandard.Library": "2.0.3"
         },
         "compile": {
@@ -370,7 +370,7 @@
           "build/Microsoft.NetCore.UniversalWindowsPlatform.targets": {}
         }
       },
-      "Microsoft.UI.Xaml/2.3.191211002": {
+      "Microsoft.UI.Xaml/2.4.2": {
         "type": "package",
         "compile": {
           "lib/uap10.0/Microsoft.UI.Xaml.winmd": {}
@@ -380,17 +380,6 @@
         },
         "build": {
           "buildTransitive/Microsoft.UI.Xaml.props": {}
-        }
-      },
-      "MimeTypes/2.0.1": {
-        "type": "package",
-        "contentFiles": {
-          "contentFiles/cs/any/MimeTypes.NullableAttributes.cs.pp": {
-            "buildAction": "Compile",
-            "codeLanguage": "cs",
-            "copyToOutput": false,
-            "ppOutputPath": "MimeTypes.NullableAttributes.cs"
-          }
         }
       },
       "Nancy/2.0.0": {
@@ -444,6 +433,18 @@
           "lib/uap10.0.16299/Plugin.Fingerprint.dll": {}
         }
       },
+      "Plugin.Permissions/6.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Essentials": "1.5.2"
+        },
+        "compile": {
+          "lib/uap10.0.16299/Plugin.Permissions.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0.16299/Plugin.Permissions.dll": {}
+        }
+      },
       "RestSharp/106.11.4": {
         "type": "package",
         "compile": {
@@ -453,7 +454,7 @@
           "lib/netstandard2.0/RestSharp.dll": {}
         }
       },
-      "Rg.Plugins.Popup/2.0.0.2": {
+      "Rg.Plugins.Popup/2.0.0.3": {
         "type": "package",
         "dependencies": {
           "Xamarin.Forms": "4.5.0.530"
@@ -576,89 +577,89 @@
           }
         }
       },
-      "runtime.win10-arm.Microsoft.Net.Native.Compiler/2.2.7-rel-27913-00": {
+      "runtime.win10-arm.Microsoft.Net.Native.Compiler/2.2.8-rel-28605-00": {
         "type": "package",
         "dependencies": {
-          "runtime.win10-arm.Microsoft.Net.Native.SharedLibrary": "2.2.7-rel-27913-00"
+          "runtime.win10-arm.Microsoft.Net.Native.SharedLibrary": "2.2.7-rel-28605-00"
         },
         "build": {
           "build/runtime.win10-arm.Microsoft.Net.Native.Compiler.props": {},
           "build/runtime.win10-arm.Microsoft.Net.Native.Compiler.targets": {}
         }
       },
-      "runtime.win10-arm.Microsoft.Net.Native.SharedLibrary/2.2.7-rel-27913-00": {
+      "runtime.win10-arm.Microsoft.Net.Native.SharedLibrary/2.2.7-rel-28605-00": {
         "type": "package",
         "build": {
           "build/runtime.win10-arm.Microsoft.Net.Native.SharedLibrary.props": {},
           "build/runtime.win10-arm.Microsoft.Net.Native.SharedLibrary.targets": {}
         }
       },
-      "runtime.win10-arm.Microsoft.Net.UWPCoreRuntimeSdk/2.2.9": {
+      "runtime.win10-arm.Microsoft.Net.UWPCoreRuntimeSdk/2.2.10": {
         "type": "package",
         "build": {
           "build/runtime.win10-arm.Microsoft.Net.UWPCoreRuntimeSdk.props": {},
           "build/runtime.win10-arm.Microsoft.Net.UWPCoreRuntimeSdk.targets": {}
         }
       },
-      "runtime.win10-arm64.Microsoft.Net.Native.Compiler/2.2.7-rel-27913-00": {
+      "runtime.win10-arm64.Microsoft.Net.Native.Compiler/2.2.8-rel-28605-00": {
         "type": "package",
         "dependencies": {
-          "runtime.win10-arm64.Microsoft.Net.Native.SharedLibrary": "2.2.7-rel-27913-00"
+          "runtime.win10-arm64.Microsoft.Net.Native.SharedLibrary": "2.2.7-rel-28605-00"
         },
         "build": {
           "build/runtime.win10-arm64.Microsoft.Net.Native.Compiler.props": {},
           "build/runtime.win10-arm64.Microsoft.Net.Native.Compiler.targets": {}
         }
       },
-      "runtime.win10-arm64.Microsoft.Net.Native.SharedLibrary/2.2.7-rel-27913-00": {
+      "runtime.win10-arm64.Microsoft.Net.Native.SharedLibrary/2.2.7-rel-28605-00": {
         "type": "package",
         "build": {
           "build/runtime.win10-arm64.Microsoft.Net.Native.SharedLibrary.props": {},
           "build/runtime.win10-arm64.Microsoft.Net.Native.SharedLibrary.targets": {}
         }
       },
-      "runtime.win10-x64.Microsoft.Net.Native.Compiler/2.2.7-rel-27913-00": {
+      "runtime.win10-x64.Microsoft.Net.Native.Compiler/2.2.8-rel-28605-00": {
         "type": "package",
         "dependencies": {
-          "runtime.win10-x64.Microsoft.Net.Native.SharedLibrary": "2.2.7-rel-27913-00"
+          "runtime.win10-x64.Microsoft.Net.Native.SharedLibrary": "2.2.7-rel-28605-00"
         },
         "build": {
           "build/runtime.win10-x64.Microsoft.Net.Native.Compiler.props": {},
           "build/runtime.win10-x64.Microsoft.Net.Native.Compiler.targets": {}
         }
       },
-      "runtime.win10-x64.Microsoft.Net.Native.SharedLibrary/2.2.7-rel-27913-00": {
+      "runtime.win10-x64.Microsoft.Net.Native.SharedLibrary/2.2.7-rel-28605-00": {
         "type": "package",
         "build": {
           "build/runtime.win10-x64.Microsoft.Net.Native.SharedLibrary.props": {},
           "build/runtime.win10-x64.Microsoft.Net.Native.SharedLibrary.targets": {}
         }
       },
-      "runtime.win10-x64.Microsoft.Net.UWPCoreRuntimeSdk/2.2.9": {
+      "runtime.win10-x64.Microsoft.Net.UWPCoreRuntimeSdk/2.2.10": {
         "type": "package",
         "build": {
           "build/runtime.win10-x64.Microsoft.Net.UWPCoreRuntimeSdk.props": {},
           "build/runtime.win10-x64.Microsoft.Net.UWPCoreRuntimeSdk.targets": {}
         }
       },
-      "runtime.win10-x86.Microsoft.Net.Native.Compiler/2.2.7-rel-27913-00": {
+      "runtime.win10-x86.Microsoft.Net.Native.Compiler/2.2.8-rel-28605-00": {
         "type": "package",
         "dependencies": {
-          "runtime.win10-x86.Microsoft.Net.Native.SharedLibrary": "2.2.7-rel-27913-00"
+          "runtime.win10-x86.Microsoft.Net.Native.SharedLibrary": "2.2.7-rel-28605-00"
         },
         "build": {
           "build/runtime.win10-x86.Microsoft.Net.Native.Compiler.props": {},
           "build/runtime.win10-x86.Microsoft.Net.Native.Compiler.targets": {}
         }
       },
-      "runtime.win10-x86.Microsoft.Net.Native.SharedLibrary/2.2.7-rel-27913-00": {
+      "runtime.win10-x86.Microsoft.Net.Native.SharedLibrary/2.2.7-rel-28605-00": {
         "type": "package",
         "build": {
           "build/runtime.win10-x86.Microsoft.Net.Native.SharedLibrary.props": {},
           "build/runtime.win10-x86.Microsoft.Net.Native.SharedLibrary.targets": {}
         }
       },
-      "runtime.win10-x86.Microsoft.Net.UWPCoreRuntimeSdk/2.2.9": {
+      "runtime.win10-x86.Microsoft.Net.UWPCoreRuntimeSdk/2.2.10": {
         "type": "package",
         "build": {
           "build/runtime.win10-x86.Microsoft.Net.UWPCoreRuntimeSdk.props": {},
@@ -1035,11 +1036,11 @@
           }
         }
       },
-      "System.IdentityModel.Tokens.Jwt/6.6.0": {
+      "System.IdentityModel.Tokens.Jwt/6.7.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.IdentityModel.JsonWebTokens": "6.6.0",
-          "Microsoft.IdentityModel.Tokens": "6.6.0"
+          "Microsoft.IdentityModel.JsonWebTokens": "6.7.0",
+          "Microsoft.IdentityModel.Tokens": "6.7.0"
         },
         "compile": {
           "lib/netstandard2.0/System.IdentityModel.Tokens.Jwt.dll": {}
@@ -1935,10 +1936,10 @@
           "lib/UAP10/Plugin.Settings.dll": {}
         }
       },
-      "Xamarin.Essentials/1.5.1": {
+      "Xamarin.Essentials/1.5.3.2": {
         "type": "package",
         "dependencies": {
-          "Microsoft.NETCore.UniversalWindowsPlatform": "6.1.9"
+          "Microsoft.NETCore.UniversalWindowsPlatform": "6.2.9"
         },
         "compile": {
           "lib/uap10.0.16299/Xamarin.Essentials.dll": {}
@@ -1973,11 +1974,11 @@
           "lib/uap/FFImageLoading.Forms.dll": {}
         }
       },
-      "Xamarin.Forms/4.5.0.617": {
+      "Xamarin.Forms/4.7.0.968": {
         "type": "package",
         "dependencies": {
           "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.15",
-          "Microsoft.UI.Xaml": "2.3.191211002",
+          "Microsoft.UI.Xaml": "2.4.2",
           "Win2D.uwp": "1.20.0"
         },
         "compile": {
@@ -1997,7 +1998,7 @@
           "buildTransitive/Xamarin.Forms.targets": {}
         }
       },
-      "Xamarin.Plugin.FilePicker/2.1.34": {
+      "Xamarin.Plugin.FilePicker/2.1.41": {
         "type": "package",
         "compile": {
           "lib/uap10.0.16299/Plugin.FilePicker.dll": {}
@@ -2046,9 +2047,10 @@
           "Nancy": "2.0.0",
           "Newtonsoft.Json": "12.0.3",
           "Plugin.Fingerprint": "2.1.1",
+          "Plugin.Permissions": "6.0.1",
           "RestSharp": "106.11.4",
           "Rg.Plugins.Popup": "2.0.0.3",
-          "System.IdentityModel.Tokens.Jwt": "6.6.0",
+          "System.IdentityModel.Tokens.Jwt": "6.7.0",
           "System.Net.Http": "4.3.4",
           "System.Xml.XmlSerializer": "4.3.0",
           "Xam.Plugin.Media": "5.0.1",
@@ -2193,10 +2195,10 @@
           "lib/netstandard1.3/Microsoft.Extensions.PlatformAbstractions.dll": {}
         }
       },
-      "Microsoft.IdentityModel.JsonWebTokens/6.6.0": {
+      "Microsoft.IdentityModel.JsonWebTokens/6.7.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.IdentityModel.Tokens": "6.6.0"
+          "Microsoft.IdentityModel.Tokens": "6.7.0"
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.IdentityModel.JsonWebTokens.dll": {}
@@ -2205,7 +2207,7 @@
           "lib/netstandard2.0/Microsoft.IdentityModel.JsonWebTokens.dll": {}
         }
       },
-      "Microsoft.IdentityModel.Logging/6.6.0": {
+      "Microsoft.IdentityModel.Logging/6.7.0": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/Microsoft.IdentityModel.Logging.dll": {}
@@ -2214,11 +2216,11 @@
           "lib/netstandard2.0/Microsoft.IdentityModel.Logging.dll": {}
         }
       },
-      "Microsoft.IdentityModel.Tokens/6.6.0": {
+      "Microsoft.IdentityModel.Tokens/6.7.0": {
         "type": "package",
         "dependencies": {
           "Microsoft.CSharp": "4.5.0",
-          "Microsoft.IdentityModel.Logging": "6.6.0",
+          "Microsoft.IdentityModel.Logging": "6.7.0",
           "System.Security.Cryptography.Cng": "4.5.0"
         },
         "compile": {
@@ -2228,25 +2230,25 @@
           "lib/netstandard2.0/Microsoft.IdentityModel.Tokens.dll": {}
         }
       },
-      "Microsoft.Net.Native.Compiler/2.2.7-rel-27913-00": {
+      "Microsoft.Net.Native.Compiler/2.2.8-rel-28605-00": {
         "type": "package",
         "dependencies": {
-          "runtime.win10-arm.Microsoft.Net.Native.Compiler": "2.2.7-rel-27913-00",
-          "runtime.win10-arm64.Microsoft.Net.Native.Compiler": "2.2.7-rel-27913-00",
-          "runtime.win10-x64.Microsoft.Net.Native.Compiler": "2.2.7-rel-27913-00",
-          "runtime.win10-x86.Microsoft.Net.Native.Compiler": "2.2.7-rel-27913-00"
+          "runtime.win10-arm.Microsoft.Net.Native.Compiler": "2.2.8-rel-28605-00",
+          "runtime.win10-arm64.Microsoft.Net.Native.Compiler": "2.2.8-rel-28605-00",
+          "runtime.win10-x64.Microsoft.Net.Native.Compiler": "2.2.8-rel-28605-00",
+          "runtime.win10-x86.Microsoft.Net.Native.Compiler": "2.2.8-rel-28605-00"
         },
         "build": {
           "build/Microsoft.Net.Native.Compiler.props": {},
           "build/Microsoft.Net.Native.Compiler.targets": {}
         }
       },
-      "Microsoft.Net.UWPCoreRuntimeSdk/2.2.9": {
+      "Microsoft.Net.UWPCoreRuntimeSdk/2.2.10": {
         "type": "package",
         "dependencies": {
-          "runtime.win10-arm.Microsoft.Net.UWPCoreRuntimeSdk": "2.2.9",
-          "runtime.win10-x64.Microsoft.Net.UWPCoreRuntimeSdk": "2.2.9",
-          "runtime.win10-x86.Microsoft.Net.UWPCoreRuntimeSdk": "2.2.9"
+          "runtime.win10-arm.Microsoft.Net.UWPCoreRuntimeSdk": "2.2.10",
+          "runtime.win10-x64.Microsoft.Net.UWPCoreRuntimeSdk": "2.2.10",
+          "runtime.win10-x86.Microsoft.Net.UWPCoreRuntimeSdk": "2.2.10"
         },
         "build": {
           "build/Microsoft.Net.UWPCoreRuntimeSdk.props": {}
@@ -2270,14 +2272,14 @@
           "lib/netstandard1.0/_._": {}
         }
       },
-      "Microsoft.NETCore.UniversalWindowsPlatform/6.2.9": {
+      "Microsoft.NETCore.UniversalWindowsPlatform/6.2.10": {
         "type": "package",
         "dependencies": {
           "Microsoft.NETCore.Platforms": "2.1.0",
-          "Microsoft.Net.Native.Compiler": "2.2.7-rel-27913-00",
-          "Microsoft.Net.UWPCoreRuntimeSdk": "2.2.9",
+          "Microsoft.Net.Native.Compiler": "2.2.8-rel-28605-00",
+          "Microsoft.Net.UWPCoreRuntimeSdk": "2.2.10",
           "NETStandard.Library": "2.0.3",
-          "runtime.win10-arm.Microsoft.NETCore.UniversalWindowsPlatform": "6.2.9"
+          "runtime.win10-arm.Microsoft.NETCore.UniversalWindowsPlatform": "6.2.10"
         },
         "compile": {
           "ref/uap10.0.15138/Microsoft.CSharp.dll": {},
@@ -2439,7 +2441,7 @@
           "build/Microsoft.NetCore.UniversalWindowsPlatform.targets": {}
         }
       },
-      "Microsoft.UI.Xaml/2.3.191211002": {
+      "Microsoft.UI.Xaml/2.4.2": {
         "type": "package",
         "compile": {
           "lib/uap10.0/Microsoft.UI.Xaml.winmd": {}
@@ -2461,17 +2463,6 @@
         },
         "compile": {
           "ref/netstandard1.3/Microsoft.Win32.Primitives.dll": {}
-        }
-      },
-      "MimeTypes/2.0.1": {
-        "type": "package",
-        "contentFiles": {
-          "contentFiles/cs/any/MimeTypes.NullableAttributes.cs.pp": {
-            "buildAction": "Compile",
-            "codeLanguage": "cs",
-            "copyToOutput": false,
-            "ppOutputPath": "MimeTypes.NullableAttributes.cs"
-          }
         }
       },
       "Nancy/2.0.0": {
@@ -2525,6 +2516,18 @@
           "lib/uap10.0.16299/Plugin.Fingerprint.dll": {}
         }
       },
+      "Plugin.Permissions/6.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Essentials": "1.5.2"
+        },
+        "compile": {
+          "lib/uap10.0.16299/Plugin.Permissions.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0.16299/Plugin.Permissions.dll": {}
+        }
+      },
       "RestSharp/106.11.4": {
         "type": "package",
         "compile": {
@@ -2534,7 +2537,7 @@
           "lib/netstandard2.0/RestSharp.dll": {}
         }
       },
-      "Rg.Plugins.Popup/2.0.0.2": {
+      "Rg.Plugins.Popup/2.0.0.3": {
         "type": "package",
         "dependencies": {
           "Xamarin.Forms": "4.5.0.530"
@@ -2820,31 +2823,31 @@
           "runtimes/win/lib/netcore50/System.Runtime.Extensions.dll": {}
         }
       },
-      "runtime.win10-arm.Microsoft.Net.Native.Compiler/2.2.7-rel-27913-00": {
+      "runtime.win10-arm.Microsoft.Net.Native.Compiler/2.2.8-rel-28605-00": {
         "type": "package",
         "dependencies": {
-          "runtime.win10-arm.Microsoft.Net.Native.SharedLibrary": "2.2.7-rel-27913-00"
+          "runtime.win10-arm.Microsoft.Net.Native.SharedLibrary": "2.2.7-rel-28605-00"
         },
         "build": {
           "build/runtime.win10-arm.Microsoft.Net.Native.Compiler.props": {},
           "build/runtime.win10-arm.Microsoft.Net.Native.Compiler.targets": {}
         }
       },
-      "runtime.win10-arm.Microsoft.Net.Native.SharedLibrary/2.2.7-rel-27913-00": {
+      "runtime.win10-arm.Microsoft.Net.Native.SharedLibrary/2.2.7-rel-28605-00": {
         "type": "package",
         "build": {
           "build/runtime.win10-arm.Microsoft.Net.Native.SharedLibrary.props": {},
           "build/runtime.win10-arm.Microsoft.Net.Native.SharedLibrary.targets": {}
         }
       },
-      "runtime.win10-arm.Microsoft.Net.UWPCoreRuntimeSdk/2.2.9": {
+      "runtime.win10-arm.Microsoft.Net.UWPCoreRuntimeSdk/2.2.10": {
         "type": "package",
         "build": {
           "build/runtime.win10-arm.Microsoft.Net.UWPCoreRuntimeSdk.props": {},
           "build/runtime.win10-arm.Microsoft.Net.UWPCoreRuntimeSdk.targets": {}
         }
       },
-      "runtime.win10-arm.Microsoft.NETCore.UniversalWindowsPlatform/6.2.9": {
+      "runtime.win10-arm.Microsoft.NETCore.UniversalWindowsPlatform/6.2.10": {
         "type": "package",
         "compile": {
           "ref/netstandard/_._": {}
@@ -3022,65 +3025,65 @@
           "runtimes/win10-arm/nativeassets/uap10.0.15138/clrcompression.dll": {}
         }
       },
-      "runtime.win10-arm64.Microsoft.Net.Native.Compiler/2.2.7-rel-27913-00": {
+      "runtime.win10-arm64.Microsoft.Net.Native.Compiler/2.2.8-rel-28605-00": {
         "type": "package",
         "dependencies": {
-          "runtime.win10-arm64.Microsoft.Net.Native.SharedLibrary": "2.2.7-rel-27913-00"
+          "runtime.win10-arm64.Microsoft.Net.Native.SharedLibrary": "2.2.7-rel-28605-00"
         },
         "build": {
           "build/runtime.win10-arm64.Microsoft.Net.Native.Compiler.props": {},
           "build/runtime.win10-arm64.Microsoft.Net.Native.Compiler.targets": {}
         }
       },
-      "runtime.win10-arm64.Microsoft.Net.Native.SharedLibrary/2.2.7-rel-27913-00": {
+      "runtime.win10-arm64.Microsoft.Net.Native.SharedLibrary/2.2.7-rel-28605-00": {
         "type": "package",
         "build": {
           "build/runtime.win10-arm64.Microsoft.Net.Native.SharedLibrary.props": {},
           "build/runtime.win10-arm64.Microsoft.Net.Native.SharedLibrary.targets": {}
         }
       },
-      "runtime.win10-x64.Microsoft.Net.Native.Compiler/2.2.7-rel-27913-00": {
+      "runtime.win10-x64.Microsoft.Net.Native.Compiler/2.2.8-rel-28605-00": {
         "type": "package",
         "dependencies": {
-          "runtime.win10-x64.Microsoft.Net.Native.SharedLibrary": "2.2.7-rel-27913-00"
+          "runtime.win10-x64.Microsoft.Net.Native.SharedLibrary": "2.2.7-rel-28605-00"
         },
         "build": {
           "build/runtime.win10-x64.Microsoft.Net.Native.Compiler.props": {},
           "build/runtime.win10-x64.Microsoft.Net.Native.Compiler.targets": {}
         }
       },
-      "runtime.win10-x64.Microsoft.Net.Native.SharedLibrary/2.2.7-rel-27913-00": {
+      "runtime.win10-x64.Microsoft.Net.Native.SharedLibrary/2.2.7-rel-28605-00": {
         "type": "package",
         "build": {
           "build/runtime.win10-x64.Microsoft.Net.Native.SharedLibrary.props": {},
           "build/runtime.win10-x64.Microsoft.Net.Native.SharedLibrary.targets": {}
         }
       },
-      "runtime.win10-x64.Microsoft.Net.UWPCoreRuntimeSdk/2.2.9": {
+      "runtime.win10-x64.Microsoft.Net.UWPCoreRuntimeSdk/2.2.10": {
         "type": "package",
         "build": {
           "build/runtime.win10-x64.Microsoft.Net.UWPCoreRuntimeSdk.props": {},
           "build/runtime.win10-x64.Microsoft.Net.UWPCoreRuntimeSdk.targets": {}
         }
       },
-      "runtime.win10-x86.Microsoft.Net.Native.Compiler/2.2.7-rel-27913-00": {
+      "runtime.win10-x86.Microsoft.Net.Native.Compiler/2.2.8-rel-28605-00": {
         "type": "package",
         "dependencies": {
-          "runtime.win10-x86.Microsoft.Net.Native.SharedLibrary": "2.2.7-rel-27913-00"
+          "runtime.win10-x86.Microsoft.Net.Native.SharedLibrary": "2.2.7-rel-28605-00"
         },
         "build": {
           "build/runtime.win10-x86.Microsoft.Net.Native.Compiler.props": {},
           "build/runtime.win10-x86.Microsoft.Net.Native.Compiler.targets": {}
         }
       },
-      "runtime.win10-x86.Microsoft.Net.Native.SharedLibrary/2.2.7-rel-27913-00": {
+      "runtime.win10-x86.Microsoft.Net.Native.SharedLibrary/2.2.7-rel-28605-00": {
         "type": "package",
         "build": {
           "build/runtime.win10-x86.Microsoft.Net.Native.SharedLibrary.props": {},
           "build/runtime.win10-x86.Microsoft.Net.Native.SharedLibrary.targets": {}
         }
       },
-      "runtime.win10-x86.Microsoft.Net.UWPCoreRuntimeSdk/2.2.9": {
+      "runtime.win10-x86.Microsoft.Net.UWPCoreRuntimeSdk/2.2.10": {
         "type": "package",
         "build": {
           "build/runtime.win10-x86.Microsoft.Net.UWPCoreRuntimeSdk.props": {},
@@ -3392,11 +3395,11 @@
           "runtimes/win/lib/netstandard1.3/System.Globalization.Extensions.dll": {}
         }
       },
-      "System.IdentityModel.Tokens.Jwt/6.6.0": {
+      "System.IdentityModel.Tokens.Jwt/6.7.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.IdentityModel.JsonWebTokens": "6.6.0",
-          "Microsoft.IdentityModel.Tokens": "6.6.0"
+          "Microsoft.IdentityModel.JsonWebTokens": "6.7.0",
+          "Microsoft.IdentityModel.Tokens": "6.7.0"
         },
         "compile": {
           "lib/netstandard2.0/System.IdentityModel.Tokens.Jwt.dll": {}
@@ -4216,10 +4219,10 @@
           "lib/UAP10/Plugin.Settings.dll": {}
         }
       },
-      "Xamarin.Essentials/1.5.1": {
+      "Xamarin.Essentials/1.5.3.2": {
         "type": "package",
         "dependencies": {
-          "Microsoft.NETCore.UniversalWindowsPlatform": "6.1.9"
+          "Microsoft.NETCore.UniversalWindowsPlatform": "6.2.9"
         },
         "compile": {
           "lib/uap10.0.16299/Xamarin.Essentials.dll": {}
@@ -4254,11 +4257,11 @@
           "lib/uap/FFImageLoading.Forms.dll": {}
         }
       },
-      "Xamarin.Forms/4.5.0.617": {
+      "Xamarin.Forms/4.7.0.968": {
         "type": "package",
         "dependencies": {
           "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.15",
-          "Microsoft.UI.Xaml": "2.3.191211002",
+          "Microsoft.UI.Xaml": "2.4.2",
           "Win2D.uwp": "1.20.0"
         },
         "compile": {
@@ -4278,7 +4281,7 @@
           "buildTransitive/Xamarin.Forms.targets": {}
         }
       },
-      "Xamarin.Plugin.FilePicker/2.1.34": {
+      "Xamarin.Plugin.FilePicker/2.1.41": {
         "type": "package",
         "compile": {
           "lib/uap10.0.16299/Plugin.FilePicker.dll": {}
@@ -4327,9 +4330,10 @@
           "Nancy": "2.0.0",
           "Newtonsoft.Json": "12.0.3",
           "Plugin.Fingerprint": "2.1.1",
+          "Plugin.Permissions": "6.0.1",
           "RestSharp": "106.11.4",
           "Rg.Plugins.Popup": "2.0.0.3",
-          "System.IdentityModel.Tokens.Jwt": "6.6.0",
+          "System.IdentityModel.Tokens.Jwt": "6.7.0",
           "System.Net.Http": "4.3.4",
           "System.Xml.XmlSerializer": "4.3.0",
           "Xam.Plugin.Media": "5.0.1",
@@ -4474,10 +4478,10 @@
           "lib/netstandard1.3/Microsoft.Extensions.PlatformAbstractions.dll": {}
         }
       },
-      "Microsoft.IdentityModel.JsonWebTokens/6.6.0": {
+      "Microsoft.IdentityModel.JsonWebTokens/6.7.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.IdentityModel.Tokens": "6.6.0"
+          "Microsoft.IdentityModel.Tokens": "6.7.0"
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.IdentityModel.JsonWebTokens.dll": {}
@@ -4486,7 +4490,7 @@
           "lib/netstandard2.0/Microsoft.IdentityModel.JsonWebTokens.dll": {}
         }
       },
-      "Microsoft.IdentityModel.Logging/6.6.0": {
+      "Microsoft.IdentityModel.Logging/6.7.0": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/Microsoft.IdentityModel.Logging.dll": {}
@@ -4495,11 +4499,11 @@
           "lib/netstandard2.0/Microsoft.IdentityModel.Logging.dll": {}
         }
       },
-      "Microsoft.IdentityModel.Tokens/6.6.0": {
+      "Microsoft.IdentityModel.Tokens/6.7.0": {
         "type": "package",
         "dependencies": {
           "Microsoft.CSharp": "4.5.0",
-          "Microsoft.IdentityModel.Logging": "6.6.0",
+          "Microsoft.IdentityModel.Logging": "6.7.0",
           "System.Security.Cryptography.Cng": "4.5.0"
         },
         "compile": {
@@ -4509,25 +4513,25 @@
           "lib/netstandard2.0/Microsoft.IdentityModel.Tokens.dll": {}
         }
       },
-      "Microsoft.Net.Native.Compiler/2.2.7-rel-27913-00": {
+      "Microsoft.Net.Native.Compiler/2.2.8-rel-28605-00": {
         "type": "package",
         "dependencies": {
-          "runtime.win10-arm.Microsoft.Net.Native.Compiler": "2.2.7-rel-27913-00",
-          "runtime.win10-arm64.Microsoft.Net.Native.Compiler": "2.2.7-rel-27913-00",
-          "runtime.win10-x64.Microsoft.Net.Native.Compiler": "2.2.7-rel-27913-00",
-          "runtime.win10-x86.Microsoft.Net.Native.Compiler": "2.2.7-rel-27913-00"
+          "runtime.win10-arm.Microsoft.Net.Native.Compiler": "2.2.8-rel-28605-00",
+          "runtime.win10-arm64.Microsoft.Net.Native.Compiler": "2.2.8-rel-28605-00",
+          "runtime.win10-x64.Microsoft.Net.Native.Compiler": "2.2.8-rel-28605-00",
+          "runtime.win10-x86.Microsoft.Net.Native.Compiler": "2.2.8-rel-28605-00"
         },
         "build": {
           "build/Microsoft.Net.Native.Compiler.props": {},
           "build/Microsoft.Net.Native.Compiler.targets": {}
         }
       },
-      "Microsoft.Net.UWPCoreRuntimeSdk/2.2.9": {
+      "Microsoft.Net.UWPCoreRuntimeSdk/2.2.10": {
         "type": "package",
         "dependencies": {
-          "runtime.win10-arm.Microsoft.Net.UWPCoreRuntimeSdk": "2.2.9",
-          "runtime.win10-x64.Microsoft.Net.UWPCoreRuntimeSdk": "2.2.9",
-          "runtime.win10-x86.Microsoft.Net.UWPCoreRuntimeSdk": "2.2.9"
+          "runtime.win10-arm.Microsoft.Net.UWPCoreRuntimeSdk": "2.2.10",
+          "runtime.win10-x64.Microsoft.Net.UWPCoreRuntimeSdk": "2.2.10",
+          "runtime.win10-x86.Microsoft.Net.UWPCoreRuntimeSdk": "2.2.10"
         },
         "build": {
           "build/Microsoft.Net.UWPCoreRuntimeSdk.props": {}
@@ -4551,14 +4555,14 @@
           "lib/netstandard1.0/_._": {}
         }
       },
-      "Microsoft.NETCore.UniversalWindowsPlatform/6.2.9": {
+      "Microsoft.NETCore.UniversalWindowsPlatform/6.2.10": {
         "type": "package",
         "dependencies": {
           "Microsoft.NETCore.Platforms": "2.1.0",
-          "Microsoft.Net.Native.Compiler": "2.2.7-rel-27913-00",
-          "Microsoft.Net.UWPCoreRuntimeSdk": "2.2.9",
+          "Microsoft.Net.Native.Compiler": "2.2.8-rel-28605-00",
+          "Microsoft.Net.UWPCoreRuntimeSdk": "2.2.10",
           "NETStandard.Library": "2.0.3",
-          "runtime.win10-arm-aot.Microsoft.NETCore.UniversalWindowsPlatform": "6.2.9"
+          "runtime.win10-arm-aot.Microsoft.NETCore.UniversalWindowsPlatform": "6.2.10"
         },
         "compile": {
           "ref/uap10.0.15138/Microsoft.CSharp.dll": {},
@@ -4720,7 +4724,7 @@
           "build/Microsoft.NetCore.UniversalWindowsPlatform.targets": {}
         }
       },
-      "Microsoft.UI.Xaml/2.3.191211002": {
+      "Microsoft.UI.Xaml/2.4.2": {
         "type": "package",
         "compile": {
           "lib/uap10.0/Microsoft.UI.Xaml.winmd": {}
@@ -4742,17 +4746,6 @@
         },
         "compile": {
           "ref/netstandard1.3/Microsoft.Win32.Primitives.dll": {}
-        }
-      },
-      "MimeTypes/2.0.1": {
-        "type": "package",
-        "contentFiles": {
-          "contentFiles/cs/any/MimeTypes.NullableAttributes.cs.pp": {
-            "buildAction": "Compile",
-            "codeLanguage": "cs",
-            "copyToOutput": false,
-            "ppOutputPath": "MimeTypes.NullableAttributes.cs"
-          }
         }
       },
       "Nancy/2.0.0": {
@@ -4806,6 +4799,18 @@
           "lib/uap10.0.16299/Plugin.Fingerprint.dll": {}
         }
       },
+      "Plugin.Permissions/6.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Essentials": "1.5.2"
+        },
+        "compile": {
+          "lib/uap10.0.16299/Plugin.Permissions.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0.16299/Plugin.Permissions.dll": {}
+        }
+      },
       "RestSharp/106.11.4": {
         "type": "package",
         "compile": {
@@ -4815,7 +4820,7 @@
           "lib/netstandard2.0/RestSharp.dll": {}
         }
       },
-      "Rg.Plugins.Popup/2.0.0.2": {
+      "Rg.Plugins.Popup/2.0.0.3": {
         "type": "package",
         "dependencies": {
           "Xamarin.Forms": "4.5.0.530"
@@ -5143,7 +5148,7 @@
           "runtimes/aot/lib/netcore50/System.Runtime.Extensions.dll": {}
         }
       },
-      "runtime.win10-arm-aot.Microsoft.NETCore.UniversalWindowsPlatform/6.2.9": {
+      "runtime.win10-arm-aot.Microsoft.NETCore.UniversalWindowsPlatform/6.2.10": {
         "type": "package",
         "compile": {
           "ref/netstandard/_._": {}
@@ -5322,89 +5327,89 @@
           "runtimes/win10-arm-aot/nativeassets/uap10.0.15138/clrcompression.dll": {}
         }
       },
-      "runtime.win10-arm.Microsoft.Net.Native.Compiler/2.2.7-rel-27913-00": {
+      "runtime.win10-arm.Microsoft.Net.Native.Compiler/2.2.8-rel-28605-00": {
         "type": "package",
         "dependencies": {
-          "runtime.win10-arm.Microsoft.Net.Native.SharedLibrary": "2.2.7-rel-27913-00"
+          "runtime.win10-arm.Microsoft.Net.Native.SharedLibrary": "2.2.7-rel-28605-00"
         },
         "build": {
           "build/runtime.win10-arm.Microsoft.Net.Native.Compiler.props": {},
           "build/runtime.win10-arm.Microsoft.Net.Native.Compiler.targets": {}
         }
       },
-      "runtime.win10-arm.Microsoft.Net.Native.SharedLibrary/2.2.7-rel-27913-00": {
+      "runtime.win10-arm.Microsoft.Net.Native.SharedLibrary/2.2.7-rel-28605-00": {
         "type": "package",
         "build": {
           "build/runtime.win10-arm.Microsoft.Net.Native.SharedLibrary.props": {},
           "build/runtime.win10-arm.Microsoft.Net.Native.SharedLibrary.targets": {}
         }
       },
-      "runtime.win10-arm.Microsoft.Net.UWPCoreRuntimeSdk/2.2.9": {
+      "runtime.win10-arm.Microsoft.Net.UWPCoreRuntimeSdk/2.2.10": {
         "type": "package",
         "build": {
           "build/runtime.win10-arm.Microsoft.Net.UWPCoreRuntimeSdk.props": {},
           "build/runtime.win10-arm.Microsoft.Net.UWPCoreRuntimeSdk.targets": {}
         }
       },
-      "runtime.win10-arm64.Microsoft.Net.Native.Compiler/2.2.7-rel-27913-00": {
+      "runtime.win10-arm64.Microsoft.Net.Native.Compiler/2.2.8-rel-28605-00": {
         "type": "package",
         "dependencies": {
-          "runtime.win10-arm64.Microsoft.Net.Native.SharedLibrary": "2.2.7-rel-27913-00"
+          "runtime.win10-arm64.Microsoft.Net.Native.SharedLibrary": "2.2.7-rel-28605-00"
         },
         "build": {
           "build/runtime.win10-arm64.Microsoft.Net.Native.Compiler.props": {},
           "build/runtime.win10-arm64.Microsoft.Net.Native.Compiler.targets": {}
         }
       },
-      "runtime.win10-arm64.Microsoft.Net.Native.SharedLibrary/2.2.7-rel-27913-00": {
+      "runtime.win10-arm64.Microsoft.Net.Native.SharedLibrary/2.2.7-rel-28605-00": {
         "type": "package",
         "build": {
           "build/runtime.win10-arm64.Microsoft.Net.Native.SharedLibrary.props": {},
           "build/runtime.win10-arm64.Microsoft.Net.Native.SharedLibrary.targets": {}
         }
       },
-      "runtime.win10-x64.Microsoft.Net.Native.Compiler/2.2.7-rel-27913-00": {
+      "runtime.win10-x64.Microsoft.Net.Native.Compiler/2.2.8-rel-28605-00": {
         "type": "package",
         "dependencies": {
-          "runtime.win10-x64.Microsoft.Net.Native.SharedLibrary": "2.2.7-rel-27913-00"
+          "runtime.win10-x64.Microsoft.Net.Native.SharedLibrary": "2.2.7-rel-28605-00"
         },
         "build": {
           "build/runtime.win10-x64.Microsoft.Net.Native.Compiler.props": {},
           "build/runtime.win10-x64.Microsoft.Net.Native.Compiler.targets": {}
         }
       },
-      "runtime.win10-x64.Microsoft.Net.Native.SharedLibrary/2.2.7-rel-27913-00": {
+      "runtime.win10-x64.Microsoft.Net.Native.SharedLibrary/2.2.7-rel-28605-00": {
         "type": "package",
         "build": {
           "build/runtime.win10-x64.Microsoft.Net.Native.SharedLibrary.props": {},
           "build/runtime.win10-x64.Microsoft.Net.Native.SharedLibrary.targets": {}
         }
       },
-      "runtime.win10-x64.Microsoft.Net.UWPCoreRuntimeSdk/2.2.9": {
+      "runtime.win10-x64.Microsoft.Net.UWPCoreRuntimeSdk/2.2.10": {
         "type": "package",
         "build": {
           "build/runtime.win10-x64.Microsoft.Net.UWPCoreRuntimeSdk.props": {},
           "build/runtime.win10-x64.Microsoft.Net.UWPCoreRuntimeSdk.targets": {}
         }
       },
-      "runtime.win10-x86.Microsoft.Net.Native.Compiler/2.2.7-rel-27913-00": {
+      "runtime.win10-x86.Microsoft.Net.Native.Compiler/2.2.8-rel-28605-00": {
         "type": "package",
         "dependencies": {
-          "runtime.win10-x86.Microsoft.Net.Native.SharedLibrary": "2.2.7-rel-27913-00"
+          "runtime.win10-x86.Microsoft.Net.Native.SharedLibrary": "2.2.7-rel-28605-00"
         },
         "build": {
           "build/runtime.win10-x86.Microsoft.Net.Native.Compiler.props": {},
           "build/runtime.win10-x86.Microsoft.Net.Native.Compiler.targets": {}
         }
       },
-      "runtime.win10-x86.Microsoft.Net.Native.SharedLibrary/2.2.7-rel-27913-00": {
+      "runtime.win10-x86.Microsoft.Net.Native.SharedLibrary/2.2.7-rel-28605-00": {
         "type": "package",
         "build": {
           "build/runtime.win10-x86.Microsoft.Net.Native.SharedLibrary.props": {},
           "build/runtime.win10-x86.Microsoft.Net.Native.SharedLibrary.targets": {}
         }
       },
-      "runtime.win10-x86.Microsoft.Net.UWPCoreRuntimeSdk/2.2.9": {
+      "runtime.win10-x86.Microsoft.Net.UWPCoreRuntimeSdk/2.2.10": {
         "type": "package",
         "build": {
           "build/runtime.win10-x86.Microsoft.Net.UWPCoreRuntimeSdk.props": {},
@@ -5716,11 +5721,11 @@
           "runtimes/win/lib/netstandard1.3/System.Globalization.Extensions.dll": {}
         }
       },
-      "System.IdentityModel.Tokens.Jwt/6.6.0": {
+      "System.IdentityModel.Tokens.Jwt/6.7.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.IdentityModel.JsonWebTokens": "6.6.0",
-          "Microsoft.IdentityModel.Tokens": "6.6.0"
+          "Microsoft.IdentityModel.JsonWebTokens": "6.7.0",
+          "Microsoft.IdentityModel.Tokens": "6.7.0"
         },
         "compile": {
           "lib/netstandard2.0/System.IdentityModel.Tokens.Jwt.dll": {}
@@ -6540,10 +6545,10 @@
           "lib/UAP10/Plugin.Settings.dll": {}
         }
       },
-      "Xamarin.Essentials/1.5.1": {
+      "Xamarin.Essentials/1.5.3.2": {
         "type": "package",
         "dependencies": {
-          "Microsoft.NETCore.UniversalWindowsPlatform": "6.1.9"
+          "Microsoft.NETCore.UniversalWindowsPlatform": "6.2.9"
         },
         "compile": {
           "lib/uap10.0.16299/Xamarin.Essentials.dll": {}
@@ -6578,11 +6583,11 @@
           "lib/uap/FFImageLoading.Forms.dll": {}
         }
       },
-      "Xamarin.Forms/4.5.0.617": {
+      "Xamarin.Forms/4.7.0.968": {
         "type": "package",
         "dependencies": {
           "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.15",
-          "Microsoft.UI.Xaml": "2.3.191211002",
+          "Microsoft.UI.Xaml": "2.4.2",
           "Win2D.uwp": "1.20.0"
         },
         "compile": {
@@ -6602,7 +6607,7 @@
           "buildTransitive/Xamarin.Forms.targets": {}
         }
       },
-      "Xamarin.Plugin.FilePicker/2.1.34": {
+      "Xamarin.Plugin.FilePicker/2.1.41": {
         "type": "package",
         "compile": {
           "lib/uap10.0.16299/Plugin.FilePicker.dll": {}
@@ -6651,9 +6656,10 @@
           "Nancy": "2.0.0",
           "Newtonsoft.Json": "12.0.3",
           "Plugin.Fingerprint": "2.1.1",
+          "Plugin.Permissions": "6.0.1",
           "RestSharp": "106.11.4",
           "Rg.Plugins.Popup": "2.0.0.3",
-          "System.IdentityModel.Tokens.Jwt": "6.6.0",
+          "System.IdentityModel.Tokens.Jwt": "6.7.0",
           "System.Net.Http": "4.3.4",
           "System.Xml.XmlSerializer": "4.3.0",
           "Xam.Plugin.Media": "5.0.1",
@@ -6798,10 +6804,10 @@
           "lib/netstandard1.3/Microsoft.Extensions.PlatformAbstractions.dll": {}
         }
       },
-      "Microsoft.IdentityModel.JsonWebTokens/6.6.0": {
+      "Microsoft.IdentityModel.JsonWebTokens/6.7.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.IdentityModel.Tokens": "6.6.0"
+          "Microsoft.IdentityModel.Tokens": "6.7.0"
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.IdentityModel.JsonWebTokens.dll": {}
@@ -6810,7 +6816,7 @@
           "lib/netstandard2.0/Microsoft.IdentityModel.JsonWebTokens.dll": {}
         }
       },
-      "Microsoft.IdentityModel.Logging/6.6.0": {
+      "Microsoft.IdentityModel.Logging/6.7.0": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/Microsoft.IdentityModel.Logging.dll": {}
@@ -6819,11 +6825,11 @@
           "lib/netstandard2.0/Microsoft.IdentityModel.Logging.dll": {}
         }
       },
-      "Microsoft.IdentityModel.Tokens/6.6.0": {
+      "Microsoft.IdentityModel.Tokens/6.7.0": {
         "type": "package",
         "dependencies": {
           "Microsoft.CSharp": "4.5.0",
-          "Microsoft.IdentityModel.Logging": "6.6.0",
+          "Microsoft.IdentityModel.Logging": "6.7.0",
           "System.Security.Cryptography.Cng": "4.5.0"
         },
         "compile": {
@@ -6833,25 +6839,25 @@
           "lib/netstandard2.0/Microsoft.IdentityModel.Tokens.dll": {}
         }
       },
-      "Microsoft.Net.Native.Compiler/2.2.7-rel-27913-00": {
+      "Microsoft.Net.Native.Compiler/2.2.8-rel-28605-00": {
         "type": "package",
         "dependencies": {
-          "runtime.win10-arm.Microsoft.Net.Native.Compiler": "2.2.7-rel-27913-00",
-          "runtime.win10-arm64.Microsoft.Net.Native.Compiler": "2.2.7-rel-27913-00",
-          "runtime.win10-x64.Microsoft.Net.Native.Compiler": "2.2.7-rel-27913-00",
-          "runtime.win10-x86.Microsoft.Net.Native.Compiler": "2.2.7-rel-27913-00"
+          "runtime.win10-arm.Microsoft.Net.Native.Compiler": "2.2.8-rel-28605-00",
+          "runtime.win10-arm64.Microsoft.Net.Native.Compiler": "2.2.8-rel-28605-00",
+          "runtime.win10-x64.Microsoft.Net.Native.Compiler": "2.2.8-rel-28605-00",
+          "runtime.win10-x86.Microsoft.Net.Native.Compiler": "2.2.8-rel-28605-00"
         },
         "build": {
           "build/Microsoft.Net.Native.Compiler.props": {},
           "build/Microsoft.Net.Native.Compiler.targets": {}
         }
       },
-      "Microsoft.Net.UWPCoreRuntimeSdk/2.2.9": {
+      "Microsoft.Net.UWPCoreRuntimeSdk/2.2.10": {
         "type": "package",
         "dependencies": {
-          "runtime.win10-arm.Microsoft.Net.UWPCoreRuntimeSdk": "2.2.9",
-          "runtime.win10-x64.Microsoft.Net.UWPCoreRuntimeSdk": "2.2.9",
-          "runtime.win10-x86.Microsoft.Net.UWPCoreRuntimeSdk": "2.2.9"
+          "runtime.win10-arm.Microsoft.Net.UWPCoreRuntimeSdk": "2.2.10",
+          "runtime.win10-x64.Microsoft.Net.UWPCoreRuntimeSdk": "2.2.10",
+          "runtime.win10-x86.Microsoft.Net.UWPCoreRuntimeSdk": "2.2.10"
         },
         "build": {
           "build/Microsoft.Net.UWPCoreRuntimeSdk.props": {}
@@ -6875,14 +6881,14 @@
           "lib/netstandard1.0/_._": {}
         }
       },
-      "Microsoft.NETCore.UniversalWindowsPlatform/6.2.9": {
+      "Microsoft.NETCore.UniversalWindowsPlatform/6.2.10": {
         "type": "package",
         "dependencies": {
           "Microsoft.NETCore.Platforms": "2.1.0",
-          "Microsoft.Net.Native.Compiler": "2.2.7-rel-27913-00",
-          "Microsoft.Net.UWPCoreRuntimeSdk": "2.2.9",
+          "Microsoft.Net.Native.Compiler": "2.2.8-rel-28605-00",
+          "Microsoft.Net.UWPCoreRuntimeSdk": "2.2.10",
           "NETStandard.Library": "2.0.3",
-          "runtime.win10-arm64-aot.Microsoft.NETCore.UniversalWindowsPlatform": "6.2.9"
+          "runtime.win10-arm64-aot.Microsoft.NETCore.UniversalWindowsPlatform": "6.2.10"
         },
         "compile": {
           "ref/uap10.0.15138/Microsoft.CSharp.dll": {},
@@ -7044,7 +7050,7 @@
           "build/Microsoft.NetCore.UniversalWindowsPlatform.targets": {}
         }
       },
-      "Microsoft.UI.Xaml/2.3.191211002": {
+      "Microsoft.UI.Xaml/2.4.2": {
         "type": "package",
         "compile": {
           "lib/uap10.0/Microsoft.UI.Xaml.winmd": {}
@@ -7066,17 +7072,6 @@
         },
         "compile": {
           "ref/netstandard1.3/Microsoft.Win32.Primitives.dll": {}
-        }
-      },
-      "MimeTypes/2.0.1": {
-        "type": "package",
-        "contentFiles": {
-          "contentFiles/cs/any/MimeTypes.NullableAttributes.cs.pp": {
-            "buildAction": "Compile",
-            "codeLanguage": "cs",
-            "copyToOutput": false,
-            "ppOutputPath": "MimeTypes.NullableAttributes.cs"
-          }
         }
       },
       "Nancy/2.0.0": {
@@ -7130,6 +7125,18 @@
           "lib/uap10.0.16299/Plugin.Fingerprint.dll": {}
         }
       },
+      "Plugin.Permissions/6.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Essentials": "1.5.2"
+        },
+        "compile": {
+          "lib/uap10.0.16299/Plugin.Permissions.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0.16299/Plugin.Permissions.dll": {}
+        }
+      },
       "RestSharp/106.11.4": {
         "type": "package",
         "compile": {
@@ -7139,7 +7146,7 @@
           "lib/netstandard2.0/RestSharp.dll": {}
         }
       },
-      "Rg.Plugins.Popup/2.0.0.2": {
+      "Rg.Plugins.Popup/2.0.0.3": {
         "type": "package",
         "dependencies": {
           "Xamarin.Forms": "4.5.0.530"
@@ -7467,31 +7474,31 @@
           "runtimes/aot/lib/netcore50/System.Runtime.Extensions.dll": {}
         }
       },
-      "runtime.win10-arm.Microsoft.Net.Native.Compiler/2.2.7-rel-27913-00": {
+      "runtime.win10-arm.Microsoft.Net.Native.Compiler/2.2.8-rel-28605-00": {
         "type": "package",
         "dependencies": {
-          "runtime.win10-arm.Microsoft.Net.Native.SharedLibrary": "2.2.7-rel-27913-00"
+          "runtime.win10-arm.Microsoft.Net.Native.SharedLibrary": "2.2.7-rel-28605-00"
         },
         "build": {
           "build/runtime.win10-arm.Microsoft.Net.Native.Compiler.props": {},
           "build/runtime.win10-arm.Microsoft.Net.Native.Compiler.targets": {}
         }
       },
-      "runtime.win10-arm.Microsoft.Net.Native.SharedLibrary/2.2.7-rel-27913-00": {
+      "runtime.win10-arm.Microsoft.Net.Native.SharedLibrary/2.2.7-rel-28605-00": {
         "type": "package",
         "build": {
           "build/runtime.win10-arm.Microsoft.Net.Native.SharedLibrary.props": {},
           "build/runtime.win10-arm.Microsoft.Net.Native.SharedLibrary.targets": {}
         }
       },
-      "runtime.win10-arm.Microsoft.Net.UWPCoreRuntimeSdk/2.2.9": {
+      "runtime.win10-arm.Microsoft.Net.UWPCoreRuntimeSdk/2.2.10": {
         "type": "package",
         "build": {
           "build/runtime.win10-arm.Microsoft.Net.UWPCoreRuntimeSdk.props": {},
           "build/runtime.win10-arm.Microsoft.Net.UWPCoreRuntimeSdk.targets": {}
         }
       },
-      "runtime.win10-arm64-aot.Microsoft.NETCore.UniversalWindowsPlatform/6.2.9": {
+      "runtime.win10-arm64-aot.Microsoft.NETCore.UniversalWindowsPlatform/6.2.10": {
         "type": "package",
         "compile": {
           "ref/netstandard/_._": {}
@@ -7670,65 +7677,65 @@
           "runtimes/win10-arm64-aot/nativeassets/uap10.0.15138/clrcompression.dll": {}
         }
       },
-      "runtime.win10-arm64.Microsoft.Net.Native.Compiler/2.2.7-rel-27913-00": {
+      "runtime.win10-arm64.Microsoft.Net.Native.Compiler/2.2.8-rel-28605-00": {
         "type": "package",
         "dependencies": {
-          "runtime.win10-arm64.Microsoft.Net.Native.SharedLibrary": "2.2.7-rel-27913-00"
+          "runtime.win10-arm64.Microsoft.Net.Native.SharedLibrary": "2.2.7-rel-28605-00"
         },
         "build": {
           "build/runtime.win10-arm64.Microsoft.Net.Native.Compiler.props": {},
           "build/runtime.win10-arm64.Microsoft.Net.Native.Compiler.targets": {}
         }
       },
-      "runtime.win10-arm64.Microsoft.Net.Native.SharedLibrary/2.2.7-rel-27913-00": {
+      "runtime.win10-arm64.Microsoft.Net.Native.SharedLibrary/2.2.7-rel-28605-00": {
         "type": "package",
         "build": {
           "build/runtime.win10-arm64.Microsoft.Net.Native.SharedLibrary.props": {},
           "build/runtime.win10-arm64.Microsoft.Net.Native.SharedLibrary.targets": {}
         }
       },
-      "runtime.win10-x64.Microsoft.Net.Native.Compiler/2.2.7-rel-27913-00": {
+      "runtime.win10-x64.Microsoft.Net.Native.Compiler/2.2.8-rel-28605-00": {
         "type": "package",
         "dependencies": {
-          "runtime.win10-x64.Microsoft.Net.Native.SharedLibrary": "2.2.7-rel-27913-00"
+          "runtime.win10-x64.Microsoft.Net.Native.SharedLibrary": "2.2.7-rel-28605-00"
         },
         "build": {
           "build/runtime.win10-x64.Microsoft.Net.Native.Compiler.props": {},
           "build/runtime.win10-x64.Microsoft.Net.Native.Compiler.targets": {}
         }
       },
-      "runtime.win10-x64.Microsoft.Net.Native.SharedLibrary/2.2.7-rel-27913-00": {
+      "runtime.win10-x64.Microsoft.Net.Native.SharedLibrary/2.2.7-rel-28605-00": {
         "type": "package",
         "build": {
           "build/runtime.win10-x64.Microsoft.Net.Native.SharedLibrary.props": {},
           "build/runtime.win10-x64.Microsoft.Net.Native.SharedLibrary.targets": {}
         }
       },
-      "runtime.win10-x64.Microsoft.Net.UWPCoreRuntimeSdk/2.2.9": {
+      "runtime.win10-x64.Microsoft.Net.UWPCoreRuntimeSdk/2.2.10": {
         "type": "package",
         "build": {
           "build/runtime.win10-x64.Microsoft.Net.UWPCoreRuntimeSdk.props": {},
           "build/runtime.win10-x64.Microsoft.Net.UWPCoreRuntimeSdk.targets": {}
         }
       },
-      "runtime.win10-x86.Microsoft.Net.Native.Compiler/2.2.7-rel-27913-00": {
+      "runtime.win10-x86.Microsoft.Net.Native.Compiler/2.2.8-rel-28605-00": {
         "type": "package",
         "dependencies": {
-          "runtime.win10-x86.Microsoft.Net.Native.SharedLibrary": "2.2.7-rel-27913-00"
+          "runtime.win10-x86.Microsoft.Net.Native.SharedLibrary": "2.2.7-rel-28605-00"
         },
         "build": {
           "build/runtime.win10-x86.Microsoft.Net.Native.Compiler.props": {},
           "build/runtime.win10-x86.Microsoft.Net.Native.Compiler.targets": {}
         }
       },
-      "runtime.win10-x86.Microsoft.Net.Native.SharedLibrary/2.2.7-rel-27913-00": {
+      "runtime.win10-x86.Microsoft.Net.Native.SharedLibrary/2.2.7-rel-28605-00": {
         "type": "package",
         "build": {
           "build/runtime.win10-x86.Microsoft.Net.Native.SharedLibrary.props": {},
           "build/runtime.win10-x86.Microsoft.Net.Native.SharedLibrary.targets": {}
         }
       },
-      "runtime.win10-x86.Microsoft.Net.UWPCoreRuntimeSdk/2.2.9": {
+      "runtime.win10-x86.Microsoft.Net.UWPCoreRuntimeSdk/2.2.10": {
         "type": "package",
         "build": {
           "build/runtime.win10-x86.Microsoft.Net.UWPCoreRuntimeSdk.props": {},
@@ -8040,11 +8047,11 @@
           "runtimes/win/lib/netstandard1.3/System.Globalization.Extensions.dll": {}
         }
       },
-      "System.IdentityModel.Tokens.Jwt/6.6.0": {
+      "System.IdentityModel.Tokens.Jwt/6.7.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.IdentityModel.JsonWebTokens": "6.6.0",
-          "Microsoft.IdentityModel.Tokens": "6.6.0"
+          "Microsoft.IdentityModel.JsonWebTokens": "6.7.0",
+          "Microsoft.IdentityModel.Tokens": "6.7.0"
         },
         "compile": {
           "lib/netstandard2.0/System.IdentityModel.Tokens.Jwt.dll": {}
@@ -8861,10 +8868,10 @@
           "lib/UAP10/Plugin.Settings.dll": {}
         }
       },
-      "Xamarin.Essentials/1.5.1": {
+      "Xamarin.Essentials/1.5.3.2": {
         "type": "package",
         "dependencies": {
-          "Microsoft.NETCore.UniversalWindowsPlatform": "6.1.9"
+          "Microsoft.NETCore.UniversalWindowsPlatform": "6.2.9"
         },
         "compile": {
           "lib/uap10.0.16299/Xamarin.Essentials.dll": {}
@@ -8899,11 +8906,11 @@
           "lib/uap/FFImageLoading.Forms.dll": {}
         }
       },
-      "Xamarin.Forms/4.5.0.617": {
+      "Xamarin.Forms/4.7.0.968": {
         "type": "package",
         "dependencies": {
           "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.15",
-          "Microsoft.UI.Xaml": "2.3.191211002",
+          "Microsoft.UI.Xaml": "2.4.2",
           "Win2D.uwp": "1.20.0"
         },
         "compile": {
@@ -8923,7 +8930,7 @@
           "buildTransitive/Xamarin.Forms.targets": {}
         }
       },
-      "Xamarin.Plugin.FilePicker/2.1.34": {
+      "Xamarin.Plugin.FilePicker/2.1.41": {
         "type": "package",
         "compile": {
           "lib/uap10.0.16299/Plugin.FilePicker.dll": {}
@@ -8972,9 +8979,10 @@
           "Nancy": "2.0.0",
           "Newtonsoft.Json": "12.0.3",
           "Plugin.Fingerprint": "2.1.1",
+          "Plugin.Permissions": "6.0.1",
           "RestSharp": "106.11.4",
           "Rg.Plugins.Popup": "2.0.0.3",
-          "System.IdentityModel.Tokens.Jwt": "6.6.0",
+          "System.IdentityModel.Tokens.Jwt": "6.7.0",
           "System.Net.Http": "4.3.4",
           "System.Xml.XmlSerializer": "4.3.0",
           "Xam.Plugin.Media": "5.0.1",
@@ -9119,10 +9127,10 @@
           "lib/netstandard1.3/Microsoft.Extensions.PlatformAbstractions.dll": {}
         }
       },
-      "Microsoft.IdentityModel.JsonWebTokens/6.6.0": {
+      "Microsoft.IdentityModel.JsonWebTokens/6.7.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.IdentityModel.Tokens": "6.6.0"
+          "Microsoft.IdentityModel.Tokens": "6.7.0"
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.IdentityModel.JsonWebTokens.dll": {}
@@ -9131,7 +9139,7 @@
           "lib/netstandard2.0/Microsoft.IdentityModel.JsonWebTokens.dll": {}
         }
       },
-      "Microsoft.IdentityModel.Logging/6.6.0": {
+      "Microsoft.IdentityModel.Logging/6.7.0": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/Microsoft.IdentityModel.Logging.dll": {}
@@ -9140,11 +9148,11 @@
           "lib/netstandard2.0/Microsoft.IdentityModel.Logging.dll": {}
         }
       },
-      "Microsoft.IdentityModel.Tokens/6.6.0": {
+      "Microsoft.IdentityModel.Tokens/6.7.0": {
         "type": "package",
         "dependencies": {
           "Microsoft.CSharp": "4.5.0",
-          "Microsoft.IdentityModel.Logging": "6.6.0",
+          "Microsoft.IdentityModel.Logging": "6.7.0",
           "System.Security.Cryptography.Cng": "4.5.0"
         },
         "compile": {
@@ -9154,25 +9162,25 @@
           "lib/netstandard2.0/Microsoft.IdentityModel.Tokens.dll": {}
         }
       },
-      "Microsoft.Net.Native.Compiler/2.2.7-rel-27913-00": {
+      "Microsoft.Net.Native.Compiler/2.2.8-rel-28605-00": {
         "type": "package",
         "dependencies": {
-          "runtime.win10-arm.Microsoft.Net.Native.Compiler": "2.2.7-rel-27913-00",
-          "runtime.win10-arm64.Microsoft.Net.Native.Compiler": "2.2.7-rel-27913-00",
-          "runtime.win10-x64.Microsoft.Net.Native.Compiler": "2.2.7-rel-27913-00",
-          "runtime.win10-x86.Microsoft.Net.Native.Compiler": "2.2.7-rel-27913-00"
+          "runtime.win10-arm.Microsoft.Net.Native.Compiler": "2.2.8-rel-28605-00",
+          "runtime.win10-arm64.Microsoft.Net.Native.Compiler": "2.2.8-rel-28605-00",
+          "runtime.win10-x64.Microsoft.Net.Native.Compiler": "2.2.8-rel-28605-00",
+          "runtime.win10-x86.Microsoft.Net.Native.Compiler": "2.2.8-rel-28605-00"
         },
         "build": {
           "build/Microsoft.Net.Native.Compiler.props": {},
           "build/Microsoft.Net.Native.Compiler.targets": {}
         }
       },
-      "Microsoft.Net.UWPCoreRuntimeSdk/2.2.9": {
+      "Microsoft.Net.UWPCoreRuntimeSdk/2.2.10": {
         "type": "package",
         "dependencies": {
-          "runtime.win10-arm.Microsoft.Net.UWPCoreRuntimeSdk": "2.2.9",
-          "runtime.win10-x64.Microsoft.Net.UWPCoreRuntimeSdk": "2.2.9",
-          "runtime.win10-x86.Microsoft.Net.UWPCoreRuntimeSdk": "2.2.9"
+          "runtime.win10-arm.Microsoft.Net.UWPCoreRuntimeSdk": "2.2.10",
+          "runtime.win10-x64.Microsoft.Net.UWPCoreRuntimeSdk": "2.2.10",
+          "runtime.win10-x86.Microsoft.Net.UWPCoreRuntimeSdk": "2.2.10"
         },
         "build": {
           "build/Microsoft.Net.UWPCoreRuntimeSdk.props": {}
@@ -9196,14 +9204,14 @@
           "lib/netstandard1.0/_._": {}
         }
       },
-      "Microsoft.NETCore.UniversalWindowsPlatform/6.2.9": {
+      "Microsoft.NETCore.UniversalWindowsPlatform/6.2.10": {
         "type": "package",
         "dependencies": {
           "Microsoft.NETCore.Platforms": "2.1.0",
-          "Microsoft.Net.Native.Compiler": "2.2.7-rel-27913-00",
-          "Microsoft.Net.UWPCoreRuntimeSdk": "2.2.9",
+          "Microsoft.Net.Native.Compiler": "2.2.8-rel-28605-00",
+          "Microsoft.Net.UWPCoreRuntimeSdk": "2.2.10",
           "NETStandard.Library": "2.0.3",
-          "runtime.win10-x64.Microsoft.NETCore.UniversalWindowsPlatform": "6.2.9"
+          "runtime.win10-x64.Microsoft.NETCore.UniversalWindowsPlatform": "6.2.10"
         },
         "compile": {
           "ref/uap10.0.15138/Microsoft.CSharp.dll": {},
@@ -9365,7 +9373,7 @@
           "build/Microsoft.NetCore.UniversalWindowsPlatform.targets": {}
         }
       },
-      "Microsoft.UI.Xaml/2.3.191211002": {
+      "Microsoft.UI.Xaml/2.4.2": {
         "type": "package",
         "compile": {
           "lib/uap10.0/Microsoft.UI.Xaml.winmd": {}
@@ -9387,17 +9395,6 @@
         },
         "compile": {
           "ref/netstandard1.3/Microsoft.Win32.Primitives.dll": {}
-        }
-      },
-      "MimeTypes/2.0.1": {
-        "type": "package",
-        "contentFiles": {
-          "contentFiles/cs/any/MimeTypes.NullableAttributes.cs.pp": {
-            "buildAction": "Compile",
-            "codeLanguage": "cs",
-            "copyToOutput": false,
-            "ppOutputPath": "MimeTypes.NullableAttributes.cs"
-          }
         }
       },
       "Nancy/2.0.0": {
@@ -9451,6 +9448,18 @@
           "lib/uap10.0.16299/Plugin.Fingerprint.dll": {}
         }
       },
+      "Plugin.Permissions/6.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Essentials": "1.5.2"
+        },
+        "compile": {
+          "lib/uap10.0.16299/Plugin.Permissions.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0.16299/Plugin.Permissions.dll": {}
+        }
+      },
       "RestSharp/106.11.4": {
         "type": "package",
         "compile": {
@@ -9460,7 +9469,7 @@
           "lib/netstandard2.0/RestSharp.dll": {}
         }
       },
-      "Rg.Plugins.Popup/2.0.0.2": {
+      "Rg.Plugins.Popup/2.0.0.3": {
         "type": "package",
         "dependencies": {
           "Xamarin.Forms": "4.5.0.530"
@@ -9746,72 +9755,72 @@
           "runtimes/win/lib/netcore50/System.Runtime.Extensions.dll": {}
         }
       },
-      "runtime.win10-arm.Microsoft.Net.Native.Compiler/2.2.7-rel-27913-00": {
+      "runtime.win10-arm.Microsoft.Net.Native.Compiler/2.2.8-rel-28605-00": {
         "type": "package",
         "dependencies": {
-          "runtime.win10-arm.Microsoft.Net.Native.SharedLibrary": "2.2.7-rel-27913-00"
+          "runtime.win10-arm.Microsoft.Net.Native.SharedLibrary": "2.2.7-rel-28605-00"
         },
         "build": {
           "build/runtime.win10-arm.Microsoft.Net.Native.Compiler.props": {},
           "build/runtime.win10-arm.Microsoft.Net.Native.Compiler.targets": {}
         }
       },
-      "runtime.win10-arm.Microsoft.Net.Native.SharedLibrary/2.2.7-rel-27913-00": {
+      "runtime.win10-arm.Microsoft.Net.Native.SharedLibrary/2.2.7-rel-28605-00": {
         "type": "package",
         "build": {
           "build/runtime.win10-arm.Microsoft.Net.Native.SharedLibrary.props": {},
           "build/runtime.win10-arm.Microsoft.Net.Native.SharedLibrary.targets": {}
         }
       },
-      "runtime.win10-arm.Microsoft.Net.UWPCoreRuntimeSdk/2.2.9": {
+      "runtime.win10-arm.Microsoft.Net.UWPCoreRuntimeSdk/2.2.10": {
         "type": "package",
         "build": {
           "build/runtime.win10-arm.Microsoft.Net.UWPCoreRuntimeSdk.props": {},
           "build/runtime.win10-arm.Microsoft.Net.UWPCoreRuntimeSdk.targets": {}
         }
       },
-      "runtime.win10-arm64.Microsoft.Net.Native.Compiler/2.2.7-rel-27913-00": {
+      "runtime.win10-arm64.Microsoft.Net.Native.Compiler/2.2.8-rel-28605-00": {
         "type": "package",
         "dependencies": {
-          "runtime.win10-arm64.Microsoft.Net.Native.SharedLibrary": "2.2.7-rel-27913-00"
+          "runtime.win10-arm64.Microsoft.Net.Native.SharedLibrary": "2.2.7-rel-28605-00"
         },
         "build": {
           "build/runtime.win10-arm64.Microsoft.Net.Native.Compiler.props": {},
           "build/runtime.win10-arm64.Microsoft.Net.Native.Compiler.targets": {}
         }
       },
-      "runtime.win10-arm64.Microsoft.Net.Native.SharedLibrary/2.2.7-rel-27913-00": {
+      "runtime.win10-arm64.Microsoft.Net.Native.SharedLibrary/2.2.7-rel-28605-00": {
         "type": "package",
         "build": {
           "build/runtime.win10-arm64.Microsoft.Net.Native.SharedLibrary.props": {},
           "build/runtime.win10-arm64.Microsoft.Net.Native.SharedLibrary.targets": {}
         }
       },
-      "runtime.win10-x64.Microsoft.Net.Native.Compiler/2.2.7-rel-27913-00": {
+      "runtime.win10-x64.Microsoft.Net.Native.Compiler/2.2.8-rel-28605-00": {
         "type": "package",
         "dependencies": {
-          "runtime.win10-x64.Microsoft.Net.Native.SharedLibrary": "2.2.7-rel-27913-00"
+          "runtime.win10-x64.Microsoft.Net.Native.SharedLibrary": "2.2.7-rel-28605-00"
         },
         "build": {
           "build/runtime.win10-x64.Microsoft.Net.Native.Compiler.props": {},
           "build/runtime.win10-x64.Microsoft.Net.Native.Compiler.targets": {}
         }
       },
-      "runtime.win10-x64.Microsoft.Net.Native.SharedLibrary/2.2.7-rel-27913-00": {
+      "runtime.win10-x64.Microsoft.Net.Native.SharedLibrary/2.2.7-rel-28605-00": {
         "type": "package",
         "build": {
           "build/runtime.win10-x64.Microsoft.Net.Native.SharedLibrary.props": {},
           "build/runtime.win10-x64.Microsoft.Net.Native.SharedLibrary.targets": {}
         }
       },
-      "runtime.win10-x64.Microsoft.Net.UWPCoreRuntimeSdk/2.2.9": {
+      "runtime.win10-x64.Microsoft.Net.UWPCoreRuntimeSdk/2.2.10": {
         "type": "package",
         "build": {
           "build/runtime.win10-x64.Microsoft.Net.UWPCoreRuntimeSdk.props": {},
           "build/runtime.win10-x64.Microsoft.Net.UWPCoreRuntimeSdk.targets": {}
         }
       },
-      "runtime.win10-x64.Microsoft.NETCore.UniversalWindowsPlatform/6.2.9": {
+      "runtime.win10-x64.Microsoft.NETCore.UniversalWindowsPlatform/6.2.10": {
         "type": "package",
         "compile": {
           "ref/netstandard/_._": {}
@@ -9989,24 +9998,24 @@
           "runtimes/win10-x64/nativeassets/uap10.0.15138/clrcompression.dll": {}
         }
       },
-      "runtime.win10-x86.Microsoft.Net.Native.Compiler/2.2.7-rel-27913-00": {
+      "runtime.win10-x86.Microsoft.Net.Native.Compiler/2.2.8-rel-28605-00": {
         "type": "package",
         "dependencies": {
-          "runtime.win10-x86.Microsoft.Net.Native.SharedLibrary": "2.2.7-rel-27913-00"
+          "runtime.win10-x86.Microsoft.Net.Native.SharedLibrary": "2.2.7-rel-28605-00"
         },
         "build": {
           "build/runtime.win10-x86.Microsoft.Net.Native.Compiler.props": {},
           "build/runtime.win10-x86.Microsoft.Net.Native.Compiler.targets": {}
         }
       },
-      "runtime.win10-x86.Microsoft.Net.Native.SharedLibrary/2.2.7-rel-27913-00": {
+      "runtime.win10-x86.Microsoft.Net.Native.SharedLibrary/2.2.7-rel-28605-00": {
         "type": "package",
         "build": {
           "build/runtime.win10-x86.Microsoft.Net.Native.SharedLibrary.props": {},
           "build/runtime.win10-x86.Microsoft.Net.Native.SharedLibrary.targets": {}
         }
       },
-      "runtime.win10-x86.Microsoft.Net.UWPCoreRuntimeSdk/2.2.9": {
+      "runtime.win10-x86.Microsoft.Net.UWPCoreRuntimeSdk/2.2.10": {
         "type": "package",
         "build": {
           "build/runtime.win10-x86.Microsoft.Net.UWPCoreRuntimeSdk.props": {},
@@ -10318,11 +10327,11 @@
           "runtimes/win/lib/netstandard1.3/System.Globalization.Extensions.dll": {}
         }
       },
-      "System.IdentityModel.Tokens.Jwt/6.6.0": {
+      "System.IdentityModel.Tokens.Jwt/6.7.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.IdentityModel.JsonWebTokens": "6.6.0",
-          "Microsoft.IdentityModel.Tokens": "6.6.0"
+          "Microsoft.IdentityModel.JsonWebTokens": "6.7.0",
+          "Microsoft.IdentityModel.Tokens": "6.7.0"
         },
         "compile": {
           "lib/netstandard2.0/System.IdentityModel.Tokens.Jwt.dll": {}
@@ -11142,10 +11151,10 @@
           "lib/UAP10/Plugin.Settings.dll": {}
         }
       },
-      "Xamarin.Essentials/1.5.1": {
+      "Xamarin.Essentials/1.5.3.2": {
         "type": "package",
         "dependencies": {
-          "Microsoft.NETCore.UniversalWindowsPlatform": "6.1.9"
+          "Microsoft.NETCore.UniversalWindowsPlatform": "6.2.9"
         },
         "compile": {
           "lib/uap10.0.16299/Xamarin.Essentials.dll": {}
@@ -11180,11 +11189,11 @@
           "lib/uap/FFImageLoading.Forms.dll": {}
         }
       },
-      "Xamarin.Forms/4.5.0.617": {
+      "Xamarin.Forms/4.7.0.968": {
         "type": "package",
         "dependencies": {
           "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.15",
-          "Microsoft.UI.Xaml": "2.3.191211002",
+          "Microsoft.UI.Xaml": "2.4.2",
           "Win2D.uwp": "1.20.0"
         },
         "compile": {
@@ -11204,7 +11213,7 @@
           "buildTransitive/Xamarin.Forms.targets": {}
         }
       },
-      "Xamarin.Plugin.FilePicker/2.1.34": {
+      "Xamarin.Plugin.FilePicker/2.1.41": {
         "type": "package",
         "compile": {
           "lib/uap10.0.16299/Plugin.FilePicker.dll": {}
@@ -11253,9 +11262,10 @@
           "Nancy": "2.0.0",
           "Newtonsoft.Json": "12.0.3",
           "Plugin.Fingerprint": "2.1.1",
+          "Plugin.Permissions": "6.0.1",
           "RestSharp": "106.11.4",
           "Rg.Plugins.Popup": "2.0.0.3",
-          "System.IdentityModel.Tokens.Jwt": "6.6.0",
+          "System.IdentityModel.Tokens.Jwt": "6.7.0",
           "System.Net.Http": "4.3.4",
           "System.Xml.XmlSerializer": "4.3.0",
           "Xam.Plugin.Media": "5.0.1",
@@ -11400,10 +11410,10 @@
           "lib/netstandard1.3/Microsoft.Extensions.PlatformAbstractions.dll": {}
         }
       },
-      "Microsoft.IdentityModel.JsonWebTokens/6.6.0": {
+      "Microsoft.IdentityModel.JsonWebTokens/6.7.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.IdentityModel.Tokens": "6.6.0"
+          "Microsoft.IdentityModel.Tokens": "6.7.0"
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.IdentityModel.JsonWebTokens.dll": {}
@@ -11412,7 +11422,7 @@
           "lib/netstandard2.0/Microsoft.IdentityModel.JsonWebTokens.dll": {}
         }
       },
-      "Microsoft.IdentityModel.Logging/6.6.0": {
+      "Microsoft.IdentityModel.Logging/6.7.0": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/Microsoft.IdentityModel.Logging.dll": {}
@@ -11421,11 +11431,11 @@
           "lib/netstandard2.0/Microsoft.IdentityModel.Logging.dll": {}
         }
       },
-      "Microsoft.IdentityModel.Tokens/6.6.0": {
+      "Microsoft.IdentityModel.Tokens/6.7.0": {
         "type": "package",
         "dependencies": {
           "Microsoft.CSharp": "4.5.0",
-          "Microsoft.IdentityModel.Logging": "6.6.0",
+          "Microsoft.IdentityModel.Logging": "6.7.0",
           "System.Security.Cryptography.Cng": "4.5.0"
         },
         "compile": {
@@ -11435,25 +11445,25 @@
           "lib/netstandard2.0/Microsoft.IdentityModel.Tokens.dll": {}
         }
       },
-      "Microsoft.Net.Native.Compiler/2.2.7-rel-27913-00": {
+      "Microsoft.Net.Native.Compiler/2.2.8-rel-28605-00": {
         "type": "package",
         "dependencies": {
-          "runtime.win10-arm.Microsoft.Net.Native.Compiler": "2.2.7-rel-27913-00",
-          "runtime.win10-arm64.Microsoft.Net.Native.Compiler": "2.2.7-rel-27913-00",
-          "runtime.win10-x64.Microsoft.Net.Native.Compiler": "2.2.7-rel-27913-00",
-          "runtime.win10-x86.Microsoft.Net.Native.Compiler": "2.2.7-rel-27913-00"
+          "runtime.win10-arm.Microsoft.Net.Native.Compiler": "2.2.8-rel-28605-00",
+          "runtime.win10-arm64.Microsoft.Net.Native.Compiler": "2.2.8-rel-28605-00",
+          "runtime.win10-x64.Microsoft.Net.Native.Compiler": "2.2.8-rel-28605-00",
+          "runtime.win10-x86.Microsoft.Net.Native.Compiler": "2.2.8-rel-28605-00"
         },
         "build": {
           "build/Microsoft.Net.Native.Compiler.props": {},
           "build/Microsoft.Net.Native.Compiler.targets": {}
         }
       },
-      "Microsoft.Net.UWPCoreRuntimeSdk/2.2.9": {
+      "Microsoft.Net.UWPCoreRuntimeSdk/2.2.10": {
         "type": "package",
         "dependencies": {
-          "runtime.win10-arm.Microsoft.Net.UWPCoreRuntimeSdk": "2.2.9",
-          "runtime.win10-x64.Microsoft.Net.UWPCoreRuntimeSdk": "2.2.9",
-          "runtime.win10-x86.Microsoft.Net.UWPCoreRuntimeSdk": "2.2.9"
+          "runtime.win10-arm.Microsoft.Net.UWPCoreRuntimeSdk": "2.2.10",
+          "runtime.win10-x64.Microsoft.Net.UWPCoreRuntimeSdk": "2.2.10",
+          "runtime.win10-x86.Microsoft.Net.UWPCoreRuntimeSdk": "2.2.10"
         },
         "build": {
           "build/Microsoft.Net.UWPCoreRuntimeSdk.props": {}
@@ -11477,14 +11487,14 @@
           "lib/netstandard1.0/_._": {}
         }
       },
-      "Microsoft.NETCore.UniversalWindowsPlatform/6.2.9": {
+      "Microsoft.NETCore.UniversalWindowsPlatform/6.2.10": {
         "type": "package",
         "dependencies": {
           "Microsoft.NETCore.Platforms": "2.1.0",
-          "Microsoft.Net.Native.Compiler": "2.2.7-rel-27913-00",
-          "Microsoft.Net.UWPCoreRuntimeSdk": "2.2.9",
+          "Microsoft.Net.Native.Compiler": "2.2.8-rel-28605-00",
+          "Microsoft.Net.UWPCoreRuntimeSdk": "2.2.10",
           "NETStandard.Library": "2.0.3",
-          "runtime.win10-x64-aot.Microsoft.NETCore.UniversalWindowsPlatform": "6.2.9"
+          "runtime.win10-x64-aot.Microsoft.NETCore.UniversalWindowsPlatform": "6.2.10"
         },
         "compile": {
           "ref/uap10.0.15138/Microsoft.CSharp.dll": {},
@@ -11646,7 +11656,7 @@
           "build/Microsoft.NetCore.UniversalWindowsPlatform.targets": {}
         }
       },
-      "Microsoft.UI.Xaml/2.3.191211002": {
+      "Microsoft.UI.Xaml/2.4.2": {
         "type": "package",
         "compile": {
           "lib/uap10.0/Microsoft.UI.Xaml.winmd": {}
@@ -11668,17 +11678,6 @@
         },
         "compile": {
           "ref/netstandard1.3/Microsoft.Win32.Primitives.dll": {}
-        }
-      },
-      "MimeTypes/2.0.1": {
-        "type": "package",
-        "contentFiles": {
-          "contentFiles/cs/any/MimeTypes.NullableAttributes.cs.pp": {
-            "buildAction": "Compile",
-            "codeLanguage": "cs",
-            "copyToOutput": false,
-            "ppOutputPath": "MimeTypes.NullableAttributes.cs"
-          }
         }
       },
       "Nancy/2.0.0": {
@@ -11732,6 +11731,18 @@
           "lib/uap10.0.16299/Plugin.Fingerprint.dll": {}
         }
       },
+      "Plugin.Permissions/6.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Essentials": "1.5.2"
+        },
+        "compile": {
+          "lib/uap10.0.16299/Plugin.Permissions.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0.16299/Plugin.Permissions.dll": {}
+        }
+      },
       "RestSharp/106.11.4": {
         "type": "package",
         "compile": {
@@ -11741,7 +11752,7 @@
           "lib/netstandard2.0/RestSharp.dll": {}
         }
       },
-      "Rg.Plugins.Popup/2.0.0.2": {
+      "Rg.Plugins.Popup/2.0.0.3": {
         "type": "package",
         "dependencies": {
           "Xamarin.Forms": "4.5.0.530"
@@ -12069,48 +12080,48 @@
           "runtimes/aot/lib/netcore50/System.Runtime.Extensions.dll": {}
         }
       },
-      "runtime.win10-arm.Microsoft.Net.Native.Compiler/2.2.7-rel-27913-00": {
+      "runtime.win10-arm.Microsoft.Net.Native.Compiler/2.2.8-rel-28605-00": {
         "type": "package",
         "dependencies": {
-          "runtime.win10-arm.Microsoft.Net.Native.SharedLibrary": "2.2.7-rel-27913-00"
+          "runtime.win10-arm.Microsoft.Net.Native.SharedLibrary": "2.2.7-rel-28605-00"
         },
         "build": {
           "build/runtime.win10-arm.Microsoft.Net.Native.Compiler.props": {},
           "build/runtime.win10-arm.Microsoft.Net.Native.Compiler.targets": {}
         }
       },
-      "runtime.win10-arm.Microsoft.Net.Native.SharedLibrary/2.2.7-rel-27913-00": {
+      "runtime.win10-arm.Microsoft.Net.Native.SharedLibrary/2.2.7-rel-28605-00": {
         "type": "package",
         "build": {
           "build/runtime.win10-arm.Microsoft.Net.Native.SharedLibrary.props": {},
           "build/runtime.win10-arm.Microsoft.Net.Native.SharedLibrary.targets": {}
         }
       },
-      "runtime.win10-arm.Microsoft.Net.UWPCoreRuntimeSdk/2.2.9": {
+      "runtime.win10-arm.Microsoft.Net.UWPCoreRuntimeSdk/2.2.10": {
         "type": "package",
         "build": {
           "build/runtime.win10-arm.Microsoft.Net.UWPCoreRuntimeSdk.props": {},
           "build/runtime.win10-arm.Microsoft.Net.UWPCoreRuntimeSdk.targets": {}
         }
       },
-      "runtime.win10-arm64.Microsoft.Net.Native.Compiler/2.2.7-rel-27913-00": {
+      "runtime.win10-arm64.Microsoft.Net.Native.Compiler/2.2.8-rel-28605-00": {
         "type": "package",
         "dependencies": {
-          "runtime.win10-arm64.Microsoft.Net.Native.SharedLibrary": "2.2.7-rel-27913-00"
+          "runtime.win10-arm64.Microsoft.Net.Native.SharedLibrary": "2.2.7-rel-28605-00"
         },
         "build": {
           "build/runtime.win10-arm64.Microsoft.Net.Native.Compiler.props": {},
           "build/runtime.win10-arm64.Microsoft.Net.Native.Compiler.targets": {}
         }
       },
-      "runtime.win10-arm64.Microsoft.Net.Native.SharedLibrary/2.2.7-rel-27913-00": {
+      "runtime.win10-arm64.Microsoft.Net.Native.SharedLibrary/2.2.7-rel-28605-00": {
         "type": "package",
         "build": {
           "build/runtime.win10-arm64.Microsoft.Net.Native.SharedLibrary.props": {},
           "build/runtime.win10-arm64.Microsoft.Net.Native.SharedLibrary.targets": {}
         }
       },
-      "runtime.win10-x64-aot.Microsoft.NETCore.UniversalWindowsPlatform/6.2.9": {
+      "runtime.win10-x64-aot.Microsoft.NETCore.UniversalWindowsPlatform/6.2.10": {
         "type": "package",
         "compile": {
           "ref/netstandard/_._": {}
@@ -12289,48 +12300,48 @@
           "runtimes/win10-x64-aot/nativeassets/uap10.0.15138/clrcompression.dll": {}
         }
       },
-      "runtime.win10-x64.Microsoft.Net.Native.Compiler/2.2.7-rel-27913-00": {
+      "runtime.win10-x64.Microsoft.Net.Native.Compiler/2.2.8-rel-28605-00": {
         "type": "package",
         "dependencies": {
-          "runtime.win10-x64.Microsoft.Net.Native.SharedLibrary": "2.2.7-rel-27913-00"
+          "runtime.win10-x64.Microsoft.Net.Native.SharedLibrary": "2.2.7-rel-28605-00"
         },
         "build": {
           "build/runtime.win10-x64.Microsoft.Net.Native.Compiler.props": {},
           "build/runtime.win10-x64.Microsoft.Net.Native.Compiler.targets": {}
         }
       },
-      "runtime.win10-x64.Microsoft.Net.Native.SharedLibrary/2.2.7-rel-27913-00": {
+      "runtime.win10-x64.Microsoft.Net.Native.SharedLibrary/2.2.7-rel-28605-00": {
         "type": "package",
         "build": {
           "build/runtime.win10-x64.Microsoft.Net.Native.SharedLibrary.props": {},
           "build/runtime.win10-x64.Microsoft.Net.Native.SharedLibrary.targets": {}
         }
       },
-      "runtime.win10-x64.Microsoft.Net.UWPCoreRuntimeSdk/2.2.9": {
+      "runtime.win10-x64.Microsoft.Net.UWPCoreRuntimeSdk/2.2.10": {
         "type": "package",
         "build": {
           "build/runtime.win10-x64.Microsoft.Net.UWPCoreRuntimeSdk.props": {},
           "build/runtime.win10-x64.Microsoft.Net.UWPCoreRuntimeSdk.targets": {}
         }
       },
-      "runtime.win10-x86.Microsoft.Net.Native.Compiler/2.2.7-rel-27913-00": {
+      "runtime.win10-x86.Microsoft.Net.Native.Compiler/2.2.8-rel-28605-00": {
         "type": "package",
         "dependencies": {
-          "runtime.win10-x86.Microsoft.Net.Native.SharedLibrary": "2.2.7-rel-27913-00"
+          "runtime.win10-x86.Microsoft.Net.Native.SharedLibrary": "2.2.7-rel-28605-00"
         },
         "build": {
           "build/runtime.win10-x86.Microsoft.Net.Native.Compiler.props": {},
           "build/runtime.win10-x86.Microsoft.Net.Native.Compiler.targets": {}
         }
       },
-      "runtime.win10-x86.Microsoft.Net.Native.SharedLibrary/2.2.7-rel-27913-00": {
+      "runtime.win10-x86.Microsoft.Net.Native.SharedLibrary/2.2.7-rel-28605-00": {
         "type": "package",
         "build": {
           "build/runtime.win10-x86.Microsoft.Net.Native.SharedLibrary.props": {},
           "build/runtime.win10-x86.Microsoft.Net.Native.SharedLibrary.targets": {}
         }
       },
-      "runtime.win10-x86.Microsoft.Net.UWPCoreRuntimeSdk/2.2.9": {
+      "runtime.win10-x86.Microsoft.Net.UWPCoreRuntimeSdk/2.2.10": {
         "type": "package",
         "build": {
           "build/runtime.win10-x86.Microsoft.Net.UWPCoreRuntimeSdk.props": {},
@@ -12642,11 +12653,11 @@
           "runtimes/win/lib/netstandard1.3/System.Globalization.Extensions.dll": {}
         }
       },
-      "System.IdentityModel.Tokens.Jwt/6.6.0": {
+      "System.IdentityModel.Tokens.Jwt/6.7.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.IdentityModel.JsonWebTokens": "6.6.0",
-          "Microsoft.IdentityModel.Tokens": "6.6.0"
+          "Microsoft.IdentityModel.JsonWebTokens": "6.7.0",
+          "Microsoft.IdentityModel.Tokens": "6.7.0"
         },
         "compile": {
           "lib/netstandard2.0/System.IdentityModel.Tokens.Jwt.dll": {}
@@ -13466,10 +13477,10 @@
           "lib/UAP10/Plugin.Settings.dll": {}
         }
       },
-      "Xamarin.Essentials/1.5.1": {
+      "Xamarin.Essentials/1.5.3.2": {
         "type": "package",
         "dependencies": {
-          "Microsoft.NETCore.UniversalWindowsPlatform": "6.1.9"
+          "Microsoft.NETCore.UniversalWindowsPlatform": "6.2.9"
         },
         "compile": {
           "lib/uap10.0.16299/Xamarin.Essentials.dll": {}
@@ -13504,11 +13515,11 @@
           "lib/uap/FFImageLoading.Forms.dll": {}
         }
       },
-      "Xamarin.Forms/4.5.0.617": {
+      "Xamarin.Forms/4.7.0.968": {
         "type": "package",
         "dependencies": {
           "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.15",
-          "Microsoft.UI.Xaml": "2.3.191211002",
+          "Microsoft.UI.Xaml": "2.4.2",
           "Win2D.uwp": "1.20.0"
         },
         "compile": {
@@ -13528,7 +13539,7 @@
           "buildTransitive/Xamarin.Forms.targets": {}
         }
       },
-      "Xamarin.Plugin.FilePicker/2.1.34": {
+      "Xamarin.Plugin.FilePicker/2.1.41": {
         "type": "package",
         "compile": {
           "lib/uap10.0.16299/Plugin.FilePicker.dll": {}
@@ -13577,9 +13588,10 @@
           "Nancy": "2.0.0",
           "Newtonsoft.Json": "12.0.3",
           "Plugin.Fingerprint": "2.1.1",
+          "Plugin.Permissions": "6.0.1",
           "RestSharp": "106.11.4",
           "Rg.Plugins.Popup": "2.0.0.3",
-          "System.IdentityModel.Tokens.Jwt": "6.6.0",
+          "System.IdentityModel.Tokens.Jwt": "6.7.0",
           "System.Net.Http": "4.3.4",
           "System.Xml.XmlSerializer": "4.3.0",
           "Xam.Plugin.Media": "5.0.1",
@@ -13724,10 +13736,10 @@
           "lib/netstandard1.3/Microsoft.Extensions.PlatformAbstractions.dll": {}
         }
       },
-      "Microsoft.IdentityModel.JsonWebTokens/6.6.0": {
+      "Microsoft.IdentityModel.JsonWebTokens/6.7.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.IdentityModel.Tokens": "6.6.0"
+          "Microsoft.IdentityModel.Tokens": "6.7.0"
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.IdentityModel.JsonWebTokens.dll": {}
@@ -13736,7 +13748,7 @@
           "lib/netstandard2.0/Microsoft.IdentityModel.JsonWebTokens.dll": {}
         }
       },
-      "Microsoft.IdentityModel.Logging/6.6.0": {
+      "Microsoft.IdentityModel.Logging/6.7.0": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/Microsoft.IdentityModel.Logging.dll": {}
@@ -13745,11 +13757,11 @@
           "lib/netstandard2.0/Microsoft.IdentityModel.Logging.dll": {}
         }
       },
-      "Microsoft.IdentityModel.Tokens/6.6.0": {
+      "Microsoft.IdentityModel.Tokens/6.7.0": {
         "type": "package",
         "dependencies": {
           "Microsoft.CSharp": "4.5.0",
-          "Microsoft.IdentityModel.Logging": "6.6.0",
+          "Microsoft.IdentityModel.Logging": "6.7.0",
           "System.Security.Cryptography.Cng": "4.5.0"
         },
         "compile": {
@@ -13759,25 +13771,25 @@
           "lib/netstandard2.0/Microsoft.IdentityModel.Tokens.dll": {}
         }
       },
-      "Microsoft.Net.Native.Compiler/2.2.7-rel-27913-00": {
+      "Microsoft.Net.Native.Compiler/2.2.8-rel-28605-00": {
         "type": "package",
         "dependencies": {
-          "runtime.win10-arm.Microsoft.Net.Native.Compiler": "2.2.7-rel-27913-00",
-          "runtime.win10-arm64.Microsoft.Net.Native.Compiler": "2.2.7-rel-27913-00",
-          "runtime.win10-x64.Microsoft.Net.Native.Compiler": "2.2.7-rel-27913-00",
-          "runtime.win10-x86.Microsoft.Net.Native.Compiler": "2.2.7-rel-27913-00"
+          "runtime.win10-arm.Microsoft.Net.Native.Compiler": "2.2.8-rel-28605-00",
+          "runtime.win10-arm64.Microsoft.Net.Native.Compiler": "2.2.8-rel-28605-00",
+          "runtime.win10-x64.Microsoft.Net.Native.Compiler": "2.2.8-rel-28605-00",
+          "runtime.win10-x86.Microsoft.Net.Native.Compiler": "2.2.8-rel-28605-00"
         },
         "build": {
           "build/Microsoft.Net.Native.Compiler.props": {},
           "build/Microsoft.Net.Native.Compiler.targets": {}
         }
       },
-      "Microsoft.Net.UWPCoreRuntimeSdk/2.2.9": {
+      "Microsoft.Net.UWPCoreRuntimeSdk/2.2.10": {
         "type": "package",
         "dependencies": {
-          "runtime.win10-arm.Microsoft.Net.UWPCoreRuntimeSdk": "2.2.9",
-          "runtime.win10-x64.Microsoft.Net.UWPCoreRuntimeSdk": "2.2.9",
-          "runtime.win10-x86.Microsoft.Net.UWPCoreRuntimeSdk": "2.2.9"
+          "runtime.win10-arm.Microsoft.Net.UWPCoreRuntimeSdk": "2.2.10",
+          "runtime.win10-x64.Microsoft.Net.UWPCoreRuntimeSdk": "2.2.10",
+          "runtime.win10-x86.Microsoft.Net.UWPCoreRuntimeSdk": "2.2.10"
         },
         "build": {
           "build/Microsoft.Net.UWPCoreRuntimeSdk.props": {}
@@ -13801,14 +13813,14 @@
           "lib/netstandard1.0/_._": {}
         }
       },
-      "Microsoft.NETCore.UniversalWindowsPlatform/6.2.9": {
+      "Microsoft.NETCore.UniversalWindowsPlatform/6.2.10": {
         "type": "package",
         "dependencies": {
           "Microsoft.NETCore.Platforms": "2.1.0",
-          "Microsoft.Net.Native.Compiler": "2.2.7-rel-27913-00",
-          "Microsoft.Net.UWPCoreRuntimeSdk": "2.2.9",
+          "Microsoft.Net.Native.Compiler": "2.2.8-rel-28605-00",
+          "Microsoft.Net.UWPCoreRuntimeSdk": "2.2.10",
           "NETStandard.Library": "2.0.3",
-          "runtime.win10-x86.Microsoft.NETCore.UniversalWindowsPlatform": "6.2.9"
+          "runtime.win10-x86.Microsoft.NETCore.UniversalWindowsPlatform": "6.2.10"
         },
         "compile": {
           "ref/uap10.0.15138/Microsoft.CSharp.dll": {},
@@ -13970,7 +13982,7 @@
           "build/Microsoft.NetCore.UniversalWindowsPlatform.targets": {}
         }
       },
-      "Microsoft.UI.Xaml/2.3.191211002": {
+      "Microsoft.UI.Xaml/2.4.2": {
         "type": "package",
         "compile": {
           "lib/uap10.0/Microsoft.UI.Xaml.winmd": {}
@@ -13992,17 +14004,6 @@
         },
         "compile": {
           "ref/netstandard1.3/Microsoft.Win32.Primitives.dll": {}
-        }
-      },
-      "MimeTypes/2.0.1": {
-        "type": "package",
-        "contentFiles": {
-          "contentFiles/cs/any/MimeTypes.NullableAttributes.cs.pp": {
-            "buildAction": "Compile",
-            "codeLanguage": "cs",
-            "copyToOutput": false,
-            "ppOutputPath": "MimeTypes.NullableAttributes.cs"
-          }
         }
       },
       "Nancy/2.0.0": {
@@ -14056,6 +14057,18 @@
           "lib/uap10.0.16299/Plugin.Fingerprint.dll": {}
         }
       },
+      "Plugin.Permissions/6.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Essentials": "1.5.2"
+        },
+        "compile": {
+          "lib/uap10.0.16299/Plugin.Permissions.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0.16299/Plugin.Permissions.dll": {}
+        }
+      },
       "RestSharp/106.11.4": {
         "type": "package",
         "compile": {
@@ -14065,7 +14078,7 @@
           "lib/netstandard2.0/RestSharp.dll": {}
         }
       },
-      "Rg.Plugins.Popup/2.0.0.2": {
+      "Rg.Plugins.Popup/2.0.0.3": {
         "type": "package",
         "dependencies": {
           "Xamarin.Forms": "4.5.0.530"
@@ -14351,96 +14364,96 @@
           "runtimes/win/lib/netcore50/System.Runtime.Extensions.dll": {}
         }
       },
-      "runtime.win10-arm.Microsoft.Net.Native.Compiler/2.2.7-rel-27913-00": {
+      "runtime.win10-arm.Microsoft.Net.Native.Compiler/2.2.8-rel-28605-00": {
         "type": "package",
         "dependencies": {
-          "runtime.win10-arm.Microsoft.Net.Native.SharedLibrary": "2.2.7-rel-27913-00"
+          "runtime.win10-arm.Microsoft.Net.Native.SharedLibrary": "2.2.7-rel-28605-00"
         },
         "build": {
           "build/runtime.win10-arm.Microsoft.Net.Native.Compiler.props": {},
           "build/runtime.win10-arm.Microsoft.Net.Native.Compiler.targets": {}
         }
       },
-      "runtime.win10-arm.Microsoft.Net.Native.SharedLibrary/2.2.7-rel-27913-00": {
+      "runtime.win10-arm.Microsoft.Net.Native.SharedLibrary/2.2.7-rel-28605-00": {
         "type": "package",
         "build": {
           "build/runtime.win10-arm.Microsoft.Net.Native.SharedLibrary.props": {},
           "build/runtime.win10-arm.Microsoft.Net.Native.SharedLibrary.targets": {}
         }
       },
-      "runtime.win10-arm.Microsoft.Net.UWPCoreRuntimeSdk/2.2.9": {
+      "runtime.win10-arm.Microsoft.Net.UWPCoreRuntimeSdk/2.2.10": {
         "type": "package",
         "build": {
           "build/runtime.win10-arm.Microsoft.Net.UWPCoreRuntimeSdk.props": {},
           "build/runtime.win10-arm.Microsoft.Net.UWPCoreRuntimeSdk.targets": {}
         }
       },
-      "runtime.win10-arm64.Microsoft.Net.Native.Compiler/2.2.7-rel-27913-00": {
+      "runtime.win10-arm64.Microsoft.Net.Native.Compiler/2.2.8-rel-28605-00": {
         "type": "package",
         "dependencies": {
-          "runtime.win10-arm64.Microsoft.Net.Native.SharedLibrary": "2.2.7-rel-27913-00"
+          "runtime.win10-arm64.Microsoft.Net.Native.SharedLibrary": "2.2.7-rel-28605-00"
         },
         "build": {
           "build/runtime.win10-arm64.Microsoft.Net.Native.Compiler.props": {},
           "build/runtime.win10-arm64.Microsoft.Net.Native.Compiler.targets": {}
         }
       },
-      "runtime.win10-arm64.Microsoft.Net.Native.SharedLibrary/2.2.7-rel-27913-00": {
+      "runtime.win10-arm64.Microsoft.Net.Native.SharedLibrary/2.2.7-rel-28605-00": {
         "type": "package",
         "build": {
           "build/runtime.win10-arm64.Microsoft.Net.Native.SharedLibrary.props": {},
           "build/runtime.win10-arm64.Microsoft.Net.Native.SharedLibrary.targets": {}
         }
       },
-      "runtime.win10-x64.Microsoft.Net.Native.Compiler/2.2.7-rel-27913-00": {
+      "runtime.win10-x64.Microsoft.Net.Native.Compiler/2.2.8-rel-28605-00": {
         "type": "package",
         "dependencies": {
-          "runtime.win10-x64.Microsoft.Net.Native.SharedLibrary": "2.2.7-rel-27913-00"
+          "runtime.win10-x64.Microsoft.Net.Native.SharedLibrary": "2.2.7-rel-28605-00"
         },
         "build": {
           "build/runtime.win10-x64.Microsoft.Net.Native.Compiler.props": {},
           "build/runtime.win10-x64.Microsoft.Net.Native.Compiler.targets": {}
         }
       },
-      "runtime.win10-x64.Microsoft.Net.Native.SharedLibrary/2.2.7-rel-27913-00": {
+      "runtime.win10-x64.Microsoft.Net.Native.SharedLibrary/2.2.7-rel-28605-00": {
         "type": "package",
         "build": {
           "build/runtime.win10-x64.Microsoft.Net.Native.SharedLibrary.props": {},
           "build/runtime.win10-x64.Microsoft.Net.Native.SharedLibrary.targets": {}
         }
       },
-      "runtime.win10-x64.Microsoft.Net.UWPCoreRuntimeSdk/2.2.9": {
+      "runtime.win10-x64.Microsoft.Net.UWPCoreRuntimeSdk/2.2.10": {
         "type": "package",
         "build": {
           "build/runtime.win10-x64.Microsoft.Net.UWPCoreRuntimeSdk.props": {},
           "build/runtime.win10-x64.Microsoft.Net.UWPCoreRuntimeSdk.targets": {}
         }
       },
-      "runtime.win10-x86.Microsoft.Net.Native.Compiler/2.2.7-rel-27913-00": {
+      "runtime.win10-x86.Microsoft.Net.Native.Compiler/2.2.8-rel-28605-00": {
         "type": "package",
         "dependencies": {
-          "runtime.win10-x86.Microsoft.Net.Native.SharedLibrary": "2.2.7-rel-27913-00"
+          "runtime.win10-x86.Microsoft.Net.Native.SharedLibrary": "2.2.7-rel-28605-00"
         },
         "build": {
           "build/runtime.win10-x86.Microsoft.Net.Native.Compiler.props": {},
           "build/runtime.win10-x86.Microsoft.Net.Native.Compiler.targets": {}
         }
       },
-      "runtime.win10-x86.Microsoft.Net.Native.SharedLibrary/2.2.7-rel-27913-00": {
+      "runtime.win10-x86.Microsoft.Net.Native.SharedLibrary/2.2.7-rel-28605-00": {
         "type": "package",
         "build": {
           "build/runtime.win10-x86.Microsoft.Net.Native.SharedLibrary.props": {},
           "build/runtime.win10-x86.Microsoft.Net.Native.SharedLibrary.targets": {}
         }
       },
-      "runtime.win10-x86.Microsoft.Net.UWPCoreRuntimeSdk/2.2.9": {
+      "runtime.win10-x86.Microsoft.Net.UWPCoreRuntimeSdk/2.2.10": {
         "type": "package",
         "build": {
           "build/runtime.win10-x86.Microsoft.Net.UWPCoreRuntimeSdk.props": {},
           "build/runtime.win10-x86.Microsoft.Net.UWPCoreRuntimeSdk.targets": {}
         }
       },
-      "runtime.win10-x86.Microsoft.NETCore.UniversalWindowsPlatform/6.2.9": {
+      "runtime.win10-x86.Microsoft.NETCore.UniversalWindowsPlatform/6.2.10": {
         "type": "package",
         "compile": {
           "ref/netstandard/_._": {}
@@ -14923,11 +14936,11 @@
           "runtimes/win/lib/netstandard1.3/System.Globalization.Extensions.dll": {}
         }
       },
-      "System.IdentityModel.Tokens.Jwt/6.6.0": {
+      "System.IdentityModel.Tokens.Jwt/6.7.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.IdentityModel.JsonWebTokens": "6.6.0",
-          "Microsoft.IdentityModel.Tokens": "6.6.0"
+          "Microsoft.IdentityModel.JsonWebTokens": "6.7.0",
+          "Microsoft.IdentityModel.Tokens": "6.7.0"
         },
         "compile": {
           "lib/netstandard2.0/System.IdentityModel.Tokens.Jwt.dll": {}
@@ -15747,10 +15760,10 @@
           "lib/UAP10/Plugin.Settings.dll": {}
         }
       },
-      "Xamarin.Essentials/1.5.1": {
+      "Xamarin.Essentials/1.5.3.2": {
         "type": "package",
         "dependencies": {
-          "Microsoft.NETCore.UniversalWindowsPlatform": "6.1.9"
+          "Microsoft.NETCore.UniversalWindowsPlatform": "6.2.9"
         },
         "compile": {
           "lib/uap10.0.16299/Xamarin.Essentials.dll": {}
@@ -15785,11 +15798,11 @@
           "lib/uap/FFImageLoading.Forms.dll": {}
         }
       },
-      "Xamarin.Forms/4.5.0.617": {
+      "Xamarin.Forms/4.7.0.968": {
         "type": "package",
         "dependencies": {
           "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.15",
-          "Microsoft.UI.Xaml": "2.3.191211002",
+          "Microsoft.UI.Xaml": "2.4.2",
           "Win2D.uwp": "1.20.0"
         },
         "compile": {
@@ -15809,7 +15822,7 @@
           "buildTransitive/Xamarin.Forms.targets": {}
         }
       },
-      "Xamarin.Plugin.FilePicker/2.1.34": {
+      "Xamarin.Plugin.FilePicker/2.1.41": {
         "type": "package",
         "compile": {
           "lib/uap10.0.16299/Plugin.FilePicker.dll": {}
@@ -15858,9 +15871,10 @@
           "Nancy": "2.0.0",
           "Newtonsoft.Json": "12.0.3",
           "Plugin.Fingerprint": "2.1.1",
+          "Plugin.Permissions": "6.0.1",
           "RestSharp": "106.11.4",
           "Rg.Plugins.Popup": "2.0.0.3",
-          "System.IdentityModel.Tokens.Jwt": "6.6.0",
+          "System.IdentityModel.Tokens.Jwt": "6.7.0",
           "System.Net.Http": "4.3.4",
           "System.Xml.XmlSerializer": "4.3.0",
           "Xam.Plugin.Media": "5.0.1",
@@ -16005,10 +16019,10 @@
           "lib/netstandard1.3/Microsoft.Extensions.PlatformAbstractions.dll": {}
         }
       },
-      "Microsoft.IdentityModel.JsonWebTokens/6.6.0": {
+      "Microsoft.IdentityModel.JsonWebTokens/6.7.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.IdentityModel.Tokens": "6.6.0"
+          "Microsoft.IdentityModel.Tokens": "6.7.0"
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.IdentityModel.JsonWebTokens.dll": {}
@@ -16017,7 +16031,7 @@
           "lib/netstandard2.0/Microsoft.IdentityModel.JsonWebTokens.dll": {}
         }
       },
-      "Microsoft.IdentityModel.Logging/6.6.0": {
+      "Microsoft.IdentityModel.Logging/6.7.0": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/Microsoft.IdentityModel.Logging.dll": {}
@@ -16026,11 +16040,11 @@
           "lib/netstandard2.0/Microsoft.IdentityModel.Logging.dll": {}
         }
       },
-      "Microsoft.IdentityModel.Tokens/6.6.0": {
+      "Microsoft.IdentityModel.Tokens/6.7.0": {
         "type": "package",
         "dependencies": {
           "Microsoft.CSharp": "4.5.0",
-          "Microsoft.IdentityModel.Logging": "6.6.0",
+          "Microsoft.IdentityModel.Logging": "6.7.0",
           "System.Security.Cryptography.Cng": "4.5.0"
         },
         "compile": {
@@ -16040,25 +16054,25 @@
           "lib/netstandard2.0/Microsoft.IdentityModel.Tokens.dll": {}
         }
       },
-      "Microsoft.Net.Native.Compiler/2.2.7-rel-27913-00": {
+      "Microsoft.Net.Native.Compiler/2.2.8-rel-28605-00": {
         "type": "package",
         "dependencies": {
-          "runtime.win10-arm.Microsoft.Net.Native.Compiler": "2.2.7-rel-27913-00",
-          "runtime.win10-arm64.Microsoft.Net.Native.Compiler": "2.2.7-rel-27913-00",
-          "runtime.win10-x64.Microsoft.Net.Native.Compiler": "2.2.7-rel-27913-00",
-          "runtime.win10-x86.Microsoft.Net.Native.Compiler": "2.2.7-rel-27913-00"
+          "runtime.win10-arm.Microsoft.Net.Native.Compiler": "2.2.8-rel-28605-00",
+          "runtime.win10-arm64.Microsoft.Net.Native.Compiler": "2.2.8-rel-28605-00",
+          "runtime.win10-x64.Microsoft.Net.Native.Compiler": "2.2.8-rel-28605-00",
+          "runtime.win10-x86.Microsoft.Net.Native.Compiler": "2.2.8-rel-28605-00"
         },
         "build": {
           "build/Microsoft.Net.Native.Compiler.props": {},
           "build/Microsoft.Net.Native.Compiler.targets": {}
         }
       },
-      "Microsoft.Net.UWPCoreRuntimeSdk/2.2.9": {
+      "Microsoft.Net.UWPCoreRuntimeSdk/2.2.10": {
         "type": "package",
         "dependencies": {
-          "runtime.win10-arm.Microsoft.Net.UWPCoreRuntimeSdk": "2.2.9",
-          "runtime.win10-x64.Microsoft.Net.UWPCoreRuntimeSdk": "2.2.9",
-          "runtime.win10-x86.Microsoft.Net.UWPCoreRuntimeSdk": "2.2.9"
+          "runtime.win10-arm.Microsoft.Net.UWPCoreRuntimeSdk": "2.2.10",
+          "runtime.win10-x64.Microsoft.Net.UWPCoreRuntimeSdk": "2.2.10",
+          "runtime.win10-x86.Microsoft.Net.UWPCoreRuntimeSdk": "2.2.10"
         },
         "build": {
           "build/Microsoft.Net.UWPCoreRuntimeSdk.props": {}
@@ -16082,14 +16096,14 @@
           "lib/netstandard1.0/_._": {}
         }
       },
-      "Microsoft.NETCore.UniversalWindowsPlatform/6.2.9": {
+      "Microsoft.NETCore.UniversalWindowsPlatform/6.2.10": {
         "type": "package",
         "dependencies": {
           "Microsoft.NETCore.Platforms": "2.1.0",
-          "Microsoft.Net.Native.Compiler": "2.2.7-rel-27913-00",
-          "Microsoft.Net.UWPCoreRuntimeSdk": "2.2.9",
+          "Microsoft.Net.Native.Compiler": "2.2.8-rel-28605-00",
+          "Microsoft.Net.UWPCoreRuntimeSdk": "2.2.10",
           "NETStandard.Library": "2.0.3",
-          "runtime.win10-x86-aot.Microsoft.NETCore.UniversalWindowsPlatform": "6.2.9"
+          "runtime.win10-x86-aot.Microsoft.NETCore.UniversalWindowsPlatform": "6.2.10"
         },
         "compile": {
           "ref/uap10.0.15138/Microsoft.CSharp.dll": {},
@@ -16251,7 +16265,7 @@
           "build/Microsoft.NetCore.UniversalWindowsPlatform.targets": {}
         }
       },
-      "Microsoft.UI.Xaml/2.3.191211002": {
+      "Microsoft.UI.Xaml/2.4.2": {
         "type": "package",
         "compile": {
           "lib/uap10.0/Microsoft.UI.Xaml.winmd": {}
@@ -16273,17 +16287,6 @@
         },
         "compile": {
           "ref/netstandard1.3/Microsoft.Win32.Primitives.dll": {}
-        }
-      },
-      "MimeTypes/2.0.1": {
-        "type": "package",
-        "contentFiles": {
-          "contentFiles/cs/any/MimeTypes.NullableAttributes.cs.pp": {
-            "buildAction": "Compile",
-            "codeLanguage": "cs",
-            "copyToOutput": false,
-            "ppOutputPath": "MimeTypes.NullableAttributes.cs"
-          }
         }
       },
       "Nancy/2.0.0": {
@@ -16337,6 +16340,18 @@
           "lib/uap10.0.16299/Plugin.Fingerprint.dll": {}
         }
       },
+      "Plugin.Permissions/6.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Essentials": "1.5.2"
+        },
+        "compile": {
+          "lib/uap10.0.16299/Plugin.Permissions.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0.16299/Plugin.Permissions.dll": {}
+        }
+      },
       "RestSharp/106.11.4": {
         "type": "package",
         "compile": {
@@ -16346,7 +16361,7 @@
           "lib/netstandard2.0/RestSharp.dll": {}
         }
       },
-      "Rg.Plugins.Popup/2.0.0.2": {
+      "Rg.Plugins.Popup/2.0.0.3": {
         "type": "package",
         "dependencies": {
           "Xamarin.Forms": "4.5.0.530"
@@ -16674,72 +16689,72 @@
           "runtimes/aot/lib/netcore50/System.Runtime.Extensions.dll": {}
         }
       },
-      "runtime.win10-arm.Microsoft.Net.Native.Compiler/2.2.7-rel-27913-00": {
+      "runtime.win10-arm.Microsoft.Net.Native.Compiler/2.2.8-rel-28605-00": {
         "type": "package",
         "dependencies": {
-          "runtime.win10-arm.Microsoft.Net.Native.SharedLibrary": "2.2.7-rel-27913-00"
+          "runtime.win10-arm.Microsoft.Net.Native.SharedLibrary": "2.2.7-rel-28605-00"
         },
         "build": {
           "build/runtime.win10-arm.Microsoft.Net.Native.Compiler.props": {},
           "build/runtime.win10-arm.Microsoft.Net.Native.Compiler.targets": {}
         }
       },
-      "runtime.win10-arm.Microsoft.Net.Native.SharedLibrary/2.2.7-rel-27913-00": {
+      "runtime.win10-arm.Microsoft.Net.Native.SharedLibrary/2.2.7-rel-28605-00": {
         "type": "package",
         "build": {
           "build/runtime.win10-arm.Microsoft.Net.Native.SharedLibrary.props": {},
           "build/runtime.win10-arm.Microsoft.Net.Native.SharedLibrary.targets": {}
         }
       },
-      "runtime.win10-arm.Microsoft.Net.UWPCoreRuntimeSdk/2.2.9": {
+      "runtime.win10-arm.Microsoft.Net.UWPCoreRuntimeSdk/2.2.10": {
         "type": "package",
         "build": {
           "build/runtime.win10-arm.Microsoft.Net.UWPCoreRuntimeSdk.props": {},
           "build/runtime.win10-arm.Microsoft.Net.UWPCoreRuntimeSdk.targets": {}
         }
       },
-      "runtime.win10-arm64.Microsoft.Net.Native.Compiler/2.2.7-rel-27913-00": {
+      "runtime.win10-arm64.Microsoft.Net.Native.Compiler/2.2.8-rel-28605-00": {
         "type": "package",
         "dependencies": {
-          "runtime.win10-arm64.Microsoft.Net.Native.SharedLibrary": "2.2.7-rel-27913-00"
+          "runtime.win10-arm64.Microsoft.Net.Native.SharedLibrary": "2.2.7-rel-28605-00"
         },
         "build": {
           "build/runtime.win10-arm64.Microsoft.Net.Native.Compiler.props": {},
           "build/runtime.win10-arm64.Microsoft.Net.Native.Compiler.targets": {}
         }
       },
-      "runtime.win10-arm64.Microsoft.Net.Native.SharedLibrary/2.2.7-rel-27913-00": {
+      "runtime.win10-arm64.Microsoft.Net.Native.SharedLibrary/2.2.7-rel-28605-00": {
         "type": "package",
         "build": {
           "build/runtime.win10-arm64.Microsoft.Net.Native.SharedLibrary.props": {},
           "build/runtime.win10-arm64.Microsoft.Net.Native.SharedLibrary.targets": {}
         }
       },
-      "runtime.win10-x64.Microsoft.Net.Native.Compiler/2.2.7-rel-27913-00": {
+      "runtime.win10-x64.Microsoft.Net.Native.Compiler/2.2.8-rel-28605-00": {
         "type": "package",
         "dependencies": {
-          "runtime.win10-x64.Microsoft.Net.Native.SharedLibrary": "2.2.7-rel-27913-00"
+          "runtime.win10-x64.Microsoft.Net.Native.SharedLibrary": "2.2.7-rel-28605-00"
         },
         "build": {
           "build/runtime.win10-x64.Microsoft.Net.Native.Compiler.props": {},
           "build/runtime.win10-x64.Microsoft.Net.Native.Compiler.targets": {}
         }
       },
-      "runtime.win10-x64.Microsoft.Net.Native.SharedLibrary/2.2.7-rel-27913-00": {
+      "runtime.win10-x64.Microsoft.Net.Native.SharedLibrary/2.2.7-rel-28605-00": {
         "type": "package",
         "build": {
           "build/runtime.win10-x64.Microsoft.Net.Native.SharedLibrary.props": {},
           "build/runtime.win10-x64.Microsoft.Net.Native.SharedLibrary.targets": {}
         }
       },
-      "runtime.win10-x64.Microsoft.Net.UWPCoreRuntimeSdk/2.2.9": {
+      "runtime.win10-x64.Microsoft.Net.UWPCoreRuntimeSdk/2.2.10": {
         "type": "package",
         "build": {
           "build/runtime.win10-x64.Microsoft.Net.UWPCoreRuntimeSdk.props": {},
           "build/runtime.win10-x64.Microsoft.Net.UWPCoreRuntimeSdk.targets": {}
         }
       },
-      "runtime.win10-x86-aot.Microsoft.NETCore.UniversalWindowsPlatform/6.2.9": {
+      "runtime.win10-x86-aot.Microsoft.NETCore.UniversalWindowsPlatform/6.2.10": {
         "type": "package",
         "compile": {
           "ref/netstandard/_._": {}
@@ -16918,24 +16933,24 @@
           "runtimes/win10-x86-aot/nativeassets/uap10.0.15138/clrcompression.dll": {}
         }
       },
-      "runtime.win10-x86.Microsoft.Net.Native.Compiler/2.2.7-rel-27913-00": {
+      "runtime.win10-x86.Microsoft.Net.Native.Compiler/2.2.8-rel-28605-00": {
         "type": "package",
         "dependencies": {
-          "runtime.win10-x86.Microsoft.Net.Native.SharedLibrary": "2.2.7-rel-27913-00"
+          "runtime.win10-x86.Microsoft.Net.Native.SharedLibrary": "2.2.7-rel-28605-00"
         },
         "build": {
           "build/runtime.win10-x86.Microsoft.Net.Native.Compiler.props": {},
           "build/runtime.win10-x86.Microsoft.Net.Native.Compiler.targets": {}
         }
       },
-      "runtime.win10-x86.Microsoft.Net.Native.SharedLibrary/2.2.7-rel-27913-00": {
+      "runtime.win10-x86.Microsoft.Net.Native.SharedLibrary/2.2.7-rel-28605-00": {
         "type": "package",
         "build": {
           "build/runtime.win10-x86.Microsoft.Net.Native.SharedLibrary.props": {},
           "build/runtime.win10-x86.Microsoft.Net.Native.SharedLibrary.targets": {}
         }
       },
-      "runtime.win10-x86.Microsoft.Net.UWPCoreRuntimeSdk/2.2.9": {
+      "runtime.win10-x86.Microsoft.Net.UWPCoreRuntimeSdk/2.2.10": {
         "type": "package",
         "build": {
           "build/runtime.win10-x86.Microsoft.Net.UWPCoreRuntimeSdk.props": {},
@@ -17247,11 +17262,11 @@
           "runtimes/win/lib/netstandard1.3/System.Globalization.Extensions.dll": {}
         }
       },
-      "System.IdentityModel.Tokens.Jwt/6.6.0": {
+      "System.IdentityModel.Tokens.Jwt/6.7.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.IdentityModel.JsonWebTokens": "6.6.0",
-          "Microsoft.IdentityModel.Tokens": "6.6.0"
+          "Microsoft.IdentityModel.JsonWebTokens": "6.7.0",
+          "Microsoft.IdentityModel.Tokens": "6.7.0"
         },
         "compile": {
           "lib/netstandard2.0/System.IdentityModel.Tokens.Jwt.dll": {}
@@ -18071,10 +18086,10 @@
           "lib/UAP10/Plugin.Settings.dll": {}
         }
       },
-      "Xamarin.Essentials/1.5.1": {
+      "Xamarin.Essentials/1.5.3.2": {
         "type": "package",
         "dependencies": {
-          "Microsoft.NETCore.UniversalWindowsPlatform": "6.1.9"
+          "Microsoft.NETCore.UniversalWindowsPlatform": "6.2.9"
         },
         "compile": {
           "lib/uap10.0.16299/Xamarin.Essentials.dll": {}
@@ -18109,11 +18124,11 @@
           "lib/uap/FFImageLoading.Forms.dll": {}
         }
       },
-      "Xamarin.Forms/4.5.0.617": {
+      "Xamarin.Forms/4.7.0.968": {
         "type": "package",
         "dependencies": {
           "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.15",
-          "Microsoft.UI.Xaml": "2.3.191211002",
+          "Microsoft.UI.Xaml": "2.4.2",
           "Win2D.uwp": "1.20.0"
         },
         "compile": {
@@ -18133,7 +18148,7 @@
           "buildTransitive/Xamarin.Forms.targets": {}
         }
       },
-      "Xamarin.Plugin.FilePicker/2.1.34": {
+      "Xamarin.Plugin.FilePicker/2.1.41": {
         "type": "package",
         "compile": {
           "lib/uap10.0.16299/Plugin.FilePicker.dll": {}
@@ -18182,9 +18197,10 @@
           "Nancy": "2.0.0",
           "Newtonsoft.Json": "12.0.3",
           "Plugin.Fingerprint": "2.1.1",
+          "Plugin.Permissions": "6.0.1",
           "RestSharp": "106.11.4",
           "Rg.Plugins.Popup": "2.0.0.3",
-          "System.IdentityModel.Tokens.Jwt": "6.6.0",
+          "System.IdentityModel.Tokens.Jwt": "6.7.0",
           "System.Net.Http": "4.3.4",
           "System.Xml.XmlSerializer": "4.3.0",
           "Xam.Plugin.Media": "5.0.1",
@@ -18433,10 +18449,10 @@
         "microsoft.extensions.platformabstractions.nuspec"
       ]
     },
-    "Microsoft.IdentityModel.JsonWebTokens/6.6.0": {
-      "sha512": "ZhzG2+nxbGDJ67vY0e9kuJEtPpA53EhkhXpLWlBOUzEGd085ojJT3XPLK74mC+mjsXpZqWj5pHtgbB77gSqJeg==",
+    "Microsoft.IdentityModel.JsonWebTokens/6.7.0": {
+      "sha512": "j7rPXrgShwXAyRtH0zp71EmXFSNjFBWZzffSu7POSKCxSll7Hvu4GVoB2466fXk/7BQvUbOChLcyGs9F3CfdHg==",
       "type": "package",
-      "path": "microsoft.identitymodel.jsonwebtokens/6.6.0",
+      "path": "microsoft.identitymodel.jsonwebtokens/6.7.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -18446,14 +18462,14 @@
         "lib/net461/Microsoft.IdentityModel.JsonWebTokens.xml",
         "lib/netstandard2.0/Microsoft.IdentityModel.JsonWebTokens.dll",
         "lib/netstandard2.0/Microsoft.IdentityModel.JsonWebTokens.xml",
-        "microsoft.identitymodel.jsonwebtokens.6.6.0.nupkg.sha512",
+        "microsoft.identitymodel.jsonwebtokens.6.7.0.nupkg.sha512",
         "microsoft.identitymodel.jsonwebtokens.nuspec"
       ]
     },
-    "Microsoft.IdentityModel.Logging/6.6.0": {
-      "sha512": "OWfHX7bXKTEBXcD9b+0Tx7dWBaqF4wht7RmS6q+9vAXHiNpRG/wkoFKhOp1Yus0Xd1xAXXHSkAKxgmn/SRD1KA==",
+    "Microsoft.IdentityModel.Logging/6.7.0": {
+      "sha512": "HcUFr7ycJ9I/u12dnkBntY4pvrJoRT+FCuDyA1FPFbhFFulGjyEt63YUcBqbwkvmpgCDhi9fQ/inM0Izn4apeg==",
       "type": "package",
-      "path": "microsoft.identitymodel.logging/6.6.0",
+      "path": "microsoft.identitymodel.logging/6.7.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -18463,14 +18479,14 @@
         "lib/net461/Microsoft.IdentityModel.Logging.xml",
         "lib/netstandard2.0/Microsoft.IdentityModel.Logging.dll",
         "lib/netstandard2.0/Microsoft.IdentityModel.Logging.xml",
-        "microsoft.identitymodel.logging.6.6.0.nupkg.sha512",
+        "microsoft.identitymodel.logging.6.7.0.nupkg.sha512",
         "microsoft.identitymodel.logging.nuspec"
       ]
     },
-    "Microsoft.IdentityModel.Tokens/6.6.0": {
-      "sha512": "fNfhlY7AEB9y/jooK6xI1vH+7rmq7c2kTEk7j/5SSy25iHRB1twrG8+He9sHxBQqIXhrQliMEwi4GXZInzO4ww==",
+    "Microsoft.IdentityModel.Tokens/6.7.0": {
+      "sha512": "KL1hJq0UeLMaUHLImLifHKPs03lSuXDHzY7l/sADpaGyM2/TCCdEh2jlEsUKGDU2P7TLkzMW05+Mpu8sdVEhxw==",
       "type": "package",
-      "path": "microsoft.identitymodel.tokens/6.6.0",
+      "path": "microsoft.identitymodel.tokens/6.7.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -18480,21 +18496,21 @@
         "lib/net461/Microsoft.IdentityModel.Tokens.xml",
         "lib/netstandard2.0/Microsoft.IdentityModel.Tokens.dll",
         "lib/netstandard2.0/Microsoft.IdentityModel.Tokens.xml",
-        "microsoft.identitymodel.tokens.6.6.0.nupkg.sha512",
+        "microsoft.identitymodel.tokens.6.7.0.nupkg.sha512",
         "microsoft.identitymodel.tokens.nuspec"
       ]
     },
-    "Microsoft.Net.Native.Compiler/2.2.7-rel-27913-00": {
-      "sha512": "EtGDVRBaNWEqQDJTfkeHOLiiKUOzlr4UVK2KciIt3zYOZeLEnhsshTR6D+1ADetJRKluYR7s0HruAtw1kbc0Xg==",
+    "Microsoft.Net.Native.Compiler/2.2.8-rel-28605-00": {
+      "sha512": "JmPpJFTBZz+IW2iMf9C2uSBEJouDt3zaeqURRFah3gJ0xEMd/Gd3iu3HQYwfTsbx/f+C8n8pTAqiXPMpIci/iw==",
       "type": "package",
-      "path": "microsoft.net.native.compiler/2.2.7-rel-27913-00",
+      "path": "microsoft.net.native.compiler/2.2.8-rel-28605-00",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "build/Microsoft.Net.Native.Compiler.props",
         "build/Microsoft.Net.Native.Compiler.targets",
-        "microsoft.net.native.compiler.2.2.7-rel-27913-00.nupkg.sha512",
+        "microsoft.net.native.compiler.2.2.8-rel-28605-00.nupkg.sha512",
         "microsoft.net.native.compiler.nuspec",
         "tools/LibraryXML/Callisto.rd.xml",
         "tools/LibraryXML/GalaSoft.MvvmLight.Extras.Win8.rd.xml",
@@ -18538,10 +18554,10 @@
         "tools/csc/mrt150.dll"
       ]
     },
-    "Microsoft.Net.UWPCoreRuntimeSdk/2.2.9": {
-      "sha512": "4N6mDdolISwxqM9yT0qptgCoxq+C4Z8CdQD/dpp0bb5egIda5LZ36Pg3nGKmBtU28PVYEljGsUCjRcWYBBXh2Q==",
+    "Microsoft.Net.UWPCoreRuntimeSdk/2.2.10": {
+      "sha512": "E+kj8w7zLN2fs4JRmluOMYeGvkJ6nibxiMFAfyzMwLZGU6KJ6avvX5YrBGTC6rqXV5rBvEaVLSo/ApBoslD39A==",
       "type": "package",
-      "path": "microsoft.net.uwpcoreruntimesdk/2.2.9",
+      "path": "microsoft.net.uwpcoreruntimesdk/2.2.10",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
@@ -18549,7 +18565,7 @@
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
         "build/Microsoft.Net.UWPCoreRuntimeSdk.props",
-        "microsoft.net.uwpcoreruntimesdk.2.2.9.nupkg.sha512",
+        "microsoft.net.uwpcoreruntimesdk.2.2.10.nupkg.sha512",
         "microsoft.net.uwpcoreruntimesdk.nuspec",
         "tools/CoreRuntime/Microsoft.Build.Net.CoreRuntimeTask.dll",
         "tools/CoreRuntime/Microsoft.Cci.dll",
@@ -18589,10 +18605,10 @@
         "runtime.json"
       ]
     },
-    "Microsoft.NETCore.UniversalWindowsPlatform/6.2.9": {
-      "sha512": "QcNHcEvhO0bMhF1LW7Ebn1f6wrzvbkloRsZSrAZsGbAAqdhmfuZcD3VVeVCL8VWsBXRlhdb3+0Y7HLxvnMTpZA==",
+    "Microsoft.NETCore.UniversalWindowsPlatform/6.2.10": {
+      "sha512": "YfQmR0oyJ9wO3a6uB9yutc3Vpt4ouaZ5cfnjcVi5ONLpSCBNyUHgcF4X9sflb1gQiXl1jT6aU2+VAkvQIRiSGQ==",
       "type": "package",
-      "path": "microsoft.netcore.universalwindowsplatform/6.2.9",
+      "path": "microsoft.netcore.universalwindowsplatform/6.2.10",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -18600,7 +18616,7 @@
         "THIRD-PARTY-NOTICES.TXT",
         "build/Microsoft.NETCore.UniversalWindowsPlatform.props",
         "build/Microsoft.NetCore.UniversalWindowsPlatform.targets",
-        "microsoft.netcore.universalwindowsplatform.6.2.9.nupkg.sha512",
+        "microsoft.netcore.universalwindowsplatform.6.2.10.nupkg.sha512",
         "microsoft.netcore.universalwindowsplatform.nuspec",
         "ref/netcore50/_._",
         "ref/uap10.0.15138/Microsoft.CSharp.dll",
@@ -18880,10 +18896,10 @@
         "runtime.json"
       ]
     },
-    "Microsoft.UI.Xaml/2.3.191211002": {
-      "sha512": "Sr27CVH8Dh4jSPYXKYLrMeuNfPFZSh1/t5W/xD8MKjDlPdv9vHQdCFUCtMqEKZalNQIo35UUSV6jgl5ZeRihIg==",
+    "Microsoft.UI.Xaml/2.4.2": {
+      "sha512": "EPuBFtyrKi7VweJEB6pBQE9lsQKMT0xaHHsQwDnm5yusYFGRCnPLuwptRfEeXbZemkpnXU6NmtC7FY5WBMqxGA==",
       "type": "package",
-      "path": "microsoft.ui.xaml/2.3.191211002",
+      "path": "microsoft.ui.xaml/2.4.2",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
@@ -18901,13 +18917,13 @@
         "lib/uap10.0/Microsoft.UI.Xaml.xml",
         "lib/uap10.0/Microsoft.UI.Xaml/Themes/Generic.xaml",
         "license.txt",
-        "microsoft.ui.xaml.2.3.191211002.nupkg.sha512",
+        "microsoft.ui.xaml.2.4.2.nupkg.sha512",
         "microsoft.ui.xaml.nuspec",
         "readme.txt",
-        "tools/AppX/arm/Release/Microsoft.UI.Xaml.2.3.appx",
-        "tools/AppX/arm64/Release/Microsoft.UI.Xaml.2.3.appx",
-        "tools/AppX/x64/Release/Microsoft.UI.Xaml.2.3.appx",
-        "tools/AppX/x86/Release/Microsoft.UI.Xaml.2.3.appx",
+        "tools/AppX/arm/Release/Microsoft.UI.Xaml.2.4.appx",
+        "tools/AppX/arm64/Release/Microsoft.UI.Xaml.2.4.appx",
+        "tools/AppX/x64/Release/Microsoft.UI.Xaml.2.4.appx",
+        "tools/AppX/x86/Release/Microsoft.UI.Xaml.2.4.appx",
         "tools/VisualStudioToolsManifest.xml"
       ]
     },
@@ -18947,21 +18963,6 @@
         "ref/xamarinmac20/_._",
         "ref/xamarintvos10/_._",
         "ref/xamarinwatchos10/_._"
-      ]
-    },
-    "MimeTypes/2.0.1": {
-      "sha512": "wN2eEA/5uSjmpTw9sfoAunl/IYW4yPMBGcqN7gcn7BhyVcIc782Yntj6kZYvDTo44FnDseIY7EpCwQXnbLfDpw==",
-      "type": "package",
-      "path": "mimetypes/2.0.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "contentFiles/cs/any/MimeTypes.NullableAttributes.cs.pp",
-        "contentFiles/cs/netcoreapp3.0/MimeTypes.cs.pp",
-        "contentFiles/cs/netstandard2.1/MimeTypes.cs.pp",
-        "images/nuget-icon.png",
-        "mimetypes.2.0.1.nupkg.sha512",
-        "mimetypes.nuspec"
       ]
     },
     "Nancy/2.0.0": {
@@ -19181,6 +19182,37 @@
         "xamarin_fingerprint.png"
       ]
     },
+    "Plugin.Permissions/6.0.1": {
+      "sha512": "na/0FNhyKmSicANWZMLSM0y/FW2AvLoawX3lsvBpELwP15sdJRyuBhRKk1OQjRoNrmTIewcON1tJFyydjMGWcA==",
+      "type": "package",
+      "path": "plugin.permissions/6.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/monoandroid10.0/Plugin.Permissions.dll",
+        "lib/monoandroid10.0/Plugin.Permissions.pdb",
+        "lib/monoandroid80/Plugin.Permissions.dll",
+        "lib/monoandroid80/Plugin.Permissions.pdb",
+        "lib/monoandroid81/Plugin.Permissions.dll",
+        "lib/monoandroid81/Plugin.Permissions.pdb",
+        "lib/monoandroid90/Plugin.Permissions.dll",
+        "lib/monoandroid90/Plugin.Permissions.pdb",
+        "lib/netstandard1.0/Plugin.Permissions.dll",
+        "lib/netstandard1.0/Plugin.Permissions.pdb",
+        "lib/netstandard2.0/Plugin.Permissions.dll",
+        "lib/netstandard2.0/Plugin.Permissions.pdb",
+        "lib/uap10.0.16299/Plugin.Permissions.dll",
+        "lib/uap10.0.16299/Plugin.Permissions.pdb",
+        "lib/uap10.0.16299/Plugin.Permissions.pri",
+        "lib/xamarinios10/Plugin.Permissions.dll",
+        "lib/xamarinios10/Plugin.Permissions.pdb",
+        "lib/xamarintvos10/Plugin.Permissions.dll",
+        "lib/xamarintvos10/Plugin.Permissions.pdb",
+        "plugin.permissions.6.0.1.nupkg.sha512",
+        "plugin.permissions.nuspec",
+        "readme.txt"
+      ]
+    },
     "RestSharp/106.11.4": {
       "sha512": "vx35q52cM3UQNOiN3UqSQ9U7I5UeoyzVmjsWKQxOxn6FVu+n01+SNwhxc/jvf92WPBmmwzTV4VYTeTg4KviJdA==",
       "type": "package",
@@ -19197,10 +19229,10 @@
         "restsharp.png"
       ]
     },
-    "Rg.Plugins.Popup/2.0.0.2": {
-      "sha512": "UExzgLevcih/oDokftGPKRqaefS65ByAOeaFzfr1Qy2opeyv9+eR0hDWotGb0hPI5JFHD7NJv5aK6NbTM3WuLw==",
+    "Rg.Plugins.Popup/2.0.0.3": {
+      "sha512": "/lrKxxsdaF9T+YEnVDaUMj0angdRyvpngSmX8veY/QYhSjT4x3guJTsL8O8D4egDf7MI5McnmMAsst0tkN1LOA==",
       "type": "package",
-      "path": "rg.plugins.popup/2.0.0.2",
+      "path": "rg.plugins.popup/2.0.0.3",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -19241,7 +19273,7 @@
         "lib/xamarinwatchos10/Rg.Plugins.Popup.pdb",
         "lib/xamarinwatchos10/Rg.Plugins.Popup.xml",
         "readme.txt",
-        "rg.plugins.popup.2.0.0.2.nupkg.sha512",
+        "rg.plugins.popup.2.0.0.3.nupkg.sha512",
         "rg.plugins.popup.nuspec"
       ]
     },
@@ -20123,17 +20155,17 @@
         "runtimes/win/lib/netstandard1.5/System.Runtime.Extensions.dll"
       ]
     },
-    "runtime.win10-arm-aot.Microsoft.NETCore.UniversalWindowsPlatform/6.2.9": {
-      "sha512": "tN7AmnRPUuu29nh9ulL/UGMdzayAe/AQNhM7+fQNKuT4jUlxc61Ilf2djKNJ5MvK8wY69KH0Iz9Yy5+95rB+DQ==",
+    "runtime.win10-arm-aot.Microsoft.NETCore.UniversalWindowsPlatform/6.2.10": {
+      "sha512": "EjhVHW/GiH5/k/PICAGDfh6L0ulDhZpB76SxpRqX1Q+9Txq5I+2tqM8PsiQ75xhImwY0T/uPVkLn1I9XAZDsIg==",
       "type": "package",
-      "path": "runtime.win10-arm-aot.microsoft.netcore.universalwindowsplatform/6.2.9",
+      "path": "runtime.win10-arm-aot.microsoft.netcore.universalwindowsplatform/6.2.10",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
         "ref/netstandard/_._",
-        "runtime.win10-arm-aot.microsoft.netcore.universalwindowsplatform.6.2.9.nupkg.sha512",
+        "runtime.win10-arm-aot.microsoft.netcore.universalwindowsplatform.6.2.10.nupkg.sha512",
         "runtime.win10-arm-aot.microsoft.netcore.universalwindowsplatform.nuspec",
         "runtimes/win10-arm-aot/lib/uap10.0.15138/Microsoft.CSharp.dll",
         "runtimes/win10-arm-aot/lib/uap10.0.15138/Microsoft.VisualBasic.dll",
@@ -20306,17 +20338,17 @@
         "runtimes/win10-arm-aot/nativeassets/uap10.0.15138/clrcompression.dll"
       ]
     },
-    "runtime.win10-arm.Microsoft.Net.Native.Compiler/2.2.7-rel-27913-00": {
-      "sha512": "7MmoGge/BtJAHCnnV1LqjT2Yvnxlsm/8+4C2ASK819zq+pGSloeNwJtVxyM3okA9T4/1jKr+JpQsfis4F/KSKg==",
+    "runtime.win10-arm.Microsoft.Net.Native.Compiler/2.2.8-rel-28605-00": {
+      "sha512": "D+fIHupLfpkn9+uUWuOagrWr4kQIkgasKrKSt8qQMcZ0DNZQGeZndS2S4eHMtjsdmHp9WQzcgwkiSdqpmJau4Q==",
       "type": "package",
-      "path": "runtime.win10-arm.microsoft.net.native.compiler/2.2.7-rel-27913-00",
+      "path": "runtime.win10-arm.microsoft.net.native.compiler/2.2.8-rel-28605-00",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "build/runtime.win10-arm.Microsoft.Net.Native.Compiler.props",
         "build/runtime.win10-arm.Microsoft.Net.Native.Compiler.targets",
-        "runtime.win10-arm.microsoft.net.native.compiler.2.2.7-rel-27913-00.nupkg.sha512",
+        "runtime.win10-arm.microsoft.net.native.compiler.2.2.8-rel-28605-00.nupkg.sha512",
         "runtime.win10-arm.microsoft.net.native.compiler.nuspec",
         "tools/Runtime/arm/CommandProvider.dll",
         "tools/Runtime/arm/Microsoft.NET.Native.Runtime.2.2.appx",
@@ -20605,17 +20637,17 @@
         "tools/arm/mrt100etw.dll"
       ]
     },
-    "runtime.win10-arm.Microsoft.Net.Native.SharedLibrary/2.2.7-rel-27913-00": {
-      "sha512": "ifk8FQ8srunhdyo0QQe8H+36as9/wiQKXq1aXJ+6YeGyx0UjrTSyNx/zq6eThJfjRz9VyoomR+LZVhuXK+QKYw==",
+    "runtime.win10-arm.Microsoft.Net.Native.SharedLibrary/2.2.7-rel-28605-00": {
+      "sha512": "4XjW1YL8X099ArVhVYias0I4Xu7tamwhIfMr++JrJpeZpmtHalqdSIBMsaIaWMZFyxKOomSW4W4fNvzLJFq9SA==",
       "type": "package",
-      "path": "runtime.win10-arm.microsoft.net.native.sharedlibrary/2.2.7-rel-27913-00",
+      "path": "runtime.win10-arm.microsoft.net.native.sharedlibrary/2.2.7-rel-28605-00",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "build/runtime.win10-arm.Microsoft.Net.Native.SharedLibrary.props",
         "build/runtime.win10-arm.Microsoft.Net.Native.SharedLibrary.targets",
-        "runtime.win10-arm.microsoft.net.native.sharedlibrary.2.2.7-rel-27913-00.nupkg.sha512",
+        "runtime.win10-arm.microsoft.net.native.sharedlibrary.2.2.7-rel-28605-00.nupkg.sha512",
         "runtime.win10-arm.microsoft.net.native.sharedlibrary.nuspec",
         "tools/SharedLibrary/chk/AnalysisILToc/System.Collections.Concurrent.iltoc",
         "tools/SharedLibrary/chk/AnalysisILToc/System.Collections.Concurrent.iltocpdb",
@@ -20983,10 +21015,10 @@
         "tools/SharedLibrary/ret/Toc/System.Threading.toc"
       ]
     },
-    "runtime.win10-arm.Microsoft.Net.UWPCoreRuntimeSdk/2.2.9": {
-      "sha512": "viBS+DhSzl2JZYC/88uhlWi4DutSIFy32ocoRsdi5RsPLG50XTqq6w0traHQuuqLLJ4gwswlNXO9AD4J0+zvIQ==",
+    "runtime.win10-arm.Microsoft.Net.UWPCoreRuntimeSdk/2.2.10": {
+      "sha512": "mRtKZkmnKkd7pBr85TUzkv0vMOggXD2dmXC8I5raahugrt807+whsvmsJEnmW4EtdU3QVvpdhqT676r49Rj7zQ==",
       "type": "package",
-      "path": "runtime.win10-arm.microsoft.net.uwpcoreruntimesdk/2.2.9",
+      "path": "runtime.win10-arm.microsoft.net.uwpcoreruntimesdk/2.2.10",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
@@ -20995,7 +21027,7 @@
         "THIRD-PARTY-NOTICES.TXT",
         "build/runtime.win10-arm.Microsoft.Net.UWPCoreRuntimeSdk.props",
         "build/runtime.win10-arm.Microsoft.Net.UWPCoreRuntimeSdk.targets",
-        "runtime.win10-arm.microsoft.net.uwpcoreruntimesdk.2.2.9.nupkg.sha512",
+        "runtime.win10-arm.microsoft.net.uwpcoreruntimesdk.2.2.10.nupkg.sha512",
         "runtime.win10-arm.microsoft.net.uwpcoreruntimesdk.nuspec",
         "tools/AppLocal/consoleuwpshim.exe",
         "tools/AppLocal/uwpshim.exe",
@@ -21004,17 +21036,17 @@
         "tools/CoreRuntime/copywin32resources.exe"
       ]
     },
-    "runtime.win10-arm.Microsoft.NETCore.UniversalWindowsPlatform/6.2.9": {
-      "sha512": "/q9U+SqJTVrocU7CHFd1D4ac2jqPc4U8kPy8F147Li3XGf0Ce9v6UKJqf7nskR+XgVi3IVfUJUcjWLVskG5ZKw==",
+    "runtime.win10-arm.Microsoft.NETCore.UniversalWindowsPlatform/6.2.10": {
+      "sha512": "mHSAfyIW8OW8Ei3vwPYoCIDS9uCve9oJBxveEb+6tupokxH6J+i4yJRdq30BX3smnrBuimnhj7k78YuIhQ+qkw==",
       "type": "package",
-      "path": "runtime.win10-arm.microsoft.netcore.universalwindowsplatform/6.2.9",
+      "path": "runtime.win10-arm.microsoft.netcore.universalwindowsplatform/6.2.10",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
         "ref/netstandard/_._",
-        "runtime.win10-arm.microsoft.netcore.universalwindowsplatform.6.2.9.nupkg.sha512",
+        "runtime.win10-arm.microsoft.netcore.universalwindowsplatform.6.2.10.nupkg.sha512",
         "runtime.win10-arm.microsoft.netcore.universalwindowsplatform.nuspec",
         "runtimes/win10-arm/lib/uap10.0.15138/Microsoft.CSharp.dll",
         "runtimes/win10-arm/lib/uap10.0.15138/Microsoft.VisualBasic.dll",
@@ -21186,17 +21218,17 @@
         "runtimes/win10-arm/nativeassets/uap10.0.15138/clrcompression.dll"
       ]
     },
-    "runtime.win10-arm64-aot.Microsoft.NETCore.UniversalWindowsPlatform/6.2.9": {
-      "sha512": "gupfeyxXmaOyqLps1gGLh4Lzh5Wee6iuKpgZ70l2nmoHtzqCdk9aK4i+03259M6X2r7BXoIjJJml0paXBQY1kw==",
+    "runtime.win10-arm64-aot.Microsoft.NETCore.UniversalWindowsPlatform/6.2.10": {
+      "sha512": "9C2dRqDXQp/427NkQs+FPJzmVPq1BOLqtDsrinGJ4FEhnXZc4i5e9jHY+6t+Xa6clPt8jNwGh+ZehtXH7Raj1w==",
       "type": "package",
-      "path": "runtime.win10-arm64-aot.microsoft.netcore.universalwindowsplatform/6.2.9",
+      "path": "runtime.win10-arm64-aot.microsoft.netcore.universalwindowsplatform/6.2.10",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
         "ref/netstandard/_._",
-        "runtime.win10-arm64-aot.microsoft.netcore.universalwindowsplatform.6.2.9.nupkg.sha512",
+        "runtime.win10-arm64-aot.microsoft.netcore.universalwindowsplatform.6.2.10.nupkg.sha512",
         "runtime.win10-arm64-aot.microsoft.netcore.universalwindowsplatform.nuspec",
         "runtimes/win10-arm64-aot/lib/uap10.0.15138/Microsoft.CSharp.dll",
         "runtimes/win10-arm64-aot/lib/uap10.0.15138/Microsoft.VisualBasic.dll",
@@ -21369,17 +21401,17 @@
         "runtimes/win10-arm64-aot/nativeassets/uap10.0.15138/clrcompression.dll"
       ]
     },
-    "runtime.win10-arm64.Microsoft.Net.Native.Compiler/2.2.7-rel-27913-00": {
-      "sha512": "5Pt/M1mMmvYQUGWEn33V9SnZtTDUeLvfKPsd71GwedZOh7MDSRuLZqSPG7P3ElOforh4nXlG6x8lcaE9Kauebg==",
+    "runtime.win10-arm64.Microsoft.Net.Native.Compiler/2.2.8-rel-28605-00": {
+      "sha512": "inmWWhLz8FfyzMBW35Ivme88NqSt3lvDunkOZRQcPp7ceThusvs6EQzPNffNdyu+ejr6bnKloEx1xdl0+B0Rug==",
       "type": "package",
-      "path": "runtime.win10-arm64.microsoft.net.native.compiler/2.2.7-rel-27913-00",
+      "path": "runtime.win10-arm64.microsoft.net.native.compiler/2.2.8-rel-28605-00",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "build/runtime.win10-arm64.Microsoft.Net.Native.Compiler.props",
         "build/runtime.win10-arm64.Microsoft.Net.Native.Compiler.targets",
-        "runtime.win10-arm64.microsoft.net.native.compiler.2.2.7-rel-27913-00.nupkg.sha512",
+        "runtime.win10-arm64.microsoft.net.native.compiler.2.2.8-rel-28605-00.nupkg.sha512",
         "runtime.win10-arm64.microsoft.net.native.compiler.nuspec",
         "tools/Runtime/arm64/CommandProvider.dll",
         "tools/Runtime/arm64/Microsoft.NET.Native.Runtime.2.2.appx",
@@ -21547,17 +21579,17 @@
         "tools/arm64/mrt100etw.dll"
       ]
     },
-    "runtime.win10-arm64.Microsoft.Net.Native.SharedLibrary/2.2.7-rel-27913-00": {
-      "sha512": "Bl0tXHiEko11FYLmumjPRQQl/w3wlGEXvYDpdvWSuC9Ty4YCGNHOUXzPaTMP2dv2GikTv8RYy4m1m5lbUNDa3g==",
+    "runtime.win10-arm64.Microsoft.Net.Native.SharedLibrary/2.2.7-rel-28605-00": {
+      "sha512": "ZvY1KY0f/SjnN5UlJZ2HVvLcC1tSmGqWQDRr1Kx2PJF+zM/mY4ts8mYtJ96ojFeD3nsv6WhHPl6wMMac8qQPGg==",
       "type": "package",
-      "path": "runtime.win10-arm64.microsoft.net.native.sharedlibrary/2.2.7-rel-27913-00",
+      "path": "runtime.win10-arm64.microsoft.net.native.sharedlibrary/2.2.7-rel-28605-00",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "build/runtime.win10-arm64.Microsoft.Net.Native.SharedLibrary.props",
         "build/runtime.win10-arm64.Microsoft.Net.Native.SharedLibrary.targets",
-        "runtime.win10-arm64.microsoft.net.native.sharedlibrary.2.2.7-rel-27913-00.nupkg.sha512",
+        "runtime.win10-arm64.microsoft.net.native.sharedlibrary.2.2.7-rel-28605-00.nupkg.sha512",
         "runtime.win10-arm64.microsoft.net.native.sharedlibrary.nuspec",
         "tools/SharedLibrary/chk/AnalysisILToc/System.Collections.Concurrent.iltoc",
         "tools/SharedLibrary/chk/AnalysisILToc/System.Collections.Concurrent.iltocpdb",
@@ -21927,17 +21959,17 @@
         "tools/SharedLibrary/ret/Toc/System.Threading.toc"
       ]
     },
-    "runtime.win10-x64-aot.Microsoft.NETCore.UniversalWindowsPlatform/6.2.9": {
-      "sha512": "XTmgQZIB3JbzwVE0h+GN//VniFM4MmSWjxjtK7g5zypTwtpuj68oulxWqN5R3F19GaUzT+EFdfKXKEWI73/qwQ==",
+    "runtime.win10-x64-aot.Microsoft.NETCore.UniversalWindowsPlatform/6.2.10": {
+      "sha512": "1v/onr8H5bL9Ois7oNaZ+9rRPx6jnESISxKR55CRLOHeEPhhMJwap6bGnRtg/why0ieQKzoteNVDw4g31NFicw==",
       "type": "package",
-      "path": "runtime.win10-x64-aot.microsoft.netcore.universalwindowsplatform/6.2.9",
+      "path": "runtime.win10-x64-aot.microsoft.netcore.universalwindowsplatform/6.2.10",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
         "ref/netstandard/_._",
-        "runtime.win10-x64-aot.microsoft.netcore.universalwindowsplatform.6.2.9.nupkg.sha512",
+        "runtime.win10-x64-aot.microsoft.netcore.universalwindowsplatform.6.2.10.nupkg.sha512",
         "runtime.win10-x64-aot.microsoft.netcore.universalwindowsplatform.nuspec",
         "runtimes/win10-x64-aot/lib/uap10.0.15138/Microsoft.CSharp.dll",
         "runtimes/win10-x64-aot/lib/uap10.0.15138/Microsoft.VisualBasic.dll",
@@ -22110,17 +22142,17 @@
         "runtimes/win10-x64-aot/nativeassets/uap10.0.15138/clrcompression.dll"
       ]
     },
-    "runtime.win10-x64.Microsoft.Net.Native.Compiler/2.2.7-rel-27913-00": {
-      "sha512": "aF94Kjb29+SkvySs07Ztq0cVZObv4Totcek8vCL+Xn1D6GN34PrKR2P+A17yAEbey3q4K3U8XZDybsJwoSbWFA==",
+    "runtime.win10-x64.Microsoft.Net.Native.Compiler/2.2.8-rel-28605-00": {
+      "sha512": "HHRLfD02/JsW0LP2CZUaGlRYljnSOpIk7XEAw4oH8QTbej3on/MH8yhxvr1iGKwrXtj5lIo8RmxRAGuUU0e9Ow==",
       "type": "package",
-      "path": "runtime.win10-x64.microsoft.net.native.compiler/2.2.7-rel-27913-00",
+      "path": "runtime.win10-x64.microsoft.net.native.compiler/2.2.8-rel-28605-00",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "build/runtime.win10-x64.Microsoft.Net.Native.Compiler.props",
         "build/runtime.win10-x64.Microsoft.Net.Native.Compiler.targets",
-        "runtime.win10-x64.microsoft.net.native.compiler.2.2.7-rel-27913-00.nupkg.sha512",
+        "runtime.win10-x64.microsoft.net.native.compiler.2.2.8-rel-28605-00.nupkg.sha512",
         "runtime.win10-x64.microsoft.net.native.compiler.nuspec",
         "tools/Runtime/x64/CommandProvider.dll",
         "tools/Runtime/x64/Microsoft.NET.Native.Runtime.2.2.appx",
@@ -22403,17 +22435,17 @@
         "tools/x64/mrt100etw.dll"
       ]
     },
-    "runtime.win10-x64.Microsoft.Net.Native.SharedLibrary/2.2.7-rel-27913-00": {
-      "sha512": "Hr1dSHwWQ78yFMqZuh3J0brY886r4pPBblIy6JcgAFZUFM4FaDr9T1KPSYavlPBtHMPBzrHUfsQ3Bh3STzhMLA==",
+    "runtime.win10-x64.Microsoft.Net.Native.SharedLibrary/2.2.7-rel-28605-00": {
+      "sha512": "551Sm3oZT+waMFTcuOfrNulaUcBBdgosAQAJy9EoY8WBwDfqnL7M9I5Gz8MUZdUKJxi8XMXX776cvt+BVO5tPQ==",
       "type": "package",
-      "path": "runtime.win10-x64.microsoft.net.native.sharedlibrary/2.2.7-rel-27913-00",
+      "path": "runtime.win10-x64.microsoft.net.native.sharedlibrary/2.2.7-rel-28605-00",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "build/runtime.win10-x64.Microsoft.Net.Native.SharedLibrary.props",
         "build/runtime.win10-x64.Microsoft.Net.Native.SharedLibrary.targets",
-        "runtime.win10-x64.microsoft.net.native.sharedlibrary.2.2.7-rel-27913-00.nupkg.sha512",
+        "runtime.win10-x64.microsoft.net.native.sharedlibrary.2.2.7-rel-28605-00.nupkg.sha512",
         "runtime.win10-x64.microsoft.net.native.sharedlibrary.nuspec",
         "tools/SharedLibrary/chk/AnalysisILToc/System.Collections.Concurrent.iltoc",
         "tools/SharedLibrary/chk/AnalysisILToc/System.Collections.Concurrent.iltocpdb",
@@ -22781,10 +22813,10 @@
         "tools/SharedLibrary/ret/Toc/System.Threading.toc"
       ]
     },
-    "runtime.win10-x64.Microsoft.Net.UWPCoreRuntimeSdk/2.2.9": {
-      "sha512": "QNZQ79gG3rIpaIoYbnIQCsh8Be8CzwnqDZCUZ/UGr+CfUrypGUthAxJzwitATopzonqCqPxgEnsV0ZiH8XGn8w==",
+    "runtime.win10-x64.Microsoft.Net.UWPCoreRuntimeSdk/2.2.10": {
+      "sha512": "0ngWdevYAEmsF4WHdnVnvurLdHwuAYhUJSeWpr5DuGCgHX8O8FXyVXEc0n/OEeN33ioni1HvKaBqvo+w1aMquA==",
       "type": "package",
-      "path": "runtime.win10-x64.microsoft.net.uwpcoreruntimesdk/2.2.9",
+      "path": "runtime.win10-x64.microsoft.net.uwpcoreruntimesdk/2.2.10",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
@@ -22793,7 +22825,7 @@
         "THIRD-PARTY-NOTICES.TXT",
         "build/runtime.win10-x64.Microsoft.Net.UWPCoreRuntimeSdk.props",
         "build/runtime.win10-x64.Microsoft.Net.UWPCoreRuntimeSdk.targets",
-        "runtime.win10-x64.microsoft.net.uwpcoreruntimesdk.2.2.9.nupkg.sha512",
+        "runtime.win10-x64.microsoft.net.uwpcoreruntimesdk.2.2.10.nupkg.sha512",
         "runtime.win10-x64.microsoft.net.uwpcoreruntimesdk.nuspec",
         "tools/AppLocal/consoleuwpshim.exe",
         "tools/AppLocal/uwpshim.exe",
@@ -22802,17 +22834,17 @@
         "tools/CoreRuntime/copywin32resources.exe"
       ]
     },
-    "runtime.win10-x64.Microsoft.NETCore.UniversalWindowsPlatform/6.2.9": {
-      "sha512": "JjnUToWq2LQfNKtiqld4YYkgUcC3tCQ0RvRKiut0B7AgS+Eo/HnI/viFiH4FoNG7pFvcWoKimLctj06IgJoiyA==",
+    "runtime.win10-x64.Microsoft.NETCore.UniversalWindowsPlatform/6.2.10": {
+      "sha512": "1EHJmSYUrHUAYInt3WwoUz37BxA1XtwSNpWsXRUBvGBmZqZlgm0ZHPxBg1w/ywmgWW2n0ANsaCLQVITl+1RNyw==",
       "type": "package",
-      "path": "runtime.win10-x64.microsoft.netcore.universalwindowsplatform/6.2.9",
+      "path": "runtime.win10-x64.microsoft.netcore.universalwindowsplatform/6.2.10",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
         "ref/netstandard/_._",
-        "runtime.win10-x64.microsoft.netcore.universalwindowsplatform.6.2.9.nupkg.sha512",
+        "runtime.win10-x64.microsoft.netcore.universalwindowsplatform.6.2.10.nupkg.sha512",
         "runtime.win10-x64.microsoft.netcore.universalwindowsplatform.nuspec",
         "runtimes/win10-x64/lib/uap10.0.15138/Microsoft.CSharp.dll",
         "runtimes/win10-x64/lib/uap10.0.15138/Microsoft.VisualBasic.dll",
@@ -22984,17 +23016,17 @@
         "runtimes/win10-x64/nativeassets/uap10.0.15138/clrcompression.dll"
       ]
     },
-    "runtime.win10-x86-aot.Microsoft.NETCore.UniversalWindowsPlatform/6.2.9": {
-      "sha512": "/FxhZW8KuY7aiRcC1Opk5+48Meg1PYj36LcLVuX6Ty+n4HpMf7xxvNvp0EzSLzW/Ibzqt+iaRWqfOZqiTFZG5g==",
+    "runtime.win10-x86-aot.Microsoft.NETCore.UniversalWindowsPlatform/6.2.10": {
+      "sha512": "7jkMrVHq4v/Rm++k0W/eMtWCK8/CG5Oa1i4I+xI7LyS59LEC3xdoA8WbUZuBIyIbcB2EWyQjetF4M4UoYq1AnQ==",
       "type": "package",
-      "path": "runtime.win10-x86-aot.microsoft.netcore.universalwindowsplatform/6.2.9",
+      "path": "runtime.win10-x86-aot.microsoft.netcore.universalwindowsplatform/6.2.10",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
         "ref/netstandard/_._",
-        "runtime.win10-x86-aot.microsoft.netcore.universalwindowsplatform.6.2.9.nupkg.sha512",
+        "runtime.win10-x86-aot.microsoft.netcore.universalwindowsplatform.6.2.10.nupkg.sha512",
         "runtime.win10-x86-aot.microsoft.netcore.universalwindowsplatform.nuspec",
         "runtimes/win10-x86-aot/lib/uap10.0.15138/Microsoft.CSharp.dll",
         "runtimes/win10-x86-aot/lib/uap10.0.15138/Microsoft.VisualBasic.dll",
@@ -23167,17 +23199,17 @@
         "runtimes/win10-x86-aot/nativeassets/uap10.0.15138/clrcompression.dll"
       ]
     },
-    "runtime.win10-x86.Microsoft.Net.Native.Compiler/2.2.7-rel-27913-00": {
-      "sha512": "jxyZhYtJS9AmOvsNghtxeN6RYxHN73LnzBX3ir0cBQ5LlsNUsf6GgiJvZoeYPJLt/9fsPONhBciHpwLXWFkJkw==",
+    "runtime.win10-x86.Microsoft.Net.Native.Compiler/2.2.8-rel-28605-00": {
+      "sha512": "MYgv6FjZNDLUfXr9F3TfqrqLBQ+X6AfSrddprLQrsubWHc7fDndj1NSB6hf3AdXW0Lg3hBiXQdNHGrMeo3xFXA==",
       "type": "package",
-      "path": "runtime.win10-x86.microsoft.net.native.compiler/2.2.7-rel-27913-00",
+      "path": "runtime.win10-x86.microsoft.net.native.compiler/2.2.8-rel-28605-00",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "build/runtime.win10-x86.Microsoft.Net.Native.Compiler.props",
         "build/runtime.win10-x86.Microsoft.Net.Native.Compiler.targets",
-        "runtime.win10-x86.microsoft.net.native.compiler.2.2.7-rel-27913-00.nupkg.sha512",
+        "runtime.win10-x86.microsoft.net.native.compiler.2.2.8-rel-28605-00.nupkg.sha512",
         "runtime.win10-x86.microsoft.net.native.compiler.nuspec",
         "tools/Runtime/x86/CommandProvider.dll",
         "tools/Runtime/x86/Microsoft.NET.Native.Runtime.2.2.appx",
@@ -23460,17 +23492,17 @@
         "tools/x86/mrt100etw.dll"
       ]
     },
-    "runtime.win10-x86.Microsoft.Net.Native.SharedLibrary/2.2.7-rel-27913-00": {
-      "sha512": "LL5bMKQkVUlY5rbupMC+MJ4tCOz3hb4HVKGTmyb18Jwziv5h9QbJgRVPjiAZf9W2YroZaG+VYr1iI1Ig2bco2w==",
+    "runtime.win10-x86.Microsoft.Net.Native.SharedLibrary/2.2.7-rel-28605-00": {
+      "sha512": "MIzKT2ld5+XgzFLkBzE1/jVoa3NXGhgcNB3lNNWOAPXqQoGxRsTIX1G+2xGHvV3ZFKFFQqx9DFUI9oBTke7o8Q==",
       "type": "package",
-      "path": "runtime.win10-x86.microsoft.net.native.sharedlibrary/2.2.7-rel-27913-00",
+      "path": "runtime.win10-x86.microsoft.net.native.sharedlibrary/2.2.7-rel-28605-00",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "build/runtime.win10-x86.Microsoft.Net.Native.SharedLibrary.props",
         "build/runtime.win10-x86.Microsoft.Net.Native.SharedLibrary.targets",
-        "runtime.win10-x86.microsoft.net.native.sharedlibrary.2.2.7-rel-27913-00.nupkg.sha512",
+        "runtime.win10-x86.microsoft.net.native.sharedlibrary.2.2.7-rel-28605-00.nupkg.sha512",
         "runtime.win10-x86.microsoft.net.native.sharedlibrary.nuspec",
         "tools/SharedLibrary/chk/AnalysisILToc/System.Collections.Concurrent.iltoc",
         "tools/SharedLibrary/chk/AnalysisILToc/System.Collections.Concurrent.iltocpdb",
@@ -23838,10 +23870,10 @@
         "tools/SharedLibrary/ret/Toc/System.Threading.toc"
       ]
     },
-    "runtime.win10-x86.Microsoft.Net.UWPCoreRuntimeSdk/2.2.9": {
-      "sha512": "qF6RRZKaflI+LR1YODNyWYjq5YoX8IJ2wx5y8O+AW2xO+1t/Q6Mm+jQ38zJbWnmXbrcOqUYofn7Y3/KC6lTLBQ==",
+    "runtime.win10-x86.Microsoft.Net.UWPCoreRuntimeSdk/2.2.10": {
+      "sha512": "yqgs5GCgrwl/IvLvTacrFrR6M07gTadmHzUtbSHHosRhw43SUGbE04zOGyBv/ondOwXMCX7bNhzcfmcKt3NH9g==",
       "type": "package",
-      "path": "runtime.win10-x86.microsoft.net.uwpcoreruntimesdk/2.2.9",
+      "path": "runtime.win10-x86.microsoft.net.uwpcoreruntimesdk/2.2.10",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
@@ -23850,7 +23882,7 @@
         "THIRD-PARTY-NOTICES.TXT",
         "build/runtime.win10-x86.Microsoft.Net.UWPCoreRuntimeSdk.props",
         "build/runtime.win10-x86.Microsoft.Net.UWPCoreRuntimeSdk.targets",
-        "runtime.win10-x86.microsoft.net.uwpcoreruntimesdk.2.2.9.nupkg.sha512",
+        "runtime.win10-x86.microsoft.net.uwpcoreruntimesdk.2.2.10.nupkg.sha512",
         "runtime.win10-x86.microsoft.net.uwpcoreruntimesdk.nuspec",
         "tools/AppLocal/consoleuwpshim.exe",
         "tools/AppLocal/uwpshim.exe",
@@ -23859,17 +23891,17 @@
         "tools/CoreRuntime/copywin32resources.exe"
       ]
     },
-    "runtime.win10-x86.Microsoft.NETCore.UniversalWindowsPlatform/6.2.9": {
-      "sha512": "BckZHjaqBTSEtvzj0aliq3DQvLOT7C4ei4L8pCgcD3k/MZpECBg8kUsixDanwYtRot+jNXxc6LF5J87cyigGfA==",
+    "runtime.win10-x86.Microsoft.NETCore.UniversalWindowsPlatform/6.2.10": {
+      "sha512": "VPALEDBbRPVecxaDYWvMVYyqQYsU3Q2dqEzoMOswPdJ0/prc9btgh2AgOwP2HBgXSjHZcqeV6UHQxnHk7VvDzw==",
       "type": "package",
-      "path": "runtime.win10-x86.microsoft.netcore.universalwindowsplatform/6.2.9",
+      "path": "runtime.win10-x86.microsoft.netcore.universalwindowsplatform/6.2.10",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
         "ref/netstandard/_._",
-        "runtime.win10-x86.microsoft.netcore.universalwindowsplatform.6.2.9.nupkg.sha512",
+        "runtime.win10-x86.microsoft.netcore.universalwindowsplatform.6.2.10.nupkg.sha512",
         "runtime.win10-x86.microsoft.netcore.universalwindowsplatform.nuspec",
         "runtimes/win10-x86/lib/uap10.0.15138/Microsoft.CSharp.dll",
         "runtimes/win10-x86/lib/uap10.0.15138/Microsoft.VisualBasic.dll",
@@ -24986,10 +25018,10 @@
         "system.globalization.extensions.nuspec"
       ]
     },
-    "System.IdentityModel.Tokens.Jwt/6.6.0": {
-      "sha512": "irSFzRuejokJUb0z/tkHq1x0WCCuk8wtJ85Sql7YaUqSQXPLmKi7zFjVI1UAUX+yANmD673VwN+n64lEq/vW6Q==",
+    "System.IdentityModel.Tokens.Jwt/6.7.0": {
+      "sha512": "xLIkQilVOrLO5491l4uaUVNsjy0BWGVuYXRCEyKn9e6IaYjBmmZAETh+MWSJlSlS1JlGVNUqebDG6e7SQadR1Q==",
       "type": "package",
-      "path": "system.identitymodel.tokens.jwt/6.6.0",
+      "path": "system.identitymodel.tokens.jwt/6.7.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -24999,7 +25031,7 @@
         "lib/net461/System.IdentityModel.Tokens.Jwt.xml",
         "lib/netstandard2.0/System.IdentityModel.Tokens.Jwt.dll",
         "lib/netstandard2.0/System.IdentityModel.Tokens.Jwt.xml",
-        "system.identitymodel.tokens.jwt.6.6.0.nupkg.sha512",
+        "system.identitymodel.tokens.jwt.6.7.0.nupkg.sha512",
         "system.identitymodel.tokens.jwt.nuspec"
       ]
     },
@@ -27598,10 +27630,10 @@
         "xam.plugins.settings.nuspec"
       ]
     },
-    "Xamarin.Essentials/1.5.1": {
-      "sha512": "XEKAp7BXfZkTGbMqySXtuhwxb06ULjkJNQ8p44e8amOPm4m4VTVV92F13ov0a8NFNU+6JFm98510QK9Q/HBD5A==",
+    "Xamarin.Essentials/1.5.3.2": {
+      "sha512": "BSLgDJUOPFRwTpQaftM+s4qb/MsTjrqXulEYDOcK6KF3i0Orf75zo3RwRfqnQ8WfpoEFxW/v0jgcPWCvOMgHxg==",
       "type": "package",
-      "path": "xamarin.essentials/1.5.1",
+      "path": "xamarin.essentials/1.5.3.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -27642,7 +27674,7 @@
         "lib/xamarinwatchos10/Xamarin.Essentials.pdb",
         "lib/xamarinwatchos10/Xamarin.Essentials.xml",
         "readme.txt",
-        "xamarin.essentials.1.5.1.nupkg.sha512",
+        "xamarin.essentials.1.5.3.2.nupkg.sha512",
         "xamarin.essentials.nuspec"
       ]
     },
@@ -27756,13 +27788,14 @@
         "xamarin.ffimageloading.forms.nuspec"
       ]
     },
-    "Xamarin.Forms/4.5.0.617": {
-      "sha512": "tB/h7bHEylOgNT+521SRnbmO+LCe5R3lPboD/icCMpa+FdjmxhZQ7+fIIPFDbhY2dqYetGRnAeJWXVx4NLbmAw==",
+    "Xamarin.Forms/4.7.0.968": {
+      "sha512": "VvHI/VXyDZcCLYXywh9A8gVtldD8XCLR8hujZVdlKGh87HIXAUW0b+uLFsvyMB8COwNce0w56ycgD/tXtLgFRA==",
       "type": "package",
-      "path": "xamarin.forms/4.5.0.617",
+      "path": "xamarin.forms/4.7.0.968",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
+        "Assets/xamarin_128x128.png",
         "build/MonoAndroid10/proguard.cfg",
         "build/XCODE10/Xamarin.Forms.Platform.iOS.dll",
         "build/XCODE10/Xamarin.Forms.Platform.iOS.pdb",
@@ -28022,8 +28055,8 @@
         "lib/uap10.0.14393/Xamarin.Forms.Platform.UAP/Microsoft.UI.Xaml/Themes/generic.xaml",
         "lib/uap10.0.14393/Xamarin.Forms.Platform.UAP/PageControlStyle.xaml",
         "lib/uap10.0.14393/Xamarin.Forms.Platform.UAP/PickerStyle.xaml",
+        "lib/uap10.0.14393/Xamarin.Forms.Platform.UAP/PromptDialog.xaml",
         "lib/uap10.0.14393/Xamarin.Forms.Platform.UAP/Resources.xaml",
-        "lib/uap10.0.14393/Xamarin.Forms.Platform.UAP/Shell/ShellStyles.xaml",
         "lib/uap10.0.14393/Xamarin.Forms.Platform.UAP/SliderStyle.xaml",
         "lib/uap10.0.14393/Xamarin.Forms.Platform.UAP/StepperControl.xaml",
         "lib/uap10.0.14393/Xamarin.Forms.Platform.UAP/TabbedPageStyle.xaml",
@@ -28054,6 +28087,7 @@
         "lib/uap10.0.16299/Xamarin.Forms.Platform.UAP/Microsoft.UI.Xaml/Themes/generic.xaml",
         "lib/uap10.0.16299/Xamarin.Forms.Platform.UAP/PageControlStyle.xaml",
         "lib/uap10.0.16299/Xamarin.Forms.Platform.UAP/PickerStyle.xaml",
+        "lib/uap10.0.16299/Xamarin.Forms.Platform.UAP/PromptDialog.xaml",
         "lib/uap10.0.16299/Xamarin.Forms.Platform.UAP/Resources.xaml",
         "lib/uap10.0.16299/Xamarin.Forms.Platform.UAP/Shell/ShellStyles.xaml",
         "lib/uap10.0.16299/Xamarin.Forms.Platform.UAP/SliderStyle.xaml",
@@ -28064,17 +28098,20 @@
         "lib/uap10.0.16299/Xamarin.Forms.Xaml.dll",
         "lib/uap10.0.16299/Xamarin.Forms.Xaml.pdb",
         "lib/uap10.0.16299/Xamarin.Forms.Xaml.xml",
-        "xamarin.forms.4.5.0.617.nupkg.sha512",
+        "xamarin.forms.4.7.0.968.nupkg.sha512",
         "xamarin.forms.nuspec"
       ]
     },
-    "Xamarin.Plugin.FilePicker/2.1.34": {
-      "sha512": "y1SL60eEECBYqRmJ0E94B9W6+Jl4sZeLlGn4WtTrcKRJv9CGHPH459L1EZXrTlhq5muCNIInfst6FdXLiRqb2A==",
+    "Xamarin.Plugin.FilePicker/2.1.41": {
+      "sha512": "SFJp7AEq6YFZ72mw+CxGMQcMzBYhA0b5NkhSyE5b+prCiNli7bKI5pWOT+mbyFng0En8LfeY0dEbedpkecQFQw==",
       "type": "package",
-      "path": "xamarin.plugin.filepicker/2.1.34",
+      "path": "xamarin.plugin.filepicker/2.1.41",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
+        "lib/monoandroid10.0/Plugin.FilePicker.dll",
+        "lib/monoandroid10.0/Plugin.FilePicker.pdb",
+        "lib/monoandroid10.0/Plugin.FilePicker.xml",
         "lib/monoandroid80/Plugin.FilePicker.dll",
         "lib/monoandroid80/Plugin.FilePicker.pdb",
         "lib/monoandroid80/Plugin.FilePicker.xml",
@@ -28103,7 +28140,7 @@
         "lib/xamarinmac20/Plugin.FilePicker.dll",
         "lib/xamarinmac20/Plugin.FilePicker.pdb",
         "lib/xamarinmac20/Plugin.FilePicker.xml",
-        "xamarin.plugin.filepicker.2.1.34.nupkg.sha512",
+        "xamarin.plugin.filepicker.2.1.41.nupkg.sha512",
         "xamarin.plugin.filepicker.nuspec"
       ]
     },
@@ -28159,32 +28196,31 @@
   },
   "projectFileDependencyGroups": {
     "UAP,Version=v10.0.16299": [
-      "Microsoft.NETCore.UniversalWindowsPlatform >= 6.2.9",
-      "MimeTypes >= 2.0.1",
+      "Microsoft.NETCore.UniversalWindowsPlatform >= 6.2.10",
       "NETStandard.Library >= 2.0.3",
       "REM >= 1.1.0",
-      "Rg.Plugins.Popup >= 2.0.0.2",
+      "Rg.Plugins.Popup >= 2.0.0.3",
       "Xam.Plugin.FilePicker >= 1.1.0",
-      "Xamarin.Essentials >= 1.5.1",
-      "Xamarin.Forms >= 4.5.0.617",
-      "Xamarin.Plugin.FilePicker >= 2.1.34",
+      "Xamarin.Essentials >= 1.5.3.2",
+      "Xamarin.Forms >= 4.7.0.968",
+      "Xamarin.Plugin.FilePicker >= 2.1.41",
       "ZXing.Net.Mobile >= 2.4.1",
       "ZXing.Net.Mobile.Forms >= 2.4.1"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Вазген\\.nuget\\packages\\": {},
+    "C:\\Users\\sekisov\\.nuget\\packages\\": {},
     "C:\\Microsoft\\Xamarin\\NuGet\\": {},
     "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\RT\\rtmobile\\RTMobile\\RTMobile.UWP\\RTMobile.UWP.csproj",
+      "projectUniqueName": "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile.UWP\\RTMobile.UWP.csproj",
       "projectName": "RTMobile.UWP",
-      "projectPath": "C:\\RT\\rtmobile\\RTMobile\\RTMobile.UWP\\RTMobile.UWP.csproj",
-      "packagesPath": "C:\\Users\\Вазген\\.nuget\\packages\\",
-      "outputPath": "C:\\RT\\rtmobile\\RTMobile\\RTMobile.UWP\\obj\\",
+      "projectPath": "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile.UWP\\RTMobile.UWP.csproj",
+      "packagesPath": "C:\\Users\\sekisov\\.nuget\\packages\\",
+      "outputPath": "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile.UWP\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -28192,7 +28228,7 @@
         "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\Вазген\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\sekisov\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -28206,8 +28242,8 @@
       "frameworks": {
         "uap10.0.16299": {
           "projectReferences": {
-            "C:\\RT\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj": {
-              "projectPath": "C:\\RT\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj"
+            "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj": {
+              "projectPath": "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj"
             }
           }
         }
@@ -28218,13 +28254,7 @@
         "dependencies": {
           "Microsoft.NETCore.UniversalWindowsPlatform": {
             "target": "Package",
-            "version": "[6.2.9, )"
-          },
-          "MimeTypes": {
-            "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-            "suppressParent": "All",
-            "target": "Package",
-            "version": "[2.0.1, )"
+            "version": "[6.2.10, )"
           },
           "NETStandard.Library": {
             "target": "Package",
@@ -28232,7 +28262,7 @@
           },
           "Rg.Plugins.Popup": {
             "target": "Package",
-            "version": "[2.0.0.2, )"
+            "version": "[2.0.0.3, )"
           },
           "Xam.Plugin.FilePicker": {
             "target": "Package",
@@ -28240,15 +28270,15 @@
           },
           "Xamarin.Essentials": {
             "target": "Package",
-            "version": "[1.5.1, )"
+            "version": "[1.5.3.2, )"
           },
           "Xamarin.Forms": {
             "target": "Package",
-            "version": "[4.5.0.617, )"
+            "version": "[4.7.0.968, )"
           },
           "Xamarin.Plugin.FilePicker": {
             "target": "Package",
-            "version": "[2.1.34, )"
+            "version": "[2.1.41, )"
           },
           "ZXing.Net.Mobile": {
             "target": "Package",
@@ -28289,75 +28319,5 @@
         "#import": []
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1605",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Обнаружено понижение версии пакета Rg.Plugins.Popup с 2.0.0.3 на 2.0.0.2. Чтобы выбрать другую версию, создайте ссылку на пакет напрямую из проекта. \r\n RTMobile.UWP -> REM -> Rg.Plugins.Popup (>= 2.0.0.3) \r\n RTMobile.UWP -> Rg.Plugins.Popup (>= 2.0.0.2)",
-      "libraryId": "Rg.Plugins.Popup",
-      "targetGraphs": [
-        "UAP,Version=v10.0.16299",
-        "UAP,Version=v10.0.16299/win10-arm",
-        "UAP,Version=v10.0.16299/win10-arm-aot",
-        "UAP,Version=v10.0.16299/win10-arm64-aot",
-        "UAP,Version=v10.0.16299/win10-x64",
-        "UAP,Version=v10.0.16299/win10-x64-aot",
-        "UAP,Version=v10.0.16299/win10-x86",
-        "UAP,Version=v10.0.16299/win10-x86-aot"
-      ]
-    },
-    {
-      "code": "NU1605",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Обнаружено понижение версии пакета Xamarin.Essentials с 1.5.3.2 на 1.5.1. Чтобы выбрать другую версию, создайте ссылку на пакет напрямую из проекта. \r\n RTMobile.UWP -> REM -> Xamarin.Essentials (>= 1.5.3.2) \r\n RTMobile.UWP -> Xamarin.Essentials (>= 1.5.1)",
-      "libraryId": "Xamarin.Essentials",
-      "targetGraphs": [
-        "UAP,Version=v10.0.16299",
-        "UAP,Version=v10.0.16299/win10-arm",
-        "UAP,Version=v10.0.16299/win10-arm-aot",
-        "UAP,Version=v10.0.16299/win10-arm64-aot",
-        "UAP,Version=v10.0.16299/win10-x64",
-        "UAP,Version=v10.0.16299/win10-x64-aot",
-        "UAP,Version=v10.0.16299/win10-x86",
-        "UAP,Version=v10.0.16299/win10-x86-aot"
-      ]
-    },
-    {
-      "code": "NU1605",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Обнаружено понижение версии пакета Xamarin.Plugin.FilePicker с 2.1.41 на 2.1.34. Чтобы выбрать другую версию, создайте ссылку на пакет напрямую из проекта. \r\n RTMobile.UWP -> REM -> Xamarin.Plugin.FilePicker (>= 2.1.41) \r\n RTMobile.UWP -> Xamarin.Plugin.FilePicker (>= 2.1.34)",
-      "libraryId": "Xamarin.Plugin.FilePicker",
-      "targetGraphs": [
-        "UAP,Version=v10.0.16299",
-        "UAP,Version=v10.0.16299/win10-arm",
-        "UAP,Version=v10.0.16299/win10-arm-aot",
-        "UAP,Version=v10.0.16299/win10-arm64-aot",
-        "UAP,Version=v10.0.16299/win10-x64",
-        "UAP,Version=v10.0.16299/win10-x64-aot",
-        "UAP,Version=v10.0.16299/win10-x86",
-        "UAP,Version=v10.0.16299/win10-x86-aot"
-      ]
-    },
-    {
-      "code": "NU1605",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Обнаружено понижение версии пакета Xamarin.Forms с 4.7.0.968 на 4.5.0.617. Чтобы выбрать другую версию, создайте ссылку на пакет напрямую из проекта. \r\n RTMobile.UWP -> REM -> Xamarin.Forms (>= 4.7.0.968) \r\n RTMobile.UWP -> Xamarin.Forms (>= 4.5.0.617)",
-      "libraryId": "Xamarin.Forms",
-      "targetGraphs": [
-        "UAP,Version=v10.0.16299",
-        "UAP,Version=v10.0.16299/win10-arm",
-        "UAP,Version=v10.0.16299/win10-arm-aot",
-        "UAP,Version=v10.0.16299/win10-arm64-aot",
-        "UAP,Version=v10.0.16299/win10-x64",
-        "UAP,Version=v10.0.16299/win10-x64-aot",
-        "UAP,Version=v10.0.16299/win10-x86",
-        "UAP,Version=v10.0.16299/win10-x86-aot"
-      ]
-    }
-  ]
+  }
 }

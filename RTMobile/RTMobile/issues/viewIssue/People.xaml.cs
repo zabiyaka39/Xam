@@ -127,10 +127,10 @@ namespace RTMobile.issues.viewIssue
 		}
 		private async void ListView_ItemTapped(object sender, ItemTappedEventArgs e)
 		{
-			Watchers selectedIssue = e.Item as Watchers;
-			if (selectedIssue != null)
+			User selectedWatcher = e.Item as User;
+			if (selectedWatcher != null)
 			{
-				await Navigation.PushAsync(new Profile(selectedIssue.name)).ConfigureAwait(true);
+				await Navigation.PushAsync(new Profile(selectedWatcher.name)).ConfigureAwait(true);
 			}
 			((ListView)sender).SelectedItem = null;
 		}

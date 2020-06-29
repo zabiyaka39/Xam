@@ -1,29 +1,17 @@
 ﻿using FFImageLoading;
-using FFImageLoading.Config;
 using Microsoft.AppCenter.Analytics;
 using Microsoft.AppCenter.Crashes;
 using Plugin.Settings;
 using RTMobile.issues;
 using RTMobile.settings;
-using Service.Shared.Clients;
 using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Text;
-using System.Threading.Tasks;
 using Xamarin.Forms;
 using Rg.Plugins.Popup.Services;
-using Rg.Plugins.Popup.Extensions;
 using RTMobile.jiraData;
 using Plugin.Fingerprint;
 using Plugin.Fingerprint.Abstractions;
-using Org.Apache.Http.Authentication;
-using Android.Accounts;
 
 namespace RTMobile
 {
@@ -46,6 +34,10 @@ namespace RTMobile
 				errorMessage.IsVisible = false;
 				errorMessage.FontAttributes = FontAttributes.None;
 				errorMessage.Margin = new Thickness(0, -15, 0, 0);
+				if(CrossSettings.Current.GetValueOrDefault("login", string.Empty) != string.Empty && CrossSettings.Current.GetValueOrDefault("password", string.Empty) != string.Empty)
+				{
+					fingerAuth(true);
+				}
 			}
 			else
 			{
@@ -71,21 +63,22 @@ namespace RTMobile
 			//ToolbarItems.Add(toolbar);
 		}
 
-	
+
 		private async void Button_Clicked(object sender, EventArgs e)
 		{
+			try
+			{
+				await PopupNavigation.Instance.PushAsync(new StatusBar());
+			}
+			catch (Exception ex)
+			{
+				Console.WriteLine(ex.ToString());
+			}
 			Request request = new Request();
 			try
 			{
-				try
-				{
-					await PopupNavigation.Instance.PushAsync(new StatusBar());
-				}
-				catch (Exception ex)
-				{
-					Console.WriteLine(ex.ToString());
-				}
-				if (login.Text != null && login.Text.Length > 0 && password.Text != null && password.Text.Length > 0)
+				//Проверяем на пустые поля
+				if (!string.IsNullOrWhiteSpace(login.Text) && !string.IsNullOrWhiteSpace(password.Text))
 				{
 					if (request.authorization(login.Text.Trim(' '), password.Text))
 					{
@@ -101,12 +94,10 @@ namespace RTMobile
 						ImageService.Instance.Config.HttpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic",
 							Convert.ToBase64String(System.Text.ASCIIEncoding.ASCII.GetBytes($"{CrossSettings.Current.GetValueOrDefault("login", login.Text)}:{CrossSettings.Current.AddOrUpdateValue("password", password.Text)}")));
 
-
 						await Navigation.PushModalAsync(new AllIssues()).ConfigureAwait(true);
 					}
 					else
-					{
-						
+					{						
 						errorMessage.IsVisible = true;
 						errorMessage1.IsVisible = true;
 						errorMessage.Text = "Вход не выполнен!";
@@ -153,11 +144,12 @@ namespace RTMobile
 		{
 			await Navigation.PushAsync(new Settings()).ConfigureAwait(true);
 		}
-
-		private async void FPEntery(object sender, EventArgs e)
+		public async void fingerAuth(bool first = false)
 		{
 			bool isFingerprintAvailable = await CrossFingerprint.Current.IsAvailableAsync(false);
-			if (!isFingerprintAvailable)
+			//Проверяем наличие датчика отпечатков и наличие загрузки приложение
+			//Если первый раз запустили, то нет смысла выводить данное сообщение
+			if (!isFingerprintAvailable && !first)
 			{
 				await DisplayAlert("Ошибка",
 					"Вход по отпечатку пальца недоступен", "OK");
@@ -171,8 +163,8 @@ namespace RTMobile
 			var authResult = await CrossFingerprint.Current.AuthenticateAsync(conf);
 			if (authResult.Authenticated)
 			{
-                try
-                {
+				try
+				{
 
 					try
 					{
@@ -194,7 +186,7 @@ namespace RTMobile
 						//Инициализируем данные о авторизации при подключении для получения изображений в FFImageLoading
 						ImageService.Instance.Config.HttpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic",
 							Convert.ToBase64String(System.Text.ASCIIEncoding.ASCII.GetBytes($"{CrossSettings.Current.GetValueOrDefault("login", login.Text)}:{CrossSettings.Current.GetValueOrDefault("password", password.Text)}")));
-						
+
 						await Navigation.PushModalAsync(new AllIssues()).ConfigureAwait(true);
 
 						try
@@ -208,22 +200,45 @@ namespace RTMobile
 					}
 					else
 					{
-						await DisplayAlert("Ошибка", "Ошибка входа! Ведите логин и пароль", "OK");
+						errorMessage.IsVisible = true;
+						errorMessage1.IsVisible = true;
+						errorMessage.Text = "Ошибка входа! Ведите логин и пароль";
+						try
+						{
+							await PopupNavigation.Instance.PopAsync(true);
+						}
+						catch (Exception ex)
+						{
+							Console.WriteLine(ex.ToString());
+						}
 					}
 				}
-                catch(Exception ex)
-                {
-					
+				catch (Exception ex)
+				{
+
 					Crashes.TrackError(ex);
 					Console.WriteLine(ex.ToString());
 				}
 
 			}
+		}
+		private async void FPEntery(object sender, EventArgs e)
+		{
+			fingerAuth();
+		}
+
+		private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+		{
+			if (password.IsPassword == true)
+			{
+				visibilityButton.Source = "visibility_off_white.png";
+				password.IsPassword = false;
+			}
 			else
 			{
-				await DisplayAlert("Ошибка", "Ошибка входа", "OK");
+				visibilityButton.Source = "visibility_white.png";
+				password.IsPassword = true;
 			}
-
 		}
 	}
 }

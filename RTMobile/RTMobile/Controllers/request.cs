@@ -83,7 +83,7 @@ namespace RTMobile
 				this.json = JsonConvert.SerializeObject(authorization);
 
 				RootObject rootObject = this.GetResponses<RootObject>();
-				if (rootObject.session != null && rootObject.session.name != null)
+				if (rootObject !=null && rootObject.session != null && rootObject.session.name != null)
 				{
 					return true;
 				}
@@ -206,7 +206,7 @@ namespace RTMobile
 		/// Список полей при переходе
 		/// </summary>
 		/// <returns></returns>
-		public List<Fields> GetFieldScreenCreate()
+		public List<Fields> GetFieldScreen()
 		{
 			List<Fields> fields = new List<Fields>();
 
@@ -217,7 +217,6 @@ namespace RTMobile
 				dynamic jsonConvert = JObject.Parse(streamReader.ReadToEnd());
 				if (jsonConvert.projects != null)
 				{
-
 					RootObject rootObject = new RootObject();
 					List<Fields> fieldsExtend = new List<Fields>();
 					if (jsonConvert.projects[0].id != null && jsonConvert.projects[0].issuetypes != null && jsonConvert.projects[0].issuetypes[0] != null && jsonConvert.projects[0].issuetypes[0].id != null)
@@ -235,7 +234,7 @@ namespace RTMobile
 						WebResponse httpResponseExtended = requestExtended.httpWebRequest.GetResponse();
 						using (StreamReader streamReaderExtended = new StreamReader(httpResponseExtended.GetResponseStream()))
 						{
-							dynamic jsonConvertExtended = JObject.Parse(streamReaderExtended.ReadToEnd());						
+							dynamic jsonConvertExtended = JObject.Parse(streamReaderExtended.ReadToEnd());
 							if (jsonConvertExtended.fields != null)
 							{
 								for (int i = 0; i < jsonConvertExtended.fields.Count; ++i)
@@ -255,7 +254,6 @@ namespace RTMobile
 							{
 								foreach (dynamic checkFieldsDeserializate in fieldsDeserializate)
 								{
-									string ssss = checkFieldsDeserializate.ToString();
 									fields.Add(JsonConvert.DeserializeObject<Fields>(checkFieldsDeserializate.ToString()));
 									fields[fields.Count - 1].NameField = fieldsDeserializate.Name.ToString();
 									//Если имеются системные поля то убираем их из списка на вывод
@@ -266,7 +264,11 @@ namespace RTMobile
 									else
 									{
 										//если поле не удалено, то добавляем параметр editHtml полученный ранее
-										fields[fields.Count - 1].editHtml = fieldsExtend[fieldsExtend.FindIndex(fiel => fiel.Id == fields[fields.Count - 1].NameField)].editHtml;
+										int indexFind = fieldsExtend.FindIndex(fiel => fiel.Id == fields[fields.Count - 1].NameField);
+										if (indexFind > -1)
+										{
+											fields[fields.Count - 1].editHtml = fieldsExtend[indexFind].editHtml;
+										}
 									}
 								}
 							}
@@ -287,237 +289,50 @@ namespace RTMobile
 		/// <returns></returns>
 		public List<Fields> GetFieldTransitions()
 		{
-			List<Fields> fields = new List<Fields>();
 
-			WebResponse httpResponse = this.httpWebRequest.GetResponse();
-			//Отправляем запрос для получения списка полей задачи
-			using (StreamReader streamReader = new StreamReader(httpResponse.GetResponseStream()))
+			List<Fields> Fields = new List<Fields>();
+			try
 			{
-				//читаем поток
-				string result = streamReader.ReadToEnd();
-				//Создаем JAVA серелиазатор для возможности чтения элементов по названию, а не по полю класса, т.к. нам заранее не известны названия и количество полей в задаче и их количество может меняться
-				JavaScriptSerializer js = new JavaScriptSerializer();
-				//десериализуем в переменную с типом dynamic
-				Nancy.Json.Simple.JsonObject objectCustomField = js.Deserialize<dynamic>(result);
-
-				//string str = objectCustomField["transitions"][0][3];
-				//проходимся по всем полученным customField и получаем значения
-				try
+				if (httpWebRequest.Method == "POST")
 				{
-					foreach (System.Collections.Generic.KeyValuePair<string, object> field in objectCustomField)
+					if (json != null && json.Length > 0)
 					{
-						if (field.Key == "transitions")
+						this.json = json;
+					}
+					//Исключаем пустой JSON-запрос сформированный на этапе создания подключения к серверу
+					if (this.json != null && this.json.Length > 2)
+					{
+						using (StreamWriter streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
 						{
-							if (((dynamic)(field.Value)).Count > 0)
-							{
-								//Проходимся по всем переходам
-								for (int i = 0; i < ((dynamic)(field.Value)).Count; ++i)
-								{
-									foreach (KeyValuePair<string, object> fieldTransaction in ((dynamic)(field.Value))[i])
-									{
-										switch (fieldTransaction.Key)
-										{
-											case "id":
-												{
-													//Получаем id перехода
-													break;
-												}
-											case "name":
-												{
-													//Получаем название перехода
-													break;
-												}
-											case "to":
-												{
-													//Получаем значения перехода
-													break;
-												}
-											case "fields":
-												{
-													//Получаем поля перехода для заполнения
-													for (int j = 0; j < ((dynamic)(fieldTransaction.Value)).Count; ++j)
-													{
-														Fields fieldTmp = new Fields();
-
-														List<string> keysFields = new List<string>();
-														foreach (string nameField in ((dynamic)(fieldTransaction.Value)).Keys)
-														{
-															keysFields.Add(nameField);
-														}
-														foreach (KeyValuePair<string, object> fieldTransactionInformation in ((dynamic)(fieldTransaction.Value))[j])
-														{
-															fieldTmp.name = keysFields[j];
-															switch (fieldTransactionInformation.Key)
-															{
-																case "required":
-																	{
-																		fieldTmp.required = (bool)fieldTransactionInformation.Value;
-																		break;
-																	}
-																case "hasScreen":
-																	{
-																		fieldTmp.hasScreen = (bool)fieldTransactionInformation.Value;
-																		break;
-																	}
-																case "isGlobal":
-																	{
-																		fieldTmp.isGlobal = (bool)fieldTransactionInformation.Value;
-																		break;
-																	}
-																case "isInitial":
-																	{
-																		fieldTmp.isInitial = (bool)fieldTransactionInformation.Value;
-																		break;
-																	}
-																case "isAvailable":
-																	{
-																		fieldTmp.isAvailable = (bool)fieldTransactionInformation.Value;
-																		break;
-																	}
-																case "isConditional":
-																	{
-																		fieldTmp.isConditional = (bool)fieldTransactionInformation.Value;
-																		break;
-																	}
-																case "hasDefaultValue":
-																	{
-																		fieldTmp.hasDefaultValue = (bool)fieldTransactionInformation.Value;
-																		break;
-																	}
-																case "key":
-																	{
-																		fieldTmp.key = (string)fieldTransactionInformation.Value;
-																		break;
-																	}
-																case "schema":
-																	{
-																		Schema schema = new Schema();
-																		int numberKey = 0;
-																		foreach (string shemaNameField in ((dynamic)(fieldTransactionInformation.Value)).Keys)
-																		{
-																			switch (shemaNameField)
-																			{
-																				case "type":
-																					{
-																						schema.type = ((dynamic)(fieldTransactionInformation.Value))[numberKey];
-																						break;
-																					}
-																				case "system":
-																					{
-																						schema.system = ((dynamic)(fieldTransactionInformation.Value))[numberKey];
-																						break;
-																					}
-																				case "items":
-																					{
-																						schema.items = ((dynamic)(fieldTransactionInformation.Value))[numberKey];
-																						break;
-																					}
-																				case "custom":
-																					{
-																						schema.custom = ((dynamic)(fieldTransactionInformation.Value))[numberKey];
-																						break;
-																					}
-																				case "customId":
-																					{
-																						schema.customId = ((dynamic)(fieldTransactionInformation.Value))[numberKey];
-																						break;
-																					}
-																			}
-																			fieldTmp.schema = schema;
-
-																			numberKey++;
-																		}
-																		break;
-																	}
-																case "name":
-																	{
-																		fieldTmp.displayName = (string)fieldTransactionInformation.Value;
-																		break;
-																	}
-																case "autoCompleteUrl":
-																	{
-																		fieldTmp.autoCompleteUrl = (string)fieldTransactionInformation.Value;
-																		break;
-																	}
-																case "allowedValues":
-																	{
-																		int numberKey = 0;
-																		List<AllowedValue> allowedValuesIssue = new List<AllowedValue>();
-																		for (int k = 0; k < ((dynamic)(fieldTransactionInformation.Value)).Count; ++k)
-																		{
-																			AllowedValue allowedValues = new AllowedValue();
-																			foreach (KeyValuePair<string, object> allowedValueNameField in ((dynamic)(fieldTransactionInformation.Value))[k])
-																			{
-																				switch (allowedValueNameField.Key)
-																				{
-																					case "self":
-																						{
-																							allowedValues.self = (string)allowedValueNameField.Value;
-																							break;
-																						}
-																					case "name":
-																						{
-																							allowedValues.value = (string)allowedValueNameField.Value;
-																							break;
-																						}
-																					case "id":
-																						{
-																							allowedValues.id = (string)allowedValueNameField.Value;
-																							break;
-																						}
-																					case "Value":
-																						{
-																							allowedValues.value = (string)allowedValueNameField.Value;
-																							break;
-																						}
-																					case "avatarId":
-																						{
-																							allowedValues.avatarId = (long)allowedValueNameField.Value;
-																							break;
-																						}
-																					case "subtask":
-																						{
-																							allowedValues.subtask = (bool)allowedValueNameField.Value;
-																							break;
-																						}
-																					case "iconUrl":
-																						{
-																							allowedValues.iconUrl = (string)allowedValueNameField.Value;
-																							break;
-																						}
-																					case "description":
-																						{
-																							allowedValues.description = (string)allowedValueNameField.Value;
-																							break;
-																						}
-																				}
-																			}
-																			allowedValuesIssue.Add(allowedValues);
-																		}
-																		fieldTmp.allowedValues = allowedValuesIssue;
-																		numberKey++;
-																		break;
-																	}
-															}
-														}
-														fields.Add(fieldTmp);
-													}
-													break;
-												}
-										}
-									}
-								}
-							}
+							streamWriter.Write(this.json);
 						}
 					}
 				}
-				catch (Exception ex)
+				WebResponse httpResponse = this.httpWebRequest.GetResponse();
+
+				using (StreamReader streamReader = new StreamReader(httpResponse.GetResponseStream()))
 				{
-					Console.WriteLine(ex.Message);
-					Crashes.TrackError(ex);
+					dynamic jsonConvert = JObject.Parse(streamReader.ReadToEnd());
+					if (jsonConvert.transitions != null && jsonConvert.transitions[0] != null && jsonConvert.transitions[0].fields != null)
+					{
+						foreach (dynamic fieldsDeserializate in jsonConvert.transitions[0].fields)
+						{
+							foreach (dynamic checkFieldsDeserializate in fieldsDeserializate)
+							{
+								Fields.Add(JsonConvert.DeserializeObject<Fields>(checkFieldsDeserializate.ToString()));
+								Fields[Fields.Count-1].NameField = fieldsDeserializate.Name.ToString();
+							}
+						}
+
+					}
 				}
 			}
-			return fields;
+			catch (Exception ex)
+			{
+				Console.WriteLine(ex.Message);
+			}
+
+			return Fields;
 		}
 
 		/// <summary>
@@ -548,16 +363,17 @@ namespace RTMobile
 
 				using (StreamReader streamReader = new StreamReader(httpResponse.GetResponseStream()))
 				{
-					JObject jsonConvert = JObject.Parse(streamReader.ReadToEnd());
-					if (jsonConvert["fields"] != null)
+					dynamic jsonConvert = JObject.Parse(streamReader.ReadToEnd());
+					if (jsonConvert.fields != null)
 					{
-						if (jsonConvert["editmeta"] != null && jsonConvert["editmeta"]["fields"] != null)
+						if (jsonConvert.editmeta != null && jsonConvert.editmeta.fields != null)
 						{
-							foreach (JObject fields in jsonConvert["editmeta"]["fields"])
+							string str = jsonConvert.editmeta.fields.ToString();
+							foreach (dynamic fields in jsonConvert.editmeta.fields)
 							{
 								Schema schemaFields = JsonConvert.DeserializeObject<Schema>(fields.First["schema"].ToString());
 								//Получаем имя поля в системе	
-								string nameField = fields.First.Path.Substring(fields.First.Path.LastIndexOf(".") + 1);
+								string nameField = fields.Name;
 								//Проверяем является ли данное поле системным, если нет, то добавляем на экран просмотра информации
 								if (schemaFields.customId > 0)
 								{
@@ -670,7 +486,6 @@ namespace RTMobile
 			{
 				Console.WriteLine(ex.Message);
 			}
-
 			return Fields;
 		}
 	}

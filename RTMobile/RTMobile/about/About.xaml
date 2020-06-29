@@ -8,8 +8,16 @@
                      VerticalOptions="FillAndExpand">
             <ScrollView>
                 <StackLayout>
-                    <Image Source="rosohranaLogo.png" HorizontalOptions="CenterAndExpand"
-                           VerticalOptions="Start"  Aspect="Fill" Margin="0,40,0,0"/>
+
+
+                    <Frame CornerRadius="50" IsClippedToBounds="True" Margin="0,20,0,0" 
+                           HorizontalOptions="Center" VerticalOptions="Start"  
+                           HasShadow="True" BackgroundColor="Transparent" Padding="0" x:Name="frameLogo">
+                        <Image x:Name="logoCompany" Source="rosohranaLogo.png" Aspect="Fill" HeightRequest="60" WidthRequest="50"/>
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                        </Frame.GestureRecognizers>
+                    </Frame>
                     <Label x:Name="versionApp" Text="Версия 1.0.0" HorizontalOptions="CenterAndExpand" VerticalOptions="Start"
                            FontSize="16" TextColor="#F0F1F0" Margin="0,10,0,25"/>
                     <Grid VerticalOptions="StartAndExpand" BackgroundColor="#4A4C50">

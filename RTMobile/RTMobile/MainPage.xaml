@@ -34,10 +34,22 @@
             <Frame x:Name="framePassword" HasShadow="True" CornerRadius="5"
                    BackgroundColor="#4A4C50" WidthRequest="342" HeightRequest="43"
                    HorizontalOptions="CenterAndExpand" Padding="0" Margin="0,0,0,24" >
-                <Entry x:Name="password" Placeholder="ПАРОЛЬ" HorizontalOptions="CenterAndExpand"
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="25"/>
+                    </Grid.ColumnDefinitions>
+                    <Entry x:Name="password" Grid.Column="0" Placeholder="ПАРОЛЬ" HorizontalOptions="CenterAndExpand"
                        Margin="15,0,15,0"  IsPassword="True" FontSize="18"
                        WidthRequest="338" HeightRequest="40" 
                        PlaceholderColor="#F0F1F0" TextColor="#F0F1F0" BackgroundColor="#4A4C50" />
+                    <Image Source="visibility_white.png" Grid.Column="1" Margin="-10,0,10,0" x:Name="visibilityButton">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Grid>               
+                
             </Frame>
             <Label x:Name="errorMessage" IsVisible="false" HorizontalOptions="CenterAndExpand"
                    TextColor="#BE0030" FontSize="18" Text="Вход не выполнен!" Margin="0,-15,0,0"/>
@@ -46,9 +58,6 @@
             <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
                 <Frame HasShadow="True" CornerRadius="3" BackgroundColor="#4A4C50" WidthRequest="167"
                        HeightRequest="34" HorizontalOptions="StartAndExpand" Padding="0,5,0,5" Margin="0,0,0,10">
-                    <!--<Frame.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1" NumberOfTapsRequired="1"/>
-                    </Frame.GestureRecognizers>-->
                     <Label Text="ВЫХОД" FontSize="18" TextColor="#F0F1F0" HorizontalOptions="Center"
                            FontAttributes="Bold" VerticalOptions="Center"/>
                 </Frame>
@@ -65,7 +74,7 @@
 
             </StackLayout>
             <Frame  BackgroundColor="Transparent" WidthRequest="50"
-                       HeightRequest="50" HorizontalOptions="Center" VerticalOptions="Center" Margin="0,30,0,0">
+                    HeightRequest="50" HorizontalOptions="Center" VerticalOptions="Center" Margin="0,30,0,0">
 
                 <ImageButton  Source="Fingerprint" Clicked="FPEntery" BackgroundColor="Transparent" VerticalOptions="Start"/>
             </Frame>

@@ -115,7 +115,7 @@
                                  Grid.Row="1" Grid.ColumnSpan="2" VerticalOptions="Start"/>
                     </Grid>
                     <ListView x:Name="dateIssue"  Grid.Row="1" Grid.Column="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
-                     HasUnevenRows="True" SeparatorVisibility="None" >
+                     HasUnevenRows="True" SeparatorVisibility="None" ItemSelected="propertyIssue_ItemSelected" >
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell>
@@ -158,7 +158,7 @@
                                  Grid.Row="1" Grid.ColumnSpan="2" VerticalOptions="Start"/>
                     </Grid>
                     <ListView x:Name="propertyIssue" Grid.Row="1" Grid.Column="0" HorizontalOptions="FillAndExpand" SeparatorVisibility="None" 
-                                  VerticalOptions="StartAndExpand" ItemsSource="{Binding fieldIssue}" SelectionMode="None">
+                                  VerticalOptions="StartAndExpand" ItemsSource="{Binding fieldIssue}" SelectionMode="None" ItemSelected="propertyIssue_ItemSelected">
                         <ListView.ItemTemplate >
                             <DataTemplate>
                                 <ViewCell>

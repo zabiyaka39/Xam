@@ -59,6 +59,9 @@
                                                        HorizontalOptions="Start" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" VerticalOptions="Start"
                                                        HasShadow="True" OutlineColor="Black" BackgroundColor="#FFFFFF">
                                                        <Image Source ="{Binding author.AvatarUrls.image}" Aspect="Fill" HeightRequest="50" WidthRequest="50" Margin="-20"/>
+                                                       <Frame.GestureRecognizers>
+                                                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                                                       </Frame.GestureRecognizers>
                                                 </Frame>
 
                                                 <Label Grid.Column="1" Grid.Row="0" Text="{Binding Path=author.displayName}"

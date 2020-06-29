@@ -1,23 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\RT\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj": {}
+    "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj": {}
   },
   "projects": {
-    "C:\\RT\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj": {
+    "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj": {
       "version": "1.1.0",
       "restore": {
-        "projectUniqueName": "C:\\RT\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj",
+        "projectUniqueName": "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj",
         "projectName": "REM",
-        "projectPath": "C:\\RT\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj",
-        "packagesPath": "C:\\Users\\Вазген\\.nuget\\packages\\",
-        "outputPath": "C:\\RT\\rtmobile\\RTMobile\\RTMobile\\obj\\",
+        "projectPath": "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj",
+        "packagesPath": "C:\\Users\\sekisov\\.nuget\\packages\\",
+        "outputPath": "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Вазген\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\sekisov\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -62,12 +63,6 @@
               "target": "Package",
               "version": "[4.7.0, )"
             },
-            "MimeTypes": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[2.0.2, )"
-            },
             "NETStandard.Library": {
               "suppressParent": "All",
               "target": "Package",
@@ -86,6 +81,10 @@
               "target": "Package",
               "version": "[2.1.1, )"
             },
+            "Plugin.Permissions": {
+              "target": "Package",
+              "version": "[6.0.1, )"
+            },
             "RestSharp": {
               "target": "Package",
               "version": "[106.11.4, )"
@@ -96,7 +95,7 @@
             },
             "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",
-              "version": "[6.6.0, )"
+              "version": "[6.7.0, )"
             },
             "System.Net.Http": {
               "target": "Package",

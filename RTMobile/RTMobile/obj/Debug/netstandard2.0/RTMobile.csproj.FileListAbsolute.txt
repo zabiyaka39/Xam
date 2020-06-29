@@ -1,4 +1,3 @@
-F:\project\Mobile\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\RTMobile.csprojAssemblyReference.cache
 F:\project\Mobile\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\RTMobile.Properties.Resources.resources
 F:\project\Mobile\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\RTMobile.csproj.GenerateResource.cache
 F:\project\Mobile\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\about\About.xaml.g.cs
@@ -34,15 +33,8 @@ F:\project\Mobile\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\settings\S
 F:\project\Mobile\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\StatusBar.xaml.g.cs
 F:\project\Mobile\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\RTMobile.AssemblyInfoInputs.cache
 F:\project\Mobile\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\RTMobile.AssemblyInfo.cs
-F:\project\Mobile\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\RTMobile.csproj.CoreCompileInputs.cache
-F:\project\Mobile\rtmobile\RTMobile\RTMobile\bin\Debug\netstandard2.0\RTMobile.deps.json
-F:\project\Mobile\rtmobile\RTMobile\RTMobile\bin\Debug\netstandard2.0\RTMobile.dll
-F:\project\Mobile\rtmobile\RTMobile\RTMobile\bin\Debug\netstandard2.0\RTMobile.pdb
 F:\project\Mobile\rtmobile\RTMobile\RTMobile\bin\Debug\netstandard2.0\Windows.Foundation.UniversalApiContract.winmd
-F:\project\Mobile\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\XamlC.stamp
 F:\project\Mobile\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\RTMobile.csproj.CopyComplete
-F:\project\Mobile\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\RTMobile.dll
-F:\project\Mobile\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\RTMobile.pdb
 C:\RT\rtmobile\RTMobile\RTMobile\bin\Debug\netstandard2.0\RTMobile.deps.json
 C:\RT\rtmobile\RTMobile\RTMobile\bin\Debug\netstandard2.0\RTMobile.dll
 C:\RT\rtmobile\RTMobile\RTMobile\bin\Debug\netstandard2.0\RTMobile.pdb
@@ -96,3 +88,13 @@ C:\RT\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\XamlC.stamp
 C:\RT\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\RTMobile.csproj.CopyComplete
 C:\RT\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\RTMobile.dll
 C:\RT\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\RTMobile.pdb
+F:\project\Mobile\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\insight\QRgen.xaml.g.cs
+F:\project\Mobile\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\jiraData\Fingerprint.xaml.g.cs
+F:\project\Mobile\rtmobile\RTMobile\RTMobile\bin\Debug\netstandard2.0\REM.deps.json
+F:\project\Mobile\rtmobile\RTMobile\RTMobile\bin\Debug\netstandard2.0\REM.dll
+F:\project\Mobile\rtmobile\RTMobile\RTMobile\bin\Debug\netstandard2.0\REM.pdb
+F:\project\Mobile\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\REM.dll
+F:\project\Mobile\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\REM.pdb
+F:\project\Mobile\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\RTMobile.csprojAssemblyReference.cache
+F:\project\Mobile\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\RTMobile.csproj.CoreCompileInputs.cache
+F:\project\Mobile\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\XamlC.stamp

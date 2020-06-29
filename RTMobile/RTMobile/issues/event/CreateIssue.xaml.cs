@@ -44,6 +44,15 @@ namespace RTMobile.issues
 			List<string> projectName = new List<string>();
 			for (int i = 0; i < projects.Count; ++i)
 			{
+				//Удаляем из типов задач подзадачи
+				for(int j=0; j<projects[i].issuetypes.Count;++j)
+				{
+					if(projects[i].issuetypes[j].subtask ==true)
+					{
+						projects[i].issuetypes.RemoveAt(j);
+						--j;
+					}
+				}
 				projectName.Add(projects[i].name);
 			}
 
@@ -138,7 +147,7 @@ namespace RTMobile.issues
 					methodRequest = "GET"
 				};
 				Request request = new Request(jsonRequest);
-				Fields = request.GetFieldScreenCreate();
+				Fields = request.GetFieldScreen();
 
 				void determination_requered(Xamarin.Forms.StackLayout typeStack, Fields Field)
 				{
@@ -195,13 +204,18 @@ namespace RTMobile.issues
 											{
 												urlRequest = urlRequestData,
 												currentProject = projects[projectPic.SelectedIndex].id,
-												currentReporter = CrossSettings.Current.GetValueOrDefault("login", string.Empty),
 												methodRequest = "POST"
 											};
 											Request requestInsight = new Request(jsonRequestInsight);
 
-											insights = requestInsight.GetResponses<RootObject>().objects;
-
+											try
+											{
+												insights = requestInsight.GetResponses<RootObject>().objects;
+											}
+											catch (Exception ex)
+											{
+												Console.WriteLine(ex.Message);
+											}
 											for (int j = 0; j < user.Count; ++j)
 											{
 												objectName.Add(insights[j].Label);
@@ -366,17 +380,24 @@ namespace RTMobile.issues
 											//Проверяем на наличие "потомков" 
 											List<string> childName = new List<string>();
 											Console.WriteLine(picker.Items[picker.SelectedIndex]);
-											for (int j = 0; j < DectionaryFields[picker.Id].allowedValues.Count; ++j)
+											try
 											{
-												if (DectionaryFields[picker.Id].allowedValues[j].value == picker.Items[picker.SelectedIndex])
+												for (int j = 0; j < DectionaryFields[picker.Id].allowedValues.Count; ++j)
 												{
-													for (int k = 0; k < DectionaryFields[picker.Id].allowedValues[j].children.Count; ++k)
+													if (DectionaryFields[picker.Id].allowedValues[j].value == picker.Items[picker.SelectedIndex])
 													{
-														childName.Add(DectionaryFields[picker.Id].allowedValues[j].children[k].value);
+														for (int k = 0; k < DectionaryFields[picker.Id].allowedValues[j].children.Count; ++k)
+														{
+															childName.Add(DectionaryFields[picker.Id].allowedValues[j].children[k].value);
+														}
 													}
 												}
-												pickerChild.ItemsSource = childName;
 											}
+											catch (Exception ex)
+											{
+												Console.WriteLine(ex.Message);
+											}
+											pickerChild.ItemsSource = childName;
 										}
 									};
 									typeStack.Children.Add(pickerChild);
@@ -734,10 +755,13 @@ namespace RTMobile.issues
 										fields += ", ";
 									}
 									//добавляем категорию
-									fields += "\"" + DectionaryFields[generalStackLayout.Children[i].Id].name + "\":{\"name\":\"" + ((Picker)generalStackLayout.Children[i]).Items[((Picker)generalStackLayout.Children[i]).SelectedIndex] + "\"}";
+									fields += "\"" + DectionaryFields[generalStackLayout.Children[i].Id].NameField + "\":{\"value\":\"" + ((Picker)generalStackLayout.Children[i]).Items[((Picker)generalStackLayout.Children[i]).SelectedIndex] + "\"}";
+
 
 									if (DectionaryFields[generalStackLayout.Children[i].Id].allowedValues != null &&
-										DectionaryFields[generalStackLayout.Children[i].Id].allowedValues[((Picker)generalStackLayout.Children[i]).SelectedIndex].children != null)
+										DectionaryFields[generalStackLayout.Children[i].Id].allowedValues[((Picker)generalStackLayout.Children[i]).SelectedIndex].children != null &&
+										((Picker)generalStackLayout.Children[i + 1]).SelectedIndex > -1 &&
+										((Picker)generalStackLayout.Children[i + 1]).Items[((Picker)generalStackLayout.Children[i + 1]).SelectedIndex]!=null)
 									{
 										//Добавляем подкатегорию
 										fields += ", \"" + DectionaryFields[generalStackLayout.Children[i].Id].NameField + ":1" +

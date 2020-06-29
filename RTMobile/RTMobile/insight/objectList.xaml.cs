@@ -30,14 +30,11 @@ namespace RTMobile.insight
 			InitializeComponent();
 			Title = objectschema.name;
 			if (objectschema != null)
-			{
-                
-            
+			{            
 				Shemaobj = new Dictionary<int, Poster>
 				{
 					{6, KPA_object}
-				};
-			
+				};			
 	
 				try
 				{
@@ -58,9 +55,7 @@ namespace RTMobile.insight
 						InsightProjectStuff = new ObservableCollection<ObjectEntry>();
 						insightObject.ForEach<ObjectEntry>((item) =>
 						{
-
 							InsightProjectStuff.Add(item);
-
 						});
 					}
 				}

@@ -65,8 +65,9 @@
     <CodesignEntitlements>Info.plist</CodesignEntitlements>
     <MtouchEnableSGenConc>false</MtouchEnableSGenConc>
     <OptimizePNGs>true</OptimizePNGs>
-    <CodesignProvision>VS: WildCard Development</CodesignProvision>
+    <CodesignProvision>VS: ru.rosohrana.rtmobile Development</CodesignProvision>
     <MtouchSdkVersion>13.4</MtouchSdkVersion>
+    <CodesignResourceRules>Entitlements.plist</CodesignResourceRules>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>none</DebugType>

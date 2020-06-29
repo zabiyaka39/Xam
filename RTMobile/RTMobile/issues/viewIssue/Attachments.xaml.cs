@@ -14,6 +14,11 @@ using Plugin.Media;
 using System.Net.Http;
 using System.Net.Mime;
 using System.Net.Http.Headers;
+using RTMobile.iOS;
+using Nancy.ViewEngines;
+using Plugin.Permissions;
+using Plugin.Permissions.Abstractions;
+using Nancy.Extensions;
 
 namespace RTMobile.issues.viewIssue
 {
@@ -124,49 +129,75 @@ namespace RTMobile.issues.viewIssue
 		//Кнопка при нажатии которой открывается файловый менеджер
 		private async void upload_Button(object sender, EventArgs e)
 		{
-			MediaFile _mediaFile = null;
-
-			//Инициализируем проверку доступности разрешения работы с файловой системой
-			await CrossMedia.Current.Initialize();
-			//Выполняем поиск по системе необходимого файла
-			if (CrossMedia.Current.IsPickPhotoSupported)
+			try
 			{
-				_mediaFile = await CrossMedia.Current.PickPhotoAsync().ConfigureAwait(true);
+				MediaFile _mediaFile = null;
+
+				string st = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+
+				//Инициализируем проверку доступности разрешения работы с файловой системой
+				await CrossMedia.Current.Initialize();
+
+				string action = await DisplayActionSheet("Добавить данные", "Cancel", null, "Сделать фото", "Выбрать изображение");
+				if (action == "Сделать фото")
+				{
+					if (CrossMedia.Current.IsCameraAvailable && CrossMedia.Current.IsTakePhotoSupported)
+					{
+						_mediaFile = await CrossMedia.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions
+						{
+							SaveToAlbum = true,
+							Directory = "",
+							Name = $"{DateTime.Now.ToString("dd.MM.yyyy_hh.mm.ss")}.jpg"
+						});
+
+					}
+				}
+				if (action == "Выбрать изображение")
+				{
+					if (CrossMedia.Current.IsPickPhotoSupported)
+					{
+						_mediaFile = await CrossMedia.Current.PickPhotoAsync().ConfigureAwait(true);
+					}
+				}
+
+				if (_mediaFile != null)
+				{
+					string boundary = DateTime.Now.Ticks.ToString("x");
+
+					MultipartFormDataContent content = new MultipartFormDataContent(boundary);
+
+					var streamContent = new StreamContent(_mediaFile.GetStream());
+					//Задаем MimeType файлу
+					streamContent.Headers.ContentType = new MediaTypeHeaderValue(MimeTypes.GetMimeType(_mediaFile.Path));
+
+					content.Add(streamContent, "\"file\"", $"\"{_mediaFile.Path}\"");
+
+					Byte[] byteArray = await content.ReadAsByteArrayAsync().ConfigureAwait(true);
+					JSONRequest jsonRequest = new JSONRequest()
+					{
+						urlRequest = $"/rest/api/2/issue/{issue.key}/attachments",
+						methodRequest = "POST",
+						FileUpload = content,
+						FileUploadByte = byteArray
+
+					};
+					Request request = new Request(jsonRequest);
+
+					// обновление отображения вложений
+					JSONRequest jsonRequest2 = new JSONRequest()
+					{
+						urlRequest = $"/rest/api/2/issue/{issue.key}",
+						methodRequest = "GET"
+
+					};
+					Request request2 = new Request(jsonRequest2);
+					Fields fields = request2.GetResponses<Issue>().fields;
+					issueFieldsRefresh(fields);
+				}
 			}
-
-			if (_mediaFile != null)
+			catch (Exception ex)
 			{
-				string boundary = DateTime.Now.Ticks.ToString("x");
-
-				MultipartFormDataContent content = new MultipartFormDataContent(boundary);
-
-				var streamContent = new StreamContent(_mediaFile.GetStream());
-				//Задаем MimeType файлу
-				streamContent.Headers.ContentType = new MediaTypeHeaderValue(MimeTypes.GetMimeType(_mediaFile.Path));
-
-				content.Add(streamContent, "\"file\"", $"\"{_mediaFile.Path}\"");
-
-				Byte[] byteArray = await content.ReadAsByteArrayAsync().ConfigureAwait(true);
-				JSONRequest jsonRequest = new JSONRequest()
-				{
-					urlRequest = $"/rest/api/2/issue/{issue.key}/attachments",
-					methodRequest = "POST",
-					FileUpload = content,
-					FileUploadByte = byteArray
-
-				};
-				Request request = new Request(jsonRequest);
-
-				// обновление отображения вложений
-				JSONRequest jsonRequest2 = new JSONRequest()
-				{
-					urlRequest = $"/rest/api/2/issue/{issue.key}",
-					methodRequest = "GET"
-
-				};
-				Request request2 = new Request(jsonRequest2);
-				Fields fields = request2.GetResponses<Issue>().fields;
-				issueFieldsRefresh(fields);
+				Console.WriteLine(ex.Message);
 			}
 		}
 		void ImageButton_Clicked(System.Object sender, System.EventArgs e)

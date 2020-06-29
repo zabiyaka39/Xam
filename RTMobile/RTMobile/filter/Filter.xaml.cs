@@ -233,7 +233,12 @@ namespace RTMobile.filter
 
 			Request request = new Request(jsonRequestFilter);
 			Filters filter = request.GetResponses<Filters>();
-
+			if (filter == null)
+			{
+				filter = new Filters();
+				filter.Jql = "";
+			}
+			
 			if (filter.Jql.IndexOf("ORDER") == -1)
 			{
 				if (typeSort.SelectedIndex == 0)
@@ -255,7 +260,7 @@ namespace RTMobile.filter
 				startAt = "0"
 			};
 			MessagingCenter.Send(this, "RefreshMainPage", jsonRequest);
-			Navigation.PopAsync();
+			Navigation.PopToRootAsync();
 		}
 		private void TapGestureRecognizer_Tapped_2(object sender, EventArgs e)
 		{
@@ -287,8 +292,8 @@ namespace RTMobile.filter
 		{
 			if (e.SelectedItemIndex != -1)
 			{
-				numberFilter = favorites[e.SelectedItemIndex-1].Id;
-				jqlFilter = favorites[e.SelectedItemIndex-1].Jql;
+				numberFilter = favorites[e.SelectedItemIndex].Id;
+				jqlFilter = favorites[e.SelectedItemIndex].Jql;
 				lastFilterList.SelectedItem = -1;
 				allFilterList.SelectedItem = -1;
 			}

@@ -22,7 +22,7 @@ namespace RTMobile
             InitializeComponent();
             VersionTracking.Track();
             versionApp.Text = "Версия: " + VersionTracking.CurrentVersion;
-            List<string> recipients = new List<string>() { "a.kotochigov@rosohrana.ru", "Sekisov@rosohrana.ru" };
+            List<string> recipients = new List<string>() {/* "a.kotochigov@rosohrana.ru",*/ "sekisov@rosohrana.ru" };
             mail = CrossSettings.Current.GetValueOrDefault("login", string.Empty);
             password = CrossSettings.Current.GetValueOrDefault("password", string.Empty);
         }
@@ -61,32 +61,67 @@ namespace RTMobile
             }
         }
         private async Task SendEmailAsync()
-        {
-            try
-            {   
-                MailAddress from = new MailAddress(String.Format("{0}.@rosohrana.ru",CrossSettings.Current.GetValueOrDefault("login", string.Empty)));
-                MailAddress to = new MailAddress("a.kotochigov@rosohrana.ru");
-                MailMessage message = new MailMessage(from, to);
-                message.Subject = FBHead.Text;
-                message.Body = FBBody.Text;
-                SmtpClient client = new SmtpClient("mail.rosohrana.ru", 443);
-                client.Credentials = new NetworkCredential(CrossSettings.Current.GetValueOrDefault("login", string.Empty), CrossSettings.Current.GetValueOrDefault("password", string.Empty));
-                client.EnableSsl = true;
-                await client.SendMailAsync(message);
-            }
-            catch (Exception ex)
-            {
+		{
+
+			try
+			{
+				MailAddress from = new MailAddress(String.Format("{0}.@rosohrana.ru", CrossSettings.Current.GetValueOrDefault("login", string.Empty)));
+				MailAddress to = new MailAddress("sekisov@rosohrana.ru");
+				MailMessage message = new MailMessage(from, to);
+				message.Subject = FBHead.Text;
+				message.Body = FBBody.Text;
+				SmtpClient client = new SmtpClient("mail.rosohrana.ru", 443);
+				client.Credentials = new NetworkCredential(@"rosohrana\"+CrossSettings.Current.GetValueOrDefault("login", string.Empty), CrossSettings.Current.GetValueOrDefault("password", string.Empty));
+				client.EnableSsl = true;
+				await client.SendMailAsync(message);
+			}
+			catch (Exception ex)
+			{
 				Console.WriteLine(ex.Message);
-            }
-            
-        }
+			}
 
-        void FeedbacSender_clicked(object sender, System.EventArgs e)
+		}
+
+		void FeedbacSender_clicked(object sender, System.EventArgs e)
         {
-            SendEmailAsync();
-
-        }
-
-    }   
+			SendEmailAsync();
+		}
+        private static int countClick = 0;
+        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+		{
+            if (countClick < 2 || countClick > 7)
+            {
+                frameLogo.CornerRadius = 0;
+                logoCompany.HeightRequest = 60;
+                logoCompany.WidthRequest = 50;
+                VersionTracking.Track();
+                versionApp.Text = "Версия: " + VersionTracking.CurrentVersion;
+                logoCompany.Source = "rosohranaLogo.png";
+                ++countClick;
+            }
+            else
+            {
+                if (countClick < 5)
+                {
+                    versionApp.Text = "Секисов Владислав Александрович";
+                    logoCompany.Source = "sekisov.jpg";
+                }
+                else
+                {
+                    versionApp.Text = "Коточигов Алексей Викторович";
+                    logoCompany.Source = "kotochigov.jpg";
+                    if (countClick >= 7)
+                    {
+                        countClick = 0;
+                    }
+                }
+                ++countClick;
+                frameLogo.CornerRadius = 50;
+                logoCompany.HeightRequest = 150;
+                logoCompany.WidthRequest = 150;                
+                
+            }
+		}
+	}   
     
 }

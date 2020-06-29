@@ -114,10 +114,10 @@
           "lib/netstandard1.3/Microsoft.Extensions.PlatformAbstractions.dll": {}
         }
       },
-      "Microsoft.IdentityModel.JsonWebTokens/6.6.0": {
+      "Microsoft.IdentityModel.JsonWebTokens/6.7.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.IdentityModel.Tokens": "6.6.0"
+          "Microsoft.IdentityModel.Tokens": "6.7.0"
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.IdentityModel.JsonWebTokens.dll": {}
@@ -126,7 +126,7 @@
           "lib/netstandard2.0/Microsoft.IdentityModel.JsonWebTokens.dll": {}
         }
       },
-      "Microsoft.IdentityModel.Logging/6.6.0": {
+      "Microsoft.IdentityModel.Logging/6.7.0": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/Microsoft.IdentityModel.Logging.dll": {}
@@ -135,11 +135,11 @@
           "lib/netstandard2.0/Microsoft.IdentityModel.Logging.dll": {}
         }
       },
-      "Microsoft.IdentityModel.Tokens/6.6.0": {
+      "Microsoft.IdentityModel.Tokens/6.7.0": {
         "type": "package",
         "dependencies": {
           "Microsoft.CSharp": "4.5.0",
-          "Microsoft.IdentityModel.Logging": "6.6.0",
+          "Microsoft.IdentityModel.Logging": "6.7.0",
           "System.Security.Cryptography.Cng": "4.5.0"
         },
         "compile": {
@@ -176,17 +176,6 @@
         },
         "compile": {
           "ref/netstandard1.3/_._": {}
-        }
-      },
-      "MimeTypes/2.0.2": {
-        "type": "package",
-        "contentFiles": {
-          "contentFiles/cs/any/MimeTypes.NullableAttributes.cs.pp": {
-            "buildAction": "Compile",
-            "codeLanguage": "cs",
-            "copyToOutput": false,
-            "ppOutputPath": "MimeTypes.NullableAttributes.cs"
-          }
         }
       },
       "Nancy/2.0.0": {
@@ -238,6 +227,18 @@
         },
         "runtime": {
           "lib/netstandard2.0/Plugin.Fingerprint.dll": {}
+        }
+      },
+      "Plugin.Permissions/6.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Essentials": "1.5.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/Plugin.Permissions.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Plugin.Permissions.dll": {}
         }
       },
       "RestSharp/106.11.4": {
@@ -661,11 +662,11 @@
           }
         }
       },
-      "System.IdentityModel.Tokens.Jwt/6.6.0": {
+      "System.IdentityModel.Tokens.Jwt/6.7.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.IdentityModel.JsonWebTokens": "6.6.0",
-          "Microsoft.IdentityModel.Tokens": "6.6.0"
+          "Microsoft.IdentityModel.JsonWebTokens": "6.7.0",
+          "Microsoft.IdentityModel.Tokens": "6.7.0"
         },
         "compile": {
           "lib/netstandard2.0/System.IdentityModel.Tokens.Jwt.dll": {}
@@ -1826,10 +1827,10 @@
         "microsoft.extensions.platformabstractions.nuspec"
       ]
     },
-    "Microsoft.IdentityModel.JsonWebTokens/6.6.0": {
-      "sha512": "ZhzG2+nxbGDJ67vY0e9kuJEtPpA53EhkhXpLWlBOUzEGd085ojJT3XPLK74mC+mjsXpZqWj5pHtgbB77gSqJeg==",
+    "Microsoft.IdentityModel.JsonWebTokens/6.7.0": {
+      "sha512": "j7rPXrgShwXAyRtH0zp71EmXFSNjFBWZzffSu7POSKCxSll7Hvu4GVoB2466fXk/7BQvUbOChLcyGs9F3CfdHg==",
       "type": "package",
-      "path": "microsoft.identitymodel.jsonwebtokens/6.6.0",
+      "path": "microsoft.identitymodel.jsonwebtokens/6.7.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1839,14 +1840,14 @@
         "lib/net461/Microsoft.IdentityModel.JsonWebTokens.xml",
         "lib/netstandard2.0/Microsoft.IdentityModel.JsonWebTokens.dll",
         "lib/netstandard2.0/Microsoft.IdentityModel.JsonWebTokens.xml",
-        "microsoft.identitymodel.jsonwebtokens.6.6.0.nupkg.sha512",
+        "microsoft.identitymodel.jsonwebtokens.6.7.0.nupkg.sha512",
         "microsoft.identitymodel.jsonwebtokens.nuspec"
       ]
     },
-    "Microsoft.IdentityModel.Logging/6.6.0": {
-      "sha512": "OWfHX7bXKTEBXcD9b+0Tx7dWBaqF4wht7RmS6q+9vAXHiNpRG/wkoFKhOp1Yus0Xd1xAXXHSkAKxgmn/SRD1KA==",
+    "Microsoft.IdentityModel.Logging/6.7.0": {
+      "sha512": "HcUFr7ycJ9I/u12dnkBntY4pvrJoRT+FCuDyA1FPFbhFFulGjyEt63YUcBqbwkvmpgCDhi9fQ/inM0Izn4apeg==",
       "type": "package",
-      "path": "microsoft.identitymodel.logging/6.6.0",
+      "path": "microsoft.identitymodel.logging/6.7.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1856,14 +1857,14 @@
         "lib/net461/Microsoft.IdentityModel.Logging.xml",
         "lib/netstandard2.0/Microsoft.IdentityModel.Logging.dll",
         "lib/netstandard2.0/Microsoft.IdentityModel.Logging.xml",
-        "microsoft.identitymodel.logging.6.6.0.nupkg.sha512",
+        "microsoft.identitymodel.logging.6.7.0.nupkg.sha512",
         "microsoft.identitymodel.logging.nuspec"
       ]
     },
-    "Microsoft.IdentityModel.Tokens/6.6.0": {
-      "sha512": "fNfhlY7AEB9y/jooK6xI1vH+7rmq7c2kTEk7j/5SSy25iHRB1twrG8+He9sHxBQqIXhrQliMEwi4GXZInzO4ww==",
+    "Microsoft.IdentityModel.Tokens/6.7.0": {
+      "sha512": "KL1hJq0UeLMaUHLImLifHKPs03lSuXDHzY7l/sADpaGyM2/TCCdEh2jlEsUKGDU2P7TLkzMW05+Mpu8sdVEhxw==",
       "type": "package",
-      "path": "microsoft.identitymodel.tokens/6.6.0",
+      "path": "microsoft.identitymodel.tokens/6.7.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1873,7 +1874,7 @@
         "lib/net461/Microsoft.IdentityModel.Tokens.xml",
         "lib/netstandard2.0/Microsoft.IdentityModel.Tokens.dll",
         "lib/netstandard2.0/Microsoft.IdentityModel.Tokens.xml",
-        "microsoft.identitymodel.tokens.6.6.0.nupkg.sha512",
+        "microsoft.identitymodel.tokens.6.7.0.nupkg.sha512",
         "microsoft.identitymodel.tokens.nuspec"
       ]
     },
@@ -1943,21 +1944,6 @@
         "ref/xamarinmac20/_._",
         "ref/xamarintvos10/_._",
         "ref/xamarinwatchos10/_._"
-      ]
-    },
-    "MimeTypes/2.0.2": {
-      "sha512": "6fcmjALwCY4EZdLb2WCBKIEw9N0Doij1Kz+2/6kezsBU7SXPjeKkC4sExtmZ1nsQpzCOJRkdHsEFUJSLGY4PrQ==",
-      "type": "package",
-      "path": "mimetypes/2.0.2",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "contentFiles/cs/any/MimeTypes.NullableAttributes.cs.pp",
-        "contentFiles/cs/netcoreapp3.0/MimeTypes.cs.pp",
-        "contentFiles/cs/netstandard2.1/MimeTypes.cs.pp",
-        "images/nuget-icon.png",
-        "mimetypes.2.0.2.nupkg.sha512",
-        "mimetypes.nuspec"
       ]
     },
     "Nancy/2.0.0": {
@@ -2175,6 +2161,37 @@
         "plugin.fingerprint.nuspec",
         "readme.txt",
         "xamarin_fingerprint.png"
+      ]
+    },
+    "Plugin.Permissions/6.0.1": {
+      "sha512": "na/0FNhyKmSicANWZMLSM0y/FW2AvLoawX3lsvBpELwP15sdJRyuBhRKk1OQjRoNrmTIewcON1tJFyydjMGWcA==",
+      "type": "package",
+      "path": "plugin.permissions/6.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/monoandroid10.0/Plugin.Permissions.dll",
+        "lib/monoandroid10.0/Plugin.Permissions.pdb",
+        "lib/monoandroid80/Plugin.Permissions.dll",
+        "lib/monoandroid80/Plugin.Permissions.pdb",
+        "lib/monoandroid81/Plugin.Permissions.dll",
+        "lib/monoandroid81/Plugin.Permissions.pdb",
+        "lib/monoandroid90/Plugin.Permissions.dll",
+        "lib/monoandroid90/Plugin.Permissions.pdb",
+        "lib/netstandard1.0/Plugin.Permissions.dll",
+        "lib/netstandard1.0/Plugin.Permissions.pdb",
+        "lib/netstandard2.0/Plugin.Permissions.dll",
+        "lib/netstandard2.0/Plugin.Permissions.pdb",
+        "lib/uap10.0.16299/Plugin.Permissions.dll",
+        "lib/uap10.0.16299/Plugin.Permissions.pdb",
+        "lib/uap10.0.16299/Plugin.Permissions.pri",
+        "lib/xamarinios10/Plugin.Permissions.dll",
+        "lib/xamarinios10/Plugin.Permissions.pdb",
+        "lib/xamarintvos10/Plugin.Permissions.dll",
+        "lib/xamarintvos10/Plugin.Permissions.pdb",
+        "plugin.permissions.6.0.1.nupkg.sha512",
+        "plugin.permissions.nuspec",
+        "readme.txt"
       ]
     },
     "RestSharp/106.11.4": {
@@ -3265,10 +3282,10 @@
         "system.globalization.extensions.nuspec"
       ]
     },
-    "System.IdentityModel.Tokens.Jwt/6.6.0": {
-      "sha512": "irSFzRuejokJUb0z/tkHq1x0WCCuk8wtJ85Sql7YaUqSQXPLmKi7zFjVI1UAUX+yANmD673VwN+n64lEq/vW6Q==",
+    "System.IdentityModel.Tokens.Jwt/6.7.0": {
+      "sha512": "xLIkQilVOrLO5491l4uaUVNsjy0BWGVuYXRCEyKn9e6IaYjBmmZAETh+MWSJlSlS1JlGVNUqebDG6e7SQadR1Q==",
       "type": "package",
-      "path": "system.identitymodel.tokens.jwt/6.6.0",
+      "path": "system.identitymodel.tokens.jwt/6.7.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -3278,7 +3295,7 @@
         "lib/net461/System.IdentityModel.Tokens.Jwt.xml",
         "lib/netstandard2.0/System.IdentityModel.Tokens.Jwt.dll",
         "lib/netstandard2.0/System.IdentityModel.Tokens.Jwt.xml",
-        "system.identitymodel.tokens.jwt.6.6.0.nupkg.sha512",
+        "system.identitymodel.tokens.jwt.6.7.0.nupkg.sha512",
         "system.identitymodel.tokens.jwt.nuspec"
       ]
     },
@@ -6325,14 +6342,14 @@
       "Microsoft.AppCenter.Analytics >= 3.2.2",
       "Microsoft.AppCenter.Crashes >= 3.2.2",
       "Microsoft.CSharp >= 4.7.0",
-      "MimeTypes >= 2.0.2",
       "NETStandard.Library >= 2.0.3",
       "Nancy >= 2.0.0",
       "Newtonsoft.Json >= 12.0.3",
       "Plugin.Fingerprint >= 2.1.1",
+      "Plugin.Permissions >= 6.0.1",
       "RestSharp >= 106.11.4",
       "Rg.Plugins.Popup >= 2.0.0.3",
-      "System.IdentityModel.Tokens.Jwt >= 6.6.0",
+      "System.IdentityModel.Tokens.Jwt >= 6.7.0",
       "System.Net.Http >= 4.3.4",
       "System.Xml.XmlSerializer >= 4.3.0",
       "Xam.Plugin.Media >= 5.0.1",
@@ -6347,23 +6364,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Вазген\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\sekisov\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.1.0",
     "restore": {
-      "projectUniqueName": "C:\\RT\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj",
+      "projectUniqueName": "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj",
       "projectName": "REM",
-      "projectPath": "C:\\RT\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj",
-      "packagesPath": "C:\\Users\\Вазген\\.nuget\\packages\\",
-      "outputPath": "C:\\RT\\rtmobile\\RTMobile\\RTMobile\\obj\\",
+      "projectPath": "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj",
+      "packagesPath": "C:\\Users\\sekisov\\.nuget\\packages\\",
+      "outputPath": "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\"
+        "C:\\Microsoft\\Xamarin\\NuGet\\",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Вазген\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\sekisov\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -6408,12 +6427,6 @@
             "target": "Package",
             "version": "[4.7.0, )"
           },
-          "MimeTypes": {
-            "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-            "suppressParent": "All",
-            "target": "Package",
-            "version": "[2.0.2, )"
-          },
           "NETStandard.Library": {
             "suppressParent": "All",
             "target": "Package",
@@ -6432,6 +6445,10 @@
             "target": "Package",
             "version": "[2.1.1, )"
           },
+          "Plugin.Permissions": {
+            "target": "Package",
+            "version": "[6.0.1, )"
+          },
           "RestSharp": {
             "target": "Package",
             "version": "[106.11.4, )"
@@ -6442,7 +6459,7 @@
           },
           "System.IdentityModel.Tokens.Jwt": {
             "target": "Package",
-            "version": "[6.6.0, )"
+            "version": "[6.7.0, )"
           },
           "System.Net.Http": {
             "target": "Package",

@@ -40,7 +40,7 @@ namespace RTMobile.issues.viewIssue
 					//Создаем label с названием получаемого аргумента для более понятного вида для пользователя
 					Label label = new Label
 					{
-						Text = fieldIssue[i].displayName,
+						Text = fieldIssue[i].name,
 						TextColor = Color.FromHex("#F0F1F0"),
 						FontSize = 14
 					};

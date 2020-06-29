@@ -84,9 +84,6 @@ namespace RTMobile.issues.viewIssue
 					};
 					Request request = new Request(jsonRequest);
 
-					//fieldIssue = request.GetCustomField();
-
-
 					fieldIssue = request.GetFieldsIssue();
 				}
 				catch (Exception ex)
@@ -198,6 +195,14 @@ namespace RTMobile.issues.viewIssue
 		void SendIssueClicked(System.Object sender, System.EventArgs e)
 		{
 			ShereIssue();
+		}
+
+		private void propertyIssue_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+		{
+			if (sender is ListView lv)
+			{
+				lv.SelectedItem = null;
+			}
 		}
 	}
 }

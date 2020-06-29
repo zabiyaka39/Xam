@@ -204,5 +204,9 @@ namespace RTMobile.issues.viewIssue
 				await DisplayAlert("Error issues", ex.ToString(), "OK").ConfigureAwait(true);
 			}
 		}
+
+		private async void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+		{
+		}
 	}
 }

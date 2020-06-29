@@ -21,8 +21,8 @@
                    BackgroundColor="#4A4C50">
                 <SearchBar Placeholder="Найти..." FontSize="16" TextColor="#F0F1F0"
                            BackgroundColor="#4A4C50" CancelButtonColor="#F0F1F0"
-                           PlaceholderColor="#F0F1F0" SearchButtonPressed="SearchBar_SearchButtonPressed" 
-                           x:Name="searchIssue"/>
+                           PlaceholderColor="#F0F1F0" SearchButtonPressed="SearchBar_SearchButtonPressed" TextChanged="searchIssue_TextChanged"
+                           x:Name="searchIssue"  />
             </Frame>
             <!--<Label x:Name="log" Text="sdad" HorizontalOptions="CenterAndExpand"/>-->
             <!--<Label x:Name="iss" Text="sdad" HorizontalOptions="CenterAndExpand"/>-->

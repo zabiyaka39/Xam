@@ -18,7 +18,7 @@ namespace RTMobile.issues
 {
 	public partial class AllIssuesView : ContentPage
 	{
-		
+
 		public ObservableCollection<Issue> issues { get; set; }
 		private string filterIssue { get; set; }
 		//string typeSort = "";
@@ -54,53 +54,53 @@ namespace RTMobile.issues
 		{
 			MessagingCenter.Subscribe<Filter, JSONRequest>(this, "RefreshMainPage", (sender, e) =>
 			{
-				 Console.WriteLine("text");
-				 try
-				 {
-					 RootObject rootObject = new RootObject();
-					 Request request = new Request(e);
+				Console.WriteLine("text");
+				try
+				{
+					RootObject rootObject = new RootObject();
+					Request request = new Request(e);
 
-					 rootObject = request.GetResponses<RootObject>();
+					rootObject = request.GetResponses<RootObject>();
 
-					 //Проверка на пустой список задач
-					 try
-					 {
-						 if (issues != null)
-						 {
-							 //Очищаем список задач
-							 for (int i = issues.Count; i > 0; --i)
-							 {
-								 issues.RemoveAt(0);
-							 }
-						 }
-						 else
-						 {
-							 issues = new ObservableCollection<Issue>();
-						 }
-						 //Заполняем списком полученным при запросе
-						 if (rootObject != null && rootObject.issues != null)
-						 {
-							 for (int i = 0; i < rootObject.issues.Count; ++i)
-							 {
-								 issues.Add(rootObject.issues[i]);
-							 }
-						 }
-					 }
-					 catch (Exception ex)
-					 {
-						 Console.WriteLine(ex.Message);
-						 Crashes.TrackError(ex);
-					 }
-				 }
-				 catch (Exception ex)
-				 {
-					 Console.WriteLine(ex.Message);
-					 Crashes.TrackError(ex);
-				 }
+					//Проверка на пустой список задач
+					try
+					{
+						if (issues != null)
+						{
+							//Очищаем список задач
+							for (int i = issues.Count; i > 0; --i)
+							{
+								issues.RemoveAt(0);
+							}
+						}
+						else
+						{
+							issues = new ObservableCollection<Issue>();
+						}
+						//Заполняем списком полученным при запросе
+						if (rootObject != null && rootObject.issues != null)
+						{
+							for (int i = 0; i < rootObject.issues.Count; ++i)
+							{
+								issues.Add(rootObject.issues[i]);
+							}
+						}
+					}
+					catch (Exception ex)
+					{
+						Console.WriteLine(ex.Message);
+						Crashes.TrackError(ex);
+					}
+				}
+				catch (Exception ex)
+				{
+					Console.WriteLine(ex.Message);
+					Crashes.TrackError(ex);
+				}
 
 
-				 this.BindingContext = this;
-			 });
+				this.BindingContext = this;
+			});
 		}
 
 
@@ -137,7 +137,7 @@ namespace RTMobile.issues
 		/// Выгрузка всех задач
 		/// </summary>
 		async void issueStartPostRequest()
-		{			
+		{
 			try
 			{
 				JSONRequest jsonRequest = new JSONRequest()
@@ -202,6 +202,7 @@ namespace RTMobile.issues
 		private void SearchBar_SearchButtonPressed(object sender, EventArgs e)
 		{
 			filterIssue = $"text ~ \"{searchIssue.Text}\"";
+
 			issueStartPostRequest();
 			if (this.issues != null && this.issues.Count > 0)
 			{
@@ -212,6 +213,26 @@ namespace RTMobile.issues
 			{
 				issuesList.IsVisible = false;
 				noneIssue.IsVisible = true;
+			}
+		}
+
+		private void searchIssue_TextChanged(object sender, TextChangedEventArgs e)
+		{
+			if (searchIssue.Text.Length == 0)
+			{
+				filterIssue = "status not in  (Закрыта, Отклонена, Отменена, Активирована, Выполнено, 'Доставлена клиенту', Провалено) AND assignee in (currentUser())";
+
+				issueStartPostRequest();
+				if (this.issues != null && this.issues.Count > 0)
+				{
+					issuesList.IsVisible = true;
+					noneIssue.IsVisible = false;
+				}
+				else
+				{
+					issuesList.IsVisible = false;
+					noneIssue.IsVisible = true;
+				}
 			}
 		}
 	}
