@@ -31,11 +31,6 @@ com.google.android.material.tabs.TabLayout;F:\project\Mobile\rtmobile\RTMobile\R
 com.google.android.material.tabs.TabLayout;obj\Debug\90\res\layout\tabbar.xml
 Com.ViewPagerIndicator.CirclePageIndicator;F:\project\Mobile\rtmobile\RTMobile\RTMobile.Android\obj\Debug\90\lp\1\jl\res\layout\horizontal_viewpager.xml
 Com.ViewPagerIndicator.CirclePageIndicator;F:\project\Mobile\rtmobile\RTMobile\RTMobile.Android\obj\Debug\90\lp\1\jl\res\layout\vertical_viewpager.xml
-crc6443725871784b4041.HorizontalViewPager;F:\project\Mobile\rtmobile\RTMobile\RTMobile.Android\obj\Debug\90\lp\1\jl\res\layout\horizontal_viewpager.xml
-crc6443725871784b4041.VerticalViewPager;F:\project\Mobile\rtmobile\RTMobile\RTMobile.Android\obj\Debug\90\lp\1\jl\res\layout\vertical_viewpager.xml
-crc646c47a7af3a53b8ab.CirclePageIndicator;F:\project\Mobile\rtmobile\RTMobile\RTMobile.Android\obj\Debug\90\lp\1\jl\res\layout\horizontal_viewpager.xml
-crc646c47a7af3a53b8ab.CirclePageIndicator;F:\project\Mobile\rtmobile\RTMobile\RTMobile.Android\obj\Debug\90\lp\1\jl\res\layout\vertical_viewpager.xml
-crc64720bb2db43a66fe9.FormsViewPager;F:\project\Mobile\rtmobile\RTMobile\RTMobile.Android\obj\Debug\90\lp\65\jl\res\layout\rootlayout.xml
 declare-styleable;F:\project\Mobile\rtmobile\RTMobile\RTMobile.Android\obj\Debug\90\lp\3\jl\res\values\vpi__attrs.xml
 declare-styleable;F:\project\Mobile\rtmobile\RTMobile\RTMobile.Android\obj\Debug\90\lp\65\jl\res\values\attrs.xml
 dimen;F:\project\Mobile\rtmobile\RTMobile\RTMobile.Android\obj\Debug\90\lp\3\jl\res\values\vpi__defaults.xml
