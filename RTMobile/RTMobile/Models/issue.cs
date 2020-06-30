@@ -1262,7 +1262,7 @@ namespace RTMobile
 		public List<Transition> transitions { get; set; }
 		public ObservableCollection<Issue> issues { get; set; }
 		public ObservableCollection<Comment> comments { get; set; }
-		public ObservableCollection<Fields> fields { get; set; }
+		//public ObservableCollection<Fields> fields { get; set; }
 		public ObservableCollection<Worklog> worklogs { get; set; }
 		public ObservableCollection<ObjectEntry> objectEntries { get; set; }
 		public ObservableCollection<Objectschema> objectschemas { get; set; }
