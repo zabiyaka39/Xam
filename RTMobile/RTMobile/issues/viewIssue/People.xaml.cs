@@ -73,7 +73,7 @@ namespace RTMobile.issues.viewIssue
 		}
 		void ImageButton_Clicked_3(System.Object sender, System.EventArgs e)
 		{
-			Navigation.PopToRootAsync();
+			Application.Current.MainPage = new AllIssues();
 		}
 		void showWatcherPeople_Clicked(System.Object sender, System.EventArgs e)
 		{

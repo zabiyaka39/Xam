@@ -35,16 +35,12 @@ F:\project\Mobile\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\RTMobile.A
 F:\project\Mobile\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\RTMobile.AssemblyInfo.cs
 F:\project\Mobile\rtmobile\RTMobile\RTMobile\bin\Debug\netstandard2.0\Windows.Foundation.UniversalApiContract.winmd
 F:\project\Mobile\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\RTMobile.csproj.CopyComplete
-C:\RT\rtmobile\RTMobile\RTMobile\bin\Debug\netstandard2.0\RTMobile.deps.json
-C:\RT\rtmobile\RTMobile\RTMobile\bin\Debug\netstandard2.0\RTMobile.dll
-C:\RT\rtmobile\RTMobile\RTMobile\bin\Debug\netstandard2.0\RTMobile.pdb
 C:\RT\rtmobile\RTMobile\RTMobile\bin\Debug\netstandard2.0\Mono.Android.dll
 C:\RT\rtmobile\RTMobile\RTMobile\bin\Debug\netstandard2.0\Windows.Foundation.UniversalApiContract.winmd
 C:\RT\rtmobile\RTMobile\RTMobile\bin\Debug\netstandard2.0\Xamarin.iOS.dll
 C:\RT\rtmobile\RTMobile\RTMobile\bin\Debug\netstandard2.0\Mono.Android.pdb
 C:\RT\rtmobile\RTMobile\RTMobile\bin\Debug\netstandard2.0\Mono.Android.xml
 C:\RT\rtmobile\RTMobile\RTMobile\bin\Debug\netstandard2.0\Xamarin.iOS.xml
-C:\RT\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\RTMobile.csprojAssemblyReference.cache
 C:\RT\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\RTMobile.Properties.Resources.resources
 C:\RT\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\RTMobile.csproj.GenerateResource.cache
 C:\RT\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\about\About.xaml.g.cs
@@ -76,8 +72,6 @@ C:\RT\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\issues\viewIssue\Trans
 C:\RT\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\issues\viewIssue\WorkJournal.xaml.g.cs
 C:\RT\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\jiraData\Fingerprint.xaml.g.cs
 C:\RT\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
-C:\RT\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\notification\FingerprintLogin.xaml.g.cs
-C:\RT\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\notification\Notification.xaml.g.cs
 C:\RT\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\profile\Profile.xaml.g.cs
 C:\RT\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\settings\Settings.xaml.g.cs
 C:\RT\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\StatusBar.xaml.g.cs
@@ -86,8 +80,6 @@ C:\RT\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\RTMobile.AssemblyInfo.
 C:\RT\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\RTMobile.csproj.CoreCompileInputs.cache
 C:\RT\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\XamlC.stamp
 C:\RT\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\RTMobile.csproj.CopyComplete
-C:\RT\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\RTMobile.dll
-C:\RT\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\RTMobile.pdb
 F:\project\Mobile\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\insight\QRgen.xaml.g.cs
 F:\project\Mobile\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\jiraData\Fingerprint.xaml.g.cs
 F:\project\Mobile\rtmobile\RTMobile\RTMobile\bin\Debug\netstandard2.0\REM.deps.json
@@ -98,3 +90,10 @@ F:\project\Mobile\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\REM.pdb
 F:\project\Mobile\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\RTMobile.csprojAssemblyReference.cache
 F:\project\Mobile\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\RTMobile.csproj.CoreCompileInputs.cache
 F:\project\Mobile\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\XamlC.stamp
+C:\RT\rtmobile\RTMobile\RTMobile\bin\Debug\netstandard2.0\REM.deps.json
+C:\RT\rtmobile\RTMobile\RTMobile\bin\Debug\netstandard2.0\REM.dll
+C:\RT\rtmobile\RTMobile\RTMobile\bin\Debug\netstandard2.0\REM.pdb
+C:\RT\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\REM.dll
+C:\RT\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\REM.pdb
+C:\RT\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\RTMobile.csprojAssemblyReference.cache
+C:\RT\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\profile\Notification.xaml.g.cs

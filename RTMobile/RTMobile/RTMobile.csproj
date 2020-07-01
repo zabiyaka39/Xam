@@ -110,7 +110,6 @@
     <Folder Include="calendar\" />
     <Folder Include="filter\" />
     <Folder Include="notification\" />
-    <Folder Include="profile\" />
   </ItemGroup>
 
   <ItemGroup>

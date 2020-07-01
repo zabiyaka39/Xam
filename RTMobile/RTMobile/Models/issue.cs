@@ -892,7 +892,8 @@ namespace RTMobile
 		public Uri thumbnail { get; set; }
 	}
 	public class AllowedValue
-	{
+	{	
+		public string key { get; set; }
 		public string self { get; set; }
 		public string value { get; set; }
 		public string name { get; set; }
