@@ -758,7 +758,8 @@ namespace RTMobile.issues
 										fields += ", ";
 									}
 									//добавляем категорию
-									fields += "\"" + DectionaryFields[generalStackLayout.Children[i].Id].NameField + "\":{\"value\":\"" + ((Picker)generalStackLayout.Children[i]).Items[((Picker)generalStackLayout.Children[i]).SelectedIndex] + "\"}";
+									fields += "\"" + DectionaryFields[generalStackLayout.Children[i].Id].NameField + 
+										"\":{\"value\":\"" + ((Picker)generalStackLayout.Children[i]).Items[((Picker)generalStackLayout.Children[i]).SelectedIndex];
 
 
 									if (DectionaryFields[generalStackLayout.Children[i].Id].allowedValues != null &&
@@ -767,9 +768,10 @@ namespace RTMobile.issues
 										((Picker)generalStackLayout.Children[i + 1]).Items[((Picker)generalStackLayout.Children[i + 1]).SelectedIndex]!=null)
 									{
 										//Добавляем подкатегорию
-										fields += ", \"" + DectionaryFields[generalStackLayout.Children[i].Id].NameField + ":1" +
-												  "\":{\"value\":\"" + ((Picker)generalStackLayout.Children[i + 1]).Items[((Picker)generalStackLayout.Children[i + 1]).SelectedIndex] + "\"}";
+										fields += "\", \"child:" +
+												  "\":{\"value\":\"" + ((Picker)generalStackLayout.Children[i + 1]).Items[((Picker)generalStackLayout.Children[i + 1]).SelectedIndex]+ "\"}";
 									}
+									fields += "}";
 								}
 								break;
 							}

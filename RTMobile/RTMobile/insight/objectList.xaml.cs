@@ -38,6 +38,7 @@ namespace RTMobile.insight
 	
 				try
 				{
+					//СОздаем запрос на получение списка объектов по id в количестве 1000 элементов
 					JSONRequest jsonRequest = new JSONRequest()
 					{
 						urlRequest = $"/rest/insight/1.0/iql/objects?objectSchemaId={objectschema.id}&resultPerPage=1000",

@@ -37,7 +37,7 @@ namespace RTMobile.issues.viewIssue
 			{
 				JSONRequest jsonRequest = new JSONRequest()
 				{
-					
+
 					urlRequest = $"/rest/api/2/issue/{issueKey}?expand=changelog",
 					methodRequest = "GET"
 				};
@@ -85,7 +85,7 @@ namespace RTMobile.issues.viewIssue
 
 		void ToolbarItem_Clicked_1(System.Object sender, System.EventArgs e)
 		{
-			Navigation.PushAsync(new WorkJournal());
+			Navigation.PushAsync(new WorkJournal(issueKey, issueSummary));
 		}
 
 		void ToolbarItem_Clicked_2(System.Object sender, System.EventArgs e)

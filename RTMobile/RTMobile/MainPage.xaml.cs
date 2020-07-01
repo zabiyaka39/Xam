@@ -34,6 +34,8 @@ namespace RTMobile
 				errorMessage.IsVisible = false;
 				errorMessage.FontAttributes = FontAttributes.None;
 				errorMessage.Margin = new Thickness(0, -15, 0, 0);
+
+				//Если логин и пароль существуют, то даем пользователю входить по отпечатку
 				if(CrossSettings.Current.GetValueOrDefault("login", string.Empty) != string.Empty && CrossSettings.Current.GetValueOrDefault("password", string.Empty) != string.Empty)
 				{
 					fingerAuth(true);
@@ -85,7 +87,7 @@ namespace RTMobile
 
 						errorMessage.IsVisible = false;
 						errorMessage1.IsVisible = false;
-
+						//Если авторизация прошла успешно, то записываем значения в память приложения для дальнейшего быстрого входа в систему
 						CrossSettings.Current.AddOrUpdateValue("login", login.Text.Trim(' '));
 						CrossSettings.Current.AddOrUpdateValue("password", password.Text);
 						Analytics.TrackEvent("Выполнен вход в систему: пользователь - " + CrossSettings.Current.GetValueOrDefault("login", string.Empty) + ", " + DateTime.Now);
@@ -160,7 +162,8 @@ namespace RTMobile
 				new AuthenticationRequestConfiguration("Аутентификация",
 				"Авторизируйтесь");
 
-			var authResult = await CrossFingerprint.Current.AuthenticateAsync(conf);
+			//Проверяем прошла ли авторизация по отпечатку
+			FingerprintAuthenticationResult authResult = await CrossFingerprint.Current.AuthenticateAsync(conf);
 			if (authResult.Authenticated)
 			{
 				try
@@ -175,6 +178,7 @@ namespace RTMobile
 						Console.WriteLine(ex.ToString());
 					}
 					Request request = new Request();
+					//Проверяем  авторизацию по логину и паролю, если все ок, то выводим задачи пользователю, если нет, то выводим ошибку
 					if (request.authorization(CrossSettings.Current.GetValueOrDefault("login", login.Text.Trim(' ')), CrossSettings.Current.GetValueOrDefault("password", password.Text)))
 					{
 
@@ -229,6 +233,7 @@ namespace RTMobile
 
 		private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
 		{
+			//Обрабатываем значения нажатия кнопки просмотра пароля
 			if (password.IsPassword == true)
 			{
 				visibilityButton.Source = "visibility_off_white.png";
