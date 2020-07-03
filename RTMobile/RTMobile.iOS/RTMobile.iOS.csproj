@@ -34,8 +34,7 @@
     <MtouchEnableSGenConc>false</MtouchEnableSGenConc>
     <OptimizePNGs>true</OptimizePNGs>
     <CodesignKey>Apple Development: Vladislav Sekisov (G6L75T83Y2)</CodesignKey>
-    <CodesignProvision>
-    </CodesignProvision>
+    <CodesignProvision>VS: ru.rosohrana.rtmobile Development</CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>none</DebugType>

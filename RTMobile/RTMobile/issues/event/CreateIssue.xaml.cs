@@ -623,7 +623,6 @@ namespace RTMobile.issues
 						//Проверяем на обязательность данного поля
 						if (Fields[i].required)
 						{
-							label.Text += "*";
 							generalStackLayout.Children.Add(label);
 							determination_requered(generalStackLayout, Fields[i]);
 						}
@@ -765,7 +764,7 @@ namespace RTMobile.issues
 										((Picker)generalStackLayout.Children[i + 1]).Items[((Picker)generalStackLayout.Children[i + 1]).SelectedIndex]!=null)
 									{
 										//Добавляем подкатегорию
-										fields += "\", \"child:" +
+										fields += "\", \"child" +
 												  "\":{\"value\":\"" + ((Picker)generalStackLayout.Children[i + 1]).Items[((Picker)generalStackLayout.Children[i + 1]).SelectedIndex]+ "\"}";
 									}
 									fields += "}";
@@ -854,7 +853,7 @@ namespace RTMobile.issues
 			{
 				jsonRequestCreate += "\"fields\":{" + fields +
 												  ", \"project\":{\"key\":\"" + projects[projectPic.SelectedIndex].key + "\"}," +
-												  "\"issuetype\":{\"name\":\"" + projects[projectPic.SelectedIndex].issuetypes[typeIssuePic.SelectedIndex].name + "\"}" +
+												  "\"issuetype\":{\"id\":\"" + projects[projectPic.SelectedIndex].issuetypes[typeIssuePic.SelectedIndex].id + "\"}" +
 												  "}";
 			}
 
@@ -879,7 +878,7 @@ namespace RTMobile.issues
 			else
 			{
 				errorMessage.IsVisible = true;
-				errorMessage.Text = "Заполните обязательные поля помечанные *";
+				errorMessage.Text = "Заполните обязательные поля";
 			}
 		}
 	}
