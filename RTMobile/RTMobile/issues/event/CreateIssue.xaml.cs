@@ -198,7 +198,13 @@ namespace RTMobile.issues
 										}
 										if (numberConfigSchema > -1)
 										{
-											urlRequestData = $"/rest/insight/1.0/customfield/default/{numberConfigSchema}/objects";
+											//Ищем подходящую схему Insight, т.к может быть default или deprecated 
+											int startSearchInsight = Field.editHtml.IndexOf("data-resource-path=") + 20;
+											//Так же обрезаем на 19 символов для выбора только номера схемы в числовом формате
+											int endSearchInsight = Field.editHtml.IndexOf(" ", startSearchInsight);
+
+											urlRequestData = $"/rest/insight/1.0/{Field.editHtml.Substring(startSearchInsight, endSearchInsight - startSearchInsight - 1)}/{numberConfigSchema}/objects";
+											
 
 											JSONRequest jsonRequestInsight = new JSONRequest
 											{
@@ -288,8 +294,11 @@ namespace RTMobile.issues
 												methodRequest = "POST"
 											};
 											Request requestIssue = new Request(jsonRequestInsightSearch);
-
-											insights = requestIssue.GetResponses<RootObject>().objects;
+											RootObject tmpRootObject = requestIssue.GetResponses<RootObject>();
+											if (tmpRootObject.objects != null)
+											{
+												insights = tmpRootObject.objects;
+											}
 
 											objectName.Clear();
 
