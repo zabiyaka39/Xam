@@ -39,6 +39,7 @@ namespace RTMobile.issues
 			}
 
 			this.BindingContext = this;
+			Subscribe();
 		}
 
 		void ImageButton_Clicked(System.Object sender, System.EventArgs e)
@@ -49,6 +50,14 @@ namespace RTMobile.issues
 		{
 			Navigation.PushAsync(new Insight());
 		}
+
+		void Subscribe()
+		{ 
+			MessagingCenter.Subscribe<Page>(this, "RefreshIssueList", (sender)  => {
+
+				issueStartPostRequest(); });
+		}
+
 
 		public async void GoToback()
 		{

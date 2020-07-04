@@ -13,6 +13,7 @@ using RTMobile.jiraData;
 using Service.Shared.Clients;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using System.Threading.Tasks;
 
 namespace RTMobile.issues
 {
@@ -21,7 +22,7 @@ namespace RTMobile.issues
 		List<Project> projects { get; set; }
 		List<Issuetype> typeIssue { get; set; }
 		List<Fields> Fields { get; set; }
-
+		public string Idf { get; set; }
 		//Поле для более удобного поиска и доступа к полям (полученные поля = нарисованным полям, если нет доп. полей)
 		Dictionary<Guid, Fields> DectionaryFields = new Dictionary<Guid, Fields>();
 		public CreateIssue()
@@ -75,6 +76,8 @@ namespace RTMobile.issues
 		{
 			Navigation.PopToRootAsync();
 		}
+
+		
 		private void Picker_SelectedIndexChanged(object sender, EventArgs e)
 		{
 			//Полученные ранее поля при выгрузке проектов добавляем как ItemSource
@@ -868,6 +871,8 @@ namespace RTMobile.issues
 
 			//Закрываем запрос
 			jsonRequestCreate += "}";
+
+
 			if (checkRequeredFields)
 			{
 				//Совершаем переход с полученными данными
@@ -877,12 +882,26 @@ namespace RTMobile.issues
 					methodRequest = "POST"
 				};
 				Request request = new Request(jsonRequest);
+                try
+                {
+					
+					Idf = request.GetResponses<AllowedValue>(jsonRequestCreate).key;
+					Issue kEy = new Issue() {key = Idf };
+					Navigation.PushAsync(new RTMobile.issues.viewIssue.TabPageIssue(kEy));
+					Navigation.RemovePage(Navigation.NavigationStack[Navigation.NavigationStack.Count - 2]);
+					MessagingCenter.Send<Page>(this, "RefreshIssueList");
+				}
+				catch (Exception ex)
+				{
+					Console.WriteLine(ex.Message);
+				}
 
-				Errors errors = request.GetResponses<Errors>(jsonRequestCreate);
+				/*Errors errors = request.GetResponses<Errors>(jsonRequestCreate);
 				if (errors == null || (errors.comment == null && errors.assignee == null))
 				{
 					Application.Current.MainPage = new AllIssues();
-				}
+					request = new Request(jsonRequest);
+				}*/
 			}
 			else
 			{

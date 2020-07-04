@@ -6,12 +6,15 @@ using RTMobile.profile;
 using System;
 using Plugin.Settings;
 using Microsoft.AppCenter.Crashes;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace RTMobile.issues
 {
 	public partial class AllIssues : MasterDetailPage
 	{
 		User user { get; set; }
+		string IDIssue {get;set;}
 		public AllIssues()
 		{
 			InitializeComponent();
@@ -52,14 +55,15 @@ namespace RTMobile.issues
 
 		void Button_Clicked_2(System.Object sender, System.EventArgs e)
 		{
-			Detail.Navigation.PushAsync(new CreateIssue());
-			IsPresented = false;
+					Detail.Navigation.PushAsync(new CreateIssue());
+					IsPresented = false;
 		}
 
 		void Button_Clicked_3(System.Object sender, System.EventArgs e)
 		{
 			Detail.Navigation.PushAsync(new Settings());
 			IsPresented = false;
+
 		}
 
 		void Button_Clicked_4(System.Object sender, System.EventArgs e)
@@ -75,8 +79,12 @@ namespace RTMobile.issues
 
 		void TapGestureRecognizer_Tapped(System.Object sender, System.EventArgs e)
 		{
-			Detail.Navigation.PushAsync(new Profile());
-			IsPresented = false;
+			Task t2 = Task.Factory.StartNew(() => {
+				Device.BeginInvokeOnMainThread(() =>{
+				Detail.Navigation.PushAsync(new Profile());
+				IsPresented = false; });
+			});
+			
 		}
 
 		private void Button_Clicked_6(object sender, System.EventArgs e)

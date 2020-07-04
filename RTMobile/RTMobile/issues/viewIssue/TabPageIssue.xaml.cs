@@ -12,6 +12,7 @@ namespace RTMobile.issues.viewIssue
 		public TabPageIssue(Issue issues)
 		{
 			InitializeComponent();
+
 			if (issues != null)
 			{
 				Title = issues.key;
