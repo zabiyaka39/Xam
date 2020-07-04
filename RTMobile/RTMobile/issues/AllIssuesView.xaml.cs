@@ -12,7 +12,7 @@ using RTMobile.profile;
 using Xamarin.Forms;
 using System.Threading.Tasks;
 using System.Drawing;
-
+using Windows.UI.Input.Inking.Analysis;
 
 namespace RTMobile.issues
 {
@@ -22,6 +22,17 @@ namespace RTMobile.issues
 		public ObservableCollection<Issue> issues { get; set; }
 		private string filterIssue { get; set; }
 		//string typeSort = "";
+		bool isRefrashing;
+		public bool IsRefreshing
+		{
+			get => isRefrashing;
+			set {
+				isRefrashing = value;
+				OnPropertyChanged(nameof(IsRefreshing));
+			}
+        }
+
+		public Command command { get; }
 		public AllIssuesView()
 		{
 			InitializeComponent();
@@ -37,10 +48,15 @@ namespace RTMobile.issues
 				issuesList.IsVisible = false;
 				noneIssue.IsVisible = true;
 			}
-
+			command = new Command(pullref);
 			this.BindingContext = this;
 		}
-
+		async void pullref()
+        {
+			await issueStartPostRequest();
+			IsRefreshing = false;
+			this.BindingContext = this;
+		}
 		void ImageButton_Clicked(System.Object sender, System.EventArgs e)
 		{
 			Navigation.PushAsync(new Calendar());
@@ -136,7 +152,7 @@ namespace RTMobile.issues
 		/// <summary>
 		/// Выгрузка всех задач
 		/// </summary>
-		async void issueStartPostRequest()
+		async Task issueStartPostRequest()
 		{
 			try
 			{

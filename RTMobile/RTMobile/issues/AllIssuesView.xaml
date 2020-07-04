@@ -27,101 +27,103 @@
             <!--<Label x:Name="log" Text="sdad" HorizontalOptions="CenterAndExpand"/>-->
             <!--<Label x:Name="iss" Text="sdad" HorizontalOptions="CenterAndExpand"/>-->
             <!--<Button Clicked="Button_Clicked"></Button>-->
+            <RefreshView IsRefreshing="{Binding IsRefreshing}"
+             Command="{Binding command}">
+                <ListView  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" 
+                         BackgroundColor="#4A4C50" HasUnevenRows="True" SeparatorVisibility="None"
+                         ItemsSource="{Binding issues}" ItemTapped="ListView_ItemTapped" x:Name="issuesList" CachingStrategy="RecycleElement">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.View>
+                                    <Grid Margin="5">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="50"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="140"/>
+                                        </Grid.RowDefinitions>
 
-            <ListView  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" 
-                     BackgroundColor="#4A4C50" HasUnevenRows="True" SeparatorVisibility="None"
-                     ItemsSource="{Binding issues}" ItemTapped="ListView_ItemTapped" x:Name="issuesList">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <ViewCell.View>
-                                <Grid Margin="5">
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="50"/>
-                                        <ColumnDefinition Width="*"/>
-                                    </Grid.ColumnDefinitions>
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="140"/>
-                                    </Grid.RowDefinitions>
+                                        <Frame BackgroundColor="{Binding Path= fields.status.statusCategory.colorJ}" HasShadow="True" Padding="0"
+                                               Grid.Column="0" Grid.Row="0" CornerRadius="5" Margin="0,0,-4,0">
+                                            <StackLayout Orientation="Horizontal">
+                                                <BoxView HorizontalOptions="Center" VerticalOptions="Center"
+                                                         CornerRadius="50" Margin="-5,0,0,0" BackgroundColor="#4A4C50"
+                                                         HeightRequest="10" WidthRequest="10"/>
+                                                <Label Text="{Binding Path = key}" Rotation="-90" FontAttributes="Bold" FontSize="14"
+                                                       VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"
+                                                       TextColor="#FFFFFF" Margin="-40,0,-30,0"/>
 
-                                    <Frame BackgroundColor="{Binding Path= fields.status.statusCategory.colorJ}" HasShadow="True" Padding="0"
-                                           Grid.Column="0" Grid.Row="0" CornerRadius="5" Margin="0,0,-4,0">
-                                        <StackLayout Orientation="Horizontal">
-                                            <BoxView HorizontalOptions="Center" VerticalOptions="Center"
-                                                     CornerRadius="50" Margin="-5,0,0,0" BackgroundColor="#4A4C50"
-                                                     HeightRequest="10" WidthRequest="10"/>
-                                            <Label Text="{Binding Path = key}" Rotation="-90" FontAttributes="Bold" FontSize="14"
-                                                   VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"
-                                                   TextColor="#FFFFFF" Margin="-40,0,-30,0"/>
+                                            </StackLayout>
+                                        </Frame>
+                                        <Frame BackgroundColor="#FFFFFF" HasShadow="True"
+                                               Grid.Column="1" Grid.Row="0" CornerRadius="5">
+                                            <Grid HorizontalOptions="FillAndExpand">
+                                                <Label Text="{Binding Path=fields.summary}" TextColor="#000000"
+                                                       FontSize="13" FontAttributes ="Bold" MaxLines="1" LineBreakMode="TailTruncation"
+                                                       Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Margin="0,-5,0,0"
+                                                       HorizontalOptions="StartAndExpand"/>
 
-                                        </StackLayout>
-                                    </Frame>
-                                    <Frame BackgroundColor="#FFFFFF" HasShadow="True"
-                                           Grid.Column="1" Grid.Row="0" CornerRadius="5">
-                                        <Grid HorizontalOptions="FillAndExpand">
-                                            <Label Text="{Binding Path=fields.summary}" TextColor="#000000"
-                                                   FontSize="13" FontAttributes ="Bold" MaxLines="1" LineBreakMode="TailTruncation"
-                                                   Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Margin="0,-5,0,0"
-                                                   HorizontalOptions="StartAndExpand"/>
+                                                <Label Text="{Binding Path=fields.description}" TextColor="#000000"
+                                                       FontSize="12" Grid.Row="1"  MaxLines="2" LineBreakMode="TailTruncation"
+                                                       Grid.Column="0" Grid.ColumnSpan="4" Margin="0,-10,0,-10"
+                                                       HorizontalOptions="FillAndExpand" Padding="0,0,0,0"/>
+                                                <Grid Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="4" HorizontalOptions="FillAndExpand"  HeightRequest="30" >
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="*"/>
+                                                        <ColumnDefinition Width="20"/>
+                                                        <ColumnDefinition Width="20"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <!--<Image Source="{Binding Path=fields.issuetype.icon}" Grid.Column="0"/>-->
+                                                    <Label Text="{Binding Path=fields.issuetype.name}" FontAttributes="Bold"
+                                                       FontSize="13" Grid.Column="0" Padding="10,0,0,-5" 
+                                                       Grid.Row="0" Margin="-10,0,0,0" Grid.ColumnSpan="2" HorizontalOptions="Fill" />
+                                                </Grid>
 
-                                            <Label Text="{Binding Path=fields.description}" TextColor="#000000"
-                                                   FontSize="12" Grid.Row="1"  MaxLines="2" LineBreakMode="TailTruncation"
-                                                   Grid.Column="0" Grid.ColumnSpan="4" Margin="0,-10,0,-10"
-                                                   HorizontalOptions="FillAndExpand" Padding="0,0,0,0"/>
-                                            <Grid Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="4" HorizontalOptions="FillAndExpand"  HeightRequest="30" >
-                                                <Grid.ColumnDefinitions>
-                                                    <ColumnDefinition Width="*"/>
-                                                    <ColumnDefinition Width="20"/>
-                                                    <ColumnDefinition Width="20"/>
-                                                </Grid.ColumnDefinitions>
-                                                <!--<Image Source="{Binding Path=fields.issuetype.icon}" Grid.Column="0"/>-->
-                                                <Label Text="{Binding Path=fields.issuetype.name}" FontAttributes="Bold"
-                                                   FontSize="13" Grid.Column="0" Padding="10,0,0,-5" 
-                                                   Grid.Row="0" Margin="-10,0,0,0" Grid.ColumnSpan="2" HorizontalOptions="Fill" />
+                                                <Grid Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="4" HorizontalOptions="FillAndExpand">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto"/>
+                                                        <ColumnDefinition Width="*"/>
+                                                        <ColumnDefinition Width="Auto"/>
+                                                        <ColumnDefinition Width="Auto"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <Image Source="person.png" Grid.Column="0" VerticalOptions="Start"
+                                                       Grid.Row="0" HorizontalOptions="Start" Margin="0,0,0,0" />
+                                                    <Label Text="{Binding Path=fields.assignee.displayName}" TextColor="#000000"
+                                                       FontSize="13" Grid.Row="0"  Grid.Column="1"
+                                                       HorizontalOptions="Fill" Margin="0,-3,0,0" />
+                                                    <Image Source="timeStart.png" Grid.Column="2" VerticalOptions="Start"
+                                                       Grid.Row="0" HorizontalOptions="End" />
+                                                    <Label Text="{Binding Path=fields.created}" TextColor="#000000"
+                                                       FontSize="13" Grid.Row="0"
+                                                       Grid.Column="3" HorizontalOptions="End" Margin="0,-3,0,0" />
+                                                </Grid>
+
+                                                <Grid Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="4" HorizontalOptions="FillAndExpand">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="*"/>
+                                                        <ColumnDefinition Width="Auto"/>
+                                                        <ColumnDefinition Width="Auto"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <Label Text="{Binding Path=fields.status.name}" TextColor="{Binding Path= fields.status.statusCategory.colorJ}" 
+                                                       FontSize="13" Grid.Row="0"  Grid.Column="0"
+                                                       HorizontalOptions="StartAndExpand" Margin="0,-6,0,0" />
+                                                    <Image x:Name="resolutionImg" Source="timeUpdate.png" Grid.Column="1" VerticalOptions="Start"
+                                                       Grid.Row="0" HorizontalOptions="End" />
+                                                    <Label x:Name="resolution" Text="{Binding Path=fields.resolutiondate}" TextColor="#000000"
+                                                       FontSize="13" Grid.Row="0"
+                                                       Grid.Column="2" HorizontalOptions="End" Margin="0,-3,0,0" />
+                                                </Grid>
                                             </Grid>
-
-                                            <Grid Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="4" HorizontalOptions="FillAndExpand">
-                                                <Grid.ColumnDefinitions>
-                                                    <ColumnDefinition Width="Auto"/>
-                                                    <ColumnDefinition Width="*"/>
-                                                    <ColumnDefinition Width="Auto"/>
-                                                    <ColumnDefinition Width="Auto"/>
-                                                </Grid.ColumnDefinitions>
-                                                <Image Source="person.png" Grid.Column="0" VerticalOptions="Start"
-                                                   Grid.Row="0" HorizontalOptions="Start" Margin="0,0,0,0" />
-                                                <Label Text="{Binding Path=fields.assignee.displayName}" TextColor="#000000"
-                                                   FontSize="13" Grid.Row="0"  Grid.Column="1"
-                                                   HorizontalOptions="Fill" Margin="0,-3,0,0" />
-                                                <Image Source="timeStart.png" Grid.Column="2" VerticalOptions="Start"
-                                                   Grid.Row="0" HorizontalOptions="End" />
-                                                <Label Text="{Binding Path=fields.created}" TextColor="#000000"
-                                                   FontSize="13" Grid.Row="0"
-                                                   Grid.Column="3" HorizontalOptions="End" Margin="0,-3,0,0" />
-                                            </Grid>
-
-                                            <Grid Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="4" HorizontalOptions="FillAndExpand">
-                                                <Grid.ColumnDefinitions>
-                                                    <ColumnDefinition Width="*"/>
-                                                    <ColumnDefinition Width="Auto"/>
-                                                    <ColumnDefinition Width="Auto"/>
-                                                </Grid.ColumnDefinitions>
-                                                <Label Text="{Binding Path=fields.status.name}" TextColor="{Binding Path= fields.status.statusCategory.colorJ}" 
-                                                   FontSize="13" Grid.Row="0"  Grid.Column="0"
-                                                   HorizontalOptions="StartAndExpand" Margin="0,-6,0,0" />
-                                                <Image x:Name="resolutionImg" Source="timeUpdate.png" Grid.Column="1" VerticalOptions="Start"
-                                                   Grid.Row="0" HorizontalOptions="End" />
-                                                <Label x:Name="resolution" Text="{Binding Path=fields.resolutiondate}" TextColor="#000000"
-                                                   FontSize="13" Grid.Row="0"
-                                                   Grid.Column="2" HorizontalOptions="End" Margin="0,-3,0,0" />
-                                            </Grid>
-                                        </Grid>
-                                    </Frame>
-                                </Grid>
-                            </ViewCell.View>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+                                        </Frame>
+                                    </Grid>
+                                </ViewCell.View>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </RefreshView>
             <StackLayout x:Name="noneIssue" BackgroundColor="#4A4C50" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
                 <Label Text="Задачи отсутствуют" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" 
                    TextColor="#F0F1F0" FontSize="16" IsVisible="False"/>
