@@ -28209,18 +28209,18 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\leshiy\\.nuget\\packages\\": {},
+    "C:\\Users\\sekisov\\.nuget\\packages\\": {},
     "C:\\Microsoft\\Xamarin\\NuGet\\": {},
     "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\RT\\rtmobile\\RTMobile\\RTMobile.UWP\\RTMobile.UWP.csproj",
+      "projectUniqueName": "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile.UWP\\RTMobile.UWP.csproj",
       "projectName": "RTMobile.UWP",
-      "projectPath": "C:\\RT\\rtmobile\\RTMobile\\RTMobile.UWP\\RTMobile.UWP.csproj",
-      "packagesPath": "C:\\Users\\leshiy\\.nuget\\packages\\",
-      "outputPath": "C:\\RT\\rtmobile\\RTMobile\\RTMobile.UWP\\obj\\",
+      "projectPath": "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile.UWP\\RTMobile.UWP.csproj",
+      "packagesPath": "C:\\Users\\sekisov\\.nuget\\packages\\",
+      "outputPath": "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile.UWP\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -28228,7 +28228,7 @@
         "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\leshiy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\sekisov\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -28242,8 +28242,8 @@
       "frameworks": {
         "uap10.0.16299": {
           "projectReferences": {
-            "C:\\RT\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj": {
-              "projectPath": "C:\\RT\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj"
+            "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj": {
+              "projectPath": "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj"
             }
           }
         }
