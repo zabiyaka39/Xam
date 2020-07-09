@@ -651,10 +651,6 @@ namespace RTMobile.issues
 			}
 		}
 
-
-
-
-
 		private void Button_Clicked(object sender, EventArgs e)
 		{
 			//Создаем переменную для построения json-запроса для совершения перехода
@@ -751,7 +747,6 @@ namespace RTMobile.issues
 						case "priority":
 						case "option":
 						case "option-with-child":
-						case "resolution":
 							{
 								if (((Picker)generalStackLayout.Children[i]).SelectedIndex == -1 && DectionaryFields[generalStackLayout.Children[i].Id].required == true)
 								{
@@ -766,20 +761,39 @@ namespace RTMobile.issues
 										fields += ", ";
 									}
 									//добавляем категорию
-									fields += "\"" + DectionaryFields[generalStackLayout.Children[i].Id].NameField + 
-										"\":{\"value\":\"" + ((Picker)generalStackLayout.Children[i]).Items[((Picker)generalStackLayout.Children[i]).SelectedIndex];
+									fields += "\"" + DectionaryFields[generalStackLayout.Children[i].Id].NameField +
+										"\":{\"value\":\"" + ((Picker)generalStackLayout.Children[i]).Items[((Picker)generalStackLayout.Children[i]).SelectedIndex] + "\"";
 
 
 									if (DectionaryFields[generalStackLayout.Children[i].Id].allowedValues != null &&
 										DectionaryFields[generalStackLayout.Children[i].Id].allowedValues[((Picker)generalStackLayout.Children[i]).SelectedIndex].children != null &&
 										((Picker)generalStackLayout.Children[i + 1]).SelectedIndex > -1 &&
-										((Picker)generalStackLayout.Children[i + 1]).Items[((Picker)generalStackLayout.Children[i + 1]).SelectedIndex]!=null)
+										((Picker)generalStackLayout.Children[i + 1]).Items[((Picker)generalStackLayout.Children[i + 1]).SelectedIndex] != null)
 									{
 										//Добавляем подкатегорию
-										fields += "\", \"child" +
-												  "\":{\"value\":\"" + ((Picker)generalStackLayout.Children[i + 1]).Items[((Picker)generalStackLayout.Children[i + 1]).SelectedIndex]+ "\"}";
+										fields += ", \"child" +
+												  "\":{\"value\":\"" + ((Picker)generalStackLayout.Children[i + 1]).Items[((Picker)generalStackLayout.Children[i + 1]).SelectedIndex] + "\"}";
 									}
 									fields += "}";
+								}
+								break;
+							}
+						case "resolution":
+							{
+								if (((Picker)generalStackLayout.Children[i]).SelectedIndex == -1 && DectionaryFields[generalStackLayout.Children[i].Id].required == true)
+								{
+									checkRequeredFields = false;
+									break;
+								}
+
+								if (((Picker)generalStackLayout.Children[i]).SelectedIndex != -1)
+								{
+									if (fields.Length > 0)
+									{
+										fields += ", ";
+									}
+									fields += "\"" + DectionaryFields[generalStackLayout.Children[i].Id].NameField +
+									"\":{\"id\":\"" + DectionaryFields[generalStackLayout.Children[i].Id].allowedValues[((Picker)generalStackLayout.Children[i]).SelectedIndex].id + "\"}";
 								}
 								break;
 							}
@@ -895,13 +909,6 @@ namespace RTMobile.issues
 				{
 					Console.WriteLine(ex.Message);
 				}
-
-				/*Errors errors = request.GetResponses<Errors>(jsonRequestCreate);
-				if (errors == null || (errors.comment == null && errors.assignee == null))
-				{
-					Application.Current.MainPage = new AllIssues();
-					request = new Request(jsonRequest);
-				}*/
 			}
 			else
 			{

@@ -79,7 +79,6 @@ namespace RTMobile.issues
 		{
 			MessagingCenter.Subscribe<Filter, JSONRequest>(this, "RefreshMainPage", (sender, e) =>
 			{
-				Console.WriteLine("text");
 				try
 				{
 					RootObject rootObject = new RootObject();
@@ -131,13 +130,6 @@ namespace RTMobile.issues
 
 		void ImageButton_Clicked_2(System.Object sender, System.EventArgs e)
 		{
-			//Полученный фильтр 
-			string filterJQL = "";
-			//Тип сортировки (по убыванию или по возрастанию)
-			string sorted = "";
-			//Наличие группировки
-			int grouped = -1;
-
 			Navigation.PushAsync(new Filter());
 			GoToback();
 		}

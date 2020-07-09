@@ -109,7 +109,6 @@
     <Folder Include="settings\" />
     <Folder Include="calendar\" />
     <Folder Include="filter\" />
-    <Folder Include="notification\" />
   </ItemGroup>
 
   <ItemGroup>

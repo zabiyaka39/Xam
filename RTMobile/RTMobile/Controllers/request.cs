@@ -162,6 +162,7 @@ namespace RTMobile
 				Crashes.TrackError(ex);
 			}
 		}
+
 		/// <summary>
 		/// Метод для получения данных 
 		/// </summary>
@@ -203,7 +204,7 @@ namespace RTMobile
 		}
 
 		/// <summary>
-		/// Список полей при переходе
+		/// Список полей при создании задачи
 		/// </summary>
 		/// <returns></returns>
 		public List<Fields> GetFieldScreen()
