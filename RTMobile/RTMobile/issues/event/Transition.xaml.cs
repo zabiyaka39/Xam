@@ -276,15 +276,14 @@ namespace RTMobile.issues.viewIssue
 								}
 								Picker picker = new Picker
 								{
-									Title = "Заполните значение...",
+									Title = "Выберите значение...",
 									TextColor = Color.FromHex("#F0F1F0"),
 									TitleColor = Color.FromHex("#F0F1F0"),
 									HorizontalOptions = LayoutOptions.FillAndExpand,
 									Margin = new Thickness(0, 0, 0, 0),
-									FontSize = 16
+									FontSize = 16,
+									ItemsSource = resolutionValues
 								};
-								picker.Title = "Выберите значение...";
-								picker.ItemsSource = resolutionValues;
 
 								//Если при выборе поля у него имеется "потомок" (доп. поле), то показываем его
 
@@ -372,6 +371,7 @@ namespace RTMobile.issues.viewIssue
 										{
 											Picker picker = new Picker
 											{
+												Title = "Выберите значение...",
 												TextColor = Color.FromHex("#F0F1F0"),
 												TitleColor = Color.FromHex("#F0F1F0"),
 												HorizontalOptions = LayoutOptions.FillAndExpand,
@@ -392,7 +392,6 @@ namespace RTMobile.issues.viewIssue
 												picker.Items.Add(issuelinks[j].outward);
 												picker.Items.Add(issuelinks[j].inward);
 											}
-											picker.Title = "Выберите значение...";
 
 											typeStack.Children.Add(picker);
 
@@ -504,15 +503,14 @@ namespace RTMobile.issues.viewIssue
 											}
 											Picker picker = new Picker
 											{
-												Title = "Заполните значение...",
+												Title = "Выберите значение...",
 												TextColor = Color.FromHex("#F0F1F0"),
 												TitleColor = Color.FromHex("#F0F1F0"),
 												HorizontalOptions = LayoutOptions.FillAndExpand,
 												Margin = new Thickness(0, 0, 0, 20),
-												FontSize = 16
+												FontSize = 16,
+												ItemsSource = resolutionValues
 											};
-											picker.Title = "Выберите значение...";
-											picker.ItemsSource = resolutionValues;
 
 											typeStack.Children.Add(picker);
 											DectionaryFields.Add(picker.Id, Field);

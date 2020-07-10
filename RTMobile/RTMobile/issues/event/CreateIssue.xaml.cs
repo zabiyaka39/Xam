@@ -46,9 +46,9 @@ namespace RTMobile.issues
 			for (int i = 0; i < projects.Count; ++i)
 			{
 				//Удаляем из типов задач подзадачи
-				for(int j=0; j<projects[i].issuetypes.Count;++j)
+				for (int j = 0; j < projects[i].issuetypes.Count; ++j)
 				{
-					if(projects[i].issuetypes[j].subtask ==true)
+					if (projects[i].issuetypes[j].subtask == true)
 					{
 						projects[i].issuetypes.RemoveAt(j);
 						--j;
@@ -77,7 +77,7 @@ namespace RTMobile.issues
 			Navigation.PopToRootAsync();
 		}
 
-		
+
 		private void Picker_SelectedIndexChanged(object sender, EventArgs e)
 		{
 			//Полученные ранее поля при выгрузке проектов добавляем как ItemSource
@@ -207,7 +207,7 @@ namespace RTMobile.issues
 											int endSearchInsight = Field.editHtml.IndexOf(" ", startSearchInsight);
 
 											urlRequestData = $"/rest/insight/1.0/{Field.editHtml.Substring(startSearchInsight, endSearchInsight - startSearchInsight - 1)}/{numberConfigSchema}/objects";
-											
+
 
 											JSONRequest jsonRequestInsight = new JSONRequest
 											{
@@ -356,18 +356,14 @@ namespace RTMobile.issues
 								}
 								Picker picker = new Picker
 								{
-									Title = "Заполните значение...",
+									Title = "Выберите значение...",
 									TextColor = Color.FromHex("#F0F1F0"),
 									TitleColor = Color.FromHex("#F0F1F0"),
 									HorizontalOptions = LayoutOptions.FillAndExpand,
 									Margin = new Thickness(0, 0, 0, 0),
-									FontSize = 16
+									FontSize = 16,
+									ItemsSource = resolutionValues
 								};
-								if (picker.Title.Length == 0)
-								{
-									picker.Title = "Выберите значение...";
-								}
-								picker.ItemsSource = resolutionValues;
 
 								//Если при выборе поля у него имеется "потомок" (доп. поле), то показываем его
 
@@ -455,6 +451,7 @@ namespace RTMobile.issues
 										{
 											Picker picker = new Picker
 											{
+												Title = "Выберите значение...",
 												TextColor = Color.FromHex("#F0F1F0"),
 												TitleColor = Color.FromHex("#F0F1F0"),
 												HorizontalOptions = LayoutOptions.FillAndExpand,
@@ -475,7 +472,6 @@ namespace RTMobile.issues
 												picker.Items.Add(issuelinks[j].outward);
 												picker.Items.Add(issuelinks[j].inward);
 											}
-											picker.Title = "Выберите значение...";
 
 											typeStack.Children.Add(picker);
 
@@ -587,15 +583,14 @@ namespace RTMobile.issues
 											}
 											Picker picker = new Picker
 											{
-												Title = "Заполните значение...",
+												Title = "Выберите значение...",
 												TextColor = Color.FromHex("#F0F1F0"),
 												TitleColor = Color.FromHex("#F0F1F0"),
 												HorizontalOptions = LayoutOptions.FillAndExpand,
 												Margin = new Thickness(0, 0, 0, 20),
-												FontSize = 16
+												FontSize = 16,
+												ItemsSource = resolutionValues
 											};
-											picker.Title = "Выберите значение...";
-											picker.ItemsSource = resolutionValues;
 
 											typeStack.Children.Add(picker);
 											DectionaryFields.Add(picker.Id, Field);
@@ -896,11 +891,11 @@ namespace RTMobile.issues
 					methodRequest = "POST"
 				};
 				Request request = new Request(jsonRequest);
-                try
-                {
-					
+				try
+				{
+
 					Idf = request.GetResponses<AllowedValue>(jsonRequestCreate).key;
-					Issue kEy = new Issue() {key = Idf };
+					Issue kEy = new Issue() { key = Idf };
 					Navigation.PushAsync(new RTMobile.issues.viewIssue.TabPageIssue(kEy));
 					Navigation.RemovePage(Navigation.NavigationStack[Navigation.NavigationStack.Count - 2]);
 					MessagingCenter.Send<Page>(this, "RefreshIssueList");
