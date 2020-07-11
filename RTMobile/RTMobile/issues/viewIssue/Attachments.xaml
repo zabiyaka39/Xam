@@ -18,10 +18,11 @@
 
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        <ScrollView VerticalOptions="FillAndExpand">
+        
                 <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
                       BackgroundColor="#4A4C50">
-
+            <ScrollView VerticalOptions="FillAndExpand">
+                <StackLayout>
                 <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="170"/>
@@ -220,8 +221,9 @@
                     <ImageButton Source="filter.png" Grid.Column="3" Grid.Row="1"
                              BackgroundColor="Transparent" Clicked="ImageButton_Clicked_2"></ImageButton>
                 </Grid>
-
-            </StackLayout>
-        </ScrollView>
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+        
     </ContentPage.Content>
 </ContentPage>

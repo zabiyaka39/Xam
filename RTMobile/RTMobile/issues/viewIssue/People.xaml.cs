@@ -75,10 +75,14 @@ namespace RTMobile.issues.viewIssue
 		{
 			Application.Current.MainPage = new AllIssues();
 		}
+		//Высота блока с наблюдателями для скрытия и разворачивания
+		private double heightWatcherPeople = 0;
 		void showWatcherPeople_Clicked(System.Object sender, System.EventArgs e)
 		{
 			if (watcherPeople.IsVisible)
 			{
+				//Запоминаем высоту блока перед тем как его скрыть
+				heightWatcherPeople = watcherPeople.HeightRequest;
 				showWatcherPeople.Source = "arrowDown.png";
 				watcherFrame.HeightRequest = 70;
 				watcherPeople.IsVisible = false;
@@ -86,14 +90,19 @@ namespace RTMobile.issues.viewIssue
 			else
 			{
 				showWatcherPeople.Source = "arrowUp.png";
-				watcherFrame.HeightRequest = 250;
+				//Указываем высоту блока равной запомненной ранее
+				watcherFrame.HeightRequest = heightWatcherPeople;
 				watcherPeople.IsVisible = true;
 			}
 		}
+		//Высота блока с исполнителем и автором для скрытия и разворачивания
+		private double heightGeneralPeople = 0;
 		void showGeneralPeople_Clicked(System.Object sender, System.EventArgs e)
 		{
 			if (generalPeople.IsVisible)
 			{
+				//Запоминаем высоту блока перед тем как его скрыть
+				heightGeneralPeople = generalFrame.HeightRequest;
 				showGeneralPeople.Source = "arrowDown.png";
 				generalFrame.HeightRequest = 70;
 				generalPeople.IsVisible = false;
@@ -101,7 +110,8 @@ namespace RTMobile.issues.viewIssue
 			else
 			{
 				showGeneralPeople.Source = "arrowUp.png";
-				generalFrame.HeightRequest = 210;
+				//Указываем высоту блока равной запомненной ранее
+				generalFrame.HeightRequest = heightGeneralPeople;
 				generalPeople.IsVisible = true;
 			}
 		}

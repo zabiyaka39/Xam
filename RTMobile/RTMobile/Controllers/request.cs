@@ -21,12 +21,18 @@ using System.Collections.Specialized;
 using RestSharp;
 using Newtonsoft.Json.Linq;
 using System.Linq;
+using Plugin.Geolocator;
+using Plugin.Geolocator.Abstractions;
+using static RTMobile.MainPage;
+using RTMobile.Models;
 
 namespace RTMobile
 {
 	class Request
 	{
 		private HttpWebRequest httpWebRequest = null;
+
+
 		/// <summary>
 		/// Пустой конструктор для авторизации
 		/// </summary>
@@ -83,8 +89,31 @@ namespace RTMobile
 				this.json = JsonConvert.SerializeObject(authorization);
 
 				RootObject rootObject = this.GetResponses<RootObject>();
-				if (rootObject !=null && rootObject.session != null && rootObject.session.name != null)
+				if (rootObject != null && rootObject.session != null && rootObject.session.name != null)
 				{
+					try
+					{
+						JSONRequest jsonRequest = new JSONRequest()
+						{
+							urlRequest = $"/rest/api/2/user?username={CrossSettings.Current.GetValueOrDefault("login", string.Empty)}&expand=groups,applicationRoles",
+							methodRequest = "GET"
+						};
+						Request request = new Request(jsonRequest);
+
+						MeUser.User = request.GetResponses<User>();
+						Event eventResp = new Event()
+						{
+							EventName = "Авториазция"
+						};
+						//Отправляем геолокацию при успешной авторизации
+						Geolocation(eventResp);
+					}
+					catch (Exception ex)
+					{
+						Crashes.TrackError(ex);
+						Console.WriteLine(ex.ToString());
+					}
+
 					return true;
 				}
 				return false;
@@ -163,12 +192,84 @@ namespace RTMobile
 			}
 		}
 
+		private async void Geolocation(Event eventResp)
+		{
+			try
+			{
+				if (eventResp == null)
+				{
+					eventResp = new Event()
+					{
+						EventName = "Отсутствует",
+						NumberIssue = ""
+					};
+				}
+				IGeolocator locator = CrossGeolocator.Current;
+				locator.DesiredAccuracy = 50;
+				TimeSpan timeSpan = new TimeSpan(10000);
+				Position position = await locator.GetPositionAsync(timeSpan);
+				Models.Location location = new Models.Location()
+				{
+					Latitude = position.Latitude,
+					Longitude = position.Longitude
+				};
+
+				RequestEngineer requestEngineer = new RequestEngineer()
+				{
+					User = MeUser.User,
+					Location = location,
+					Event = eventResp
+				};
+				try
+				{
+					//Адрес сервера куда будет отправляться геолокация
+					//string geoServerAdress = "172.18.43.89:52613/api/engineer";
+					string geoServerAdress = "http://localhost:52613/api/engineer";
+
+					HttpWebRequest httpWebRequestGeo = (HttpWebRequest)WebRequest.Create(geoServerAdress);
+
+					httpWebRequestGeo.Method = "POST";
+					httpWebRequestGeo.Headers.Add(HttpRequestHeader.Authorization, "Basic " +
+																					Convert.ToBase64String(Encoding.Default.GetBytes(CrossSettings.Current.GetValueOrDefault("login", string.Empty) +
+																					":" +
+																					CrossSettings.Current.GetValueOrDefault("password", string.Empty))));
+					httpWebRequestGeo.KeepAlive = true;
+					httpWebRequestGeo.ContentType = "application/json";
+					string jsonRequest = JsonConvert.SerializeObject(requestEngineer,
+															Newtonsoft.Json.Formatting.None,
+															new JsonSerializerSettings
+															{
+																NullValueHandling = NullValueHandling.Ignore
+															});
+					using (StreamWriter streamWriter = new StreamWriter(httpWebRequestGeo.GetRequestStream()))
+					{
+						streamWriter.Write(jsonRequest);
+					}
+					HttpWebResponse httpWebResponse = (HttpWebResponse)httpWebRequestGeo.GetResponse();
+				}
+				catch (Exception ex)
+				{
+					Console.WriteLine(ex.Message);
+					Crashes.TrackError(ex);
+				}
+			}
+			catch (Exception ex)
+			{
+				Console.WriteLine(ex.Message);
+			}
+		}
+
 		/// <summary>
 		/// Метод для получения данных 
 		/// </summary>
 		/// <returns></returns>
-		public T GetResponses<T>(string json = "")
+		public T GetResponses<T>(string json = "", Event eventResp = null)
 		{
+			//Проверяем прошли ли мы авторизацию, если прошли, то отправляем полноценный запрос на сервер для регистрации геолокации
+			if (MeUser.User != null)
+			{
+				Geolocation(eventResp);
+			}
 			T rootObject = default(T);
 			try
 			{
@@ -290,7 +391,6 @@ namespace RTMobile
 		/// <returns></returns>
 		public List<Fields> GetFieldTransitions()
 		{
-
 			List<Fields> Fields = new List<Fields>();
 			try
 			{
@@ -321,7 +421,7 @@ namespace RTMobile
 							foreach (dynamic checkFieldsDeserializate in fieldsDeserializate)
 							{
 								Fields.Add(JsonConvert.DeserializeObject<Fields>(checkFieldsDeserializate.ToString()));
-								Fields[Fields.Count-1].NameField = fieldsDeserializate.Name.ToString();
+								Fields[Fields.Count - 1].NameField = fieldsDeserializate.Name.ToString();
 							}
 						}
 

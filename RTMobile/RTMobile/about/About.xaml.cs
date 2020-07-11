@@ -9,6 +9,9 @@ using Xamarin.Forms;
 using System.Net.Mail;
 using Plugin.Settings;
 using System.Net;
+using Plugin.Geolocator;
+using ZXing.OneD;
+using Plugin.Geolocator.Abstractions;
 
 namespace RTMobile
 {
@@ -89,39 +92,23 @@ namespace RTMobile
         private static int countClick = 0;
         private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
 		{
-            if (countClick < 2 || countClick > 7)
+            if (countClick > 2 && countClick < 5)
             {
-                frameLogo.CornerRadius = 0;
-                logoCompany.HeightRequest = 60;
-                logoCompany.WidthRequest = 50;
-                VersionTracking.Track();
-                versionApp.Text = "Версия: " + VersionTracking.CurrentVersion;
-                logoCompany.Source = "rosohranaLogo.png";
+                autors.IsVisible = true;
                 ++countClick;
             }
             else
             {
-                if (countClick < 5)
-                {
-                    versionApp.Text = "Секисов Владислав Александрович";
-                    logoCompany.Source = "sekisov.jpg";
-                }
-                else
-                {
-                    versionApp.Text = "Коточигов Алексей Викторович";
-                    logoCompany.Source = "kotochigov.jpg";
-                    if (countClick >= 7)
-                    {
-                        countClick = 0;
-                    }
-                }
                 ++countClick;
-                frameLogo.CornerRadius = 50;
-                logoCompany.HeightRequest = 150;
-                logoCompany.WidthRequest = 150;                
-                
-            }
+                autors.IsVisible = false;
+            }           
 		}
+
+		private async void Button_Clicked(object sender, EventArgs e)
+		{
+            
+
+        }
 	}   
     
 }

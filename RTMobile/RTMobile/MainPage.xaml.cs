@@ -12,16 +12,24 @@ using Rg.Plugins.Popup.Services;
 using RTMobile.jiraData;
 using Plugin.Fingerprint;
 using Plugin.Fingerprint.Abstractions;
+using Plugin.Geolocator;
+using Plugin.Geolocator.Abstractions;
 
 namespace RTMobile
 {
+	
 	[DesignTimeVisible(false)]
 	public partial class MainPage : ContentPage
 	{
-
+		static public class MeUser
+		{
+			static public User User { get; set; }
+		}
 		public MainPage()
 		{
 			InitializeComponent();
+
+			IGeolocator locator = CrossGeolocator.Current;
 
 			login.Text = CrossSettings.Current.GetValueOrDefault("login", "");
 			
@@ -51,18 +59,6 @@ namespace RTMobile
 				errorMessage.FontAttributes = FontAttributes.Bold;
 				errorMessage.Margin = new Thickness(0, -15, 0, 15);
 			}
-			//ToolbarItem toolbar = new ToolbarItem
-			//{
-			//    Text = "Настройки",
-			//    Order = ToolbarItemOrder.Primary,
-			//    Priority = 0,
-			//    Icon = new FileImageSource
-			//    {
-			//        File = "settings.png"
-			//    }
-
-			//};
-			//ToolbarItems.Add(toolbar);
 		}
 
 
@@ -84,7 +80,6 @@ namespace RTMobile
 				{
 					if (request.authorization(login.Text.Trim(' '), password.Text))
 					{
-
 						errorMessage.IsVisible = false;
 						errorMessage1.IsVisible = false;
 						//Если авторизация прошла успешно, то записываем значения в память приложения для дальнейшего быстрого входа в систему

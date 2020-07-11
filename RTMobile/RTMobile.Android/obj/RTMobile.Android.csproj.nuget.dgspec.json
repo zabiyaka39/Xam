@@ -273,6 +273,10 @@
               "target": "Package",
               "version": "[4.3.0, )"
             },
+            "Xam.Plugin.Geolocator": {
+              "target": "Package",
+              "version": "[4.5.0.6, )"
+            },
             "Xam.Plugin.Media": {
               "target": "Package",
               "version": "[5.0.1, )"

@@ -87,8 +87,6 @@ F:\project\Mobile\rtmobile\RTMobile\RTMobile\bin\Debug\netstandard2.0\REM.pdb
 F:\project\Mobile\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\REM.dll
 F:\project\Mobile\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\REM.pdb
 F:\project\Mobile\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\RTMobile.csprojAssemblyReference.cache
-F:\project\Mobile\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\RTMobile.csproj.CoreCompileInputs.cache
-F:\project\Mobile\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\XamlC.stamp
 C:\RT\rtmobile\RTMobile\RTMobile\bin\Debug\netstandard2.0\REM.deps.json
 C:\RT\rtmobile\RTMobile\RTMobile\bin\Debug\netstandard2.0\REM.dll
 C:\RT\rtmobile\RTMobile\RTMobile\bin\Debug\netstandard2.0\REM.pdb
@@ -97,3 +95,5 @@ C:\RT\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\REM.pdb
 C:\RT\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\RTMobile.csprojAssemblyReference.cache
 C:\RT\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\profile\Notification.xaml.g.cs
 F:\project\Mobile\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\issues\event\Transition.xaml.g.cs
+F:\project\Mobile\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\RTMobile.csproj.CoreCompileInputs.cache
+F:\project\Mobile\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\XamlC.stamp

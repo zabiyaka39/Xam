@@ -15,6 +15,7 @@ Microsoft.AppCenter
 Plugin.CurrentActivity
 Plugin.FilePicker
 Plugin.Fingerprint
+Plugin.Geolocator
 Plugin.Media
 Plugin.Permissions
 Plugin.Settings

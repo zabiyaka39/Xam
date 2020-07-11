@@ -22,7 +22,7 @@
                       BackgroundColor="#4A4C50">
             <StackLayout x:Name="generalPeopleFrame" VerticalOptions="FillAndExpand">
                 <Frame Grid.Row="0" Grid.Column="0" HasShadow="True" CornerRadius="5"
-                   x:Name="generalFrame" BackgroundColor="#FFFFFF" HeightRequest="210" Margin="10,20,10,10" Padding="10,0,10,0">
+                   x:Name="generalFrame" BackgroundColor="#FFFFFF" HeightRequest="500" Margin="10,20,10,10" Padding="10,0,10,0">
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="25"/>
@@ -95,7 +95,7 @@
                 </Frame>
 
                 <Frame Grid.Row="0" Grid.Column="0" HasShadow="True" CornerRadius="5"
-                   x:Name="watcherFrame" BackgroundColor="#FFFFFF" HeightRequest="250" Margin="10,0,10,20" Padding="10,0,10,0">
+                   x:Name="watcherFrame" BackgroundColor="#FFFFFF" VerticalOptions="FillAndExpand" Margin="10,0,10,20" Padding="10,0,10,0">
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="25"/>
