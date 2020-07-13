@@ -106,7 +106,7 @@ namespace RTMobile
 							EventName = "Авториазция"
 						};
 						//Отправляем геолокацию при успешной авторизации
-						Geolocation(eventResp);
+						//Geolocation(eventResp);
 					}
 					catch (Exception ex)
 					{
@@ -266,10 +266,10 @@ namespace RTMobile
 		public T GetResponses<T>(string json = "", Event eventResp = null)
 		{
 			//Проверяем прошли ли мы авторизацию, если прошли, то отправляем полноценный запрос на сервер для регистрации геолокации
-			if (MeUser.User != null)
-			{
-				Geolocation(eventResp);
-			}
+			//if (MeUser.User != null)
+			//{
+			//	Geolocation(eventResp);
+			//}
 			T rootObject = default(T);
 			try
 			{

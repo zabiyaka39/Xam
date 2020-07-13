@@ -91,7 +91,6 @@ namespace RTMobile
 		public string name { get; set; } = "Отсутствует";
 		public string emailAddress { get; set; } = "Отсутствует";
 		[JsonProperty("avatarUrls")]
-		[JsonIgnore]
 		public Urls AvatarUrls { get; set; }
 		public string displayName { get; set; } = "Отсутствует";
 		public bool active { get; set; }
@@ -100,7 +99,6 @@ namespace RTMobile
 		public Groups groups { get; set; }
 		public ApplicationRoles applicationRoles { get; set; }
 		public string expand { get; set; }
-		[JsonIgnore]
 		/// <summary>
 		/// Максимальный размер изображения (его адрес)
 		/// </summary>
