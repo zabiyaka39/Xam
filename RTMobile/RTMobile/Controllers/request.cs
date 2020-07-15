@@ -273,7 +273,7 @@ namespace RTMobile
 			T rootObject = default(T);
 			try
 			{
-				if (httpWebRequest.Method == "POST")
+				if (httpWebRequest.Method == "POST" || httpWebRequest.Method == "PUT")
 				{
 					if (json != null && json.Length > 0)
 					{
@@ -414,6 +414,7 @@ namespace RTMobile
 				using (StreamReader streamReader = new StreamReader(httpResponse.GetResponseStream()))
 				{
 					dynamic jsonConvert = JObject.Parse(streamReader.ReadToEnd());
+					string str = jsonConvert.ToString();
 					if (jsonConvert.transitions != null && jsonConvert.transitions[0] != null && jsonConvert.transitions[0].fields != null)
 					{
 						foreach (dynamic fieldsDeserializate in jsonConvert.transitions[0].fields)

@@ -1256,7 +1256,7 @@ namespace RTMobile
 	{
 		public List<string> errorMessages { get; set; }
 		public Errors errors { get; set; }
-		public List<User> users { get; set; }
+		public ObservableCollection<User> users { get; set; }
 		public List<Project> projects { get; set; }
 		public List<Section> sections { get; set; }
 		public List<Issuelink> issueLinkTypes { get; set; }

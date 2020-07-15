@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="RTMobile.issues.viewIssue.imageView" 
+             Title="Изображения">
+    <ContentPage.Content> 
+        <CarouselView x:Name="page" >
+            <CarouselView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" BackgroundColor="#4A4C50" >
+                        <!--<Label Text="{Binding content}"/>-->
+                        <Image HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Source="{Binding contentImage}" Aspect="Fill" />
+                    </StackLayout>
+                </DataTemplate>
+            </CarouselView.ItemTemplate>
+        </CarouselView>
+    </ContentPage.Content>
+    <!--<ContentPage>
+        <StackLayout>
+            <Label Text="Red" />
+            <BoxView Color="Red" VerticalOptions="FillAndExpand" />
+        </StackLayout>
+    </ContentPage>
+    --><!--<ContentPage>
+        <StackLayout>
+            <Label Text="Green" />
+            <BoxView Color="Green" VerticalOptions="FillAndExpand" />
+        </StackLayout>
+    </ContentPage>
+    <ContentPage>
+        <StackLayout>
+            <Label Text="Blue" />
+            <BoxView Color="Blue" VerticalOptions="FillAndExpand" />
+        </StackLayout>
+    </ContentPage>-->
+    <!--<ContentPage>
+        <ContentPage.Content>
+            <StackLayout  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="Red">
+                    <Image Source="{Binding Path=attachmentsImage.contentImage}"/>
+                    <Label Text="SS"/>
+                </StackLayout>
+            </StackLayout>
+        </ContentPage.Content>
+    </ContentPage>-->
+</ContentPage>

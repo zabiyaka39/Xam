@@ -9,7 +9,7 @@ using RTMobile.insight;
 using RTMobile.profile;
 using Xamarin.Forms;
 using Rg.Plugins.Popup.Services;
-
+using RTMobile.issues.eventIssue;
 
 namespace RTMobile.issues.viewIssue
 {
@@ -129,7 +129,21 @@ namespace RTMobile.issues.viewIssue
 		}
 		private async void TapGestureRecognizer_Tapped(object sender, EventArgs e)
 		{
-			await Navigation.PushAsync(new Profile(issue.fields.creator.name)).ConfigureAwait(true);
+
+			string result = await DisplayActionSheet("Выберете действие", "Отмена", null, "Профиль пользователя", "Изменить автора");
+			switch (result)
+			{
+				case "Профиль пользователя":
+					{
+						await Navigation.PushAsync(new Profile(issue.fields.creator.name)).ConfigureAwait(true);
+						break;
+					}
+				case "Изменить автора":
+					{
+						await PopupNavigation.Instance.PushAsync(new EditPeople(issue.key, true));
+						break;
+					}
+			}			
 		}
 		private async void TapGestureRecognizer_Tapped_1(object sender, EventArgs e)
 		{

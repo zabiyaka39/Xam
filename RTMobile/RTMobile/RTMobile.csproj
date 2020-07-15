@@ -29,6 +29,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="issues\eventIssue\EditPeople.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="CarouselView" Version="7.0.3.1" />
     <PackageReference Include="CarouselView.FormsPlugin" Version="5.2.0" />
     <PackageReference Include="Microsoft.AppCenter.Analytics" Version="3.2.2" />
@@ -92,13 +96,16 @@
     <EmbeddedResource Update="insight\TabPageObjectInsight.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="issues\event\imageView.xaml">
+    <EmbeddedResource Update="issues\eventIssue\EditPeople.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="issues\event\NewWorklog.xaml">
+    <EmbeddedResource Update="issues\eventIssue\imageView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="issues\event\AddWatchersModal.xaml">
+    <EmbeddedResource Update="issues\eventIssue\NewWorklog.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="issues\eventIssue\AddWatchersModal.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="StatusBar.xaml">
@@ -120,10 +127,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="issues\event\NewWorklog.xaml.cs">
+    <Compile Update="issues\eventIssue\NewWorklog.xaml.cs">
       <DependentUpon>NewWorklog.xaml</DependentUpon>
     </Compile>
-    <Compile Update="issues\event\AddWatchersModal.xaml.cs">
+    <Compile Update="issues\eventIssue\AddWatchersModal.xaml.cs">
       <DependentUpon>AddWatchersModal.xaml</DependentUpon>
     </Compile>
     <Compile Update="StatusBar.xaml.cs">
