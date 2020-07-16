@@ -9,9 +9,12 @@ namespace RTMobile.issues.viewIssue
 	public partial class TabPageIssue : TabbedPage
 	{
 		private List<RTMobile.Transition> transition { get; set; }//Переходы по заявке
+		private Issue issue = new Issue();
 		public TabPageIssue(Issue issues)
 		{
 			InitializeComponent();
+
+			issue = issues;
 
 			if (issues != null)
 			{
@@ -35,6 +38,7 @@ namespace RTMobile.issues.viewIssue
 
 			try
 			{
+				
 				if (issues != null)
 				{
 					JSONRequest jsonRequest = new JSONRequest
@@ -59,6 +63,52 @@ namespace RTMobile.issues.viewIssue
 						};
 						ToolbarItems.Add(tb);
 					}
+					//Добавляем поле с комментарием
+					ToolbarItem tbComment = new ToolbarItem
+					{
+						Text = "Комментарии",
+						Order = ToolbarItemOrder.Primary,
+						IconImageSource = "commentToolBar.png",
+						Priority = 0
+					};
+					tbComment.Clicked += ToolbarItem_Clicked_2;
+					ToolbarItems.Add(tbComment);
+
+					ToolbarItem tbSeporator = new ToolbarItem
+					{
+						Text = "   _________________   ",
+						Order = ToolbarItemOrder.Secondary,
+						Priority = 997
+					};
+					ToolbarItems.Add(tbSeporator);
+
+					ToolbarItem tbCommentSec = new ToolbarItem
+					{
+						Text = "Комментарии",
+						Order = ToolbarItemOrder.Secondary,
+						Priority = 998
+					};
+					tbCommentSec.Clicked += ToolbarItem_Clicked_2;
+					ToolbarItems.Add(tbCommentSec);
+
+					ToolbarItem tbCommentWorklog = new ToolbarItem
+					{
+						Text = "Рабочий журнал",
+						Order = ToolbarItemOrder.Secondary,
+						Priority = 999
+					};
+					tbCommentWorklog.Clicked += ToolbarItem_Clicked_1;
+					ToolbarItems.Add(tbCommentWorklog);
+
+
+					ToolbarItem tbCommentHistory = new ToolbarItem
+					{
+						Text = "История",
+						Order = ToolbarItemOrder.Secondary,
+						Priority = 1000
+					};
+					tbCommentHistory.Clicked += ToolbarItem_Clicked;
+					ToolbarItems.Add(tbCommentHistory);
 				}
 			}
 			catch (Exception ex)
@@ -66,6 +116,19 @@ namespace RTMobile.issues.viewIssue
 				Console.WriteLine(ex.Message);
 				Crashes.TrackError(ex);
 			}
+		}
+		void ToolbarItem_Clicked(System.Object sender, System.EventArgs e)
+		{
+			Navigation.PushAsync(new History(issue.key, issue.fields.summary));
+		}
+		void ToolbarItem_Clicked_1(System.Object sender, System.EventArgs e)
+		{
+			Navigation.PushAsync(new WorkJournal(issue.key, issue.fields.summary));
+		}
+
+		void ToolbarItem_Clicked_2(System.Object sender, System.EventArgs e)
+		{
+			Navigation.PushAsync(new Comment(issue.key, issue.fields.summary));
 		}
 
 	}

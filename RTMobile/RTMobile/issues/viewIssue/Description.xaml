@@ -4,23 +4,6 @@
              x:Class="RTMobile.issues.viewIssue.Description"
              Title="ОПИСАНИЕ">
 
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Комментарии" Icon="commentToolBar.png" Clicked="ToolbarItem_Clicked_2"
-                     Order="Primary" Priority="0"/>
-        
-        <ToolbarItem Text="   _________________   " 
-                     Order="Secondary" Priority="995"/>
-        
-        <ToolbarItem Text="Комментарии" Icon="comment.png" Clicked="ToolbarItem_Clicked_2"
-                     Order="Secondary" Priority="996"/>
-        
-        <ToolbarItem Text="История" Clicked="ToolbarItem_Clicked"
-                     Order="Secondary" Priority="997"/>
-        
-        <ToolbarItem Text="Рабочий журнал" 
-                     Order="Secondary" Priority="998" Clicked="ToolbarItem_Clicked_4"/>
-    </ContentPage.ToolbarItems>
-
     <ContentPage.Content >
         <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
                       BackgroundColor="#4A4C50">

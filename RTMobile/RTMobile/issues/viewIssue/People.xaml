@@ -3,20 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="RTMobile.issues.viewIssue.People"
              Title="ЛЮДИ">
-    <ContentPage.ToolbarItems>
-
-        <ToolbarItem Text="Комментарии" Icon="commentToolBar.png" Clicked="ToolbarItem_Clicked_2"
-                     Order="Primary" Priority="0"/>
-        <ToolbarItem Text="   _________________   " 
-                     Order="Secondary" Priority="997"/>
-        <ToolbarItem Text="Комментарии" Icon="comment.png"  Clicked="ToolbarItem_Clicked_2"
-                     Order="Secondary" Priority="998"/>
-        <ToolbarItem Text="Рабочий журнал" Clicked="ToolbarItem_Clicked_1"
-                     Order="Secondary" Priority="999"/>
-        <ToolbarItem Text="История" Clicked="ToolbarItem_Clicked"
-                     Order="Secondary" Priority="1000"/>
-
-    </ContentPage.ToolbarItems>
+    
     <ContentPage.Content >
         <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
                       BackgroundColor="#4A4C50">

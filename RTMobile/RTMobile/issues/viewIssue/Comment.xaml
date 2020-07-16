@@ -5,14 +5,12 @@
              Title="КОММЕНТАРИИ">
    
     <ContentPage.ToolbarItems>
-
         <ToolbarItem Text="   _________________   " 
                      Order="Secondary" Priority="997"/>
         <ToolbarItem Text="Рабочий журнал" Clicked="ToolbarItem_Clicked_1"
                      Order="Secondary" Priority="998"/>
         <ToolbarItem Text="История" Clicked="ToolbarItem_Clicked"
                      Order="Secondary" Priority="1000"/>
-
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
