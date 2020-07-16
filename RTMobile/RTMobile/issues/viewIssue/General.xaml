@@ -7,167 +7,180 @@
     <ContentPage.Content>
         <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
                       BackgroundColor="#4A4C50">
-            <ScrollView VerticalOptions="FillAndExpand">
-                <StackLayout>
-            <Frame Grid.Row="0" Grid.Column="0" HasShadow="True" CornerRadius="5"
-                   x:Name="detailFrame" BackgroundColor="#FFFFFF" HeightRequest="150" Margin="10,20,10,10" Padding="10,0,10,0">
+            <ScrollView VerticalOptions="Start">
                 <Grid>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="25"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="25"/>
-                    </Grid.RowDefinitions>
-                    <Grid Grid.Row="0" Grid.Column="0" Padding="0" Margin="0">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="15"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="21"/>
-                            <RowDefinition Height="1"/>
-                        </Grid.RowDefinitions>
-                        <Image Source="info.png" Grid.Column="0" Grid.Row="0" VerticalOptions="Center" />
-                        <Label Text="Детали задачи" Grid.Column="1" Grid.Row="0" VerticalOptions="Center" />
-
-                        <BoxView BackgroundColor="#4A4C50" HeightRequest="1" Margin="-20,0,-20,0"
-                                 HorizontalOptions="FillAndExpand" Grid.Column="0"
-                                 Grid.Row="1" Grid.ColumnSpan="2" VerticalOptions="Start"/>
-                    </Grid>
-                    <ScrollView  x:Name="detailIssue" Grid.Row="1" Grid.Column="0" HorizontalOptions="FillAndExpand"
-                                    VerticalOptions="FillAndExpand" Margin="0,0,10,0">
-                        <Grid Padding="0" Margin="0">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="Auto"/>
-                            </Grid.RowDefinitions>
-                            <Label Text="Тема:" Grid.Column="0" Grid.Row="0" VerticalOptions="Start" Padding="0"/>
-                            <Label x:Name="summaryIssue" Grid.Column="1" Grid.Row="0"
-                                   Text="{Binding Path=issue.fields.summary}" HorizontalTextAlignment="End"
-                                   HorizontalOptions="EndAndExpand" VerticalOptions="Start" Padding="0"/>
-
-                            <Label x:Name="typeIssueLbl" Text="Тип задачи:" Grid.Column="0" Grid.Row="1" VerticalOptions="Start" Padding="0"/>
-                            <Label x:Name="typeIssue" Grid.Column="1" Grid.Row="1"
-                                   Text="{Binding Path=issue.fields.issuetype.name}" HorizontalTextAlignment="End"
-                                   HorizontalOptions="EndAndExpand" VerticalOptions="Start"/>
-
-                            <Label x:Name="statusIssueLbl" Text="Статус задачи:" Grid.Column="0" Grid.Row="2" VerticalOptions="Start"/>
-                            <Label x:Name="statusIssue" Grid.Column="1" Grid.Row="2"
-                                   Text="{Binding Path=issue.fields.status.name}" HorizontalTextAlignment="End"
-                                   HorizontalOptions="EndAndExpand" VerticalOptions="Start"/>
-
-                            <Label x:Name="projectIssueLbl" Text="Проект:" Grid.Column="0" Grid.Row="3" VerticalOptions="Start"/>
-                            <Label x:Name="projectIssue" Grid.Column="1" Grid.Row="3"
-                                   Text="{Binding Path=issue.fields.project.name} " HorizontalTextAlignment="End"
-                                   HorizontalOptions="EndAndExpand" VerticalOptions="Start"/>
-
-                            <Label x:Name="resolutionLlb" Text="Решение:" Grid.Column="0" Grid.Row="4" VerticalOptions="Start"/>
-                            <Label x:Name="resolution" Grid.Column="1" Grid.Row="4"
-                                   Text="{Binding Path=issue.fields.resolution.name} " HorizontalTextAlignment="End"
-                                   HorizontalOptions="EndAndExpand" VerticalOptions="Start"/>
-                        </Grid>
-                    </ScrollView>
-                    <ImageButton x:Name="showDetailIssue" Source="arrowUp.png"  Grid.Column="0" BackgroundColor="Transparent"
-                                 Clicked="showDetailIssue_Clicked" Grid.Row="2" HorizontalOptions="Center" VerticalOptions="End" Margin="0,0,0,10"/>
-                </Grid>
-            </Frame>
-            <Frame x:Name="dateFrame" Grid.Row="1" Grid.Column="0" HasShadow="True" CornerRadius="5"
-                       BackgroundColor="#FFFFFF" HeightRequest="150" Margin="10,0,10,10" Padding="10,0,10,0">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="25"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="25"/>
-                    </Grid.RowDefinitions>
-                    <Grid Grid.Row="0" Grid.Column="0" Padding="0" Margin="0">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="15"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="21"/>
-                            <RowDefinition Height="1"/>
-                        </Grid.RowDefinitions>
-                        <Image Source="time.png" Grid.Column="0" Grid.Row="0" VerticalOptions="Center" />
-                        <Label Text="Даты" Grid.Column="1" Grid.Row="0" VerticalOptions="Center" />
-
-                        <BoxView BackgroundColor="#4A4C50" HeightRequest="1" Margin="-20,0,-20,0"
-                                 HorizontalOptions="FillAndExpand" Grid.Column="0"
-                                 Grid.Row="1" Grid.ColumnSpan="2" VerticalOptions="Start"/>
-                    </Grid>
-                    <ListView x:Name="dateIssue"  Grid.Row="1" Grid.Column="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
-                     HasUnevenRows="True" SeparatorVisibility="None" ItemSelected="propertyIssue_ItemSelected" >
-                        <ListView.ItemTemplate>
-                            <DataTemplate>
-                                <ViewCell>
-                                    <ViewCell.View>
-                                        <Grid>
-                                            <Label Text="{Binding name}" Grid.Column="0"/>
-                                            <Label Text="{Binding value}" Grid.Column="1" HorizontalTextAlignment="End"/>
-                                        </Grid>
-                                    </ViewCell.View>
-                                </ViewCell>
-                            </DataTemplate>
-                        </ListView.ItemTemplate>
-                    </ListView>
-                    <ImageButton x:Name="showDate" Source="arrowUp.png"  Grid.Column="0" BackgroundColor="Transparent"
-                                 Clicked="showDate_Clicked" Grid.Row="2" HorizontalOptions="Center" VerticalOptions="End" Margin="0,0,0,10"/>
-                </Grid>
-            </Frame>
-            <Frame x:Name="propertyFrame" Grid.Row="2" Grid.Column="0" HasShadow="True" CornerRadius="5"
-                   BackgroundColor="#FFFFFF" Margin="10,0,10,10" Padding="10,0,10,0" HeightRequest="150">
-                <Grid Padding="0" Margin="0" x:Name="property" VerticalOptions="FillAndExpand">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="25"/>
                         <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
-                    <Grid Grid.Row="0" Grid.Column="0" Padding="0" Margin="0">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="15"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="21"/>
-                            <RowDefinition Height="1"/>
-                        </Grid.RowDefinitions>
-                        <Image Source="property.png" Grid.Column="0" Grid.Row="0" VerticalOptions="Center"/>
-                        <Label Text="Подробности задачи" Grid.Column="1" Grid.Row="0" VerticalOptions="Center"/>
+                    <Frame Grid.Row="0" Grid.Column="0" HasShadow="True" CornerRadius="5"
+                               x:Name="detailFrame" BackgroundColor="#FFFFFF"  Margin="10,20,10,10" Padding="10,0,10,0" VerticalOptions="Start">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="25"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="25"/>
+                            </Grid.RowDefinitions>
+                            <Grid Grid.Row="0" Grid.Column="0" Padding="0" Margin="0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="15"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="21"/>
+                                    <RowDefinition Height="1"/>
+                                </Grid.RowDefinitions>
+                                <Image Source="info.png" Grid.Column="0" Grid.Row="0" VerticalOptions="Center" />
+                                <Label Text="Детали задачи" Grid.Column="1" Grid.Row="0" VerticalOptions="Center" />
 
-                        <BoxView BackgroundColor="#4A4C50" HeightRequest="1" Margin="-20,0,-20,0"
-                                 HorizontalOptions="FillAndExpand" Grid.Column="0"
-                                 Grid.Row="1" Grid.ColumnSpan="2" VerticalOptions="Start"/>
-                    </Grid>
-                    <ListView x:Name="propertyIssue" Grid.Row="1" Grid.Column="0" HorizontalOptions="FillAndExpand" SeparatorVisibility="None" 
-                                  VerticalOptions="StartAndExpand" ItemsSource="{Binding fieldIssue}" SelectionMode="None" ItemSelected="propertyIssue_ItemSelected">
-                        <ListView.ItemTemplate >
-                            <DataTemplate>
-                                <ViewCell>
-                                    <ViewCell.View>
-                                        <Grid Margin="0" Padding="0">
-                                            <Label Grid.Column="0" Text="{Binding Path = DisplayNameField}"/>
-                                            <Label Grid.Column="1"  HorizontalOptions="EndAndExpand" Margin="0,0,10,0">
-                                                <Label.FormattedText>
-                                                    <FormattedString>
-                                                        <Span Text="{Binding Path = value }"></Span>
-                                                        <Span Text=" "></Span>
-                                                        <Span Text="{Binding Path = Child.value }"></Span>
-                                                    </FormattedString>
-                                                </Label.FormattedText>
-                                            </Label>
-                                        </Grid>
-                                    </ViewCell.View>
-                                </ViewCell>
-                            </DataTemplate>
-                        </ListView.ItemTemplate>
-                    </ListView>
-                    <ImageButton x:Name="showPropertyIssue" Source="arrowUp.png"  Grid.Column="0" BackgroundColor="Transparent"
-                                     Grid.Row="2" HorizontalOptions="Center" VerticalOptions="End" Margin="0,0,0,10" Clicked="showPropertyIssue_Clicked"/>
+                                <BoxView BackgroundColor="#4A4C50" HeightRequest="1" Margin="-20,0,-20,0"
+                                             HorizontalOptions="FillAndExpand" Grid.Column="0"
+                                             Grid.Row="1" Grid.ColumnSpan="2" VerticalOptions="Start"/>
+                            </Grid>
+                            <ScrollView  x:Name="detailIssue" Grid.Row="1" Grid.Column="0" HorizontalOptions="FillAndExpand"
+                                                VerticalOptions="FillAndExpand" Margin="0,0,10,0">
+                                <Grid Padding="0" Margin="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                    <Label Text="Тема:" Grid.Column="0" Grid.Row="0" VerticalOptions="Start" Padding="0"/>
+                                    <Label x:Name="summaryIssue" Grid.Column="1" Grid.Row="0"
+                                               Text="{Binding Path=issue.fields.summary}" HorizontalTextAlignment="End"
+                                               HorizontalOptions="EndAndExpand" VerticalOptions="Start" Padding="0"/>
+
+                                    <Label x:Name="typeIssueLbl" Text="Тип задачи:" Grid.Column="0" Grid.Row="1" VerticalOptions="Start" Padding="0"/>
+                                    <Label x:Name="typeIssue" Grid.Column="1" Grid.Row="1"
+                                               Text="{Binding Path=issue.fields.issuetype.name}" HorizontalTextAlignment="End"
+                                               HorizontalOptions="EndAndExpand" VerticalOptions="Start"/>
+
+                                    <Label x:Name="statusIssueLbl" Text="Статус задачи:" Grid.Column="0" Grid.Row="2" VerticalOptions="Start"/>
+                                    <Label x:Name="statusIssue" Grid.Column="1" Grid.Row="2"
+                                               Text="{Binding Path=issue.fields.status.name}" HorizontalTextAlignment="End"
+                                               HorizontalOptions="EndAndExpand" VerticalOptions="Start"/>
+
+                                    <Label x:Name="projectIssueLbl" Text="Проект:" Grid.Column="0" Grid.Row="3" VerticalOptions="Start"/>
+                                    <Label x:Name="projectIssue" Grid.Column="1" Grid.Row="3"
+                                               Text="{Binding Path=issue.fields.project.name} " HorizontalTextAlignment="End"
+                                               HorizontalOptions="EndAndExpand" VerticalOptions="Start"/>
+
+                                    <Label x:Name="resolutionLlb" Text="Решение:" Grid.Column="0" Grid.Row="4" VerticalOptions="Start"/>
+                                    <Label x:Name="resolution" Grid.Column="1" Grid.Row="4"
+                                               Text="{Binding Path=issue.fields.resolution.name} " HorizontalTextAlignment="End"
+                                               HorizontalOptions="EndAndExpand" VerticalOptions="Start"/>
+                                </Grid>
+                            </ScrollView>
+                            <ImageButton x:Name="showDetailIssue" Source="arrowUp.png"  Grid.Column="0" BackgroundColor="Transparent"
+                                             Clicked="showDetailIssue_Clicked" Grid.Row="2" HorizontalOptions="Center" VerticalOptions="End" Margin="0,0,0,10"/>
+                        </Grid>
+                    </Frame>
+                    <Frame x:Name="dateFrame" Grid.Row="1" VerticalOptions="Start" Grid.Column="0" HasShadow="True" CornerRadius="5"
+                                   BackgroundColor="#FFFFFF"  Margin="10,0,10,10" Padding="10,0,10,0">
+
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="25"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="25"/>
+                            </Grid.RowDefinitions>
+                            <Grid Grid.Row="0" Grid.Column="0" Padding="0" Margin="0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="15"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="21"/>
+                                    <RowDefinition Height="1"/>
+                                </Grid.RowDefinitions>
+                                <Image Source="time.png" Grid.Column="0" Grid.Row="0" VerticalOptions="Center" />
+                                <Label Text="Даты" Grid.Column="1" Grid.Row="0" VerticalOptions="Center" />
+
+                                <BoxView BackgroundColor="#4A4C50" HeightRequest="1" Margin="-20,0,-20,0"
+                                             HorizontalOptions="FillAndExpand" Grid.Column="0"
+                                             Grid.Row="1" Grid.ColumnSpan="2" VerticalOptions="Start"/>
+                            </Grid>
+                            <ListView x:Name="dateIssue"  Grid.Row="1" Grid.Column="0"  VerticalOptions="Start" HorizontalOptions="FillAndExpand" 
+                                          HasUnevenRows="True" SeparatorVisibility="None" ItemSelected="propertyIssue_ItemSelected" HeightRequest="100" ItemsSource="{Binding timeIssue}">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ViewCell>
+                                            <ViewCell.View>
+                                                <Grid>
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="Auto"/>
+                                                        <RowDefinition Height="Auto"/>
+                                                    </Grid.RowDefinitions>
+
+                                                    <Label Text="{Binding Path = name}" Grid.Column="0" />
+                                                    <Label Text="{Binding Path = value}" Grid.Column="1" HorizontalTextAlignment="End"/>
+
+                                                </Grid>
+                                            </ViewCell.View>
+                                        </ViewCell>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                            <ImageButton x:Name="showDate" Source="arrowUp.png"  Grid.Column="0" BackgroundColor="Transparent"
+                                             Clicked="showDate_Clicked" Grid.Row="2" HorizontalOptions="Center" VerticalOptions="End" Margin="0,0,0,10"/>
+                        </Grid>
+                    </Frame>
+                    <Frame x:Name="propertyFrame" Grid.Row="2" Grid.Column="0" HasShadow="True" CornerRadius="5"
+                               BackgroundColor="#FFFFFF" Margin="10,0,10,10" Padding="10,0,10,0" HeightRequest="200" >
+                        <Grid Padding="0" Margin="0" x:Name="property" VerticalOptions="FillAndExpand">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="25"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="25"/>
+                            </Grid.RowDefinitions>
+                            <Grid Grid.Row="0" Grid.Column="0" Padding="0" Margin="0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="15"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="21"/>
+                                    <RowDefinition Height="1"/>
+                                </Grid.RowDefinitions>
+                                <Image Source="property.png" Grid.Column="0" Grid.Row="0" VerticalOptions="Center"/>
+                                <Label Text="Подробности задачи" Grid.Column="1" Grid.Row="0" VerticalOptions="Center"/>
+
+                                <BoxView BackgroundColor="#4A4C50" HeightRequest="1" Margin="-20,0,-20,0"
+                                             HorizontalOptions="FillAndExpand" Grid.Column="0"
+                                             Grid.Row="1" Grid.ColumnSpan="2" VerticalOptions="Start"/>
+                            </Grid>
+                            <ListView x:Name="propertyIssue" Grid.Row="1" Grid.Column="0" HorizontalOptions="FillAndExpand" SeparatorVisibility="None"  HasUnevenRows="True"
+                                      VerticalOptions="StartAndExpand" ItemsSource="{Binding fieldIssue}" SelectionMode="None" ItemSelected="propertyIssue_ItemSelected">
+                                <ListView.ItemTemplate >
+                                    <DataTemplate>
+                                        <ViewCell>
+                                            <ViewCell.View>
+                                                <Grid Margin="0" Padding="0">
+                                                    <Label Grid.Column="0" Text="{Binding Path = DisplayNameField}"/>
+                                                    <Label Grid.Column="1"  HorizontalOptions="EndAndExpand" Margin="0,0,10,0">
+                                                        <Label.FormattedText>
+                                                            <FormattedString>
+                                                                <Span Text="{Binding Path = value }"></Span>
+                                                                <Span Text=" "></Span>
+                                                                <Span Text="{Binding Path = Child.value }"></Span>
+                                                            </FormattedString>
+                                                        </Label.FormattedText>
+                                                    </Label>
+                                                </Grid>
+                                            </ViewCell.View>
+                                        </ViewCell>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                            <ImageButton x:Name="showPropertyIssue" Source="arrowUp.png"  Grid.Column="0" BackgroundColor="Transparent"
+                                         Grid.Row="2" HorizontalOptions="Center" VerticalOptions="End" Margin="0,0,0,10" Clicked="showPropertyIssue_Clicked"/>
+                        </Grid>
+                    </Frame>
                 </Grid>
-            </Frame>
-
+            </ScrollView>
             <Grid VerticalOptions="EndAndExpand" BackgroundColor="#323037">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="5"/>
@@ -175,16 +188,14 @@
                     <RowDefinition Height="5"/>
                 </Grid.RowDefinitions>
                 <ImageButton Source="home.png" Grid.Column="0" Grid.Row="1"
-                             BackgroundColor="Transparent" Clicked="ImageButton_Clicked_3"></ImageButton>
+                                 BackgroundColor="Transparent" Clicked="ImageButton_Clicked_3"></ImageButton>
                 <ImageButton Source="calendar.png" Grid.Column="1" Grid.Row="1"
-                             BackgroundColor="Transparent" Clicked="ImageButton_Clicked"></ImageButton>
+                                 BackgroundColor="Transparent" Clicked="ImageButton_Clicked"></ImageButton>
                 <ImageButton Source="insight.png" Grid.Column="2" Grid.Row="1"
-                             BackgroundColor="Transparent" Clicked="ImageButton_Clicked_1"></ImageButton>
+                                 BackgroundColor="Transparent" Clicked="ImageButton_Clicked_1"></ImageButton>
                 <ImageButton Source="filter.png" Grid.Column="3" Grid.Row="1"
-                             BackgroundColor="Transparent" Clicked="ImageButton_Clicked_2"></ImageButton>
+                                 BackgroundColor="Transparent" Clicked="ImageButton_Clicked_2"></ImageButton>
             </Grid>
-                </StackLayout>
-            </ScrollView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

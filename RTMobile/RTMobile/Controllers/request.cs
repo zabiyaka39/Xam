@@ -441,9 +441,9 @@ namespace RTMobile
 		/// Получаем список названий полей и значений задачи
 		/// </summary>
 		/// <returns></returns>
-		public List<Fields> GetFieldsIssue(string json = "")
+		public ObservableCollection<Fields> GetFieldsIssue(string json = "")
 		{
-			List<Fields> Fields = new List<Fields>();
+			ObservableCollection<Fields> Fields = new ObservableCollection<Fields>();
 			try
 			{
 				if (httpWebRequest.Method == "POST")

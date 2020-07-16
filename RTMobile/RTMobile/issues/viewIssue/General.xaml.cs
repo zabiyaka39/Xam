@@ -18,14 +18,11 @@ namespace RTMobile.issues.viewIssue
 		/// <summary>
 		/// Поля задачи
 		/// </summary>
-		public List<Fields> fieldIssue { get; set; }
+		public ObservableCollection<Fields> fieldIssue { get; set; }
 		/// <summary>
 		/// /Время в задаче (дата создания, SLA, ...)
 		/// </summary>
-		ObservableCollection<Fields> timeIssue { get; set; }
-		/// Переходы по задачи
-		/// </summary>
-		public List<RTMobile.Transition> transition { get; set; }
+		public ObservableCollection<Fields> timeIssue { get; set; }
 		public Issue issue { get; set; }
 		public General()
 		{
@@ -71,7 +68,6 @@ namespace RTMobile.issues.viewIssue
 							}
 						}
 						timeIssue = tmpTimeIssue;
-						dateIssue.ItemsSource = timeIssue;
 					}
 					//Делаем запрпос на получение расширенных данных по задаче				
 					JSONRequest jsonRequest = new JSONRequest()
@@ -110,7 +106,7 @@ namespace RTMobile.issues.viewIssue
 		}
 
 		void ImageButton_Clicked_2(System.Object sender, System.EventArgs e)
-		{			
+		{
 			Navigation.PushAsync(new Filter());
 		}
 
@@ -118,51 +114,63 @@ namespace RTMobile.issues.viewIssue
 		{
 			Application.Current.MainPage = new AllIssues();
 		}
-
+		/// <summary>
+		/// Высота блока перед сворачиванием
+		/// </summary>
+		private double propertyHeight = 0;
 		void showPropertyIssue_Clicked(System.Object sender, System.EventArgs e)
 		{
 			if (propertyIssue.IsVisible)
 			{
 				showPropertyIssue.Source = "arrowDown.png";
+				propertyHeight = propertyFrame.HeightRequest;
 				propertyFrame.HeightRequest = 70;
 				propertyIssue.IsVisible = false;
 			}
 			else
 			{
 				showPropertyIssue.Source = "arrowUp.png";
-				propertyFrame.HeightRequest = 150;
+				propertyFrame.HeightRequest = propertyHeight;
 				propertyIssue.IsVisible = true;
 			}
 		}
-
+		/// <summary>
+		/// Высота блока перед сворачиванием
+		/// </summary>
+		private double dateHeight = 0;
 		void showDate_Clicked(System.Object sender, System.EventArgs e)
 		{
 			if (dateIssue.IsVisible)
 			{
 				showDate.Source = "arrowDown.png";
+				dateHeight = dateFrame.HeightRequest;
 				dateFrame.HeightRequest = 70;
 				dateIssue.IsVisible = false;
 			}
 			else
 			{
 				showDate.Source = "arrowUp.png";
-				dateFrame.HeightRequest = 150;
+				dateFrame.HeightRequest = dateHeight;
 				dateIssue.IsVisible = true;
 			}
 		}
-
+		/// <summary>
+		/// Высота блока перед сворачиванием
+		/// </summary>
+		private double detailHeight = 0;
 		void showDetailIssue_Clicked(System.Object sender, System.EventArgs e)
 		{
 			if (detailIssue.IsVisible)
 			{
 				showDetailIssue.Source = "arrowDown.png";
+				detailHeight = detailFrame.HeightRequest;
 				detailFrame.HeightRequest = 70;
 				detailIssue.IsVisible = false;
 			}
 			else
 			{
 				showDetailIssue.Source = "arrowUp.png";
-				detailFrame.HeightRequest = 150;
+				detailFrame.HeightRequest = detailHeight;
 				detailIssue.IsVisible = true;
 			}
 		}
@@ -181,7 +189,7 @@ namespace RTMobile.issues.viewIssue
 		{
 			Navigation.PushAsync(new Comment(issue.key, issue.fields.summary));
 		}
-	
+
 
 		private void propertyIssue_ItemSelected(object sender, SelectedItemChangedEventArgs e)
 		{
