@@ -10,6 +10,8 @@ using RTMobile.profile;
 using Xamarin.Forms;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
+using Xamarin.Essentials;
 
 namespace RTMobile.issues.viewIssue
 {
@@ -38,6 +40,20 @@ namespace RTMobile.issues.viewIssue
             this.BindingContext = this;
             GoToback();
 
+        }
+        void SendIssueClicked(System.Object sender, System.EventArgs e)
+        {
+            ShereIssue();
+        }
+        //метод вызова диалогового окна, в котором можно выбрать способ отпраки ссылки на задачу
+        public async Task ShereIssue()
+        {
+            await Share.RequestAsync(new ShareTextRequest
+            {
+                Uri = String.Format("https://sd.rosohrana.ru/browse/{0}", issueKey),
+                Text = String.Format("С вами поделились задачей:\n{0} - {1}", issueKey, issueSummary),
+                Title = String.Format("Вы хотите поделиться задачей: {0} - {1}", issueKey, issueSummary)
+            });
         }
 
         void ImageButton_Clicked(System.Object sender, System.EventArgs e)

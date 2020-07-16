@@ -3,14 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="RTMobile.issues.viewIssue.General"
              Title="ОСНОВНОЕ">
-    <ContentPage.ToolbarItems>
-        <ToolbarItem IconImageSource="shered.png" Clicked="SendIssueClicked"
-                     Order="Primary" Priority="1001"/>
-        <ToolbarItem Text="   _________________   " 
-                     Order="Secondary" Priority="1001"/>
-        <ToolbarItem Text="Поделиться" Clicked="SendIssueClicked"
-                     Order="Secondary" Priority="1002"/>
-    </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
         <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"

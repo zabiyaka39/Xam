@@ -1,7 +1,8 @@
 ﻿using Microsoft.AppCenter.Crashes;
 using System;
 using System.Collections.Generic;
-
+using System.Threading.Tasks;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace RTMobile.issues.viewIssue
@@ -101,14 +102,44 @@ namespace RTMobile.issues.viewIssue
 					ToolbarItems.Add(tbCommentWorklog);
 
 
-					ToolbarItem tbCommentHistory = new ToolbarItem
+					ToolbarItem tbHistory = new ToolbarItem
 					{
 						Text = "История",
 						Order = ToolbarItemOrder.Secondary,
 						Priority = 1000
 					};
-					tbCommentHistory.Clicked += ToolbarItem_Clicked;
-					ToolbarItems.Add(tbCommentHistory);
+					tbHistory.Clicked += ToolbarItem_Clicked;
+					ToolbarItems.Add(tbHistory);
+
+					ToolbarItem tbShared = new ToolbarItem
+					{
+						Text = "Поделиться",
+						IconImageSource = "shered.png",
+						Order = ToolbarItemOrder.Primary,
+						Priority = 1001
+					};
+					tbShared.Clicked += SendIssueClicked;
+					ToolbarItems.Add(tbShared);
+
+
+					ToolbarItem tbSeporator1 = new ToolbarItem
+					{
+						Text = "   _________________   ",
+						Order = ToolbarItemOrder.Secondary,
+						Priority = 1001
+					};
+					ToolbarItems.Add(tbSeporator1);
+
+					ToolbarItem tbSharedMore = new ToolbarItem
+					{
+						Text = "Поделиться",
+						IconImageSource = "shered.png",
+						Order = ToolbarItemOrder.Secondary,
+						Priority = 1002
+					};
+					tbSharedMore.Clicked += SendIssueClicked;
+					ToolbarItems.Add(tbSharedMore);
+
 				}
 			}
 			catch (Exception ex)
@@ -116,6 +147,22 @@ namespace RTMobile.issues.viewIssue
 				Console.WriteLine(ex.Message);
 				Crashes.TrackError(ex);
 			}
+		}
+
+		//кнопка вызывает диалоговое окно, в котором можно выбрать способ отпраки ссылки на задачу
+		void SendIssueClicked(System.Object sender, System.EventArgs e)
+		{
+			ShereIssue();
+		}
+		//метод вызова диалогового окна, в котором можно выбрать способ отпраки ссылки на задачу
+		public async Task ShereIssue()
+		{
+			await Share.RequestAsync(new ShareTextRequest
+			{
+				Uri = String.Format("https://sd.rosohrana.ru/browse/{0}", issue.key),
+				Text = String.Format("С вами поделились задачей:\n{0} - {1}", issue.key, issue.fields.summary),
+				Title = String.Format("Вы хотите поделиться задачей: {0} - {1}", issue.key, issue.fields.summary)
+			});
 		}
 		void ToolbarItem_Clicked(System.Object sender, System.EventArgs e)
 		{

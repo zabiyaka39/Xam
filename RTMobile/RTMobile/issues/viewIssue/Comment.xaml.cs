@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Threading.Tasks;
 using Microsoft.AppCenter.Crashes;
 using Plugin.Settings;
 using RTMobile.calendar;
 using RTMobile.filter;
 using RTMobile.insight;
 using RTMobile.profile;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace RTMobile.issues.viewIssue
@@ -23,6 +25,20 @@ namespace RTMobile.issues.viewIssue
 		{
 			InitializeComponent();
 			transitionIssue(issueKey);
+		}
+		void SendIssueClicked(System.Object sender, System.EventArgs e)
+		{
+			ShereIssue();
+		}
+		//метод вызова диалогового окна, в котором можно выбрать способ отпраки ссылки на задачу
+		public async Task ShereIssue()
+		{
+			await Share.RequestAsync(new ShareTextRequest
+			{
+				Uri = String.Format("https://sd.rosohrana.ru/browse/{0}", issueKey),
+				Text = String.Format("С вами поделились задачей:\n{0} - {1}", issueKey, issueSummary),
+				Title = String.Format("Вы хотите поделиться задачей: {0} - {1}", issueKey, issueSummary)
+			});
 		}
 		public Comment(string issueKey, string issueSummary)
 		{

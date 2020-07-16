@@ -181,21 +181,7 @@ namespace RTMobile.issues.viewIssue
 		{
 			Navigation.PushAsync(new Comment(issue.key, issue.fields.summary));
 		}
-		//метод вызова диалогового окна, в котором можно выбрать способ отпраки ссылки на задачу
-		public async Task ShereIssue()
-		{
-			await Share.RequestAsync(new ShareTextRequest
-			{
-				Uri = String.Format("https://sd.rosohrana.ru/browse/{0}", issue.key),
-				Text = String.Format("С вами поделились задачей:\n{0} - {1}", issue.key, issue.fields.summary),
-				Title = String.Format("Вы хотите поделиться задачей: {0} - {1}", issue.key, issue.fields.summary)
-			});
-		}
-		//кнопка вызывает диалоговое окно, в котором можно выбрать способ отпраки ссылки на задачу
-		void SendIssueClicked(System.Object sender, System.EventArgs e)
-		{
-			ShereIssue();
-		}
+	
 
 		private void propertyIssue_ItemSelected(object sender, SelectedItemChangedEventArgs e)
 		{
