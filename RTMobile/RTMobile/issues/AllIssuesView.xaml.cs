@@ -13,6 +13,8 @@ using Xamarin.Forms;
 using System.Threading.Tasks;
 using System.Drawing;
 using Windows.UI.Input.Inking.Analysis;
+using Rg.Plugins.Popup.Services;
+using RTMobile.jiraData;
 
 namespace RTMobile.issues
 {
@@ -69,13 +71,13 @@ namespace RTMobile.issues
 
 		void Subscribe()
 		{ 
-			MessagingCenter.Subscribe<Page>(this, "RefreshIssueList", (sender)  => {
+			MessagingCenter.Subscribe<Page>(this, "RefreshIssueList", async (sender)  => {
 
-				issueStartPostRequest(); });
+				await issueStartPostRequest(); });
 		}
 
 
-		public async void GoToback()
+		public void GoToback()
 		{
 			MessagingCenter.Subscribe<Filter, JSONRequest>(this, "RefreshMainPage", (sender, e) =>
 			{
@@ -121,8 +123,6 @@ namespace RTMobile.issues
 					Console.WriteLine(ex.Message);
 					Crashes.TrackError(ex);
 				}
-
-
 				this.BindingContext = this;
 			});
 		}
@@ -142,7 +142,23 @@ namespace RTMobile.issues
 			Issue selectedIssue = e.Item as Issue;
 			if (selectedIssue != null)
 			{
+				try
+				{
+					await PopupNavigation.Instance.PushAsync(new StatusBar());
+				}
+				catch (Exception ex)
+				{
+					Console.WriteLine(ex.ToString());
+				}
 				await Navigation.PushAsync(new TabPageIssue(selectedIssue)).ConfigureAwait(true);
+				try
+				{
+					await PopupNavigation.Instance.PopAsync(true);
+				}
+				catch (Exception ex)
+				{
+					Console.WriteLine(ex.ToString());
+				}
 			}
 			((ListView)sender).SelectedItem = null;
 		}
@@ -216,11 +232,11 @@ namespace RTMobile.issues
 
 		}
 
-		private void SearchBar_SearchButtonPressed(object sender, EventArgs e)
+		private async void SearchBar_SearchButtonPressed(object sender, EventArgs e)
 		{
 			filterIssue = $"text ~ \"{searchIssue.Text}\"";
 
-			issueStartPostRequest();
+			await issueStartPostRequest();
 			if (this.issues != null && this.issues.Count > 0)
 			{
 				issuesList.IsVisible = true;
@@ -233,13 +249,13 @@ namespace RTMobile.issues
 			}
 		}
 
-		private void searchIssue_TextChanged(object sender, TextChangedEventArgs e)
+		private async void searchIssue_TextChanged(object sender, TextChangedEventArgs e)
 		{
 			if (searchIssue.Text.Length == 0)
 			{
 				filterIssue = "status not in  (Закрыта, Отклонена, Отменена, Активирована, Выполнено, 'Доставлена клиенту', Провалено) AND assignee in (currentUser())";
 
-				issueStartPostRequest();
+				await issueStartPostRequest();
 				if (this.issues != null && this.issues.Count > 0)
 				{
 					issuesList.IsVisible = true;
