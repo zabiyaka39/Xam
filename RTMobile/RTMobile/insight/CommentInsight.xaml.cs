@@ -102,7 +102,7 @@ namespace RTMobile.insight
 					methodRequest = "POST",
 					comment = newComment.Text,
 					objectId = InsightKey,
-					role = 0
+					role = "0"
 				};
 
 				RootObject rootObject = new RootObject();

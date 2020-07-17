@@ -44,7 +44,7 @@ namespace RTMobile
 
 		public string comment { get; set; }
 		public string objectId { get; set; }
-		public int role { get; set; }
+		public string role { get; set; }
 
 		public string name { get; set; }
 		/// <summary>

@@ -28,11 +28,12 @@ namespace RTMobile.issues
 		public bool IsRefreshing
 		{
 			get => isRefrashing;
-			set {
+			set
+			{
 				isRefrashing = value;
 				OnPropertyChanged(nameof(IsRefreshing));
 			}
-        }
+		}
 
 		public Command command { get; }
 		public AllIssuesView()
@@ -54,7 +55,7 @@ namespace RTMobile.issues
 			this.BindingContext = this;
 		}
 		async void pullref()
-        {
+		{
 			await issueStartPostRequest();
 			IsRefreshing = false;
 			this.BindingContext = this;
@@ -70,10 +71,11 @@ namespace RTMobile.issues
 		}
 
 		void Subscribe()
-		{ 
-			MessagingCenter.Subscribe<Page>(this, "RefreshIssueList", async (sender)  => {
-
-				await issueStartPostRequest(); });
+		{
+			MessagingCenter.Subscribe<Page>(this, "RefreshIssueList", async (sender) =>
+		   {
+			   await issueStartPostRequest();
+		   });
 		}
 
 

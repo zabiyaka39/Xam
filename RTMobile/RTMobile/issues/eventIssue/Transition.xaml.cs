@@ -602,7 +602,7 @@ namespace RTMobile.issues.viewIssue
 		{
 			Navigation.PopToRootAsync();
 		}
-		private void Button_Clicked(object sender, EventArgs e)
+		private async void Button_Clicked(object sender, EventArgs e)
 		{
 			string fields = "";
 			//Переменная для отлова незаполненного обязательного поля
@@ -872,7 +872,9 @@ namespace RTMobile.issues.viewIssue
 				Errors errors = request.GetResponses<Errors>(jsonRequestTransitions);
 				if (errors == null || (errors.comment == null && errors.assignee == null))
 				{
-					Application.Current.MainPage = new AllIssues();
+					MessagingCenter.Send<Page>(this, "RefreshIssueUpdate");
+					//MessagingCenter.Send(this, "RefreshIssueUpdate");
+					await Navigation.PopAsync();
 				}
 			}
 			else

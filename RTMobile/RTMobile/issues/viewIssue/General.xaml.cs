@@ -27,13 +27,34 @@ namespace RTMobile.issues.viewIssue
 		public General()
 		{
 			InitializeComponent();
+
 			this.BindingContext = this;
 		}
-		public General(Issue issues)
+		void Subscribe()
 		{
-			InitializeComponent();
-			issue = issues;
-			//Проверяем на существование задачи в памяти
+			MessagingCenter.Subscribe<Page>(this, "RefreshIssueUpdate", async (sender) =>
+			{
+				JSONRequest jsonRequest = new JSONRequest()
+				{
+					//Показ всех полей, даже не видимых
+					//urlRequest = $"/rest/api/2/issue/{issue.key}?expand=names,schema",
+					//Показываем только видимые поля
+					urlRequest = $"/rest/api/2/issue/{issue.key}?expand=names,editmeta",
+					methodRequest = "GET"
+				};
+				Request request = new Request(jsonRequest);
+
+				fieldIssue = request.GetFieldsIssue();
+
+				Request requestIssue = new Request(jsonRequest);
+				issue = requestIssue.GetResponses<Issue>();
+
+				OnPropertyChanged(nameof(issue));
+				await dataIssue();
+			});
+		}
+		private async Task dataIssue()
+		{
 			if (issue != null && issue.key != null)
 			{
 				try
@@ -67,7 +88,22 @@ namespace RTMobile.issues.viewIssue
 								tmpTimeIssue.Add(new Fields { name = timeSLAIssue.Values[i].name, value = timeSLAIssue.Values[i].OngoingCycle.RemainingTime.Friendly });
 							}
 						}
-						timeIssue = tmpTimeIssue;
+						if (timeIssue != null)
+						{
+							for (int i = timeIssue.Count; i > 0; --i)
+							{
+								timeIssue.RemoveAt(0);
+							}
+						}
+						if (timeIssue == null)
+						{
+							timeIssue = new ObservableCollection<Fields>();
+						}
+						for (int i = 0; i < tmpTimeIssue.Count; ++i)
+						{
+							timeIssue.Add(tmpTimeIssue[i]);
+						}
+
 					}
 					//Делаем запрпос на получение расширенных данных по задаче				
 					JSONRequest jsonRequest = new JSONRequest()
@@ -81,6 +117,9 @@ namespace RTMobile.issues.viewIssue
 					Request request = new Request(jsonRequest);
 
 					fieldIssue = request.GetFieldsIssue();
+
+					OnPropertyChanged(nameof(fieldIssue));
+					OnPropertyChanged(nameof(timeIssue));
 				}
 				catch (Exception ex)
 				{
@@ -93,6 +132,14 @@ namespace RTMobile.issues.viewIssue
 					issue.fields.resolution = new Resolution { name = "Нет решения" };
 				}
 			}
+		}
+		public General(Issue issues)
+		{
+			InitializeComponent();
+			issue = issues;
+			//Проверяем на существование задачи в памяти
+			dataIssue();
+			Subscribe();
 			this.BindingContext = this;
 		}
 		void ImageButton_Clicked(System.Object sender, System.EventArgs e)

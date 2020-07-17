@@ -898,6 +898,8 @@ namespace RTMobile.issues
 					Issue kEy = new Issue() { key = Idf };
 					Navigation.PushAsync(new RTMobile.issues.viewIssue.TabPageIssue(kEy));
 					Navigation.RemovePage(Navigation.NavigationStack[Navigation.NavigationStack.Count - 2]);
+
+					
 					MessagingCenter.Send<Page>(this, "RefreshIssueList");
 				}
 				catch (Exception ex)
