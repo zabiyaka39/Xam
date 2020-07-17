@@ -7,18 +7,11 @@
              Title="СВЕДЕНИЯ"
              x:Class="RTMobile.insight.GeneralObjectInsight">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Комментарии" Icon="commentToolBar.png" Clicked="ToolbarItem_Clicked"
-                     Order="Primary" Priority="0"/>
-        <ToolbarItem Text="   _________________   " 
-                     Order="Secondary" Priority="997"/>
-        <ToolbarItem Text="Комментарии" Icon="comment.png"  Clicked="ToolbarItem_Clicked_1"
-                     Order="Secondary" Priority="998"/>
         <ToolbarItem Text="Рабочий журнал" Clicked="ToolbarItem_Clicked_1"
                      Order="Secondary" Priority="999"/>
         <ToolbarItem Text="История" Clicked="ToolbarItem_Clicked"
                      Order="Secondary" Priority="1000"/>
-        <ToolbarItem Text="QR-код" Clicked="ToolbarItem_Clicked_QR"
-                     Order="Secondary" Priority="1000"/>
+       
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>

@@ -26,9 +26,9 @@ namespace RTMobile.issues.viewIssue
 			InitializeComponent();
 			transitionIssue(issueKey);
 		}
-		void SendIssueClicked(System.Object sender, System.EventArgs e)
+		async void SendIssueClicked(System.Object sender, System.EventArgs e)
 		{
-			ShereIssue();
+			await ShereIssue();
 		}
 		//метод вызова диалогового окна, в котором можно выбрать способ отпраки ссылки на задачу
 		public async Task ShereIssue()

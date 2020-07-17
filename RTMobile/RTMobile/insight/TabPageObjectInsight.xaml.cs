@@ -23,40 +23,42 @@ namespace RTMobile.insight
 			Children.Add(new AttachmentsObjectInsight(selectedField) { Title = "Вложения" });
 			Children.Add(new LinkObjectInsight(selectedField) { Title = "Ссылки" });
 
-			//Добавляем выпадающее меню справа для действий по объекту
-			//try
-			//{
-			//	if (issues != null)
-			//	{
-			//		JSONRequest jsonRequest = new JSONRequest
-			//		{
-			//			urlRequest = $"/rest/api/2/issue/{issues.key}/transitions/",
-			//			methodRequest = "GET"
-			//		};
-			//		Request request = new Request(jsonRequest);
+			  ToolbarItem tbQR= new ToolbarItem
+			{
+				Text = "QR-код",
+				Order = ToolbarItemOrder.Secondary,
+				Priority = 1
+			};
+			tbQR.Clicked += async (sender, args) =>
+			{
+				await Navigation.PushAsync(new QRgen(selectedField)).ConfigureAwait(true);
+			};
+			ToolbarItems.Add(tbQR);
 
-			//		transition = request.GetResponses<RootObject>().transitions;
-			//		for (int i = 0; i < transition.Count; ++i)
-			//		{
-			//			ToolbarItem tb = new ToolbarItem
-			//			{
-			//				Text = transition[i].name,
-			//				Order = ToolbarItemOrder.Secondary,
-			//				Priority = i + 1
-			//			};
-			//			tb.Clicked += async (sender, args) =>
-			//			{
-			//				await Navigation.PushAsync(new Transition(int.Parse(transition[((ToolbarItem)sender).Priority - 1].id), issues.key)).ConfigureAwait(true);
-			//			};
-			//			ToolbarItems.Add(tb);
-			//		}
-			//	}
-			//}
-			//catch (Exception ex)
-			//{
-			//	Console.WriteLine(ex.Message);
-			//	Crashes.TrackError(ex);
-			//}
+			ToolbarItem tbPrimary = new ToolbarItem
+			{
+				Text = "Комментарии",
+				Order = ToolbarItemOrder.Primary,
+				IconImageSource = "commentToolBar.png",
+				Priority = 0
+			};
+			tbPrimary.Clicked += async (sender, args) =>
+			{
+				await Navigation.PushAsync(new CommentInsight(selectedField.id.ToString(), selectedField.objectKey)).ConfigureAwait(true);
+			};
+			ToolbarItems.Add(tbPrimary);
+			ToolbarItem tb = new ToolbarItem
+			{
+				Text = "Комментарии",
+				Order = ToolbarItemOrder.Secondary,
+				IconImageSource = "comment.png",
+				Priority = 0
+			};
+			tb.Clicked += async (sender, args) =>
+			{
+				await Navigation.PushAsync(new CommentInsight(selectedField.id.ToString(), selectedField.label)).ConfigureAwait(true);
+			};
+			ToolbarItems.Add(tb);
 		}
 	}
 }

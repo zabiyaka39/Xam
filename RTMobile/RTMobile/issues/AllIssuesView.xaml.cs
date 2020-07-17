@@ -142,6 +142,7 @@ namespace RTMobile.issues
 			Issue selectedIssue = e.Item as Issue;
 			if (selectedIssue != null)
 			{
+				//Добавляем колесо загрузки
 				try
 				{
 					await PopupNavigation.Instance.PushAsync(new StatusBar());
@@ -150,7 +151,9 @@ namespace RTMobile.issues
 				{
 					Console.WriteLine(ex.ToString());
 				}
+				//Вызывавем страницу с информацией по задаче
 				await Navigation.PushAsync(new TabPageIssue(selectedIssue)).ConfigureAwait(true);
+				//Прекращаем просмотр колеса загрузки
 				try
 				{
 					await PopupNavigation.Instance.PopAsync(true);

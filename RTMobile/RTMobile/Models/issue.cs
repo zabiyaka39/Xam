@@ -41,11 +41,10 @@ namespace RTMobile
 		/// Содержание запроса (тело)
 		/// </summary>
 		public string body { get; set; }
-		/// <summary>
-		/// Сортировка которую необходимо произвести для полученного результата
-		/// </summary>
 
 		public string comment { get; set; }
+		public string objectId { get; set; }
+		public int role { get; set; }
 
 		public string name { get; set; }
 		/// <summary>

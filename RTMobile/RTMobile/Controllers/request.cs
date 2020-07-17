@@ -25,6 +25,8 @@ using Plugin.Geolocator;
 using Plugin.Geolocator.Abstractions;
 using static RTMobile.MainPage;
 using RTMobile.Models;
+using RTMobile.insight;
+using RTMobile.jiraData;
 
 namespace RTMobile
 {
@@ -435,6 +437,26 @@ namespace RTMobile
 			}
 
 			return Fields;
+		}
+
+		public ObservableCollection<jiraData.CommentInsight> GetCommentInsight()
+		{
+			ObservableCollection<jiraData.CommentInsight> commentInsights = new ObservableCollection<jiraData.CommentInsight>();
+			try
+			{
+				WebResponse httpResponse = this.httpWebRequest.GetResponse();
+				using (StreamReader streamReader = new StreamReader(httpResponse.GetResponseStream()))
+				{
+					string json = streamReader.ReadToEnd();
+					json = "{\"commentInsight\":" + json + "}";
+					commentInsights = JsonConvert.DeserializeObject<RootInsightComment>(json).commentInsight;
+				}
+			}
+			catch (Exception ex)
+			{
+				Console.WriteLine(ex.Message);
+			}
+			return commentInsights;
 		}
 
 		/// <summary>
