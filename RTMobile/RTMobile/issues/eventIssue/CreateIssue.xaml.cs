@@ -213,7 +213,9 @@ namespace RTMobile.issues
 											{
 												urlRequest = urlRequestData,
 												currentProject = projects[projectPic.SelectedIndex].id,
-												methodRequest = "POST"
+												methodRequest = "POST",
+												currentReporter = CrossSettings.Current.GetValueOrDefault("login", string.Empty)
+
 											};
 											Request requestInsight = new Request(jsonRequestInsight);
 
@@ -899,7 +901,7 @@ namespace RTMobile.issues
 					Navigation.PushAsync(new RTMobile.issues.viewIssue.TabPageIssue(kEy));
 					Navigation.RemovePage(Navigation.NavigationStack[Navigation.NavigationStack.Count - 2]);
 
-					
+
 					MessagingCenter.Send<Page>(this, "RefreshIssueList");
 				}
 				catch (Exception ex)
