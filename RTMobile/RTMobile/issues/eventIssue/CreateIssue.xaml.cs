@@ -14,14 +14,25 @@ using Service.Shared.Clients;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using System.Threading.Tasks;
+using Plugin.Media;
+using Plugin.Media.Abstractions;
+using System.Net.Http.Headers;
+using Nancy;
+using Rg.Plugins.Popup.Services;
 
 namespace RTMobile.issues
 {
 	public partial class CreateIssue : ContentPage
 	{
+		MediaFile _mediaFile { get; set; }
 		List<Project> projects { get; set; }
-		List<Issuetype> typeIssue { get; set; }
 		List<Fields> Fields { get; set; }
+		Label nameAttachmentLabel = new Label()
+		{
+			Text = "Отсутствует",
+			TextColor = Color.FromHex("#F0F1F0"),
+			FontSize = 18
+		};
 		public string Idf { get; set; }
 		//Поле для более удобного поиска и доступа к полям (полученные поля = нарисованным полям, если нет доп. полей)
 		Dictionary<Guid, Fields> DectionaryFields = new Dictionary<Guid, Fields>();
@@ -438,13 +449,14 @@ namespace RTMobile.issues
 								switch (Field.schema.items)
 								{
 									case "attachment":
-										{
+										{											
 											Button button = new Button()
 											{
 												Text = "Загрузить файлы...",
 												HorizontalOptions = LayoutOptions.FillAndExpand,
 												Margin = new Thickness(0, 0, 0, 20),
 											};
+											button.Clicked += Button_Clicked1;
 											typeStack.Children.Add(button);
 											DectionaryFields.Add(button.Id, Field);
 											break;
@@ -633,11 +645,19 @@ namespace RTMobile.issues
 						if (Fields[i].required)
 						{
 							generalStackLayout.Children.Add(label);
+							if (Fields[i].schema.type == "array" && Fields[i].schema.items == "attachment")
+							{
+								generalStackLayout.Children.Add(nameAttachmentLabel);
+							}
 							determination_requered(generalStackLayout, Fields[i]);
 						}
 						else
 						{
 							necessarily_fields.Children.Add(label);
+							if (Fields[i].schema.type == "array" && Fields[i].schema.items == "attachment")
+							{
+								necessarily_fields.Children.Add(nameAttachmentLabel);
+							}
 							determination_requered(necessarily_fields, Fields[i]);
 						}
 						delimiter.IsVisible = true;
@@ -648,7 +668,44 @@ namespace RTMobile.issues
 			}
 		}
 
-		private void Button_Clicked(object sender, EventArgs e)
+		private async void Button_Clicked1(object sender, EventArgs e)
+		{
+
+			string st = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+
+			//Инициализируем проверку доступности разрешения работы с файловой системой
+			await CrossMedia.Current.Initialize();
+
+			string action = await DisplayActionSheet("Добавить данные", "Cancel", null, "Сделать фото", "Выбрать изображение");
+			if (action == "Сделать фото")
+			{
+				if (CrossMedia.Current.IsCameraAvailable && CrossMedia.Current.IsTakePhotoSupported)
+				{
+					_mediaFile = await CrossMedia.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions
+					{
+						SaveToAlbum = true,
+						Directory = "",
+						Name = $"{DateTime.Now.ToString("dd.MM.yyyy_hh.mm.ss")}.jpg"
+					});
+
+				}
+			}
+			if (action == "Выбрать изображение")
+			{
+				if (CrossMedia.Current.IsPickPhotoSupported)
+				{
+					_mediaFile = await CrossMedia.Current.PickPhotoAsync().ConfigureAwait(true);
+				}
+			}
+
+			if (_mediaFile != null)
+			{
+				nameAttachmentLabel.IsVisible = true;
+				nameAttachmentLabel.Text = _mediaFile.Path;
+			}
+		}
+
+		private async void Button_Clicked(object sender, EventArgs e)
 		{
 			//Создаем переменную для построения json-запроса для совершения перехода
 			string jsonRequestCreate = "{ ";
@@ -895,14 +952,65 @@ namespace RTMobile.issues
 				Request request = new Request(jsonRequest);
 				try
 				{
+					AllowedValue allowedValue = request.GetResponses<AllowedValue>(jsonRequestCreate);
 
-					Idf = request.GetResponses<AllowedValue>(jsonRequestCreate).key;
-					Issue kEy = new Issue() { key = Idf };
-					Navigation.PushAsync(new RTMobile.issues.viewIssue.TabPageIssue(kEy));
-					Navigation.RemovePage(Navigation.NavigationStack[Navigation.NavigationStack.Count - 2]);
+					if (allowedValue != null)
+					{
+						try
+						{
+							//Если имеются добавленные вложения, то после создания задачи добавляем эти вложения
+							if (_mediaFile != null)
+							{
+								string boundary = DateTime.Now.Ticks.ToString("x");
 
+								MultipartFormDataContent content = new MultipartFormDataContent(boundary);
 
-					MessagingCenter.Send<Page>(this, "RefreshIssueList");
+								var streamContent = new StreamContent(_mediaFile.GetStream());
+								//Задаем MimeType файлу
+								streamContent.Headers.ContentType = new MediaTypeHeaderValue(MimeTypes.GetMimeType(_mediaFile.Path));
+
+								content.Add(streamContent, "\"file\"", $"\"{_mediaFile.Path}\"");
+
+								byte[] byteArray = await content.ReadAsByteArrayAsync().ConfigureAwait(true);
+								JSONRequest jsonRequestAttachment = new JSONRequest()
+								{
+									urlRequest = $"/rest/api/2/issue/{allowedValue.key}/attachments",
+									methodRequest = "POST",
+									FileUpload = content,
+									FileUploadByte = byteArray
+
+								};
+								//Отправка вложений в задачу
+								Request requestAttachment = new Request(jsonRequestAttachment);
+							}
+						}
+						catch (Exception ex)
+						{
+							Console.WriteLine(ex.Message);
+						}
+						//Добавляем колесо загрузки
+						try
+						{
+							await PopupNavigation.Instance.PushAsync(new StatusBar());
+						}
+						catch (Exception ex)
+						{
+							Console.WriteLine(ex.ToString());
+						}
+						//Открываем созданную задачу для просмотра
+						await Navigation.PushAsync(new viewIssue.TabPageIssue(new Issue() { key = allowedValue.key }));
+						try
+						{
+							await PopupNavigation.Instance.PopAsync(true);
+						}
+						catch (Exception ex)
+						{
+							Console.WriteLine(ex.ToString());
+						}
+						Navigation.RemovePage(Navigation.NavigationStack[Navigation.NavigationStack.Count - 2]);
+
+						MessagingCenter.Send<Page>(this, "RefreshIssueList");
+					}
 				}
 				catch (Exception ex)
 				{

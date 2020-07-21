@@ -29,7 +29,6 @@ namespace RTMobile.issues.viewIssue
 		private ObservableCollection<Attachment> attachmentsImage = new ObservableCollection<Attachment>();
 		private ObservableCollection<Attachment> attachmentsDocument = new ObservableCollection<Attachment>();
 		private ObservableCollection<Attachment> attachmentsOther = new ObservableCollection<Attachment>();
-		private List<RTMobile.Transition> transition { get; set; }//Переходы по заявке
 		public Attachments(Issue issue)
 		{
 
