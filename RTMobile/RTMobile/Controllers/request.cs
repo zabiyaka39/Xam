@@ -1,31 +1,17 @@
-﻿//using Nancy.Json;
-using Nancy.Json;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using Plugin.Settings;
 using System;
 using System.Collections.Generic;
-using System.IdentityModel.Tokens.Jwt;
-//using System.Web.Script.Serialization;
 using System.IO;
 using System.Net;
 using System.Text;
-using Microsoft.CSharp;
 using System.Collections.ObjectModel;
-using Xamarin.Forms;
 using Microsoft.AppCenter.Crashes;
-using Plugin.Media.Abstractions;
-using Plugin.Media;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Collections.Specialized;
-using RestSharp;
 using Newtonsoft.Json.Linq;
-using System.Linq;
 using Plugin.Geolocator;
 using Plugin.Geolocator.Abstractions;
 using static RTMobile.MainPage;
 using RTMobile.Models;
-using RTMobile.insight;
 using RTMobile.jiraData;
 
 namespace RTMobile
@@ -492,7 +478,8 @@ namespace RTMobile
 					{
 						if (jsonConvert.editmeta != null && jsonConvert.editmeta.fields != null)
 						{
-							string str = jsonConvert.editmeta.fields.ToString();
+							string str = jsonConvert.ToString() ;
+
 							foreach (dynamic fields in jsonConvert.editmeta.fields)
 							{
 								Schema schemaFields = JsonConvert.DeserializeObject<Schema>(fields.First["schema"].ToString());
@@ -505,97 +492,138 @@ namespace RTMobile
 									{
 										case "string":
 											{
-												Fields.Add(new Fields
+												if (jsonConvert["fields"][nameField].ToString().Length > 0)
 												{
-													//Заполняем значение поля
-													value = jsonConvert["fields"][nameField].ToString(),
-													//Заполняем имя поля в системе
-													NameField = nameField,
-													//Заполняем человекочитаемое имя поля для удобства отображения
-													DisplayNameField = jsonConvert["names"][nameField].ToString()
-												});
-												//Проверяем на наличие элемента, если элемент равен null, то надо переопределить элемент
-												//с именем и описанием, для удобочитаемого формата
-												if (Fields[Fields.Count - 1] == null)
-												{
-													Fields[Fields.Count - 1] = new Fields()
+													Fields.Add(new Fields
 													{
-														DisplayNameField = jsonConvert["names"][nameField].ToString(),
-														value = "Не определено",
+														//Заполняем значение поля
+														value = jsonConvert["fields"][nameField].ToString(),
+														//Заполняем имя поля в системе
 														NameField = nameField,
-														schema = schemaFields
-													};
+														//Заполняем человекочитаемое имя поля для удобства отображения
+														DisplayNameField = jsonConvert["names"][nameField].ToString()
+													});
+													//Проверяем на наличие элемента, если элемент равен null, то надо переопределить элемент
+													//с именем и описанием, для удобочитаемого формата
+													if (Fields[Fields.Count - 1] == null)
+													{
+														Fields[Fields.Count - 1] = new Fields()
+														{
+															DisplayNameField = jsonConvert["names"][nameField].ToString(),
+															value = "Не определено",
+															NameField = nameField,
+															schema = schemaFields
+														};
+													}
+												}
+												break;
+											}
+										case "any":
+											{
+												if (jsonConvert["fields"][nameField] != null && jsonConvert["fields"][nameField].Count > 0)
+												{
+													Fields.Add(new Fields
+													{
+														//Заполняем значение поля
+														value = jsonConvert["fields"][nameField][0].ToString(),
+														//Заполняем имя поля в системе
+														NameField = nameField,
+														//Заполняем человекочитаемое имя поля для удобства отображения
+														DisplayNameField = jsonConvert["names"][nameField].ToString()
+													});
+													//Проверяем на наличие элемента, если элемент равен null, то надо переопределить элемент
+													//с именем и описанием, для удобочитаемого формата
+													if (Fields[Fields.Count - 1] == null)
+													{
+														Fields[Fields.Count - 1] = new Fields()
+														{
+															DisplayNameField = jsonConvert["names"][nameField].ToString(),
+															value = "Не определено",
+															NameField = nameField,
+															schema = schemaFields
+														};
+													}
 												}
 												break;
 											}
 										case "array":
 											{
-												Fields.Add(JsonConvert.DeserializeObject<Fields>(jsonConvert["fields"][nameField][0].ToString()));
+												if (jsonConvert["fields"][nameField] != null && jsonConvert["fields"][nameField].Count > 0)
+												{
+													Fields.Add(JsonConvert.DeserializeObject<Fields>(jsonConvert["fields"][nameField][0].ToString()));
 
-												//Проверяем на наличие элемента, если элемент равен null, то надо переопределить элемент
-												//с именем и описанием, для удобочитаемого формата
-												if (Fields[Fields.Count - 1] == null)
-												{
-													Fields[Fields.Count - 1] = new Fields()
+													//Проверяем на наличие элемента, если элемент равен null, то надо переопределить элемент
+													//с именем и описанием, для удобочитаемого формата
+													if (Fields[Fields.Count - 1] == null)
 													{
-														value = "Не определено",
-														schema = schemaFields
-													};
-												}
-												//Изменяем значение поля, т.к. все значения должны храниться в Value, а в некоторых запросах получаем в Name или displayName (человекочитаемый формат)
-												if (Fields[Fields.Count - 1].value == null)
-												{
-													if (Fields[Fields.Count - 1].displayName != null)
-													{
-														Fields[Fields.Count - 1].value = Fields[Fields.Count - 1].displayName;
-													}
-													else
-													{
-														if (Fields[Fields.Count - 1].name != null)
+														Fields[Fields.Count - 1] = new Fields()
 														{
-															Fields[Fields.Count - 1].value = Fields[Fields.Count - 1].name;
+															value = "Не определено",
+															schema = schemaFields
+														};
+													}
+													//Изменяем значение поля, т.к. все значения должны храниться в Value, а в некоторых запросах получаем в Name или displayName (человекочитаемый формат)
+													if (Fields[Fields.Count - 1].value == null)
+													{
+														if (Fields[Fields.Count - 1].displayName != null)
+														{
+															Fields[Fields.Count - 1].value = Fields[Fields.Count - 1].displayName;
+														}
+														else
+														{
+															if (Fields[Fields.Count - 1].name != null)
+															{
+																Fields[Fields.Count - 1].value = Fields[Fields.Count - 1].name;
+															}
 														}
 													}
+													Fields[Fields.Count - 1].DisplayNameField = jsonConvert["names"][nameField].ToString();
+													Fields[Fields.Count - 1].NameField = nameField;
 												}
-												Fields[Fields.Count - 1].DisplayNameField = jsonConvert["names"][nameField].ToString();
-												Fields[Fields.Count - 1].NameField = nameField;
 												break;
 											}
 										default:
 											{
-												Fields.Add(JsonConvert.DeserializeObject<Fields>(jsonConvert["fields"][nameField].ToString()));
 
-												//Проверяем на наличие элемента, если элемент равен null, то надо переопределить элемент
-												//с именем и описанием, для удобочитаемого формата
-												if (Fields[Fields.Count - 1] == null)
+												Fields tmpField = JsonConvert.DeserializeObject<Fields>(jsonConvert["fields"][nameField].ToString());
+												if (tmpField != null)
 												{
-													Fields[Fields.Count - 1] = new Fields()
+													//Fields.Add(JsonConvert.DeserializeObject<Fields>(jsonConvert["fields"][nameField].ToString()));
+													Fields.Add(tmpField);
+
+													//Проверяем на наличие элемента, если элемент равен null, то надо переопределить элемент
+													//с именем и описанием, для удобочитаемого формата
+													if (Fields[Fields.Count - 1] == null)
 													{
-														value = "Не определено",
-														schema = schemaFields
-													};
-												}
-												//Изменяем значение поля, т.к. все значения должны храниться в Value, а в некоторых запросах получаем в Name или displayName (человекочитаемый формат)
-												if (Fields[Fields.Count - 1].value == null)
-												{
-													if (Fields[Fields.Count - 1].displayName != null)
-													{
-														Fields[Fields.Count - 1].value = Fields[Fields.Count - 1].displayName;
-													}
-													else
-													{
-														if (Fields[Fields.Count - 1].name != null)
+														Fields[Fields.Count - 1] = new Fields()
 														{
-															Fields[Fields.Count - 1].value = Fields[Fields.Count - 1].name;
+															value = "Не определено",
+															schema = schemaFields
+														};
+													}
+													//Изменяем значение поля, т.к. все значения должны храниться в Value, а в некоторых запросах получаем в Name или displayName (человекочитаемый формат)
+													if (Fields[Fields.Count - 1].value == null)
+													{
+														if (Fields[Fields.Count - 1].displayName != null)
+														{
+															Fields[Fields.Count - 1].value = Fields[Fields.Count - 1].displayName;
+														}
+														else
+														{
+															if (Fields[Fields.Count - 1].name != null)
+															{
+																Fields[Fields.Count - 1].value = Fields[Fields.Count - 1].name;
+															}
 														}
 													}
+													if (Fields[Fields.Count - 1].Child != null)
+													{
+														Fields[Fields.Count - 1].value += " - ";
+													}
+													Fields[Fields.Count - 1].NameField = nameField;
+													Fields[Fields.Count - 1].DisplayNameField = jsonConvert["names"][nameField].ToString();
 												}
-												if (Fields[Fields.Count - 1].Child != null)
-												{
-													Fields[Fields.Count - 1].value += " - ";
-												}
-												Fields[Fields.Count - 1].NameField = nameField;
-												Fields[Fields.Count - 1].DisplayNameField = jsonConvert["names"][nameField].ToString();
+
 												break;
 											}
 									}
