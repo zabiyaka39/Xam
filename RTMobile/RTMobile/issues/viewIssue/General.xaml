@@ -86,7 +86,7 @@
                                 </Grid>
                             </ScrollView>
                             <ImageButton x:Name="showDetailIssue" Source="arrowUp.png"  Grid.Column="0" BackgroundColor="Transparent"
-                                             Clicked="showDetailIssue_Clicked" Grid.Row="2" HorizontalOptions="Center" VerticalOptions="End" Margin="0,0,0,10"/>
+                                         Clicked="showDetailIssue_Clicked" Grid.Row="2" HorizontalOptions="Center" VerticalOptions="End" Margin="0,0,0,10"/>
                         </Grid>
                     </Frame>
                     <Frame x:Name="dateFrame" Grid.Row="1" VerticalOptions="Start" Grid.Column="0" HasShadow="True" CornerRadius="5"
