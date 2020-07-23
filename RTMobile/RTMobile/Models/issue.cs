@@ -891,7 +891,7 @@ namespace RTMobile
 		public Uri thumbnail { get; set; }
 	}
 	public class AllowedValue
-	{	
+	{
 		public string key { get; set; }
 		public string self { get; set; }
 		public string value { get; set; }
@@ -1100,10 +1100,21 @@ namespace RTMobile
 		public string self { get; set; }
 		public Fields fields { get; set; }
 	}
+
+	public class Component
+	{
+		public string self { get; set; }
+		public string id { get; set; }
+		public string name { get; set; }
+		public string description { get; set; }
+	}
+
 	public class Fields
 	{
 		[JsonProperty("child")]
 		public Child Child { get; set; }
+		[JsonProperty("components")]
+		public List<Component> Components { get; set; }
 		[JsonProperty("iconUrl")]
 		public string IconUrl { get; set; }
 		public Comment comment { get; set; }
@@ -1142,7 +1153,19 @@ namespace RTMobile
 		/// </summary>
 		[JsonProperty("displayNameField")]
 		public string DisplayNameField { get; set; }
-		public string duedate { get; set; }
+
+		private string _duedate { get; set; }
+		public string duedate
+		{
+			get
+			{
+				return _duedate;
+			}
+			set
+			{
+				_duedate = (Convert.ToDateTime(value)).ToString("dd.MM.yyyy HH:mm");
+			}
+		}
 		private string _description { get; set; }
 		public string description
 		{

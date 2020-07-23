@@ -47,6 +47,7 @@
                                         <RowDefinition Height="Auto"/>
                                         <RowDefinition Height="Auto"/>
                                         <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="20"/>
                                     </Grid.RowDefinitions>
                                     <Label Text="Тема:" Grid.Column="0" Grid.Row="0" VerticalOptions="Start" Padding="0"/>
                                     <Label x:Name="summaryIssue" Grid.Column="1" Grid.Row="0"
@@ -71,7 +72,17 @@
                                     <Label x:Name="resolutionLlb" Text="Решение:" Grid.Column="0" Grid.Row="4" VerticalOptions="Start"/>
                                     <Label x:Name="resolution" Grid.Column="1" Grid.Row="4"
                                                Text="{Binding Path=issue.fields.resolution.name} " HorizontalTextAlignment="End"
-                                               HorizontalOptions="EndAndExpand" VerticalOptions="Start"/>
+                                               HorizontalOptions="EndAndExpand" VerticalOptions="Start" IsEnabled="True"/>
+                                    <Label x:Name="componentsLbl" Text="Компоненты:" Grid.Column="0" Grid.Row="5" VerticalOptions="Start"/>
+                                    <ListView x:Name="componentsList" Grid.Column="1" Grid.Row="5" ItemsSource="{Binding issue.fields.Components}" HorizontalOptions="EndAndExpand" VerticalOptions="Start" IsEnabled="False" SeparatorVisibility="None" Margin="0">
+                                        <ListView.ItemTemplate>
+                                            <DataTemplate>
+                                                <ViewCell>
+                                                    <Label Text="{Binding Path=name}"  HorizontalOptions="EndAndExpand" Padding="0"/>
+                                                </ViewCell>
+                                            </DataTemplate>
+                                        </ListView.ItemTemplate>
+                                    </ListView>
                                 </Grid>
                             </ScrollView>
                             <ImageButton x:Name="showDetailIssue" Source="arrowUp.png"  Grid.Column="0" BackgroundColor="Transparent"
@@ -160,10 +171,10 @@
                                             <ViewCell.View>
                                                 <Grid Margin="0" Padding="0">
                                                     <Label Grid.Column="0" Text="{Binding Path = DisplayNameField}"/>
-                                                    <Label Grid.Column="1"  HorizontalOptions="EndAndExpand" Margin="0,0,10,0">
+                                                    <Label Grid.Column="1"  HorizontalOptions="EndAndExpand"  Margin="0,0,10,0">
                                                         <Label.FormattedText>
                                                             <FormattedString>
-                                                                <Span Text="{Binding Path = value }"></Span>
+                                                                <Span Text="{Binding Path = value }" ></Span>
                                                                 <Span Text=" "></Span>
                                                                 <Span Text="{Binding Path = Child.value }"></Span>
                                                             </FormattedString>

@@ -50,10 +50,10 @@ namespace RTMobile.issues.viewIssue
 				issue = requestIssue.GetResponses<Issue>();
 
 				OnPropertyChanged(nameof(issue));
-				await dataIssue();
+				dataIssue();
 			});
 		}
-		private async Task dataIssue()
+		private void dataIssue()
 		{
 			if (issue != null && issue.key != null)
 			{
@@ -71,6 +71,10 @@ namespace RTMobile.issues.viewIssue
 						if (issue.fields.resolutiondate != null)
 						{
 							tmpTimeIssue.Add(new Fields { name = "Дата решения:", value = issue.fields.resolutiondate });
+						}
+						if (issue.fields.duedate != null)
+						{
+							tmpTimeIssue.Add(new Fields { name = "Срок исполнения:", value = issue.fields.duedate });
 						}
 						JSONRequest jsonRequestSLA = new JSONRequest()
 						{
@@ -131,6 +135,12 @@ namespace RTMobile.issues.viewIssue
 				{
 					issue.fields.resolution = new Resolution { name = "Нет решения" };
 				}
+				if (issue.fields.Components == null)
+				{
+					issue.fields.Components = new List<Component> ();
+					issue.fields.Components.Add(new Component { name = "Отсутствуют" });
+				}
+				componentsList.HeightRequest = issue.fields.Components.Count * 20;
 			}
 		}
 		public General(Issue issues)

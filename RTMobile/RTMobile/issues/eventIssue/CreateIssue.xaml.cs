@@ -699,323 +699,367 @@ namespace RTMobile.issues
 				nameAttachmentLabel.Text = _mediaFile.Path;
 			}
 		}
+		private void JsonFields(StackLayout Layout, ref string fields, ref bool checkRequeredFields)
+		{
+			try
+			{
+				//Проходимся по всем элементам на форме
+				for (int i = 0; i < Layout.Children.Count && checkRequeredFields; ++i)
+				{
+					string str = Layout.Children[i].Id.ToString();
+					if (DectionaryFields.ContainsKey(Layout.Children[i].Id))
+					{
+						switch (DectionaryFields[Layout.Children[i].Id].schema.type)
+						{
+							case "any":
+								{
+									if (DectionaryFields[Layout.Children[i].Id].required == true)
+									{
+										if (((SearchBar)Layout.Children[i]).Text == null)
+										{
+											checkRequeredFields = false;
+											break;
+										}
+									}
+									//Увеличиваем счетчик для получения доступа к элементу после label
+									ObservableCollection<InsightRoot> insights = new ObservableCollection<InsightRoot>();
+									string urlRequestData = "";
+									int startSearch = DectionaryFields[Layout.Children[i].Id].editHtml.IndexOf("data-fieldconfig=") + 18;
+									//Так же обрезаем на 19 символов для выбора только номера схемы в числовом формате
+									int endSearch = DectionaryFields[Layout.Children[i].Id].editHtml.IndexOf(" ", startSearch);
+									int numberConfigSchema = -1;
+									if (startSearch > -1 && endSearch > -1)
+									{
+										numberConfigSchema = Convert.ToInt32(DectionaryFields[Layout.Children[i].Id].editHtml.Substring(startSearch, endSearch - startSearch - 1));
+									}
+									if (numberConfigSchema > -1)
+									{
+										urlRequestData = $"/rest/insight/1.0/customfield/default/{numberConfigSchema}/objects";
+									}
+
+									JSONRequest jsonRequestInsightSearch = new JSONRequest
+									{
+										urlRequest = urlRequestData,
+										currentReporter = CrossSettings.Current.GetValueOrDefault("login", string.Empty),
+										query = ((SearchBar)Layout.Children[i]).Text,
+										methodRequest = "POST"
+									};
+									Request requestIssue = new Request(jsonRequestInsightSearch);
+
+									insights = requestIssue.GetResponses<RootObject>().objects;
+
+									if (insights != null && insights.Count > 0)
+									{
+										if (fields.Length > 0)
+										{
+											fields += ", ";
+										}
+										fields += "\"" + DectionaryFields[Layout.Children[i].Id].NameField + "\":[{\"key\":\"" + insights[0].ObjectKey + "\"}]";
+									}
+									break;
+								}
+							case "user":
+								{
+									if (DectionaryFields[Layout.Children[i].Id].required == true)
+									{
+										if (((SearchBar)Layout.Children[i]).Text == null)
+										{
+											checkRequeredFields = false;
+											break;
+										}
+									}
+									//Увеличиваем счетчик для получения доступа к элементу после label
+									List<User> user;
+									JSONRequest jsonRequestIssue = new JSONRequest
+									{
+										urlRequest = $"/rest/api/2/user/picker?query=" + ((SearchBar)Layout.Children[i]).Text,
+										methodRequest = "GET"
+									};
+									Request requestUser = new Request(jsonRequestIssue);
+
+									user = requestUser.GetResponses<List<User>>();
+									if (user != null && user.Count > 0)
+									{
+										if (fields.Length > 0)
+										{
+											fields += ", ";
+										}
+										fields += "\"" + DectionaryFields[Layout.Children[i].Id].NameField + "\":{\"name\":\"" + user[0].name + "\"}";
+									}
+									break;
+								}
+							case "priority":
+							case "option":
+							case "option-with-child":
+								{
+									if (((Picker)Layout.Children[i]).SelectedIndex == -1 && DectionaryFields[Layout.Children[i].Id].required == true)
+									{
+										checkRequeredFields = false;
+										break;
+									}
+
+									if (((Picker)Layout.Children[i]).SelectedIndex != -1)
+									{
+										if (fields.Length > 0)
+										{
+											fields += ", ";
+										}
+										//добавляем категорию
+										fields += "\"" + DectionaryFields[Layout.Children[i].Id].NameField +
+											"\":{\"value\":\"" + ((Picker)Layout.Children[i]).Items[((Picker)Layout.Children[i]).SelectedIndex] + "\"";
+
+
+										if (DectionaryFields[Layout.Children[i].Id].allowedValues != null &&
+											DectionaryFields[Layout.Children[i].Id].allowedValues[((Picker)Layout.Children[i]).SelectedIndex].children != null &&
+											((Picker)Layout.Children[i + 1]).SelectedIndex > -1 &&
+											((Picker)Layout.Children[i + 1]).Items[((Picker)Layout.Children[i + 1]).SelectedIndex] != null)
+										{
+											//Добавляем подкатегорию
+											fields += ", \"child" +
+													  "\":{\"value\":\"" + ((Picker)Layout.Children[i + 1]).Items[((Picker)Layout.Children[i + 1]).SelectedIndex] + "\"}";
+										}
+										fields += "}";
+									}
+									break;
+								}
+							case "resolution":
+								{
+									if (((Picker)Layout.Children[i]).SelectedIndex == -1 && DectionaryFields[Layout.Children[i].Id].required == true)
+									{
+										checkRequeredFields = false;
+										break;
+									}
+
+									if (((Picker)Layout.Children[i]).SelectedIndex != -1)
+									{
+										if (fields.Length > 0)
+										{
+											fields += ", ";
+										}
+										fields += "\"" + DectionaryFields[Layout.Children[i].Id].NameField +
+										"\":{\"id\":\"" + DectionaryFields[Layout.Children[i].Id].allowedValues[((Picker)Layout.Children[i]).SelectedIndex].id + "\"}";
+									}
+									break;
+								}
+							case "string":
+								{
+									if (DectionaryFields[Layout.Children[i].Id].required == true)
+									{
+										if (((Entry)Layout.Children[i]).Text == null)
+										{
+											checkRequeredFields = false;
+											break;
+										}
+									}
+									string strr = ((Entry)Layout.Children[i]).Text;
+									if (((Entry)Layout.Children[i]).Text != null && ((Entry)Layout.Children[i]).Text.Length > 0)
+									{
+										if (fields.Length > 0)
+										{
+											fields += ", ";
+										}
+										fields += "\"" + DectionaryFields[Layout.Children[i].Id].NameField + "\":\"" + ((Entry)Layout.Children[i]).Text + "\"";
+
+									}
+									break;
+								}
+							case "array":
+								{
+									//Проверяем какой массив данных необходимо принять на вход
+									switch (DectionaryFields[Layout.Children[i].Id].schema.items)
+									{
+										case "attachment":
+											{
+												break;
+											}
+										case "component":
+											{
+												if (DectionaryFields[Layout.Children[i].Id].required == true)
+												{
+													if (((SearchBar)Layout.Children[i]).Text == null && ((Picker)Layout.Children[i]).SelectedIndex == -1)
+													{
+														checkRequeredFields = false;
+														break;
+													}
+												}
+												int selectedIndex = ((Picker)Layout.Children[i]).SelectedIndex;
+												if (selectedIndex != -1)
+												{
+													if (fields.Length > 0)
+													{
+														fields += ", ";
+													}
+													var saq = DectionaryFields[Layout.Children[i].Id].allowedValues[selectedIndex].id;
+													fields += "\"" + DectionaryFields[Layout.Children[i].Id].NameField + "\":[{\"id\":\"" + DectionaryFields[Layout.Children[i].Id].allowedValues[selectedIndex].id + "\"}]";
+												}											
+												break;
+											}
+										case "issuelinks":
+											{
+												if (DectionaryFields[Layout.Children[i].Id].required == true)
+												{
+													if (((SearchBar)Layout.Children[i]).Text == null && ((Picker)Layout.Children[i]).SelectedIndex == -1)
+													{
+														checkRequeredFields = false;
+														break;
+													}
+												}
+												int selectedIndex = ((Picker)Layout.Children[i]).SelectedIndex;
+												if (selectedIndex != -1)
+												{
+													if (fields.Length > 0)
+													{
+														fields += ", ";
+													}
+													fields += "\"" + DectionaryFields[Layout.Children[i].Id].NameField + "\":{\"name\":\"" + ((Picker)Layout.Children[i]).Items[selectedIndex] + "\"}";
+												}
+												//Увеличиваем счетчик полей на единицу, т.к. мы ранее создавали для этого типа поля два поля (searchBar и grid и picker)
+												++i;
+												if (((SearchBar)Layout.Children[i]).Text.Length > 0)
+												{
+													if (fields.Length > 0)
+													{
+														fields += ", ";
+													}
+													fields += "\"issuelinks\":{\"name\":\"" + ((SearchBar)Layout.Children[i]).Text + "\"}";
+												}
+												break;
+											}
+									}
+									break;
+								}
+							case "date":
+							case "datetime":
+								{
+									if (fields.Length > 0)
+									{
+										fields += ", ";
+									}
+									fields += "\"" + DectionaryFields[Layout.Children[i].Id].NameField + "\":\"" + ((DatePicker)Layout.Children[i]).Date.ToString("yyyy-MM-dd") + "\"";
+									break;
+								}
+						}
+					}
+				}
+			}
+			catch (Exception ex)
+			{
+				Console.WriteLine(ex.Message);
+			}
+		}
 
 		private async void Button_Clicked(object sender, EventArgs e)
 		{
-			//Создаем переменную для построения json-запроса для совершения перехода
-			string jsonRequestCreate = "{ ";
-			//Переменная для заполнения полей
-			string fields = "";
-			//Переменная для отлова незаполненного обязательного поля
-			bool checkRequeredFields = true;
-			//Проходимся по всем элементам на форме
-			for (int i = 0; i < generalStackLayout.Children.Count && checkRequeredFields; ++i)
+			try
 			{
-				if (DectionaryFields.ContainsKey(generalStackLayout.Children[i].Id))
+				//Создаем переменную для построения json-запроса для совершения перехода
+				string jsonRequestCreate = "{ ";
+				//Переменная для заполнения полей
+				string fields = "";
+				//Переменная для отлова незаполненного обязательного поля
+				bool checkRequeredFields = true;
+
+				//Проходимся по всем элементам на формах
+				JsonFields(generalStackLayout, ref fields, ref checkRequeredFields);
+				JsonFields(necessarily_fields, ref fields, ref checkRequeredFields);
+
+				if (fields.Length > 0)
 				{
-					switch (DectionaryFields[generalStackLayout.Children[i].Id].schema.type)
+					jsonRequestCreate += "\"fields\":{" + fields +
+													  ", \"project\":{\"key\":\"" + projects[projectPic.SelectedIndex].key + "\"}," +
+													  "\"issuetype\":{\"id\":\"" + projects[projectPic.SelectedIndex].issuetypes[typeIssuePic.SelectedIndex].id + "\"}" +
+													  "}";
+				}
+
+				//Закрываем запрос
+				jsonRequestCreate += "}";
+
+
+				if (checkRequeredFields)
+				{
+					//Совершаем переход с полученными данными
+					JSONRequest jsonRequest = new JSONRequest
 					{
-						case "any":
+						urlRequest = $"/rest/api/2/issue",
+						methodRequest = "POST"
+					};
+					Request request = new Request(jsonRequest);
+					try
+					{
+						AllowedValue allowedValue = request.GetResponses<AllowedValue>(jsonRequestCreate);
+
+						if (allowedValue != null)
+						{
+							try
 							{
-								if (DectionaryFields[generalStackLayout.Children[i].Id].required == true)
+								//Если имеются добавленные вложения, то после создания задачи добавляем эти вложения
+								if (_mediaFile != null)
 								{
-									if (((SearchBar)generalStackLayout.Children[i]).Text == null)
+									string boundary = DateTime.Now.Ticks.ToString("x");
+
+									MultipartFormDataContent content = new MultipartFormDataContent(boundary);
+
+									var streamContent = new StreamContent(_mediaFile.GetStream());
+									//Задаем MimeType файлу
+									streamContent.Headers.ContentType = new MediaTypeHeaderValue(MimeTypes.GetMimeType(_mediaFile.Path));
+
+									content.Add(streamContent, "\"file\"", $"\"{_mediaFile.Path}\"");
+
+									byte[] byteArray = await content.ReadAsByteArrayAsync().ConfigureAwait(true);
+									JSONRequest jsonRequestAttachment = new JSONRequest()
 									{
-										checkRequeredFields = false;
-										break;
-									}
-								}
-								//Увеличиваем счетчик для получения доступа к элементу после label
-								ObservableCollection<InsightRoot> insights = new ObservableCollection<InsightRoot>();
-								string urlRequestData = "";
-								int startSearch = DectionaryFields[generalStackLayout.Children[i].Id].editHtml.IndexOf("data-fieldconfig=") + 18;
-								//Так же обрезаем на 19 символов для выбора только номера схемы в числовом формате
-								int endSearch = DectionaryFields[generalStackLayout.Children[i].Id].editHtml.IndexOf(" ", startSearch);
-								int numberConfigSchema = -1;
-								if (startSearch > -1 && endSearch > -1)
-								{
-									numberConfigSchema = Convert.ToInt32(DectionaryFields[generalStackLayout.Children[i].Id].editHtml.Substring(startSearch, endSearch - startSearch - 1));
-								}
-								if (numberConfigSchema > -1)
-								{
-									urlRequestData = $"/rest/insight/1.0/customfield/default/{numberConfigSchema}/objects";
-								}
+										urlRequest = $"/rest/api/2/issue/{allowedValue.key}/attachments",
+										methodRequest = "POST",
+										FileUpload = content,
+										FileUploadByte = byteArray
 
-								JSONRequest jsonRequestInsightSearch = new JSONRequest
-								{
-									urlRequest = urlRequestData,
-									currentProject = projects[projectPic.SelectedIndex].id,
-									currentReporter = CrossSettings.Current.GetValueOrDefault("login", string.Empty),
-									query = ((SearchBar)generalStackLayout.Children[i]).Text,
-									methodRequest = "POST"
-								};
-								Request requestIssue = new Request(jsonRequestInsightSearch);
-
-								insights = requestIssue.GetResponses<RootObject>().objects;
-
-								if (insights != null && insights.Count > 0)
-								{
-									if (fields.Length > 0)
-									{
-										fields += ", ";
-									}
-									fields += "\"" + DectionaryFields[generalStackLayout.Children[i].Id].NameField + "\":[{\"key\":\"" + insights[0].ObjectKey + "\"}]";
+									};
+									//Отправка вложений в задачу
+									Request requestAttachment = new Request(jsonRequestAttachment);
 								}
-								break;
 							}
-						case "user":
+							catch (Exception ex)
 							{
-								if (DectionaryFields[generalStackLayout.Children[i].Id].required == true)
-								{
-									if (((SearchBar)generalStackLayout.Children[i]).Text == null)
-									{
-										checkRequeredFields = false;
-										break;
-									}
-								}
-								//Увеличиваем счетчик для получения доступа к элементу после label
-								List<User> user;
-								JSONRequest jsonRequestIssue = new JSONRequest
-								{
-									urlRequest = $"/rest/api/2/user/picker?query=" + ((SearchBar)generalStackLayout.Children[i]).Text,
-									methodRequest = "GET"
-								};
-								Request requestUser = new Request(jsonRequestIssue);
-
-								user = requestUser.GetResponses<List<User>>();
-								if (user != null && user.Count > 0)
-								{
-									if (fields.Length > 0)
-									{
-										fields += ", ";
-									}
-									fields += "\"" + DectionaryFields[generalStackLayout.Children[i].Id].NameField + "\":{\"name\":\"" + user[0].name + "\"}";
-								}
-								break;
+								Console.WriteLine(ex.Message);
 							}
-						case "priority":
-						case "option":
-						case "option-with-child":
+							//Добавляем колесо загрузки
+							try
 							{
-								if (((Picker)generalStackLayout.Children[i]).SelectedIndex == -1 && DectionaryFields[generalStackLayout.Children[i].Id].required == true)
-								{
-									checkRequeredFields = false;
-									break;
-								}
-
-								if (((Picker)generalStackLayout.Children[i]).SelectedIndex != -1)
-								{
-									if (fields.Length > 0)
-									{
-										fields += ", ";
-									}
-									//добавляем категорию
-									fields += "\"" + DectionaryFields[generalStackLayout.Children[i].Id].NameField +
-										"\":{\"value\":\"" + ((Picker)generalStackLayout.Children[i]).Items[((Picker)generalStackLayout.Children[i]).SelectedIndex] + "\"";
-
-
-									if (DectionaryFields[generalStackLayout.Children[i].Id].allowedValues != null &&
-										DectionaryFields[generalStackLayout.Children[i].Id].allowedValues[((Picker)generalStackLayout.Children[i]).SelectedIndex].children != null &&
-										((Picker)generalStackLayout.Children[i + 1]).SelectedIndex > -1 &&
-										((Picker)generalStackLayout.Children[i + 1]).Items[((Picker)generalStackLayout.Children[i + 1]).SelectedIndex] != null)
-									{
-										//Добавляем подкатегорию
-										fields += ", \"child" +
-												  "\":{\"value\":\"" + ((Picker)generalStackLayout.Children[i + 1]).Items[((Picker)generalStackLayout.Children[i + 1]).SelectedIndex] + "\"}";
-									}
-									fields += "}";
-								}
-								break;
+								await PopupNavigation.Instance.PushAsync(new StatusBar());
 							}
-						case "resolution":
+							catch (Exception ex)
 							{
-								if (((Picker)generalStackLayout.Children[i]).SelectedIndex == -1 && DectionaryFields[generalStackLayout.Children[i].Id].required == true)
-								{
-									checkRequeredFields = false;
-									break;
-								}
+								Console.WriteLine(ex.ToString());
+							}
+							//Открываем созданную задачу для просмотра
+							await Navigation.PushAsync(new viewIssue.TabPageIssue(new Issue() { key = allowedValue.key }));
+							try
+							{
+								await PopupNavigation.Instance.PopAsync(true);
+							}
+							catch (Exception ex)
+							{
+								Console.WriteLine(ex.ToString());
+							}
+							Navigation.RemovePage(Navigation.NavigationStack[Navigation.NavigationStack.Count - 2]);
 
-								if (((Picker)generalStackLayout.Children[i]).SelectedIndex != -1)
-								{
-									if (fields.Length > 0)
-									{
-										fields += ", ";
-									}
-									fields += "\"" + DectionaryFields[generalStackLayout.Children[i].Id].NameField +
-									"\":{\"id\":\"" + DectionaryFields[generalStackLayout.Children[i].Id].allowedValues[((Picker)generalStackLayout.Children[i]).SelectedIndex].id + "\"}";
-								}
-								break;
-							}
-						case "string":
-							{
-								if (DectionaryFields[generalStackLayout.Children[i].Id].required == true)
-								{
-									if (((Entry)generalStackLayout.Children[i]).Text == null)
-									{
-										checkRequeredFields = false;
-										break;
-									}
-								}
-								if (((Entry)generalStackLayout.Children[i]).Text != null && ((Entry)generalStackLayout.Children[i]).Text.Length > 0)
-								{
-									if (fields.Length > 0)
-									{
-										fields += ", ";
-									}
-									fields += "\"" + DectionaryFields[generalStackLayout.Children[i].Id].NameField + "\":\"" + ((Entry)generalStackLayout.Children[i]).Text + "\"";
-
-								}
-								break;
-							}
-						case "array":
-							{
-								//Проверяем какой массив данных необходимо принять на вход
-								switch (DectionaryFields[generalStackLayout.Children[i].Id].schema.items)
-								{
-									case "attachment":
-										{
-											break;
-										}
-									case "issuelinks":
-										{
-											if (DectionaryFields[generalStackLayout.Children[i].Id].required == true)
-											{
-												if (((SearchBar)generalStackLayout.Children[i]).Text == null && ((Picker)generalStackLayout.Children[i]).SelectedIndex == -1)
-												{
-													checkRequeredFields = false;
-													break;
-												}
-											}
-											int selectedIndex = ((Picker)generalStackLayout.Children[i]).SelectedIndex;
-											if (selectedIndex != -1)
-											{
-												if (fields.Length > 0)
-												{
-													fields += ", ";
-												}
-												fields += "\"" + DectionaryFields[generalStackLayout.Children[i].Id].NameField + "\":{\"name\":\"" + ((Picker)generalStackLayout.Children[i]).Items[selectedIndex] + "\"}";
-											}
-											//Увеличиваем счетчик полей на единицу, т.к. мы ранее создавали для этого типа поля два поля (searchBar и grid и picker)
-											++i;
-											if (((SearchBar)generalStackLayout.Children[i]).Text.Length > 0)
-											{
-												if (fields.Length > 0)
-												{
-													fields += ", ";
-												}
-												fields += "\"issuelinks\":{\"name\":\"" + ((SearchBar)generalStackLayout.Children[i]).Text + "\"}";
-											}
-											break;
-										}
-								}
-								break;
-							}
-						case "date":
-						case "datetime":
-							{
-								if (fields.Length > 0)
-								{
-									fields += ", ";
-								}
-								fields += "\"" + DectionaryFields[generalStackLayout.Children[i].Id].NameField + "\":{\"name\":\"" + ((DatePicker)generalStackLayout.Children[i]).Date.ToString() + "\"}";
-								break;
-							}
+							MessagingCenter.Send<Page>(this, "RefreshIssueList");
+						}
+					}
+					catch (Exception ex)
+					{
+						Console.WriteLine(ex.Message);
 					}
 				}
-			}
-
-			if (fields.Length > 0)
-			{
-				jsonRequestCreate += "\"fields\":{" + fields +
-												  ", \"project\":{\"key\":\"" + projects[projectPic.SelectedIndex].key + "\"}," +
-												  "\"issuetype\":{\"id\":\"" + projects[projectPic.SelectedIndex].issuetypes[typeIssuePic.SelectedIndex].id + "\"}" +
-												  "}";
-			}
-
-			//Закрываем запрос
-			jsonRequestCreate += "}";
-
-
-			if (checkRequeredFields)
-			{
-				//Совершаем переход с полученными данными
-				JSONRequest jsonRequest = new JSONRequest
+				else
 				{
-					urlRequest = $"/rest/api/2/issue",
-					methodRequest = "POST"
-				};
-				Request request = new Request(jsonRequest);
-				try
-				{
-					AllowedValue allowedValue = request.GetResponses<AllowedValue>(jsonRequestCreate);
-
-					if (allowedValue != null)
-					{
-						try
-						{
-							//Если имеются добавленные вложения, то после создания задачи добавляем эти вложения
-							if (_mediaFile != null)
-							{
-								string boundary = DateTime.Now.Ticks.ToString("x");
-
-								MultipartFormDataContent content = new MultipartFormDataContent(boundary);
-
-								var streamContent = new StreamContent(_mediaFile.GetStream());
-								//Задаем MimeType файлу
-								streamContent.Headers.ContentType = new MediaTypeHeaderValue(MimeTypes.GetMimeType(_mediaFile.Path));
-
-								content.Add(streamContent, "\"file\"", $"\"{_mediaFile.Path}\"");
-
-								byte[] byteArray = await content.ReadAsByteArrayAsync().ConfigureAwait(true);
-								JSONRequest jsonRequestAttachment = new JSONRequest()
-								{
-									urlRequest = $"/rest/api/2/issue/{allowedValue.key}/attachments",
-									methodRequest = "POST",
-									FileUpload = content,
-									FileUploadByte = byteArray
-
-								};
-								//Отправка вложений в задачу
-								Request requestAttachment = new Request(jsonRequestAttachment);
-							}
-						}
-						catch (Exception ex)
-						{
-							Console.WriteLine(ex.Message);
-						}
-						//Добавляем колесо загрузки
-						try
-						{
-							await PopupNavigation.Instance.PushAsync(new StatusBar());
-						}
-						catch (Exception ex)
-						{
-							Console.WriteLine(ex.ToString());
-						}
-						//Открываем созданную задачу для просмотра
-						await Navigation.PushAsync(new viewIssue.TabPageIssue(new Issue() { key = allowedValue.key }));
-						try
-						{
-							await PopupNavigation.Instance.PopAsync(true);
-						}
-						catch (Exception ex)
-						{
-							Console.WriteLine(ex.ToString());
-						}
-						Navigation.RemovePage(Navigation.NavigationStack[Navigation.NavigationStack.Count - 2]);
-
-						MessagingCenter.Send<Page>(this, "RefreshIssueList");
-					}
-				}
-				catch (Exception ex)
-				{
-					Console.WriteLine(ex.Message);
+					errorMessage.IsVisible = true;
+					errorMessage.Text = "Заполните обязательные поля";
 				}
 			}
-			else
+			catch (Exception ex)
 			{
-				errorMessage.IsVisible = true;
-				errorMessage.Text = "Заполните обязательные поля";
+				Console.WriteLine(ex.Message);
 			}
 		}
 	}
