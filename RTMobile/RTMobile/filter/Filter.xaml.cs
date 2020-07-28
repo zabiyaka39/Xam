@@ -46,22 +46,26 @@ namespace RTMobile.filter
 					string[] listTmpFilters = tmpFilter.Split(',');
 					for (int i = 0, countFilters = listTmpFilters.Count(); i < countFilters; ++i)
 					{
-						//Проходимся по всему списку фильтров которые ранее смотрели
-						try
+						//Исключаем стандартные фильтры, стандартные фильтры имеют индекс меньше 0
+						if (int.Parse(listTmpFilters[i]) > 0)
 						{
-							JSONRequest jsonRequest = new JSONRequest()
+							//Проходимся по всему списку фильтров которые ранее смотрели
+							try
 							{
-								urlRequest = $"/rest/api/2/filter/{listTmpFilters[i]}",
-								methodRequest = "GET"
-							};
-							Request request = new Request(jsonRequest);
-							//Получаем список избранных фильтров
-							lastFilters.Add(request.GetResponses<Filters>());
-						}
-						catch (Exception ex)
-						{
-							Console.WriteLine(ex.Message);
-							Crashes.TrackError(ex);
+								JSONRequest jsonRequest = new JSONRequest()
+								{
+									urlRequest = $"/rest/api/2/filter/{listTmpFilters[i]}",
+									methodRequest = "GET"
+								};
+								Request request = new Request(jsonRequest);
+								//Получаем список избранных фильтров
+								lastFilters.Add(request.GetResponses<Filters>());
+							}
+							catch (Exception ex)
+							{
+								Console.WriteLine(ex.Message);
+								Crashes.TrackError(ex);
+							}
 						}
 					}
 				}

@@ -20,7 +20,7 @@
                 </Frame>
             </Grid>
             <Frame Grid.Row="0" Grid.Column="0" HasShadow="True" CornerRadius="5"
-                   x:Name="detailFrame" BackgroundColor="#FFFFFF" HeightRequest="200" Margin="10,10,10,10" Padding="10,10,10,-20">
+                   x:Name="detailFrame" BackgroundColor="#FFFFFF" HeightRequest="300" Margin="10,10,10,10" Padding="10,10,10,-20">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="25"/>
@@ -72,7 +72,7 @@
             </Frame>
 
             <Frame Grid.Row="0" Grid.Column="0" HasShadow="True" CornerRadius="5"
-                   BackgroundColor="#FFFFFF" HeightRequest="250" Margin="10,10,10,10" Padding="10,10,10,-20">
+                   BackgroundColor="#FFFFFF" HeightRequest="300" Margin="10,10,10,10" Padding="10,10,10,-20">
                 <ScrollView VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
                     <StackLayout VerticalOptions="FillAndExpand">
                         <Grid Grid.Row="0" Grid.Column="0" Padding="0" Margin="0">
