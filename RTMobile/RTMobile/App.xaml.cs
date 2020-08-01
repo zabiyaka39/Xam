@@ -6,12 +6,12 @@ using Xamarin.Forms.Xaml;
 namespace RTMobile
 {
     public partial class App : Application
-    {
-        public App()
+    {   
+        public App(string data)
         {
             
             InitializeComponent();
-            MainPage = new NavigationPage(new MainPage());
+            MainPage = new NavigationPage(new MainPage(data));
             //MainPage = new NavigationPage(new MainPage());
             //MainPage = new NavigationPage(new dataIssue.screen());
             //MainPage = new NavigationPage(new RTMobile.IssuePage());
