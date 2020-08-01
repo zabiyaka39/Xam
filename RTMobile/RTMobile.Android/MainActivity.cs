@@ -67,26 +67,22 @@ namespace RTMobile.Droid
 
 			base.OnCreate(savedInstanceState);
 			Xamarin.Essentials.Platform.Init(this, savedInstanceState);
-			
+			Rg.Plugins.Popup.Popup.Init(this, savedInstanceState);
+
 			var action = Intent?.Action;
 			var data = Intent?.Data;
 
 	
 			global::Xamarin.Forms.Forms.SetFlags("Shell_Experimental", "Visual_Experimental", "CollectionView_Experimental");
 			global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
-			if (data != null)
-			{
-				LoadApplication(new App((string)data));
-				
-			}
-            else
-            {
-				
-				LoadApplication(new App("empty"));
-				
-			}
 
-			
+			//выбор аргумента для запуска приложения. Если приложение открывается через ссылку, App инстанцируется с текстом ссылки, которую передает в мейнпейдж
+			// если пиложенизе запускается через иконку, то передается со стрoкой empty
+			string linkBegin;
+			linkBegin = (data != null) ? (string)data : "empty";
+			LoadApplication(new App(linkBegin));
+
+
 		}
 
 

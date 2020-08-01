@@ -96,26 +96,47 @@ namespace RTMobile
 						ImageService.Instance.Config.HttpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic",
 							Convert.ToBase64String(System.Text.ASCIIEncoding.ASCII.GetBytes($"{CrossSettings.Current.GetValueOrDefault("login", login.Text)}:{CrossSettings.Current.AddOrUpdateValue("password", password.Text)}")));
 
-						if (data == "empty") 
+						if (data == "empty")
 						{
 							await Navigation.PushModalAsync(new AllIssues()).ConfigureAwait(true);
 
 						}
-                        else
-                        {
+						else
+						{
+							//регулярные выражения обрабатывают полученые ссылки
+							// и если ссылка соответсвует одному из регклярных выражений, то вызывается страница
+							// соответсвующая тому или инному регулярному выражению
+							// если ссылка не соответствует ни одному регулярному выражению, то открывается глаынй экран приложенгия
 							Regex regex = new Regex(@"(\w{2,10}-+\d{2,10}$)");
-							Regex regex2 = new Regex(@"(\w{2,10}$)");
 							Match match = regex.Match(data);
-							if ((string)match.Value != "{}")
+							if (match.Success)
 							{
 								Issue issue = new Issue() { key = match.Value };
 								await Navigation.PushModalAsync(new TabPageIssue(issue)).ConfigureAwait(true);
-
 							}
-							Match match2 = regex2.Match(data);
-							Console.WriteLine(match2);
+							regex = new Regex(@"objectId=(\w{2,10}$)");
+							match = regex.Match(data);
+							if (match.Success)
+							{
+								string input = Regex.Replace(match.Value, "objectId=", "");
+								JSONRequest jsonRequest = new JSONRequest()
+								{
+									urlRequest = $"/rest/insight/1.0/object/{input}",
+									methodRequest = "GET"
+								};
+								request = new Request(jsonRequest);
+
+								ObjectEntry insightObject = request.GetResponses<ObjectEntry>();
+								await Navigation.PushModalAsync(new TabPageObjectInsight(insightObject)).ConfigureAwait(true);
+							}
+
+							else
+							{
+								await Navigation.PushModalAsync(new AllIssues()).ConfigureAwait(true);
+							};
+
 						}
-						
+
 					}
 					else
 					{						
@@ -209,7 +230,7 @@ namespace RTMobile
 						ImageService.Instance.Config.HttpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic",
 							Convert.ToBase64String(System.Text.ASCIIEncoding.ASCII.GetBytes($"{CrossSettings.Current.GetValueOrDefault("login", login.Text)}:{CrossSettings.Current.GetValueOrDefault("password", password.Text)}")));
 
-
+						// если дата емпти, запрускает главный экран приложения
 						if (data == "empty")
 						{
 							await Navigation.PushModalAsync(new AllIssues()).ConfigureAwait(true);
@@ -217,6 +238,10 @@ namespace RTMobile
 						}
 						else
 						{
+							//регулярные выражения обрабатывают полученые ссылки
+							// и если ссылка соответсвует одному из регклярных выражений, то вызывается страница
+							// соответсвующая тому или инному регулярному выражению
+							// если ссылка не соответствует ни одному регулярному выражению, то открывается глаынй экран приложенгия
 							Regex regex = new Regex(@"(\w{2,10}-+\d{2,10}$)");
 							Match match = regex.Match(data);
 							if (match.Success)
@@ -235,10 +260,16 @@ namespace RTMobile
 									methodRequest = "GET"
 								};
 								request = new Request(jsonRequest);
-								//Получаем список избранных фильтров
+							
 								ObjectEntry insightObject = request.GetResponses<ObjectEntry>();
 								await Navigation.PushModalAsync(new TabPageObjectInsight(insightObject)).ConfigureAwait(true);
 							}
+
+							else
+							{
+								await Navigation.PushModalAsync(new AllIssues()).ConfigureAwait(true);
+							};
+							
 						}
 						 
 
