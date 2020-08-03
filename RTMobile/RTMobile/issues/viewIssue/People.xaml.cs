@@ -130,24 +130,38 @@ namespace RTMobile.issues.viewIssue
 		private async void TapGestureRecognizer_Tapped(object sender, EventArgs e)
 		{
 
-			string result = await DisplayActionSheet("Выберете действие", "Отмена", null, "Профиль пользователя", "Изменить автора");
+			await Navigation.PushAsync(new Profile(issue.fields.creator.name)).ConfigureAwait(true);
+			
+		}
+		private async void TapGestureRecognizer_Tapped_1(object sender, EventArgs e)
+		{
+			string result = await DisplayActionSheet("Выберете действие", "Отмена", null, "Профиль пользователя", "Изменить исполнителя");
 			switch (result)
 			{
 				case "Профиль пользователя":
 					{
-						await Navigation.PushAsync(new Profile(issue.fields.creator.name)).ConfigureAwait(true);
+						await Navigation.PushAsync(new Profile(issue.fields.assignee.name)).ConfigureAwait(true);
 						break;
 					}
-				case "Изменить автора":
+				case "Изменить исполнителя":
 					{
 						await PopupNavigation.Instance.PushAsync(new EditPeople(issue.key, true));
+						JSONRequest jsonRequest = new JSONRequest()
+						{
+							//Показ всех полей, даже не видимых
+							//urlRequest = $"/rest/api/2/issue/{issue.key}?expand=names,schema",
+							//Показываем только видимые поля
+							urlRequest = $"/rest/api/2/issue/{issue.key}?expand=names,editmeta",
+							methodRequest = "GET"
+						};
+
+						Request requestIssue = new Request(jsonRequest);
+						issue = requestIssue.GetResponses<Issue>();
+						this.BindingContext = this;
+
 						break;
 					}
-			}			
-		}
-		private async void TapGestureRecognizer_Tapped_1(object sender, EventArgs e)
-		{
-			await Navigation.PushAsync(new Profile(issue.fields.assignee.name)).ConfigureAwait(true);
+			}
 		}
 		private async void ListView_ItemTapped(object sender, ItemTappedEventArgs e)
 		{

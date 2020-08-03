@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Rg.Plugins.Popup.Services;
+using System;
 using System.Collections.ObjectModel;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -14,7 +15,7 @@ namespace RTMobile.issues.eventIssue
 		/// </summary>
 		private bool assignee { get; set; }
 		private string issueKey { get; set; }
-		public EditPeople(string issueKey,bool assignee=true)
+		public EditPeople(string issueKey, bool assignee = true)
 		{
 			InitializeComponent();
 			this.assignee = assignee;
@@ -40,7 +41,6 @@ namespace RTMobile.issues.eventIssue
 			{
 				((ListView)sender).SelectedItem = null;
 				User user = e.SelectedItem as RTMobile.User;
-
 			}
 		}
 
@@ -92,7 +92,7 @@ namespace RTMobile.issues.eventIssue
 			await Navigation.PopAsync().ConfigureAwait(true);
 		}
 
-		private async void Button_Clicked_1(object sender, EventArgs e)
+		private void Button_Clicked_1(object sender, EventArgs e)
 		{
 			if (assignee)
 			{
@@ -102,11 +102,11 @@ namespace RTMobile.issues.eventIssue
 					methodRequest = "PUT"
 				};
 				User user = usersList.SelectedItem as RTMobile.User;
-				string json = "{\"name\":\"" + user.name+ "\"}";
+				string json = "{\"name\":\"" + user.name + "\"}";
 				Request requestIssue = new Request(jsonrequest);
-				
+
 				requestIssue.GetResponses<RootObject>(json);
-				await Navigation.PopAsync().ConfigureAwait(true);
+				PopupNavigation.Instance.PopAsync(true);
 			}
 		}
 	}
