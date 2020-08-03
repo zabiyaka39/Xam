@@ -32,7 +32,7 @@ namespace RTMobile.issues.viewIssue
 		}
 		void Subscribe()
 		{
-			MessagingCenter.Subscribe<Page>(this, "RefreshIssueUpdate", async (sender) =>
+			MessagingCenter.Subscribe<Page>(this, "RefreshIssueUpdate", (sender) =>
 			{
 				JSONRequest jsonRequest = new JSONRequest()
 				{

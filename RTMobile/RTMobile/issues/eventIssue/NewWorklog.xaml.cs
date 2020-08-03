@@ -57,7 +57,7 @@ namespace RTMobile.issues.viewIssue
                 }
 
                 MessagingCenter.Send<NewWorkjornal>(this, "RefreshMainPage");
-                Navigation.PopAsync();
+				await Navigation.PopAsync();
             }
             else
             {

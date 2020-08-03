@@ -85,9 +85,9 @@ namespace RTMobile
 
 		}
 
-		void FeedbacSender_clicked(object sender, System.EventArgs e)
+		async void FeedbacSender_clicked(object sender, System.EventArgs e)
         {
-			SendEmailAsync();
+			await SendEmailAsync();
 		}
         private static int countClick = 0;
         private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
@@ -104,9 +104,8 @@ namespace RTMobile
             }           
 		}
 
-		private async void Button_Clicked(object sender, EventArgs e)
+		private void Button_Clicked(object sender, EventArgs e)
 		{
-            
 
         }
 	}   

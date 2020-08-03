@@ -21,7 +21,7 @@ using RTMobile.insight;
 
 namespace RTMobile
 {
-	
+
 	[DesignTimeVisible(false)]
 	public partial class MainPage : ContentPage
 	{
@@ -38,7 +38,7 @@ namespace RTMobile
 
 			Request request = new Request();
 			this.data = data;
-			
+
 			if (request.verifyServer())
 			{
 				frameLogin.IsEnabled = true;
@@ -48,7 +48,7 @@ namespace RTMobile
 				errorMessage.Margin = new Thickness(0, -15, 0, 0);
 
 				//Если логин и пароль существуют, то даем пользователю входить по отпечатку
-				if(CrossSettings.Current.GetValueOrDefault("login", string.Empty) != string.Empty && CrossSettings.Current.GetValueOrDefault("password", string.Empty) != string.Empty)
+				if (CrossSettings.Current.GetValueOrDefault("login", string.Empty) != string.Empty && CrossSettings.Current.GetValueOrDefault("password", string.Empty) != string.Empty)
 				{
 					fingerAuth(true);
 				}
@@ -62,7 +62,7 @@ namespace RTMobile
 				errorMessage1.Text = "Повторите попытку позже!";
 				errorMessage.FontAttributes = FontAttributes.Bold;
 				errorMessage.Margin = new Thickness(0, -15, 0, 15);
-				
+
 			}
 		}
 
@@ -138,7 +138,7 @@ namespace RTMobile
 
 					}
 					else
-					{						
+					{
 						errorMessage.IsVisible = true;
 						errorMessage1.IsVisible = true;
 						errorMessage.Text = "Вход не выполнен!";
@@ -259,7 +259,7 @@ namespace RTMobile
 									methodRequest = "GET"
 								};
 								request = new Request(jsonRequest);
-							
+
 								ObjectEntry insightObject = request.GetResponses<ObjectEntry>();
 								await Navigation.PushModalAsync(new TabPageObjectInsight(insightObject)).ConfigureAwait(true);
 							}
@@ -268,9 +268,9 @@ namespace RTMobile
 							{
 								await Navigation.PushModalAsync(new AllIssues()).ConfigureAwait(true);
 							};
-							
+
 						}
-						 
+
 
 						try
 						{

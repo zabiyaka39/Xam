@@ -58,7 +58,22 @@ namespace RTMobile.insight
 
 				RootInsightComment rootObject = new RootInsightComment();
 				Request request = new Request(jsonRequest);
-				comments = request.GetCommentInsight();
+				ObservableCollection<jiraData.CommentInsight> tmpComments = request.GetCommentInsight();
+				if (comments != null)
+				{
+					for (int i = comments.Count; i > 0; --i)
+					{
+						comments.RemoveAt(0);
+					}
+				}
+				else
+				{
+					comments = new ObservableCollection<jiraData.CommentInsight>();
+				}
+				for (int i = 0; i < tmpComments.Count; ++i)
+				{
+					comments.Add(tmpComments[i]);
+				}
 			}
 			catch (Exception ex)
 			{
@@ -89,7 +104,7 @@ namespace RTMobile.insight
 		{
 			Navigation.PopToRootAsync();
 		}
-		private async void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+		private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
 		{
 		}
 		private async void ImageButton_Clicked_4(object sender, EventArgs e)
@@ -98,7 +113,7 @@ namespace RTMobile.insight
 			{
 				JSONRequest jsonRequest = new JSONRequest()
 				{
-					urlRequest = $"rest/insight/1.0/comment/create",
+					urlRequest = $"/rest/insight/1.0/comment/create",
 					methodRequest = "POST",
 					comment = newComment.Text,
 					objectId = InsightKey,
@@ -117,6 +132,7 @@ namespace RTMobile.insight
 				{
 					newComment.Text = "";
 					issueStartPostRequest(InsightKey);
+
 					//await DisplayAlert("Готово", "Комментарий добавлен", "OK").ConfigureAwait(true);
 				}
 				else
@@ -139,7 +155,7 @@ namespace RTMobile.insight
 			catch (Exception ex)
 			{
 				Console.WriteLine(ex.ToString());
-				await DisplayAlert("Error issues", ex.ToString(), "OK").ConfigureAwait(true);
+				await DisplayAlert("Ошибка добавления комментария в систему", ex.ToString(), "OK").ConfigureAwait(true);
 			}
 		}
 	}

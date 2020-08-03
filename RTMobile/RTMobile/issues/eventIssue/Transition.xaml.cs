@@ -1,4 +1,7 @@
-﻿using Plugin.Settings;
+﻿using Nancy;
+using Plugin.Media;
+using Plugin.Media.Abstractions;
+using Plugin.Settings;
 using RTMobile.calendar;
 using RTMobile.filter;
 using RTMobile.insight;
@@ -8,6 +11,8 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using Xamarin.Forms;
 
 namespace RTMobile.issues.viewIssue
@@ -16,6 +21,13 @@ namespace RTMobile.issues.viewIssue
 	{
 		Dictionary<Guid, Fields> DectionaryFields = new Dictionary<Guid, Fields>();
 		public List<Fields> Fields { get; set; }//Поля заявки
+		MediaFile _mediaFile { get; set; }
+		Label nameAttachmentLabel = new Label()
+		{
+			Text = "Отсутствует",
+			TextColor = Color.FromHex("#F0F1F0"),
+			FontSize = 18
+		};
 		string numberIssue { get; set; }
 		int transitionId { get; set; }
 		public Transition(int transitionId, string numberIssue)
@@ -363,6 +375,7 @@ namespace RTMobile.issues.viewIssue
 												HorizontalOptions = LayoutOptions.FillAndExpand,
 												Margin = new Thickness(0, 0, 0, 20),
 											};
+											button.Clicked += Button_Clicked1;
 											typeStack.Children.Add(button);
 											DectionaryFields.Add(button.Id, Field);
 											break;
@@ -603,11 +616,51 @@ namespace RTMobile.issues.viewIssue
 		{
 			Navigation.PopToRootAsync();
 		}
+
+
+		private async void Button_Clicked1(object sender, EventArgs e)
+		{
+
+			string st = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+
+			//Инициализируем проверку доступности разрешения работы с файловой системой
+			await CrossMedia.Current.Initialize();
+
+			string action = await DisplayActionSheet("Добавить данные", "Cancel", null, "Сделать фото", "Выбрать изображение");
+			if (action == "Сделать фото")
+			{
+				if (CrossMedia.Current.IsCameraAvailable && CrossMedia.Current.IsTakePhotoSupported)
+				{
+					_mediaFile = await CrossMedia.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions
+					{
+						SaveToAlbum = true,
+						Directory = "",
+						Name = $"{DateTime.Now.ToString("dd.MM.yyyy_hh.mm.ss")}.jpg"
+					});
+
+				}
+			}
+			if (action == "Выбрать изображение")
+			{
+				if (CrossMedia.Current.IsPickPhotoSupported)
+				{
+					_mediaFile = await CrossMedia.Current.PickPhotoAsync().ConfigureAwait(true);
+				}
+			}
+
+			if (_mediaFile != null)
+			{
+				nameAttachmentLabel.IsVisible = true;
+				nameAttachmentLabel.Text = _mediaFile.Path;
+			}
+		}
+
+
 		private async void Button_Clicked(object sender, EventArgs e)
 		{
 			string fields = "";
 			//Переменная для отлова незаполненного обязательного поля
-		
+
 			//Создаем переменную для построения json-запроса для совершения перехода
 			string jsonRequestTransitions = "{ \"transition\":{\"id\": \"" + transitionId.ToString() + "\"}";
 
@@ -638,8 +691,38 @@ namespace RTMobile.issues.viewIssue
 				Errors errors = request.GetResponses<Errors>(jsonRequestTransitions);
 				if (errors == null || (errors.comment == null && errors.assignee == null))
 				{
+					try
+					{
+						//Если имеются добавленные вложения, то после создания задачи добавляем эти вложения
+						if (_mediaFile != null)
+						{
+							string boundary = DateTime.Now.Ticks.ToString("x");
+
+							MultipartFormDataContent content = new MultipartFormDataContent(boundary);
+
+							var streamContent = new StreamContent(_mediaFile.GetStream());
+							//Задаем MimeType файлу
+							streamContent.Headers.ContentType = new MediaTypeHeaderValue(MimeTypes.GetMimeType(_mediaFile.Path));
+
+							content.Add(streamContent, "\"file\"", $"\"{_mediaFile.Path}\"");
+
+							byte[] byteArray = await content.ReadAsByteArrayAsync().ConfigureAwait(true);
+							JSONRequest jsonRequestAttachment = new JSONRequest()
+							{
+								urlRequest = $"/rest/api/2/issue/{numberIssue}/attachments",
+								methodRequest = "POST",
+								FileUpload = content,
+								FileUploadByte = byteArray
+							};
+							//Отправка вложений в задачу
+							Request requestAttachment = new Request(jsonRequestAttachment);
+						}
+					}
+					catch (Exception ex)
+					{
+						Console.WriteLine(ex.Message);
+					}
 					MessagingCenter.Send<Page>(this, "RefreshIssueUpdate");
-					//MessagingCenter.Send(this, "RefreshIssueUpdate");
 					await Navigation.PopAsync();
 				}
 			}
@@ -865,9 +948,11 @@ namespace RTMobile.issues.viewIssue
 								switch (DectionaryFields[Layout.Children[i].Id].schema.items)
 								{
 									case "attachment":
-										{
+										{									
+											
 											break;
 										}
+
 									case "issuelinks":
 										{
 											if (DectionaryFields[Layout.Children[i].Id].required == true)

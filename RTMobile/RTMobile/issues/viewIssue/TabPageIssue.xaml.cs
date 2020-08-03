@@ -150,9 +150,9 @@ namespace RTMobile.issues.viewIssue
 		}
 
 		//кнопка вызывает диалоговое окно, в котором можно выбрать способ отпраки ссылки на задачу
-		void SendIssueClicked(System.Object sender, System.EventArgs e)
+		async void SendIssueClicked(System.Object sender, System.EventArgs e)
 		{
-			ShereIssue();
+			await ShereIssue();
 		}
 		//метод вызова диалогового окна, в котором можно выбрать способ отпраки ссылки на задачу
 		public async Task ShereIssue()

@@ -41,9 +41,9 @@ namespace RTMobile.issues.viewIssue
             GoToback();
 
         }
-        void SendIssueClicked(System.Object sender, System.EventArgs e)
+        async void SendIssueClicked(System.Object sender, System.EventArgs e)
         {
-            ShereIssue();
+			await ShereIssue();
         }
         //метод вызова диалогового окна, в котором можно выбрать способ отпраки ссылки на задачу
         public async Task ShereIssue()
@@ -95,7 +95,7 @@ namespace RTMobile.issues.viewIssue
             }
 
         }
-        public async void GoToback()
+        public void GoToback()
         {
             MessagingCenter.Subscribe<NewWorkjornal>(this, "RefreshMainPage", (sender) =>
             {

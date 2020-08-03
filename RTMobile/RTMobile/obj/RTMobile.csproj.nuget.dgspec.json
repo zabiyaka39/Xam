@@ -1,23 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\RT\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj": {}
+    "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj": {}
   },
   "projects": {
-    "C:\\RT\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj": {
+    "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj": {
       "version": "1.1.0",
       "restore": {
-        "projectUniqueName": "C:\\RT\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj",
+        "projectUniqueName": "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj",
         "projectName": "REM",
-        "projectPath": "C:\\RT\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj",
-        "packagesPath": "C:\\Users\\leshiy\\.nuget\\packages\\",
-        "outputPath": "C:\\RT\\rtmobile\\RTMobile\\RTMobile\\obj\\",
+        "projectPath": "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj",
+        "packagesPath": "C:\\Users\\sekisov\\.nuget\\packages\\",
+        "outputPath": "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\leshiy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\sekisov\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -42,21 +43,17 @@
       "frameworks": {
         "netstandard2.0": {
           "dependencies": {
-            "CarouselView": {
-              "target": "Package",
-              "version": "[7.0.3.1, )"
-            },
             "CarouselView.FormsPlugin": {
               "target": "Package",
               "version": "[5.2.0, )"
             },
             "Microsoft.AppCenter.Analytics": {
               "target": "Package",
-              "version": "[3.2.2, )"
+              "version": "[3.4.0, )"
             },
             "Microsoft.AppCenter.Crashes": {
               "target": "Package",
-              "version": "[3.2.2, )"
+              "version": "[3.4.0, )"
             },
             "Microsoft.CSharp": {
               "target": "Package",
@@ -94,7 +91,7 @@
             },
             "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",
-              "version": "[6.7.0, )"
+              "version": "[6.7.1, )"
             },
             "System.Net.Http": {
               "target": "Package",
@@ -130,7 +127,7 @@
             },
             "Xamarin.Forms": {
               "target": "Package",
-              "version": "[4.7.0.968, )"
+              "version": "[4.7.0.1239, )"
             },
             "Xamarin.Plugin.FilePicker": {
               "target": "Package",

@@ -1,15 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Security;
 using Microsoft.AppCenter.Crashes;
 using Plugin.Settings;
-using RTMobile;
 using RTMobile.calendar;
 using RTMobile.insight;
-using RTMobile.profile;
-
 using Xamarin.Forms;
 
 namespace RTMobile.filter

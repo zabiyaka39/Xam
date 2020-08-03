@@ -1012,7 +1012,6 @@ namespace RTMobile.issues
 										methodRequest = "POST",
 										FileUpload = content,
 										FileUploadByte = byteArray
-
 									};
 									//Отправка вложений в задачу
 									Request requestAttachment = new Request(jsonRequestAttachment);
