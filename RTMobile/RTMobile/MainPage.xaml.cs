@@ -14,6 +14,10 @@ using Plugin.Fingerprint;
 using Plugin.Fingerprint.Abstractions;
 using Plugin.Geolocator;
 using Plugin.Geolocator.Abstractions;
+using FFImageLoading.Helpers;
+using System.Text.RegularExpressions;
+using RTMobile.issues.viewIssue;
+using RTMobile.insight;
 
 namespace RTMobile
 {
@@ -25,16 +29,16 @@ namespace RTMobile
 		{
 			static public User User { get; set; }
 		}
-		public MainPage()
+		string data { get; set; }
+		public MainPage(string data)
 		{
 			InitializeComponent();
-
 			IGeolocator locator = CrossGeolocator.Current;
-
 			login.Text = CrossSettings.Current.GetValueOrDefault("login", "");
-			
-			Request request = new Request();
 
+			Request request = new Request();
+			this.data = data;
+			
 			if (request.verifyServer())
 			{
 				frameLogin.IsEnabled = true;
@@ -58,6 +62,7 @@ namespace RTMobile
 				errorMessage1.Text = "Повторите попытку позже!";
 				errorMessage.FontAttributes = FontAttributes.Bold;
 				errorMessage.Margin = new Thickness(0, -15, 0, 15);
+				
 			}
 		}
 
@@ -90,7 +95,47 @@ namespace RTMobile
 						ImageService.Instance.Config.HttpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic",
 							Convert.ToBase64String(System.Text.ASCIIEncoding.ASCII.GetBytes($"{CrossSettings.Current.GetValueOrDefault("login", login.Text)}:{CrossSettings.Current.AddOrUpdateValue("password", password.Text)}")));
 
-						await Navigation.PushModalAsync(new AllIssues()).ConfigureAwait(true);
+						if (data == "empty")
+						{
+							await Navigation.PushModalAsync(new AllIssues()).ConfigureAwait(true);
+
+						}
+						else
+						{
+							//регулярные выражения обрабатывают полученые ссылки
+							// и если ссылка соответсвует одному из регклярных выражений, то вызывается страница
+							// соответсвующая тому или инному регулярному выражению
+							// если ссылка не соответствует ни одному регулярному выражению, то открывается глаынй экран приложенгия
+							Regex regex = new Regex(@"(\w{2,10}-+\d{2,10}$)");
+							Match match = regex.Match(data);
+							if (match.Success)
+							{
+								Issue issue = new Issue() { key = match.Value };
+								await Navigation.PushModalAsync(new TabPageIssue(issue)).ConfigureAwait(true);
+							}
+							regex = new Regex(@"objectId=(\w{2,10}$)");
+							match = regex.Match(data);
+							if (match.Success)
+							{
+								string input = Regex.Replace(match.Value, "objectId=", "");
+								JSONRequest jsonRequest = new JSONRequest()
+								{
+									urlRequest = $"/rest/insight/1.0/object/{input}",
+									methodRequest = "GET"
+								};
+								request = new Request(jsonRequest);
+
+								ObjectEntry insightObject = request.GetResponses<ObjectEntry>();
+								await Navigation.PushModalAsync(new TabPageObjectInsight(insightObject)).ConfigureAwait(true);
+							}
+
+							else
+							{
+								await Navigation.PushModalAsync(new AllIssues()).ConfigureAwait(true);
+							};
+
+						}
+
 					}
 					else
 					{						
@@ -130,7 +175,6 @@ namespace RTMobile
 			}
 
 		}
-
 		private async void Button_Clicked_1(object sender, EventArgs e)
 		{
 			await Navigation.PushAsync(new About()).ConfigureAwait(true);
@@ -185,7 +229,48 @@ namespace RTMobile
 						ImageService.Instance.Config.HttpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic",
 							Convert.ToBase64String(System.Text.ASCIIEncoding.ASCII.GetBytes($"{CrossSettings.Current.GetValueOrDefault("login", login.Text)}:{CrossSettings.Current.GetValueOrDefault("password", password.Text)}")));
 
-						await Navigation.PushModalAsync(new AllIssues()).ConfigureAwait(true);
+						// если дата емпти, запрускает главный экран приложения
+						if (data == "empty")
+						{
+							await Navigation.PushModalAsync(new AllIssues()).ConfigureAwait(true);
+
+						}
+						else
+						{
+							//регулярные выражения обрабатывают полученые ссылки
+							// и если ссылка соответсвует одному из регклярных выражений, то вызывается страница
+							// соответсвующая тому или инному регулярному выражению
+							// если ссылка не соответствует ни одному регулярному выражению, то открывается глаынй экран приложенгия
+							Regex regex = new Regex(@"(\w{2,10}-+\d{2,10}$)");
+							Match match = regex.Match(data);
+							if (match.Success)
+							{
+								Issue issue = new Issue() { key = match.Value };
+								await Navigation.PushModalAsync(new TabPageIssue(issue)).ConfigureAwait(true);
+							}
+							regex = new Regex(@"objectId=(\w{2,10}$)");
+							match = regex.Match(data);
+							if (match.Success)
+							{
+								string input = Regex.Replace(match.Value, "objectId=", "");
+								JSONRequest jsonRequest = new JSONRequest()
+								{
+									urlRequest = $"/rest/insight/1.0/object/{input}",
+									methodRequest = "GET"
+								};
+								request = new Request(jsonRequest);
+							
+								ObjectEntry insightObject = request.GetResponses<ObjectEntry>();
+								await Navigation.PushModalAsync(new TabPageObjectInsight(insightObject)).ConfigureAwait(true);
+							}
+
+							else
+							{
+								await Navigation.PushModalAsync(new AllIssues()).ConfigureAwait(true);
+							};
+							
+						}
+						 
 
 						try
 						{

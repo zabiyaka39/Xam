@@ -1,24 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj": {}
+    "C:\\RT\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj": {}
   },
   "projects": {
-    "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj": {
+    "C:\\RT\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj": {
       "version": "1.1.0",
       "restore": {
-        "projectUniqueName": "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj",
+        "projectUniqueName": "C:\\RT\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj",
         "projectName": "REM",
-        "projectPath": "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj",
-        "packagesPath": "C:\\Users\\sekisov\\.nuget\\packages\\",
-        "outputPath": "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile\\obj\\",
+        "projectPath": "C:\\RT\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj",
+        "packagesPath": "C:\\Users\\leshiy\\.nuget\\packages\\",
+        "outputPath": "C:\\RT\\rtmobile\\RTMobile\\RTMobile\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\sekisov\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\leshiy\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],

@@ -21,12 +21,25 @@ using System.Net.Http.Headers;
 using Rg.Plugins.Popup.Services;
 using Plugin.Fingerprint;
 using Plugin.CurrentActivity;
+using System.Text.RegularExpressions;
+using Xamarin.Forms;
 
 namespace RTMobile.Droid
 {
-	[Activity(Label = "RTMobile", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+
+	[Activity(Name = "packagename.MainActivity", Label = "RTMobile", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+	[IntentFilter(new[] { Android.Content.Intent.ActionView },
+					   AutoVerify = true,
+					   Categories = new[]
+					   {
+							Android.Content.Intent.CategoryDefault,
+							Android.Content.Intent.CategoryBrowsable
+					   },
+					   DataScheme = "https",
+					   DataHost = "sd.rosohrana.ru")]
 	public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
 	{
+
 		protected override void OnCreate(Bundle savedInstanceState)
 		{
 			AppCenter.Start("70eacacc-10db-4aed-98da-d55ac5b5940d",
@@ -53,15 +66,23 @@ namespace RTMobile.Droid
 
 
 			base.OnCreate(savedInstanceState);
-
+			Xamarin.Essentials.Platform.Init(this, savedInstanceState);
 			Rg.Plugins.Popup.Popup.Init(this, savedInstanceState);
 
-			Xamarin.Essentials.Platform.Init(this, savedInstanceState);
+			var action = Intent?.Action;
+			var data = Intent?.Data;
+
+	
 			global::Xamarin.Forms.Forms.SetFlags("Shell_Experimental", "Visual_Experimental", "CollectionView_Experimental");
 			global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
-			LoadApplication(new App());
-			Xamarin.Essentials.Platform.Init(this, savedInstanceState);
-			global::ZXing.Net.Mobile.Forms.Android.Platform.Init();
+
+			//выбор аргумента для запуска приложения. Если приложение открывается через ссылку, App инстанцируется с текстом ссылки, которую передает в мейнпейдж
+			// если пиложенизе запускается через иконку, то передается со стрoкой empty
+			string linkBegin;
+			linkBegin = (data != null) ? (string)data : "empty";
+			LoadApplication(new App(linkBegin));
+
+
 		}
 
 

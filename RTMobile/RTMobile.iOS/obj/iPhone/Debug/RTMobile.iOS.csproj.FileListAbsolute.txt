@@ -201,3 +201,11 @@ F:\project\Mobile\rtmobile\RTMobile\RTMobile.iOS\obj\iPhone\Debug\CopyFilesToMac
 F:\project\Mobile\rtmobile\RTMobile\RTMobile.iOS\obj\iPhone\Debug\CopyFilesToMac\RTMobile.iOS.pdb.DebugSymbolsProjectOutputGroupOutput.stamp
 F:\project\Mobile\rtmobile\RTMobile\RTMobile.iOS\obj\iPhone\Debug\CopyFilesToMac\Entitlements.plist.NoneOutput.stamp
 F:\project\Mobile\rtmobile\RTMobile\RTMobile.iOS\obj\iPhone\Debug\CopyFilesToMac\Info.plist.NoneOutput.stamp
+C:\RT\rtmobile\RTMobile\RTMobile.iOS\obj\iPhone\Debug\device-builds\iphone8.4-13.5.1\ibtool\_BundleResourceWithLogicalName.items
+C:\RT\rtmobile\RTMobile\RTMobile.iOS\obj\iPhone\Debug\device-builds\iphone8.4-13.5.1\actool\_PartialAppManifest.items
+C:\RT\rtmobile\RTMobile\RTMobile.iOS\obj\iPhone\Debug\device-builds\iphone8.4-13.5.1\actool\_BundleResourceWithLogicalName.items
+C:\RT\rtmobile\RTMobile\RTMobile.iOS\obj\iPhone\Debug\device-builds\iphone8.4-13.5.1\coremlc\_PartialAppManifest.items
+C:\RT\rtmobile\RTMobile\RTMobile.iOS\obj\iPhone\Debug\device-builds\iphone8.4-13.5.1\coremlc\_BundleResourceWithLogicalName.items
+C:\RT\rtmobile\RTMobile\RTMobile.iOS\obj\iPhone\Debug\device-builds\iphone8.4-13.5.1\optimized\
+C:\RT\rtmobile\RTMobile\RTMobile.iOS\obj\iPhone\Debug\RTMobile.iOS.csprojAssemblyReference.cache
+C:\RT\rtmobile\RTMobile\RTMobile.iOS\obj\iPhone\Debug\RTMobile.iOS.csproj.CoreCompileInputs.cache

@@ -108,7 +108,7 @@ namespace RTMobile.insight
 		}
 		void ImageButton_Clicked_3(System.Object sender, System.EventArgs e)
 		{
-			Navigation.PopToRootAsync();
+			Application.Current.MainPage = new issues.AllIssues();
 		}
 
 		private void showDetailIssue_Clicked(object sender, EventArgs e)

@@ -89,7 +89,7 @@ namespace RTMobile.issues
 
 		private void Button_Clicked_6(object sender, System.EventArgs e)
 		{
-			Application.Current.MainPage = new MainPage();
+			Application.Current.MainPage = new MainPage("empty");
 		}
 	}
 }
