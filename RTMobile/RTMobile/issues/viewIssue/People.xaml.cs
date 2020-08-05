@@ -22,7 +22,7 @@ namespace RTMobile.issues.viewIssue
 			InitializeComponent();
 			this.issue = issue;
 			warchersIssue();
-
+			Subscribe();
 			this.BindingContext = this;
 		}
 		private void warchersIssue()
@@ -57,6 +57,13 @@ namespace RTMobile.issues.viewIssue
 				Crashes.TrackError(ex);
 				Console.WriteLine(ex.ToString());
 			}
+		}
+		private void Subscribe()
+		{
+			MessagingCenter.Subscribe<AddWatchersModal>(this, "WatchersChange", (sender) => {
+				warchersIssue();
+				OnPropertyChanged(nameof(watchers));
+			});
 		}
 
 		void ImageButton_Clicked(System.Object sender, System.EventArgs e)

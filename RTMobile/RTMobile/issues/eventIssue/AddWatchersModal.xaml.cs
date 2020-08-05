@@ -10,7 +10,7 @@ using RTMobile.profile;
 using Xamarin.Forms;
 using System.ComponentModel;
 using Rg.Plugins.Popup.Services;
-
+using Windows.ApplicationModel.VoiceCommands;
 
 namespace RTMobile.issues.viewIssue
 {
@@ -157,20 +157,28 @@ namespace RTMobile.issues.viewIssue
 		void Cho(object sender, EventArgs e)
 		{
 			for (int j = 0; j < Additional.Count; ++j)
-				for (int i = 0; i < watchers.Count; ++i)
-					if (watchers[i].name == Additional[j].name)
-					{
-						break;
-					}
-					else
-					{
-						if (i == watchers.Count - 1)
+				if (watchers.Count == 0)
+                {
+					DoWatch("POST", Additional[j].name);
+				}
+                else
+                {
+					for (int i = 0; i < watchers.Count; ++i)
+						if (watchers[i].name == Additional[j].name)
 						{
-							DoWatch("POST", Additional[j].name);
 							break;
 						}
-					}
-			PopupNavigation.Instance.PopAsync(true);
+						else
+						{
+							if (i == watchers.Count - 1)
+							{
+								DoWatch("POST", Additional[j].name);
+								break;
+							}
+						}
+				}
+				MessagingCenter.Send<AddWatchersModal>(this,"WatchersChange");
+				PopupNavigation.Instance.PopAsync(true);
 		}
 		protected override bool OnBackgroundClicked()
 		{

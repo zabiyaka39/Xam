@@ -109,7 +109,7 @@
                                     VerticalOptions="FillAndExpand" Margin="0,0,0,0">
                             <ListView  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
                                        HasUnevenRows="True" SeparatorVisibility="None"
-                                       ItemsSource="{Binding Path=watchers}"
+                                       ItemsSource="{Binding watchers}"
                                        ItemTapped="ListView_ItemTapped">
                                 <ListView.ItemTemplate>
                                     <DataTemplate>
