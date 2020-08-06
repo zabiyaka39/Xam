@@ -106,18 +106,13 @@ namespace RTMobile
 							// и если ссылка соответсвует одному из регклярных выражений, то вызывается страница
 							// соответсвующая тому или инному регулярному выражению
 							// если ссылка не соответствует ни одному регулярному выражению, то открывается глаынй экран приложенгия
-							Regex regex = new Regex(@"(\w{2,10}-+\d{2,10}$)");
-							Match match = regex.Match(data);
-							if (match.Success)
+
+
+							Regex regex = new Regex(@"(objectId=(\w{2,10}$)|(id=(.{2,10}$)))");
+							Match match2 = regex.Match(data);
+							if (match2.Success)
 							{
-								Issue issue = new Issue() { key = match.Value };
-								await Navigation.PushModalAsync(new TabPageIssue(issue)).ConfigureAwait(true);
-							}
-							regex = new Regex(@"objectId=(\w{2,10}$)");
-							match = regex.Match(data);
-							if (match.Success)
-							{
-								string input = Regex.Replace(match.Value, "objectId=", "");
+								string input = Regex.Replace(match2.Value, @"(^\w{2,15}=)", "");
 								JSONRequest jsonRequest = new JSONRequest()
 								{
 									urlRequest = $"/rest/insight/1.0/object/{input}",
@@ -126,13 +121,23 @@ namespace RTMobile
 								request = new Request(jsonRequest);
 
 								ObjectEntry insightObject = request.GetResponses<ObjectEntry>();
-								await Navigation.PushModalAsync(new TabPageObjectInsight(insightObject)).ConfigureAwait(true);
+								await Navigation.PushModalAsync(new NavigationPage(new TabPageObjectInsight(insightObject))).ConfigureAwait(true);
 							}
 
-							else
+							if (!match2.Success)
 							{
-								await Navigation.PushModalAsync(new AllIssues()).ConfigureAwait(true);
-							};
+								regex = new Regex(@"(\w{2,10}-+\d{2,15}$)");
+								Match match1 = regex.Match(data);
+								if (match1.Success)
+								{
+									Issue issue = new Issue() { key = match1.Value };
+									await Navigation.PushModalAsync(new NavigationPage(new TabPageIssue(issue))).ConfigureAwait(true);
+								}
+								if (!match1.Success && !match2.Success)
+								{
+									await Navigation.PushModalAsync(new AllIssues()).ConfigureAwait(true);
+								}
+							}
 
 						}
 
@@ -241,18 +246,13 @@ namespace RTMobile
 							// и если ссылка соответсвует одному из регклярных выражений, то вызывается страница
 							// соответсвующая тому или инному регулярному выражению
 							// если ссылка не соответствует ни одному регулярному выражению, то открывается глаынй экран приложенгия
-							Regex regex = new Regex(@"(\w{2,10}-+\d{2,10}$)");
-							Match match1 = regex.Match(data);
-							if (match1.Success)
-							{
-								Issue issue = new Issue() { key = match1.Value };
-								await Navigation.PushModalAsync(new TabPageIssue(issue)).ConfigureAwait(true);
-							}
-							regex = new Regex(@"objectId=(\w{2,10}$)");
+
+
+							Regex regex = new Regex(@"(objectId=(\w{2,10}$)|(id=(.{2,10}$)))");
 							Match match2 = regex.Match(data);
 							if (match2.Success)
 							{
-								string input = Regex.Replace(match2.Value, "objectId=", "");
+								string input = Regex.Replace(match2.Value, @"(^\w{2,15}=)", "");
 								JSONRequest jsonRequest = new JSONRequest()
 								{
 									urlRequest = $"/rest/insight/1.0/object/{input}",
@@ -261,12 +261,22 @@ namespace RTMobile
 								request = new Request(jsonRequest);
 
 								ObjectEntry insightObject = request.GetResponses<ObjectEntry>();
-								await Navigation.PushModalAsync(new TabPageObjectInsight(insightObject)).ConfigureAwait(true);
+								await Navigation.PushModalAsync(new NavigationPage (new TabPageObjectInsight(insightObject))).ConfigureAwait(true);
 							}
 
-							if (!match1.Success && !match2.Success)
-							{
-								await Navigation.PushModalAsync(new AllIssues()).ConfigureAwait(true);
+                            if (!match2.Success)
+                            {
+								regex = new Regex(@"(\w{2,10}-+\d{2,15}$)");
+								Match match1 = regex.Match(data);
+								if (match1.Success)
+								{
+									Issue issue = new Issue() { key = match1.Value };
+									await Navigation.PushModalAsync(new NavigationPage(new TabPageIssue(issue))).ConfigureAwait(true);
+								}
+								if (!match1.Success && !match2.Success)
+								{
+									await Navigation.PushModalAsync(new AllIssues()).ConfigureAwait(true);
+								}
 							}
 
 						}
