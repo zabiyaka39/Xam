@@ -29,7 +29,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="issues\eventIssue\EditPeople.cs" />
+    <Compile Remove="Views\Issues\EventIssue\EditPeople.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -54,7 +54,7 @@
     <PackageReference Include="Xamarin.Essentials" Version="1.5.2" />
     <PackageReference Include="Xamarin.FFImageLoading" Version="2.4.11.982" />
     <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.11.982" />
-    <PackageReference Include="Xamarin.Forms" Version="4.7.0.1239" />
+    <PackageReference Include="Xamarin.Forms" Version="4.8.0.1269" />
     <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
     <PackageReference Include="Xamarin.Plugin.FilePicker" Version="2.1.41" />
     <PackageReference Include="ZXing.Net.Mobile" Version="2.4.1" />
@@ -74,51 +74,51 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="insight\AttachmentsObjectInsight.xaml">
+    <EmbeddedResource Update="Views\Insight\AttachmentsObjectInsight.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="insight\CommentInsight.xaml">
+    <EmbeddedResource Update="Views\Insight\CommentInsight.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="insight\GeneralObjectInsight.xaml">
+    <EmbeddedResource Update="Views\Insight\GeneralObjectInsight.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="insight\IssueObjectInsight.xaml">
+    <EmbeddedResource Update="Views\Insight\IssueObjectInsight.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="insight\LinkObjectInsight.xaml">
+    <EmbeddedResource Update="Views\Insight\LinkObjectInsight.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="insight\objectList.xaml">
+    <EmbeddedResource Update="Views\Insight\objectList.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="insight\QRgen.xaml">
+    <EmbeddedResource Update="Views\Insight\QRgen.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="insight\TabPageObjectInsight.xaml">
+    <EmbeddedResource Update="Views\Insight\TabPageObjectInsight.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="issues\eventIssue\EditPeople.xaml">
+    <EmbeddedResource Update="Views\Issues\EventIssue\EditPeople.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="issues\eventIssue\imageView.xaml">
+    <EmbeddedResource Update="Views\Issues\EventIssue\imageView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="issues\eventIssue\NewWorklog.xaml">
+    <EmbeddedResource Update="Views\Issues\EventIssue\NewWorklog.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="issues\eventIssue\AddWatchersModal.xaml">
+    <EmbeddedResource Update="Views\Issues\EventIssue\AddWatchersModal.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="StatusBar.xaml">
+    <EmbeddedResource Update="Views\StatusBar.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="settings\" />
-    <Folder Include="calendar\" />
-    <Folder Include="filter\" />
+    <Folder Include="Views\Settings\" />
+    <Folder Include="Views\Calendar\" />
+    <Folder Include="Views\Filter\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -129,13 +129,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="issues\eventIssue\NewWorklog.xaml.cs">
+    <Compile Update="Views\Issues\EventIssue\NewWorklog.xaml.cs">
       <DependentUpon>NewWorklog.xaml</DependentUpon>
     </Compile>
-    <Compile Update="issues\eventIssue\AddWatchersModal.xaml.cs">
+    <Compile Update="Views\Issues\EventIssue\AddWatchersModal.xaml.cs">
       <DependentUpon>AddWatchersModal.xaml</DependentUpon>
     </Compile>
-    <Compile Update="StatusBar.xaml.cs">
+    <Compile Update="Views\StatusBar.xaml.cs">
       <DependentUpon>StatusBar.xaml</DependentUpon>
     </Compile>
   </ItemGroup>

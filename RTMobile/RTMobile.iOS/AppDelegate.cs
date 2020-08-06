@@ -36,7 +36,7 @@ namespace RTMobile.iOS
 
 		
 
-			LoadApplication(new App());
+			LoadApplication(new App("empty"));
 
 			return base.FinishedLaunching(app, options);
 		}
