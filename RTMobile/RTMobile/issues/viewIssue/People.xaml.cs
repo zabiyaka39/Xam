@@ -157,7 +157,8 @@ namespace RTMobile.issues.viewIssue
 
 						Request requestIssue = new Request(jsonRequest);
 						issue = requestIssue.GetResponses<Issue>();
-						this.BindingContext = this;
+
+						nameReporter.Text = issue.fields.assignee.displayName;
 
 						break;
 					}
