@@ -108,11 +108,11 @@ namespace RTMobile
 							// если ссылка не соответствует ни одному регулярному выражению, то открывается глаынй экран приложенгия
 
 
-							Regex regex = new Regex(@"(objectId=(\w{2,10}$)|(id=(.{2,10}$)))");
+							Regex regex = new Regex(@"(objectId=(\w{2,100}$)|(id=(.{2,1000}$)))");
 							Match match2 = regex.Match(data);
 							if (match2.Success)
 							{
-								string input = Regex.Replace(match2.Value, @"(^\w{2,15}=)", "");
+								string input = Regex.Replace(match2.Value, @"(^\w{2,100}=)", "");
 								JSONRequest jsonRequest = new JSONRequest()
 								{
 									urlRequest = $"/rest/insight/1.0/object/{input}",
@@ -126,7 +126,7 @@ namespace RTMobile
 
 							if (!match2.Success)
 							{
-								regex = new Regex(@"(\w{2,10}-+\d{2,15}$)");
+								regex = new Regex(@"(\w{2,10}-+\d{2,100}$)");
 								Match match1 = regex.Match(data);
 								if (match1.Success)
 								{
@@ -248,11 +248,11 @@ namespace RTMobile
 							// если ссылка не соответствует ни одному регулярному выражению, то открывается глаынй экран приложенгия
 
 
-							Regex regex = new Regex(@"(objectId=(\w{2,10}$)|(id=(.{2,10}$)))");
+							Regex regex = new Regex(@"(objectId=(\w{2,100}$)|(id=(.{2,1000}$)))");
 							Match match2 = regex.Match(data);
 							if (match2.Success)
 							{
-								string input = Regex.Replace(match2.Value, @"(^\w{2,15}=)", "");
+								string input = Regex.Replace(match2.Value, @"(^\w{2,100}=)", "");
 								JSONRequest jsonRequest = new JSONRequest()
 								{
 									urlRequest = $"/rest/insight/1.0/object/{input}",
@@ -266,7 +266,7 @@ namespace RTMobile
 
                             if (!match2.Success)
                             {
-								regex = new Regex(@"(\w{2,10}-+\d{2,15}$)");
+								regex = new Regex(@"(\w{2,10}-+\d{2,100}$)");
 								Match match1 = regex.Match(data);
 								if (match1.Success)
 								{
