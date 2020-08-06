@@ -65,11 +65,6 @@ C:\RT\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\insight\QRgen.xaml.g.c
 C:\RT\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\insight\TabPageObjectInsight.xaml.g.cs
 C:\RT\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\issues\AllIssues.xaml.g.cs
 C:\RT\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\issues\AllIssuesView.xaml.g.cs
-C:\RT\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\issues\event\AddWatchersModal.xaml.g.cs
-C:\RT\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\issues\event\CreateIssue.xaml.g.cs
-C:\RT\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\issues\event\imageView.xaml.g.cs
-C:\RT\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\issues\event\NewWorklog.xaml.g.cs
-C:\RT\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\issues\event\Transition.xaml.g.cs
 C:\RT\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\issues\viewIssue\Attachments.xaml.g.cs
 C:\RT\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\issues\viewIssue\Comment.xaml.g.cs
 C:\RT\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\issues\viewIssue\Description.xaml.g.cs
@@ -99,3 +94,10 @@ F:\project\Mobile\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\issues\eve
 F:\project\Mobile\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\issues\eventIssue\imageView.xaml.g.cs
 F:\project\Mobile\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\issues\eventIssue\NewWorklog.xaml.g.cs
 F:\project\Mobile\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\issues\eventIssue\Transition.xaml.g.cs
+C:\RT\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\insight\CommentInsight.xaml.g.cs
+C:\RT\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\issues\eventIssue\AddWatchersModal.xaml.g.cs
+C:\RT\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\issues\eventIssue\CreateIssue.xaml.g.cs
+C:\RT\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\issues\eventIssue\EditPeople.xaml.g.cs
+C:\RT\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\issues\eventIssue\imageView.xaml.g.cs
+C:\RT\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\issues\eventIssue\NewWorklog.xaml.g.cs
+C:\RT\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\issues\eventIssue\Transition.xaml.g.cs

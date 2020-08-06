@@ -242,17 +242,17 @@ namespace RTMobile
 							// соответсвующая тому или инному регулярному выражению
 							// если ссылка не соответствует ни одному регулярному выражению, то открывается глаынй экран приложенгия
 							Regex regex = new Regex(@"(\w{2,10}-+\d{2,10}$)");
-							Match match = regex.Match(data);
-							if (match.Success)
+							Match match1 = regex.Match(data);
+							if (match1.Success)
 							{
-								Issue issue = new Issue() { key = match.Value };
+								Issue issue = new Issue() { key = match1.Value };
 								await Navigation.PushModalAsync(new TabPageIssue(issue)).ConfigureAwait(true);
 							}
 							regex = new Regex(@"objectId=(\w{2,10}$)");
-							match = regex.Match(data);
-							if (match.Success)
+							Match match2 = regex.Match(data);
+							if (match2.Success)
 							{
-								string input = Regex.Replace(match.Value, "objectId=", "");
+								string input = Regex.Replace(match2.Value, "objectId=", "");
 								JSONRequest jsonRequest = new JSONRequest()
 								{
 									urlRequest = $"/rest/insight/1.0/object/{input}",
@@ -264,10 +264,10 @@ namespace RTMobile
 								await Navigation.PushModalAsync(new TabPageObjectInsight(insightObject)).ConfigureAwait(true);
 							}
 
-							else
+							if (!match1.Success && !match2.Success)
 							{
 								await Navigation.PushModalAsync(new AllIssues()).ConfigureAwait(true);
-							};
+							}
 
 						}
 
