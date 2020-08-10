@@ -14,12 +14,13 @@ namespace RTMobile.issues.viewIssue
 	public partial class History : ContentPage
 	{
 		public string issueKeySummary { get; set; }
+		public string idIssue { get; set; }
 		public string issueSummary { get; set; }
 		public string issueKey { get; set; }
-		private List<RTMobile.Transition> transition { get; set; }
 		public ObservableCollection<RTMobile.History> histories { get; set; }
-		public History(string issueKey, string issueSummary)
+		public History(string issueKey, string issueSummary, string idIssue)
 		{
+			this.idIssue = idIssue;
 			issueKeySummary = issueKey + " - " + issueSummary;
 			this.issueKey = issueKey;
 			this.issueSummary = issueSummary;
@@ -85,12 +86,12 @@ namespace RTMobile.issues.viewIssue
 
 		void ToolbarItem_Clicked_1(System.Object sender, System.EventArgs e)
 		{
-			Navigation.PushAsync(new WorkJournal(issueKey, issueSummary));
+			Navigation.PushAsync(new WorkJournal(issueKey, issueSummary,idIssue));
 		}
 
 		void ToolbarItem_Clicked_2(System.Object sender, System.EventArgs e)
 		{
-			Navigation.PushAsync(new Comment(issueKey, issueSummary));
+			Navigation.PushAsync(new Comment(issueKey, issueSummary, idIssue));
 		}
 
 

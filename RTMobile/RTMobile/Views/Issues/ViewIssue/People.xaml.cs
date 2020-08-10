@@ -60,7 +60,8 @@ namespace RTMobile.issues.viewIssue
 		}
 		private void Subscribe()
 		{
-			MessagingCenter.Subscribe<AddWatchersModal>(this, "WatchersChange", (sender) => {
+			MessagingCenter.Subscribe<AddWatchersModal>(this, "WatchersChange", (sender) =>
+			{
 				warchersIssue();
 				OnPropertyChanged(nameof(watchers));
 			});
@@ -124,21 +125,21 @@ namespace RTMobile.issues.viewIssue
 		}
 		void ToolbarItem_Clicked(System.Object sender, System.EventArgs e)
 		{
-			Navigation.PushAsync(new History(issue.key, issue.fields.summary));
+			Navigation.PushAsync(new History(issue.key, issue.fields.summary, issue.id));
 		}
 		void ToolbarItem_Clicked_1(System.Object sender, System.EventArgs e)
 		{
-			Navigation.PushAsync(new WorkJournal(issue.key, issue.fields.summary));
+			Navigation.PushAsync(new WorkJournal(issue.key, issue.fields.summary, issue.id));
 		}
 		void ToolbarItem_Clicked_2(System.Object sender, System.EventArgs e)
 		{
-			Navigation.PushAsync(new Comment(issue.key, issue.fields.summary));
+			Navigation.PushAsync(new Comment(issue.key, issue.fields.summary, issue.id));
 		}
 		private async void TapGestureRecognizer_Tapped(object sender, EventArgs e)
 		{
 
 			await Navigation.PushAsync(new Profile(issue.fields.creator.name)).ConfigureAwait(true);
-			
+
 		}
 		private async void TapGestureRecognizer_Tapped_1(object sender, EventArgs e)
 		{

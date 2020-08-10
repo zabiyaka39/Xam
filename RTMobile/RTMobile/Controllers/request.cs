@@ -377,7 +377,7 @@ namespace RTMobile
 		/// Список полей при переходе
 		/// </summary>
 		/// <returns></returns>
-		public List<Fields> GetFieldTransitions()
+		public List<Fields> GetFieldTransitions(string idIssue)
 		{
 			List<Fields> Fields = new List<Fields>();
 			try
@@ -413,7 +413,29 @@ namespace RTMobile
 								Fields[Fields.Count - 1].NameField = fieldsDeserializate.Name.ToString();
 							}
 						}
+						JSONRequest jsonRequestValidator = new JSONRequest
+						{
+							urlRequest = $"/rest/wes/latest/validator/transition-ids-mandatory-validator/{idIssue}",
+							methodRequest = "GET"
+						};
+						Request requestValidator = new Request(jsonRequestValidator);
+						List<ValidatorOption> validatorOptions = requestValidator.GetValidatorOption();
 
+						for (int i = 0; i < validatorOptions.Count; ++i)
+						{
+							if (jsonConvert.transitions[0].id == validatorOptions[i].transitionId)
+							{
+								Fields searchField = Fields.Find(f => f.NameField == validatorOptions[i].fieldId);
+
+								int numberFields = Fields.IndexOf(searchField);
+
+								if (numberFields != -1)
+								{
+									Fields[numberFields].ValidatorMessage = validatorOptions[i].validatorMessage;
+									Fields[numberFields].required = true;
+								}
+							}
+						}
 					}
 				}
 			}
@@ -423,6 +445,33 @@ namespace RTMobile
 			}
 
 			return Fields;
+		}
+		private List<ValidatorOption> GetValidatorOption()
+		{
+			List<ValidatorOption> validatorOptions = new List<ValidatorOption>();
+
+			try
+			{
+				WebResponse httpResponse = this.httpWebRequest.GetResponse();
+
+				using (StreamReader streamReader = new StreamReader(httpResponse.GetResponseStream()))
+				{
+					dynamic jsonConvert = JObject.Parse("{validator:" + streamReader.ReadToEnd() + "}");
+					string str = jsonConvert.ToString();
+					if (jsonConvert.validator != null)
+					{
+						for (int i = 0; i < jsonConvert.validator.Count; ++i)
+						{
+							validatorOptions.Add(JsonConvert.DeserializeObject<ValidatorOption>(jsonConvert.validator[i].ToString()));
+						}
+					}
+				}
+			}
+			catch (Exception ex)
+			{
+				Console.WriteLine(ex.Message);
+			}
+			return validatorOptions;
 		}
 
 		public ObservableCollection<jiraData.CommentInsight> GetCommentInsight()
@@ -478,7 +527,7 @@ namespace RTMobile
 					{
 						if (jsonConvert.editmeta != null && jsonConvert.editmeta.fields != null)
 						{
-							string str = jsonConvert.ToString() ;
+							string str = jsonConvert.ToString();
 
 							foreach (dynamic fields in jsonConvert.editmeta.fields)
 							{

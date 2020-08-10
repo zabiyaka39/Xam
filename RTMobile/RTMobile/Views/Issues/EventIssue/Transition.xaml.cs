@@ -30,7 +30,7 @@ namespace RTMobile.issues.viewIssue
 		};
 		string numberIssue { get; set; }
 		int transitionId { get; set; }
-		public Transition(int transitionId, string numberIssue)
+		public Transition(int transitionId, string numberIssue, string idIssue)
 		{
 			InitializeComponent();
 
@@ -44,7 +44,7 @@ namespace RTMobile.issues.viewIssue
 			};
 			Request request = new Request(jsonRequest);
 
-			Fields = request.GetFieldTransitions();
+			Fields = request.GetFieldTransitions(idIssue);
 
 			if (Fields == null || Fields.Count == 0)
 			{

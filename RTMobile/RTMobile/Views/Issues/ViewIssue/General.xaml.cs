@@ -137,7 +137,7 @@ namespace RTMobile.issues.viewIssue
 				}
 				if (issue.fields.Components == null)
 				{
-					issue.fields.Components = new List<Component> ();
+					issue.fields.Components = new List<Component>();
 					issue.fields.Components.Add(new Component { name = "Отсутствуют" });
 				}
 				componentsList.HeightRequest = issue.fields.Components.Count * 20;
@@ -234,17 +234,17 @@ namespace RTMobile.issues.viewIssue
 
 		void ToolbarItem_Clicked(System.Object sender, System.EventArgs e)
 		{
-			Navigation.PushAsync(new History(issue.key, issue.fields.summary));
+			Navigation.PushAsync(new History(issue.key, issue.fields.summary, issue.id));
 		}
 
 		void ToolbarItem_Clicked_1(System.Object sender, System.EventArgs e)
 		{
-			Navigation.PushAsync(new WorkJournal(issue.key, issue.fields.summary));
+			Navigation.PushAsync(new WorkJournal(issue.key, issue.fields.summary, issue.id));
 		}
 
 		void ToolbarItem_Clicked_2(System.Object sender, System.EventArgs e)
 		{
-			Navigation.PushAsync(new Comment(issue.key, issue.fields.summary));
+			Navigation.PushAsync(new Comment(issue.key, issue.fields.summary, issue.id));
 		}
 
 

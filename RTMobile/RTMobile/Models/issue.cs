@@ -85,6 +85,15 @@ namespace RTMobile
 		public Byte[] FileUploadByte { get; set; }
 	}
 
+
+	public class ValidatorOption
+	{
+		public string transitionId { get; set; }
+		public string fieldId { get; set; }
+		public string validatorMessage { get; set; }
+	}
+
+
 	/// <summary>
 	/// Класс хранящий данные по истории (общие данные и список событий задачи)  задачи
 	/// </summary>
@@ -1136,6 +1145,7 @@ namespace RTMobile
 		public Guid idFieldScreen { get; set; }
 		public string autoCompleteUrl { get; set; }
 		private string _created;
+		public string ValidatorMessage { get; set; }
 		public string created
 		{
 			get

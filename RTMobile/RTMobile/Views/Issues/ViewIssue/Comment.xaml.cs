@@ -21,10 +21,11 @@ namespace RTMobile.issues.viewIssue
 		public string issueKeySummary { get; set; }
 		public string issueSummary { get; set; }
 		public string issueKey { get; set; }
+		string idIssue { get; set; }
 		public Comment()
 		{
 			InitializeComponent();
-			transitionIssue(issueKey);
+			transitionIssue(issueKey, idIssue);
 		}
 		async void SendIssueClicked(System.Object sender, System.EventArgs e)
 		{
@@ -40,14 +41,15 @@ namespace RTMobile.issues.viewIssue
 				Title = String.Format("Вы хотите поделиться задачей: {0} - {1}", issueKey, issueSummary)
 			});
 		}
-		public Comment(string issueKey, string issueSummary)
+		public Comment(string issueKey, string issueSummary, string idIssue)
 		{
+			this.idIssue = idIssue;
 			this.issueKey = issueKey;
 			this.issueSummary = issueSummary;
 			this.issueKeySummary = issueKey + " - " + issueSummary;
 			InitializeComponent();
 			issueStartPostRequest(issueKey);
-			transitionIssue(issueKey);
+			transitionIssue(issueKey, idIssue);
 
 			if (this.comments != null && this.comments.Count > 0)
 
@@ -62,7 +64,7 @@ namespace RTMobile.issues.viewIssue
 			}
 			this.BindingContext = this;
 		}
-		private void transitionIssue(string issueKey)
+		private void transitionIssue(string issueKey, string idIssue)
 		{
 			try
 			{
@@ -84,7 +86,7 @@ namespace RTMobile.issues.viewIssue
 					};
 					tb.Clicked += async (sender, args) =>
 					{
-						await Navigation.PushAsync(new RTMobile.issues.viewIssue.Transition(int.Parse(transition[((ToolbarItem)sender).Priority - 1].id), issueKey)).ConfigureAwait(true);
+						await Navigation.PushAsync(new RTMobile.issues.viewIssue.Transition(int.Parse(transition[((ToolbarItem)sender).Priority - 1].id), issueKey,idIssue)).ConfigureAwait(true);
 					};
 					ToolbarItems.Add(tb);
 				}
@@ -154,12 +156,12 @@ namespace RTMobile.issues.viewIssue
 
 		void ToolbarItem_Clicked(System.Object sender, System.EventArgs e)
 		{
-			Navigation.PushAsync(new History(issueKey, issueSummary));
+			Navigation.PushAsync(new History(issueKey, issueSummary,idIssue));
 		}
 
 		void ToolbarItem_Clicked_1(System.Object sender, System.EventArgs e)
 		{
-			Navigation.PushAsync(new WorkJournal(issueKey, issueSummary));
+			Navigation.PushAsync(new WorkJournal(issueKey, issueSummary, idIssue));
 		}
 
 		void showHistory_Clicked(System.Object sender, System.EventArgs e)

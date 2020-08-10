@@ -15,10 +15,11 @@ namespace RTMobile.issues.viewIssue
     {
         public string issueSummary { get; set; }
         public string issueKey { get; set; }
+        string idIssue { get; set; }
 
-
-        public NewWorkjornal(string issueKey, string issueSummary)
+        public NewWorkjornal(string issueKey, string issueSummary,string idIssue)
         {
+            this.idIssue = idIssue;
             this.issueKey = issueKey;
             this.issueSummary = issueSummary;
             InitializeComponent();
@@ -82,12 +83,12 @@ namespace RTMobile.issues.viewIssue
 
         void ToolbarItem_Clicked(System.Object sender, System.EventArgs e)
         {
-            Navigation.PushAsync(new History(issueKey, issueSummary));
+            Navigation.PushAsync(new History(issueKey, issueSummary, idIssue));
         }
 
         void ToolbarItem_Clicked_2(System.Object sender, System.EventArgs e)
         {
-            Navigation.PushAsync(new Comment(issueKey, issueSummary));
+            Navigation.PushAsync(new Comment(issueKey, issueSummary,idIssue));
         }
 
 

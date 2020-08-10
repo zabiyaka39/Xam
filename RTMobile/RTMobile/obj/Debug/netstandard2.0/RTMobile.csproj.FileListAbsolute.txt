@@ -100,3 +100,4 @@ F:\project\Mobile\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\Views\Noti
 F:\project\Mobile\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\Views\Profile\Profile.xaml.g.cs
 F:\project\Mobile\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\Views\Settings\Settings.xaml.g.cs
 F:\project\Mobile\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\Views\StatusBar.xaml.g.cs
+F:\project\Mobile\rtmobile\RTMobile\RTMobile\obj\Debug\netstandard2.0\RTMobile.csprojAssemblyReference.cache
