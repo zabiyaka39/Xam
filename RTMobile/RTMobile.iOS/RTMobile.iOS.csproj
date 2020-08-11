@@ -198,6 +198,59 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <BundleResource Include="Resources\about.png" />
+    <BundleResource Include="Resources\addWatchers.png" />
+    <BundleResource Include="Resources\all.png" />
+    <BundleResource Include="Resources\arrowDown.png" />
+    <BundleResource Include="Resources\arrowRight.png" />
+    <BundleResource Include="Resources\arrowRightDark.png" />
+    <BundleResource Include="Resources\arrowUp.png" />
+    <BundleResource Include="Resources\attachment.png" />
+    <BundleResource Include="Resources\calendar.png" />
+    <BundleResource Include="Resources\comment.png" />
+    <BundleResource Include="Resources\commentToolBar.png" />
+    <BundleResource Include="Resources\create.png" />
+    <BundleResource Include="Resources\Default.png" />
+    <BundleResource Include="Resources\Default%402x.png" />
+    <BundleResource Include="Resources\Default-568h%402x.png" />
+    <BundleResource Include="Resources\Default-Portrait.png" />
+    <BundleResource Include="Resources\Default-Portrait%402x.png" />
+    <BundleResource Include="Resources\description.png" />
+    <BundleResource Include="Resources\exit.png" />
+    <BundleResource Include="Resources\files.png" />
+    <BundleResource Include="Resources\filter.png" />
+    <BundleResource Include="Resources\Fingerprint.png" />
+    <BundleResource Include="Resources\folder.png" />
+    <BundleResource Include="Resources\group.png" />
+    <BundleResource Include="Resources\hideMenu.png" />
+    <BundleResource Include="Resources\home.png" />
+    <BundleResource Include="Resources\image.png" />
+    <BundleResource Include="Resources\info.png" />
+    <BundleResource Include="Resources\insight.png" />
+    <BundleResource Include="Resources\isFavorites.png" />
+    <BundleResource Include="Resources\kotochigov.jpg" />
+    <BundleResource Include="Resources\newNotification.png" />
+    <BundleResource Include="Resources\notFavorites.png" />
+    <BundleResource Include="Resources\notification.png" />
+    <BundleResource Include="Resources\person.png" />
+    <BundleResource Include="Resources\property.png" />
+    <BundleResource Include="Resources\relatedIssue.png" />
+    <BundleResource Include="Resources\rosohranaLogo.png" />
+    <BundleResource Include="Resources\sekisov.jpg" />
+    <BundleResource Include="Resources\settings.png" />
+    <BundleResource Include="Resources\settingToolBar.png" />
+    <BundleResource Include="Resources\shered.png" />
+    <BundleResource Include="Resources\showMenu.png" />
+    <BundleResource Include="Resources\sorted.png" />
+    <BundleResource Include="Resources\star.png" />
+    <BundleResource Include="Resources\time.png" />
+    <BundleResource Include="Resources\timeStart.png" />
+    <BundleResource Include="Resources\timeUpdate.png" />
+    <BundleResource Include="Resources\visibility.png" />
+    <BundleResource Include="Resources\visibility_off_white.png" />
+    <BundleResource Include="Resources\visibility_white.png" />
+    <BundleResource Include="Resources\visibilityOff.png" />
+    <BundleResource Include="Resources\more.png" />
     <Content Include="rosohranaLogo.ico" />
   </ItemGroup>
 </Project>

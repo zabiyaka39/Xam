@@ -239,7 +239,7 @@ namespace RTMobile.issues
 
 		private async void SearchBar_SearchButtonPressed(object sender, EventArgs e)
 		{
-			filterIssue = $"text ~ \"{searchIssue.Text}\"";
+			filterIssue = $"text ~ \"{searchIssue.Text}\" OR key = {searchIssue.Text}";
 
 			await issueStartPostRequest();
 			if (this.issues != null && this.issues.Count > 0)

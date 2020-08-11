@@ -39,7 +39,6 @@ namespace RTMobile.issues.viewIssue
 
 			try
 			{
-
 				if (issues != null)
 				{
 					JSONRequest jsonRequest = new JSONRequest
@@ -50,95 +49,113 @@ namespace RTMobile.issues.viewIssue
 					Request request = new Request(jsonRequest);
 
 					transition = request.GetResponses<RootObject>().transitions;
-					for (int i = 0; i < transition.Count; ++i)
+
+
+					if (Device.RuntimePlatform == Device.Android)
 					{
-						ToolbarItem tb = new ToolbarItem
+						for (int i = 0; i < transition.Count; ++i)
 						{
-							Text = transition[i].name,
+							ToolbarItem tb = new ToolbarItem
+							{
+								Text = transition[i].name,
+								Order = ToolbarItemOrder.Secondary,
+								Priority = i + 1
+							};
+							tb.Clicked += async (sender, args) =>
+							{
+								await Navigation.PushAsync(new Transition(int.Parse(transition[((ToolbarItem)sender).Priority - 1].id), issues.key, issue.id)).ConfigureAwait(true);
+							};
+							ToolbarItems.Add(tb);
+						}
+						//Добавляем поле с комментарием
+						ToolbarItem tbComment = new ToolbarItem
+						{
+							Text = "Комментарии",
+							Order = ToolbarItemOrder.Primary,
+							IconImageSource = "commentToolBar.png",
+							Priority = 0
+						};
+						tbComment.Clicked += ToolbarItem_Clicked_2;
+						ToolbarItems.Add(tbComment);
+
+						ToolbarItem tbSeporator = new ToolbarItem
+						{
+							Text = "   _________________   ",
 							Order = ToolbarItemOrder.Secondary,
-							Priority = i + 1
+							Priority = 997
 						};
-						tb.Clicked += async (sender, args) =>
+						ToolbarItems.Add(tbSeporator);
+
+						ToolbarItem tbCommentSec = new ToolbarItem
 						{
-							await Navigation.PushAsync(new Transition(int.Parse(transition[((ToolbarItem)sender).Priority - 1].id), issues.key, issue.id)).ConfigureAwait(true);
+							Text = "Комментарии",
+							Order = ToolbarItemOrder.Secondary,
+							Priority = 998
 						};
-						ToolbarItems.Add(tb);
+						tbCommentSec.Clicked += ToolbarItem_Clicked_2;
+						ToolbarItems.Add(tbCommentSec);
+
+						ToolbarItem tbWorklog = new ToolbarItem
+						{
+							Text = "Рабочий журнал",
+							Order = ToolbarItemOrder.Secondary,
+							Priority = 999
+						};
+						tbWorklog.Clicked += ToolbarItem_Clicked_1;
+						ToolbarItems.Add(tbWorklog);
+
+						ToolbarItem tbHistory = new ToolbarItem
+						{
+							Text = "История",
+							Order = ToolbarItemOrder.Secondary,
+							Priority = 1000
+						};
+						tbHistory.Clicked += ToolbarItem_Clicked;
+						ToolbarItems.Add(tbHistory);
+
+						ToolbarItem tbShared = new ToolbarItem
+						{
+							Text = "Поделиться",
+							IconImageSource = "shered.png",
+							Order = ToolbarItemOrder.Primary,
+							Priority = 1001
+						};
+						tbShared.Clicked += SendIssueClicked;
+						ToolbarItems.Add(tbShared);
+
+						ToolbarItem tbSeporator1 = new ToolbarItem
+						{
+							Text = "   _________________   ",
+							Order = ToolbarItemOrder.Secondary,
+							Priority = 1001
+						};
+						ToolbarItems.Add(tbSeporator1);
+
+						ToolbarItem tbSharedMore = new ToolbarItem
+						{
+							Text = "Поделиться",
+							IconImageSource = "shered.png",
+							Order = ToolbarItemOrder.Secondary,
+							Priority = 1002
+						};
+						tbSharedMore.Clicked += SendIssueClicked;
+						ToolbarItems.Add(tbSharedMore);
 					}
-					//Добавляем поле с комментарием
-					ToolbarItem tbComment = new ToolbarItem
+					else
 					{
-						Text = "Комментарии",
-						Order = ToolbarItemOrder.Primary,
-						IconImageSource = "commentToolBar.png",
-						Priority = 0
-					};
-					tbComment.Clicked += ToolbarItem_Clicked_2;
-					ToolbarItems.Add(tbComment);
+						ToolbarItem tbMoreButton = new ToolbarItem
+						{
+							Text="Дополнительно",
+							IconImageSource = "more.png",
+							Order = ToolbarItemOrder.Primary,
+							Priority = 1
+						};
+						tbMoreButton.Clicked += ViewTransition;
+						ToolbarItems.Add(tbMoreButton);
+					}
 
-					ToolbarItem tbSeporator = new ToolbarItem
-					{
-						Text = "   _________________   ",
-						Order = ToolbarItemOrder.Secondary,
-						Priority = 997
-					};
-					ToolbarItems.Add(tbSeporator);
-
-					ToolbarItem tbCommentSec = new ToolbarItem
-					{
-						Text = "Комментарии",
-						Order = ToolbarItemOrder.Secondary,
-						Priority = 998
-					};
-					tbCommentSec.Clicked += ToolbarItem_Clicked_2;
-					ToolbarItems.Add(tbCommentSec);
-
-					ToolbarItem tbCommentWorklog = new ToolbarItem
-					{
-						Text = "Рабочий журнал",
-						Order = ToolbarItemOrder.Secondary,
-						Priority = 999
-					};
-					tbCommentWorklog.Clicked += ToolbarItem_Clicked_1;
-					ToolbarItems.Add(tbCommentWorklog);
-
-
-					ToolbarItem tbHistory = new ToolbarItem
-					{
-						Text = "История",
-						Order = ToolbarItemOrder.Secondary,
-						Priority = 1000
-					};
-					tbHistory.Clicked += ToolbarItem_Clicked;
-					ToolbarItems.Add(tbHistory);
-
-					ToolbarItem tbShared = new ToolbarItem
-					{
-						Text = "Поделиться",
-						IconImageSource = "shered.png",
-						Order = ToolbarItemOrder.Primary,
-						Priority = 1001
-					};
-					tbShared.Clicked += SendIssueClicked;
-					ToolbarItems.Add(tbShared);
-
-
-					ToolbarItem tbSeporator1 = new ToolbarItem
-					{
-						Text = "   _________________   ",
-						Order = ToolbarItemOrder.Secondary,
-						Priority = 1001
-					};
-					ToolbarItems.Add(tbSeporator1);
-
-					ToolbarItem tbSharedMore = new ToolbarItem
-					{
-						Text = "Поделиться",
-						IconImageSource = "shered.png",
-						Order = ToolbarItemOrder.Secondary,
-						Priority = 1002
-					};
-					tbSharedMore.Clicked += SendIssueClicked;
-					ToolbarItems.Add(tbSharedMore);
+					
+				
 
 				}
 			}
@@ -153,6 +170,57 @@ namespace RTMobile.issues.viewIssue
 		async void SendIssueClicked(System.Object sender, System.EventArgs e)
 		{
 			await ShereIssue();
+		}
+		//Вызов меню с списком переходов
+		async void ViewTransition(System.Object sender, System.EventArgs e)
+		{
+			List<string> tmpTransition = new List<string>();
+			tmpTransition.Add("Комментарии");
+			tmpTransition.Add("Рабочий журнал");
+			tmpTransition.Add("История");
+			tmpTransition.Add("Поделиться");
+			foreach (var tmpTrans in transition)
+			{
+				tmpTransition.Add(tmpTrans.name);
+			}
+			string action = await DisplayActionSheet("Выберите действие?", "Отмена", null, tmpTransition.ToArray());
+			switch (action)
+			{
+				case "Комментарии":
+					{
+						ToolbarItem_Clicked_2(sender,e);
+						break;
+					}
+				case "Рабочий журнал":
+					{
+						ToolbarItem_Clicked_1(sender, e);
+						break;
+					}
+				case "История":
+					{
+						ToolbarItem_Clicked(sender, e);
+						break;
+					}
+				case "Поделиться":
+					{
+						SendIssueClicked(sender,e);
+						break;
+					}
+				default:
+					{
+						for (int i = 0; i < transition.Count; ++i)
+						{
+							if (transition[i].name == action)
+							{
+								await Navigation.PushAsync(new Transition(int.Parse(transition[i].id), issue.key, issue.id)).ConfigureAwait(true);
+
+								break;
+							}
+						}
+						break;
+					}
+				
+			}
 		}
 		//метод вызова диалогового окна, в котором можно выбрать способ отпраки ссылки на задачу
 		public async Task ShereIssue()

@@ -34,7 +34,7 @@ namespace RTMobile.filter
 			}
 			try
 			{
-				var tmpFilter = CrossSettings.Current.GetValueOrDefault("lastFilters","");
+				var tmpFilter = CrossSettings.Current.GetValueOrDefault("lastFilters", "");
 
 				if (tmpFilter.Length > 0)
 				{
@@ -216,13 +216,13 @@ namespace RTMobile.filter
 			//Добавляем номер выбранного фильтра в список последних использованных фильтров
 			if (tmpFilter.Length == 0)
 			{
-				CrossSettings.Current.AddOrUpdateValue("lastFilters", numberFilter.ToString());				
+				CrossSettings.Current.AddOrUpdateValue("lastFilters", numberFilter.ToString());
 			}
 			else
 			{
 				CrossSettings.Current.AddOrUpdateValue("lastFilters", tmpFilter + "," + numberFilter.ToString());
 			}
-			string sorted = "";			
+			string sorted = "";
 
 			JSONRequest jsonRequestFilter = new JSONRequest()
 			{
@@ -235,10 +235,58 @@ namespace RTMobile.filter
 			if (filter == null)
 			{
 				filter = new Filters();
-				filter.Jql = "";
+				//Проверяем не входит лы выбранный фильтр в список стандартных, если входит, то добавлыяем сортировку вручную
+				switch (numberFilter)
+				{
+					case -1:
+						{
+							filter.Jql = "assignee = currentUser() AND resolution = Unresolved order by updated DESC";
+							break;
+						}
+					case -2:
+						{
+							filter.Jql = "reporter = currentUser() order by created DESC";
+							break;
+						}
+					case -3:
+						{
+							filter.Jql = "order by created DESC";
+							break;
+						}
+					case -4:
+						{
+							filter.Jql = "resolution = Unresolved order by priority DESC,updated DESC";
+							break;
+						}
+					case -5:
+						{
+							filter.Jql = "statusCategory = Done order by updated DESC";
+							break;
+						}
+					case -6:
+						{
+							filter.Jql = "issuekey in issueHistory() order by lastViewed DESC";
+							break;
+						}
+					case -7:
+						{
+							filter.Jql = "created >= -1w order by created DESC";
+							break;
+						}
+					case -8:
+						{
+							filter.Jql = "resolutiondate >= -1w order by updated DESC";
+							break;
+						}
+					case -9:
+						{
+							filter.Jql = "updated >= -1w order by updated DESC";
+							break;
+						}
+				}				
 			}
-			
-			if (filter.Jql.IndexOf("ORDER") == -1)
+			//Приводим к верхнему регистру и производим поиск по полю наличия сортировки
+			if (filter.Jql.ToUpper().IndexOf("ORDER") == -1)
 			{
 				if (typeSort.SelectedIndex == 0)
 				{
