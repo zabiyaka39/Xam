@@ -14,7 +14,7 @@ namespace RTMobile
 	/// </summary>
 	public class ApplicationRoles
 	{
-		public int size { get; set; }
+		public string size { get; set; }
 		public List<Item> items { get; set; }
 	}
 	/// <summary>
@@ -28,7 +28,7 @@ namespace RTMobile
 		[JsonProperty("self")]
 		public Uri Self { get; set; }
 
-		public int size { get; set; }
+		public string size { get; set; }
 		[JsonIgnore]
 		public List<Item> items { get; set; }
 	}
@@ -92,6 +92,7 @@ namespace RTMobile
 		public string emailAddress { get; set; } = "Отсутствует";
 		[JsonProperty("avatarUrls")]
 		public Urls AvatarUrls { get; set; }
+		public string avatarUrl { get; set; }
 		public string displayName { get; set; } = "Отсутствует";
 		public bool active { get; set; }
 		public string timeZone { get; set; }

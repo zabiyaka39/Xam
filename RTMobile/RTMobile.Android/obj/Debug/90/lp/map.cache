@@ -5,6 +5,8 @@ Com.ViewPagerIndicator
 FastAndroidCamera
 FFImageLoading.Forms.Platform
 FFImageLoading.Platform
+FFImageLoading.Svg.Platform
+FFImageLoading.Transformations
 FormsViewGroup
 Microsoft.AppCenter.Analytics.Android.Bindings
 Microsoft.AppCenter.Analytics
@@ -20,6 +22,7 @@ Plugin.Media
 Plugin.Permissions
 Plugin.Settings
 Rg.Plugins.Popup
+SkiaSharp
 Xamarin.AndroidX.Activity
 Xamarin.AndroidX.Annotation
 Xamarin.AndroidX.AppCompat.AppCompatResources

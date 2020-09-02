@@ -15,6 +15,7 @@ using System.Net.Http;
 using FFImageLoading.Config;
 using FFImageLoading.Forms.Platform;
 using FFImageLoading;
+using FFImageLoading.Transformations;
 using Service.Shared.Clients;
 using Plugin.Settings;
 using System.Net.Http.Headers;
@@ -54,7 +55,7 @@ namespace RTMobile.Droid
 			FFImageLoading.Forms.Platform.CachedImageRenderer.Init(true);
 
 			CachedImageRenderer.InitImageViewHandler();
-
+	
 			HttpClient httpClient = new HttpClient(new HttpLoggingHandler());
 
 			ImageService.Instance.Initialize(new Configuration

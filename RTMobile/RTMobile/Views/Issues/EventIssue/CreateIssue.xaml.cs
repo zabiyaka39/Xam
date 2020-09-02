@@ -14,6 +14,8 @@ using Plugin.Media.Abstractions;
 using System.Net.Http.Headers;
 using Nancy;
 using Rg.Plugins.Popup.Services;
+using FFImageLoading.Forms;
+using FFImageLoading.Transformations;
 
 namespace RTMobile.issues
 {
@@ -22,6 +24,9 @@ namespace RTMobile.issues
 		MediaFile _mediaFile { get; set; }
 		List<Project> projects { get; set; }
 		List<Fields> Fields { get; set; }
+
+		ObservableCollection<User> user { get; set; }
+
 		Label nameAttachmentLabel = new Label()
 		{
 			Text = "Отсутствует",
@@ -259,7 +264,9 @@ namespace RTMobile.issues
 									IsVisible = false,
 									VerticalOptions = LayoutOptions.Start,
 									HeightRequest = 250,
-									BackgroundColor = Color.FromHex("#4A4C50")
+									BackgroundColor = Color.FromHex("#4A4C50"),
+								
+
 
 								};
 								grid.Children.Add(listView);
@@ -271,6 +278,7 @@ namespace RTMobile.issues
 									if (keyword.Length >= 1)
 									{
 										//Проверяем является ли данное поле Insight или это иное
+										/** если "user", создается пользавательская ячейка с изображения пользователей и именем**/
 										if (Field.schema.type == "user")
 										{
 											JSONRequest jsonRequestIssue = new JSONRequest
@@ -281,17 +289,63 @@ namespace RTMobile.issues
 											Request requestIssue = new Request(jsonRequestIssue);
 
 											user = requestIssue.GetResponses<RootObject>().users;
+											//создается привязка listview к коллекции "user"
+											listView.ItemsSource = user;
 
 											objectName.Clear();
 
 											for (int j = 0; j < user.Count; ++j)
 											{
 												objectName.Add(user[j].displayName);
+												user[j].avatarUrl = "https://sd.rosohrana.ru/secure/useravatar?ownerId=" + user[j].name;
+											
 											}
+											//создлается пользовательская ячейка
+											listView.ItemTemplate = new DataTemplate(() =>
+											{
+												// Ниже реализован загрузчик изображения с кэшированием
+												CachedImage cacheImage = new CachedImage()
+												{
+													CacheDuration = TimeSpan.FromDays(7),
+													DownsampleToViewSize = true,
+													HeightRequest = 50,
+													WidthRequest = 50,
+													RetryCount = 0,
+													RetryDelay = 250,
+													BitmapOptimizations = false,
+													Transformations = new System.Collections.Generic.List<FFImageLoading.Work.ITransformation>()
+													{
+														new CircleTransformation(),
+													}
+								
+												};
+												cacheImage.SetBinding(CachedImage.SourceProperty, "avatarUrl");
+                                                Label name = new Label
+                                                {
+                                                    TextColor = Color.White,
+													VerticalOptions=LayoutOptions.Center
+													
+													
+                                                };
+                                                name.SetBinding(Label.TextProperty, "displayName");
+                                                return new ViewCell
+                                                {
+													//создается структура пользовательской ячейки 
+													View = new StackLayout
+                                                    {
+														Padding = new Thickness(5,5,5,5),
+														Orientation = StackOrientation.Horizontal,
+														Children = { cacheImage, name}
 
-											var suggestion = objectName.Where(c => c.ToLower().Contains(keyword.ToLower()));
-											listView.ItemsSource = suggestion;
+													}
+													
+                                                };
+                                         
+ 											});
+											OnPropertyChanged(nameof(user));
 											listView.IsVisible = true;
+											
+									
 										}
 										else
 										{
@@ -320,6 +374,7 @@ namespace RTMobile.issues
 
 											var suggestion = objectName.Where(c => c.ToLower().Contains(keyword.ToLower()));
 											listView.ItemsSource = suggestion;
+
 											listView.IsVisible = true;
 										}
 									}
@@ -344,7 +399,7 @@ namespace RTMobile.issues
 									}
 									listView.IsVisible = false;
 								};
-								typeStack.Children.Add(searchBar);
+					 			typeStack.Children.Add(searchBar);
 								typeStack.Children.Add(grid);
 								DectionaryFields.Add(searchBar.Id, Field);
 								break;
@@ -531,6 +586,8 @@ namespace RTMobile.issues
 											searchBar.TextChanged += (senders, args) =>
 											{
 												var keyword = searchBar.Text;
+
+
 												if (keyword.Length >= 1)
 												{
 													JSONRequest jsonRequestIssue = new JSONRequest

@@ -249,6 +249,37 @@
           "lib/xamarinios10/Rg.Plugins.Popup.dll": {}
         }
       },
+      "SkiaSharp/1.68.0": {
+        "type": "package",
+        "compile": {
+          "lib/Xamarin.iOS/SkiaSharp.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS/SkiaSharp.dll": {}
+        },
+        "runtimeTargets": {
+          "runtimes/osx/native/libSkiaSharp.dylib": {
+            "assetType": "native",
+            "rid": "osx"
+          },
+          "runtimes/tizen-armel/native/libSkiaSharp.so": {
+            "assetType": "native",
+            "rid": "tizen-armel"
+          },
+          "runtimes/tizen-x86/native/libSkiaSharp.so": {
+            "assetType": "native",
+            "rid": "tizen-x86"
+          },
+          "runtimes/win-x64/native/libSkiaSharp.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x86/native/libSkiaSharp.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          }
+        }
+      },
       "System.AppContext/4.1.0": {
         "type": "package",
         "compile": {
@@ -563,6 +594,31 @@
           "lib/Xamarin.iOS10/FFImageLoading.Forms.dll": {}
         }
       },
+      "Xamarin.FFImageLoading.Svg/2.4.11.982": {
+        "type": "package",
+        "dependencies": {
+          "SkiaSharp": "1.68.0",
+          "Xamarin.FFImageLoading": "2.4.11.982"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/FFImageLoading.Svg.Platform.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/FFImageLoading.Svg.Platform.dll": {}
+        }
+      },
+      "Xamarin.FFImageLoading.Transformations/2.4.11.982": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.FFImageLoading": "2.4.11.982"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/FFImageLoading.Transformations.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/FFImageLoading.Transformations.dll": {}
+        }
+      },
       "Xamarin.Forms/4.7.0.968": {
         "type": "package",
         "compile": {
@@ -747,6 +803,8 @@
           "Xamarin.Essentials": "1.5.3.2",
           "Xamarin.FFImageLoading": "2.4.11.982",
           "Xamarin.FFImageLoading.Forms": "2.4.11.982",
+          "Xamarin.FFImageLoading.Svg": "2.4.11.982",
+          "Xamarin.FFImageLoading.Transformations": "2.4.11.982",
           "Xamarin.Forms": "4.8.0.1269",
           "Xamarin.Plugin.FilePicker": "2.1.41",
           "ZXing.Net.Mobile": "2.4.1",
@@ -1008,6 +1066,15 @@
           "lib/xamarinios10/Rg.Plugins.Popup.dll": {}
         }
       },
+      "SkiaSharp/1.68.0": {
+        "type": "package",
+        "compile": {
+          "lib/Xamarin.iOS/SkiaSharp.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS/SkiaSharp.dll": {}
+        }
+      },
       "System.AppContext/4.1.0": {
         "type": "package",
         "compile": {
@@ -1286,6 +1353,31 @@
           "lib/Xamarin.iOS10/FFImageLoading.Forms.dll": {}
         }
       },
+      "Xamarin.FFImageLoading.Svg/2.4.11.982": {
+        "type": "package",
+        "dependencies": {
+          "SkiaSharp": "1.68.0",
+          "Xamarin.FFImageLoading": "2.4.11.982"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/FFImageLoading.Svg.Platform.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/FFImageLoading.Svg.Platform.dll": {}
+        }
+      },
+      "Xamarin.FFImageLoading.Transformations/2.4.11.982": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.FFImageLoading": "2.4.11.982"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/FFImageLoading.Transformations.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/FFImageLoading.Transformations.dll": {}
+        }
+      },
       "Xamarin.Forms/4.7.0.968": {
         "type": "package",
         "compile": {
@@ -1470,6 +1562,8 @@
           "Xamarin.Essentials": "1.5.3.2",
           "Xamarin.FFImageLoading": "2.4.11.982",
           "Xamarin.FFImageLoading.Forms": "2.4.11.982",
+          "Xamarin.FFImageLoading.Svg": "2.4.11.982",
+          "Xamarin.FFImageLoading.Transformations": "2.4.11.982",
           "Xamarin.Forms": "4.8.0.1269",
           "Xamarin.Plugin.FilePicker": "2.1.41",
           "ZXing.Net.Mobile": "2.4.1",
@@ -1731,6 +1825,18 @@
           "lib/xamarinios10/Rg.Plugins.Popup.dll": {}
         }
       },
+      "SkiaSharp/1.68.0": {
+        "type": "package",
+        "compile": {
+          "lib/Xamarin.iOS/SkiaSharp.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS/SkiaSharp.dll": {}
+        },
+        "native": {
+          "runtimes/win-x64/native/libSkiaSharp.dll": {}
+        }
+      },
       "System.AppContext/4.1.0": {
         "type": "package",
         "compile": {
@@ -2009,6 +2115,31 @@
           "lib/Xamarin.iOS10/FFImageLoading.Forms.dll": {}
         }
       },
+      "Xamarin.FFImageLoading.Svg/2.4.11.982": {
+        "type": "package",
+        "dependencies": {
+          "SkiaSharp": "1.68.0",
+          "Xamarin.FFImageLoading": "2.4.11.982"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/FFImageLoading.Svg.Platform.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/FFImageLoading.Svg.Platform.dll": {}
+        }
+      },
+      "Xamarin.FFImageLoading.Transformations/2.4.11.982": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.FFImageLoading": "2.4.11.982"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/FFImageLoading.Transformations.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/FFImageLoading.Transformations.dll": {}
+        }
+      },
       "Xamarin.Forms/4.7.0.968": {
         "type": "package",
         "compile": {
@@ -2193,6 +2324,8 @@
           "Xamarin.Essentials": "1.5.3.2",
           "Xamarin.FFImageLoading": "2.4.11.982",
           "Xamarin.FFImageLoading.Forms": "2.4.11.982",
+          "Xamarin.FFImageLoading.Svg": "2.4.11.982",
+          "Xamarin.FFImageLoading.Transformations": "2.4.11.982",
           "Xamarin.Forms": "4.8.0.1269",
           "Xamarin.Plugin.FilePicker": "2.1.41",
           "ZXing.Net.Mobile": "2.4.1",
@@ -2454,6 +2587,18 @@
           "lib/xamarinios10/Rg.Plugins.Popup.dll": {}
         }
       },
+      "SkiaSharp/1.68.0": {
+        "type": "package",
+        "compile": {
+          "lib/Xamarin.iOS/SkiaSharp.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS/SkiaSharp.dll": {}
+        },
+        "native": {
+          "runtimes/win-x86/native/libSkiaSharp.dll": {}
+        }
+      },
       "System.AppContext/4.1.0": {
         "type": "package",
         "compile": {
@@ -2732,6 +2877,31 @@
           "lib/Xamarin.iOS10/FFImageLoading.Forms.dll": {}
         }
       },
+      "Xamarin.FFImageLoading.Svg/2.4.11.982": {
+        "type": "package",
+        "dependencies": {
+          "SkiaSharp": "1.68.0",
+          "Xamarin.FFImageLoading": "2.4.11.982"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/FFImageLoading.Svg.Platform.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/FFImageLoading.Svg.Platform.dll": {}
+        }
+      },
+      "Xamarin.FFImageLoading.Transformations/2.4.11.982": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.FFImageLoading": "2.4.11.982"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/FFImageLoading.Transformations.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/FFImageLoading.Transformations.dll": {}
+        }
+      },
       "Xamarin.Forms/4.7.0.968": {
         "type": "package",
         "compile": {
@@ -2916,6 +3086,8 @@
           "Xamarin.Essentials": "1.5.3.2",
           "Xamarin.FFImageLoading": "2.4.11.982",
           "Xamarin.FFImageLoading.Forms": "2.4.11.982",
+          "Xamarin.FFImageLoading.Svg": "2.4.11.982",
+          "Xamarin.FFImageLoading.Transformations": "2.4.11.982",
           "Xamarin.Forms": "4.8.0.1269",
           "Xamarin.Plugin.FilePicker": "2.1.41",
           "ZXing.Net.Mobile": "2.4.1",
@@ -3519,6 +3691,54 @@
         "readme.txt",
         "rg.plugins.popup.2.0.0.3.nupkg.sha512",
         "rg.plugins.popup.nuspec"
+      ]
+    },
+    "SkiaSharp/1.68.0": {
+      "sha512": "ptuxAKk9FiClNnAgWM8hVMCYw/B0hUJWZ8W6efnIAtJmJn/Xl4jvxxDF5WOqfQYCLVzxXw5gvBPVxvTLblFp0g==",
+      "type": "package",
+      "path": "skiasharp/1.68.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "THIRD-PARTY-NOTICES.txt",
+        "build/net45/SkiaSharp.targets",
+        "build/tizen40/SkiaSharp.targets",
+        "lib/MonoAndroid/SkiaSharp.dll",
+        "lib/MonoAndroid/SkiaSharp.xml",
+        "lib/Xamarin.Mac20/SkiaSharp.dll",
+        "lib/Xamarin.Mac20/SkiaSharp.xml",
+        "lib/Xamarin.TVOS/SkiaSharp.dll",
+        "lib/Xamarin.TVOS/SkiaSharp.xml",
+        "lib/Xamarin.WatchOS/SkiaSharp.dll",
+        "lib/Xamarin.WatchOS/SkiaSharp.xml",
+        "lib/Xamarin.iOS/SkiaSharp.dll",
+        "lib/Xamarin.iOS/SkiaSharp.xml",
+        "lib/net45/SkiaSharp.dll",
+        "lib/net45/SkiaSharp.xml",
+        "lib/netstandard1.3/SkiaSharp.dll",
+        "lib/netstandard1.3/SkiaSharp.xml",
+        "lib/tizen40/SkiaSharp.dll",
+        "lib/tizen40/SkiaSharp.xml",
+        "lib/uap10.0/SkiaSharp.dll",
+        "lib/uap10.0/SkiaSharp.xml",
+        "runtimes/osx/native/libSkiaSharp.dylib",
+        "runtimes/tizen-armel/native/libSkiaSharp.so",
+        "runtimes/tizen-x86/native/libSkiaSharp.so",
+        "runtimes/win-x64/native/libSkiaSharp.dll",
+        "runtimes/win-x86/native/libSkiaSharp.dll",
+        "runtimes/win10-arm/nativeassets/uap10.0/libEGL.dll",
+        "runtimes/win10-arm/nativeassets/uap10.0/libGLESv2.dll",
+        "runtimes/win10-arm/nativeassets/uap10.0/libSkiaSharp.dll",
+        "runtimes/win10-x64/nativeassets/uap10.0/libEGL.dll",
+        "runtimes/win10-x64/nativeassets/uap10.0/libGLESv2.dll",
+        "runtimes/win10-x64/nativeassets/uap10.0/libSkiaSharp.dll",
+        "runtimes/win10-x86/nativeassets/uap10.0/libEGL.dll",
+        "runtimes/win10-x86/nativeassets/uap10.0/libGLESv2.dll",
+        "runtimes/win10-x86/nativeassets/uap10.0/libSkiaSharp.dll",
+        "skiasharp.1.68.0.nupkg.sha512",
+        "skiasharp.nuspec",
+        "xamarin.interactive/SkiaSharp.Workbooks.dll"
       ]
     },
     "System.AppContext/4.1.0": {
@@ -4953,6 +5173,72 @@
         "xamarin.ffimageloading.forms.nuspec"
       ]
     },
+    "Xamarin.FFImageLoading.Svg/2.4.11.982": {
+      "sha512": "acXrd+afkdQTXy24+/ZPY4W2z3/Yb3LyvQy/I+yeaV0X6bDWQ+niAUvxfyd3/ulbLvvPJzI2QT+bAcRXZo0Ztw==",
+      "type": "package",
+      "path": "xamarin.ffimageloading.svg/2.4.11.982",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/MonoAndroid10/FFImageLoading.Svg.Platform.dll",
+        "lib/MonoAndroid10/FFImageLoading.Svg.Platform.pdb",
+        "lib/MonoAndroid10/FFImageLoading.Svg.Platform.xml",
+        "lib/Xamarin.Mac20/FFImageLoading.Svg.Platform.dll",
+        "lib/Xamarin.Mac20/FFImageLoading.Svg.Platform.pdb",
+        "lib/Xamarin.Mac20/FFImageLoading.Svg.Platform.xml",
+        "lib/Xamarin.iOS10/FFImageLoading.Svg.Platform.dll",
+        "lib/Xamarin.iOS10/FFImageLoading.Svg.Platform.pdb",
+        "lib/Xamarin.iOS10/FFImageLoading.Svg.Platform.xml",
+        "lib/netstandard1.0/FFImageLoading.Svg.Platform.dll",
+        "lib/netstandard1.0/FFImageLoading.Svg.Platform.xml",
+        "lib/portable-win+net45+wp80+win81+wpa81/FFImageLoading.Svg.Platform.dll",
+        "lib/portable-win+net45+wp80+win81+wpa81/FFImageLoading.Svg.Platform.xml",
+        "lib/tizen40/FFImageLoading.Svg.Platform.dll",
+        "lib/tizen40/FFImageLoading.Svg.Platform.pdb",
+        "lib/tizen40/FFImageLoading.Svg.Platform.xml",
+        "lib/uap/FFImageLoading.Svg.Platform.dll",
+        "lib/uap/FFImageLoading.Svg.Platform.pdb",
+        "lib/uap/FFImageLoading.Svg.Platform.xml",
+        "xamarin.ffimageloading.svg.2.4.11.982.nupkg.sha512",
+        "xamarin.ffimageloading.svg.nuspec"
+      ]
+    },
+    "Xamarin.FFImageLoading.Transformations/2.4.11.982": {
+      "sha512": "cNG6zhiEBTENAGgIc9lY54YMJ0tg2dJ9+tj8tYgrOEQT8gxlj3OUzzNWZgaQWpcx28y5iIt/qM+Bd6jUwtAn1Q==",
+      "type": "package",
+      "path": "xamarin.ffimageloading.transformations/2.4.11.982",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/MonoAndroid10/FFImageLoading.Transformations.dll",
+        "lib/MonoAndroid10/FFImageLoading.Transformations.pdb",
+        "lib/MonoAndroid10/FFImageLoading.Transformations.xml",
+        "lib/Xamarin.Mac20/FFImageLoading.Transformations.dll",
+        "lib/Xamarin.Mac20/FFImageLoading.Transformations.pdb",
+        "lib/Xamarin.Mac20/FFImageLoading.Transformations.xml",
+        "lib/Xamarin.iOS10/FFImageLoading.Transformations.dll",
+        "lib/Xamarin.iOS10/FFImageLoading.Transformations.pdb",
+        "lib/Xamarin.iOS10/FFImageLoading.Transformations.xml",
+        "lib/netstandard1.0/FFImageLoading.Transformations.dll",
+        "lib/netstandard1.0/FFImageLoading.Transformations.xml",
+        "lib/portable-win+net45+wp80+win81+wpa81/FFImageLoading.Transformations.dll",
+        "lib/portable-win+net45+wp80+win81+wpa81/FFImageLoading.Transformations.xml",
+        "lib/tizen40/FFImageLoading.Transformations.dll",
+        "lib/tizen40/FFImageLoading.Transformations.pdb",
+        "lib/tizen40/FFImageLoading.Transformations.xml",
+        "lib/uap/FFImageLoading.Transformations.dll",
+        "lib/uap/FFImageLoading.Transformations.pdb",
+        "lib/uap/FFImageLoading.Transformations.xml",
+        "lib/win81/FFImageLoading.Transformations.dll",
+        "lib/win81/FFImageLoading.Transformations.pdb",
+        "lib/win81/FFImageLoading.Transformations.xml",
+        "lib/wpa81/FFImageLoading.Transformations.dll",
+        "lib/wpa81/FFImageLoading.Transformations.pdb",
+        "lib/wpa81/FFImageLoading.Transformations.xml",
+        "xamarin.ffimageloading.transformations.2.4.11.982.nupkg.sha512",
+        "xamarin.ffimageloading.transformations.nuspec"
+      ]
+    },
     "Xamarin.Forms/4.7.0.968": {
       "sha512": "VvHI/VXyDZcCLYXywh9A8gVtldD8XCLR8hujZVdlKGh87HIXAUW0b+uLFsvyMB8COwNce0w56ycgD/tXtLgFRA==",
       "type": "package",
@@ -5367,6 +5653,8 @@
       "Rg.Plugins.Popup >= 2.0.0.3",
       "Xam.Plugin.FilePicker >= 1.1.0",
       "Xamarin.Essentials >= 1.5.3.2",
+      "Xamarin.FFImageLoading.Svg >= 2.4.11.982",
+      "Xamarin.FFImageLoading.Transformations >= 2.4.11.982",
       "Xamarin.Forms >= 4.7.0.968",
       "Xamarin.Plugin.FilePicker >= 2.1.41",
       "ZXing.Net.Mobile >= 2.4.1",
@@ -5374,24 +5662,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\sekisov\\.nuget\\packages\\": {},
+    "C:\\Users\\leshiy\\.nuget\\packages\\": {},
     "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile.iOS\\RTMobile.iOS.csproj",
+      "projectUniqueName": "C:\\RT\\rtmobile\\RTMobile\\RTMobile.iOS\\RTMobile.iOS.csproj",
       "projectName": "RTMobile.iOS",
-      "projectPath": "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile.iOS\\RTMobile.iOS.csproj",
-      "packagesPath": "C:\\Users\\sekisov\\.nuget\\packages\\",
-      "outputPath": "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile.iOS\\obj\\",
+      "projectPath": "C:\\RT\\rtmobile\\RTMobile\\RTMobile.iOS\\RTMobile.iOS.csproj",
+      "packagesPath": "C:\\Users\\leshiy\\.nuget\\packages\\",
+      "outputPath": "C:\\RT\\rtmobile\\RTMobile\\RTMobile.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\sekisov\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\leshiy\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -5405,8 +5693,8 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj": {
-              "projectPath": "F:\\project\\Mobile\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj"
+            "C:\\RT\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj": {
+              "projectPath": "C:\\RT\\rtmobile\\RTMobile\\RTMobile\\RTMobile.csproj"
             }
           }
         }
@@ -5434,6 +5722,14 @@
           "Xamarin.Essentials": {
             "target": "Package",
             "version": "[1.5.3.2, )"
+          },
+          "Xamarin.FFImageLoading.Svg": {
+            "target": "Package",
+            "version": "[2.4.11.982, )"
+          },
+          "Xamarin.FFImageLoading.Transformations": {
+            "target": "Package",
+            "version": "[2.4.11.982, )"
           },
           "Xamarin.Forms": {
             "target": "Package",
