@@ -298,7 +298,7 @@ namespace RTMobile.issues
 											{
 												objectName.Add(user[j].displayName);
 												user[j].avatarUrl = "https://sd.rosohrana.ru/secure/useravatar?ownerId=" + user[j].name;
-											
+
 											}
 											//создлается пользовательская ячейка
 											listView.ItemTemplate = new DataTemplate(() =>
@@ -317,35 +317,37 @@ namespace RTMobile.issues
 													{
 														new CircleTransformation(),
 													}
-								
+
 												};
 												cacheImage.SetBinding(CachedImage.SourceProperty, "avatarUrl");
-                                                Label name = new Label
-                                                {
-                                                    TextColor = Color.White,
-													VerticalOptions=LayoutOptions.Center
-													
-													
-                                                };
-                                                name.SetBinding(Label.TextProperty, "displayName");
-                                                return new ViewCell
-                                                {
+												Label name = new Label
+												{
+													TextColor = Color.White,
+													VerticalOptions = LayoutOptions.Center
+
+
+												};
+												name.SetBinding(Label.TextProperty, "displayName");
+												return new ViewCell
+												{
 													//создается структура пользовательской ячейки 
 													View = new StackLayout
-                                                    {
-														Padding = new Thickness(5,5,5,5),
+													{
+														Padding = new Thickness(5, 5, 5, 5),
 														Orientation = StackOrientation.Horizontal,
-														Children = { cacheImage, name}
+														Children = { cacheImage, name }
 
 													}
-													
-                                                };
-                                         
- 											});
+
+												};
+
+											});
+
 											OnPropertyChanged(nameof(user));
 											listView.IsVisible = true;
-											
-									
+
+
+
 										}
 										else
 										{
@@ -376,7 +378,11 @@ namespace RTMobile.issues
 											listView.ItemsSource = suggestion;
 
 											listView.IsVisible = true;
+
+
 										}
+
+
 									}
 									else
 									{
@@ -387,15 +393,11 @@ namespace RTMobile.issues
 								//Заполняем поле выбранным элементом из списка
 								listView.ItemTapped += (senders, args) =>
 								{
-									if (args.Item as string == null)
+									if (args.Item != null)
 									{
-										return;
-									}
-									else
-									{
-										listView.ItemsSource = objectName.Where(c => c.Equals(args.Item as string));
 										listView.IsVisible = true;
-										searchBar.Text = args.Item as string;
+										User user_selecter = (User)args.Item;
+										searchBar.Text = user_selecter.displayName;
 									}
 									listView.IsVisible = false;
 								};
