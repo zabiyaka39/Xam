@@ -65,6 +65,7 @@ namespace RTMobile
 
 			}
 		}
+ 
 
 		private async void Button_Clicked(object sender, EventArgs e)
 		{
@@ -94,6 +95,8 @@ namespace RTMobile
 						//Инициализируем данные о авторизации при подключении для получения изображений в FFImageLoading
 						ImageService.Instance.Config.HttpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic",
 							Convert.ToBase64String(System.Text.ASCIIEncoding.ASCII.GetBytes($"{CrossSettings.Current.GetValueOrDefault("login", login.Text)}:{CrossSettings.Current.AddOrUpdateValue("password", password.Text)}")));
+						
+
 
 						if (data == "empty")
 						{

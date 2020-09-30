@@ -13,13 +13,13 @@ using Plugin.Geolocator.Abstractions;
 using static RTMobile.MainPage;
 using RTMobile.Models;
 using RTMobile.jiraData;
+using Windows.Security.Authentication.Web.Provider;
 
 namespace RTMobile
 {
-	class Request
+	public class Request
 	{
 		private HttpWebRequest httpWebRequest = null;
-
 
 		/// <summary>
 		/// Пустой конструктор для авторизации
@@ -52,7 +52,8 @@ namespace RTMobile
 				return false;
 			}
 			return true;
-
+		
+		
 		}
 		/// <summary>
 		/// Авторизация пользователя и возвращение упешности результата авторизации
@@ -79,6 +80,7 @@ namespace RTMobile
 				RootObject rootObject = this.GetResponses<RootObject>();
 				if (rootObject != null && rootObject.session != null && rootObject.session.name != null)
 				{
+					CrossSettings.Current.AddOrUpdateValue("token", rootObject.session.value);
 					try
 					{
 						JSONRequest jsonRequest = new JSONRequest()

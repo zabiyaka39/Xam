@@ -294,7 +294,7 @@ namespace RTMobile.issues
 
 											objectName.Clear();
 
-											for (int j = 0; j < user.Count; ++j)
+											for (int j = 0; j < user.Count - 1; ++j)
 											{
 												objectName.Add(user[j].displayName);
 												user[j].avatarUrl = "https://sd.rosohrana.ru/secure/useravatar?ownerId=" + user[j].name;

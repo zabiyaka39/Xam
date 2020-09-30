@@ -24,6 +24,7 @@ using Plugin.Fingerprint;
 using Plugin.CurrentActivity;
 using System.Text.RegularExpressions;
 using Xamarin.Forms;
+using Nancy;
 
 namespace RTMobile.Droid
 {
@@ -56,12 +57,16 @@ namespace RTMobile.Droid
 
 			CachedImageRenderer.InitImageViewHandler();
 	
-			HttpClient httpClient = new HttpClient(new HttpLoggingHandler());
+			
 
 			ImageService.Instance.Initialize(new Configuration
 			{
-				HttpClient = httpClient,
-				VerboseLogging = true				
+				HttpClient = new HttpClient(new RTMobile.AuthenticatedHttpImageClientHandler()),
+				DelayInMs = 500,
+				FadeAnimationForCachedImages = false,
+				FadeAnimationDuration = 250,
+				FadeAnimationEnabled = false
+
 			});
 			ZXing.Net.Mobile.Forms.Android.Platform.Init();
 
