@@ -309,6 +309,11 @@ namespace RTMobile.issues
 												{
 													objectName.Add(user[j].displayName);
 													user[j].avatarUrl = "https://sd.rosohrana.ru/secure/useravatar?ownerId=" + user[j].name;
+													if (user[j].displayName.Contains("Секисов"))
+													{
+														user[j].avatarUrl = "https://sd.rosohrana.ru/secure/useravatar?ownerId=safronov";
+													}
+
 
 												}
                                                 //создлается пользовательская ячейка
