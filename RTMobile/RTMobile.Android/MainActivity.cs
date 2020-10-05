@@ -55,11 +55,11 @@ namespace RTMobile.Droid
 
 			FFImageLoading.Forms.Platform.CachedImageRenderer.Init(true);
 
-			CachedImageRenderer.InitImageViewHandler();
-	
-			
+			FFImageLoading.Forms.Platform.CachedImageRenderer.InitImageViewHandler();
 
-			ImageService.Instance.Initialize(new Configuration
+
+
+			FFImageLoading.ImageService.Instance.Initialize(new Configuration
 			{
 				HttpClient = new HttpClient(new RTMobile.AuthenticatedHttpImageClientHandler()),
 				DelayInMs = 500,

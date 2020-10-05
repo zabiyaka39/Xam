@@ -14,18 +14,16 @@ namespace RTMobile
 {
     public class AuthenticatedHttpImageClientHandler : HttpClientHandler
     {
-        
-        public string token;
 
         public AuthenticatedHttpImageClientHandler()
         {
-            token = CrossSettings.Current.GetValueOrDefault("token", string.Empty);
+           
         }
 
         protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
         {
-            Console.WriteLine(token);
-            request.Headers.Add("Authorization", "Bearer " + token);
+            request.Headers.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue ("Basic",
+		    Convert.ToBase64String(System.Text.ASCIIEncoding.ASCII.GetBytes($"{CrossSettings.Current.GetValueOrDefault("login", String.Empty)}:{CrossSettings.Current.GetValueOrDefault("password", string.Empty)}")));
             return await base.SendAsync(request, cancellationToken).ConfigureAwait(false);
         }
     }

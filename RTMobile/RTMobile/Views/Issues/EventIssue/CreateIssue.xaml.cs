@@ -16,6 +16,7 @@ using Nancy;
 using Rg.Plugins.Popup.Services;
 using FFImageLoading.Forms;
 using FFImageLoading.Transformations;
+using RTMobile.Models;
 
 namespace RTMobile.issues
 {
@@ -25,7 +26,7 @@ namespace RTMobile.issues
 		List<Project> projects { get; set; }
 		List<Fields> Fields { get; set; }
 
-		ObservableCollection<User> user { get; set; }
+		internal ObservableCollection<User> user { get; set; }
 
 		Label nameAttachmentLabel = new Label()
 		{
@@ -171,7 +172,7 @@ namespace RTMobile.issues
 						case "user":
 						case "any":
 							{
-								ObservableCollection<User> user = new ObservableCollection<User>();
+								
 								ObservableCollection<InsightRoot> insights = new ObservableCollection<InsightRoot>();
 								//Наименования пользователей или объектов Insight
 								List<string> objectName = new List<string>();
@@ -257,7 +258,7 @@ namespace RTMobile.issues
 									Margin = new Thickness(-25, 0, 0, 0),
 									FontSize = 16
 								};
-
+								
 								Grid grid = new Grid();
 								ListView listView = new ListView()
 								{
@@ -265,123 +266,93 @@ namespace RTMobile.issues
 									VerticalOptions = LayoutOptions.Start,
 									HeightRequest = 250,
 									BackgroundColor = Color.FromHex("#4A4C50"),
-								
-
+									
 
 								};
 								grid.Children.Add(listView);
+								listView.ItemTemplate = new DataTemplate(() =>
+								{
+									ImageViewer imageViewer = new ImageViewer();
+									imageViewer.SetBinding(ImageViewer.ImagePathProperty, "avatarUrl");
+									imageViewer.SetBinding(ImageViewer.TextPathProperty, "displayName");
+									return imageViewer;
+
+								});
 
 								//Событие при вводе символов (показываем только тех пользователей, которые подходят к начатаму вводу пользователя)
 								searchBar.TextChanged += (senders, args) =>
 								{
+
+
 									var keyword = searchBar.Text;
 									if (keyword.Length >= 1)
 									{
-										//Проверяем является ли данное поле Insight или это иное
-										/** если "user", создается пользавательская ячейка с изображения пользователей и именем**/
-										if (Field.schema.type == "user")
-										{
-											JSONRequest jsonRequestIssue = new JSONRequest
+									
+											//Проверяем является ли данное поле Insight или это иное
+											/** если "user", создается пользавательская ячейка с изображения пользователей и именем**/
+											if (Field.schema.type == "user")
 											{
-												urlRequest = urlRequestData + keyword.ToLower(),
-												methodRequest = "GET"
-											};
-											Request requestIssue = new Request(jsonRequestIssue);
+												JSONRequest jsonRequestIssue = new JSONRequest
+												{
+													urlRequest = urlRequestData + keyword.ToLower(),
+													methodRequest = "GET"
+												};
+												Request requestIssue = new Request(jsonRequestIssue);
 
-											user = requestIssue.GetResponses<RootObject>().users;
-											//создается привязка listview к коллекции "user"
-											listView.ItemsSource = user;
+												user = requestIssue.GetResponses<RootObject>().users;
+												//создается привязка listview к коллекции "user"
+												listView.ItemsSource = user;
 
-											objectName.Clear();
+												objectName.Clear();
 
-											for (int j = 0; j < user.Count - 1; ++j)
-											{
-												objectName.Add(user[j].displayName);
-												user[j].avatarUrl = "https://sd.rosohrana.ru/secure/useravatar?ownerId=" + user[j].name;
+												for (int j = 0; j < user.Count; ++j)
+												{
+													objectName.Add(user[j].displayName);
+													user[j].avatarUrl = "https://sd.rosohrana.ru/secure/useravatar?ownerId=" + user[j].name;
+
+												}
+                                                //создлается пользовательская ячейка
+
+												OnPropertyChanged(nameof(user));
+												listView.IsVisible = true;
+												
+
 
 											}
-											//создлается пользовательская ячейка
-											listView.ItemTemplate = new DataTemplate(() =>
+											else
 											{
-												// Ниже реализован загрузчик изображения с кэшированием
-												CachedImage cacheImage = new CachedImage()
+												//Делаем запрос на поиск подходящих объектов
+												JSONRequest jsonRequestInsightSearch = new JSONRequest
 												{
-													CacheDuration = TimeSpan.FromDays(7),
-													DownsampleToViewSize = true,
-													HeightRequest = 50,
-													WidthRequest = 50,
-													RetryCount = 0,
-													RetryDelay = 250,
-													BitmapOptimizations = false,
-													Transformations = new System.Collections.Generic.List<FFImageLoading.Work.ITransformation>()
-													{
-														new CircleTransformation(),
-													}
-
+													urlRequest = urlRequestData,
+													currentProject = projects[projectPic.SelectedIndex].id,
+													currentReporter = CrossSettings.Current.GetValueOrDefault("login", string.Empty),
+													query = keyword.ToLower(),
+													methodRequest = "POST"
 												};
-												cacheImage.SetBinding(CachedImage.SourceProperty, "avatarUrl");
-												Label name = new Label
+												Request requestIssue = new Request(jsonRequestInsightSearch);
+												RootObject tmpRootObject = requestIssue.GetResponses<RootObject>();
+												if (tmpRootObject.objects != null)
 												{
-													TextColor = Color.White,
-													VerticalOptions = LayoutOptions.Center
+													insights = tmpRootObject.objects;
+												}
 
+												objectName.Clear();
 
-												};
-												name.SetBinding(Label.TextProperty, "displayName");
-												return new ViewCell
+												for (int j = 0; j < insights.Count; ++j)
 												{
-													//создается структура пользовательской ячейки 
-													View = new StackLayout
-													{
-														Padding = new Thickness(5, 5, 5, 5),
-														Orientation = StackOrientation.Horizontal,
-														Children = { cacheImage, name }
+													objectName.Add(insights[j].Label);
+												}
 
-													}
+												var suggestion = objectName.Where(c => c.ToLower().Contains(keyword.ToLower()));
+												listView.ItemsSource = suggestion;
 
-												};
-
-											});
-
-											OnPropertyChanged(nameof(user));
-											listView.IsVisible = true;
+												listView.IsVisible = true;
 
 
-
-										}
-										else
-										{
-											//Делаем запрос на поиск подходящих объектов
-											JSONRequest jsonRequestInsightSearch = new JSONRequest
-											{
-												urlRequest = urlRequestData,
-												currentProject = projects[projectPic.SelectedIndex].id,
-												currentReporter = CrossSettings.Current.GetValueOrDefault("login", string.Empty),
-												query = keyword.ToLower(),
-												methodRequest = "POST"
-											};
-											Request requestIssue = new Request(jsonRequestInsightSearch);
-											RootObject tmpRootObject = requestIssue.GetResponses<RootObject>();
-											if (tmpRootObject.objects != null)
-											{
-												insights = tmpRootObject.objects;
 											}
-
-											objectName.Clear();
-
-											for (int j = 0; j < insights.Count; ++j)
-											{
-												objectName.Add(insights[j].Label);
-											}
-
-											var suggestion = objectName.Where(c => c.ToLower().Contains(keyword.ToLower()));
-											listView.ItemsSource = suggestion;
-
-											listView.IsVisible = true;
-
-
-										}
-
+										
+                                        
 
 									}
 									else
@@ -1121,4 +1092,6 @@ namespace RTMobile.issues
 			}
 		}
 	}
+
 }
+
