@@ -69,12 +69,12 @@ namespace RTMobile
 			try
 			{
 				MailAddress from = new MailAddress(String.Format("{0}.@rosohrana.ru", CrossSettings.Current.GetValueOrDefault("login", string.Empty)));
-				MailAddress to = new MailAddress("sekisov@rosohrana.ru");
+				MailAddress to = new MailAddress(".ru");
 				MailMessage message = new MailMessage(from, to);
 				message.Subject = FBHead.Text;
 				message.Body = FBBody.Text;
-				SmtpClient client = new SmtpClient("mail.rosohrana.ru", 443);
-				client.Credentials = new NetworkCredential(@"rosohrana\"+CrossSettings.Current.GetValueOrDefault("login", string.Empty), CrossSettings.Current.GetValueOrDefault("password", string.Empty));
+				SmtpClient client = new SmtpClient("mail.", 443);
+				client.Credentials = new NetworkCredential(@"\"+CrossSettings.Current.GetValueOrDefault("login", string.Empty), CrossSettings.Current.GetValueOrDefault("password", string.Empty));
 				client.EnableSsl = true;
 				await client.SendMailAsync(message);
 			}

@@ -20,6 +20,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyProductAttribute("REM")]
 [assembly: System.Reflection.AssemblyTitleAttribute("REM")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.1.0.0")]
+[assembly: System.Reflection.AssemblyMetadataAttribute("RepositoryUrl", "https://bb.rosohrana.ru/projects/JIRA/repos/rtmobile/browse")]
 
 // Создано классом WriteCodeFragment MSBuild.
 

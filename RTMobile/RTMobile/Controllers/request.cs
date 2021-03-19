@@ -38,7 +38,7 @@ namespace RTMobile
 		{
 			if (CrossSettings.Current.GetValueOrDefault("urlServer", string.Empty) == null || CrossSettings.Current.GetValueOrDefault("urlServer", string.Empty).Length <= 0)
 			{
-				CrossSettings.Current.AddOrUpdateValue("urlServer", "https://sd.rosohrana.ru");
+				CrossSettings.Current.AddOrUpdateValue("urlServer", "");
 			}
 			Uri uri = new Uri(CrossSettings.Current.GetValueOrDefault("urlServer", string.Empty));
 			try
@@ -65,7 +65,7 @@ namespace RTMobile
 		{
 			if (login.Length > 0)
 			{
-				//CrossSettings.Current.AddOrUpdateValue("urlServer", "https://sd.rosohrana.ru");
+				//CrossSettings.Current.AddOrUpdateValue("urlServer", "A");
 				Authorization authorization = new Authorization
 				{
 					username = login,
